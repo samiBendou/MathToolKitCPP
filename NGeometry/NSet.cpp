@@ -5,7 +5,7 @@
 #include "NSet.h"
 #include "NDSet.h"
 
-NSet::NSet(const int dim) : _dim(dim) {
+NSet::NSet(unsigned long dim) : _dim(dim) {
 
 }
 

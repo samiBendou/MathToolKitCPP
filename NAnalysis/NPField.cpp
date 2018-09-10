@@ -20,7 +20,7 @@ ENVector NPField::operator()(const ENVector &u) {
             minIndex = k;
         }
     }
-    return ((const ENVector) *this)(_dimOut * minIndex, _dimOut * (minIndex + 1) - 1);
+    return ((const ENVector) *this)(_dimOut * arroundIndex[minIndex], _dimOut * (arroundIndex[minIndex] + 1) - 1);
 }
 
 std::vector<ENVector> NPField::meshVectors() {
@@ -28,6 +28,7 @@ std::vector<ENVector> NPField::meshVectors() {
 }
 
 NPMatrix NPField::meshMatrix() {
+    mesh();
     return NPMatrix((*this), dim() / _dimOut, _dimOut);
 }
 
@@ -46,18 +47,18 @@ void NPField::mesh() {
 }
 
 std::vector<unsigned long> NPField::meshArround(const ENVector& x) {
-    const int stepsToMesh = 100;
     std::vector<unsigned long> arroundIndex{};
     ENVector res;
     if(dim() > 0) {
+        //mémoriser un tableau d'index les plus proche à un rayon près
         for (unsigned long k = 0; k < _meshIn.size(); ++k) {
-            if(x / _meshIn[k] < stepsToMesh * !h) {
+            if(x / _meshIn[k] <= !h) {
                 arroundIndex.push_back(k);
             }
         }
         for (unsigned long k = 0; k < arroundIndex.size(); ++k) {
             res = g(_meshIn[arroundIndex[k]]);
-            ((const NVector) *this)(_dimOut * k, _dimOut * (k + 1) - 1) = res;
+            ((NVector) *this)(_dimOut * arroundIndex[k], _dimOut * (arroundIndex[k] + 1) - 1) = res;
         }
     } else {
         mesh();

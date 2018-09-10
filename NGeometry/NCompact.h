@@ -10,7 +10,7 @@
 
 class NCompact : public NSet {
 public:
-    NCompact(int dim);
+    NCompact(unsigned long dim);
 
     virtual NCompact* border() const = 0;
 

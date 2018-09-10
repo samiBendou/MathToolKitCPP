@@ -332,10 +332,10 @@ bool testNMatrixSolve() {
 
 bool testNConstantField() {
     cout << endl<< "**** CONSTANT FIELD ****" << endl << endl;
-    NMatrix base = NMatrix::scalar(5, 6);
+    NMatrix base = NMatrix::scalar(5, 3);
     vector<ENVector> baseCols = base.cols();
-    ENVector pos = NVector::zeros(6);
-    ENVector dx = NVector::scalar(1.0 / 3.0, 6);
+    ENVector pos = NVector::zeros(3);
+    ENVector dx = NVector::scalar(1.0 / 3.0, 3);
     NParallelepiped para{base, pos};
     cout << "para : " << para << endl;
     NConstantField field{&para, Vector3(0, 0, 9.81)};
@@ -352,7 +352,7 @@ bool testSNewtonianField() {
     NMatrix base = NMatrix::scalar(1 * earthSunDistance, 3);
     vector<ENVector> baseCols = base.cols();
     ENVector pos = NVector::zeros(3);
-    ENVector dx = NVector::scalar(1.0 / 25, 3);
+    ENVector dx = NVector::scalar(1.0 / 3, 3);
     NParallelepiped para{base, pos};
 
     cout << "para : " << para << endl;

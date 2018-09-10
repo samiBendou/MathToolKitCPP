@@ -4,6 +4,6 @@
 
 #include "NCompact.h"
 
-NCompact::NCompact(const int dim) : NSet(dim) {
+NCompact::NCompact(unsigned long dim) : NSet(dim) {
 
 }

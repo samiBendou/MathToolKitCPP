@@ -46,7 +46,6 @@ protected:
 
 
 
-
     int card() const override;
 };
 

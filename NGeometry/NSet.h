@@ -9,7 +9,7 @@
 
 class NSet {
 public:
-    NSet(const int dim);
+    explicit NSet(unsigned long dim);
 
     ~NSet();
 

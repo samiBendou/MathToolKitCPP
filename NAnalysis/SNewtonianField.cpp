@@ -7,7 +7,7 @@
 SNewtonianField::SNewtonianField(NCompact* domain, const double k, const std::vector<double>& mu, const std::vector<Vector3>& r) :
         NPField(domain, 3), _k(k), _size(mu.size()), _mu(mu), _r(r)
 {
-
+    mesh();
 }
 
 Vector3 SNewtonianField::g(const Vector3 &r) {

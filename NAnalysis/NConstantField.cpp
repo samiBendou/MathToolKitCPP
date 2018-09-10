@@ -4,12 +4,12 @@
 
 #include "NConstantField.h"
 
-NConstantField::NConstantField(NCompact* domain, const ENVector& cst) : NPField(domain, 2 * cst.dim()), _cst(cst) {
+NConstantField::NConstantField(NCompact* domain, const ENVector& cst) : NPField(domain, cst.dim()), _cst(cst) {
 
 }
 
 ENVector NConstantField::g(const ENVector &x) {
-    return x;
+    return _cst;
 }
 
 
