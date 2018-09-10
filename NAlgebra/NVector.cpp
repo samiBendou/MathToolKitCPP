@@ -48,7 +48,7 @@ std::vector<double> NVector::array() {
 // SWAP
 
 
-void NVector::swap(const unsigned long k1, const unsigned long k2) {
+void NVector::swap(unsigned long k1, unsigned long k2) {
     if(isValidIndex(k1) && isValidIndex(k2)) {
         const double temp = (*this)[k1];
         (*this)[k1] = (*this)[k2];
@@ -251,15 +251,15 @@ NVector & NVector::operator=(const NVector &vector) {
 // STATIC METHODS
 
 
-NVector NVector::zeros(const unsigned long dim) {
+NVector NVector::zeros(unsigned long dim) {
     return scalar(0.0, dim);
 }
 
-NVector NVector::ones(const unsigned long dim) {
+NVector NVector::ones(unsigned long dim) {
     return scalar(1.0, dim);
 }
 
-NVector NVector::scalar(const double scalar, const unsigned long dim) {
+NVector NVector::scalar(const double scalar, unsigned long dim) {
     NVector scalarVector = NVector(dim);
     for (unsigned long k = 0; k < dim; ++k) {
         scalarVector(k) = scalar;
@@ -267,7 +267,7 @@ NVector NVector::scalar(const double scalar, const unsigned long dim) {
     return scalarVector;
 }
 
-NVector NVector::canonical(const unsigned long k, const unsigned long dim) {
+NVector NVector::canonical(unsigned long k, unsigned long dim) {
     NVector canonical = NVector::zeros(dim);
     if(canonical.isValidIndex(k)) {
         canonical(k) = 1.0;
@@ -342,9 +342,9 @@ unsigned long NVector::getExtremumAbsIndex(bool max) const {
 
 // SUB-VECTORS
 
-NVector NVector::subVector(const unsigned long k1, const unsigned long k2) const {
-    const unsigned long end = (isValidIndex(k2)) ? k2 : dim() - 1;
-    const unsigned long dim = end - k1 + 1;
+NVector NVector::subVector(unsigned long k1, unsigned long k2) const {
+    unsigned long end = (isValidIndex(k2)) ? k2 : dim() - 1;
+    unsigned long dim = end - k1 + 1;
 
     if(isValidIndex(k1) && dim > 0) {
         vector<double> data(dim);

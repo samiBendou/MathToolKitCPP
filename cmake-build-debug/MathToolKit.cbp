@@ -8,179 +8,181 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MathToolKit">
-				<Option output="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/MathToolKit" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug"/>
+				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/MathToolKit" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MathToolKit/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/MathToolKit" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug"/>
+				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/MathToolKit" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/ConsoleMenu.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/ConsoleMenu.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/ENVector.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/ENVector.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/NMatrix.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/NMatrix.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/NPMatrix.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/NPMatrix.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/NVector.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/NVector.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/Vector3.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAlgebra/Vector3.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/NConstantField.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/NConstantField.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/NOde.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/NOde.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/NPField.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/NPField.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/SNewtonianField.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NAnalysis/SNewtonianField.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NCompact.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NCompact.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NDSet.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NDSet.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NParallelepiped.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NParallelepiped.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NSegment.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NSegment.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NSet.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/NGeometry/NSet.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/main.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/main.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/mainBis.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/mainBis.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/tests.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/tests.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/tests.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/tests.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKit/CMakeLists.txt">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

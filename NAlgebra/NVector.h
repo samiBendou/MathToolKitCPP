@@ -147,6 +147,7 @@ public:
     static NVector sum(const std::vector<NVector>& vectors);
 
     static NVector sumProd(const std::vector<double>& scalars, const std::vector<NVector>& vectors);
+    // Returns linear combination of vectors with scalars coefficients
 
 protected:
 
@@ -154,6 +155,7 @@ protected:
     unsigned long _k1;
 
     unsigned long _k2;
+    //Indexes used to return sub vector of a vector or to set a sub vector
 
 
     // EXTREMUM GETTERS

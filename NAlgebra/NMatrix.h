@@ -54,6 +54,8 @@ public:
     // Trace of this matrix
     double det();
     // Determinant of this
+
+    void matrixProduct(const NPMatrix &matrix);
     
     // OPERATIONS
 

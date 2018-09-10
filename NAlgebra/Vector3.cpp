@@ -100,7 +100,7 @@ Vector3 Vector3::ones() {
     return Vector3(NVector::ones(3));
 }
 
-Vector3 Vector3::scalar(const double scalar) {
+Vector3 Vector3::scalar(double scalar) {
     return Vector3(NVector::scalar(scalar, 3));
 }
 

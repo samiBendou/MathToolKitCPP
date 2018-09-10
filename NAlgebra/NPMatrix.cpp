@@ -6,13 +6,13 @@
 
 using namespace std;
 
-NPMatrix::NPMatrix(const unsigned long n, const unsigned long p) :
+NPMatrix::NPMatrix(unsigned long n, unsigned long p) :
         ENVector(n * ((p > 0) ? p : n)), _n(n), _p((p > 0) ? p : n) {}
 
 NPMatrix::NPMatrix(const ENVector &vector) :
         ENVector(vector), _n(1), _p(vector.dim()) {}
 
-NPMatrix::NPMatrix(const ENVector &vector, const unsigned long n, const unsigned long p) :
+NPMatrix::NPMatrix(const ENVector &vector, unsigned long n, unsigned long p) :
         ENVector(vector), _n(n), _p((p > 0) ? p : n) {}
 
 NPMatrix::NPMatrix(const NPMatrix &matrix) :
@@ -87,7 +87,7 @@ unsigned long NPMatrix::p() const {
     return _p;
 }
 
-ENVector NPMatrix::row(const unsigned long i) const {
+ENVector NPMatrix::row(unsigned long i) const {
     vector<double> data(_p);
     for (unsigned long k = 0; k < _p; ++k) {
         data[k] = (*this)[getVectorIndex(i, k)];
@@ -95,7 +95,7 @@ ENVector NPMatrix::row(const unsigned long i) const {
     return ENVector(data);
 }
 
-ENVector NPMatrix::col(const unsigned long j) const {
+ENVector NPMatrix::col(unsigned long j) const {
     vector<double> data(_n);
     for (unsigned long k = 0; k < _n; ++k) {
         data[k] = (*this)[getVectorIndex(k, j)];
@@ -103,9 +103,9 @@ ENVector NPMatrix::col(const unsigned long j) const {
     return ENVector(data);
 }
 
-vector<ENVector> NPMatrix::rows(const unsigned long i1, const unsigned long i2) const {
-    const unsigned long start = (isValidRowIndex(i1)) ? i1 : 0;
-    const unsigned long end   = (isValidRowIndex(i2)) ? i2 : _n - 1;
+vector<ENVector> NPMatrix::rows(unsigned long i1, unsigned long i2) const {
+    unsigned long start = (isValidRowIndex(i1)) ? i1 : 0;
+    unsigned long end   = (isValidRowIndex(i2)) ? i2 : _n - 1;
 
     vector<ENVector> rows(end - start + 1);
     for (unsigned long i = start; i <= end; ++i) {
@@ -114,9 +114,9 @@ vector<ENVector> NPMatrix::rows(const unsigned long i1, const unsigned long i2) 
     return rows;
 }
 
-vector<ENVector> NPMatrix::cols(const unsigned long j1, const unsigned long j2) const {
-    const unsigned long start = (isValidRowIndex(j1)) ? j1 : 0;
-    const unsigned long end   = (isValidRowIndex(j2)) ? j2 : _p - 1;
+vector<ENVector> NPMatrix::cols(unsigned long j1, unsigned long j2) const {
+    unsigned long start = (isValidRowIndex(j1)) ? j1 : 0;
+    unsigned long end   = (isValidRowIndex(j2)) ? j2 : _p - 1;
 
     vector<ENVector> cols(end - start + 1);
     for (unsigned long j = start; j <= end; ++j) {
@@ -125,9 +125,9 @@ vector<ENVector> NPMatrix::cols(const unsigned long j1, const unsigned long j2) 
     return cols;
 }
 
-NPMatrix NPMatrix::subMatrix(const unsigned long i1, const unsigned long j1, const unsigned long i2, const unsigned long j2) {
-    const unsigned long n = i2 - i1 + 1;
-    const unsigned long p = j2 - j1 + 1;
+NPMatrix NPMatrix::subMatrix(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) {
+    unsigned long n = i2 - i1 + 1;
+    unsigned long p = j2 - j1 + 1;
 
     NPMatrix subMatrix = NPMatrix::zeros(n, p);
     for (unsigned long i = 0; i < n; ++i) {
@@ -142,7 +142,7 @@ NPMatrix NPMatrix::subMatrix(const unsigned long i1, const unsigned long j1, con
 // ROWS/COLS/SUB SETTERS
 
 
-void NPMatrix::setRow(const ENVector &vector, const unsigned long i1) {
+void NPMatrix::setRow(const ENVector &vector, unsigned long i1) {
     if(vector.dim() == _p && isValidRowIndex(i1)) {
         for (unsigned long j = 0; j < vector.dim(); ++j) {
             (*this)(i1, j) = vector(j);
@@ -150,7 +150,7 @@ void NPMatrix::setRow(const ENVector &vector, const unsigned long i1) {
     }
 }
 
-void NPMatrix::setCol(const ENVector &vector, const unsigned long j1) {
+void NPMatrix::setCol(const ENVector &vector, unsigned long j1) {
     if(vector.dim() == _n && isValidColIndex(j1)) {
         for (unsigned long i = 0; i < vector.dim(); ++i) {
             (*this)(i, j1) = vector(i);
@@ -158,7 +158,7 @@ void NPMatrix::setCol(const ENVector &vector, const unsigned long j1) {
     }
 }
 
-void NPMatrix::setRows(const vector<ENVector> &vectors, const unsigned long i1) {
+void NPMatrix::setRows(const vector<ENVector> &vectors, unsigned long i1) {
     if(vectors.size() + i1 < _n) {
         for (unsigned long i = i1; i < i1 + vectors.size(); ++i) {
             setRow(vectors[i - i1], i);
@@ -166,7 +166,7 @@ void NPMatrix::setRows(const vector<ENVector> &vectors, const unsigned long i1) 
     }
 }
 
-void NPMatrix::setCols(const vector<ENVector> &vectors, const unsigned long j1) {
+void NPMatrix::setCols(const vector<ENVector> &vectors, unsigned long j1) {
     if(vectors.size() + j1 < _p) {
         for (unsigned long j = j1; j < j1 + vectors.size(); ++j) {
             setCol(vectors[j - j1], j);
@@ -174,9 +174,9 @@ void NPMatrix::setCols(const vector<ENVector> &vectors, const unsigned long j1) 
     }
 }
 
-void NPMatrix::setSubMatrix(const NPMatrix &matrix, const unsigned long i1, const unsigned long j1) {
-    const unsigned long n = matrix._n - i1 + 1;
-    const unsigned long p = matrix._p - j1 + 1;
+void NPMatrix::setSubMatrix(const NPMatrix &matrix, unsigned long i1, unsigned long j1) {
+    unsigned long n = matrix._n - i1 + 1;
+    unsigned long p = matrix._p - j1 + 1;
 
     if(n <= _n && p <= _p) {
         for (unsigned long i = 0; i < n; ++i) {
@@ -191,15 +191,15 @@ void NPMatrix::setSubMatrix(const NPMatrix &matrix, const unsigned long i1, cons
 // SWAPS
 
 
-void NPMatrix::swap(const unsigned long i1, const unsigned long j1, const unsigned long i2, const unsigned long j2) {
+void NPMatrix::swap(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) {
     NVector::swap(getVectorIndex(i1, j1), getVectorIndex(i2, j2));
 }
 
-void NPMatrix::swapRow(const unsigned long i1, const unsigned long i2) {
+void NPMatrix::swapRow(unsigned long i1, unsigned long i2) {
     swap(Row, i1, i2);
 }
 
-void NPMatrix::swapCol(const unsigned long j1, const unsigned long j2) {
+void NPMatrix::swapCol(unsigned long j1, unsigned long j2) {
     swap(Col, j1, j2);
 }
 
@@ -207,11 +207,11 @@ void NPMatrix::swapCol(const unsigned long j1, const unsigned long j2) {
 // SHIFTS
 
 
-void NPMatrix::shiftRow(const unsigned long i, const long iterations) {
+void NPMatrix::shiftRow(unsigned long i, const long iterations) {
     shift(Row, i, iterations);
 }
 
-void NPMatrix::shiftCol(const unsigned long j, const long iterations) {
+void NPMatrix::shiftCol(unsigned long j, const long iterations) {
     shift(Col, j, iterations);
 }
 
@@ -219,11 +219,11 @@ void NPMatrix::shiftCol(const unsigned long j, const long iterations) {
 //MAX / MIN
 
 
-unsigned long NPMatrix::maxAbsIndexRow(const unsigned long i, const unsigned long r) const {
+unsigned long NPMatrix::maxAbsIndexRow(unsigned long i, unsigned long r) const {
     return maxAbsIndex(Row, i, r);
 }
 
-unsigned long NPMatrix::maxAbsIndexCol(const unsigned long j, const unsigned long r) const {
+unsigned long NPMatrix::maxAbsIndexCol(unsigned long j, unsigned long r) const {
     return maxAbsIndex(Col, j, r);
 }
 
@@ -335,17 +335,17 @@ double NPMatrix::operator()(unsigned long i, unsigned long j) const {
 // STATIC FUNCTIONS
 
 
-NPMatrix NPMatrix::zeros(const unsigned long n, unsigned long p) {
+NPMatrix NPMatrix::zeros(unsigned long n, unsigned long p) {
     p = (p > -1) ? p : n;
     return NPMatrix(NVector::zeros(n * p), n, p);
 }
 
-NPMatrix NPMatrix::ones(const unsigned long n, unsigned long p) {
+NPMatrix NPMatrix::ones(unsigned long n, unsigned long p) {
     p = (p > -1) ? p : n;
     return NPMatrix(NVector::ones(n * p), n, p);
 }
 
-NPMatrix NPMatrix::canonical(const unsigned long i, const unsigned long j, const unsigned long n, unsigned long p) {
+NPMatrix NPMatrix::canonical(unsigned long i, unsigned long j, unsigned long n, unsigned long p) {
     p = (p > -1) ? p : n;
     return NPMatrix(NVector::canonical(p * i + j, n * p), n, p);
 }
@@ -353,15 +353,15 @@ NPMatrix NPMatrix::canonical(const unsigned long i, const unsigned long j, const
 // PRIVATE METHODS
 
 
-unsigned long NPMatrix::getVectorIndex(const unsigned long i, const unsigned long j) const {
+unsigned long NPMatrix::getVectorIndex(unsigned long i, unsigned long j) const {
     return _p * i + j;
 }
 
-unsigned long NPMatrix::getRowFromVectorIndex(const unsigned long k) const {
+unsigned long NPMatrix::getRowFromVectorIndex(unsigned long k) const {
     return k / _p;
 }
 
-unsigned long NPMatrix::getColFromVectorIndex(const unsigned long k) const {
+unsigned long NPMatrix::getColFromVectorIndex(unsigned long k) const {
     return k % _p;
 }
 
@@ -420,6 +420,7 @@ void NPMatrix::matrixProduct(const NPMatrix &matrix) {
             }
         }
         (*this) = res;
+
     }
 }
 

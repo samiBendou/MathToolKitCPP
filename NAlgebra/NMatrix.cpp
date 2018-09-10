@@ -114,6 +114,11 @@ double NMatrix::det() {
     return det;
 }
 
+void NMatrix::matrixProduct(const NPMatrix &matrix) {
+    NPMatrix::matrixProduct(matrix);
+    lupClear();
+}
+
 
 // OPERATORS
 
@@ -326,7 +331,7 @@ void NMatrix::lupUpdate() {
                 }
             }
             for (j = i + 1; j < _n; j++) {
-                if((*_a)(i, i) < std::numeric_limits<double>::epsilon()) {
+                if(abs((*_a)(i, i)) < std::numeric_limits<double>::epsilon()) {
                     lupClear();
                     return;
                 }
@@ -399,6 +404,8 @@ NMatrix operator!(const NMatrix &matrix) {
     res.transpose();
     return res;
 }
+
+
 
 
 

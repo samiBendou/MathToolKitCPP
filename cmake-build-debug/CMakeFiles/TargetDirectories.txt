@@ -1,3 +1,3 @@
-/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/lemale/CLionProjects/MathToolKit/cmake-build-debug/CMakeFiles/MathToolKit.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/MathToolKit.dir
