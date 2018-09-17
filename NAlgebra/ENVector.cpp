@@ -90,8 +90,8 @@ double operator!(const ENVector &vector) {
     return vector.norm();
 }
 
-double operator*(const ENVector &v1, const ENVector &v2) {
-    return v1.dot(v2);
+double operator*(const ENVector &u, const ENVector &v) {
+    return u.dot(v);
 }
 
 double operator/(const ENVector &v1, const ENVector &v2) {

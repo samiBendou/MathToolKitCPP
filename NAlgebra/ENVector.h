@@ -1,11 +1,20 @@
-//
-// Created by Sami Dahoux on 03/05/2018
-//
-//
-//@license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
-//@class          : ENVector
-//@description    : Module inheriting from NVector which represent Euclidean Space vector. Featuring norm based upon
-//                  inner product scalar and distance between two vectors.
+/**
+ * @class          : ENVector
+ * @date           : 03/05/2018
+ * @author         : samiBendou
+ * @description    : A ENVector object inherit from NVector. It is a euclidean space vector. In this class,
+ *                   we will use the following definitions :
+ *
+ *                   -epsilon : the smallest strictly positive double quantity
+ *                              representable in memory which is std::numeric_limits<double>::epsilon().
+ *
+ *                   -||.||    : the norm base on dot product * which is usual dot product.
+ *
+ *
+ *                   Featuring norm, comparison between vectors and distance.
+ *
+ * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ */
 
 
 #ifndef MATHTOOLKIT_ENVECTOR_H
@@ -15,6 +24,8 @@
 
 class ENVector : public NVector {
 public:
+
+    // CONSTRUCTORS
 
     ENVector(unsigned long dim = 0);
 
@@ -39,19 +50,34 @@ public:
 
     // NORM BASED COMPARISON OPERATORS
 
-
+    /**
+     *
+     * @return return true if ||v1 - v2|| < epsilon.
+     */
     friend bool operator==(const ENVector& v1, const ENVector& v2);
 
     friend bool operator==(const ENVector& vector, double scalar);
 
+    /**
+     *
+     * @return return true if ||v1 - v2|| >= epsilon.
+     */
     friend bool operator!=(const ENVector& v1, const ENVector& v2);
 
     friend bool operator!=(const ENVector& vector, double scalar);
 
+    /**
+     *
+     * @return return true if ||v1|| > ||v2||.
+     */
     friend bool operator<(const ENVector& v1, const ENVector& v2);
 
     friend bool operator>(const ENVector& v1, const ENVector& v2);
 
+    /**
+     *
+     * @return return true if ||v1|| >= ||v2||.
+     */
     friend bool operator<=(const ENVector& v1, const ENVector& v2);
 
     friend bool operator>=(const ENVector& v1, const ENVector& v2);
@@ -59,16 +85,25 @@ public:
 
     // SCALAR PRODUCT BASED OPERATIONS
 
-
+    /**
+     *
+     * @return the norm of vector ||.||
+     */
     friend double operator!(const ENVector& vector);
     // Returns norm of vector !v1 = ||v1||
 
-    friend double operator*(const ENVector& v1, const ENVector& v2);
-    // Returns scalar product of v1 & v2 : v1 * v2 = (v1 | v2)
 
+    /**
+     *
+     * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
+     */
+    friend double operator*(const ENVector &u, const ENVector &v);
+
+    /**
+     *
+     * @return distance between v1 & v2, ||v1 - v2||.
+     */
     friend double operator/(const ENVector& v1, const ENVector& v2);
-    // Returns distance between v1 & v2 : v1 / v2 = d(v1, v2)
-
 
     // STATIC METHODS
     static ENVector sum(const std::vector<ENVector>& vectors);

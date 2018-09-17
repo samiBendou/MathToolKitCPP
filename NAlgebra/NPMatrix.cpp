@@ -13,13 +13,19 @@ NPMatrix::NPMatrix(const ENVector &vector) :
         ENVector(vector), _n(1), _p(vector.dim()) {}
 
 NPMatrix::NPMatrix(const ENVector &vector, unsigned long n, unsigned long p) :
-        ENVector(vector), _n(n), _p((p > 0) ? p : n) {}
+        ENVector(vector), _n(n), _p((p > 0) ? p : n) {
+    assert(vector.dim() == _n * _p);
+}
 
 NPMatrix::NPMatrix(const NPMatrix &matrix) :
         ENVector(matrix), _n(matrix._n), _p(matrix._p) {}
 
 NPMatrix::NPMatrix(const vector< vector<double> >& data) :
         ENVector((data.size() * data[0].size())), _n(data.size()),  _p(data[0].size()) {
+
+    for (int k = 1; k < data.size(); ++k) {
+        assert(data[k].size() == data[0].size());
+    }
 
     if(!(*this).empty()) {
         for (unsigned long i = 0; i < _n; ++i) {
@@ -32,6 +38,10 @@ NPMatrix::NPMatrix(const vector< vector<double> >& data) :
 
 NPMatrix::NPMatrix(const vector<ENVector> &vectors) :
         ENVector((vectors.size() * vectors[0].dim())), _n(vectors.size()), _p(vectors[0].dim()) {
+
+    for (int k = 1; k < vectors.size(); ++k) {
+        assert(vectors[k].dim() == vectors[0].dim());
+    }
 
     for (unsigned long i = 0; i < _n; ++i) {
         setRow(vectors[i], i);
@@ -346,7 +356,7 @@ NPMatrix NPMatrix::ones(unsigned long n, unsigned long p) {
 }
 
 NPMatrix NPMatrix::canonical(unsigned long i, unsigned long j, unsigned long n, unsigned long p) {
-    p = (p > -1) ? p : n;
+    p = (p >= -1) ? p : n;
     return NPMatrix(NVector::canonical(p * i + j, n * p), n, p);
 }
 

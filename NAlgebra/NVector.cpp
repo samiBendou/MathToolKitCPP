@@ -131,36 +131,36 @@ unsigned long NVector::minAbsIndex() const{
 // OPERATORS
 
 
-NVector operator+(const NVector &v1, const NVector &v2){
-    NVector res{v1};
-    res.add(v2);
+NVector operator+(const NVector &u, const NVector &v){
+    NVector res{u};
+    res.add(v);
     return res;
 }
 
-NVector operator-(const NVector &v1, const NVector &v2){
-    NVector res{v1};
-    res.sub(v2);
+NVector operator-(const NVector &u, const NVector &v){
+    NVector res{u};
+    res.sub(v);
     return res;
 }
 
-NVector operator*(const double scalar, const NVector &vector){
-    NVector res{vector};
-    res.prod(scalar);
+NVector operator*(double s, const NVector &u){
+    NVector res{u};
+    res.prod(s);
     return res;
 }
 
-NVector operator*(const NVector &vector, const double scalar){
-    return operator*(scalar, vector);
+NVector operator*(const NVector &u, double s){
+    return operator*(s, u);
 }
 
-NVector operator/(const NVector &vector, const double scalar){
-    NVector res{vector};
-    res.div(scalar);
+NVector operator/(const NVector &u, double s){
+    NVector res{u};
+    res.div(s);
     return res;
 }
 
-NVector operator-(const NVector &vector) {
-    NVector res{vector};
+NVector operator-(const NVector &u) {
+    NVector res{u};
     res.opp();
     return res;
 }
@@ -213,7 +213,7 @@ double NVector::operator()(long k) const {
 }
 
 NVector NVector::operator()(const long k1, const long k2) const {
-    if(isValidIndex(k1) && isValidIndex(k2))
+    if(isValidIndex(k1) && isValidIndex(k2) && abs(k1) <= abs(k2))
         return subVector((k1 >= 0) ? k1 : dim() - k1 - 1, (k2 >= 0) ? k2 : dim() - k2 - 1);
 }
 
@@ -259,10 +259,10 @@ NVector NVector::ones(unsigned long dim) {
     return scalar(1.0, dim);
 }
 
-NVector NVector::scalar(const double scalar, unsigned long dim) {
+NVector NVector::scalar(double s, unsigned long dim) {
     NVector scalarVector = NVector(dim);
     for (unsigned long k = 0; k < dim; ++k) {
-        scalarVector(k) = scalar;
+        scalarVector(k) = s;
     }
     return scalarVector;
 }
