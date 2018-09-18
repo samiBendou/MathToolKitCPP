@@ -31,8 +31,6 @@
 
 #include "ENVector.h"
 
-#define DEF
-
 using namespace std;
 
 enum ElementEnum{Row, Col};
@@ -45,13 +43,13 @@ public:
      *
      * @return a n x p matrix constructed using a std::vector of size n * p.
      */
-    NPMatrix(unsigned long n, unsigned long p = 0);
+    explicit NPMatrix(unsigned long n, unsigned long p = 0);
 
     /**
      *
      * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
      */
-    NPMatrix(const ENVector& vector);
+    explicit NPMatrix(const ENVector& vector);
 
     /**
      *
@@ -305,7 +303,7 @@ public:
     NPMatrix& operator*=(const NPMatrix& matrix);
     // Store matrix product with matrix in this matrix
 
-    NPMatrix& operator*=(double scalar);
+    NPMatrix& operator*=(double scalar) override;
 
 
     // BI-DIMENSIONAL ACCESSORS

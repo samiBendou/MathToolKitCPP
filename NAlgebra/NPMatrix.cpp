@@ -17,8 +17,7 @@ NPMatrix::NPMatrix(const ENVector &vector, unsigned long n, unsigned long p) :
     assert(vector.dim() == _n * _p);
 }
 
-NPMatrix::NPMatrix(const NPMatrix &matrix) :
-        ENVector(matrix), _n(matrix._n), _p(matrix._p) {}
+NPMatrix::NPMatrix(const NPMatrix &matrix) = default;
 
 NPMatrix::NPMatrix(const vector< vector<double> >& data) :
         ENVector((data.size() * data[0].size())), _n(data.size()),  _p(data[0].size()) {
@@ -336,7 +335,7 @@ double &NPMatrix::operator()(unsigned long i, unsigned long j) {
 double NPMatrix::operator()(unsigned long i, unsigned long j) const {
     unsigned long k = getVectorIndex(i, j);
     if(isValidIndex(i, j))
-        return (*this).at((unsigned long) k);
+        return (*this).at(k);
     else
         return nan("");
 }

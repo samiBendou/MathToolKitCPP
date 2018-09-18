@@ -181,7 +181,7 @@ public:
 
     NVector& operator-=(const NVector& vector);
 
-    NVector& operator*=(double scalar);
+    virtual NVector& operator*=(double scalar);
 
     NVector& operator/=(double scalar);
 

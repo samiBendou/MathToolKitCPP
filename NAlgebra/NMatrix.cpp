@@ -11,7 +11,7 @@ NMatrix::NMatrix(const NPMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _permu
 NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _permutation(nullptr){
     //Hard copy constructor
     if(matrix._a != nullptr && matrix._permutation != nullptr) {
-        _a = new NMatrix((NPMatrix) *(matrix._a));
+        _a = new NMatrix(*(matrix._a));
         _permutation = new unsigned long[matrix._n];
         std::copy(matrix._permutation, matrix._permutation + matrix._n, _permutation);
     }
@@ -145,15 +145,15 @@ NVector &NMatrix::operator^=(const long exp) {
 
 
 NMatrix NMatrix::eye(const unsigned long n) {
-    NMatrix eye = NPMatrix::zeros(n);
-    for (long k = 0; k < eye._n; ++k) {
+    NPMatrix eye = NPMatrix::zeros(n);
+    for (long k = 0; k < eye.n(); ++k) {
         eye(k, k) = 1.0;
     }
     return eye;
 }
 
 NMatrix NMatrix::diag(const std::vector<double> &data, const unsigned long n) {
-    NMatrix diag = NPMatrix::zeros(n);
+    NPMatrix diag = NPMatrix::zeros(n);
     for (long k = 0; k < n; ++k) {
         diag(k, k) = data[k];
     }
@@ -167,10 +167,10 @@ NMatrix NMatrix::scalar(double s, unsigned long n) {
 //Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
 //diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
 NMatrix NMatrix::nDiag(const std::vector< ENVector > & data) {
-    const auto n      = (long) data.size();
-    const long middle  = (n - 1) / 2;
-    const long dim     = data[middle].dim();
-    NMatrix diag      = NPMatrix::zeros(dim);
+    const auto n = (long) data.size();
+    const auto middle = (n - 1) / 2;
+    const auto dim = data[middle].dim();
+    NPMatrix diag = NPMatrix::zeros(dim);
 
     for(long l = -middle; l <= middle; l++) {
         for(unsigned long k = 0; k < dim - abs(l); k++) {
@@ -190,7 +190,7 @@ NMatrix NMatrix::nScalar(const std::vector<double> & scalars, const unsigned lon
     const long minSize = n - scalarSize;
 
     std::vector< ENVector > diags((unsigned long) (2 * scalarSize - 1));
-    long size = 1;
+    unsigned long size = 1;
     for(unsigned long l = 0; l < scalarSize; l++) {
         diags[l] = NVector::scalar(scalars[l], size + minSize);
         if(l > 0) {

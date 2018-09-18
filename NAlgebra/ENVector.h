@@ -27,7 +27,7 @@ public:
 
     // CONSTRUCTORS
 
-    ENVector(unsigned long dim = 0);
+    explicit ENVector(unsigned long dim = 0);
 
     ENVector(const NVector& vector);
 

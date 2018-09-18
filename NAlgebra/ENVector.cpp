@@ -10,7 +10,7 @@ ENVector::ENVector(const unsigned long dim) : NVector(dim) {}
 
 ENVector::ENVector(const NVector &vector) : NVector(vector) {}
 
-ENVector::ENVector(const ENVector &vector) : NVector(vector) {}
+ENVector::ENVector(const ENVector &vector) = default;
 
 
 // OPERATORS

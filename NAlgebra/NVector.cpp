@@ -213,8 +213,8 @@ double NVector::operator()(long k) const {
 }
 
 NVector NVector::operator()(const long k1, const long k2) const {
-    if(isValidIndex(k1) && isValidIndex(k2) && abs(k1) <= abs(k2))
-        return subVector((k1 >= 0) ? k1 : dim() - k1 - 1, (k2 >= 0) ? k2 : dim() - k2 - 1);
+    assert(isValidIndex(k1) && isValidIndex(k2) && abs(k1) <= abs(k2));
+    return subVector((k1 >= 0) ? k1 : dim() - k1 - 1, (k2 >= 0) ? k2 : dim() - k2 - 1);
 }
 
 NVector& NVector::operator()(const long k1, const long k2) {
@@ -277,8 +277,8 @@ NVector NVector::canonical(unsigned long k, unsigned long dim) {
 
 NVector NVector::sum(const std::vector<NVector> &vectors) {
     NVector sum = NVector::zeros(vectors[0].dim());
-    for(unsigned long k = 0; k < vectors.size(); ++k) {
-        sum += vectors[k];
+    for (const auto &vector : vectors) {
+        sum += vector;
     }
     return sum;
 }

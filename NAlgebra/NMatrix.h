@@ -50,7 +50,7 @@ public:
      * @return upper part of this matrix as a upper matrix.
      */
     NMatrix upper() const;
-x
+
     /**
      *
      * @return lower part of this matrix as a lower matrix.

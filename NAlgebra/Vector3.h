@@ -32,7 +32,7 @@ public:
 
     Vector3(const Vector3& vector);
 
-    Vector3(double x = 0, double y = 0, double z = 0);
+    explicit Vector3(double x = 0, double y = 0, double z = 0);
 
 
     //3D COORDINATES GETTERS
