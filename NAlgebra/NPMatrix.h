@@ -4,13 +4,14 @@
  * @author         : samiBendou
  * @description    : A NPMatrix inherits from ENVector. It's a representation of a numerical matrices of arbitrary
  *                   size. We will use the following definitions :
-
+ *
  *                      - n : Number of Rows
  *                      - p : Number of Columns
  *                      - i : Row Index between 0 <= i < n
  *                      - j : Column Index 0 <= j < p
  *                      - k, l : either compound index or underlying std::vector array index.
  *                      - A : This NPMatrix. the components of the matrix in a certain base are noted Aij.
+ *                      - R : This NVec
  *
  *                   The matrix components are stored in a linear form with the index transformation k = p * i + j.
  *                   The underlying std::vector is represented as t[p * i + j].
@@ -140,16 +141,48 @@ public:
     std::vector<ENVector> cols(unsigned long j1 = 0, unsigned long j2 = MAX_SIZE) const;
 
 
-
+    /**
+     *
+     * @param i1/j1 : start index of rows/cols
+     * @param i2/j2 : end index i2/j2 >= i1/j1 of rows/cols
+     * @return a sub matrix with rows starting at i1 and ending at i2 and cols starting at j1 and ending at j2 :
+     *
+     *  |Ai1j1, ..., Ai2j1|
+     *  |...  , ..., ...  |
+     *  |Ai2j1, ..., Ai2j2|
+     *
+     *  Start indices are by default 0 and end indices are by default n or p.
+     */
     NPMatrix subMatrix(unsigned long i1 = 0, unsigned long j1 = MAX_SIZE, unsigned long i2 = 0, unsigned long j2 = MAX_SIZE);
 
 
     // SETTERS
 
+    /**
+     *
+     * @param vector row/col seen as ENVector. The dimension of the vector must be equal to the number of cols/rows
+     * @param i1/j1 index of row/col to set
+     */
     void setRow(const ENVector& vector, unsigned long i1 = 0);
+
 
     void setCol(const ENVector& vector, unsigned long j1 = 0);
 
+    /**
+     *
+     * @param vectors : std::vector of ENVector representing rows/cols to set on the matrix. Each row/col must have the
+     *                  same length. The length of each row/col must be equal to the number of cols/rows.
+     * @param i1/j1 : start index to set row/col.
+     * @description :   Replace the components of the matrix with the array of vectors for example setCols will change
+     *                  the matrix this way :
+     *
+     *                  |A00, ..., A0(j1 - 1), v[0]0, ..., v[q-1]0, ..., A0(p-1)|
+     *                  |A00, ..., A0(j1 - 1), v[0]1, ..., v[q-1]1, ..., A0(p-1)|
+     *                  |Ai0, ..., Ai(j1 - 1), v[0]i, ..., v[q-1]i, ..., Ai(p-1)|
+     *                  |A(n-1)0, ..., A(n-1)(j1 - 1), v[0](n-1), ..., ..., ... |
+     *
+     *                  Where q is the size of the vector array.
+     */
     void setRows(const std::vector<ENVector>& vectors, unsigned long i1 = 0);
 
     void setCols(const std::vector<ENVector>& vectors, unsigned long j1 = 0);
@@ -159,9 +192,20 @@ public:
 
     // SWAP
 
-
+    /**
+     *
+     * @param i1/j1 first row/col indices to swap
+     * @param i2/j2 second row/col indices to swap
+     * @description : Swap Ai1j1 and Ai2j2.
+     */
     void swap(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
 
+    /**
+     *
+     * @param i1/j1 first row/col indices to swap
+     * @param i2/j2 second row/col indices to swap
+     * @description : Swap Ri1/Cj1 and Ri2/Cj2.
+     */
     void swapRow(unsigned long i1, unsigned long i2);
 
     void swapCol(unsigned long j1, unsigned long j2);
@@ -169,7 +213,20 @@ public:
 
     // SHIFT
 
-
+   /**
+   *
+   * @param i index of row/col to shift
+   * @param iterations number of times to shift. If iterations is > 0, shift is powered to the left/up,
+   *                   else to the right/down.
+   * @desciption : shift a i/j row/col. For example shiftCol(0, 2) will return :
+   *
+   *                  |A20, ..., ...|
+   *                  |A30, ..., ...|
+   *                  |..., ..., ...|
+   *                  |A(n-1)0,  ...|
+   *                  |A00, ..., ...|
+   *                  |A10, ..., ...|
+   */
     void shiftRow(unsigned long i, long iterations = 1);
 
     void shiftCol(unsigned long j, long iterations = 1);
@@ -178,6 +235,13 @@ public:
     // MAX / MIN
 
 
+    /**
+     *
+     * @param i/j row/col where to search max
+     * @param r start index in the row/col to search.
+     * @return  the index of the maximum value in the row/col.
+     *          maxAbsIndexRow(i, r) will search the max in [Air, Ai(r+1), ..., Ai(n-1)].
+     */
     unsigned long maxAbsIndexRow(unsigned long i, unsigned long r = 0) const;
 
     unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
@@ -185,31 +249,58 @@ public:
 
     // OPERATORS
 
-
+    /**
+     * @return m1 + m2 where + is usual addition for matrices. The matrices must have the length.
+     */
     friend NPMatrix operator+(const NPMatrix& m1, const NPMatrix& m2);
-
+    /**
+     * @return m1 - m2 where - is substraction based on + for matrices. The matrices must have the length.
+     */
     friend NPMatrix operator-(const NPMatrix& m1, const NPMatrix& m2);
+    /**
+     * @return s * m where * is usual scalar multiplication for matrices.
+     */
+    friend NPMatrix operator*(double s, const NPMatrix &m);
 
-    friend NPMatrix operator*(double scalar, const NPMatrix& matrix);
-
-    friend NPMatrix operator*(const NPMatrix& matrix, double scalar);
-
+    friend NPMatrix operator*(const NPMatrix &m, double s);
+    /**
+     * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
+     *          Natural O(n3) matrix product is used.
+     */
     friend NPMatrix operator*(const NPMatrix& m1, const NPMatrix& m2);
-    //Returns Natural O(n3) matrix product m1 * m2.
 
-    friend ENVector operator*(const NPMatrix& matrix, const ENVector& vector);
-    //Returns Natural O(n2) matrix apply to vector.
+    /**
+     *
+     * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
+     *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
+     */
+    friend ENVector operator*(const NPMatrix &m, const ENVector &v);
 
+    /**
+     * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
+     * and m2 columns. m1 and m2 must have the same number of rows.
+     */
     friend NPMatrix operator|(const NPMatrix& m1, const NPMatrix& m2);
-    // Returns the shifted matrix m1 | m2
 
-    friend NPMatrix operator/(const NPMatrix& matrix, double scalar);
+    /**
+     * @return (1 / s) * m where * is usual scalar multiplicationb.
+     */
+    friend NPMatrix operator/(const NPMatrix &m, double s);
 
+    /**
+     * @return the usual opposite of the matrix -m.
+     */
+    friend NPMatrix operator-(const NPMatrix &m);
 
-    friend NPMatrix operator-(const NPMatrix& matrix);
-
-    friend NPMatrix operator!(const NPMatrix& matrix);
+    /**
+     *
+     * @return the the transposed of m.
+     */
+    friend NPMatrix operator!(const NPMatrix &m);
     // Returns transposed of matrix
+
+
+    // COMPOUND OPERATORS
 
     NPMatrix& operator*=(const NPMatrix& matrix);
     // Store matrix product with matrix in this matrix
@@ -219,19 +310,41 @@ public:
 
     // BI-DIMENSIONAL ACCESSORS
 
-
+    /**
+     *
+     * @return component ij of matrix. Operator can be used to read/write values.
+     */
     double& operator()(unsigned long i, unsigned long j);
 
     double operator()(unsigned long i, unsigned long j) const;
 
+    // ALGEBRA
+
+    /**
+     * @description :   Apply Gauss Jordan elimination on matrix to calculate inverse for non square matrix.
+     *                  To perform this, shift the matrix you want to invert than apply this function.
+     */
+    void reduce();
 
     // STATIC FUNCTIONS
 
-
+    /**
+     *
+     * @return zero nxp matrix, ie. filled with 0.
+     */
     static NPMatrix zeros(unsigned long n, unsigned long p = 0);
 
+    /**
+     *
+     * @return nxp matrix filled with 1
+     */
     static NPMatrix ones(unsigned long n, unsigned long p = 0);
-
+    /**
+     * @param i row where to put 1.
+     * @param j col where to put 1.
+     *
+     * @return canonical matrices Eij which contains 1 in position ij and 0 elsewhere.
+     */
     static NPMatrix canonical(unsigned long i, unsigned long j, unsigned long n, unsigned long p = 0);
     // Returns canonical matrix Eij of Mnp(R)
 
@@ -239,7 +352,6 @@ protected:
 
 
     // INDEX GETTERS
-
 
     unsigned long getVectorIndex(unsigned long i, unsigned long j) const;
 
@@ -261,14 +373,10 @@ protected:
 
     void vectorProduct(NVector& vector) const;
 
-    void matrixProduct(const NPMatrix& matrix);
-
-
-    void reduce();
-    //Apply Gauss Jordan elimination algorithm
+    virtual void matrixProduct(const NPMatrix& matrix);
 
     NPMatrix shifted(const NPMatrix& matrix) const;
-    //Get a shifted matrix according to Gauss Jordan algorithm.
+    //Get a shifted matrix used in Gauss Jordan algorithm.
     //  Shifted = [THIS | MATRIX] where Shifted is a N x (PThis + PMatrix)
 
     unsigned long _n;

@@ -186,4 +186,3 @@ int launchTest() {
 int main() {
     return launchTest();
 }
-

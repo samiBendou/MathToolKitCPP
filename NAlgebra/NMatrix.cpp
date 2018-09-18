@@ -123,8 +123,8 @@ void NMatrix::matrixProduct(const NPMatrix &matrix) {
 // OPERATORS
 
 
-NMatrix operator^(const NPMatrix &matrix, long exp) {
-    NMatrix res{matrix};
+NMatrix operator^(const NPMatrix &m, long exp) {
+    NMatrix res{m};
     res.pow(exp);
     return res;
 }
@@ -160,8 +160,8 @@ NMatrix NMatrix::diag(const std::vector<double> &data, const unsigned long n) {
     return diag;
 }
 
-NMatrix NMatrix::scalar(double scalar, const unsigned long n) {
-    return scalar * NMatrix::eye(n);
+NMatrix NMatrix::scalar(double s, unsigned long n) {
+    return s * NMatrix::eye(n);
 }
 
 //Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th

@@ -1,17 +1,23 @@
-//
-// Created by Sami Dahoux on 05/05/2018.
-//
-//
-//@license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
-//@class          : NMatrix
-//@description    : Representation of numerical N x N Matrix vector space. Featuring LU decomposition, classic matrix
-//                  recognition & generation (lower, upper, diag, eye...), linear systems solving,
-//                  matrix inversion and determinant, fast exponentiation...
-//
-//                  The LU decomposition is stored as member of square matrices. It is auto-updated only on need.
-//
-//                  a : is matrix A = L + U where PA = LU = this
-//                  permutation : permutation vector P
+/**
+ * @class          : NMatrix
+ * @date           : 05/05/2018
+ * @author         : samiBendou
+ * @description    : A NMatrix inherits from NPMatrix. It's a representation of a numerical square matrices.
+ *                   The LU decomposition is stored as property of square matrices. It is auto-updated only on need.
+ *                   It allow to reduce complexity to get invert or determinant. Precisely the LU decomposition is
+ *                   represented by :
+ *
+ *                      -a : is matrix A = L + U where PA = LU = this. a points to the A NMatrix or points to nullptr if
+ *                           the matrix has never calculated LU decomposition or if the decomposition failed.
+ *                      -permutation : permutation vector P such as PA = LU. Represented as unsigned long array.
+ *
+*                    The *a object never is never used directly so it's own a pointer a->a always points to nullptr.
+ *
+ *                   Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...),
+ *                   linear systems solving, matrix inversion and determinant, fast exponentiation...
+ *
+ * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ */
 
 #ifndef MATHTOOLKIT_NMATRIX_H
 #define MATHTOOLKIT_NMATRIX_H
@@ -21,6 +27,9 @@
 
 class NMatrix : public NPMatrix {
 public:
+
+    // CONSTRUCTION
+
     NMatrix(const NPMatrix& matrix);
 
     NMatrix(const NMatrix& matrix);
@@ -36,34 +45,58 @@ public:
 
     // GETTERS
 
+    /**
+     *
+     * @return upper part of this matrix as a upper matrix.
+     */
     NMatrix upper() const;
-    // Returns upper part of this matrix
-
+x
+    /**
+     *
+     * @return lower part of this matrix as a lower matrix.
+     */
     NMatrix lower() const;
-    // Returns lower part of this matrix
 
+    /**
+     *
+     * @return L/U matrix of LU decomposition of this matrix
+     */
     NMatrix lupL();
-    // Returns L matrix of LU decomposition of this matrix
 
     NMatrix lupU();
-    // Returns U matrix of LU decomposition of this matrix
 
     // OPERATIONS / OPERATORS
 
+    /**
+     *
+     * @return trace of this matrix A00 + A11 + ... + A(n-1)(n-1)
+     */
     double trace() const;
-    // Trace of this matrix
+    /**
+     *
+     * @return determinant of this matrix det(A). Using the LU decomposition O(n).
+     */
     double det();
     // Determinant of this
 
-    void matrixProduct(const NPMatrix &matrix);
+
     
     // OPERATIONS
 
-    friend NMatrix operator^(const NPMatrix &matrix, long exp);
-    // Returns matrix elevated to power exp;
+    /**
+     *
+     * @param m matrix to exponentiate.
+     * @param exp long integer exponent. If exp < 0 we calculate the power of the inverse matrix m^-1 (O(n3)).
+     * @return m^exp using fast exponentiation algorithm.
+     */
+    friend NMatrix operator^(const NPMatrix &m, long exp);
 
-    friend ENVector operator%(NMatrix &matrix, const NVector &vector);
-    // Returns result of linear application represented by matrix at vector.
+    /**
+     * @param m matrix of the equation system.
+     * @param v second member of the equation system.
+     * @return the solution of m * x = v by inverting the m matrix.
+     */
+    friend ENVector operator%(NMatrix &m, const NVector &v);
     
     NVector& operator^=(long exp);
 
@@ -86,24 +119,55 @@ public:
 
     // STATIC FUNCTIONS
 
+    /**
+     *
+     * @param n size of the matrix
+     * @return n-th order Identity matrix
+     */
     static NMatrix eye(unsigned long n);
-    //Returns n-th order Identity matrix
 
+    /**
+     *
+     * @param data values of diagonal [d0, d1, ..., d(n-1)]
+     * @param n size of the matrix
+     * @return Returns diagonal n-th order diagonal matrix filled with data array
+     */
     static NMatrix diag(const std::vector<double> &data, unsigned long  n);
-    //Returns diagonal n-th order matrix  filled with arr Array
 
-    static NMatrix scalar(double scalar, unsigned long n);
-    //Returns a scalar n-th order matrix filled with value
 
+    /**
+     *
+     * @return a scalar n-th order matrix filled with s value. This is a diagonal matrix filled with s.
+     */
+    static NMatrix scalar(double s, unsigned long n);
+
+    /**
+     *
+     * @param data values of multiple diagonal such as :
+     *          -data[l] is the values of coefficients of the l-th diagonal from the left.
+     *          -data[middle] is the values of coefficients on the diagonal.
+     *
+     * @return a n-diagonal matrix filled with data bi-dimensional array which looks like :
+     *
+     *          |d[middle]0,    d[middle+1]0,   ...|
+     *          |d[middle-1]0,  d[middle]1,     ...|
+     *          |               ...                |
+     *          |d[0]0, d[1]1,  ..., d[middle](n-1)|
+     *
+     *          The input data must be ordered such as d[0] has size equal to 1, d[1] to 2, ..., d[middle] to n,
+     *          d[middle+1] to n-1, ..., d[end] to 0.
+     */
     static NMatrix nDiag(const std::vector< ENVector > & data);
-    //Returns a n-diagonal matrix filled with arr bi-dimensional array :
-    // -data[l] is the values of coefficients of the l-th diagonal from the left
-    // -data[middle] is the values of coefficients on the diagonal.
 
 
+    /**
+     *
+     * @param scalars array of scalars values to fill diagonals [s0, s1, ..., sq]
+     * @param n size of the matrix
+     * @return  a n-scalar Matrix filled with values. If values.length = 2, the matrix is tri-diagonal.
+     *          Center diagonal is filled with s1 and the other diagonal are filled with s0.
+     */
     static NMatrix nScalar(const std::vector<double> & scalars, unsigned long n);
-    //Returns a n-scalar Matrix filled with values. If values.length = 2, the matrix is tri-diagonal. and values[1] is
-    //the value of the diagonal.
 
 protected:
     NMatrix* _a;
@@ -121,6 +185,8 @@ protected:
     void prod(double scalar) override ;
 
     void div(double scalar) override ;
+
+    void matrixProduct(const NPMatrix &matrix) override ;
 
     void rPow(long n);
     // Exponentiation by squaring of this matrix : O(log(exp) * n3)

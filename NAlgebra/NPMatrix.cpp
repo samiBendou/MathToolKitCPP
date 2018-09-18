@@ -70,11 +70,11 @@ string NPMatrix::str() const {
 
 
 bool NPMatrix::isValidRowIndex(unsigned long i) const {
-    return i >= 0 && i < _n;
+    return i < _n;
 }
 
 bool NPMatrix::isValidColIndex(unsigned long j) const {
-    return j >= 0 && j < _p;
+    return j < _p;
 }
 
 bool NPMatrix::isValidIndex(unsigned long i, unsigned long j) const {
@@ -255,15 +255,15 @@ NPMatrix operator-(const NPMatrix &m1, const NPMatrix &m2) {
     return res;
 }
 
-NPMatrix operator*(double scalar, const NPMatrix &matrix) {
-    NPMatrix res{matrix};
-    res.prod(scalar);
+NPMatrix operator*(double s, const NPMatrix &m) {
+    NPMatrix res{m};
+    res.prod(s);
     return res;
 }
 
-NPMatrix operator*(const NPMatrix &matrix, double scalar) {
-    NPMatrix res{matrix};
-    res.prod(scalar);
+NPMatrix operator*(const NPMatrix &m, double s) {
+    NPMatrix res{m};
+    res.prod(s);
     return res;
 }
 
@@ -274,9 +274,9 @@ NPMatrix operator*(const NPMatrix &m1, const NPMatrix &m2) {
     return res;
 }
 
-ENVector operator*(const NPMatrix &matrix, const ENVector &vector) {
-    NVector res{vector};
-    matrix.vectorProduct(res);
+ENVector operator*(const NPMatrix &m, const ENVector &v) {
+    NVector res{v};
+    m.vectorProduct(res);
     return res;
 }
 
@@ -286,20 +286,20 @@ NPMatrix operator|(const NPMatrix &m1, const NPMatrix &m2) {
 }
 
 
-NPMatrix operator/(const NPMatrix &matrix, double scalar) {
-    NPMatrix res{matrix};
-    res.div(scalar);
+NPMatrix operator/(const NPMatrix &m, double s) {
+    NPMatrix res{m};
+    res.div(s);
     return res;
 }
 
-NPMatrix operator-(const NPMatrix &matrix) {
-    NPMatrix res{matrix};
+NPMatrix operator-(const NPMatrix &m) {
+    NPMatrix res{m};
     res.opp();
     return res;
 }
 
-NPMatrix operator!(const NPMatrix &matrix) {
-    NPMatrix res{matrix};
+NPMatrix operator!(const NPMatrix &m) {
+    NPMatrix res{m};
     res.transpose();
     return res;
 }
@@ -341,6 +341,31 @@ double NPMatrix::operator()(unsigned long i, unsigned long j) const {
         return nan("");
 }
 
+
+// ALGEBRA
+
+void NPMatrix::reduce() {
+    const double epsilon = numeric_limits<double>::epsilon();
+
+    unsigned long r = 0, k, i, j;
+    ENVector spin;
+    for(j = 0; j < floor(_p / 2); ++j) {
+
+        k = maxAbsIndexCol(j, r);
+        if( abs((*this)(k, j)) > epsilon ) {
+            setRow( row(k) / (*this)(k, j), k );
+            swapRow(k, r);
+
+            spin = row(r);
+            for(i = 0; i < _n; ++i) {
+                if(i != r)
+                    setRow( row(i) - (*this)(i, j) * spin, i );
+            }
+            r++;
+        }
+
+    }
+}
 
 // STATIC FUNCTIONS
 
@@ -430,31 +455,6 @@ void NPMatrix::matrixProduct(const NPMatrix &matrix) {
             }
         }
         (*this) = res;
-
-    }
-}
-
-// INVERSIONS RELATED OPERATION
-
-void NPMatrix::reduce() {
-    const double epsilon = numeric_limits<double>::epsilon();
-
-    unsigned long r = 0, k, i, j;
-    ENVector spin;
-    for(j = 0; j < floor(_p / 2); ++j) {
-
-        k = maxAbsIndexCol(j, r);
-        if( abs((*this)(k, j)) > epsilon ) {
-            setRow( row(k) / (*this)(k, j), k );
-            swapRow(k, r);
-
-            spin = row(r);
-            for(i = 0; i < _n; ++i) {
-                if(i != r)
-                    setRow( row(i) - (*this)(i, j) * spin, i );
-            }
-            r++;
-        }
 
     }
 }

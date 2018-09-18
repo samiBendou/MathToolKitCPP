@@ -1,20 +1,24 @@
-//
-// Created by Sami Dahoux on 04/05/2018.
-//
-//@license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
-//@class          : Vector3
-//@description    : Module inheriting from ENVector representing 3D Euclidean space. Featuring cross product, coordinate
-//                  transforms and rotations.
-//
-//                  - X, Y, Z       : Cartesian coordinates.
-//
-//                  - R, THETA, Z   : Cylindrical coordinates.   |R       = RXY = sqrt(x2 + y2),
-//                                                               |THETA   = atan(y / x)
-//                                                               |Z       = z
-//
-//                  - R, THETA, PHI : Spherical coordinates.     |R       = sqrt(x2 + y2 + z2),
-//                                                               |THETA   = atan(y / x),
-//                                                               |PHI     = atan(RXY / Z)
+/**
+ * @class          : Vector3
+ * @date           : 04/05/2018
+ * @author         : samiBendou
+ * @description    : Class inheriting from ENVector representing 3D Euclidean space. Featuring cross product, coordinate
+ *                   transforms and rotations. We will use the following 3D systems of coordinates :
+ *
+ *                   - X, Y, Z       : Cartesian coordinates.
+ *
+ *                   - RXY, THETA, Z : Cylindrical coordinates.   |RXY     = sqrt(x2 + y2),
+ *                                                                |THETA   = atan(y / x)
+ *                                                                |Z       = z
+ *
+ *                   - R, THETA, PHI : Spherical coordinates.     |R       = sqrt(x2 + y2 + z2),
+ *                                                                |THETA   = atan(y / x),
+ *                                                                |PHI     = atan(RXY / Z)
+ *
+ *                   The vector is stored in cartesian coordinates.
+ *
+ * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ */
 
 #ifndef MATHTOOLKIT_VECTOR3_H
 #define MATHTOOLKIT_VECTOR3_H
@@ -33,7 +37,6 @@ public:
 
     //3D COORDINATES GETTERS
 
-
     double x() const;
 
     double y() const;
@@ -50,7 +53,6 @@ public:
 
 
     //3D COORDINATES SETTERS
-
 
     void setX(double scalar);
 
@@ -70,9 +72,16 @@ public:
 
     void setRThetaPhi(double r, double theta, double phi);
 
+    /**
+     *
+     * @return v1 ^ v2 where ^ is vector product between v1 and v2 (cross product).
+     */
     friend Vector3 operator^(const Vector3& v1, const Vector3& v2);
-    // Returns vector product between v1 and v2 (cross product)
 
+    /**
+     *
+     * @return v1 % v2 which is the angle between the two vector.
+     */
     friend double operator%(const Vector3& v1, const Vector3& v2);
     // Returns angle between v1 & v2
 

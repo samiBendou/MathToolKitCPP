@@ -192,7 +192,8 @@ public:
     /**
      *
      * @param k : index of the coordinate. Between -(dim() - 1) and dim() - 1
-     * @return the kth coordinate of the vector xk if k < 0, returns x(n - 1 - k).
+     * @return  the kth coordinate of the vector xk if k < 0, returns x(n - 1 - k).
+     *          Operator can be used to read/write values.
      */
     double& operator()(long k);
 
@@ -206,7 +207,7 @@ public:
      *              - If k1 >= 0 returns : (xk1, x(k1+1), ...,xk2).
      *              - If k1 =< 0 returns : (x(n - 1 - k1), ..., x(n - 1 - k2)).
      *          the non const version of function operator is used to affect a subrange
-     *          of this instance of NVector.
+     *          of this instance of NVector. Operator can be used to read/write values.
      */
     NVector operator()(long k1, long k2) const;
 
