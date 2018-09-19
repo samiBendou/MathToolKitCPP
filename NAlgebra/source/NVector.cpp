@@ -8,18 +8,21 @@ using namespace std;
 
 // CONSTRUCTORS
 
-NVector::NVector(unsigned long dim) : std::vector<double>(dim), _k1(0), _k2(0) {}
+NVector::NVector(unsigned long dim) :
+    std::vector<double>(dim), _k1(0), _k2(dim > 0 ? dim - 1 : 0) {}
 
-NVector::NVector(const std::vector<double>& data) : std::vector<double>(data), _k1(0), _k2(0) {}
+NVector::NVector(const std::vector<double>& data) :
+    std::vector<double>(data), _k1(0), _k2(data.size() - 1 > 0 ? data.size() - 1 : 0) {}
 
-NVector::NVector(const NVector& vector) : std::vector<double>(vector), _k1(0), _k2(0) {}
+NVector::NVector(const NVector& vector) :
+    std::vector<double>(vector), _k1(0), _k2(vector.dim() - 1 > 0 ? vector.dim() - 1 : 0) {}
 
 // SERIALIZATION
 
-string NVector::str() const{
+string NVector::str() const {
     string str = "(";
     char buffer[6];
-    for (unsigned long k = 0; k < dim(); ++k) {
+    for (unsigned long k = _k1; k <= _k2; ++k) {
         sprintf(buffer, "%.2e", abs((*this)[k]));
         str += ((*this)(k) >= 0 ? "  " : " -");
         str += buffer;
@@ -28,12 +31,19 @@ string NVector::str() const{
     return str;
 }
 
+std::string NVector::str() {
+    const NVector& constThis = (const NVector&) (*this);
+    string str = constThis.str();
+    _k1 = 0; _k2 = dim() - 1;
+    return str;
+}
+
 
 // CHARACTERIZATION
 
 
-bool NVector::isValidIndex(long k) const{
-    return (abs(k) < dim());
+bool NVector::isValidIndex(unsigned long k) const {
+    return k < dim();
 }
 
 
@@ -203,23 +213,21 @@ NVector &NVector::operator/=(const double scalar) {
 
 double &NVector::operator()(long k) {
     assert(isValidIndex(k));
-    return (*this)[(k >= 0) ? k : dim() - k - 1];
+    return (*this)[(k >= 0) ? k : dim() + k - 1];
 }
 
 double NVector::operator()(long k) const {
     assert(isValidIndex(k));
-    return (*this).at((k >= 0) ? k : dim() - k - 1);
+    return (*this).at((k >= 0) ? k : dim() + k - 1);
 }
 
-NVector NVector::operator()(long k1, long k2) const {
-    assert(isValidIndex(k1) && isValidIndex(k2) && abs(k1) <= abs(k2));
-    return subVector((k1 >= 0) ? k1 : dim() - k1 - 1, (k2 >= 0) ? k2 : dim() - k2 - 1);
+NVector NVector::operator()(unsigned long k1, unsigned long k2) const {
+    return subVector(k1, k2);
 }
 
-NVector &NVector::operator()(long k1, long k2) {
-    assert(isValidIndex(k1) && isValidIndex(k2) && k2 > k1);
-    _k1 = (k1 >= 0) ? k1 : dim() - k1 - 1;
-    _k2 = (k2 >= 0) ? k2 : dim() - k2 - 1;
+NVector &NVector::operator()(unsigned long k1, unsigned long k2) {
+    _k1 = k1; _k2 = k2;
+    assert(isValidIndex(_k1) && isValidIndex(_k2) && _k2 >= _k1);
     return *this;
 }
 
@@ -242,7 +250,7 @@ NVector &NVector::operator=(const NVector &vector) {
 
 NVector &NVector::operator=(NVector &vector) {
     copy(vector);
-    vector._k1 = 0; vector._k2 = 0;
+    vector._k1 = 0; vector._k2 = vector.dim() - 1;
     return *this;
 }
 
@@ -297,16 +305,16 @@ NVector NVector::sumProd(const std::vector<double>& scalars, const std::vector<N
 
 void NVector::copy(const NVector &vector) {
     if(this != &vector) {
-        if (_k1 == 0 && _k2 == 0 && vector._k1 == 0 && vector._k2 == 0){
+        if (_k1 == 0 && (_k2 == dim() - 1 || _k2 == 0) && vector._k1 == 0 && vector._k2 == vector.dim() - 1){
             this->std::vector<double>::operator=(vector);
         }
-        else if (_k1 == 0 && _k2 == 0) {
+        else if (_k1 == 0 && (_k2 == dim() - 1 || _k2 == 0)) {
             this->std::vector<double>::operator=(vector.subVector(vector._k1, vector._k2));
         }
         else {
             setSubVector(vector);
-            _k1 = 0; _k2 = 0;
         }
+        _k1 = 0; _k2 = dim() - 1;
     }
 }
 
@@ -375,11 +383,9 @@ NVector NVector::subVector(unsigned long k1, unsigned long k2) const {
 }
 
 void NVector::setSubVector(const NVector &vector) {
-    unsigned long thisEnd = (_k1 == 0 && _k2 == 0) ? dim() - 1 : _k2;
-    unsigned  long vectorEnd = (vector._k2 == 0 && vector._k1 == 0) ? vector.dim() - 1 : vector._k2;
 
-    assert(thisEnd - _k1 == vectorEnd - vector._k1);
-    for (unsigned long k = _k1; k <= thisEnd; ++k) {
+    assert(_k2 - _k1 == vector._k2 - vector._k1);
+    for (unsigned long k = _k1; k <= _k2; ++k) {
         (*this)[k] = vector[k + vector._k1];
     }
 }
@@ -418,6 +424,8 @@ void NVector::div(const double scalar) {
         (*this)[k] /= scalar;
     }
 }
+
+
 
 
 

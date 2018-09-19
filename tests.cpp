@@ -84,6 +84,13 @@ bool testNVectorSubVectors() {
     NVector vector = testVector;
     NVector subVector1, subVector2;
 
+    cout << "**** SIMPLE OPERATOR() ****" << endl << endl;
+
+    vector(0) = 6;
+    cout << "vector(0) = 6 : " << vector(0) << endl << endl;
+
+    cout << "**** DOUBLE OPERATOR() + ****" << endl << endl;
+
     subVector1 = vector(0, 1);
     subVector2 = vector;
 
@@ -94,10 +101,13 @@ bool testNVectorSubVectors() {
     subVector1(0, 1) = vector(1, 2);
     cout << "subVector1(0, 1) = vector(1, 2) : " << subVector1 << endl;
     vector(0, 1) = subVector1;
-    cout << "vector(0, 1) = subVector1 : " << vector << endl;
+    cout << "vector(0, 1) = subVector1 : " << vector << endl << endl;
 
-    vector(0) = 6;
-    cout << "vector(0) = 6 : " << vector << endl;
+    cout << "**** DOUBLE OPERATOR() - ****" << endl << endl;
+
+    cout << "vector(0, 1) : " << vector(0, 1) << endl;
+    cout << "vector(1, 2) : " << vector(1, 2) << endl;
+
     return false;
 }
 

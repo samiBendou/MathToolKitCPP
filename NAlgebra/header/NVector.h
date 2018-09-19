@@ -56,6 +56,8 @@ public:
      */
     virtual std::string str() const;
 
+    virtual std::string str();
+
     // CHARACTERIZATION
 
     /**
@@ -63,7 +65,7 @@ public:
      * @param k Index to test
      * @return true if k is valid, ie. if k is between 0 and dim() - 1.
      */
-    bool isValidIndex(long k) const;
+    bool isValidIndex(unsigned long k) const;
     // Returns true
 
     // GETTERS
@@ -210,9 +212,9 @@ public:
      *          the non const version of function operator is used to affect a sub-range
      *          of this instance of NVector. Operator can be used to read/write values.
      */
-    NVector operator()(long k1, long k2) const;
+    NVector operator()(unsigned long k1, unsigned long k2) const;
 
-    NVector& operator()(long k1, long k2);
+    NVector& operator()(unsigned long k1, unsigned long k2);
 
 
     // STREAM EXTRACT/INSERT
