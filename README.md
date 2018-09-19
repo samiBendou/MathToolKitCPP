@@ -21,7 +21,7 @@ Featuring :
   
   - NMatrix : Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...), linear systems solving, matrix inversion and determinant, fast exponentiation...
   
-  - Vector3 : Featuring cross product, coordinate transforms and rotation.
+  - Vector3 : 3D Space vectors. Featuring cross product, coordinate transforms and rotation.
   
  ### NAnalysis
  
