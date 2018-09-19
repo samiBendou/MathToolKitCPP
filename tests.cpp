@@ -80,6 +80,10 @@ bool testNVectorSubVectors() {
     cout << "vector(0, 1) : " << subVector << endl;
     subVector(0, 1) = vector(1, 2);
     cout << "subVector(0, 1) = vector(1, 2) : " << subVector << endl;
+    vector(0, 1) = subVector;
+    cout << "vector(0, 1) = subVector : " << vector << endl;
+    vector;
+    cout << "vector(0) = 6 : " << vector << endl;
     return false;
 }
 

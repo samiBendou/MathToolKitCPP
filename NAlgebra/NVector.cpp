@@ -194,22 +194,13 @@ NVector &NVector::operator/=(const double scalar) {
 
 
 double &NVector::operator()(long k) {
-    if(isValidIndex(k))
-        return (*this)[(k >= 0) ? k : dim() - k - 1];
-    else {
-        auto* nanValue = new double; *nanValue = nan("");
-        return *nanValue;
-    }
-
+    assert(isValidIndex(k));
+    return (*this)[(k >= 0) ? k : dim() - k - 1];
 }
 
 double NVector::operator()(long k) const {
-    if(isValidIndex(k)) {
-        return (*this).at((k >= 0) ? k : dim() - k - 1);
-    }
-    else {
-        return nan("");
-    }
+    assert(isValidIndex(k));
+    return (*this).at((k >= 0) ? k : dim() - k - 1);
 }
 
 NVector NVector::operator()(const long k1, const long k2) const {
@@ -218,10 +209,9 @@ NVector NVector::operator()(const long k1, const long k2) const {
 }
 
 NVector& NVector::operator()(const long k1, const long k2) {
-    if(isValidIndex(k1) && isValidIndex(k2) && k2 > k1) {
-        _k1 = (k1 >= 0) ? k1 : dim() - k1 - 1;
-        _k2 = (k2 >= 0) ? k2 : dim() - k2 - 1;
-    }
+    assert(isValidIndex(k1) && isValidIndex(k2) && k2 > k1);
+    _k1 = (k1 >= 0) ? k1 : dim() - k1 - 1;
+    _k2 = (k2 >= 0) ? k2 : dim() - k2 - 1;
     return *this;
 }
 

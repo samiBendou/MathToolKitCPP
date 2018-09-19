@@ -145,7 +145,7 @@ NVector &NMatrix::operator^=(const long exp) {
 
 
 NMatrix NMatrix::eye(const unsigned long n) {
-    NPMatrix eye = NPMatrix::zeros(n);
+    NMatrix eye = NPMatrix::zeros(n);
     for (long k = 0; k < eye.n(); ++k) {
         eye(k, k) = 1.0;
     }
@@ -153,7 +153,7 @@ NMatrix NMatrix::eye(const unsigned long n) {
 }
 
 NMatrix NMatrix::diag(const std::vector<double> &data, const unsigned long n) {
-    NPMatrix diag = NPMatrix::zeros(n);
+    NMatrix diag = NPMatrix::zeros(n);
     for (long k = 0; k < n; ++k) {
         diag(k, k) = data[k];
     }
