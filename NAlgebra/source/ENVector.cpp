@@ -132,14 +132,12 @@ bool ENVector::isEqual(const ENVector& vector) const {
 
 double ENVector::dot(const ENVector &vector) const {
     double dot = 0.0;
-    if(dim() == vector.dim()) {
-        for (int k = 0; k < dim(); ++k) {
-            dot += vector(k) * (*this)(k);
-        }
-        return dot;
+
+    assert(dim() == vector.dim());
+    for (int k = 0; k < dim(); ++k) {
+        dot += vector(k) * (*this)(k);
     }
-    else
-        return nan("");
+    return dot;
 }
 
 double ENVector::norm() const {

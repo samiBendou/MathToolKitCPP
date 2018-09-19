@@ -15,7 +15,9 @@ NVector::NVector(const std::vector<double>& data) :
     std::vector<double>(data), _k1(0), _k2(data.size() - 1 > 0 ? data.size() - 1 : 0) {}
 
 NVector::NVector(const NVector& vector) :
-    std::vector<double>(vector), _k1(0), _k2(vector.dim() - 1 > 0 ? vector.dim() - 1 : 0) {}
+    std::vector<double>(vector), _k1(0), _k2(vector.dim() - 1 > 0 ? vector.dim() - 1 : 0) {
+    copy(vector);
+}
 
 // SERIALIZATION
 

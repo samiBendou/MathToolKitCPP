@@ -250,6 +250,10 @@ bool testNPMatrixShift() {
     cout << "matrix shift row.shiftRow(1, 1) : " << matrix << endl;
     matrix.shiftCol(0, 1);
     cout << "matrix shift col.shiftCol(0, 1) : " << matrix << endl;
+    matrix.shiftCol(0, -1);
+    cout << "matrix shift col.shiftCol(0, -1) : " << matrix << endl;
+    matrix.shiftRow(1, -1);
+    cout << "matrix shift row.shiftRow(1, -1) : " << matrix << endl;
 
     return false;
 }

@@ -168,10 +168,12 @@ public:
 
     /**
      *
-     * @param vectors : std::vector of ENVector representing rows/cols to set on the matrix. Each row/col must have the
-     *                  same length. The length of each row/col must be equal to the number of cols/rows.
-     * @param i1/j1 : start index to set row/col.
-     * @description :   Replace the components of the matrix with the array of vectors for example setCols will change
+     * @param vectors : std::vector of ENVector representing rows/cols to set on the matrix.
+     *                  - The length of each row/col must be inferior or equal to the number of cols/rows.
+     *                  - The total number of rows/cols must be inferior or equal to the number of rows/cols.
+     * @param i1/j1 :   start index to set row/col. If i1/j1 + vectors.size() > n/p Then the algorithm truncate the
+     *                  array of ENVector.
+     * @description :   Replace the components of the matrix with the array of vectors. For example setCols will change
      *                  the matrix this way :
      *
      *                  |A00, ..., A0(j1 - 1), v[0]0, ..., v[q-1]0, ..., A0(p-1)|
