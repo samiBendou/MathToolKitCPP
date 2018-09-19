@@ -70,135 +70,135 @@ CMakeFiles/MathToolKit.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/main.cpp -o CMakeFiles/MathToolKit.dir/main.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o: ../NAlgebra/NVector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.cpp
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o: ../NAlgebra/source/NVector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NVector.cpp
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.i
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NVector.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.s
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NVector.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o: ../NAlgebra/ENVector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.cpp
+CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o: ../NAlgebra/source/ENVector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/ENVector.cpp
 
-CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.i
+CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/ENVector.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.s
+CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/ENVector.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o: ../NAlgebra/Vector3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.cpp
+CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o: ../NAlgebra/source/Vector3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/Vector3.cpp
 
-CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.i
+CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/Vector3.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.s
+CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/Vector3.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o: ../NAlgebra/NPMatrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.cpp
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o: ../NAlgebra/source/NPMatrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.i
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.s
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o: ../NAlgebra/NMatrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.cpp
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o: ../NAlgebra/source/NMatrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NMatrix.cpp
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.i
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NMatrix.cpp > CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.s
+CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NMatrix.cpp -o CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o: ../NAnalysis/NPField.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.cpp
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o: ../NAnalysis/source/NPField.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NPField.cpp
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.i
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NPField.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.s
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NPField.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.s
 
-CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o: ../NGeometry/NSegment.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.cpp
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o: ../NGeometry/source/NSegment.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp
 
-CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.cpp > CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.i
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp > CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.i
 
-CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.s
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.s
 
-CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o: ../NGeometry/NSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.cpp
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o: ../NGeometry/source/NSet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp
 
-CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.cpp > CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.i
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp > CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.i
 
-CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.s
+CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.s
 
-CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o: ../NGeometry/NCompact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.cpp
+CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o: ../NGeometry/source/NCompact.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp
 
-CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.cpp > CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.i
+CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp > CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.i
 
-CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.s
+CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.s
 
-CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o: ../NGeometry/NParallelepiped.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.cpp
+CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o: ../NGeometry/source/NParallelepiped.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NParallelepiped.cpp
 
-CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.cpp > CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.i
+CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NParallelepiped.cpp > CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.i
 
-CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.s
+CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NParallelepiped.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.s
 
 CMakeFiles/MathToolKit.dir/mainBis.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
 CMakeFiles/MathToolKit.dir/mainBis.cpp.o: ../mainBis.cpp
@@ -213,57 +213,57 @@ CMakeFiles/MathToolKit.dir/mainBis.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/mainBis.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/mainBis.cpp -o CMakeFiles/MathToolKit.dir/mainBis.cpp.s
 
-CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o: ../NGeometry/NDSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.cpp
+CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o: ../NGeometry/source/NDSet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NDSet.cpp
 
-CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.cpp > CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.i
+CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NDSet.cpp > CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.i
 
-CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.s
+CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NDSet.cpp -o CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o: ../NAnalysis/NOde.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.cpp
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o: ../NAnalysis/source/NOde.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NOde.cpp
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.i
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NOde.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.s
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NOde.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o: ../NAnalysis/NConstantField.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.cpp
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o: ../NAnalysis/source/NConstantField.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NConstantField.cpp
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.i
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NConstantField.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.s
+CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NConstantField.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.s
 
-CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o: ../NAnalysis/SNewtonianField.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.cpp
+CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o: ../NAnalysis/source/SNewtonianField.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/SNewtonianField.cpp
 
-CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.i
+CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/SNewtonianField.cpp > CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.i
 
-CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.s
+CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/SNewtonianField.cpp -o CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.s
 
 CMakeFiles/MathToolKit.dir/tests.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
 CMakeFiles/MathToolKit.dir/tests.cpp.o: ../tests.cpp
@@ -294,21 +294,21 @@ CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s: cmake_force
 # Object files for target MathToolKit
 MathToolKit_OBJECTS = \
 "CMakeFiles/MathToolKit.dir/main.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o" \
 "CMakeFiles/MathToolKit.dir/mainBis.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o" \
-"CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o" \
+"CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o" \
 "CMakeFiles/MathToolKit.dir/tests.cpp.o" \
 "CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o"
 
@@ -316,21 +316,21 @@ MathToolKit_OBJECTS = \
 MathToolKit_EXTERNAL_OBJECTS =
 
 MathToolKit: CMakeFiles/MathToolKit.dir/main.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o
 MathToolKit: CMakeFiles/MathToolKit.dir/mainBis.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o
 MathToolKit: CMakeFiles/MathToolKit.dir/tests.cpp.o
 MathToolKit: CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o
 MathToolKit: CMakeFiles/MathToolKit.dir/build.make

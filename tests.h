@@ -6,17 +6,17 @@
 #define MATHTOOLKIT_TESTS_H
 
 #include <iostream>
-#include "NAlgebra/NVector.h"
-#include "NAlgebra/ENVector.h"
-#include "NAlgebra/Vector3.h"
-#include "NAlgebra/NPMatrix.h"
-#include "NAlgebra/NMatrix.h"
-#include "NGeometry/NSegment.h"
-#include "NGeometry/NParallelepiped.h"
-#include "NGeometry/NDSet.h"
-#include "NAnalysis/NConstantField.h"
-#include "NAnalysis/NOde.h"
-#include "NAnalysis/SNewtonianField.h"
+#include "NAlgebra/header/NVector.h"
+#include "NAlgebra/header/ENVector.h"
+#include "NAlgebra/header/Vector3.h"
+#include "NAlgebra/header/NPMatrix.h"
+#include "NAlgebra/header/NMatrix.h"
+#include "NGeometry/header/NSegment.h"
+#include "NGeometry/header/NParallelepiped.h"
+#include "NGeometry/header/NDSet.h"
+#include "NAnalysis/header/NConstantField.h"
+#include "NAnalysis/header/NOde.h"
+#include "NAnalysis/header/SNewtonianField.h"
 
 bool testNVectorAlgebra();
 bool testNVectorMaxMin();

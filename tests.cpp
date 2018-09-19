@@ -56,6 +56,7 @@ bool testNVectorSwap() {
     cout << "vector : " << vector << endl;
     vector.swap(0, 1);
     cout << "vector.swap(0, 1) : " << vector << endl;
+
     return false;
 }
 
@@ -65,24 +66,37 @@ bool testNVectorShift() {
     NVector vector = testVector;
 
     cout << "Vector : " << vector << endl;
+    vector.shift(1);
+    cout << "vector.shift(1) : " << vector << endl;
+    vector.shift(-1);
+    cout << "vector.shift(-1) : " << vector << endl;
     vector.shift(-2);
     cout << "vector.shift(-2) : " << vector << endl;
+    vector.shift(2);
+    cout << "vector.shift(2) : " << vector << endl;
+
     return false;
 }
 
 bool testNVectorSubVectors() {
     cout << endl<< "**** SUB-VECTORS ****" << endl << endl;
 
-    const NVector vector = testVector;
-    NVector subVector = vector(0, 1);
+    NVector vector = testVector;
+    NVector subVector1, subVector2;
+
+    subVector1 = vector(0, 1);
+    subVector2 = vector;
 
     cout << "vector : " << vector << endl;
-    cout << "vector(0, 1) : " << subVector << endl;
-    subVector(0, 1) = vector(1, 2);
-    cout << "subVector(0, 1) = vector(1, 2) : " << subVector << endl;
-    vector(0, 1) = subVector;
-    cout << "vector(0, 1) = subVector : " << vector << endl;
-    vector;
+    cout << "subVector1 = vector(0, 1) : " << subVector1 << endl;
+    cout << "subVector2 = vector : " << subVector2 << endl;
+
+    subVector1(0, 1) = vector(1, 2);
+    cout << "subVector1(0, 1) = vector(1, 2) : " << subVector1 << endl;
+    vector(0, 1) = subVector1;
+    cout << "vector(0, 1) = subVector1 : " << vector << endl;
+
+    vector(0) = 6;
     cout << "vector(0) = 6 : " << vector << endl;
     return false;
 }

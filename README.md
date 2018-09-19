@@ -4,7 +4,10 @@
 
 ### Last Update : 05/18/2018
 
+### Current Version : 0.2
+
 MathToolKit is a complete framework for linear algebra and differential equations solving in C++. It's a tool box to ease maths and physics in C++. It's the ultimate framework to perform fast and efficient scientific calculation and AI.
+This framework is written in C++11 and can be compiled only on UNIX systems such as Ubuntu, MacOS...
 
 ### NAlgebra
 

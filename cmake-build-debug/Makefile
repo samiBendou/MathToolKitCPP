@@ -150,383 +150,383 @@ ConsoleMenu.cpp.s:
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s
 .PHONY : ConsoleMenu.cpp.s
 
-NAlgebra/ENVector.o: NAlgebra/ENVector.cpp.o
+NAlgebra/source/ENVector.o: NAlgebra/source/ENVector.cpp.o
 
-.PHONY : NAlgebra/ENVector.o
-
-# target to build an object file
-NAlgebra/ENVector.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.o
-.PHONY : NAlgebra/ENVector.cpp.o
-
-NAlgebra/ENVector.i: NAlgebra/ENVector.cpp.i
-
-.PHONY : NAlgebra/ENVector.i
-
-# target to preprocess a source file
-NAlgebra/ENVector.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.i
-.PHONY : NAlgebra/ENVector.cpp.i
-
-NAlgebra/ENVector.s: NAlgebra/ENVector.cpp.s
-
-.PHONY : NAlgebra/ENVector.s
-
-# target to generate assembly for a file
-NAlgebra/ENVector.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/ENVector.cpp.s
-.PHONY : NAlgebra/ENVector.cpp.s
-
-NAlgebra/NMatrix.o: NAlgebra/NMatrix.cpp.o
-
-.PHONY : NAlgebra/NMatrix.o
+.PHONY : NAlgebra/source/ENVector.o
 
 # target to build an object file
-NAlgebra/NMatrix.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.o
-.PHONY : NAlgebra/NMatrix.cpp.o
+NAlgebra/source/ENVector.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o
+.PHONY : NAlgebra/source/ENVector.cpp.o
 
-NAlgebra/NMatrix.i: NAlgebra/NMatrix.cpp.i
+NAlgebra/source/ENVector.i: NAlgebra/source/ENVector.cpp.i
 
-.PHONY : NAlgebra/NMatrix.i
+.PHONY : NAlgebra/source/ENVector.i
 
 # target to preprocess a source file
-NAlgebra/NMatrix.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.i
-.PHONY : NAlgebra/NMatrix.cpp.i
+NAlgebra/source/ENVector.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.i
+.PHONY : NAlgebra/source/ENVector.cpp.i
 
-NAlgebra/NMatrix.s: NAlgebra/NMatrix.cpp.s
+NAlgebra/source/ENVector.s: NAlgebra/source/ENVector.cpp.s
 
-.PHONY : NAlgebra/NMatrix.s
+.PHONY : NAlgebra/source/ENVector.s
 
 # target to generate assembly for a file
-NAlgebra/NMatrix.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NMatrix.cpp.s
-.PHONY : NAlgebra/NMatrix.cpp.s
+NAlgebra/source/ENVector.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.s
+.PHONY : NAlgebra/source/ENVector.cpp.s
 
-NAlgebra/NPMatrix.o: NAlgebra/NPMatrix.cpp.o
+NAlgebra/source/NMatrix.o: NAlgebra/source/NMatrix.cpp.o
 
-.PHONY : NAlgebra/NPMatrix.o
+.PHONY : NAlgebra/source/NMatrix.o
 
 # target to build an object file
-NAlgebra/NPMatrix.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.o
-.PHONY : NAlgebra/NPMatrix.cpp.o
+NAlgebra/source/NMatrix.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o
+.PHONY : NAlgebra/source/NMatrix.cpp.o
 
-NAlgebra/NPMatrix.i: NAlgebra/NPMatrix.cpp.i
+NAlgebra/source/NMatrix.i: NAlgebra/source/NMatrix.cpp.i
 
-.PHONY : NAlgebra/NPMatrix.i
+.PHONY : NAlgebra/source/NMatrix.i
 
 # target to preprocess a source file
-NAlgebra/NPMatrix.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.i
-.PHONY : NAlgebra/NPMatrix.cpp.i
+NAlgebra/source/NMatrix.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.i
+.PHONY : NAlgebra/source/NMatrix.cpp.i
 
-NAlgebra/NPMatrix.s: NAlgebra/NPMatrix.cpp.s
+NAlgebra/source/NMatrix.s: NAlgebra/source/NMatrix.cpp.s
 
-.PHONY : NAlgebra/NPMatrix.s
+.PHONY : NAlgebra/source/NMatrix.s
 
 # target to generate assembly for a file
-NAlgebra/NPMatrix.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NPMatrix.cpp.s
-.PHONY : NAlgebra/NPMatrix.cpp.s
+NAlgebra/source/NMatrix.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.s
+.PHONY : NAlgebra/source/NMatrix.cpp.s
 
-NAlgebra/NVector.o: NAlgebra/NVector.cpp.o
+NAlgebra/source/NPMatrix.o: NAlgebra/source/NPMatrix.cpp.o
 
-.PHONY : NAlgebra/NVector.o
+.PHONY : NAlgebra/source/NPMatrix.o
 
 # target to build an object file
-NAlgebra/NVector.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.o
-.PHONY : NAlgebra/NVector.cpp.o
+NAlgebra/source/NPMatrix.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o
+.PHONY : NAlgebra/source/NPMatrix.cpp.o
 
-NAlgebra/NVector.i: NAlgebra/NVector.cpp.i
+NAlgebra/source/NPMatrix.i: NAlgebra/source/NPMatrix.cpp.i
 
-.PHONY : NAlgebra/NVector.i
+.PHONY : NAlgebra/source/NPMatrix.i
 
 # target to preprocess a source file
-NAlgebra/NVector.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.i
-.PHONY : NAlgebra/NVector.cpp.i
+NAlgebra/source/NPMatrix.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.i
+.PHONY : NAlgebra/source/NPMatrix.cpp.i
 
-NAlgebra/NVector.s: NAlgebra/NVector.cpp.s
+NAlgebra/source/NPMatrix.s: NAlgebra/source/NPMatrix.cpp.s
 
-.PHONY : NAlgebra/NVector.s
+.PHONY : NAlgebra/source/NPMatrix.s
 
 # target to generate assembly for a file
-NAlgebra/NVector.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/NVector.cpp.s
-.PHONY : NAlgebra/NVector.cpp.s
+NAlgebra/source/NPMatrix.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.s
+.PHONY : NAlgebra/source/NPMatrix.cpp.s
 
-NAlgebra/Vector3.o: NAlgebra/Vector3.cpp.o
+NAlgebra/source/NVector.o: NAlgebra/source/NVector.cpp.o
 
-.PHONY : NAlgebra/Vector3.o
+.PHONY : NAlgebra/source/NVector.o
 
 # target to build an object file
-NAlgebra/Vector3.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.o
-.PHONY : NAlgebra/Vector3.cpp.o
+NAlgebra/source/NVector.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o
+.PHONY : NAlgebra/source/NVector.cpp.o
 
-NAlgebra/Vector3.i: NAlgebra/Vector3.cpp.i
+NAlgebra/source/NVector.i: NAlgebra/source/NVector.cpp.i
 
-.PHONY : NAlgebra/Vector3.i
+.PHONY : NAlgebra/source/NVector.i
 
 # target to preprocess a source file
-NAlgebra/Vector3.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.i
-.PHONY : NAlgebra/Vector3.cpp.i
+NAlgebra/source/NVector.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.i
+.PHONY : NAlgebra/source/NVector.cpp.i
 
-NAlgebra/Vector3.s: NAlgebra/Vector3.cpp.s
+NAlgebra/source/NVector.s: NAlgebra/source/NVector.cpp.s
 
-.PHONY : NAlgebra/Vector3.s
+.PHONY : NAlgebra/source/NVector.s
 
 # target to generate assembly for a file
-NAlgebra/Vector3.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/Vector3.cpp.s
-.PHONY : NAlgebra/Vector3.cpp.s
+NAlgebra/source/NVector.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.s
+.PHONY : NAlgebra/source/NVector.cpp.s
 
-NAnalysis/NConstantField.o: NAnalysis/NConstantField.cpp.o
+NAlgebra/source/Vector3.o: NAlgebra/source/Vector3.cpp.o
 
-.PHONY : NAnalysis/NConstantField.o
+.PHONY : NAlgebra/source/Vector3.o
 
 # target to build an object file
-NAnalysis/NConstantField.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.o
-.PHONY : NAnalysis/NConstantField.cpp.o
+NAlgebra/source/Vector3.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o
+.PHONY : NAlgebra/source/Vector3.cpp.o
 
-NAnalysis/NConstantField.i: NAnalysis/NConstantField.cpp.i
+NAlgebra/source/Vector3.i: NAlgebra/source/Vector3.cpp.i
 
-.PHONY : NAnalysis/NConstantField.i
+.PHONY : NAlgebra/source/Vector3.i
 
 # target to preprocess a source file
-NAnalysis/NConstantField.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.i
-.PHONY : NAnalysis/NConstantField.cpp.i
+NAlgebra/source/Vector3.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.i
+.PHONY : NAlgebra/source/Vector3.cpp.i
 
-NAnalysis/NConstantField.s: NAnalysis/NConstantField.cpp.s
+NAlgebra/source/Vector3.s: NAlgebra/source/Vector3.cpp.s
 
-.PHONY : NAnalysis/NConstantField.s
+.PHONY : NAlgebra/source/Vector3.s
 
 # target to generate assembly for a file
-NAnalysis/NConstantField.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NConstantField.cpp.s
-.PHONY : NAnalysis/NConstantField.cpp.s
+NAlgebra/source/Vector3.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.s
+.PHONY : NAlgebra/source/Vector3.cpp.s
 
-NAnalysis/NOde.o: NAnalysis/NOde.cpp.o
+NAnalysis/source/NConstantField.o: NAnalysis/source/NConstantField.cpp.o
 
-.PHONY : NAnalysis/NOde.o
+.PHONY : NAnalysis/source/NConstantField.o
 
 # target to build an object file
-NAnalysis/NOde.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.o
-.PHONY : NAnalysis/NOde.cpp.o
+NAnalysis/source/NConstantField.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o
+.PHONY : NAnalysis/source/NConstantField.cpp.o
 
-NAnalysis/NOde.i: NAnalysis/NOde.cpp.i
+NAnalysis/source/NConstantField.i: NAnalysis/source/NConstantField.cpp.i
 
-.PHONY : NAnalysis/NOde.i
+.PHONY : NAnalysis/source/NConstantField.i
 
 # target to preprocess a source file
-NAnalysis/NOde.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.i
-.PHONY : NAnalysis/NOde.cpp.i
+NAnalysis/source/NConstantField.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.i
+.PHONY : NAnalysis/source/NConstantField.cpp.i
 
-NAnalysis/NOde.s: NAnalysis/NOde.cpp.s
+NAnalysis/source/NConstantField.s: NAnalysis/source/NConstantField.cpp.s
 
-.PHONY : NAnalysis/NOde.s
+.PHONY : NAnalysis/source/NConstantField.s
 
 # target to generate assembly for a file
-NAnalysis/NOde.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NOde.cpp.s
-.PHONY : NAnalysis/NOde.cpp.s
+NAnalysis/source/NConstantField.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.s
+.PHONY : NAnalysis/source/NConstantField.cpp.s
 
-NAnalysis/NPField.o: NAnalysis/NPField.cpp.o
+NAnalysis/source/NOde.o: NAnalysis/source/NOde.cpp.o
 
-.PHONY : NAnalysis/NPField.o
+.PHONY : NAnalysis/source/NOde.o
 
 # target to build an object file
-NAnalysis/NPField.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.o
-.PHONY : NAnalysis/NPField.cpp.o
+NAnalysis/source/NOde.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o
+.PHONY : NAnalysis/source/NOde.cpp.o
 
-NAnalysis/NPField.i: NAnalysis/NPField.cpp.i
+NAnalysis/source/NOde.i: NAnalysis/source/NOde.cpp.i
 
-.PHONY : NAnalysis/NPField.i
+.PHONY : NAnalysis/source/NOde.i
 
 # target to preprocess a source file
-NAnalysis/NPField.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.i
-.PHONY : NAnalysis/NPField.cpp.i
+NAnalysis/source/NOde.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.i
+.PHONY : NAnalysis/source/NOde.cpp.i
 
-NAnalysis/NPField.s: NAnalysis/NPField.cpp.s
+NAnalysis/source/NOde.s: NAnalysis/source/NOde.cpp.s
 
-.PHONY : NAnalysis/NPField.s
+.PHONY : NAnalysis/source/NOde.s
 
 # target to generate assembly for a file
-NAnalysis/NPField.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/NPField.cpp.s
-.PHONY : NAnalysis/NPField.cpp.s
+NAnalysis/source/NOde.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.s
+.PHONY : NAnalysis/source/NOde.cpp.s
 
-NAnalysis/SNewtonianField.o: NAnalysis/SNewtonianField.cpp.o
+NAnalysis/source/NPField.o: NAnalysis/source/NPField.cpp.o
 
-.PHONY : NAnalysis/SNewtonianField.o
+.PHONY : NAnalysis/source/NPField.o
 
 # target to build an object file
-NAnalysis/SNewtonianField.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.o
-.PHONY : NAnalysis/SNewtonianField.cpp.o
+NAnalysis/source/NPField.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o
+.PHONY : NAnalysis/source/NPField.cpp.o
 
-NAnalysis/SNewtonianField.i: NAnalysis/SNewtonianField.cpp.i
+NAnalysis/source/NPField.i: NAnalysis/source/NPField.cpp.i
 
-.PHONY : NAnalysis/SNewtonianField.i
+.PHONY : NAnalysis/source/NPField.i
 
 # target to preprocess a source file
-NAnalysis/SNewtonianField.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.i
-.PHONY : NAnalysis/SNewtonianField.cpp.i
+NAnalysis/source/NPField.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.i
+.PHONY : NAnalysis/source/NPField.cpp.i
 
-NAnalysis/SNewtonianField.s: NAnalysis/SNewtonianField.cpp.s
+NAnalysis/source/NPField.s: NAnalysis/source/NPField.cpp.s
 
-.PHONY : NAnalysis/SNewtonianField.s
+.PHONY : NAnalysis/source/NPField.s
 
 # target to generate assembly for a file
-NAnalysis/SNewtonianField.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/SNewtonianField.cpp.s
-.PHONY : NAnalysis/SNewtonianField.cpp.s
+NAnalysis/source/NPField.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.s
+.PHONY : NAnalysis/source/NPField.cpp.s
 
-NGeometry/NCompact.o: NGeometry/NCompact.cpp.o
+NAnalysis/source/SNewtonianField.o: NAnalysis/source/SNewtonianField.cpp.o
 
-.PHONY : NGeometry/NCompact.o
+.PHONY : NAnalysis/source/SNewtonianField.o
 
 # target to build an object file
-NGeometry/NCompact.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.o
-.PHONY : NGeometry/NCompact.cpp.o
+NAnalysis/source/SNewtonianField.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o
+.PHONY : NAnalysis/source/SNewtonianField.cpp.o
 
-NGeometry/NCompact.i: NGeometry/NCompact.cpp.i
+NAnalysis/source/SNewtonianField.i: NAnalysis/source/SNewtonianField.cpp.i
 
-.PHONY : NGeometry/NCompact.i
+.PHONY : NAnalysis/source/SNewtonianField.i
 
 # target to preprocess a source file
-NGeometry/NCompact.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.i
-.PHONY : NGeometry/NCompact.cpp.i
+NAnalysis/source/SNewtonianField.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.i
+.PHONY : NAnalysis/source/SNewtonianField.cpp.i
 
-NGeometry/NCompact.s: NGeometry/NCompact.cpp.s
+NAnalysis/source/SNewtonianField.s: NAnalysis/source/SNewtonianField.cpp.s
 
-.PHONY : NGeometry/NCompact.s
+.PHONY : NAnalysis/source/SNewtonianField.s
 
 # target to generate assembly for a file
-NGeometry/NCompact.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NCompact.cpp.s
-.PHONY : NGeometry/NCompact.cpp.s
+NAnalysis/source/SNewtonianField.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.s
+.PHONY : NAnalysis/source/SNewtonianField.cpp.s
 
-NGeometry/NDSet.o: NGeometry/NDSet.cpp.o
+NGeometry/source/NCompact.o: NGeometry/source/NCompact.cpp.o
 
-.PHONY : NGeometry/NDSet.o
+.PHONY : NGeometry/source/NCompact.o
 
 # target to build an object file
-NGeometry/NDSet.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.o
-.PHONY : NGeometry/NDSet.cpp.o
+NGeometry/source/NCompact.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o
+.PHONY : NGeometry/source/NCompact.cpp.o
 
-NGeometry/NDSet.i: NGeometry/NDSet.cpp.i
+NGeometry/source/NCompact.i: NGeometry/source/NCompact.cpp.i
 
-.PHONY : NGeometry/NDSet.i
+.PHONY : NGeometry/source/NCompact.i
 
 # target to preprocess a source file
-NGeometry/NDSet.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.i
-.PHONY : NGeometry/NDSet.cpp.i
+NGeometry/source/NCompact.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.i
+.PHONY : NGeometry/source/NCompact.cpp.i
 
-NGeometry/NDSet.s: NGeometry/NDSet.cpp.s
+NGeometry/source/NCompact.s: NGeometry/source/NCompact.cpp.s
 
-.PHONY : NGeometry/NDSet.s
+.PHONY : NGeometry/source/NCompact.s
 
 # target to generate assembly for a file
-NGeometry/NDSet.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NDSet.cpp.s
-.PHONY : NGeometry/NDSet.cpp.s
+NGeometry/source/NCompact.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.s
+.PHONY : NGeometry/source/NCompact.cpp.s
 
-NGeometry/NParallelepiped.o: NGeometry/NParallelepiped.cpp.o
+NGeometry/source/NDSet.o: NGeometry/source/NDSet.cpp.o
 
-.PHONY : NGeometry/NParallelepiped.o
+.PHONY : NGeometry/source/NDSet.o
 
 # target to build an object file
-NGeometry/NParallelepiped.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.o
-.PHONY : NGeometry/NParallelepiped.cpp.o
+NGeometry/source/NDSet.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o
+.PHONY : NGeometry/source/NDSet.cpp.o
 
-NGeometry/NParallelepiped.i: NGeometry/NParallelepiped.cpp.i
+NGeometry/source/NDSet.i: NGeometry/source/NDSet.cpp.i
 
-.PHONY : NGeometry/NParallelepiped.i
+.PHONY : NGeometry/source/NDSet.i
 
 # target to preprocess a source file
-NGeometry/NParallelepiped.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.i
-.PHONY : NGeometry/NParallelepiped.cpp.i
+NGeometry/source/NDSet.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.i
+.PHONY : NGeometry/source/NDSet.cpp.i
 
-NGeometry/NParallelepiped.s: NGeometry/NParallelepiped.cpp.s
+NGeometry/source/NDSet.s: NGeometry/source/NDSet.cpp.s
 
-.PHONY : NGeometry/NParallelepiped.s
+.PHONY : NGeometry/source/NDSet.s
 
 # target to generate assembly for a file
-NGeometry/NParallelepiped.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NParallelepiped.cpp.s
-.PHONY : NGeometry/NParallelepiped.cpp.s
+NGeometry/source/NDSet.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.s
+.PHONY : NGeometry/source/NDSet.cpp.s
 
-NGeometry/NSegment.o: NGeometry/NSegment.cpp.o
+NGeometry/source/NParallelepiped.o: NGeometry/source/NParallelepiped.cpp.o
 
-.PHONY : NGeometry/NSegment.o
+.PHONY : NGeometry/source/NParallelepiped.o
 
 # target to build an object file
-NGeometry/NSegment.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.o
-.PHONY : NGeometry/NSegment.cpp.o
+NGeometry/source/NParallelepiped.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o
+.PHONY : NGeometry/source/NParallelepiped.cpp.o
 
-NGeometry/NSegment.i: NGeometry/NSegment.cpp.i
+NGeometry/source/NParallelepiped.i: NGeometry/source/NParallelepiped.cpp.i
 
-.PHONY : NGeometry/NSegment.i
+.PHONY : NGeometry/source/NParallelepiped.i
 
 # target to preprocess a source file
-NGeometry/NSegment.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.i
-.PHONY : NGeometry/NSegment.cpp.i
+NGeometry/source/NParallelepiped.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.i
+.PHONY : NGeometry/source/NParallelepiped.cpp.i
 
-NGeometry/NSegment.s: NGeometry/NSegment.cpp.s
+NGeometry/source/NParallelepiped.s: NGeometry/source/NParallelepiped.cpp.s
 
-.PHONY : NGeometry/NSegment.s
+.PHONY : NGeometry/source/NParallelepiped.s
 
 # target to generate assembly for a file
-NGeometry/NSegment.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NSegment.cpp.s
-.PHONY : NGeometry/NSegment.cpp.s
+NGeometry/source/NParallelepiped.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.s
+.PHONY : NGeometry/source/NParallelepiped.cpp.s
 
-NGeometry/NSet.o: NGeometry/NSet.cpp.o
+NGeometry/source/NSegment.o: NGeometry/source/NSegment.cpp.o
 
-.PHONY : NGeometry/NSet.o
+.PHONY : NGeometry/source/NSegment.o
 
 # target to build an object file
-NGeometry/NSet.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.o
-.PHONY : NGeometry/NSet.cpp.o
+NGeometry/source/NSegment.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o
+.PHONY : NGeometry/source/NSegment.cpp.o
 
-NGeometry/NSet.i: NGeometry/NSet.cpp.i
+NGeometry/source/NSegment.i: NGeometry/source/NSegment.cpp.i
 
-.PHONY : NGeometry/NSet.i
+.PHONY : NGeometry/source/NSegment.i
 
 # target to preprocess a source file
-NGeometry/NSet.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.i
-.PHONY : NGeometry/NSet.cpp.i
+NGeometry/source/NSegment.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.i
+.PHONY : NGeometry/source/NSegment.cpp.i
 
-NGeometry/NSet.s: NGeometry/NSet.cpp.s
+NGeometry/source/NSegment.s: NGeometry/source/NSegment.cpp.s
 
-.PHONY : NGeometry/NSet.s
+.PHONY : NGeometry/source/NSegment.s
 
 # target to generate assembly for a file
-NGeometry/NSet.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/NSet.cpp.s
-.PHONY : NGeometry/NSet.cpp.s
+NGeometry/source/NSegment.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.s
+.PHONY : NGeometry/source/NSegment.cpp.s
+
+NGeometry/source/NSet.o: NGeometry/source/NSet.cpp.o
+
+.PHONY : NGeometry/source/NSet.o
+
+# target to build an object file
+NGeometry/source/NSet.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o
+.PHONY : NGeometry/source/NSet.cpp.o
+
+NGeometry/source/NSet.i: NGeometry/source/NSet.cpp.i
+
+.PHONY : NGeometry/source/NSet.i
+
+# target to preprocess a source file
+NGeometry/source/NSet.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.i
+.PHONY : NGeometry/source/NSet.cpp.i
+
+NGeometry/source/NSet.s: NGeometry/source/NSet.cpp.s
+
+.PHONY : NGeometry/source/NSet.s
+
+# target to generate assembly for a file
+NGeometry/source/NSet.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.s
+.PHONY : NGeometry/source/NSet.cpp.s
 
 main.o: main.cpp.o
 
@@ -621,48 +621,48 @@ help:
 	@echo "... ConsoleMenu.o"
 	@echo "... ConsoleMenu.i"
 	@echo "... ConsoleMenu.s"
-	@echo "... NAlgebra/ENVector.o"
-	@echo "... NAlgebra/ENVector.i"
-	@echo "... NAlgebra/ENVector.s"
-	@echo "... NAlgebra/NMatrix.o"
-	@echo "... NAlgebra/NMatrix.i"
-	@echo "... NAlgebra/NMatrix.s"
-	@echo "... NAlgebra/NPMatrix.o"
-	@echo "... NAlgebra/NPMatrix.i"
-	@echo "... NAlgebra/NPMatrix.s"
-	@echo "... NAlgebra/NVector.o"
-	@echo "... NAlgebra/NVector.i"
-	@echo "... NAlgebra/NVector.s"
-	@echo "... NAlgebra/Vector3.o"
-	@echo "... NAlgebra/Vector3.i"
-	@echo "... NAlgebra/Vector3.s"
-	@echo "... NAnalysis/NConstantField.o"
-	@echo "... NAnalysis/NConstantField.i"
-	@echo "... NAnalysis/NConstantField.s"
-	@echo "... NAnalysis/NOde.o"
-	@echo "... NAnalysis/NOde.i"
-	@echo "... NAnalysis/NOde.s"
-	@echo "... NAnalysis/NPField.o"
-	@echo "... NAnalysis/NPField.i"
-	@echo "... NAnalysis/NPField.s"
-	@echo "... NAnalysis/SNewtonianField.o"
-	@echo "... NAnalysis/SNewtonianField.i"
-	@echo "... NAnalysis/SNewtonianField.s"
-	@echo "... NGeometry/NCompact.o"
-	@echo "... NGeometry/NCompact.i"
-	@echo "... NGeometry/NCompact.s"
-	@echo "... NGeometry/NDSet.o"
-	@echo "... NGeometry/NDSet.i"
-	@echo "... NGeometry/NDSet.s"
-	@echo "... NGeometry/NParallelepiped.o"
-	@echo "... NGeometry/NParallelepiped.i"
-	@echo "... NGeometry/NParallelepiped.s"
-	@echo "... NGeometry/NSegment.o"
-	@echo "... NGeometry/NSegment.i"
-	@echo "... NGeometry/NSegment.s"
-	@echo "... NGeometry/NSet.o"
-	@echo "... NGeometry/NSet.i"
-	@echo "... NGeometry/NSet.s"
+	@echo "... NAlgebra/source/ENVector.o"
+	@echo "... NAlgebra/source/ENVector.i"
+	@echo "... NAlgebra/source/ENVector.s"
+	@echo "... NAlgebra/source/NMatrix.o"
+	@echo "... NAlgebra/source/NMatrix.i"
+	@echo "... NAlgebra/source/NMatrix.s"
+	@echo "... NAlgebra/source/NPMatrix.o"
+	@echo "... NAlgebra/source/NPMatrix.i"
+	@echo "... NAlgebra/source/NPMatrix.s"
+	@echo "... NAlgebra/source/NVector.o"
+	@echo "... NAlgebra/source/NVector.i"
+	@echo "... NAlgebra/source/NVector.s"
+	@echo "... NAlgebra/source/Vector3.o"
+	@echo "... NAlgebra/source/Vector3.i"
+	@echo "... NAlgebra/source/Vector3.s"
+	@echo "... NAnalysis/source/NConstantField.o"
+	@echo "... NAnalysis/source/NConstantField.i"
+	@echo "... NAnalysis/source/NConstantField.s"
+	@echo "... NAnalysis/source/NOde.o"
+	@echo "... NAnalysis/source/NOde.i"
+	@echo "... NAnalysis/source/NOde.s"
+	@echo "... NAnalysis/source/NPField.o"
+	@echo "... NAnalysis/source/NPField.i"
+	@echo "... NAnalysis/source/NPField.s"
+	@echo "... NAnalysis/source/SNewtonianField.o"
+	@echo "... NAnalysis/source/SNewtonianField.i"
+	@echo "... NAnalysis/source/SNewtonianField.s"
+	@echo "... NGeometry/source/NCompact.o"
+	@echo "... NGeometry/source/NCompact.i"
+	@echo "... NGeometry/source/NCompact.s"
+	@echo "... NGeometry/source/NDSet.o"
+	@echo "... NGeometry/source/NDSet.i"
+	@echo "... NGeometry/source/NDSet.s"
+	@echo "... NGeometry/source/NParallelepiped.o"
+	@echo "... NGeometry/source/NParallelepiped.i"
+	@echo "... NGeometry/source/NParallelepiped.s"
+	@echo "... NGeometry/source/NSegment.o"
+	@echo "... NGeometry/source/NSegment.i"
+	@echo "... NGeometry/source/NSegment.s"
+	@echo "... NGeometry/source/NSet.o"
+	@echo "... NGeometry/source/NSet.i"
+	@echo "... NGeometry/source/NSet.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

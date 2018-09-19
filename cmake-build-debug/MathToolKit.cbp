@@ -86,88 +86,88 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/ENVector.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/ENVector.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NMatrix.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NPMatrix.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NMatrix.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NVector.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/Vector3.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NPMatrix.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/ENVector.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NMatrix.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/NVector.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NVector.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/Vector3.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/Vector3.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/NConstantField.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NConstantField.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/NOde.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/NPField.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NOde.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/SNewtonianField.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NConstantField.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/NPField.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NOde.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NPField.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/SNewtonianField.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/SNewtonianField.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NCompact.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NCompact.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NDSet.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NParallelepiped.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NDSet.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NSegment.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NSet.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NParallelepiped.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NDSet.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSegment.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NParallelepiped.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.cpp">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/NSet.h">
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/main.cpp">
