@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/Ma
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header -I/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header -I/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header 
 

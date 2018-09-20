@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <curses.h>
 
 class ConsoleMenu final {
 public:

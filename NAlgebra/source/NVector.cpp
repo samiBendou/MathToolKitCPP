@@ -214,12 +214,12 @@ NVector &NVector::operator/=(const double scalar) {
 
 
 double &NVector::operator()(long k) {
-    assert(isValidIndex(k));
+    assert(isValidIndex((unsigned long) k));
     return (*this)[(k >= 0) ? k : dim() + k - 1];
 }
 
 double NVector::operator()(long k) const {
-    assert(isValidIndex(k));
+    assert(isValidIndex((unsigned long) k));
     return (*this).at((k >= 0) ? k : dim() + k - 1);
 }
 
@@ -271,9 +271,7 @@ NVector NVector::ones(unsigned long dim) {
 
 NVector NVector::scalar(double s, unsigned long dim) {
     NVector scalarVector = NVector(dim);
-    for (unsigned long k = 0; k < dim; ++k) {
-        scalarVector(k) = s;
-    }
+    scalarVector.fill(s);
     return scalarVector;
 }
 
@@ -287,6 +285,7 @@ NVector NVector::canonical(unsigned long k, unsigned long dim) {
 
 NVector NVector::sum(const std::vector<NVector> &vectors) {
     NVector sum = NVector::zeros(vectors[0].dim());
+
     for (const auto &vector : vectors) {
         sum += vector;
     }
@@ -295,6 +294,9 @@ NVector NVector::sum(const std::vector<NVector> &vectors) {
 
 NVector NVector::sumProd(const std::vector<double>& scalars, const std::vector<NVector> &vectors) {
     NVector sumProd = NVector::zeros(vectors[0].dim());
+
+    assert(scalars.size() == vectors.size());
+
     for (unsigned long k = 0; k < scalars.size(); ++k) {
         sumProd += scalars[k] * vectors[k];
     }

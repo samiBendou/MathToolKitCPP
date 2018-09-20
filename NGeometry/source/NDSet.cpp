@@ -78,7 +78,7 @@ void NDSet::push(const ENVector &x) {
     _data.push_back(x);
 }
 
-ENVector& NDSet::pop() {
+ENVector NDSet::pop() {
     ENVector ret = ENVector(_data[card() - 1]);
     _data.pop_back();
     return ret;

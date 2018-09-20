@@ -6,17 +6,20 @@
 #define MATHTOOLKIT_TESTS_H
 
 #include <iostream>
-#include "NAlgebra/header/NVector.h"
-#include "NAlgebra/header/ENVector.h"
-#include "NAlgebra/header/Vector3.h"
-#include "NAlgebra/header/NPMatrix.h"
-#include "NAlgebra/header/NMatrix.h"
-#include "NGeometry/header/NSegment.h"
-#include "NGeometry/header/NParallelepiped.h"
-#include "NGeometry/header/NDSet.h"
-#include "NAnalysis/header/NConstantField.h"
-#include "NAnalysis/header/NOde.h"
-#include "NAnalysis/header/SNewtonianField.h"
+
+#include "ConsoleMenu.h"
+
+#include <NVector.h>
+#include <ENVector.h>
+#include <Vector3.h>
+#include <NPMatrix.h>
+#include <NMatrix.h>
+#include <NSegment.h>
+#include <NParallelepiped.h>
+#include <NDSet.h>
+#include <NConstantField.h>
+#include <SNewtonianField.h>
+#include <NOde.h>
 
 bool testNVectorAlgebra();
 bool testNVectorMaxMin();
@@ -45,5 +48,15 @@ bool testNConstantField();
 bool testSNewtonianField();
 
 bool testODESolver();
+
+int launchTestODESolver();
+int launchTestNParallelepiped();
+int launchTestNDSet();
+int launchTestNSegment();
+int launchTestNField();
+int launchTestNMatrix();
+int launchTestNPMatrix();
+int launchTestNVector();
+int launchTest();
 
 #endif //MATHTOOLKIT_TESTS_H

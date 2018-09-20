@@ -144,17 +144,17 @@ NVector &NMatrix::operator^=(const long exp) {
 // STATIC FUNCTIONS
 
 
-NMatrix NMatrix::eye(const unsigned long n) {
+NMatrix NMatrix::eye(unsigned long n) {
     NMatrix eye = NPMatrix::zeros(n);
-    for (long k = 0; k < eye.n(); ++k) {
+    for (unsigned long k = 0; k < eye.n(); ++k) {
         eye(k, k) = 1.0;
     }
     return eye;
 }
 
-NMatrix NMatrix::diag(const std::vector<double> &data, const unsigned long n) {
+NMatrix NMatrix::diag(const std::vector<double> &data, unsigned long n) {
     NMatrix diag = NPMatrix::zeros(n);
-    for (long k = 0; k < n; ++k) {
+    for (unsigned long k = 0; k < n; ++k) {
         diag(k, k) = data[k];
     }
     return diag;
@@ -263,6 +263,8 @@ void NMatrix::inv() {
     unsigned long i, j, k, l;
 
     if(_a == nullptr) { lupUpdate(); }
+
+    assert(abs(det()) > std::numeric_limits<double>::epsilon());
 
     if(det() != 0.0) {
         for (j = 0; j < _n; j++) {

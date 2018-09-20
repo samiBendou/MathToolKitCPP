@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +89,40 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -123,6 +169,110 @@ MathToolKit/fast:
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/build
 .PHONY : MathToolKit/fast
 
+#=============================================================================
+# Target rules for targets named NAlgebra
+
+# Build rule for target.
+NAlgebra: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NAlgebra
+.PHONY : NAlgebra
+
+# fast build rule for target.
+NAlgebra/fast:
+	$(MAKE) -f NAlgebra/CMakeFiles/NAlgebra.dir/build.make NAlgebra/CMakeFiles/NAlgebra.dir/build
+.PHONY : NAlgebra/fast
+
+#=============================================================================
+# Target rules for targets named NAnalysis
+
+# Build rule for target.
+NAnalysis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NAnalysis
+.PHONY : NAnalysis
+
+# fast build rule for target.
+NAnalysis/fast:
+	$(MAKE) -f NAnalysis/CMakeFiles/NAnalysis.dir/build.make NAnalysis/CMakeFiles/NAnalysis.dir/build
+.PHONY : NAnalysis/fast
+
+#=============================================================================
+# Target rules for targets named NGeometry
+
+# Build rule for target.
+NGeometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NGeometry
+.PHONY : NGeometry
+
+# fast build rule for target.
+NGeometry/fast:
+	$(MAKE) -f NGeometry/CMakeFiles/NGeometry.dir/build.make NGeometry/CMakeFiles/NGeometry.dir/build
+.PHONY : NGeometry/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named TestMathToolKitCPP
+
+# Build rule for target.
+TestMathToolKitCPP: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestMathToolKitCPP
+.PHONY : TestMathToolKitCPP
+
+# fast build rule for target.
+TestMathToolKitCPP/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build
+.PHONY : TestMathToolKitCPP/fast
+
 ConsoleMenu.o: ConsoleMenu.cpp.o
 
 .PHONY : ConsoleMenu.o
@@ -150,384 +300,6 @@ ConsoleMenu.cpp.s:
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s
 .PHONY : ConsoleMenu.cpp.s
 
-NAlgebra/source/ENVector.o: NAlgebra/source/ENVector.cpp.o
-
-.PHONY : NAlgebra/source/ENVector.o
-
-# target to build an object file
-NAlgebra/source/ENVector.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.o
-.PHONY : NAlgebra/source/ENVector.cpp.o
-
-NAlgebra/source/ENVector.i: NAlgebra/source/ENVector.cpp.i
-
-.PHONY : NAlgebra/source/ENVector.i
-
-# target to preprocess a source file
-NAlgebra/source/ENVector.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.i
-.PHONY : NAlgebra/source/ENVector.cpp.i
-
-NAlgebra/source/ENVector.s: NAlgebra/source/ENVector.cpp.s
-
-.PHONY : NAlgebra/source/ENVector.s
-
-# target to generate assembly for a file
-NAlgebra/source/ENVector.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/ENVector.cpp.s
-.PHONY : NAlgebra/source/ENVector.cpp.s
-
-NAlgebra/source/NMatrix.o: NAlgebra/source/NMatrix.cpp.o
-
-.PHONY : NAlgebra/source/NMatrix.o
-
-# target to build an object file
-NAlgebra/source/NMatrix.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.o
-.PHONY : NAlgebra/source/NMatrix.cpp.o
-
-NAlgebra/source/NMatrix.i: NAlgebra/source/NMatrix.cpp.i
-
-.PHONY : NAlgebra/source/NMatrix.i
-
-# target to preprocess a source file
-NAlgebra/source/NMatrix.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.i
-.PHONY : NAlgebra/source/NMatrix.cpp.i
-
-NAlgebra/source/NMatrix.s: NAlgebra/source/NMatrix.cpp.s
-
-.PHONY : NAlgebra/source/NMatrix.s
-
-# target to generate assembly for a file
-NAlgebra/source/NMatrix.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NMatrix.cpp.s
-.PHONY : NAlgebra/source/NMatrix.cpp.s
-
-NAlgebra/source/NPMatrix.o: NAlgebra/source/NPMatrix.cpp.o
-
-.PHONY : NAlgebra/source/NPMatrix.o
-
-# target to build an object file
-NAlgebra/source/NPMatrix.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.o
-.PHONY : NAlgebra/source/NPMatrix.cpp.o
-
-NAlgebra/source/NPMatrix.i: NAlgebra/source/NPMatrix.cpp.i
-
-.PHONY : NAlgebra/source/NPMatrix.i
-
-# target to preprocess a source file
-NAlgebra/source/NPMatrix.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.i
-.PHONY : NAlgebra/source/NPMatrix.cpp.i
-
-NAlgebra/source/NPMatrix.s: NAlgebra/source/NPMatrix.cpp.s
-
-.PHONY : NAlgebra/source/NPMatrix.s
-
-# target to generate assembly for a file
-NAlgebra/source/NPMatrix.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NPMatrix.cpp.s
-.PHONY : NAlgebra/source/NPMatrix.cpp.s
-
-NAlgebra/source/NVector.o: NAlgebra/source/NVector.cpp.o
-
-.PHONY : NAlgebra/source/NVector.o
-
-# target to build an object file
-NAlgebra/source/NVector.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.o
-.PHONY : NAlgebra/source/NVector.cpp.o
-
-NAlgebra/source/NVector.i: NAlgebra/source/NVector.cpp.i
-
-.PHONY : NAlgebra/source/NVector.i
-
-# target to preprocess a source file
-NAlgebra/source/NVector.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.i
-.PHONY : NAlgebra/source/NVector.cpp.i
-
-NAlgebra/source/NVector.s: NAlgebra/source/NVector.cpp.s
-
-.PHONY : NAlgebra/source/NVector.s
-
-# target to generate assembly for a file
-NAlgebra/source/NVector.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/NVector.cpp.s
-.PHONY : NAlgebra/source/NVector.cpp.s
-
-NAlgebra/source/Vector3.o: NAlgebra/source/Vector3.cpp.o
-
-.PHONY : NAlgebra/source/Vector3.o
-
-# target to build an object file
-NAlgebra/source/Vector3.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.o
-.PHONY : NAlgebra/source/Vector3.cpp.o
-
-NAlgebra/source/Vector3.i: NAlgebra/source/Vector3.cpp.i
-
-.PHONY : NAlgebra/source/Vector3.i
-
-# target to preprocess a source file
-NAlgebra/source/Vector3.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.i
-.PHONY : NAlgebra/source/Vector3.cpp.i
-
-NAlgebra/source/Vector3.s: NAlgebra/source/Vector3.cpp.s
-
-.PHONY : NAlgebra/source/Vector3.s
-
-# target to generate assembly for a file
-NAlgebra/source/Vector3.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAlgebra/source/Vector3.cpp.s
-.PHONY : NAlgebra/source/Vector3.cpp.s
-
-NAnalysis/source/NConstantField.o: NAnalysis/source/NConstantField.cpp.o
-
-.PHONY : NAnalysis/source/NConstantField.o
-
-# target to build an object file
-NAnalysis/source/NConstantField.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.o
-.PHONY : NAnalysis/source/NConstantField.cpp.o
-
-NAnalysis/source/NConstantField.i: NAnalysis/source/NConstantField.cpp.i
-
-.PHONY : NAnalysis/source/NConstantField.i
-
-# target to preprocess a source file
-NAnalysis/source/NConstantField.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.i
-.PHONY : NAnalysis/source/NConstantField.cpp.i
-
-NAnalysis/source/NConstantField.s: NAnalysis/source/NConstantField.cpp.s
-
-.PHONY : NAnalysis/source/NConstantField.s
-
-# target to generate assembly for a file
-NAnalysis/source/NConstantField.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NConstantField.cpp.s
-.PHONY : NAnalysis/source/NConstantField.cpp.s
-
-NAnalysis/source/NOde.o: NAnalysis/source/NOde.cpp.o
-
-.PHONY : NAnalysis/source/NOde.o
-
-# target to build an object file
-NAnalysis/source/NOde.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.o
-.PHONY : NAnalysis/source/NOde.cpp.o
-
-NAnalysis/source/NOde.i: NAnalysis/source/NOde.cpp.i
-
-.PHONY : NAnalysis/source/NOde.i
-
-# target to preprocess a source file
-NAnalysis/source/NOde.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.i
-.PHONY : NAnalysis/source/NOde.cpp.i
-
-NAnalysis/source/NOde.s: NAnalysis/source/NOde.cpp.s
-
-.PHONY : NAnalysis/source/NOde.s
-
-# target to generate assembly for a file
-NAnalysis/source/NOde.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NOde.cpp.s
-.PHONY : NAnalysis/source/NOde.cpp.s
-
-NAnalysis/source/NPField.o: NAnalysis/source/NPField.cpp.o
-
-.PHONY : NAnalysis/source/NPField.o
-
-# target to build an object file
-NAnalysis/source/NPField.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.o
-.PHONY : NAnalysis/source/NPField.cpp.o
-
-NAnalysis/source/NPField.i: NAnalysis/source/NPField.cpp.i
-
-.PHONY : NAnalysis/source/NPField.i
-
-# target to preprocess a source file
-NAnalysis/source/NPField.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.i
-.PHONY : NAnalysis/source/NPField.cpp.i
-
-NAnalysis/source/NPField.s: NAnalysis/source/NPField.cpp.s
-
-.PHONY : NAnalysis/source/NPField.s
-
-# target to generate assembly for a file
-NAnalysis/source/NPField.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/NPField.cpp.s
-.PHONY : NAnalysis/source/NPField.cpp.s
-
-NAnalysis/source/SNewtonianField.o: NAnalysis/source/SNewtonianField.cpp.o
-
-.PHONY : NAnalysis/source/SNewtonianField.o
-
-# target to build an object file
-NAnalysis/source/SNewtonianField.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.o
-.PHONY : NAnalysis/source/SNewtonianField.cpp.o
-
-NAnalysis/source/SNewtonianField.i: NAnalysis/source/SNewtonianField.cpp.i
-
-.PHONY : NAnalysis/source/SNewtonianField.i
-
-# target to preprocess a source file
-NAnalysis/source/SNewtonianField.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.i
-.PHONY : NAnalysis/source/SNewtonianField.cpp.i
-
-NAnalysis/source/SNewtonianField.s: NAnalysis/source/SNewtonianField.cpp.s
-
-.PHONY : NAnalysis/source/SNewtonianField.s
-
-# target to generate assembly for a file
-NAnalysis/source/SNewtonianField.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NAnalysis/source/SNewtonianField.cpp.s
-.PHONY : NAnalysis/source/SNewtonianField.cpp.s
-
-NGeometry/source/NCompact.o: NGeometry/source/NCompact.cpp.o
-
-.PHONY : NGeometry/source/NCompact.o
-
-# target to build an object file
-NGeometry/source/NCompact.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.o
-.PHONY : NGeometry/source/NCompact.cpp.o
-
-NGeometry/source/NCompact.i: NGeometry/source/NCompact.cpp.i
-
-.PHONY : NGeometry/source/NCompact.i
-
-# target to preprocess a source file
-NGeometry/source/NCompact.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.i
-.PHONY : NGeometry/source/NCompact.cpp.i
-
-NGeometry/source/NCompact.s: NGeometry/source/NCompact.cpp.s
-
-.PHONY : NGeometry/source/NCompact.s
-
-# target to generate assembly for a file
-NGeometry/source/NCompact.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NCompact.cpp.s
-.PHONY : NGeometry/source/NCompact.cpp.s
-
-NGeometry/source/NDSet.o: NGeometry/source/NDSet.cpp.o
-
-.PHONY : NGeometry/source/NDSet.o
-
-# target to build an object file
-NGeometry/source/NDSet.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.o
-.PHONY : NGeometry/source/NDSet.cpp.o
-
-NGeometry/source/NDSet.i: NGeometry/source/NDSet.cpp.i
-
-.PHONY : NGeometry/source/NDSet.i
-
-# target to preprocess a source file
-NGeometry/source/NDSet.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.i
-.PHONY : NGeometry/source/NDSet.cpp.i
-
-NGeometry/source/NDSet.s: NGeometry/source/NDSet.cpp.s
-
-.PHONY : NGeometry/source/NDSet.s
-
-# target to generate assembly for a file
-NGeometry/source/NDSet.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NDSet.cpp.s
-.PHONY : NGeometry/source/NDSet.cpp.s
-
-NGeometry/source/NParallelepiped.o: NGeometry/source/NParallelepiped.cpp.o
-
-.PHONY : NGeometry/source/NParallelepiped.o
-
-# target to build an object file
-NGeometry/source/NParallelepiped.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.o
-.PHONY : NGeometry/source/NParallelepiped.cpp.o
-
-NGeometry/source/NParallelepiped.i: NGeometry/source/NParallelepiped.cpp.i
-
-.PHONY : NGeometry/source/NParallelepiped.i
-
-# target to preprocess a source file
-NGeometry/source/NParallelepiped.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.i
-.PHONY : NGeometry/source/NParallelepiped.cpp.i
-
-NGeometry/source/NParallelepiped.s: NGeometry/source/NParallelepiped.cpp.s
-
-.PHONY : NGeometry/source/NParallelepiped.s
-
-# target to generate assembly for a file
-NGeometry/source/NParallelepiped.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NParallelepiped.cpp.s
-.PHONY : NGeometry/source/NParallelepiped.cpp.s
-
-NGeometry/source/NSegment.o: NGeometry/source/NSegment.cpp.o
-
-.PHONY : NGeometry/source/NSegment.o
-
-# target to build an object file
-NGeometry/source/NSegment.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.o
-.PHONY : NGeometry/source/NSegment.cpp.o
-
-NGeometry/source/NSegment.i: NGeometry/source/NSegment.cpp.i
-
-.PHONY : NGeometry/source/NSegment.i
-
-# target to preprocess a source file
-NGeometry/source/NSegment.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.i
-.PHONY : NGeometry/source/NSegment.cpp.i
-
-NGeometry/source/NSegment.s: NGeometry/source/NSegment.cpp.s
-
-.PHONY : NGeometry/source/NSegment.s
-
-# target to generate assembly for a file
-NGeometry/source/NSegment.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSegment.cpp.s
-.PHONY : NGeometry/source/NSegment.cpp.s
-
-NGeometry/source/NSet.o: NGeometry/source/NSet.cpp.o
-
-.PHONY : NGeometry/source/NSet.o
-
-# target to build an object file
-NGeometry/source/NSet.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.o
-.PHONY : NGeometry/source/NSet.cpp.o
-
-NGeometry/source/NSet.i: NGeometry/source/NSet.cpp.i
-
-.PHONY : NGeometry/source/NSet.i
-
-# target to preprocess a source file
-NGeometry/source/NSet.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.i
-.PHONY : NGeometry/source/NSet.cpp.i
-
-NGeometry/source/NSet.s: NGeometry/source/NSet.cpp.s
-
-.PHONY : NGeometry/source/NSet.s
-
-# target to generate assembly for a file
-NGeometry/source/NSet.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/NGeometry/source/NSet.cpp.s
-.PHONY : NGeometry/source/NSet.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -554,33 +326,6 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-mainBis.o: mainBis.cpp.o
-
-.PHONY : mainBis.o
-
-# target to build an object file
-mainBis.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/mainBis.cpp.o
-.PHONY : mainBis.cpp.o
-
-mainBis.i: mainBis.cpp.i
-
-.PHONY : mainBis.i
-
-# target to preprocess a source file
-mainBis.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/mainBis.cpp.i
-.PHONY : mainBis.cpp.i
-
-mainBis.s: mainBis.cpp.s
-
-.PHONY : mainBis.s
-
-# target to generate assembly for a file
-mainBis.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/mainBis.cpp.s
-.PHONY : mainBis.cpp.s
 
 tests.o: tests.cpp.o
 
@@ -615,60 +360,27 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... install/strip"
 	@echo "... MathToolKit"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... NAlgebra"
+	@echo "... NAnalysis"
+	@echo "... NGeometry"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest_main"
+	@echo "... gtest"
+	@echo "... TestMathToolKitCPP"
 	@echo "... ConsoleMenu.o"
 	@echo "... ConsoleMenu.i"
 	@echo "... ConsoleMenu.s"
-	@echo "... NAlgebra/source/ENVector.o"
-	@echo "... NAlgebra/source/ENVector.i"
-	@echo "... NAlgebra/source/ENVector.s"
-	@echo "... NAlgebra/source/NMatrix.o"
-	@echo "... NAlgebra/source/NMatrix.i"
-	@echo "... NAlgebra/source/NMatrix.s"
-	@echo "... NAlgebra/source/NPMatrix.o"
-	@echo "... NAlgebra/source/NPMatrix.i"
-	@echo "... NAlgebra/source/NPMatrix.s"
-	@echo "... NAlgebra/source/NVector.o"
-	@echo "... NAlgebra/source/NVector.i"
-	@echo "... NAlgebra/source/NVector.s"
-	@echo "... NAlgebra/source/Vector3.o"
-	@echo "... NAlgebra/source/Vector3.i"
-	@echo "... NAlgebra/source/Vector3.s"
-	@echo "... NAnalysis/source/NConstantField.o"
-	@echo "... NAnalysis/source/NConstantField.i"
-	@echo "... NAnalysis/source/NConstantField.s"
-	@echo "... NAnalysis/source/NOde.o"
-	@echo "... NAnalysis/source/NOde.i"
-	@echo "... NAnalysis/source/NOde.s"
-	@echo "... NAnalysis/source/NPField.o"
-	@echo "... NAnalysis/source/NPField.i"
-	@echo "... NAnalysis/source/NPField.s"
-	@echo "... NAnalysis/source/SNewtonianField.o"
-	@echo "... NAnalysis/source/SNewtonianField.i"
-	@echo "... NAnalysis/source/SNewtonianField.s"
-	@echo "... NGeometry/source/NCompact.o"
-	@echo "... NGeometry/source/NCompact.i"
-	@echo "... NGeometry/source/NCompact.s"
-	@echo "... NGeometry/source/NDSet.o"
-	@echo "... NGeometry/source/NDSet.i"
-	@echo "... NGeometry/source/NDSet.s"
-	@echo "... NGeometry/source/NParallelepiped.o"
-	@echo "... NGeometry/source/NParallelepiped.i"
-	@echo "... NGeometry/source/NParallelepiped.s"
-	@echo "... NGeometry/source/NSegment.o"
-	@echo "... NGeometry/source/NSegment.i"
-	@echo "... NGeometry/source/NSegment.s"
-	@echo "... NGeometry/source/NSet.o"
-	@echo "... NGeometry/source/NSet.i"
-	@echo "... NGeometry/source/NSet.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... mainBis.o"
-	@echo "... mainBis.i"
-	@echo "... mainBis.s"
 	@echo "... tests.o"
 	@echo "... tests.i"
 	@echo "... tests.s"

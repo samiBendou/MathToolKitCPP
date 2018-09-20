@@ -27,6 +27,7 @@
 #include <cmath>
 #include <vector>
 #include <cstdarg>
+#include <cassert>
 
 class NVector : public std::vector<double> {
 

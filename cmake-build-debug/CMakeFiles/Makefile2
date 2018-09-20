@@ -68,10 +68,12 @@ CMAKE_BINARY_DIR = /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug
 # Target rules for target CMakeFiles/MathToolKit.dir
 
 # All Build rule for target.
-CMakeFiles/MathToolKit.dir/all:
+CMakeFiles/MathToolKit.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
+CMakeFiles/MathToolKit.dir/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
+CMakeFiles/MathToolKit.dir/all: NGeometry/CMakeFiles/NGeometry.dir/all
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/depend
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target MathToolKit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target MathToolKit"
 .PHONY : CMakeFiles/MathToolKit.dir/all
 
 # Include target in all.
@@ -81,7 +83,7 @@ all: CMakeFiles/MathToolKit.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MathToolKit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 21
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MathToolKit.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/MathToolKit.dir/rule
@@ -98,6 +100,458 @@ CMakeFiles/MathToolKit.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/MathToolKit.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory NAlgebra
+
+# Convenience name for "all" pass in the directory.
+NAlgebra/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
+
+.PHONY : NAlgebra/all
+
+# Convenience name for "clean" pass in the directory.
+NAlgebra/clean: NAlgebra/CMakeFiles/NAlgebra.dir/clean
+
+.PHONY : NAlgebra/clean
+
+# Convenience name for "preinstall" pass in the directory.
+NAlgebra/preinstall:
+
+.PHONY : NAlgebra/preinstall
+
+#=============================================================================
+# Target rules for target NAlgebra/CMakeFiles/NAlgebra.dir
+
+# All Build rule for target.
+NAlgebra/CMakeFiles/NAlgebra.dir/all:
+	$(MAKE) -f NAlgebra/CMakeFiles/NAlgebra.dir/build.make NAlgebra/CMakeFiles/NAlgebra.dir/depend
+	$(MAKE) -f NAlgebra/CMakeFiles/NAlgebra.dir/build.make NAlgebra/CMakeFiles/NAlgebra.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8,9,10 "Built target NAlgebra"
+.PHONY : NAlgebra/CMakeFiles/NAlgebra.dir/all
+
+# Include target in all.
+all: NAlgebra/CMakeFiles/NAlgebra.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+NAlgebra/CMakeFiles/NAlgebra.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 NAlgebra/CMakeFiles/NAlgebra.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : NAlgebra/CMakeFiles/NAlgebra.dir/rule
+
+# Convenience name for target.
+NAlgebra: NAlgebra/CMakeFiles/NAlgebra.dir/rule
+
+.PHONY : NAlgebra
+
+# clean rule for target.
+NAlgebra/CMakeFiles/NAlgebra.dir/clean:
+	$(MAKE) -f NAlgebra/CMakeFiles/NAlgebra.dir/build.make NAlgebra/CMakeFiles/NAlgebra.dir/clean
+.PHONY : NAlgebra/CMakeFiles/NAlgebra.dir/clean
+
+# clean rule for target.
+clean: NAlgebra/CMakeFiles/NAlgebra.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory NAnalysis
+
+# Convenience name for "all" pass in the directory.
+NAnalysis/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
+
+.PHONY : NAnalysis/all
+
+# Convenience name for "clean" pass in the directory.
+NAnalysis/clean: NAnalysis/CMakeFiles/NAnalysis.dir/clean
+
+.PHONY : NAnalysis/clean
+
+# Convenience name for "preinstall" pass in the directory.
+NAnalysis/preinstall:
+
+.PHONY : NAnalysis/preinstall
+
+#=============================================================================
+# Target rules for target NAnalysis/CMakeFiles/NAnalysis.dir
+
+# All Build rule for target.
+NAnalysis/CMakeFiles/NAnalysis.dir/all:
+	$(MAKE) -f NAnalysis/CMakeFiles/NAnalysis.dir/build.make NAnalysis/CMakeFiles/NAnalysis.dir/depend
+	$(MAKE) -f NAnalysis/CMakeFiles/NAnalysis.dir/build.make NAnalysis/CMakeFiles/NAnalysis.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15 "Built target NAnalysis"
+.PHONY : NAnalysis/CMakeFiles/NAnalysis.dir/all
+
+# Include target in all.
+all: NAnalysis/CMakeFiles/NAnalysis.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+NAnalysis/CMakeFiles/NAnalysis.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 NAnalysis/CMakeFiles/NAnalysis.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : NAnalysis/CMakeFiles/NAnalysis.dir/rule
+
+# Convenience name for target.
+NAnalysis: NAnalysis/CMakeFiles/NAnalysis.dir/rule
+
+.PHONY : NAnalysis
+
+# clean rule for target.
+NAnalysis/CMakeFiles/NAnalysis.dir/clean:
+	$(MAKE) -f NAnalysis/CMakeFiles/NAnalysis.dir/build.make NAnalysis/CMakeFiles/NAnalysis.dir/clean
+.PHONY : NAnalysis/CMakeFiles/NAnalysis.dir/clean
+
+# clean rule for target.
+clean: NAnalysis/CMakeFiles/NAnalysis.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory NGeometry
+
+# Convenience name for "all" pass in the directory.
+NGeometry/all: NGeometry/CMakeFiles/NGeometry.dir/all
+
+.PHONY : NGeometry/all
+
+# Convenience name for "clean" pass in the directory.
+NGeometry/clean: NGeometry/CMakeFiles/NGeometry.dir/clean
+
+.PHONY : NGeometry/clean
+
+# Convenience name for "preinstall" pass in the directory.
+NGeometry/preinstall:
+
+.PHONY : NGeometry/preinstall
+
+#=============================================================================
+# Target rules for target NGeometry/CMakeFiles/NGeometry.dir
+
+# All Build rule for target.
+NGeometry/CMakeFiles/NGeometry.dir/all:
+	$(MAKE) -f NGeometry/CMakeFiles/NGeometry.dir/build.make NGeometry/CMakeFiles/NGeometry.dir/depend
+	$(MAKE) -f NGeometry/CMakeFiles/NGeometry.dir/build.make NGeometry/CMakeFiles/NGeometry.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=16,17,18,19,20,21 "Built target NGeometry"
+.PHONY : NGeometry/CMakeFiles/NGeometry.dir/all
+
+# Include target in all.
+all: NGeometry/CMakeFiles/NGeometry.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+NGeometry/CMakeFiles/NGeometry.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 NGeometry/CMakeFiles/NGeometry.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : NGeometry/CMakeFiles/NGeometry.dir/rule
+
+# Convenience name for target.
+NGeometry: NGeometry/CMakeFiles/NGeometry.dir/rule
+
+.PHONY : NGeometry
+
+# clean rule for target.
+NGeometry/CMakeFiles/NGeometry.dir/clean:
+	$(MAKE) -f NGeometry/CMakeFiles/NGeometry.dir/build.make NGeometry/CMakeFiles/NGeometry.dir/clean
+.PHONY : NGeometry/CMakeFiles/NGeometry.dir/clean
+
+# clean rule for target.
+clean: NGeometry/CMakeFiles/NGeometry.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory TestsMathToolKitCPP
+
+# Convenience name for "all" pass in the directory.
+TestsMathToolKitCPP/all: TestsMathToolKitCPP/lib/googletest/all
+TestsMathToolKitCPP/all: TestsMathToolKitCPP/TestNAlgebra/all
+
+.PHONY : TestsMathToolKitCPP/all
+
+# Convenience name for "clean" pass in the directory.
+TestsMathToolKitCPP/clean: TestsMathToolKitCPP/lib/googletest/clean
+TestsMathToolKitCPP/clean: TestsMathToolKitCPP/TestNAlgebra/clean
+
+.PHONY : TestsMathToolKitCPP/clean
+
+# Convenience name for "preinstall" pass in the directory.
+TestsMathToolKitCPP/preinstall: TestsMathToolKitCPP/lib/googletest/preinstall
+TestsMathToolKitCPP/preinstall: TestsMathToolKitCPP/TestNAlgebra/preinstall
+
+.PHONY : TestsMathToolKitCPP/preinstall
+
+#=============================================================================
+# Directory level rules for directory TestsMathToolKitCPP/lib/googletest
+
+# Convenience name for "all" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/all: TestsMathToolKitCPP/lib/googletest/googlemock/all
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/all
+
+# Convenience name for "clean" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/clean: TestsMathToolKitCPP/lib/googletest/googlemock/clean
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/clean
+
+# Convenience name for "preinstall" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/preinstall: TestsMathToolKitCPP/lib/googletest/googlemock/preinstall
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/preinstall
+
+#=============================================================================
+# Directory level rules for directory TestsMathToolKitCPP/lib/googletest/googlemock
+
+# Convenience name for "all" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/googlemock/all: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
+TestsMathToolKitCPP/lib/googletest/googlemock/all: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+TestsMathToolKitCPP/lib/googletest/googlemock/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/all
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/all
+
+# Convenience name for "clean" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/googlemock/clean: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/clean
+TestsMathToolKitCPP/lib/googletest/googlemock/clean: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+TestsMathToolKitCPP/lib/googletest/googlemock/clean: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/clean
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/clean
+
+# Convenience name for "preinstall" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/googlemock/preinstall: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/preinstall
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/preinstall
+
+#=============================================================================
+# Target rules for target TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=24,25 "Built target gmock"
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
+
+# Include target in all.
+all: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/rule
+
+.PHONY : gmock
+
+# clean rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/clean
+
+# clean rule for target.
+clean: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir
+
+# All Build rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock.dir/all
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=26,27 "Built target gmock_main"
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+
+# Include target in all.
+all: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
+
+# Convenience name for target.
+gmock_main: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/rule
+
+.PHONY : gmock_main
+
+# clean rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+
+# clean rule for target.
+clean: TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory TestsMathToolKitCPP/lib/googletest/googlemock/gtest
+
+# Convenience name for "all" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/all
+
+# Convenience name for "clean" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/clean: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/clean: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/clean
+
+# Convenience name for "preinstall" pass in the directory.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/preinstall:
+
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/preinstall
+
+#=============================================================================
+# Target rules for target TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=30,31 "Built target gtest_main"
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+
+# Include target in all.
+all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule
+
+.PHONY : gtest_main
+
+# clean rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
+
+# clean rule for target.
+clean: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=28,29 "Built target gtest"
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+
+# Include target in all.
+all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/rule
+
+.PHONY : gtest
+
+# clean rule for target.
+TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) -f TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+.PHONY : TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+
+# clean rule for target.
+clean: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory TestsMathToolKitCPP/TestNAlgebra
+
+# Convenience name for "all" pass in the directory.
+TestsMathToolKitCPP/TestNAlgebra/all: TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all
+
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/all
+
+# Convenience name for "clean" pass in the directory.
+TestsMathToolKitCPP/TestNAlgebra/clean: TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/clean
+
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/clean
+
+# Convenience name for "preinstall" pass in the directory.
+TestsMathToolKitCPP/TestNAlgebra/preinstall:
+
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/preinstall
+
+#=============================================================================
+# Target rules for target TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir
+
+# All Build rule for target.
+TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
+TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/depend
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=22,23 "Built target TestMathToolKitCPP"
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all
+
+# Include target in all.
+all: TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 12
+	$(MAKE) -f CMakeFiles/Makefile2 TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles 0
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/rule
+
+# Convenience name for target.
+TestMathToolKitCPP: TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/rule
+
+.PHONY : TestMathToolKitCPP
+
+# clean rule for target.
+TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/clean:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/clean
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/clean
+
+# clean rule for target.
+clean: TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/clean
 
 .PHONY : clean
 

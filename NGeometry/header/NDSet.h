@@ -34,7 +34,7 @@ public:
 
     void push(const ENVector& x);
 
-    ENVector& pop();
+    ENVector pop();
 
 protected:
     std::vector <ENVector> _data;
