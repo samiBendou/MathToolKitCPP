@@ -11,3 +11,4 @@ TEST(TestNVector, add) {
     NVector vector1 = NVector::canonical(1, DIM_TEST) + 2 * NVector::canonical(2, DIM_TEST);
     ASSERT_EQ(vector1, vector1 * 2);
 }
+

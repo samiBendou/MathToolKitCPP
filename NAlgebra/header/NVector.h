@@ -48,6 +48,8 @@ public:
      */
     explicit NVector(unsigned long dim = 0);
 
+    NVector(const std::string& str);
+
     // SERIALIZATION
 
     /**
@@ -298,6 +300,8 @@ protected:
     // AFFECTATION
 
     void copy(const NVector& vector);
+
+    void parse(const std::string& str);
 
     // EXTREMUMS
 

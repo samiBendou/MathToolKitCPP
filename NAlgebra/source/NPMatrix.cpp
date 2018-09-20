@@ -2,6 +2,8 @@
 // Created by Sami Dahoux on 04/05/2018.
 //
 
+#include <NPMatrix.h>
+
 #include "../header/NPMatrix.h"
 
 using namespace std;
@@ -41,6 +43,10 @@ NPMatrix::NPMatrix(const vector<ENVector> &vectors) :
 
         setRow(vectors[i], i);
     }
+}
+
+NPMatrix::NPMatrix(const vector<string> &str) : ENVector(0), _n(0), _p(0) {
+    parse(str);
 }
 
 
@@ -476,6 +482,16 @@ NPMatrix NPMatrix::shifted(const NPMatrix& matrix) const {
     }
     return shifted;
 }
+
+void NPMatrix::parse(const vector<string> &str) {
+    std::vector<ENVector> rows;
+    for(auto &s : str) {
+        rows.push_back(NVector(s));
+    }
+    *this = NPMatrix(rows);
+}
+
+
 
 
 

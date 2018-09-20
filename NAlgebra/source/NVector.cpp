@@ -2,6 +2,8 @@
 // Created by Sami Dahoux on 03/05/2018.
 //
 
+#include <NVector.h>
+
 #include "../header/NVector.h"
 
 using namespace std;
@@ -17,6 +19,11 @@ NVector::NVector(const std::vector<double>& data) :
 NVector::NVector(const NVector& vector) :
     std::vector<double>(vector), _k1(0), _k2(vector.dim() - 1 > 0 ? vector.dim() - 1 : 0) {
     copy(vector);
+}
+
+NVector::NVector(const std::string &str) : std::vector<double>(0), _k1(0), _k2(0) {
+    parse(str);
+    _k1 = 0; _k2 = dim() - 1;
 }
 
 // SERIALIZATION
@@ -322,6 +329,25 @@ void NVector::copy(const NVector &vector) {
     }
 }
 
+void NVector::parse(const std::string &str) {
+    vector<double> data{};
+    string::size_type sz = 1;
+    unsigned long i = 0;
+
+    if(str.find(",") == string::npos) {
+        while(i < str.size() || str[i] == '\n') {
+            try {
+                data.push_back(std::stod(str.substr(i, str.size() - i), &sz));
+                i += sz;
+            }
+            catch(const std::exception& e) {
+                i++;
+            }
+        }
+    }
+    *this = NVector(data);
+}
+
 
 // EXTREMUMS
 
@@ -428,6 +454,10 @@ void NVector::div(const double scalar) {
         (*this)[k] /= scalar;
     }
 }
+
+
+
+
 
 
 

@@ -74,6 +74,8 @@ public:
 
     explicit NPMatrix(const vector< ENVector >& vectors);
 
+    NPMatrix(const vector< std::string >& vectors);
+
     // SERIALIZATION
 
     /**
@@ -350,6 +352,9 @@ public:
 
 protected:
 
+    // AFFECTATION
+
+    void parse(const vector<string> &str);
 
     // INDEX GETTERS
 
