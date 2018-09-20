@@ -48,6 +48,11 @@ public:
      */
     explicit NVector(unsigned long dim = 0);
 
+    /**
+     *
+     * @param   str a string containing the components of vector in the form "(0 1 2)".
+     *          The character '(' and ')' can be replace by any one. Don't use comma at all.
+     */
     NVector(const std::string& str);
 
     // SERIALIZATION

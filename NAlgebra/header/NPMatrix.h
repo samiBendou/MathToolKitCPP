@@ -74,7 +74,18 @@ public:
 
     explicit NPMatrix(const vector< ENVector >& vectors);
 
-    NPMatrix(const vector< std::string >& vectors);
+    /**
+     *
+     * @param str an array of string containing the rows of the matrix in a form like |0 2 3| or (8 3 4).
+     * @details initialize a NPMatrix by parsing an array of strings representing matrix rows. Use the following
+     *          syntax : {"|A00  A01  ...  A0(P-1)|",
+     *                    "|A10  A1   ...  A1(P-1)|",
+     *                    "|...  ...   A(N-1)(P-1)|"}
+     *          The separation character | can be replace by any one. Don't use comma at all.
+     *
+ *
+     */
+    NPMatrix(const vector< std::string >& str);
 
     // SERIALIZATION
 
