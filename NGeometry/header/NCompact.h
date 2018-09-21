@@ -14,7 +14,7 @@ public:
 
     virtual NCompact* border() const = 0;
 
-    virtual std::vector<ENVector> mesh(const ENVector& h) const  = 0;
+    virtual std::vector<NVector> mesh(const NVector& h) const  = 0;
 };
 
 

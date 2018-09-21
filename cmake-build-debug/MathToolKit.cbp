@@ -548,9 +548,6 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.h">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/ENVector.h">
-			<Option target="NAlgebra"/>
-		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NMatrix.h">
 			<Option target="NAlgebra"/>
 		</Unit>
@@ -561,9 +558,6 @@
 			<Option target="NAlgebra"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/Vector3.h">
-			<Option target="NAlgebra"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/ENVector.cpp">
 			<Option target="NAlgebra"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NMatrix.cpp">

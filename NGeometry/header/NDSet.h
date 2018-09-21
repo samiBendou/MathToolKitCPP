@@ -12,11 +12,11 @@ class NDSet : public NCompact {
 public:
     NDSet();
 
-    explicit  NDSet(std::vector<ENVector>& vectors);
+    explicit  NDSet(std::vector<NVector>& vectors);
 
     std::string str() const override;
 
-    bool isIn(const ENVector& x) const override;
+    bool isIn(const NVector& x) const override;
 
     bool isEmpty() const override;
 
@@ -28,16 +28,16 @@ public:
 
     NCompact* border() const override;
 
-    std::vector<ENVector> mesh() const;
+    std::vector<NVector> mesh() const;
 
-    std::vector<ENVector> mesh(const ENVector& h) const  override;
+    std::vector<NVector> mesh(const NVector& h) const  override;
 
-    void push(const ENVector& x);
+    void push(const NVector& x);
 
-    ENVector pop();
+    NVector pop();
 
 protected:
-    std::vector <ENVector> _data;
+    std::vector <NVector> _data;
 };
 
 

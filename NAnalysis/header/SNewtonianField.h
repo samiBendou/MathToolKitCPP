@@ -17,7 +17,7 @@ public:
 
     Vector3 g(const Vector3& r);
 
-    ENVector g(const ENVector& x) override;
+    NVector g(const NVector& x) override;
 protected:
     const std::vector<double> _mu;
 

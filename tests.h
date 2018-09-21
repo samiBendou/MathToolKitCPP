@@ -10,7 +10,6 @@
 #include "ConsoleMenu.h"
 
 #include <NVector.h>
-#include <ENVector.h>
 #include <Vector3.h>
 #include <NPMatrix.h>
 #include <NMatrix.h>

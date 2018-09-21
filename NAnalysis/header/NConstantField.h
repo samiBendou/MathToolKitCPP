@@ -7,18 +7,18 @@
 
 
 #include "NPField.h"
-#include "../../NAlgebra/header/ENVector.h"
+#include "../../NAlgebra/header/NVector.h"
 #include "../../NAlgebra/header/Vector3.h"
 
 class NConstantField : public NPField {
 public:
-    NConstantField(NCompact* domain, const ENVector& cst);
+    NConstantField(NCompact* domain, const NVector& cst);
 
-    ENVector g(const ENVector& x) override;
+    NVector g(const NVector& x) override;
 
 
 protected:
-    ENVector _cst;
+    NVector _cst;
 };
 
 

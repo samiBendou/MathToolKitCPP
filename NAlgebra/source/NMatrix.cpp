@@ -129,8 +129,8 @@ NMatrix operator^(const NPMatrix &m, long exp) {
     return res;
 }
 
-ENVector operator%(NMatrix &matrix, const NVector &vector) {
-    ENVector b{vector};
+NVector operator%(NMatrix &matrix, const NVector &vector) {
+    NVector b{vector};
     matrix.solve(b);
     return b;
 }
@@ -166,7 +166,7 @@ NMatrix NMatrix::scalar(double s, unsigned long n) {
 
 //Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
 //diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
-NMatrix NMatrix::nDiag(const std::vector< ENVector > & data) {
+NMatrix NMatrix::nDiag(const std::vector< NVector > & data) {
     const auto n = (long) data.size();
     const auto middle = (n - 1) / 2;
     const auto dim = data[middle].dim();
@@ -189,7 +189,7 @@ NMatrix NMatrix::nScalar(const std::vector<double> & scalars, const unsigned lon
     const auto scalarSize = (long) scalars.size();
     const long minSize = n - scalarSize;
 
-    std::vector< ENVector > diags((unsigned long) (2 * scalarSize - 1));
+    std::vector< NVector > diags((unsigned long) (2 * scalarSize - 1));
     unsigned long size = 1;
     for(unsigned long l = 0; l < scalarSize; l++) {
         diags[l] = NVector::scalar(scalars[l], size + minSize);
@@ -287,7 +287,7 @@ void NMatrix::inv() {
     }
 }
 
-void NMatrix::solve(ENVector& vector) {
+void NMatrix::solve(NVector& vector) {
     unsigned long i, l, k;
     if(_a == nullptr) { lupUpdate(); }
 

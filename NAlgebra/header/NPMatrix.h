@@ -2,7 +2,7 @@
  * @class          : NPMatrix
  * @date           : 04/05/2018
  * @author         : samiBendou
- * @description    : A NPMatrix inherits from ENVector. It's a representation of a numerical matrices of arbitrary
+ * @description    : A NPMatrix inherits from NVector. It's a representation of a numerical matrices of arbitrary
  *                   size. We will use the following definitions :
  *
  *                      - n : Number of Rows
@@ -29,13 +29,13 @@
 
 
 
-#include "ENVector.h"
+#include "NVector.h"
 
 using namespace std;
 
 enum ElementEnum{Row, Col};
 
-class NPMatrix : public ENVector {
+class NPMatrix : public NVector {
 public:
     // CONSTRUCTION
 
@@ -49,13 +49,13 @@ public:
      *
      * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
      */
-    explicit NPMatrix(const ENVector& vector);
+    explicit NPMatrix(const NVector& vector);
 
     /**
      *
      * @return a n x p matrix constructed using a std::vector of n * p where vector.dim() must be equal to n * p.
      */
-    NPMatrix(const ENVector& vector, unsigned long n, unsigned long p = 0);
+    NPMatrix(const NVector& vector, unsigned long n, unsigned long p = 0);
 
     NPMatrix(const NPMatrix& matrix);
 
@@ -68,22 +68,20 @@ public:
 
     /**
      *
-     * @return a n x p matrix constructed using a std::vector<ENVector>. All the vectors must have the same dimension.
+     * @return a n x p matrix constructed using a std::vector<NVector>. All the vectors must have the same dimension.
      * They represent the rows of the matrix.
      */
 
-    explicit NPMatrix(const vector< ENVector >& vectors);
+    explicit NPMatrix(const vector< NVector >& vectors);
 
     /**
      *
-     * @param str an array of string containing the rows of the matrix in a form like |0 2 3| or (8 3 4).
+     * @param str an array of string containing the rows of the matrix in a form like "|0 2 3|".
      * @details initialize a NPMatrix by parsing an array of strings representing matrix rows. Use the following
      *          syntax : {"|A00  A01  ...  A0(P-1)|",
      *                    "|A10  A1   ...  A1(P-1)|",
      *                    "|...  ...   A(N-1)(P-1)|"}
-     *          The separation character | can be replace by any one. Don't use comma at all.
-     *
- *
+     *          The separation character | can be replaced by any one. Don't use comma or at all.
      */
     NPMatrix(const vector< std::string >& str);
 
@@ -132,24 +130,24 @@ public:
 
     /**
      *
-     * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a ENVector.
+     * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a NVector.
      */
-    ENVector row(unsigned long i) const;
+    NVector row(unsigned long i) const;
 
-    ENVector col(unsigned long j) const;
+    NVector col(unsigned long j) const;
 
     /**
      *
      * @param i1/j1 start index of rows/cols
      * @param i2/j2 end index i2/j2 >= i1/j1 of rows/cols
-     * @return the rows/cols of the matrix in the form of std::vector<ENVector>.
+     * @return the rows/cols of the matrix in the form of std::vector<NVector>.
      *          -rows()/cols() return all the rows/cols.
      *          -rows(i1)/cols(j1) returns the rows [Ri1, R(i1+1),..., R(n-1)]/ cols [Rj1, R(j1+1),..., C(p-1)]
      *          -rows(i1, i2)/cols(j1, j2) returns the rows [Ri1, R(i1+1),..., Ri2]/ cols [Cj1, C(j1+1),..., Cj2]
      */
-    std::vector<ENVector> rows(unsigned long i1 = 0, unsigned long i2 = MAX_SIZE) const;
+    std::vector<NVector> rows(unsigned long i1 = 0, unsigned long i2 = MAX_SIZE) const;
 
-    std::vector<ENVector> cols(unsigned long j1 = 0, unsigned long j2 = MAX_SIZE) const;
+    std::vector<NVector> cols(unsigned long j1 = 0, unsigned long j2 = MAX_SIZE) const;
 
 
     /**
@@ -171,21 +169,21 @@ public:
 
     /**
      *
-     * @param vector row/col seen as ENVector. The dimension of the vector must be equal to the number of cols/rows
+     * @param vector row/col seen as NVector. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const ENVector& vector, unsigned long i1 = 0);
+    void setRow(const NVector& vector, unsigned long i1 = 0);
 
 
-    void setCol(const ENVector& vector, unsigned long j1 = 0);
+    void setCol(const NVector& vector, unsigned long j1 = 0);
 
     /**
      *
-     * @param vectors : std::vector of ENVector representing rows/cols to set on the matrix.
+     * @param vectors : std::vector of NVector representing rows/cols to set on the matrix.
      *                  - The length of each row/col must be inferior or equal to the number of cols/rows.
      *                  - The total number of rows/cols must be inferior or equal to the number of rows/cols.
      * @param i1/j1 :   start index to set row/col. If i1/j1 + vectors.size() > n/p Then the algorithm truncate the
-     *                  array of ENVector.
+     *                  array of NVector.
      * @description :   Replace the components of the matrix with the array of vectors. For example setCols will change
      *                  the matrix this way :
      *
@@ -196,9 +194,9 @@ public:
      *
      *                  Where q is the size of the vector array.
      */
-    void setRows(const std::vector<ENVector>& vectors, unsigned long i1 = 0);
+    void setRows(const std::vector<NVector>& vectors, unsigned long i1 = 0);
 
-    void setCols(const std::vector<ENVector>& vectors, unsigned long j1 = 0);
+    void setCols(const std::vector<NVector>& vectors, unsigned long j1 = 0);
 
     void setSubMatrix(const NPMatrix& matrix, unsigned long i1 = 0, unsigned long j1 = 0);
 
@@ -287,7 +285,7 @@ public:
      * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
      *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
      */
-    friend ENVector operator*(const NPMatrix &m, const ENVector &v);
+    friend NVector operator*(const NPMatrix &m, const NVector &v);
 
     /**
      * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns

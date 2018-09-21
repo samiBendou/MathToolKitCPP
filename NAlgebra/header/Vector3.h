@@ -2,7 +2,7 @@
  * @class          : Vector3
  * @date           : 04/05/2018
  * @author         : samiBendou
- * @description    : Class inheriting from ENVector representing 3D Euclidean space. Featuring cross product, coordinate
+ * @description    : Class inheriting from NVector representing 3D Euclidean space. Featuring cross product, coordinate
  *                   transforms and rotations. We will use the following 3D systems of coordinates :
  *
  *                   - X, Y, Z       : Cartesian coordinates.
@@ -23,12 +23,12 @@
 #ifndef MATHTOOLKIT_VECTOR3_H
 #define MATHTOOLKIT_VECTOR3_H
 
-#include "ENVector.h"
+#include "NVector.h"
 
-class Vector3 : public ENVector {
+class Vector3 : public NVector {
 public:
 
-    Vector3(const ENVector& vector);
+    Vector3(const NVector& vector);
 
     Vector3(const Vector3& vector);
 

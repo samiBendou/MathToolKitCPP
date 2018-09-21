@@ -1,7 +1,8 @@
+// Use this file to perform quick tests.
+
 #include <iostream>
 
 #include <NVector.h>
-#include <ENVector.h>
 #include <Vector3.h>
 #include <NPMatrix.h>
 #include <NMatrix.h>
@@ -16,8 +17,12 @@ using namespace std;
 
 int main() {
     NVector vector{"(0 0 1)"};
+
     NPMatrix matrix{{"|1 0 0|",
-                     "|0 1 0|",
-                     "|0 0 1|"}};
+                            "|0 1 0|",
+                            "|0 0 1|"}};
+
+
+    cout << matrix * vector << endl;
     return 0;
 }

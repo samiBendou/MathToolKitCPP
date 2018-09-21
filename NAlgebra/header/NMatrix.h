@@ -22,7 +22,7 @@
 #ifndef MATHTOOLKIT_NMATRIX_H
 #define MATHTOOLKIT_NMATRIX_H
 
-#include "ENVector.h"
+#include "NVector.h"
 #include "NPMatrix.h"
 
 class NMatrix : public NPMatrix {
@@ -96,7 +96,7 @@ public:
      * @param v second member of the equation system.
      * @return the solution of m * x = v by inverting the m matrix.
      */
-    friend ENVector operator%(NMatrix &m, const NVector &v);
+    friend NVector operator%(NMatrix &m, const NVector &v);
     
     NVector& operator^=(long exp);
 
@@ -157,7 +157,7 @@ public:
      *          The input data must be ordered such as d[0] has size equal to 1, d[1] to 2, ..., d[middle] to n,
      *          d[middle+1] to n-1, ..., d[end] to 0.
      */
-    static NMatrix nDiag(const std::vector< ENVector > & data);
+    static NMatrix nDiag(const std::vector< NVector > & data);
 
 
     /**
@@ -197,7 +197,7 @@ protected:
     void inv();
     // Inversion of this matrix (O(n3))
 
-    void solve(ENVector& vector);
+    void solve(NVector& vector);
     //Solve this * X = b stores X in b vector
 
 

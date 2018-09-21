@@ -6,35 +6,35 @@
 #define MATHTOOLKIT_SEGMENT_H
 
 
-#include "../../NAlgebra/header/ENVector.h"
+#include "../../NAlgebra/header/NVector.h"
 #include "NCompact.h"
 
 
 class NSegment : NCompact {
 public:
-    explicit NSegment(const ENVector& a, const ENVector& b);
+    explicit NSegment(const NVector& a, const NVector& b);
 
     std::string str()const override;
 
-    ENVector a() const;
+    NVector a() const;
 
-    ENVector b() const;
+    NVector b() const;
 
-    void setA(const ENVector& a);
+    void setA(const NVector& a);
 
-    void setB(const ENVector& b);
+    void setB(const NVector& b);
 
-    std::vector<ENVector> mesh(double h) const;
+    std::vector<NVector> mesh(double h) const;
 
-    std::vector<ENVector> mesh(const ENVector& h) const override;
+    std::vector<NVector> mesh(const NVector& h) const override;
 
-    bool isIn(const ENVector& x) const override;
+    bool isIn(const NVector& x) const override;
 
     bool isEmpty() const override;
 
 protected:
-    ENVector _a;
-    ENVector _b;
+    NVector _a;
+    NVector _b;
 
 
 

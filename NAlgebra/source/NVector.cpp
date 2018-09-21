@@ -8,25 +8,34 @@
 
 using namespace std;
 
+
 // CONSTRUCTORS
 
+
 NVector::NVector(unsigned long dim) :
-    std::vector<double>(dim), _k1(0), _k2(dim > 0 ? dim - 1 : 0) {}
+    vector<double>(dim), _k1(0), _k2(0) {
+    setDefaultBrowseIndices();
+}
 
 NVector::NVector(const std::vector<double>& data) :
-    std::vector<double>(data), _k1(0), _k2(data.size() - 1 > 0 ? data.size() - 1 : 0) {}
-
-NVector::NVector(const NVector& vector) :
-    std::vector<double>(vector), _k1(0), _k2(vector.dim() - 1 > 0 ? vector.dim() - 1 : 0) {
-    copy(vector);
+    vector<double>(data), _k1(0), _k2(0) {
+    setDefaultBrowseIndices();
 }
 
-NVector::NVector(const std::string &str) : std::vector<double>(0), _k1(0), _k2(0) {
+NVector::NVector(const NVector &u) :
+    vector<double>(u), _k1(0), _k2(0) {
+    copy(u);
+}
+
+NVector::NVector(const std::string &str) :
+    std::vector<double>(0), _k1(0), _k2(0) {
     parse(str);
-    _k1 = 0; _k2 = dim() - 1;
+    setDefaultBrowseIndices();
 }
+
 
 // SERIALIZATION
+
 
 string NVector::str() const {
     string str = "(";
@@ -43,16 +52,8 @@ string NVector::str() const {
 std::string NVector::str() {
     const NVector& constThis = (const NVector&) (*this);
     string str = constThis.str();
-    _k1 = 0; _k2 = dim() - 1;
+    setDefaultBrowseIndices();
     return str;
-}
-
-
-// CHARACTERIZATION
-
-
-bool NVector::isValidIndex(unsigned long k) const {
-    return k < dim();
 }
 
 
@@ -152,27 +153,24 @@ unsigned long NVector::minAbsIndex() const{
 }
 
 
-
-
-
 // OPERATORS
 
 
 NVector operator+(const NVector &u, const NVector &v){
     NVector res{u};
-    res.add(v);
+    res += v;
     return res;
 }
 
 NVector operator-(const NVector &u, const NVector &v){
     NVector res{u};
-    res.sub(v);
+    res -= v;
     return res;
 }
 
 NVector operator*(double s, const NVector &u){
     NVector res{u};
-    res.prod(s);
+    res *= s;
     return res;
 }
 
@@ -182,7 +180,7 @@ NVector operator*(const NVector &u, double s){
 
 NVector operator/(const NVector &u, double s){
     NVector res{u};
-    res.div(s);
+    res /= s;
     return res;
 }
 
@@ -190,6 +188,22 @@ NVector operator-(const NVector &u) {
     NVector res{u};
     res.opp();
     return res;
+}
+
+
+// SCALAR PRODUCT BASED OPERATIONS
+
+
+double operator!(const NVector &vector) {
+    return vector.norm();
+}
+
+double operator*(const NVector &u, const NVector &v) {
+    return u.dot(v);
+}
+
+double operator/(const NVector &v1, const NVector &v2) {
+    return v1.distance(v2);
 }
 
 
@@ -240,9 +254,7 @@ NVector &NVector::operator()(unsigned long k1, unsigned long k2) {
     return *this;
 }
 
-
-std::ostream& operator<<(std::ostream& os, const NVector &vector)
-{
+std::ostream& operator<<(std::ostream& os, const NVector &vector) {
     os << vector.str();
     return os;
 }
@@ -259,11 +271,73 @@ NVector &NVector::operator=(const NVector &vector) {
 
 NVector &NVector::operator=(NVector &vector) {
     copy(vector);
-    vector._k1 = 0; vector._k2 = vector.dim() - 1;
+    vector.setDefaultBrowseIndices();
     return *this;
 }
 
 
+NVector &NVector::operator=(const std::string &str) {
+    *this = NVector(str);
+    return *this;
+}
+
+// COMPARAISON
+
+bool operator==(const NVector &u, const NVector &v) {
+    return u.isEqual(v);
+}
+
+
+bool operator==(NVector &u, NVector &v) {
+    bool result = u.isEqual(v);
+    u.setDefaultBrowseIndices();
+    v.setDefaultBrowseIndices();
+    return result;
+}
+
+bool operator==(NVector &u, const NVector &v) {
+    bool result = u.isEqual(v);
+    u.setDefaultBrowseIndices();
+    return result;
+}
+
+bool operator==(const NVector &u, NVector &v) {
+    bool result = u.isEqual(v);
+    v.setDefaultBrowseIndices();
+    return result;
+}
+
+
+// NORM BASED COMPARISON OPERATORS
+
+
+bool operator==(const NVector &u, double s) {
+    return s < std::numeric_limits<double>::epsilon() && u.isNull();
+}
+
+bool operator!=(const NVector &vector, double scalar) {
+    return !(vector == scalar);
+}
+
+bool operator!=(const NVector &v1, const NVector &v2) {
+    return !(v1 == v2);
+}
+
+bool operator<(const NVector &v1, const NVector &v2) {
+    return v1.norm() < v2.norm();
+}
+
+bool operator>(const NVector &v1, const NVector &v2) {
+    return v2 < v1;
+}
+
+bool operator<=(const NVector &v1, const NVector &v2) {
+    return !(v2 > v1);
+}
+
+bool operator>=(const NVector &v1, const NVector &v2) {
+    return !(v2 < v1);
+}
 
 // STATIC METHODS
 
@@ -312,6 +386,24 @@ NVector NVector::sumProd(const std::vector<double>& scalars, const std::vector<N
 
 // PRIVATE METHODS
 
+
+//CHARACTERIZATION
+
+bool NVector::isValidIndex(unsigned long k) const {
+    return k < dim();
+}
+
+bool NVector::isNull() const {
+    return norm() < numeric_limits<double>::epsilon();
+}
+
+bool NVector::isEqual(const NVector& vector) const {
+    if(_k2 - _k1 != vector._k2 - vector._k1)
+        return false;
+    return distance(vector) < numeric_limits<double>::epsilon();
+}
+
+
 // AFFECTATION
 
 void NVector::copy(const NVector &vector) {
@@ -325,7 +417,7 @@ void NVector::copy(const NVector &vector) {
         else {
             setSubVector(vector);
         }
-        _k1 = 0; _k2 = dim() - 1;
+        setDefaultBrowseIndices();
     }
 }
 
@@ -366,7 +458,7 @@ double NVector::getExtremum(const bool max) const {
 
 }
 
-unsigned long NVector::getExtremumIndex(const bool max) const {
+unsigned long NVector::getExtremumIndex(bool max) const {
     double extremum = (max) ? this->max() : this->min();
     for (unsigned long k = 0; k < dim(); ++k) {
         if((*this)[k] == extremum) {
@@ -443,17 +535,47 @@ void NVector::opp() {
     }
 }
 
-void NVector::prod(const double scalar) {
+void NVector::prod(double scalar) {
     for (unsigned long k = 0; k < dim(); ++k) {
         (*this)[k] *= scalar;
     }
 }
 
-void NVector::div(const double scalar) {
+void NVector::div(double scalar) {
     for (unsigned long k = 0; k < dim(); ++k) {
         (*this)[k] /= scalar;
     }
 }
+
+// EUCLIDEAN SPACE OPERATIONS
+
+double NVector::dot(const NVector &vector) const {
+    double dot = 0.0;
+
+    assert(dim() == vector.dim());
+    for (unsigned long k = 0; k < dim(); ++k) {
+        dot += vector(k) * (*this)(k);
+    }
+    return dot;
+}
+
+double NVector::norm() const {
+    return sqrt(dot(*this));
+}
+
+double NVector::distance(const NVector &vector) const {
+    return (*this - vector).norm();
+}
+
+void NVector::setDefaultBrowseIndices() {
+    _k1 = 0; _k2 = (dim() > 0) ? dim() - 1 : 0;
+}
+
+
+
+
+
+
 
 
 

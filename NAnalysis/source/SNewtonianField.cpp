@@ -23,6 +23,6 @@ Vector3 SNewtonianField::g(const Vector3 &r) {
     return g;
 }
 
-ENVector SNewtonianField::g(const ENVector &x) {
+NVector SNewtonianField::g(const NVector &x) {
     return g((Vector3) x);
 }

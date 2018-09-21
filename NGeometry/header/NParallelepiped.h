@@ -12,7 +12,7 @@
 
 class NParallelepiped : public NCompact{
 public:
-    NParallelepiped(NMatrix& base, const ENVector& _pos);
+    NParallelepiped(NMatrix& base, const NVector& _pos);
 
     std::string str() const override;
 
@@ -20,7 +20,7 @@ public:
 
     double volume() const;
 
-    bool isIn(const ENVector& x) const override;
+    bool isIn(const NVector& x) const override;
 
     bool isEmpty() const override;
 
@@ -32,11 +32,11 @@ public:
 
     NCompact* border() const override;
 
-    std::vector<ENVector> mesh(const ENVector& h) const override;
+    std::vector<NVector> mesh(const NVector& h) const override;
 
 protected:
     NMatrix _base;
-    ENVector _pos;
+    NVector _pos;
     double _vol;
 };
 

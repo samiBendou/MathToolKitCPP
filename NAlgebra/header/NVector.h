@@ -40,7 +40,7 @@ public:
      */
     NVector(const std::vector<double>& data);
 
-    NVector(const NVector& vector);
+    NVector(const NVector &u);
     /**
      *
      * @return  a NVector by giving the dimension. This method uses the std::vector constructor
@@ -51,7 +51,7 @@ public:
     /**
      *
      * @param   str a string containing the components of vector in the form "(0 1 2)".
-     *          The character '(' and ')' can be replace by any one. Don't use comma at all.
+     *          The character '(' and ')' can be replaced by any one. Don't use comma at all.
      */
     NVector(const std::string& str);
 
@@ -65,16 +65,6 @@ public:
     virtual std::string str() const;
 
     virtual std::string str();
-
-    // CHARACTERIZATION
-
-    /**
-     *
-     * @param k Index to test
-     * @return true if k is valid, ie. if k is between 0 and dim() - 1.
-     */
-    bool isValidIndex(unsigned long k) const;
-    // Returns true
 
     // GETTERS
 
@@ -185,6 +175,29 @@ public:
     friend NVector operator-(const NVector &u);
 
 
+    // SCALAR PRODUCT BASED OPERATIONS
+
+    /**
+     *
+     * @return the norm of vector ||.||
+     */
+    friend double operator!(const NVector& vector);
+    // Returns norm of vector !v1 = ||v1||
+
+
+    /**
+     *
+     * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
+     */
+    friend double operator*(const NVector &u, const NVector &v);
+
+    /**
+     *
+     * @return distance between v1 & v2, ||v1 - v2||.
+     */
+    friend double operator/(const NVector& v1, const NVector& v2);
+
+
     // COMPOUND OPERATORS
 
 
@@ -242,6 +255,49 @@ public:
     NVector& operator=(const NVector& vector);
 
     NVector& operator=(NVector& vector);
+
+    NVector& operator=(const std::string& str);
+
+    // NORM BASED COMPARISON OPERATORS
+
+    /**
+     *
+     * @return return true if ||u - v|| < epsilon.
+     */
+
+    friend bool operator==(const NVector& u, const NVector& v);
+
+    friend bool operator==(NVector& u, NVector& v);
+
+    friend bool operator==(NVector& u, const NVector& v);
+
+    friend bool operator==(const NVector& u, NVector& v);
+
+    friend bool operator==(const NVector& u, double s);
+
+    /**
+     *
+     * @return return true if ||v1 - v2|| >= epsilon.
+     */
+    friend bool operator!=(const NVector& v1, const NVector& v2);
+
+    friend bool operator!=(const NVector& vector, double scalar);
+
+    /**
+     *
+     * @return return true if ||v1|| >/< ||v2||.
+     */
+    friend bool operator<(const NVector& v1, const NVector& v2);
+
+    friend bool operator>(const NVector& v1, const NVector& v2);
+
+    /**
+     *
+     * @return return true if ||v1|| >=/<= ||v2||.
+     */
+    friend bool operator<=(const NVector& v1, const NVector& v2);
+
+    friend bool operator>=(const NVector& v1, const NVector& v2);
 
 
     // STATIC FUNCTIONS
@@ -302,6 +358,17 @@ protected:
     unsigned long _k2;
     //Indexes used to return sub vector of a vector or to set a sub vector with operator().
 
+    //CHARACTERIZATION
+
+    bool isValidIndex(unsigned long k) const;
+
+    bool isNull() const;
+    // Returns true if the two norm and the vector is less than epsilon constant
+
+    bool isEqual(const NVector& vector) const;
+
+    void setDefaultBrowseIndices();
+
     // AFFECTATION
 
     void copy(const NVector& vector);
@@ -327,10 +394,10 @@ protected:
     //SUB-VECTORS
 
     NVector subVector(unsigned long k1, unsigned long k2 = 0) const;
-    // Returns a sub-vector of this vector (xk1, x(k1 +1), ..., x(k2)) where k1 <= k2
+    // Returns a sub-vector of this vector (xk1, x(k1 +1), ..., x(k2)) where k1 <= k2 < dim()
 
     void setSubVector(const NVector& vector);
-    // Sets a sub range (x(k1 - 1), v0, v1, ..., v(dim(v)), ...; xDim) of this vector
+    // Sets a sub range (x(k1 - 1), v0, v1, ..., v(v.dim() - 1), ...; x(x.dim() - 1)) of this vector
 
 
     // VECTOR SPACE OPERATIONS
@@ -350,6 +417,17 @@ protected:
 
     virtual void div(double scalar);
     //Division by a scalar
+
+
+    // EUCLIDEAN SPACE OPERATIONS
+    double dot(const NVector& vector) const;
+    // Canonical inner product x * y = x0 * y0 + x1 * y1 + ...
+
+    double norm() const;
+    // Norm derived from inner product
+
+    double distance(const NVector& vector) const;
+    // Distance derived from inner product
 };
 
 

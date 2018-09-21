@@ -5,7 +5,7 @@
 #ifndef MATHTOOLKIT_SET_H
 #define MATHTOOLKIT_SET_H
 
-#include "../../NAlgebra/header/ENVector.h"
+#include "../../NAlgebra/header/NVector.h"
 
 class NSet {
 public:
@@ -19,7 +19,7 @@ public:
 
     virtual bool isEmpty() const = 0;
 
-    virtual bool isIn(const ENVector& x) const = 0;
+    virtual bool isIn(const NVector& x) const = 0;
 
     virtual void uni(const NSet* set) = 0;
 

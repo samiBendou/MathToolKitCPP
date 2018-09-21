@@ -5,7 +5,7 @@
 #include "../header/NParallelepiped.h"
 #include "../header/NSegment.h"
 
-NParallelepiped::NParallelepiped(NMatrix &base, const ENVector& pos) : NCompact(base.n()),
+NParallelepiped::NParallelepiped(NMatrix &base, const NVector& pos) : NCompact(base.n()),
                                                                              _base(NMatrix(base)),
                                                                              _pos(pos),
                                                                              _vol(base.det())
@@ -26,8 +26,8 @@ std::string NParallelepiped::str() const {
 }
 
 
-bool NParallelepiped::isIn(const ENVector &x) const {
-    ENVector u = x - _pos;
+bool NParallelepiped::isIn(const NVector &x) const {
+    NVector u = x - _pos;
     NMatrix pInv = _base ^- 1;
     u = pInv * u;
     for (int k = 0; k < _dim; ++k) {
@@ -60,14 +60,14 @@ NCompact *NParallelepiped::border() const {
 }
 
 
-std::vector<ENVector> NParallelepiped::mesh(const ENVector &h) const {
-    const std::vector<ENVector> e = _base.cols();
-    const ENVector end = ENVector::sum(e);
+std::vector<NVector> NParallelepiped::mesh(const NVector &h) const {
+    const std::vector<NVector> e = _base.cols();
+    const NVector end = NVector::sum(e);
     const double tol = h.maxAbs();
     double d = std::numeric_limits<double>::infinity();
 
-    std::vector<ENVector> mesh{};
-    ENVector x = NVector::zeros(_dim);
+    std::vector<NVector> mesh{};
+    NVector x = NVector::zeros(_dim);
 
     while( x / end >= tol) {
         mesh.push_back(x + _pos);
@@ -91,7 +91,7 @@ std::vector<ENVector> NParallelepiped::mesh(const ENVector &h) const {
 
 
 std::vector<NSegment> NParallelepiped::segments() const {
-    const std::vector<ENVector> e = _base.cols();
+    const std::vector<NVector> e = _base.cols();
     std::vector<NSegment> seg;
     for (int k = 0; k < _dim; ++k) {
         seg.emplace_back(NSegment(_pos, _pos + e[k]));

@@ -10,7 +10,7 @@ NDSet::NDSet() : NCompact(0), _data()
 
 }
 
-NDSet::NDSet(std::vector<ENVector>& vectors) : NCompact(vectors[0].dim()), _data(vectors)
+NDSet::NDSet(std::vector<NVector>& vectors) : NCompact(vectors[0].dim()), _data(vectors)
 {
 
 }
@@ -24,7 +24,7 @@ std::string NDSet::str() const {
     return str;
 }
 
-bool NDSet::isIn(const ENVector &x) const {
+bool NDSet::isIn(const NVector &x) const {
     for (int k = 0; k < card(); ++k) {
         if(x == _data[k]) {
             return true;
@@ -38,7 +38,7 @@ bool NDSet::isEmpty() const {
 }
 
 void NDSet::uni(const NSet* set) {
-    std::vector<ENVector> data = ((NDSet*) set)->_data;
+    std::vector<NVector> data = ((NDSet*) set)->_data;
     for(int k = 0; k < data.size(); ++k) {
         if(!isIn(data[k]))
             _data.push_back(data[k]);
@@ -46,8 +46,8 @@ void NDSet::uni(const NSet* set) {
 }
 
 void NDSet::inter(const NSet* set) {
-    std::vector<ENVector> data = ((NDSet*) set)->_data;
-    std::vector<ENVector> dataInter;
+    std::vector<NVector> data = ((NDSet*) set)->_data;
+    std::vector<NVector> dataInter;
     for(int k = 0; k < data.size(); ++k) {
         for (int l = 0; l < _data.size(); ++l) {
             if(isIn(data[k]) && set->isIn(_data[l]))
@@ -66,20 +66,20 @@ NCompact *NDSet::border() const {
     return newThis;
 }
 
-std::vector<ENVector> NDSet::mesh() const {
-    return std::vector<ENVector>(_data);
+std::vector<NVector> NDSet::mesh() const {
+    return std::vector<NVector>(_data);
 }
 
-std::vector<ENVector> NDSet::mesh(const ENVector &h) const {
+std::vector<NVector> NDSet::mesh(const NVector &h) const {
     return NDSet::mesh();
 }
 
-void NDSet::push(const ENVector &x) {
+void NDSet::push(const NVector &x) {
     _data.push_back(x);
 }
 
-ENVector NDSet::pop() {
-    ENVector ret = ENVector(_data[card() - 1]);
+NVector NDSet::pop() {
+    NVector ret = NVector(_data[card() - 1]);
     _data.pop_back();
     return ret;
 }

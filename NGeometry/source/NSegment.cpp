@@ -5,7 +5,7 @@
 #include "../header/NSegment.h"
 
 
-NSegment::NSegment(const ENVector &a, const ENVector &b) : NCompact(1), _a(a), _b(b)
+NSegment::NSegment(const NVector &a, const NVector &b) : NCompact(1), _a(a), _b(b)
 {
 
 }
@@ -14,27 +14,27 @@ std::string NSegment::str() const {
 }
 
 
-ENVector NSegment::a() const {
-    return ENVector(_a);
+NVector NSegment::a() const {
+    return NVector(_a);
 }
 
-ENVector NSegment::b() const {
-    return ENVector(_b);
+NVector NSegment::b() const {
+    return NVector(_b);
 }
 
-void NSegment::setA(const ENVector &a) {
-    _a = ENVector(a);
+void NSegment::setA(const NVector &a) {
+    _a = NVector(a);
 }
 
-void NSegment::setB(const ENVector &b) {
-    _b = ENVector(b);
+void NSegment::setB(const NVector &b) {
+    _b = NVector(b);
 }
 
 // CHARACTERIZATION
 
-bool NSegment::isIn(const ENVector &x) const {
-    const ENVector u = (x - _a);
-    const ENVector l = (_b - _a);
+bool NSegment::isIn(const NVector &x) const {
+    const NVector u = (x - _a);
+    const NVector l = (_b - _a);
     const double tol = 1000 * std::numeric_limits<double>::epsilon();
 
     return (abs(u * l - !u * !l) < tol) &&  !u / !l <= 1;
@@ -56,10 +56,10 @@ NCompact *NSegment::border() const {
     return nullptr;
 }
 
-std::vector<ENVector> NSegment::mesh(double h) const {
-    const ENVector v = h * (_b - _a) / !ENVector(_b - _a);
-    ENVector u = ENVector(_a);
-    std::vector<ENVector> mesh;
+std::vector<NVector> NSegment::mesh(double h) const {
+    const NVector v = h * (_b - _a) / !NVector(_b - _a);
+    NVector u = NVector(_a);
+    std::vector<NVector> mesh;
     while (u / _b > h) {
         mesh.push_back(u);
         u += v;
@@ -68,7 +68,7 @@ std::vector<ENVector> NSegment::mesh(double h) const {
 
 }
 
-std::vector<ENVector> NSegment::mesh(const ENVector& h) const {
+std::vector<NVector> NSegment::mesh(const NVector& h) const {
     return mesh(h(0));
 }
 

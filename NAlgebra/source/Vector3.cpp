@@ -4,13 +4,13 @@
 
 #include "../header/Vector3.h"
 
-Vector3::Vector3(const ENVector &vector) : ENVector(vector) {
+Vector3::Vector3(const NVector &vector) : NVector(vector) {
 
 }
 
 Vector3::Vector3(const Vector3 &vector) = default;
 
-Vector3::Vector3(double x, double y, double z) : ENVector(3){
+Vector3::Vector3(double x, double y, double z) : NVector(3){
     setXYZ(x, y, z);
 }
 
