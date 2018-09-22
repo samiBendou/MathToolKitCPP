@@ -25,6 +25,10 @@ protected:
     NVector _w;
 };
 
+TEST_F(NVectorTest, Dim) {
+    ASSERT_EQ(_u.dim(), 3);
+}
+
 TEST_F(NVectorTest, Construction) {
     _u = NVector(std::vector<double>{0, 1, 0});
     ASSERT_EQ(_u, _v);
@@ -46,21 +50,32 @@ TEST_F(NVectorTest, Affectation) {
 }
 
 TEST_F(NVectorTest, Serialization) {
+    std::vector<double> expect{1, 0, 0};
+
     ASSERT_EQ(_u, NVector("(1 0 0)"));
     ASSERT_NE(_u, NVector("(1, 0, 0)"));
 
     ASSERT_EQ(_u.str(), "(  1.00e+00  0.00e+00  0.00e+00  )");
+
+    ASSERT_EQ(_u.array(), expect);
 }
 
 TEST_F(NVectorTest, Equality) {
     ASSERT_FALSE(_u == _v);
     ASSERT_FALSE(_u == _w);
     ASSERT_TRUE(_u == NVector("(1 0 0)"));
+    ASSERT_FALSE(_u == 0);
+    ASSERT_TRUE(NVector("(0 0 0)") == 0);
+
+    ASSERT_TRUE(_u != _v);
+    ASSERT_TRUE(_u != _w);
+    ASSERT_FALSE(_u != NVector("(1 0 0)"));
+    ASSERT_TRUE(_u != 0);
+    ASSERT_FALSE(NVector("(0 0 0)") != 0);
 }
 
 
 TEST_F(NVectorTest, Add) {
-
     ASSERT_EQ(_u + _v, NVector("(1 1 0)"));
 
     _u += _w;
@@ -75,7 +90,6 @@ TEST_F(NVectorTest, Add) {
 }
 
 TEST_F(NVectorTest, Prod) {
-
     double x = 5;
 
     ASSERT_EQ(x * _u, NVector("(5 0 0)"));
@@ -87,6 +101,16 @@ TEST_F(NVectorTest, Prod) {
 
     _u /= x;
     ASSERT_EQ(_u,  NVector("(1 0 0)"));
+}
+
+TEST_F(NVectorTest, EuclideanOperations) {
+    ASSERT_EQ(_u * _v, 0);
+    ASSERT_EQ(_u * _w, 0);
+    ASSERT_EQ(_u * _u, 1);
+
+    ASSERT_EQ(!_u, 1);
+    ASSERT_EQ(_u/_v, pow(2, 0.5));
+    ASSERT_EQ(_u/_u, 0);
 }
 
 TEST_F(NVectorTest, MaxMin) {
@@ -149,25 +173,11 @@ TEST_F(NVectorTest, Shift) {
     ASSERT_EQ(_u, NVector("(1 0 0)"));
 }
 
-TEST_F(NVectorTest, FunctionOperator) {
-    ASSERT_EQ(_u(0), 1);
-    ASSERT_EQ(_u(1), 0);
-    ASSERT_EQ(_u(2), 0);
-
-    _v = _u(0, 1);
-    ASSERT_EQ(_v, NVector("(1 0)"));
-
-    _w = _u;
-    ASSERT_EQ(_w, NVector("(1 0 0)"));
-
-    _w = NVector("(0 0 1)");
-    _v(0, 1) = _w(1, 2);
-    ASSERT_EQ(_v, NVector("(0 1)"));
-
-    _u(0, 1) = _v;
-    ASSERT_EQ(_u, NVector("(0 1 0)"));
-
-    ASSERT_TRUE(_u(0, 1) == NVector("(0 1)"));
-    ASSERT_TRUE(_u(1, 2) == NVector("(1 0)"));
+TEST_F(NVectorTest, StaticGenerators) {
+    ASSERT_EQ(NVector::zeros(3), NVector("(0 0 0)"));
+    ASSERT_EQ(NVector::ones(3), NVector("(1 1 1)"));
+    ASSERT_EQ(NVector::scalar(5, 3), NVector("(5 5 5)"));
+    ASSERT_EQ(NVector::canonical(0, 3), NVector("(1 0 0)"));
 }
+
 
