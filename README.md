@@ -2,29 +2,39 @@
 
 ### Author : samiBendou
 
-### Last Update : 05/18/2018
+### Last Update : 05/22/2018
 
-### Current Version : 0.2
+### Current Version : 0.3
 
-MathToolKit is a complete framework for linear algebra and differential equations solving in C++. It's a tool box to ease maths and physics in C++. It's the ultimate framework to perform fast and efficient scientific calculation and AI.
-This framework is written in C++11 and can be compiled only on UNIX systems such as Ubuntu, MacOS...
+MathToolKit is a complete framework for linear algebra and differential equations solving in C++. It's a tool box to ease applied maths and physics in C++. It's the ultimate framework to perform fast and efficient scientific calculation and AI.
 
-### NAlgebra
+### Compatibility
+
+The framework is written in C++11. It's recommanded to use CMake and g++ to compile sources. I had some issues with Cygwin and Mingwin... Project has been coded using CLion, it provides easy to handle unit testing with googletest and stock build configuration.
+
+### Install
+
+- Make sure you have at least 3.12 CMake version;
+- Clone googletest : https://github.com/google/googletest;
+- Clone the project;
+- Put the googletest library at TestMathToolKit/lib/googletest where googletest is the root of the previously downloaded googletest;
+- Compile using CMake.
+
+## NAlgebra
 
 #### Overview
 
-Representing classic linear algebra objects such as euclidean vectors, matrices, tensors... Use a python-like syntax to perform common operations such as +, *, linear mapping...
+Representing classic linear algebra objects such as euclidean vectors, matrices, tensors... Use a python-like syntax to perform a very large range of operations such as +, *, linear mapping, matrix inversions...
 
-Featuring :
-  - NVector : N-dimensional vectors. Featuring algebraical operations (E, +, *), swaps, shifts and classic vectors generator such as ones, zeros...
+#### Features
+
+  - NVector : N-dimensional vectors. Featuring algebraical operations (E, +, *), swaps, shifts and classic vectors generator such as ones, zeros... Fully tested. Next phase : software optimization.
   
-  - ENVector : Euclidean space vectors. Inherits from NVector. Featuring norm, comparison between vectors and distance.
+  - NPMAtrix : NxP matrices. Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination. Setters & getters, swappers and classic matrix generators such as ones, zeros... Under test.
   
-  - NPMAtrix : NxP matrices. Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination. Setters & getters, swappers and classic matrix generators such as ones, zeros...
+  - NMatrix : Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...), linear systems solving, matrix inversion and determinant, fast exponentiation... Under test.
   
-  - NMatrix : Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...), linear systems solving, matrix inversion and determinant, fast exponentiation...
-  
-  - Vector3 : 3D Space vectors. Featuring cross product, coordinate transforms and rotation.
+  - Vector3 : 3D Space vectors. Featuring cross product, coordinate transforms and rotation. Fully tested.
   
  ### NAnalysis
  
