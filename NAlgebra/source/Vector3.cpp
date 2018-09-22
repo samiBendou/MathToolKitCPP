@@ -75,7 +75,7 @@ void Vector3::setRThetaZ(double r, double theta, double z) {
 }
 
 void Vector3::setRThetaPhi(double r, double theta, double phi) {
-    setXYZ(r * sin(phi) * cos(theta), sin(phi) * sin(theta), r * cos(phi));
+    setXYZ(r * sin(phi) * cos(theta), r * sin(phi) * sin(theta), r * cos(phi));
 }
 
 

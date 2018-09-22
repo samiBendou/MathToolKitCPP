@@ -28,6 +28,8 @@
 class Vector3 : public NVector {
 public:
 
+    using NVector::operator=;
+
     Vector3(const NVector& vector);
 
     Vector3(const Vector3& vector);
