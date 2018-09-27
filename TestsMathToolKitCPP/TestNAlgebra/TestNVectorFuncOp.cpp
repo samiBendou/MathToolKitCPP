@@ -44,8 +44,8 @@ TEST_F(NVectorFuncOpTest, Affectation) {
 
     _u(0) = 1;
 
-    ASSERT_TRUE(_u(0, 1) == NVector("(1 0)"));
-    ASSERT_TRUE(_u(1, 2) == NVector("(0 0)"));
+    ASSERT_EQ(_u(0, 1), NVector("(1 0)"));
+    ASSERT_EQ(_u(1, 2), NVector("(0 0)"));
 
     _v = _u(0, 1);
     ASSERT_EQ(_v, NVector("(1 0)"));

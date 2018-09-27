@@ -102,19 +102,6 @@ public:
      */
     std::string str() const override;
 
-
-    // CHARACTERIZATION
-
-    /**
-     *
-     * @return true if i < n resp. j < p.
-     */
-    bool isValidRowIndex(unsigned long i) const;
-
-    bool isValidColIndex(unsigned long j) const;
-
-    bool isValidIndex(unsigned long i, unsigned long j) const;
-
     /**
      *
      * @return true if n = p.
@@ -162,7 +149,8 @@ public:
      *
      *  Start indices are by default 0 and end indices are by default n or p.
      */
-    NPMatrix subMatrix(unsigned long i1 = 0, unsigned long j1 = MAX_SIZE, unsigned long i2 = 0, unsigned long j2 = MAX_SIZE);
+    NPMatrix subMatrix( unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
+                        unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
 
 
     // SETTERS
@@ -172,10 +160,10 @@ public:
      * @param vector row/col seen as NVector. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const NVector& vector, unsigned long i1 = 0);
+    void setRow(const NVector& vector, unsigned long i1);
 
 
-    void setCol(const NVector& vector, unsigned long j1 = 0);
+    void setCol(const NVector& vector, unsigned long j1);
 
     /**
      *
@@ -258,66 +246,66 @@ public:
     unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
 
 
+    // TRANSPOSED
+
+    void transpose();
+
     // OPERATORS
 
+    // ALGEBRAICAL OPERATORS
+
     /**
-     * @return m1 + m2 where + is usual addition for matrices. The matrices must have the length.
+     * @return this + m where + is usual addition for matrices. The matrices must have the length.
      */
-    friend NPMatrix operator+(const NPMatrix& m1, const NPMatrix& m2);
+    NPMatrix operator+(const NPMatrix& m);
     /**
      * @return m1 - m2 where - is substraction based on + for matrices. The matrices must have the length.
      */
-    friend NPMatrix operator-(const NPMatrix& m1, const NPMatrix& m2);
-    /**
-     * @return s * m where * is usual scalar multiplication for matrices.
-     */
-    friend NPMatrix operator*(double s, const NPMatrix &m);
+    NPMatrix operator-(const NPMatrix& m);
 
-    friend NPMatrix operator*(const NPMatrix &m, double s);
+    friend NPMatrix operator*(double s, const NPMatrix& m);
+
+    friend NPMatrix operator*(const NPMatrix& m, double s);
+
     /**
      * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
      *          Natural O(n3) matrix product is used.
      */
-    friend NPMatrix operator*(const NPMatrix& m1, const NPMatrix& m2);
+    NPMatrix operator*(const NPMatrix& m);
 
     /**
      *
      * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
      *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
      */
-    friend NVector operator*(const NPMatrix &m, const NVector &v);
+    NVector operator*(const NVector &v);
 
     /**
      * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
      * and m2 columns. m1 and m2 must have the same number of rows.
      */
-    friend NPMatrix operator|(const NPMatrix& m1, const NPMatrix& m2);
-
-    /**
-     * @return (1 / s) * m where * is usual scalar multiplicationb.
-     */
-    friend NPMatrix operator/(const NPMatrix &m, double s);
+    NPMatrix operator|(const NPMatrix& m);
 
     /**
      * @return the usual opposite of the matrix -m.
      */
-    friend NPMatrix operator-(const NPMatrix &m);
-
-    /**
-     *
-     * @return the the transposed of m.
-     */
-    friend NPMatrix operator!(const NPMatrix &m);
-    // Returns transposed of matrix
-
+    NPMatrix operator-() const;
 
     // COMPOUND OPERATORS
 
+    NPMatrix& operator+=(const NPMatrix& matrix);
+
+    NPMatrix& operator-=(const NPMatrix& matrix);
+
     NPMatrix& operator*=(const NPMatrix& matrix);
-    // Store matrix product with matrix in this matrix
 
     NPMatrix& operator*=(double scalar) override;
 
+    // COMPARAISON OPERATORS
+
+    friend bool operator==(const NPMatrix& m1, const NPMatrix& m2);
+
+    friend bool operator!=(const NPMatrix& m1, const NPMatrix& m2);
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -328,6 +316,14 @@ public:
     double& operator()(unsigned long i, unsigned long j);
 
     double operator()(unsigned long i, unsigned long j) const;
+
+    NPMatrix operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const;
+
+    NPMatrix& operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
+
+    // AFFECTATION
+
+    NPMatrix& operator=(const NPMatrix &m);
 
     // ALGEBRA
 
@@ -361,9 +357,42 @@ public:
 
 protected:
 
+    // MANIPULATIONS
+    void swap(ElementEnum element, unsigned long k1, unsigned long k2);
+
+    void shift(ElementEnum element, unsigned long k, long iterations);
+
+    unsigned long maxAbsIndex(ElementEnum element, unsigned long k, unsigned long r) const;
+
+    void vectorProduct(NVector &u) const;
+
+    virtual void matrixProduct(const NPMatrix &m);
+
+    NPMatrix shifted(const NPMatrix& matrix) const;
+
+    // OPERATIONS
+
     // AFFECTATION
 
     void parse(const vector<string> &str);
+
+    // CHARACTERIZATION
+
+    bool isValidRowIndex(unsigned long i) const;
+
+    bool isValidColIndex(unsigned long j) const;
+
+    bool isValidIndex(unsigned long i, unsigned long j) const;
+
+    bool isCompatible(const NVector& u) const;
+
+    bool isCompatible(const NPMatrix& u) const;
+
+    bool hasSameSize(const NPMatrix &m) const;
+
+    bool hasDefaultBrowseIndices() const;
+
+
 
     // INDEX GETTERS
 
@@ -374,28 +403,17 @@ protected:
     unsigned long getColFromVectorIndex(unsigned long k) const;
 
 
-    // OPERATIONS
-
-
-    void swap(ElementEnum element, unsigned long k1, unsigned long k2);
-
-    void shift(ElementEnum element, unsigned long k, long iterations);
-
-    unsigned long maxAbsIndex(ElementEnum element, unsigned long k, unsigned long r) const;
-
-    void transpose();
-
-    void vectorProduct(NVector& vector) const;
-
-    virtual void matrixProduct(const NPMatrix& matrix);
-
-    NPMatrix shifted(const NPMatrix& matrix) const;
-    //Get a shifted matrix used in Gauss Jordan algorithm.
-    //  Shifted = [THIS | MATRIX] where Shifted is a N x (PThis + PMatrix)
-
     unsigned long _n;
 
     unsigned long _p;
+
+    mutable unsigned long _i1;
+
+    mutable unsigned long _j1;
+
+    mutable unsigned long _i2;
+
+    mutable unsigned long _j2;
 };
 
 

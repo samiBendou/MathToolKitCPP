@@ -64,8 +64,6 @@ public:
      */
     virtual std::string str() const;
 
-    virtual std::string str();
-
     // GETTERS
 
     /**
@@ -74,15 +72,11 @@ public:
      */
     unsigned long dim() const;
 
-    unsigned long dim();
-
     /**
      *
      * @return an std::vector representing the base object of this instance of NVector.
      */
     std::vector<double> array() const;
-
-    std::vector<double> array();
 
     // MAX / MIN
 
@@ -92,11 +86,7 @@ public:
      */
     double max() const;
 
-    double max();
-
     double min() const;
-
-    double min();
 
     /**
      *
@@ -104,12 +94,8 @@ public:
      */
     unsigned long maxIndex() const;
 
-    unsigned long maxIndex();
-
-
     unsigned long minIndex() const;
 
-    unsigned long minIndex();
     // ABSOLUTE VALUE MAX / MIN
 
     /**
@@ -118,12 +104,8 @@ public:
      */
     double maxAbs() const;
 
-    double maxAbs();
-
-
     double minAbs() const;
 
-    double minAbs();
 
     /**
      *
@@ -131,13 +113,7 @@ public:
      */
     unsigned long maxAbsIndex() const;
 
-    unsigned long maxAbsIndex();
-
-
     unsigned long minAbsIndex() const;
-
-    unsigned long minAbsIndex();
-
 
     // MANIPULATORS
 
@@ -164,7 +140,6 @@ public:
      */
     void fill(double scalar);
 
-
     // OPERATORS
 
     /**
@@ -172,28 +147,16 @@ public:
      */
     NVector operator+(const NVector &u) const;
 
-    NVector operator+(const NVector &u);
-
-    NVector operator+(NVector& u);
-
-    NVector operator+(NVector& u) const;
 
     /**
      * @return return u - v where - is difference based on usual addition.
      */
     NVector operator-(const NVector &u) const;
 
-    NVector operator-(const NVector &u);
-
-    NVector operator-(NVector &u);
-
-    NVector operator-(NVector &u) const;
 
     /**
- * @return opposite of u (-u0, -u1, ...).
- */
-    NVector operator-();
-
+     * @return opposite of u (-u0, -u1, ...).
+     */
     NVector operator-() const;
 
     /**
@@ -201,18 +164,12 @@ public:
      */
     friend NVector operator*(double s, const NVector &u);
 
-    friend NVector operator*(double s, NVector &u);
-
     friend NVector operator*(const NVector &u, double s);
-
-    friend NVector operator*(NVector &u, double s);
 
     /**
      * @return return (1 / s) * u where * is the usual scalar multiplication (s * u0, s * u1, ...).
      */
     friend NVector operator/(const NVector &u, double s);
-
-    friend NVector operator/(NVector &u, double s);
 
     // SCALAR PRODUCT BASED OPERATIONS
 
@@ -221,45 +178,28 @@ public:
      * @return the norm of vector ||.||
      */
     friend double operator!(const NVector& vector);
-    // Returns norm of vector !v1 = ||v1||
 
-    friend double operator!(NVector& vector);
+
     /**
      *
      * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
      */
     friend double operator*(const NVector &u, const NVector &v);
 
-    friend double operator*(const NVector &u, NVector &v);
-
-    friend double operator*(NVector &u, const NVector &v);
-
-    friend double operator*(NVector &u, NVector &v);
-
     /**
      *
-     * @return distance between v1 & v2, ||v1 - v2||.
+     * @return distance between u & v, ||u - v||.
      */
     friend double operator/(const NVector &u, const NVector &v);
 
-    friend double operator/(const NVector &u, NVector &v);
-
-    friend double operator/(NVector &u, const NVector &v);
-
-    friend double operator/(NVector &u, NVector &v);
 
     // COMPOUND OPERATORS
 
 
     NVector& operator+=(const NVector& vector);
 
-    NVector& operator+=(NVector &vector);
-
 
     NVector& operator-=(const NVector& vector);
-
-    NVector& operator-=(NVector& vector);
-
 
     virtual NVector& operator*=(double scalar);
 
@@ -310,8 +250,6 @@ public:
      */
     NVector& operator=(const NVector& vector);
 
-    NVector& operator=(NVector& vector);
-
     NVector& operator=(const std::string& str);
 
     // NORM BASED COMPARISON OPERATORS
@@ -323,15 +261,7 @@ public:
 
     friend bool operator==(const NVector& u, const NVector& v);
 
-    friend bool operator==(NVector& u, NVector& v);
-
-    friend bool operator==(NVector& u, const NVector& v);
-
-    friend bool operator==(const NVector& u, NVector& v);
-
     friend bool operator==(const NVector& u, double s);
-
-    friend bool operator==(NVector& u, double s);
 
     /**
      *
@@ -339,15 +269,7 @@ public:
      */
     friend bool operator!=(const NVector& u, const NVector& v);
 
-    friend bool operator!=(NVector& u, NVector& v);
-
-    friend bool operator!=(NVector& u, const NVector& v);
-
-    friend bool operator!=(const NVector& u, NVector& v);
-
     friend bool operator!=(const NVector& u, double s);
-
-    friend bool operator!=(NVector& u, double s);
 
 
     // STATIC FUNCTIONS
@@ -404,61 +326,8 @@ protected:
 
     // PROTECTED MEMBERS
 
-    //BROWSE INDICES
-
-    unsigned long _k1;
-
-    unsigned long _k2;
-    //Indexes used to work on sub vector of a vector or to set a sub vector with operator().
-
-    //CHARACTERIZATION
-
-    bool isValidIndex(unsigned long k) const;
-
-    bool isNull() const;
-    // Returns true if the two norm and the vector is less than epsilon constant
-
-    bool isEqual(const NVector& vector) const;
-
-    bool isCompatible(const NVector& vector) const;
-
-    bool haveDefaultBrowseIndices() const;
-
-    void setDefaultBrowseIndices();
-
-    // AFFECTATION
-
-    void copy(const NVector& vector);
-
-    void parse(const std::string& str);
-
-    // EXTREMUMS
-
-
-    double getExtremum(bool max) const;
-
-    unsigned long getExtremumIndex(bool max) const;
-
-
-    // ABSOLUTE VALUE EXTREMUM GETTERS
-
-
-    double getExtremumAbs(bool max) const;
-
-    unsigned long getExtremumAbsIndex(bool max) const;
-
-
-    //SUB-VECTORS
-
-    NVector subVector(unsigned long k1, unsigned long k2) const;
-    // Returns a sub-vector of this vector (xk1, x(k1 +1), ..., x(k2)) where k1 <= k2 < dim()
-
-    void setSubVector(const NVector& vector);
-    // Sets a sub range (x(k1 - 1), v0, v1, ..., v(v.dim() - 1), ...; x(x.dim() - 1)) of this vector
-
 
     // VECTOR SPACE OPERATIONS
-
 
     virtual void add(const NVector& vector);
     //Sum of two vectors
@@ -485,6 +354,45 @@ protected:
 
     double distance(const NVector& vector) const;
     // Distance derived from inner product
+
+    //BROWSE INDICES
+
+    mutable unsigned long _k1;
+
+    mutable unsigned long _k2;
+    //Indexes used to work on sub vector of a vector or to set a sub vector with operator().
+
+    //CHARACTERIZATION
+
+    bool isValidIndex(unsigned long k) const;
+
+    bool isBetweenK12(unsigned long k) const;
+
+    bool isNull() const;
+    // Returns true if the two norm and the vector is less than epsilon constant
+
+    bool isEqual(const NVector& vector) const;
+
+    bool isCompatible(const NVector& vector) const;
+
+    bool hasDefaultBrowseIndices() const;
+
+    void setDefaultBrowseIndices() const;
+
+    // AFFECTATION
+
+    void copy(const NVector& vector);
+
+    virtual void parse(const std::string& str);
+
+    //SUB-VECTORS
+
+    NVector subVector(unsigned long k1, unsigned long k2) const;
+    // Returns a sub-vector of this vector (xk1, x(k1 +1), ..., x(k2)) where k1 <= k2 < dim()
+
+    void setSubVector(const NVector& vector);
+    // Sets a sub range (x(k1 - 1), v0, v1, ..., v(v.dim() - 1), ...; x(x.dim() - 1)) of this vector
+
 };
 
 

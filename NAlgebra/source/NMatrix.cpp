@@ -114,8 +114,8 @@ double NMatrix::det() {
     return det;
 }
 
-void NMatrix::matrixProduct(const NPMatrix &matrix) {
-    NPMatrix::matrixProduct(matrix);
+void NMatrix::matrixProduct(const NPMatrix &m) {
+    NPMatrix::matrixProduct(m);
     lupClear();
 }
 

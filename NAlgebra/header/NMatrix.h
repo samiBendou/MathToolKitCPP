@@ -176,7 +176,7 @@ protected:
 
     // ALGEBRAICAL OPERATIONS
 
-    void add(const NVector& vector) override ;
+    void add(const NVector& vector) override;
 
     void sub(const NVector& vector) override ;
 
@@ -186,7 +186,7 @@ protected:
 
     void div(double scalar) override ;
 
-    void matrixProduct(const NPMatrix &matrix) override ;
+    void matrixProduct(const NPMatrix &m) override ;
 
     void rPow(long n);
     // Exponentiation by squaring of this matrix : O(log(exp) * n3)

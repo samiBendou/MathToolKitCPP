@@ -67,28 +67,11 @@ string NPMatrix::str() const {
 }
 
 
-// CHARACTERIZATION
-
-
-bool NPMatrix::isValidRowIndex(unsigned long i) const {
-    return i < _n;
-}
-
-bool NPMatrix::isValidColIndex(unsigned long j) const {
-    return j < _p;
-}
-
-bool NPMatrix::isValidIndex(unsigned long i, unsigned long j) const {
-    return isValidRowIndex(i) && isValidColIndex(j);
-}
+// GETTERS
 
 bool NPMatrix::isSquare() const {
     return _n == _p;
 }
-
-
-// GETTERS
-
 
 unsigned long NPMatrix::n() const {
     return _n;
@@ -144,7 +127,7 @@ vector<NVector> NPMatrix::cols(unsigned long j1, unsigned long j2) const {
     return cols;
 }
 
-NPMatrix NPMatrix::subMatrix(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) {
+NPMatrix NPMatrix::subMatrix(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const {
     unsigned long n = i2 - i1 + 1;
     unsigned long p = j2 - j1 + 1;
 
@@ -251,75 +234,79 @@ unsigned long NPMatrix::maxAbsIndexCol(unsigned long j, unsigned long r) const {
     return maxAbsIndex(Col, j, r);
 }
 
+// TRANSPOSED
+
+void NPMatrix::transpose() {
+    NPMatrix temp = NPMatrix::zeros(_p, _n);
+    for(unsigned long i = 0; i < _n; i++) {
+        for(unsigned long j = 0; j < _p; j++) {
+            temp(j, i) = (*this)(i, j);
+        }
+    }
+    (*this) = temp;
+}
 
 // OPERATORS
 
+// ALGEBRAICAL OPERATORS
 
-NPMatrix operator+(const NPMatrix &m1, const NPMatrix &m2) {
-    assert(m1._n == m2._n && m1._p == m2._p);
-    NPMatrix res{m1};
-    res.add(m2);
+NPMatrix NPMatrix::operator+(const NPMatrix& matrix) {
+    NPMatrix res{*this};
+    res += matrix;
     return res;
 }
 
-NPMatrix operator-(const NPMatrix &m1, const NPMatrix &m2) {
-    assert(m1._n == m2._n && m1._p == m2._p);
-    NPMatrix res{m1};
-    res.sub(m2);
+
+NPMatrix NPMatrix::operator-(const NPMatrix &matrix) {
+    NPMatrix res{*this};
+    res -= matrix;
     return res;
 }
 
 NPMatrix operator*(double s, const NPMatrix &m) {
     NPMatrix res{m};
-    res.prod(s);
+    res *= s;
     return res;
 }
+
 
 NPMatrix operator*(const NPMatrix &m, double s) {
-    NPMatrix res{m};
-    res.prod(s);
-    return res;
+    return s * m;
 }
 
 
-NPMatrix operator*(const NPMatrix &m1, const NPMatrix &m2) {
-    NPMatrix res{m1};
-    res.matrixProduct(m2);
+NPMatrix NPMatrix::operator*(const NPMatrix &m) {
+    NPMatrix res{*this};
+    res *= m;
     return res;
 }
 
-NVector operator*(const NPMatrix &m, const NVector &v) {
+NVector NPMatrix::operator*(const NVector &v) {
     NVector res{v};
-    m.vectorProduct(res);
+    vectorProduct(res);
     return res;
 }
 
-
-NPMatrix operator|(const NPMatrix &m1, const NPMatrix &m2) {
-    return m1.shifted(m2);
+NPMatrix NPMatrix::operator|(const NPMatrix &m) {
+    return shifted(m);
 }
 
 
-NPMatrix operator/(const NPMatrix &m, double s) {
-    NPMatrix res{m};
-    res.div(s);
-    return res;
+NPMatrix NPMatrix::operator-() const {
+    return NPMatrix(NVector::operator-(), _n, _p);
 }
-
-NPMatrix operator-(const NPMatrix &m) {
-    NPMatrix res{m};
-    res.opp();
-    return res;
-}
-
-NPMatrix operator!(const NPMatrix &m) {
-    NPMatrix res{m};
-    res.transpose();
-    return res;
-}
-
 
 // COMPOUND OPERATORS
+
+NPMatrix &NPMatrix::operator+=(const NPMatrix &matrix) {
+    assert(hasSameSize(matrix));
+    this->add(matrix);
+    return *this;
+}
+
+NPMatrix &NPMatrix::operator-=(const NPMatrix &matrix) {
+    return *this += (-matrix);
+}
 
 
 NPMatrix & NPMatrix::operator*=(const NPMatrix &matrix) {
@@ -329,8 +316,18 @@ NPMatrix & NPMatrix::operator*=(const NPMatrix &matrix) {
 
 
 NPMatrix &NPMatrix::operator*=(const double scalar) {
-    prod(scalar);
-    return (*this);
+    NVector::operator*=(scalar);
+    return *this;
+}
+
+// COMPARAISON OPERATORS
+
+bool operator==(const NPMatrix& m1, const NPMatrix& m2) {
+    return m1.hasSameSize(m2) && m1.isEqual(m2);
+}
+
+bool operator!=(const NPMatrix &m1, const NPMatrix &m2) {
+    return !(m1 == m2);
 }
 
 
@@ -347,6 +344,28 @@ double NPMatrix::operator()(unsigned long i, unsigned long j) const {
     assert(isValidIndex(i, j));
     return (*this).at(getVectorIndex(i, j));
 }
+
+NPMatrix NPMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const {
+    return subMatrix(i1, j1, i2, j2);
+}
+
+NPMatrix &NPMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) {
+    assert(isValidIndex(i1, j1) && isValidIndex(i2, j2) && i2 >= i1 && j2 >= j1);
+
+    _i1 = i1; _j1 = j1;
+    _i2 = i2; _j2 = j2;
+
+    return *this;
+}
+
+// AFFECTATION
+
+NPMatrix &NPMatrix::operator=(const NPMatrix &m) {
+    setSubMatrix(m, _i1, _j1);
+
+    return *this;
+}
+
 
 // ALGEBRA
 
@@ -391,23 +410,6 @@ NPMatrix NPMatrix::canonical(unsigned long i, unsigned long j, unsigned long n, 
     return NPMatrix(NVector::canonical(p * i + j, n * p), n, p);
 }
 
-// PRIVATE METHODS
-
-
-unsigned long NPMatrix::getVectorIndex(unsigned long i, unsigned long j) const {
-    return _p * i + j;
-}
-
-unsigned long NPMatrix::getRowFromVectorIndex(unsigned long k) const {
-    assert(k < _n * _p);
-    return k / _p;
-}
-
-unsigned long NPMatrix::getColFromVectorIndex(unsigned long k) const {
-    assert(k < _n * _p);
-    return k % _p;
-}
-
 
 void NPMatrix::swap(const ElementEnum element, unsigned long k1, unsigned long k2) {
 
@@ -432,37 +434,27 @@ unsigned long NPMatrix::maxAbsIndex(const ElementEnum element, unsigned long k, 
 }
 
 
-void NPMatrix::transpose() {
-    NPMatrix temp = NPMatrix::zeros(_p, _n);
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = 0; j < _p; j++) {
-            temp(j, i) = (*this)(i, j);
-        }
-    }
-    (*this) = temp;
-}
-
-void NPMatrix::vectorProduct(NVector &vector) const {
-    assert(vector.dim() == _p);
+void NPMatrix::vectorProduct(NVector &u) const {
+    assert(isCompatible(u));
 
     std::vector<NVector> vectorRows = rows();
 
-    NVector res = NVector::zeros(vector.dim());
+    NVector res = NVector::zeros(u.dim());
     for (unsigned long i = 0; i < _n; ++i) {
-        res(i) = vectorRows[i] * vector;
+        res(i) = vectorRows[i] * u;
     }
-    vector = res;
+    u = res;
 }
 
-void NPMatrix::matrixProduct(const NPMatrix &matrix) {
-    assert(_p == matrix._n);
+void NPMatrix::matrixProduct(const NPMatrix &m) {
+    assert(isCompatible(m));
 
     vector<NVector> vectorRows = rows();
-    vector<NVector> vectorCols = matrix.cols();
+    vector<NVector> vectorCols = m.cols();
 
-    NPMatrix res = NPMatrix::zeros(_n, matrix._p);
+    NPMatrix res = NPMatrix::zeros(_n, m._p);
     for (unsigned long i = 0; i < _n; ++i) {
-        for (unsigned long j = 0; j < matrix._p; ++j) {
+        for (unsigned long j = 0; j < m._p; ++j) {
             res(i, j) = vectorRows[i] * vectorCols[j];
         }
     }
@@ -490,6 +482,53 @@ void NPMatrix::parse(const vector<string> &str) {
     }
     *this = NPMatrix(rows);
 }
+
+// PRIVATE METHODS
+
+// CHARACTERIZATION
+
+bool NPMatrix::isValidRowIndex(unsigned long i) const {
+    return i < _n;
+}
+
+bool NPMatrix::isValidColIndex(unsigned long j) const {
+    return j < _p;
+}
+
+bool NPMatrix::isValidIndex(unsigned long i, unsigned long j) const {
+    return isValidRowIndex(i) && isValidColIndex(j);
+}
+
+bool NPMatrix::isCompatible(const NVector &u) const {
+    return u.dim() == _p;
+}
+
+bool NPMatrix::isCompatible(const NPMatrix &m) const {
+    return m._n == _p;
+}
+
+bool NPMatrix::hasSameSize(const NPMatrix &m) const {
+    return m._n == _n && m._p == _p;
+}
+
+
+unsigned long NPMatrix::getVectorIndex(unsigned long i, unsigned long j) const {
+    return _p * i + j;
+}
+
+unsigned long NPMatrix::getRowFromVectorIndex(unsigned long k) const {
+    assert(k < _n * _p);
+    return k / _p;
+}
+
+unsigned long NPMatrix::getColFromVectorIndex(unsigned long k) const {
+    assert(k < _n * _p);
+    return k % _p;
+}
+
+
+
+
 
 
 

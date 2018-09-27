@@ -50,3 +50,19 @@ TEST_F(Vector3Test, Setters) {
     _u.setPhi(0);
     ASSERT_TRUE(_u == NVector("(0 0 2)"));
 }
+
+TEST_F(Vector3Test, VectorProduct) {
+    ASSERT_EQ(_u ^ _v, _w);
+    ASSERT_EQ(_v ^ _w, _u);
+    ASSERT_EQ(_w ^ _u, _v);
+}
+
+TEST_F(Vector3Test, Angle) {
+    ASSERT_EQ(_u % _v, M_PI_2);
+    ASSERT_EQ(_v % _w, M_PI_2);
+    ASSERT_EQ(_w % _u, M_PI_2);
+
+    ASSERT_EQ(_u % _u, 0);
+    ASSERT_EQ(_v % _v, 0);
+    ASSERT_EQ(_w % _w, 0);
+}

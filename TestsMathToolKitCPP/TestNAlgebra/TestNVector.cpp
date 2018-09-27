@@ -14,11 +14,6 @@ protected:
         _v = "(0 1 0)";
         _w = "(0 0 1)";
     }
-    void TearDown() override {
-        _u = "(1 0 0)";
-        _v = "(0 1 0)";
-        _w = "(0 0 1)";
-    }
 
     NVector _u;
     NVector _v;
@@ -87,6 +82,9 @@ TEST_F(NVectorTest, Add) {
     ASSERT_EQ(_u, NVector("(1 0 0)"));
 
     ASSERT_EQ(-_u, NVector("(-1 0 0)"));
+
+    _u = -_u;
+    ASSERT_EQ(_u, NVector("(-1 0 0)"));
 }
 
 TEST_F(NVectorTest, Prod) {
@@ -138,11 +136,23 @@ TEST_F(NVectorTest, MaxMinIndex) {
 TEST_F(NVectorTest, MaxMinAbs) {
     ASSERT_EQ((-_u).maxAbs(), 1);
     ASSERT_EQ((-_u).minAbs(), 0);
+
+    ASSERT_EQ((-_v).maxAbs(), 1);
+    ASSERT_EQ((-_v).minAbs(), 0);
+
+    ASSERT_EQ((-_w).maxAbs(), 1);
+    ASSERT_EQ((-_w).minAbs(), 0);
 }
 
 TEST_F(NVectorTest, MaxMinAbsIndex) {
     ASSERT_EQ((-_u).maxAbsIndex(), 0);
     ASSERT_EQ((-_u).minAbsIndex(), 1);
+
+    ASSERT_EQ((-_v).maxAbsIndex(), 1);
+    ASSERT_EQ((-_v).minAbsIndex(), 0);
+
+    ASSERT_EQ((-_w).maxAbsIndex(), 2);
+    ASSERT_EQ((-_w).minAbsIndex(), 0);
 }
 
 TEST_F(NVectorTest, Swap) {
