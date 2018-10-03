@@ -29,12 +29,20 @@ TEST_F(NVectorFuncOpTest, Dim) {
     ASSERT_EQ(_u(0, 1).dim(), 2);
 }
 
+TEST_F(NVectorFuncOpTest, Equality) {
+    ASSERT_TRUE(_u(0, 1) == _v(1, 2));
+    ASSERT_TRUE(_u(0, 1) == NVector("(1 0)"));
+
+    ASSERT_FALSE(_u(0, 1) != _v(1, 2));
+    ASSERT_FALSE(_u(0, 1) != NVector("(1 0)"));
+}
+
 TEST_F(NVectorFuncOpTest, Serialization) {
     std::vector<double> expect{1, 0};
     ASSERT_EQ(_u(0, 1).array(), expect);
 }
 
-TEST_F(NVectorFuncOpTest, Affectation) {
+TEST_F(NVectorFuncOpTest, AffectationAccess) {
     ASSERT_EQ(_u(0), 1);
     ASSERT_EQ(_u(1), 0);
     ASSERT_EQ(_u(2), 0);
@@ -61,13 +69,6 @@ TEST_F(NVectorFuncOpTest, Affectation) {
     ASSERT_EQ(_u, NVector("(0 1 0)"));
 }
 
-TEST_F(NVectorFuncOpTest, Equality) {
-    ASSERT_TRUE(_u(0, 1) == _v(1, 2));
-    ASSERT_TRUE(_u(0, 1) == NVector("(1 0)"));
-
-    ASSERT_FALSE(_u(0, 1) != _v(1, 2));
-    ASSERT_FALSE(_u(0, 1) != NVector("(1 0)"));
-}
 
 TEST_F(NVectorFuncOpTest, Add) {
     _u(0, 1) = _u(0, 1) + _v(0, 1);
@@ -102,7 +103,7 @@ TEST_F(NVectorFuncOpTest, Sub) {
 }
 
 TEST_F(NVectorFuncOpTest, Prod) {
-double x = 5;
+    double x = 5;
 
     _v(0, 1) = _u(0, 1) * x;
     ASSERT_EQ(_v, NVector("(5 0 0)"));

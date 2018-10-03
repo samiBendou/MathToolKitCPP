@@ -39,6 +39,14 @@ TEST_F(NPMatrixTest, Dim) {
     ASSERT_TRUE(_a.isSquare());
 }
 
+TEST_F(NPMatrixTest, Equality) {
+    ASSERT_FALSE(_a == _b);
+    ASSERT_TRUE(_a != _b);
+
+    ASSERT_TRUE(_a == _a);
+    ASSERT_FALSE(_a != _a);
+}
+
 TEST_F(NPMatrixTest, Construction) {
     _a = NPMatrix(5);
     ASSERT_EQ(_a.n(), 5);
@@ -78,14 +86,6 @@ TEST_F(NPMatrixTest, Construction) {
                    "|5 10 2|"
                   });
     ASSERT_EQ(_a, _c);
-}
-
-TEST_F(NPMatrixTest, Equality) {
-    ASSERT_FALSE(_a == _b);
-    ASSERT_TRUE(_a != _b);
-
-    ASSERT_TRUE(_a == _a);
-    ASSERT_FALSE(_a != _a);
 }
 
 TEST_F(NPMatrixTest, Getters) {
@@ -220,6 +220,13 @@ TEST_F(NPMatrixTest, Prod) {
     ASSERT_EQ(_b, copy_b);
 }
 
+
+TEST_F(NPMatrixTest, EuclideanOperations) {
+    ASSERT_EQ(!_a, sqrt(3));
+    ASSERT_EQ(_a | _a, 3);
+    ASSERT_EQ(_a / _b, sqrt(7));
+}
+
 TEST_F(NPMatrixTest, Transposed) {
     auto expect_trans_c = NPMatrix({
                                            "|0 1  5|",
@@ -227,13 +234,17 @@ TEST_F(NPMatrixTest, Transposed) {
                                            "|0 1 2|"
                                   });
 
-    _c.transpose();
-    ASSERT_EQ(_c, expect_trans_c);
+
+    ASSERT_EQ(_c.transposed(), expect_trans_c);
 
     NPMatrix u = NPMatrix(_c.col(1));
-    u.transpose();
-    ASSERT_EQ(u.n(), 3);
-    ASSERT_EQ(u.p(), 1);
+    NPMatrix v = u.transposed();
+
+    EXPECT_EQ(u.n(), 1);
+    ASSERT_EQ(u.p(), 3);
+
+    EXPECT_EQ(v.n(), 3);
+    ASSERT_EQ(v.p(), 1);
 }
 
 TEST_F(NPMatrixTest, MatrixProd) {
@@ -247,8 +258,8 @@ TEST_F(NPMatrixTest, MatrixProd) {
     ASSERT_EQ(_b, expect_prod_b);
 
     NPMatrix u = NPMatrix(NVector("(1 2)"));
-    NPMatrix v{u};
-    v.transpose();
+    NPMatrix v{u.transposed()};
+
 
     ASSERT_EQ(u * v, NPMatrix(NVector("(5)")));
 
@@ -261,4 +272,5 @@ TEST_F(NPMatrixTest, VectorProd) {
 
     ASSERT_EQ(_c * u, expect_prod_cu);
 }
+
 

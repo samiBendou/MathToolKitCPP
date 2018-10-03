@@ -36,6 +36,7 @@ using namespace std;
 enum ElementEnum{Row, Col};
 
 class NPMatrix : public NVector {
+
 public:
     // CONSTRUCTION
 
@@ -43,7 +44,7 @@ public:
      *
      * @return a n x p matrix constructed using a std::vector of size n * p.
      */
-    explicit NPMatrix(unsigned long n, unsigned long p = 0);
+    explicit NPMatrix(unsigned long n = 0, unsigned long p = 0);
 
     /**
      *
@@ -137,22 +138,6 @@ public:
     std::vector<NVector> cols(unsigned long j1 = 0, unsigned long j2 = MAX_SIZE) const;
 
 
-    /**
-     *
-     * @param i1/j1 : start index of rows/cols
-     * @param i2/j2 : end index i2/j2 >= i1/j1 of rows/cols
-     * @return a sub matrix with rows starting at i1 and ending at i2 and cols starting at j1 and ending at j2 :
-     *
-     *  |Ai1j1, ..., Ai2j1|
-     *  |...  , ..., ...  |
-     *  |Ai2j1, ..., Ai2j2|
-     *
-     *  Start indices are by default 0 and end indices are by default n or p.
-     */
-    NPMatrix subMatrix( unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
-                        unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
-
-
     // SETTERS
 
     /**
@@ -185,8 +170,6 @@ public:
     void setRows(const std::vector<NVector>& vectors, unsigned long i1 = 0);
 
     void setCols(const std::vector<NVector>& vectors, unsigned long j1 = 0);
-
-    void setSubMatrix(const NPMatrix& matrix, unsigned long i1 = 0, unsigned long j1 = 0);
 
 
     // SWAP
@@ -233,7 +216,6 @@ public:
 
     // MAX / MIN
 
-
     /**
      *
      * @param i/j row/col where to search max
@@ -248,7 +230,15 @@ public:
 
     // TRANSPOSED
 
-    void transpose();
+    NPMatrix transposed();
+
+    //SHIFTED
+
+    /**
+     * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
+     * and m2 columns. m1 and m2 must have the same number of rows.
+     */
+    NPMatrix shifted(const NPMatrix& matrix) const;
 
     // OPERATORS
 
@@ -280,26 +270,33 @@ public:
      */
     NVector operator*(const NVector &v);
 
-    /**
-     * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
-     * and m2 columns. m1 and m2 must have the same number of rows.
-     */
-    NPMatrix operator|(const NPMatrix& m);
+    NPMatrix operator/(double s);
+
 
     /**
      * @return the usual opposite of the matrix -m.
      */
     NPMatrix operator-() const;
 
+    // SCALAR PRODUCT BASED OPERATIONS
+
+    friend double operator!(const NPMatrix& m);
+
+    friend double operator|(const NPMatrix& m1, const NPMatrix& m2);
+
+    friend double operator/(const NPMatrix& m1, const NPMatrix& m2);
+
     // COMPOUND OPERATORS
 
     NPMatrix& operator+=(const NPMatrix& matrix);
 
-    NPMatrix& operator-=(const NPMatrix& matrix);
+    NPMatrix& operator-=(const NPMatrix& m);
 
-    NPMatrix& operator*=(const NPMatrix& matrix);
+    NPMatrix& operator*=(const NPMatrix& m);
 
-    NPMatrix& operator*=(double scalar) override;
+    NPMatrix& operator*=(double s) override;
+
+    NPMatrix& operator/=(double s) override;
 
     // COMPARAISON OPERATORS
 
@@ -368,13 +365,7 @@ protected:
 
     virtual void matrixProduct(const NPMatrix &m);
 
-    NPMatrix shifted(const NPMatrix& matrix) const;
-
     // OPERATIONS
-
-    // AFFECTATION
-
-    void parse(const vector<string> &str);
 
     // CHARACTERIZATION
 
@@ -384,15 +375,27 @@ protected:
 
     bool isValidIndex(unsigned long i, unsigned long j) const;
 
+    bool isBetweenI12(unsigned long i) const;
+
+    bool isBetweenJ12(unsigned long j) const;
+
     bool isCompatible(const NVector& u) const;
 
     bool isCompatible(const NPMatrix& u) const;
 
     bool hasSameSize(const NPMatrix &m) const;
 
-    bool hasDefaultBrowseIndices() const;
+    bool hasDefaultBrowseIndices() const override;
+
+    void setDefaultBrowseIndices() const override;
 
 
+
+    // SERIALIZATION
+
+    void copy(const NPMatrix& m);
+
+    void parse(const vector<string> &str);
 
     // INDEX GETTERS
 
@@ -402,6 +405,25 @@ protected:
 
     unsigned long getColFromVectorIndex(unsigned long k) const;
 
+    // SUB-MATRICES
+
+
+    void setSubMatrix(const NPMatrix& matrix);
+
+    /**
+ *
+ * @param i1/j1 : start index of rows/cols
+ * @param i2/j2 : end index i2/j2 >= i1/j1 of rows/cols
+ * @return a sub matrix with rows starting at i1 and ending at i2 and cols starting at j1 and ending at j2 :
+ *
+ *  |Ai1j1, ..., Ai2j1|
+ *  |...  , ..., ...  |
+ *  |Ai2j1, ..., Ai2j2|
+ *
+ *  Start indices are by default 0 and end indices are by default n or p.
+ */
+    NPMatrix subMatrix( unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
+                        unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
 
     unsigned long _n;
 

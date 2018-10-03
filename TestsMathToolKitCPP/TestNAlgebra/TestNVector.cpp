@@ -24,6 +24,21 @@ TEST_F(NVectorTest, Dim) {
     ASSERT_EQ(_u.dim(), 3);
 }
 
+TEST_F(NVectorTest, Equality) {
+    ASSERT_FALSE(_u == _v);
+    ASSERT_FALSE(_u == _w);
+    ASSERT_TRUE(_u == NVector("(1 0 0)"));
+    ASSERT_FALSE(_u == 0);
+    ASSERT_TRUE(NVector("(0 0 0)") == 0);
+
+    ASSERT_TRUE(_u != _v);
+    ASSERT_TRUE(_u != _w);
+    ASSERT_FALSE(_u != NVector("(1 0 0)"));
+    ASSERT_TRUE(_u != 0);
+    ASSERT_FALSE(NVector("(0 0 0)") != 0);
+}
+
+
 TEST_F(NVectorTest, Construction) {
     _u = NVector(std::vector<double>{0, 1, 0});
     ASSERT_EQ(_u, _v);
@@ -54,21 +69,6 @@ TEST_F(NVectorTest, Serialization) {
 
     ASSERT_EQ(_u.array(), expect);
 }
-
-TEST_F(NVectorTest, Equality) {
-    ASSERT_FALSE(_u == _v);
-    ASSERT_FALSE(_u == _w);
-    ASSERT_TRUE(_u == NVector("(1 0 0)"));
-    ASSERT_FALSE(_u == 0);
-    ASSERT_TRUE(NVector("(0 0 0)") == 0);
-
-    ASSERT_TRUE(_u != _v);
-    ASSERT_TRUE(_u != _w);
-    ASSERT_FALSE(_u != NVector("(1 0 0)"));
-    ASSERT_TRUE(_u != 0);
-    ASSERT_FALSE(NVector("(0 0 0)") != 0);
-}
-
 
 TEST_F(NVectorTest, Add) {
     ASSERT_EQ(_u + _v, NVector("(1 1 0)"));

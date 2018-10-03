@@ -9,20 +9,31 @@
 using namespace std;
 
 NPMatrix::NPMatrix(unsigned long n, unsigned long p) :
-        NVector(n * ((p > 0) ? p : n)), _n(n), _p((p > 0) ? p : n) {}
-
-NPMatrix::NPMatrix(const NVector &vector) :
-        NVector(vector), _n(1), _p(vector.dim()) {}
-
-NPMatrix::NPMatrix(const NVector &vector, unsigned long n, unsigned long p) :
-        NVector(vector), _n(n), _p((p > 0) ? p : n) {
-    assert(vector.dim() == _n * _p);
+        NVector(n * ((p > 0) ? p : n)), _n(n), _p((p > 0) ? p : n), _i1(0), _j1(0), _i2(0), _j2(0) {
+    setDefaultBrowseIndices();
 }
 
-NPMatrix::NPMatrix(const NPMatrix &matrix) = default;
+NPMatrix::NPMatrix(const NVector &vector) :
+        NVector(vector), _n(1), _p(vector.dim()), _i1(0), _j1(0), _i2(0), _j2(0) {
+    setDefaultBrowseIndices();
+}
+
+NPMatrix::NPMatrix(const NVector &vector, unsigned long n, unsigned long p) :
+        NVector(vector), _n(n), _p((p > 0) ? p : n), _i1(0), _j1(0), _i2(0), _j2(0) {
+    assert(vector.dim() == _n * _p);
+    setDefaultBrowseIndices();
+}
+
+NPMatrix::NPMatrix(const NPMatrix &matrix) :    NVector(0),
+                                                _n(0), _p(0),
+                                                _i1(0), _j1(0),
+                                                _i2(0), _j2(0) {
+    copy(matrix);
+}
 
 NPMatrix::NPMatrix(const vector< vector<double> >& data) :
-        NVector((data.size() * data[0].size())), _n(data.size()),  _p(data[0].size()) {
+        NVector((data.size() * data[0].size())), _n(data.size()),  _p(data[0].size()),
+        _i1(0), _j1(0), _i2(0), _j2(0) {
 
     for (unsigned long i = 0; i < _n; ++i) {
 
@@ -32,10 +43,12 @@ NPMatrix::NPMatrix(const vector< vector<double> >& data) :
             (*this)(i, j) = data[i][j];
         }
     }
+    setDefaultBrowseIndices();
 }
 
 NPMatrix::NPMatrix(const vector<NVector> &vectors) :
-        NVector((vectors.size() * vectors[0].dim())), _n(vectors.size()), _p(vectors[0].dim()) {
+        NVector((vectors.size() * vectors[0].dim())), _n(vectors.size()), _p(vectors[0].dim()),
+        _i1(0), _j1(0), _i2(0), _j2(0) {
 
     for (unsigned long i = 0; i < _n; ++i) {
 
@@ -43,10 +56,13 @@ NPMatrix::NPMatrix(const vector<NVector> &vectors) :
 
         setRow(vectors[i], i);
     }
+    setDefaultBrowseIndices();
 }
 
-NPMatrix::NPMatrix(const vector<string> &str) : NVector(0), _n(0), _p(0) {
+NPMatrix::NPMatrix(const vector<string> &str) : NVector(0), _n(0), _p(0), _i1(0), _j1(0), _i2(0), _j2(0) {
     parse(str);
+    setDefaultBrowseIndices();
+
 }
 
 
@@ -70,7 +86,7 @@ string NPMatrix::str() const {
 // GETTERS
 
 bool NPMatrix::isSquare() const {
-    return _n == _p;
+    return _j2 - _j1 == _i2 - _i1;
 }
 
 unsigned long NPMatrix::n() const {
@@ -127,21 +143,7 @@ vector<NVector> NPMatrix::cols(unsigned long j1, unsigned long j2) const {
     return cols;
 }
 
-NPMatrix NPMatrix::subMatrix(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const {
-    unsigned long n = i2 - i1 + 1;
-    unsigned long p = j2 - j1 + 1;
 
-    assert(n <= _n && p <= _p);
-
-    NPMatrix subMatrix = NPMatrix::zeros(n, p);
-
-    for (unsigned long i = 0; i < n; ++i) {
-        for (unsigned long j = 0; j < p; ++j) {
-            subMatrix(i, j) = (*this)(i, j);
-        }
-    }
-    return subMatrix;
-}
 
 
 // ROWS/COLS/SUB SETTERS
@@ -176,19 +178,6 @@ void NPMatrix::setCols(const vector<NVector> &vectors, unsigned long j1) {
 
     for (unsigned long j = j1; j < size; ++j) {
         setCol(vectors[j - j1], j);
-    }
-}
-
-void NPMatrix::setSubMatrix(const NPMatrix &matrix, unsigned long i1, unsigned long j1) {
-    unsigned long n = matrix._n - i1 + 1;
-    unsigned long p = matrix._p - j1 + 1;
-
-    assert(n <= _n && p <= _p);
-
-    for (unsigned long i = 0; i < n; ++i) {
-        for (unsigned long j = 0; j < p; ++j) {
-            (*this)(i + i1, j + j1) = matrix(i, j);
-        }
     }
 }
 
@@ -236,14 +225,30 @@ unsigned long NPMatrix::maxAbsIndexCol(unsigned long j, unsigned long r) const {
 
 // TRANSPOSED
 
-void NPMatrix::transpose() {
-    NPMatrix temp = NPMatrix::zeros(_p, _n);
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = 0; j < _p; j++) {
-            temp(j, i) = (*this)(i, j);
+NPMatrix NPMatrix::transposed() {
+    NPMatrix temp{_j2 - _j1 + 1, _i2 - _i1 + 1};
+
+    for(auto i = _i1; i <= _i2; ++i) {
+        for(auto j = _j1; j <= _j2; ++j) {
+            temp(j - _j1, i - _i1) = (*this)(i, j);
         }
     }
-    (*this) = temp;
+    setDefaultBrowseIndices();
+    return temp;
+}
+
+NPMatrix NPMatrix::shifted(const NPMatrix& matrix) const {
+    NPMatrix shifted = NPMatrix::zeros(_n, matrix._p + _n);
+    for(unsigned long i = 0; i < _n; i++) {
+        for(unsigned long j = 0; j < _p; j++) {
+            shifted(i, j) = (*this)(i, j);
+        }
+
+        for(unsigned long j = _p; j < matrix._p + _p; j++) {
+            shifted(i, j) = matrix(i, j - _p);
+        }
+    }
+    return shifted;
 }
 
 // OPERATORS
@@ -276,8 +281,8 @@ NPMatrix operator*(const NPMatrix &m, double s) {
 
 
 NPMatrix NPMatrix::operator*(const NPMatrix &m) {
-    NPMatrix res{*this};
-    res *= m;
+    NPMatrix res{*this}, sub_m{m};
+    res *= sub_m;
     return res;
 }
 
@@ -287,43 +292,95 @@ NVector NPMatrix::operator*(const NVector &v) {
     return res;
 }
 
-NPMatrix NPMatrix::operator|(const NPMatrix &m) {
-    return shifted(m);
+NPMatrix NPMatrix::operator/(double s) {
+    NPMatrix res{*this};
+    res /= s;
+    return res;
 }
 
-
 NPMatrix NPMatrix::operator-() const {
-    return NPMatrix(NVector::operator-(), _n, _p);
+    NPMatrix res = this->subMatrix(_i1, _j1, _i2, _j2);
+    res.opp();
+    setDefaultBrowseIndices();
+    return res;
+}
+
+// SCALAR PRODUCT BASED OPERATIONS
+
+double operator!(const NPMatrix &m) {
+    double res = !NVector(m(m._i1, m._j1, m._i2, m._j2));
+    m.setDefaultBrowseIndices();
+    return res;
+}
+
+double operator|(const NPMatrix &m1, const NPMatrix &m2) {
+    NVector sub_m1 = m1(m1._i1, m1._i2, m1._j1, m1._j2);
+    NVector sub_m2 = m2(m2._i1, m2._i2, m2._j1, m2._j2);
+    double res = sub_m1 * sub_m2;
+
+    m1.setDefaultBrowseIndices();
+    m2.setDefaultBrowseIndices();
+    return res;
+}
+
+double operator/(const NPMatrix &m1, const NPMatrix &m2) {
+    NVector sub_m1 = m1(m1._i1, m1._i2, m1._j1, m1._j2);
+    NVector sub_m2 = m2(m2._i1, m2._i2, m2._j1, m2._j2);
+    double res = sub_m1 / sub_m2;
+
+    m1.setDefaultBrowseIndices();
+    m2.setDefaultBrowseIndices();
+    return res;
 }
 
 // COMPOUND OPERATORS
 
-NPMatrix &NPMatrix::operator+=(const NPMatrix &matrix) {
-    assert(hasSameSize(matrix));
-    this->add(matrix);
+NPMatrix &NPMatrix::operator+=(const NPMatrix &m1) {
+    assert(hasSameSize(m1));
+
+    NPMatrix sub_this{this->subMatrix(_i1, _j1, _i2, _j2)};
+    sub_this.NVector::operator+=(m1(m1._i1, m1._j1, m1._i2, m1._j2));
+    (*this)(_i1, _j1, _i2, _j2) = sub_this;
+
+    setDefaultBrowseIndices();
+    m1.setDefaultBrowseIndices();
+
     return *this;
 }
 
-NPMatrix &NPMatrix::operator-=(const NPMatrix &matrix) {
-    return *this += (-matrix);
+NPMatrix &NPMatrix::operator-=(const NPMatrix &m) {
+    return *this += (-m);
 }
 
 
-NPMatrix & NPMatrix::operator*=(const NPMatrix &matrix) {
-    matrixProduct(matrix);
+NPMatrix & NPMatrix::operator*=(const NPMatrix &m) {
+    matrixProduct(m);
     return *this;
 }
 
 
-NPMatrix &NPMatrix::operator*=(const double scalar) {
-    NVector::operator*=(scalar);
+NPMatrix &NPMatrix::operator*=(double s) {
+    NPMatrix sub_this{this->subMatrix(_i1, _j1, _i2, _j2)};
+    sub_this.NVector::operator*=(s);
+    (*this)(_i1, _j1, _i2, _j2) = sub_this;
+    setDefaultBrowseIndices();
+
     return *this;
+}
+
+NPMatrix &NPMatrix::operator/=(double s) {
+    return operator*=(1 / s);
 }
 
 // COMPARAISON OPERATORS
 
 bool operator==(const NPMatrix& m1, const NPMatrix& m2) {
-    return m1.hasSameSize(m2) && m1.isEqual(m2);
+    bool    res = m1.hasSameSize(m2) &&
+            m1(m1._i1, m1._j1, m1._i2, m1._j2).isEqual(m2(m2._i1, m2._j1, m2._i2, m2._j2));
+
+    m1.setDefaultBrowseIndices();
+    m2.setDefaultBrowseIndices();
+    return res;
 }
 
 bool operator!=(const NPMatrix &m1, const NPMatrix &m2) {
@@ -361,8 +418,7 @@ NPMatrix &NPMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long
 // AFFECTATION
 
 NPMatrix &NPMatrix::operator=(const NPMatrix &m) {
-    setSubMatrix(m, _i1, _j1);
-
+    copy(m);
     return *this;
 }
 
@@ -388,7 +444,6 @@ void NPMatrix::reduce() {
             }
             r++;
         }
-
     }
 }
 
@@ -415,15 +470,25 @@ void NPMatrix::swap(const ElementEnum element, unsigned long k1, unsigned long k
 
     NVector temp = (element == Row) ? NPMatrix::row(k1) : col(k1);
 
-    (element == Row) ? setRow(NPMatrix::row(k2), k1) : setCol(NPMatrix::col(k2), k1);
-    (element == Row) ? setRow(temp, k2)              : setCol(temp, k2);
+    (element == Row) ? setRow(row(k2), k1) : setCol(col(k2), k1);
+    (element == Row) ? setRow(temp, k2)    : setCol(temp, k2);
+
+    setDefaultBrowseIndices();
 }
 
 void NPMatrix::shift(const ElementEnum element, unsigned long k, const long iterations) {
 
-    NVector vector = (element == Row) ? row(k) : col(k);
-    vector.shift(iterations);
-    (element == Row) ? setRow(vector, k) : setCol(vector, k);
+    assert(element == Row ? isBetweenI12(k + _i1) : isBetweenJ12(k + _j1));
+
+    NVector vector = (element == Row) ? row(k + _i1) : col(k + _j1);
+    if(element == Row) {
+        vector(_j1, _j2).shift(iterations);
+    } else {
+        vector(_i1, _i2).shift(iterations);
+    }
+    (element == Row) ? setRow(vector, k + _i1) : setCol(vector, k + _j1);
+
+    setDefaultBrowseIndices();
 }
 
 unsigned long NPMatrix::maxAbsIndex(const ElementEnum element, unsigned long k, unsigned long r) const {
@@ -435,15 +500,18 @@ unsigned long NPMatrix::maxAbsIndex(const ElementEnum element, unsigned long k, 
 
 
 void NPMatrix::vectorProduct(NVector &u) const {
-    assert(isCompatible(u));
-
-    std::vector<NVector> vectorRows = rows();
 
     NVector res = NVector::zeros(u.dim());
-    for (unsigned long i = 0; i < _n; ++i) {
-        res(i) = vectorRows[i] * u;
+    std::vector<NVector> vectorRows = rows(_i1, _i2);
+
+    assert(isCompatible(res));
+
+    for (unsigned long i = _i1; i <= _i2; ++i) {
+        res(i - _i1) = vectorRows[i](_j1, _j2) * u;
     }
     u = res;
+
+    setDefaultBrowseIndices();
 }
 
 void NPMatrix::matrixProduct(const NPMatrix &m) {
@@ -459,28 +527,6 @@ void NPMatrix::matrixProduct(const NPMatrix &m) {
         }
     }
     (*this) = res;
-}
-
-NPMatrix NPMatrix::shifted(const NPMatrix& matrix) const {
-    NPMatrix shifted = NPMatrix::zeros(_n, matrix._p + _n);
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = 0; j < _p; j++) {
-            shifted(i, j) = (*this)(i, j);
-        }
-
-        for(unsigned long j = _p; j < matrix._p + _p; j++) {
-            shifted(i, j) = matrix(i, j - _p);
-        }
-    }
-    return shifted;
-}
-
-void NPMatrix::parse(const vector<string> &str) {
-    std::vector<NVector> rows;
-    for(auto &s : str) {
-        rows.push_back(NVector(s));
-    }
-    *this = NPMatrix(rows);
 }
 
 // PRIVATE METHODS
@@ -499,17 +545,66 @@ bool NPMatrix::isValidIndex(unsigned long i, unsigned long j) const {
     return isValidRowIndex(i) && isValidColIndex(j);
 }
 
+bool NPMatrix::isBetweenI12(unsigned long i) const {
+    return i >= _i1 && i <= _i2;
+}
+
+bool NPMatrix::isBetweenJ12(unsigned long j) const {
+    return j >= _j1 && j <= _j2;
+}
+
 bool NPMatrix::isCompatible(const NVector &u) const {
-    return u.dim() == _p;
+    return u.dim() - 1 == _j2 - _j1;
 }
 
 bool NPMatrix::isCompatible(const NPMatrix &m) const {
-    return m._n == _p;
+    return m._i2 - m._i1 == _j2 - _j1;
 }
 
 bool NPMatrix::hasSameSize(const NPMatrix &m) const {
-    return m._n == _n && m._p == _p;
+    return m._i2 - m._i1 == _i2 - _i1 && m._j2 - m._j1 == _j2 - _j1;
 }
+
+bool NPMatrix::hasDefaultBrowseIndices() const {
+    return  _i1 == 0 &&
+            _j1 == 0 &&
+            (_i2 == _n - 1 || _i2 == 0) &&
+            (_j2 == _p - 1 || _j2 == 0) &&
+            NVector::hasDefaultBrowseIndices();
+}
+
+void NPMatrix::setDefaultBrowseIndices() const {
+    _i1 = 0; _j1 = 0;
+    _i2 = _n - 1; _j2 = _p - 1;
+    NVector::setDefaultBrowseIndices();
+}
+
+// SERIALIZATION
+
+void NPMatrix::copy(const NPMatrix &m) {
+    if(this != &m) {
+        if (hasDefaultBrowseIndices() && m.hasDefaultBrowseIndices()){
+            this->std::vector<double>::operator=(m);
+            _n = m._n; _p = m._p;
+        } else if(hasDefaultBrowseIndices()) {
+            this->std::vector<double>::operator=(m.subMatrix(m._i1, m._j1, m._i2, m._j2));
+            _n = m._i2 - m._i1 + 1; _p = m._j2 - m._j1 + 1;
+        } else {
+            setSubMatrix(m);
+        }
+        setDefaultBrowseIndices();
+        m.setDefaultBrowseIndices();
+    }
+}
+
+void NPMatrix::parse(const vector<string> &str) {
+    std::vector<NVector> rows;
+    for(auto &s : str) {
+        rows.push_back(NVector(s));
+    }
+    *this = NPMatrix(rows);
+}
+
 
 
 unsigned long NPMatrix::getVectorIndex(unsigned long i, unsigned long j) const {
@@ -527,8 +622,30 @@ unsigned long NPMatrix::getColFromVectorIndex(unsigned long k) const {
 }
 
 
+// SUB-MATRICES
 
+NPMatrix NPMatrix::subMatrix(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const {
+    NPMatrix subMatrix = NPMatrix::zeros(_i2 - _i1 + 1, _j2 - _j1 + 1);
 
+    for (unsigned long i = 0; i <= _i2 - _i1; ++i) {
+        for (unsigned long j = 0; j <= _j2 - _j1; ++j) {
+            subMatrix(i, j) = (*this)(i + _i1, j + _j1);
+        }
+    }
+    return subMatrix;
+}
+
+void NPMatrix::setSubMatrix(const NPMatrix &m) {
+    assert(hasSameSize(m));
+
+    for (unsigned long i = 0; i <= _i2 - _i1; ++i) {
+        for (unsigned long j = 0; j <= _j2 - _j1; ++j) {
+            (*this)(i + _i1, j + _j1) = m(i + m._i1, j + m._j1);
+        }
+    }
+    setDefaultBrowseIndices();
+    m.setDefaultBrowseIndices();
+}
 
 
 

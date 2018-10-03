@@ -93,9 +93,9 @@ void NVector::shift(long iterations) {
         long index;
         NVector temp{this->subVector(0, this->size() - 1)};
 
-        for (unsigned long k = _k1; k <= _k2; ++k) {
+        for (unsigned long k = 0; k < sizedDim; ++k) {
             index = (k + shiftIndex) % sizedDim;
-            temp[k] = (*this)[index];
+            temp[k + _k1] = (*this)[index + _k1];
         }
         setDefaultBrowseIndices();
         (*this) = temp;
@@ -260,13 +260,13 @@ NVector &NVector::operator-=(const NVector &vector) {
     return *this;
 }
 
-NVector &NVector::operator*=(const double scalar) {
-    this->prod(scalar);
+NVector &NVector::operator*=(double s) {
+    this->prod(s);
     return *this;
 }
 
-NVector &NVector::operator/=(const double scalar) {
-    this->div(scalar);
+NVector &NVector::operator/=(double s) {
+    this->div(s);
     return *this;
 }
 

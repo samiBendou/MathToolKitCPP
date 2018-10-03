@@ -629,6 +629,9 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">
 			<Option target="TestMathToolKitCPP"/>
 		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrixFuncOp.cpp">
+			<Option target="TestMathToolKitCPP"/>
+		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNVector.cpp">
 			<Option target="TestMathToolKitCPP"/>
 		</Unit>

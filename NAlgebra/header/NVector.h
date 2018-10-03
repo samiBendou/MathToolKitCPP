@@ -201,9 +201,9 @@ public:
 
     NVector& operator-=(const NVector& vector);
 
-    virtual NVector& operator*=(double scalar);
+    virtual NVector& operator*=(double s);
 
-    NVector& operator/=(double scalar);
+    virtual NVector& operator/=(double s);
 
 
     // ACCES OPERATOR
@@ -280,6 +280,7 @@ public:
      * @return a 0 vector (0, 0, ..., 0).
      */
     static NVector zeros(unsigned long dim);
+
     /**
      *
      * @param dim : dimension of the vector
@@ -375,9 +376,9 @@ protected:
 
     bool isCompatible(const NVector& vector) const;
 
-    bool hasDefaultBrowseIndices() const;
+    virtual bool hasDefaultBrowseIndices() const;
 
-    void setDefaultBrowseIndices() const;
+    virtual void setDefaultBrowseIndices() const;
 
     // AFFECTATION
 

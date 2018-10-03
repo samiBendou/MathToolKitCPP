@@ -401,12 +401,6 @@ NMatrix operator-(const NMatrix &matrix) {
     return res;
 }
 
-NMatrix operator!(const NMatrix &matrix) {
-    NMatrix res{matrix};
-    res.transpose();
-    return res;
-}
-
 
 
 

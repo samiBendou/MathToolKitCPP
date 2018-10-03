@@ -115,8 +115,6 @@ public:
 
     friend NMatrix operator-(const NMatrix& matrix);
 
-    friend NMatrix operator!(const NMatrix& matrix);
-
     // STATIC FUNCTIONS
 
     /**
