@@ -31,10 +31,10 @@ TEST_F(NVectorFuncOpTest, Dim) {
 
 TEST_F(NVectorFuncOpTest, Equality) {
     ASSERT_TRUE(_u(0, 1) == _v(1, 2));
-    ASSERT_TRUE(_u(0, 1) == NVector("(1 0)"));
+    ASSERT_TRUE(_u(0, 1) == "(1 0)");
 
     ASSERT_FALSE(_u(0, 1) != _v(1, 2));
-    ASSERT_FALSE(_u(0, 1) != NVector("(1 0)"));
+    ASSERT_FALSE(_u(0, 1) != "(1 0)");
 }
 
 TEST_F(NVectorFuncOpTest, Serialization) {
@@ -52,78 +52,78 @@ TEST_F(NVectorFuncOpTest, AffectationAccess) {
 
     _u(0) = 1;
 
-    ASSERT_EQ(_u(0, 1), NVector("(1 0)"));
-    ASSERT_EQ(_u(1, 2), NVector("(0 0)"));
+    ASSERT_EQ(_u(0, 1), "(1 0)");
+    ASSERT_EQ(_u(1, 2), "(0 0)");
 
     _v = _u(0, 1);
-    ASSERT_EQ(_v, NVector("(1 0)"));
+    ASSERT_EQ(_v, "(1 0)");
 
     _w = _u;
-    ASSERT_EQ(_w, NVector("(1 0 0)"));
+    ASSERT_EQ(_w, "(1 0 0)");
 
-    _w = NVector("(0 0 1)");
+    _w = "(0 0 1)";
     _v(0, 1) = _w(1, 2);
-    ASSERT_EQ(_v, NVector("(0 1)"));
+    ASSERT_EQ(_v, "(0 1)");
 
     _u(0, 1) = _v;
-    ASSERT_EQ(_u, NVector("(0 1 0)"));
+    ASSERT_EQ(_u, "(0 1 0)");
 }
 
 
 TEST_F(NVectorFuncOpTest, Add) {
     _u(0, 1) = _u(0, 1) + _v(0, 1);
-    ASSERT_EQ(_u, NVector("(1 1 0)"));
+    ASSERT_EQ(_u, "(1 1 0)");
 
     _u(0, 1) += _v(0, 1);
-    ASSERT_EQ(_u, NVector("(1 2 0)"));
+    ASSERT_EQ(_u, "(1 2 0)");
 
     _u(0, 1) = _u(0, 1) + _w(1, 2);
-    ASSERT_EQ(_u, NVector("(1 3 0)"));
+    ASSERT_EQ(_u, "(1 3 0)");
 
     _u(0, 1) += _w(1, 2);
-    ASSERT_EQ(_u, NVector("(1 4 0)"));
+    ASSERT_EQ(_u, "(1 4 0)");
 }
 
 TEST_F(NVectorFuncOpTest, Sub) {
     _u(0, 1) = _u(0, 1) - _v(0, 1);
-    ASSERT_EQ(_u, NVector("(1 -1 0)"));
+    ASSERT_EQ(_u, "(1 -1 0)");
 
     _u(0, 1) -= _v(0, 1);
-    ASSERT_EQ(_u, NVector("(1 -2 0)"));
+    ASSERT_EQ(_u, "(1 -2 0)");
 
     _u(0, 1) = _u(0, 1) - _w(1, 2);
-    ASSERT_EQ(_u, NVector("(1 -3 0)"));
+    ASSERT_EQ(_u, "(1 -3 0)");
 
     _u(0, 1) -= _w(1, 2);
-    ASSERT_EQ(_u, NVector("(1 -4 0)"));
+    ASSERT_EQ(_u, "(1 -4 0)");
 
     _u += _w;
     _u(0, 1) = -_v(0, 1);
-    ASSERT_EQ(_u, NVector("(0 -1 1)"));
+    ASSERT_EQ(_u, "(0 -1 1)");
 }
 
 TEST_F(NVectorFuncOpTest, Prod) {
     double x = 5;
 
     _v(0, 1) = _u(0, 1) * x;
-    ASSERT_EQ(_v, NVector("(5 0 0)"));
+    ASSERT_EQ(_v, "(5 0 0)");
 
     _v(0, 1) *= x;
-    ASSERT_EQ(_v, NVector("(25 0 0)"));
+    ASSERT_EQ(_v, "(25 0 0)");
 
     _v(0, 1) = _v(0, 1) / x;
-    ASSERT_EQ(_v, NVector("(5 0 0)"));
+    ASSERT_EQ(_v, "(5 0 0)");
 
     _v(0, 1) /= x;
-    ASSERT_EQ(_v, NVector("(1 0 0)"));
+    ASSERT_EQ(_v, "(1 0 0)");
 }
 
 TEST_F(NVectorFuncOpTest, EuclideanOperations) {
+    ASSERT_EQ(_u(0, 1) | _v(0, 1), 0);
+    ASSERT_EQ(_u(0, 1) | _v(1, 2), 1);
+
     ASSERT_EQ(!_u(1, 2), 0);
     ASSERT_EQ(!_u(0, 1), 1);
-
-    ASSERT_EQ(_u(0, 1) * _v(0, 1), 0);
-    ASSERT_EQ(_u(0, 1) * _v(1, 2), 1);
 
     ASSERT_EQ(_u(0, 1) / _v(0, 1), pow(2, 0.5));
     ASSERT_EQ(_u(0, 1) / _v(1, 2), 0);

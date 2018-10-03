@@ -3,9 +3,12 @@
  * @date    03/05/2018
  * @author  samiBendou
  *
- * @details A NVector object stores the coordinates of a finite dimension vector E in a certain base.
+ * @details A NVector object stores the coordinates of a finite dimension vector x in an arbitrary base.
  *          Theses are stored in the form [x0, x1, ..., x(n-1)]. where [...] is a std::vector<double>,
  *          n is the dimension and (x0, x1, ..., x(n-1)) are the coordinates.
+ *          We will be using the following definitions :
+ *              - x/u : this vector.
+ *              - s : a scalar (double)
  *
  *          Representation of a finite dimension vector space. This object is the base object of every
  *          other object in NAlgebra module. It inherits from std::vector<double> so it's kind of memory
@@ -53,7 +56,7 @@ public:
      * @param   str a string containing the components of vector in the form "(0 1 2)".
      *          The character '(' and ')' can be replaced by any one. Don't use comma at all.
      */
-    NVector(const std::string& str);
+    explicit NVector(const std::string& str);
 
     // SERIALIZATION
 
@@ -135,12 +138,14 @@ public:
 
     /**
      *
-     * @param scalar : value to fill the vector with
+     * @param s : value to fill the vector with
      * @details : Fill vector with a scalar : ie. with scalar = 3, (3, 3, 3, ..., 3).
      */
-    void fill(double scalar);
+    void fill(double s);
 
     // OPERATORS
+
+    // ALGEBRAICAL OPERATORS
 
     /**
      * @return result of u + v where + is the usual addition (u0 + v0, u1 + v1, ...).
@@ -175,16 +180,16 @@ public:
 
     /**
      *
-     * @return the norm of vector ||.||
+     * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
      */
-    friend double operator!(const NVector& vector);
-
+    friend double operator|(const NVector &u, const NVector &v);
 
     /**
      *
-     * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
+     * @return the norm of vector ||.|| dervied from dot product.
      */
-    friend double operator*(const NVector &u, const NVector &v);
+    friend double operator!(const NVector& u);
+
 
     /**
      *
@@ -196,10 +201,9 @@ public:
     // COMPOUND OPERATORS
 
 
-    NVector& operator+=(const NVector& vector);
+    NVector& operator+=(const NVector &u);
 
-
-    NVector& operator-=(const NVector& vector);
+    NVector& operator-=(const NVector &u);
 
     virtual NVector& operator*=(double s);
 
@@ -221,13 +225,19 @@ public:
 
     /**
      *
-     * @param k1 : start index for subrange. Between -(dim() - 1) and dim() - 1.
-     * @param k2 : end index for subrange. Between -(dim() - 1) and dim() - 1.
-     * @return  a sub vector in representing coordinates from k1 to k2. use this function with |k1| <= |k2|.
-     *              - If k1 >= 0 returns : (xk1, x(k1+1), ...,xk2).
-     *              - If k1 =< 0 returns : (x(n - 1 - k1), ..., x(n - 1 - k2)).
-     *          the non const version of function operator is used to affect a sub-range
-     *          of this instance of NVector. Operator can be used to read/write values.
+     * @param k1 : start index for sub-range.
+     * @param k2 : end index for sub-range.
+     * @return  a sub vector in representing coordinates from k1 to k2, (xk1, x(k1+1), ...,xk2).
+     *
+     *          - 0 <= |k1| <= |k2| <= dim() - 1.
+     *
+     *          - Operator can be used to read/write values.
+     *
+     *          - Allows operations such as u(0, 1) + v(1, 2) or u(1, 4).max(), ...
+     *
+     *          - Const version returns a sub-vector.
+     *
+     *          - See unit tests for more details.
      */
     NVector operator()(unsigned long k1, unsigned long k2) const;
 
@@ -243,12 +253,11 @@ public:
 
     /**
      *
-     * @param vector source object
+     * @param u source NVector object
      * @return reference to this.
-     * @details Copy source object on this object using copy(). The const version doesn't modify state of source object.
-     *          the non-const version reinitialize _k1 and _k2 in order to reuse operator() on non-const objects.
+     * @details Copy source object on this object using copy().
      */
-    NVector& operator=(const NVector& vector);
+    NVector& operator=(const NVector& u);
 
     NVector& operator=(const std::string& str);
 
@@ -261,6 +270,14 @@ public:
 
     friend bool operator==(const NVector& u, const NVector& v);
 
+    friend bool operator==(const NVector& u, const std::string& str);
+
+    friend bool operator==(const std::string& str, const NVector& u);
+
+    /**
+     *
+     * @return true if s is 0 and u is null vector.
+     */
     friend bool operator==(const NVector& u, double s);
 
     /**
@@ -268,6 +285,10 @@ public:
      * @return return true if ||v1 - v2|| >= epsilon.
      */
     friend bool operator!=(const NVector& u, const NVector& v);
+
+    friend bool operator!=(const NVector& u, const std::string& str);
+
+    friend bool operator!=(const std::string& str, const NVector& u);
 
     friend bool operator!=(const NVector& u, double s);
 
@@ -295,7 +316,6 @@ public:
      * @return a vector filled with s (s, s, ..., s).
      */
     static NVector scalar(double s, unsigned long dim);
-    //
 
     /**
      *
@@ -321,47 +341,28 @@ public:
      *          usual addition and scalar multiplication.
      */
     static NVector sumProd(const std::vector<double>& scalars, const std::vector<NVector>& vectors);
-    // Returns linear combination of vectors with scalars coefficients
 
 protected:
 
-    // PROTECTED MEMBERS
-
-
     // VECTOR SPACE OPERATIONS
 
-    virtual void add(const NVector& vector);
-    //Sum of two vectors
+    virtual void add(const NVector &u);
 
-    virtual void sub(const NVector& vector);
-    //Subtraction of two vectors
+    virtual void sub(const NVector &u);
 
     virtual void opp();
-    //Opposite of a vector
 
-    virtual void prod(double scalar);
-    //Scalar multiplication
+    virtual void prod(double s);
 
-    virtual void div(double scalar);
-    //Division by a scalar
-
+    virtual void div(double s);
 
     // EUCLIDEAN SPACE OPERATIONS
-    double dot(const NVector& vector) const;
-    // Canonical inner product x * y = x0 * y0 + x1 * y1 + ...
+
+    double dotProduct(const NVector &u) const;
 
     double norm() const;
-    // Norm derived from inner product
 
-    double distance(const NVector& vector) const;
-    // Distance derived from inner product
-
-    //BROWSE INDICES
-
-    mutable unsigned long _k1;
-
-    mutable unsigned long _k2;
-    //Indexes used to work on sub vector of a vector or to set a sub vector with operator().
+    double distance(const NVector &u) const;
 
     //CHARACTERIZATION
 
@@ -370,11 +371,10 @@ protected:
     bool isBetweenK12(unsigned long k) const;
 
     bool isNull() const;
-    // Returns true if the two norm and the vector is less than epsilon constant
 
-    bool isEqual(const NVector& vector) const;
+    bool isEqual(const NVector &u) const;
 
-    bool isCompatible(const NVector& vector) const;
+    bool isCompatible(const NVector &u) const;
 
     virtual bool hasDefaultBrowseIndices() const;
 
@@ -382,18 +382,21 @@ protected:
 
     // AFFECTATION
 
-    void copy(const NVector& vector);
+    void copy(const NVector &u);
 
     virtual void parse(const std::string& str);
 
     //SUB-VECTORS
 
     NVector subVector(unsigned long k1, unsigned long k2) const;
-    // Returns a sub-vector of this vector (xk1, x(k1 +1), ..., x(k2)) where k1 <= k2 < dim()
 
-    void setSubVector(const NVector& vector);
-    // Sets a sub range (x(k1 - 1), v0, v1, ..., v(v.dim() - 1), ...; x(x.dim() - 1)) of this vector
+    void setSubVector(const NVector &u);
 
+    //BROWSE INDICES
+
+    mutable unsigned long _k1;
+
+    mutable unsigned long _k2;
 };
 
 

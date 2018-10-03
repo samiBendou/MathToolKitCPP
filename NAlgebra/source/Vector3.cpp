@@ -119,7 +119,7 @@ double Vector3::angle(const Vector3 &vector) const {
 
 double Vector3::pCos(const Vector3 &vector) const {
     if(*this != 0 && vector != 0)
-        return ((*this) * vector) / (!(*this) * !vector);
+        return ((*this) | vector) / (!(*this) * !vector);
     else return 1.0;
 }
 

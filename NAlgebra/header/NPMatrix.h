@@ -10,8 +10,8 @@
  *                      - i : Row Index between 0 <= i < n
  *                      - j : Column Index 0 <= j < p
  *                      - k, l : either compound index or underlying std::vector array index.
- *                      - A : This NPMatrix. the components of the matrix in a certain base are noted Aij.
- *                      - R : This NVec
+ *                      - A/m : This NPMatrix. the components of the matrix in a certain base are noted Aij.
+ *                      - R/C : Rows/Columns of A
  *
  *                   The matrix components are stored in a linear form with the index transformation k = p * i + j.
  *                   The underlying std::vector is represented as t[p * i + j].
@@ -48,32 +48,12 @@ public:
 
     /**
      *
-     * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
-     */
-    explicit NPMatrix(const NVector& vector);
-
-    /**
-     *
-     * @return a n x p matrix constructed using a std::vector of n * p where vector.dim() must be equal to n * p.
-     */
-    NPMatrix(const NVector& vector, unsigned long n, unsigned long p = 0);
-
-    NPMatrix(const NPMatrix& matrix);
-
-    /**
-     *
      * @return a n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
      * must have the same length. They represent the rows of A matrix.
      */
-    explicit NPMatrix(const vector< vector<double> >& data);
+    explicit NPMatrix(const vector< vector<double> > &data);
 
-    /**
-     *
-     * @return a n x p matrix constructed using a std::vector<NVector>. All the vectors must have the same dimension.
-     * They represent the rows of the matrix.
-     */
-
-    explicit NPMatrix(const vector< NVector >& vectors);
+    NPMatrix(const NPMatrix &m);
 
     /**
      *
@@ -84,7 +64,29 @@ public:
      *                    "|...  ...   A(N-1)(P-1)|"}
      *          The separation character | can be replaced by any one. Don't use comma or at all.
      */
-    NPMatrix(const vector< std::string >& str);
+    explicit NPMatrix(const vector<string> &str);
+
+    /**
+     *
+     * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
+     */
+    explicit NPMatrix(const NVector& u);
+
+    /**
+     *
+     * @return a n x p matrix constructed using a NVector having u.dim() = n * p
+     */
+    NPMatrix(const NVector &u, unsigned long n, unsigned long p = 0);
+
+    /**
+     *
+     * @return a n x p matrix constructed using a std::vector<NVector>. All the vectors must have the same dimension.
+     * They represent the rows of the matrix.
+     */
+
+    explicit NPMatrix(const vector<NVector> &vectors);
+
+
 
     // SERIALIZATION
 
@@ -142,13 +144,13 @@ public:
 
     /**
      *
-     * @param vector row/col seen as NVector. The dimension of the vector must be equal to the number of cols/rows
+     * @param u row/col seen as NVector. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const NVector& vector, unsigned long i1);
+    void setRow(const NVector &u, unsigned long i1);
 
 
-    void setCol(const NVector& vector, unsigned long j1);
+    void setCol(const NVector &u, unsigned long j1);
 
     /**
      *
@@ -171,6 +173,21 @@ public:
 
     void setCols(const std::vector<NVector>& vectors, unsigned long j1 = 0);
 
+    // MAX / MIN
+
+    /**
+     *
+     * @param i/j row/col where to search max
+     * @param r start index in the row/col to search.
+     * @return  the index of the maximum value in the row/col.
+     *          maxAbsIndexRow(i, r) will search the max in [Air, Ai(r+1), ..., Ai(n-1)].
+     */
+    unsigned long maxAbsIndexRow(unsigned long i, unsigned long r = 0) const;
+
+    unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
+
+
+    // MANIPULATORS
 
     // SWAP
 
@@ -213,32 +230,25 @@ public:
 
     void shiftCol(unsigned long j, long iterations = 1);
 
-
-    // MAX / MIN
-
-    /**
-     *
-     * @param i/j row/col where to search max
-     * @param r start index in the row/col to search.
-     * @return  the index of the maximum value in the row/col.
-     *          maxAbsIndexRow(i, r) will search the max in [Air, Ai(r+1), ..., Ai(n-1)].
-     */
-    unsigned long maxAbsIndexRow(unsigned long i, unsigned long r = 0) const;
-
-    unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
-
-
     // TRANSPOSED
 
     NPMatrix transposed();
 
-    //SHIFTED
+    // ALGEBRA
 
     /**
      * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
      * and m2 columns. m1 and m2 must have the same number of rows.
      */
-    NPMatrix shifted(const NPMatrix& matrix) const;
+    NPMatrix shifted(const NPMatrix &m) const;
+
+
+    /**
+     * @description :   Apply Gauss Jordan elimination on matrix to calculate inverse for non square matrix.
+     *                  To perform this, shift the matrix you want to invert than apply this function.
+     */
+    void reduce();
+
 
     // OPERATORS
 
@@ -247,12 +257,22 @@ public:
     /**
      * @return this + m where + is usual addition for matrices. The matrices must have the length.
      */
-    NPMatrix operator+(const NPMatrix& m);
+    NPMatrix operator+(const NPMatrix& m) const;
+
     /**
      * @return m1 - m2 where - is substraction based on + for matrices. The matrices must have the length.
      */
-    NPMatrix operator-(const NPMatrix& m);
+    NPMatrix operator-(const NPMatrix& m) const;
 
+    /**
+     * @return the usual opposite of the matrix -m.
+     */
+    NPMatrix operator-() const;
+
+    /**
+     *
+     * @return s * m where * is usual scalar multiplication
+     */
     friend NPMatrix operator*(double s, const NPMatrix& m);
 
     friend NPMatrix operator*(const NPMatrix& m, double s);
@@ -261,34 +281,32 @@ public:
      * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
      *          Natural O(n3) matrix product is used.
      */
-    NPMatrix operator*(const NPMatrix& m);
+    NPMatrix operator*(const NPMatrix& m) const;
 
     /**
      *
      * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
      *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
      */
-    NVector operator*(const NVector &v);
-
-    NPMatrix operator/(double s);
-
+    NVector operator*(const NVector &v) const;
 
     /**
-     * @return the usual opposite of the matrix -m.
+     *
+     * @return (1 / s) * m
      */
-    NPMatrix operator-() const;
+    NPMatrix operator/(double s) const;
 
     // SCALAR PRODUCT BASED OPERATIONS
 
-    friend double operator!(const NPMatrix& m);
-
     friend double operator|(const NPMatrix& m1, const NPMatrix& m2);
+
+    friend double operator!(const NPMatrix& m);
 
     friend double operator/(const NPMatrix& m1, const NPMatrix& m2);
 
     // COMPOUND OPERATORS
 
-    NPMatrix& operator+=(const NPMatrix& matrix);
+    NPMatrix& operator+=(const NPMatrix &m);
 
     NPMatrix& operator-=(const NPMatrix& m);
 
@@ -297,12 +315,6 @@ public:
     NPMatrix& operator*=(double s) override;
 
     NPMatrix& operator/=(double s) override;
-
-    // COMPARAISON OPERATORS
-
-    friend bool operator==(const NPMatrix& m1, const NPMatrix& m2);
-
-    friend bool operator!=(const NPMatrix& m1, const NPMatrix& m2);
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -314,6 +326,19 @@ public:
 
     double operator()(unsigned long i, unsigned long j) const;
 
+    /**
+     *
+     * @param i1/j1 : start index of rows/cols
+     * @param i2/j2 : end index i2/j2 >= i1/j1 of rows/cols
+     * @return a sub matrix with rows starting at i1 and ending at i2 and cols starting at j1 and ending at j2 :
+     *
+     *  |Ai1j1, ..., Ai2j1|
+     *  |...  , ..., ...  |
+     *  |Ai2j1, ..., Ai2j2|
+     *
+     * Operations on a sub matrix can be applied this way matrix(i1, j1, i2, j2).shift(0, 1)
+     * See unit tests for mor details.
+     */
     NPMatrix operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const;
 
     NPMatrix& operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
@@ -322,13 +347,11 @@ public:
 
     NPMatrix& operator=(const NPMatrix &m);
 
-    // ALGEBRA
+    // COMPARAISON OPERATORS
 
-    /**
-     * @description :   Apply Gauss Jordan elimination on matrix to calculate inverse for non square matrix.
-     *                  To perform this, shift the matrix you want to invert than apply this function.
-     */
-    void reduce();
+    friend bool operator==(const NPMatrix& m1, const NPMatrix& m2);
+
+    friend bool operator!=(const NPMatrix& m1, const NPMatrix& m2);
 
     // STATIC FUNCTIONS
 
@@ -347,19 +370,23 @@ public:
      * @param i row where to put 1.
      * @param j col where to put 1.
      *
-     * @return canonical matrices Eij which contains 1 in position ij and 0 elsewhere.
+     * @return canonical matrices Eij  of Mnp(R) which contains 1 in position ij and 0 elsewhere.
      */
     static NPMatrix canonical(unsigned long i, unsigned long j, unsigned long n, unsigned long p = 0);
-    // Returns canonical matrix Eij of Mnp(R)
 
 protected:
 
-    // MANIPULATIONS
+    // MANIPULATORS
+
     void swap(ElementEnum element, unsigned long k1, unsigned long k2);
 
     void shift(ElementEnum element, unsigned long k, long iterations);
 
+    // MAX/MIN
+
     unsigned long maxAbsIndex(ElementEnum element, unsigned long k, unsigned long r) const;
+
+    // ALGEBRAICAL OPERATIONS
 
     void vectorProduct(NVector &u) const;
 
@@ -379,7 +406,7 @@ protected:
 
     bool isBetweenJ12(unsigned long j) const;
 
-    bool isCompatible(const NVector& u) const;
+    bool isCompatible(const NVector &u) const;
 
     bool isCompatible(const NPMatrix& u) const;
 
@@ -389,9 +416,7 @@ protected:
 
     void setDefaultBrowseIndices() const override;
 
-
-
-    // SERIALIZATION
+    // AFFECTATION
 
     void copy(const NPMatrix& m);
 
@@ -407,27 +432,18 @@ protected:
 
     // SUB-MATRICES
 
-
-    void setSubMatrix(const NPMatrix& matrix);
-
-    /**
- *
- * @param i1/j1 : start index of rows/cols
- * @param i2/j2 : end index i2/j2 >= i1/j1 of rows/cols
- * @return a sub matrix with rows starting at i1 and ending at i2 and cols starting at j1 and ending at j2 :
- *
- *  |Ai1j1, ..., Ai2j1|
- *  |...  , ..., ...  |
- *  |Ai2j1, ..., Ai2j2|
- *
- *  Start indices are by default 0 and end indices are by default n or p.
- */
     NPMatrix subMatrix( unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
                         unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
+
+    void setSubMatrix(const NPMatrix &m);
+
+    // SIZE
 
     unsigned long _n;
 
     unsigned long _p;
+
+    // BROWSE INDICES
 
     mutable unsigned long _i1;
 
