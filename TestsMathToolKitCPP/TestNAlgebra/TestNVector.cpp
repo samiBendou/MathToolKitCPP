@@ -61,7 +61,6 @@ TEST_F(NVectorTest, Serialization) {
     std::vector<double> expect{1, 0, 0};
 
     ASSERT_EQ(_u, "(1 0 0)");
-    ASSERT_NE(_u, "(1, 0, 0)");
 
     ASSERT_EQ(_u.str(), "(  1.00e+00  0.00e+00  0.00e+00  )");
 
@@ -181,12 +180,22 @@ TEST_F(NVectorTest, Shift) {
     _u.shift(2);
     ASSERT_EQ(_u, "(1 0 0)");
 }
-TEST_F(NVectorTest, StaticGenerators) {
 
+TEST_F(NVectorTest, Fill) {
+    _u.fill(9);
+    ASSERT_EQ(_u, "(9 9 9)");
+}
+
+TEST_F(NVectorTest, StaticGenerators) {
     ASSERT_EQ(NVector::zeros(3), "(0 0 0)");
     ASSERT_EQ(NVector::ones(3), "(1 1 1)");
     ASSERT_EQ(NVector::scalar(5, 3), "(5 5 5)");
     ASSERT_EQ(NVector::canonical(0, 3), "(1 0 0)");
+}
+
+TEST_F(NVectorTest, StaticFunctions) {
+    ASSERT_EQ(NVector::sum({_u, _v, _w}), "(1 1 1)");
+    ASSERT_EQ(NVector::sumProd({1, 2, 3}, {_u, _v, _w}), "(1 2 3)");
 }
 
 

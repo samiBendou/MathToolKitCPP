@@ -20,22 +20,6 @@
 #include <SNewtonianField.h>
 #include <NOde.h>
 
-bool testNVectorAlgebra();
-bool testNVectorMaxMin();
-bool testNVectorSwap();
-bool testNVectorShift();
-bool testNVectorSubVectors();
-bool testNVectorFunctionOp();
-bool testNVectorCopy();
-bool testENVector();
-bool testVector3();
-
-bool testNPMatrixAlgebra();
-bool testNPMatrixMaxMin();
-bool testNPMatrixSwap();
-bool testNPMatrixShift();
-bool testNPMatrixSubs();
-bool testNPMatrixFunctionOp();
 
 bool testNMatrixAlgebra();
 bool testNMatrixLUP();

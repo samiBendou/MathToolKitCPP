@@ -31,6 +31,7 @@
 #include <vector>
 #include <cstdarg>
 #include <cassert>
+#include <algorithm>
 
 class NVector : public std::vector<double> {
 
@@ -41,9 +42,10 @@ public:
      *
      * @return a NVector with an array of data. The dimension is the size of the array.
      */
-    NVector(const std::vector<double>& data);
+    NVector(const std::vector<double> &data);
 
     NVector(const NVector &u);
+
     /**
      *
      * @return  a NVector by giving the dimension. This method uses the std::vector constructor
@@ -56,7 +58,7 @@ public:
      * @param   str a string containing the components of vector in the form "(0 1 2)".
      *          The character '(' and ')' can be replaced by any one. Don't use comma at all.
      */
-    explicit NVector(const std::string& str);
+    explicit NVector(const std::string &str);
 
     // SERIALIZATION
 
@@ -188,7 +190,7 @@ public:
      *
      * @return the norm of vector ||.|| dervied from dot product.
      */
-    friend double operator!(const NVector& u);
+    friend double operator!(const NVector &u);
 
 
     /**
@@ -201,13 +203,13 @@ public:
     // COMPOUND OPERATORS
 
 
-    NVector& operator+=(const NVector &u);
+    NVector &operator+=(const NVector &u);
 
-    NVector& operator-=(const NVector &u);
+    NVector &operator-=(const NVector &u);
 
-    virtual NVector& operator*=(double s);
+    virtual NVector &operator*=(double s);
 
-    virtual NVector& operator/=(double s);
+    virtual NVector &operator/=(double s);
 
 
     // ACCES OPERATOR
@@ -219,7 +221,7 @@ public:
      * @return  the kth coordinate of the vector xk if k < 0, returns x(n - 1 - k).
      *          Operator can be used to read/write values.
      */
-    double& operator()(long k);
+    double &operator()(long k);
 
     double operator()(long k) const;
 
@@ -241,12 +243,12 @@ public:
      */
     NVector operator()(unsigned long k1, unsigned long k2) const;
 
-    NVector& operator()(unsigned long k1, unsigned long k2);
+    NVector &operator()(unsigned long k1, unsigned long k2);
 
 
     // STREAM EXTRACT/INSERT
 
-    friend std::ostream& operator<<(std::ostream &os, const NVector &vector);
+    friend std::ostream &operator<<(std::ostream &os, const NVector &vector);
 
 
     // AFFECTATION
@@ -257,9 +259,9 @@ public:
      * @return reference to this.
      * @details Copy source object on this object using copy().
      */
-    NVector& operator=(const NVector& u);
+    NVector &operator=(const NVector &u);
 
-    NVector& operator=(const std::string& str);
+    NVector &operator=(const std::string &str);
 
     // NORM BASED COMPARISON OPERATORS
 
@@ -268,29 +270,29 @@ public:
      * @return return true if ||u - v|| < epsilon.
      */
 
-    friend bool operator==(const NVector& u, const NVector& v);
+    friend bool operator==(const NVector &u, const NVector &v);
 
-    friend bool operator==(const NVector& u, const std::string& str);
+    friend bool operator==(const NVector &u, const std::string &str);
 
-    friend bool operator==(const std::string& str, const NVector& u);
+    friend bool operator==(const std::string &str, const NVector &u);
 
     /**
      *
      * @return true if s is 0 and u is null vector.
      */
-    friend bool operator==(const NVector& u, double s);
+    friend bool operator==(const NVector &u, double s);
 
     /**
      *
      * @return return true if ||v1 - v2|| >= epsilon.
      */
-    friend bool operator!=(const NVector& u, const NVector& v);
+    friend bool operator!=(const NVector &u, const NVector &v);
 
-    friend bool operator!=(const NVector& u, const std::string& str);
+    friend bool operator!=(const NVector &u, const std::string &str);
 
-    friend bool operator!=(const std::string& str, const NVector& u);
+    friend bool operator!=(const std::string &str, const NVector &u);
 
-    friend bool operator!=(const NVector& u, double s);
+    friend bool operator!=(const NVector &u, double s);
 
 
     // STATIC FUNCTIONS
@@ -331,7 +333,7 @@ public:
      * @param vectors : an array of vectors [u0, u1, ..., u(r-1)] where r is the size of the array
      * @return the sum of the vectors : u0 + u1 + ... + u(r-1). where + is usual addition
      */
-    static NVector sum(const std::vector<NVector>& vectors);
+    static NVector sum(const std::vector<NVector> &vectors);
 
     /**
      *
@@ -340,7 +342,7 @@ public:
      * @return  the linear combination s0 * u0 + s1 * u1 + ... + s(r-1) * u(r-1). where + and * are
      *          usual addition and scalar multiplication.
      */
-    static NVector sumProd(const std::vector<double>& scalars, const std::vector<NVector>& vectors);
+    static NVector sumProd(const std::vector<double> &scalars, const std::vector<NVector> &vectors);
 
 protected:
 
@@ -374,7 +376,7 @@ protected:
 
     bool isEqual(const NVector &u) const;
 
-    bool isCompatible(const NVector &u) const;
+    bool hasSameSize(const NVector &u) const;
 
     virtual bool hasDefaultBrowseIndices() const;
 
@@ -384,7 +386,7 @@ protected:
 
     void copy(const NVector &u);
 
-    virtual void parse(const std::string& str);
+    virtual void parse(const std::string &str);
 
     //SUB-VECTORS
 

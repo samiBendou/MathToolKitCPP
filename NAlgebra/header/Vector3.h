@@ -30,9 +30,9 @@ public:
 
     using NVector::operator=;
 
-    Vector3(const NVector& vector);
+    Vector3(const NVector &vector);
 
-    Vector3(const Vector3& vector);
+    Vector3(const Vector3 &vector);
 
     explicit Vector3(double x = 0, double y = 0, double z = 0);
 
@@ -78,13 +78,13 @@ public:
      *
      * @return v1 ^ v2 where ^ is vector product between v1 and v2 (cross product).
      */
-    friend Vector3 operator^(const Vector3& v1, const Vector3& v2);
+    friend Vector3 operator^(const Vector3 &v1, const Vector3 &v2);
 
     /**
      *
      * @return v1 % v2 which is the angle between the two vector.
      */
-    friend double operator%(const Vector3& v1, const Vector3& v2);
+    friend double operator%(const Vector3 &v1, const Vector3 &v2);
     // Returns angle between v1 & v2
 
     static Vector3 zeros();

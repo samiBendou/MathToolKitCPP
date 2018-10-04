@@ -10,7 +10,7 @@ Vector3::Vector3(const NVector &vector) : NVector(vector) {
 
 Vector3::Vector3(const Vector3 &vector) = default;
 
-Vector3::Vector3(double x, double y, double z) : NVector(3){
+Vector3::Vector3(double x, double y, double z) : NVector(3) {
     setXYZ(x, y, z);
 }
 
@@ -67,7 +67,9 @@ void Vector3::setPhi(double scalar) {
 }
 
 void Vector3::setXYZ(double x, double y, double z) {
-    (*this)[0] = x; (*this)[1] = y; (*this)[2] = z;
+    (*this)[0] = x;
+    (*this)[1] = y;
+    (*this)[2] = z;
 }
 
 void Vector3::setRThetaZ(double r, double theta, double z) {
@@ -118,13 +120,13 @@ double Vector3::angle(const Vector3 &vector) const {
 }
 
 double Vector3::pCos(const Vector3 &vector) const {
-    if(*this != 0 && vector != 0)
+    if (*this != 0 && vector != 0)
         return ((*this) | vector) / (!(*this) * !vector);
     else return 1.0;
 }
 
 double Vector3::pSin(const Vector3 &vector) const {
-    if(*this != 0 && vector != 0)
+    if (*this != 0 && vector != 0)
         return !((*this) ^ vector) / (!(*this) * !vector);
     else return 0.0;
 }

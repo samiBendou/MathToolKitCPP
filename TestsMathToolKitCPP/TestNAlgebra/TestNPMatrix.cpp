@@ -89,24 +89,24 @@ TEST_F(NPMatrixTest, Construction) {
 }
 
 TEST_F(NPMatrixTest, Getters) {
-    ASSERT_EQ(_b.row(0), NVector("(2 1 0)"));
-    ASSERT_EQ(_b.row(1), NVector("(-1 2 1)"));
-    ASSERT_EQ(_b.row(2), NVector("(0 -1 2)"));
+    ASSERT_EQ(_b.row(0), "(2 1 0)");
+    ASSERT_EQ(_b.row(1), "(-1 2 1)");
+    ASSERT_EQ(_b.row(2), "(0 -1 2)");
 
-    ASSERT_EQ(_b.col(0), NVector("(2 -1 0)"));
-    ASSERT_EQ(_b.col(1), NVector("(1 2 -1)"));
-    ASSERT_EQ(_b.col(2), NVector("(0 1 2)"));
+    ASSERT_EQ(_b.col(0), "(2 -1 0)");
+    ASSERT_EQ(_b.col(1), "(1 2 -1)");
+    ASSERT_EQ(_b.col(2), "(0 1 2)");
 
     std::vector<NVector> rows_b = _b.rows();
     std::vector<NVector> cols_b = _b.cols();
 
-    ASSERT_EQ(rows_b[0], NVector("(2 1 0)"));
-    ASSERT_EQ(rows_b[1], NVector("(-1 2 1)"));
-    ASSERT_EQ(rows_b[2], NVector("(0 -1 2)"));
+    ASSERT_EQ(rows_b[0], "(2 1 0)");
+    ASSERT_EQ(rows_b[1], "(-1 2 1)");
+    ASSERT_EQ(rows_b[2], "(0 -1 2)");
 
-    ASSERT_EQ(cols_b[0], NVector("(2 -1 0)"));
-    ASSERT_EQ(cols_b[1], NVector("(1 2 -1)"));
-    ASSERT_EQ(cols_b[2], NVector("(0 1 2)"));
+    ASSERT_EQ(cols_b[0], "(2 -1 0)");
+    ASSERT_EQ(cols_b[1], "(1 2 -1)");
+    ASSERT_EQ(cols_b[2], "(0 1 2)");
 }
 
 TEST_F(NPMatrixTest, Setters) {
@@ -145,30 +145,31 @@ TEST_F(NPMatrixTest, Shift) {
     NPMatrix copy_b{_b};
 
     _b.shiftRow(0, 1);
-    ASSERT_EQ(_b.row(0), NVector("(1 0 2)"));
+    ASSERT_EQ(_b.row(0), "(1 0 2)");
 
     _b.shiftRow(0, -1);
     ASSERT_EQ(_b, copy_b);
 
     _b.shiftRow(0, 2);
-    ASSERT_EQ(_b.row(0), NVector("(0 2 1)"));
+    ASSERT_EQ(_b.row(0), "(0 2 1)");
 
     _b.shiftRow(0, -2);
     ASSERT_EQ(_b, copy_b);
 
     _b.shiftCol(0, 1);
-    ASSERT_EQ(_b.col(0), NVector("(-1 0 2)"));
+    ASSERT_EQ(_b.col(0), "(-1 0 2)");
 
     _b.shiftCol(0, -1);
     ASSERT_EQ(_b, copy_b);
 
     _b.shiftCol(0, 2);
-    ASSERT_EQ(_b.col(0), NVector("(0 2 -1)"));
+    ASSERT_EQ(_b.col(0), "(0 2 -1)");
 
     _b.shiftCol(0, -2);
     ASSERT_EQ(_b, copy_b);
 }
 
+/*
 TEST_F(NPMatrixTest, MaxAbsIndexRowCol) {
     ASSERT_EQ(_b.maxAbsIndexRow(0, 0), 0);
     ASSERT_EQ(_b.maxAbsIndexRow(0, 1), 1);
@@ -178,6 +179,7 @@ TEST_F(NPMatrixTest, MaxAbsIndexRowCol) {
     ASSERT_EQ(_c.maxAbsIndexRow(0, 1), 1);
     ASSERT_EQ(_c.maxAbsIndexRow(0, 2), 2);
 }
+*/
 
 TEST_F(NPMatrixTest, Add) {
     NPMatrix copy_b{_b};

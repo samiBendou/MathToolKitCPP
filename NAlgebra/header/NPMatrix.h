@@ -28,12 +28,13 @@
 #define MATHTOOLKIT_NPMATRIX_H
 
 
-
 #include "NVector.h"
 
 using namespace std;
 
-enum ElementEnum{Row, Col};
+enum ElementEnum {
+    Row, Col
+};
 
 class NPMatrix : public NVector {
 
@@ -51,7 +52,7 @@ public:
      * @return a n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
      * must have the same length. They represent the rows of A matrix.
      */
-    explicit NPMatrix(const vector< vector<double> > &data);
+    explicit NPMatrix(const vector<vector<double> > &data);
 
     NPMatrix(const NPMatrix &m);
 
@@ -70,7 +71,7 @@ public:
      *
      * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
      */
-    explicit NPMatrix(const NVector& u);
+    explicit NPMatrix(const NVector &u);
 
     /**
      *
@@ -169,22 +170,11 @@ public:
      *
      *                  Where q is the size of the vector array.
      */
-    void setRows(const std::vector<NVector>& vectors, unsigned long i1 = 0);
+    void setRows(const std::vector<NVector> &vectors, unsigned long i1 = 0);
 
-    void setCols(const std::vector<NVector>& vectors, unsigned long j1 = 0);
+    void setCols(const std::vector<NVector> &vectors, unsigned long j1 = 0);
 
-    // MAX / MIN
 
-    /**
-     *
-     * @param i/j row/col where to search max
-     * @param r start index in the row/col to search.
-     * @return  the index of the maximum value in the row/col.
-     *          maxAbsIndexRow(i, r) will search the max in [Air, Ai(r+1), ..., Ai(n-1)].
-     */
-    unsigned long maxAbsIndexRow(unsigned long i, unsigned long r = 0) const;
-
-    unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
 
 
     // MANIPULATORS
@@ -212,20 +202,20 @@ public:
 
     // SHIFT
 
-   /**
-   *
-   * @param i index of row/col to shift
-   * @param iterations number of times to shift. If iterations is > 0, shift is powered to the left/up,
-   *                   else to the right/down.
-   * @desciption : shift a i/j row/col. For example shiftCol(0, 2) will return :
-   *
-   *                  |A20, ..., ...|
-   *                  |A30, ..., ...|
-   *                  |..., ..., ...|
-   *                  |A(n-1)0,  ...|
-   *                  |A00, ..., ...|
-   *                  |A10, ..., ...|
-   */
+    /**
+    *
+    * @param i index of row/col to shift
+    * @param iterations number of times to shift. If iterations is > 0, shift is powered to the left/up,
+    *                   else to the right/down.
+    * @desciption : shift a i/j row/col. For example shiftCol(0, 2) will return :
+    *
+    *                  |A20, ..., ...|
+    *                  |A30, ..., ...|
+    *                  |..., ..., ...|
+    *                  |A(n-1)0,  ...|
+    *                  |A00, ..., ...|
+    *                  |A10, ..., ...|
+    */
     void shiftRow(unsigned long i, long iterations = 1);
 
     void shiftCol(unsigned long j, long iterations = 1);
@@ -257,12 +247,12 @@ public:
     /**
      * @return this + m where + is usual addition for matrices. The matrices must have the length.
      */
-    NPMatrix operator+(const NPMatrix& m) const;
+    NPMatrix operator+(const NPMatrix &m) const;
 
     /**
      * @return m1 - m2 where - is substraction based on + for matrices. The matrices must have the length.
      */
-    NPMatrix operator-(const NPMatrix& m) const;
+    NPMatrix operator-(const NPMatrix &m) const;
 
     /**
      * @return the usual opposite of the matrix -m.
@@ -273,15 +263,15 @@ public:
      *
      * @return s * m where * is usual scalar multiplication
      */
-    friend NPMatrix operator*(double s, const NPMatrix& m);
+    friend NPMatrix operator*(double s, const NPMatrix &m);
 
-    friend NPMatrix operator*(const NPMatrix& m, double s);
+    friend NPMatrix operator*(const NPMatrix &m, double s);
 
     /**
      * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
      *          Natural O(n3) matrix product is used.
      */
-    NPMatrix operator*(const NPMatrix& m) const;
+    NPMatrix operator*(const NPMatrix &m) const;
 
     /**
      *
@@ -298,23 +288,23 @@ public:
 
     // SCALAR PRODUCT BASED OPERATIONS
 
-    friend double operator|(const NPMatrix& m1, const NPMatrix& m2);
+    friend double operator|(const NPMatrix &m1, const NPMatrix &m2);
 
-    friend double operator!(const NPMatrix& m);
+    friend double operator!(const NPMatrix &m);
 
-    friend double operator/(const NPMatrix& m1, const NPMatrix& m2);
+    friend double operator/(const NPMatrix &m1, const NPMatrix &m2);
 
     // COMPOUND OPERATORS
 
-    NPMatrix& operator+=(const NPMatrix &m);
+    NPMatrix &operator+=(const NPMatrix &m);
 
-    NPMatrix& operator-=(const NPMatrix& m);
+    NPMatrix &operator-=(const NPMatrix &m);
 
-    NPMatrix& operator*=(const NPMatrix& m);
+    NPMatrix &operator*=(const NPMatrix &m);
 
-    NPMatrix& operator*=(double s) override;
+    NPMatrix &operator*=(double s) override;
 
-    NPMatrix& operator/=(double s) override;
+    NPMatrix &operator/=(double s) override;
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -322,7 +312,7 @@ public:
      *
      * @return component ij of matrix. Operator can be used to read/write values.
      */
-    double& operator()(unsigned long i, unsigned long j);
+    double &operator()(unsigned long i, unsigned long j);
 
     double operator()(unsigned long i, unsigned long j) const;
 
@@ -341,17 +331,17 @@ public:
      */
     NPMatrix operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const;
 
-    NPMatrix& operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
+    NPMatrix &operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
 
     // AFFECTATION
 
-    NPMatrix& operator=(const NPMatrix &m);
+    NPMatrix &operator=(const NPMatrix &m);
 
     // COMPARAISON OPERATORS
 
-    friend bool operator==(const NPMatrix& m1, const NPMatrix& m2);
+    friend bool operator==(const NPMatrix &m1, const NPMatrix &m2);
 
-    friend bool operator!=(const NPMatrix& m1, const NPMatrix& m2);
+    friend bool operator!=(const NPMatrix &m1, const NPMatrix &m2);
 
     // STATIC FUNCTIONS
 
@@ -366,6 +356,7 @@ public:
      * @return nxp matrix filled with 1
      */
     static NPMatrix ones(unsigned long n, unsigned long p = 0);
+
     /**
      * @param i row where to put 1.
      * @param j col where to put 1.
@@ -385,6 +376,12 @@ protected:
     // MAX/MIN
 
     unsigned long maxAbsIndex(ElementEnum element, unsigned long k, unsigned long r) const;
+
+    // MAX / MIN
+
+    unsigned long maxAbsIndexRow(unsigned long i, unsigned long r = 0) const;
+
+    unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
 
     // ALGEBRAICAL OPERATIONS
 
@@ -408,7 +405,7 @@ protected:
 
     bool isCompatible(const NVector &u) const;
 
-    bool isCompatible(const NPMatrix& u) const;
+    bool isCompatible(const NPMatrix &u) const;
 
     bool hasSameSize(const NPMatrix &m) const;
 
@@ -418,7 +415,7 @@ protected:
 
     // AFFECTATION
 
-    void copy(const NPMatrix& m);
+    void copy(const NPMatrix &m);
 
     void parse(const vector<string> &str);
 
@@ -432,8 +429,8 @@ protected:
 
     // SUB-MATRICES
 
-    NPMatrix subMatrix( unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
-                        unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
+    NPMatrix subMatrix(unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
+                       unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
 
     void setSubMatrix(const NPMatrix &m);
 
