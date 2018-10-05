@@ -59,13 +59,13 @@ public:
     /**
      *
      * @param str an array of string containing the rows of the matrix in a form like "|0 2 3|".
-     * @details initialize a NPMatrix by parsing an array of strings representing matrix rows. Use the following
-     *          syntax : {"|A00  A01  ...  A0(P-1)|",
-     *                    "|A10  A1   ...  A1(P-1)|",
-     *                    "|...  ...   A(N-1)(P-1)|"}
-     *          The separation character | can be replaced by any one. Don't use comma or at all.
+     * @details initialize a NPMatrix by parsing a string representing matrix rows. Use the following
+     *          syntax : {"(A00  A01  ...  A0(P-1)) \
+     *                     (A10  A1   ...  A1(P-1)) \
+     *                     (...  ...   A(N-1)(P-1))"}
+     *          The separation character | can be replaced by any one. Don't use comma at all.
      */
-    explicit NPMatrix(const vector<string> &str);
+    explicit NPMatrix(const string &str);
 
     /**
      *
@@ -337,6 +337,8 @@ public:
 
     NPMatrix &operator=(const NPMatrix &m);
 
+    NPMatrix &operator=(const string &str);
+
     // COMPARAISON OPERATORS
 
     friend bool operator==(const NPMatrix &m1, const NPMatrix &m2);
@@ -417,7 +419,7 @@ protected:
 
     void copy(const NPMatrix &m);
 
-    void parse(const vector<string> &str);
+    void parse(const string &str) override;
 
     // INDEX GETTERS
 

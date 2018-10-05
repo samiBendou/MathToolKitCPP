@@ -49,12 +49,17 @@ TEST_F(NVectorTest, Construction) {
 
     _u = NVector(3);
     ASSERT_EQ(_u, "(0 0 0)");
+
 }
 
 TEST_F(NVectorTest, Affectation) {
     _u = _v;
     _v *= 5;
     ASSERT_EQ(_u, "(0 1 0)");
+    ASSERT_EQ(_v, "(0 5 0)");
+
+    _u = "(1 0 1)";
+    ASSERT_EQ(_u, "(1 0 1)");
 }
 
 TEST_F(NVectorTest, Serialization) {

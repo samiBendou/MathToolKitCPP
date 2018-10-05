@@ -56,7 +56,7 @@ public:
     /**
      *
      * @param   str a string containing the components of vector in the form "(0 1 2)".
-     *          The character '(' and ')' can be replaced by any one. Don't use comma at all.
+     *          The character '(' and ')' can't be replaced. Use spaces to separate values.
      */
     explicit NVector(const std::string &str);
 

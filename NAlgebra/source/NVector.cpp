@@ -525,7 +525,7 @@ void NVector::parse(const std::string &str) {
 
     assert(str.find(",") == string::npos);
 
-    while (i < str.size() || str[i] == '\n') {
+    while (i < str.size() && str[i] != ')') {
         try {
             data.push_back(std::stod(str.substr(i, str.size() - i), &sz));
             i += sz;

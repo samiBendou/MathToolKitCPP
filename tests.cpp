@@ -9,19 +9,6 @@ using namespace std;
 const NVector testVector = NVector::canonical(1, DIM_TEST) + 2 * NVector::canonical(2, DIM_TEST);
 
 
-
-bool testNPMatrixFunctionOp() {
-    cout << endl<< "**** FUNCTIONS OPERATORS ****" << endl << endl;
-
-    NMatrix matrix = NMatrix::diag(vector<double>{1, 2, 1}, DIM_TEST);
-
-    cout << "matrix : " << matrix << endl;
-    cout << "matrix(0, 0)" << matrix(0, 0) << endl;
-    cout << "matrix(1, 1)" << matrix(1, 1) << endl;
-    cout << "matrix(2, 2)" << matrix(2, 2) << endl;
-    return false;
-}
-
 bool testNMatrixAlgebra() {
     cout << endl << "*** ALGEBRAICAL OPERATIONS ***" << endl << endl;
     

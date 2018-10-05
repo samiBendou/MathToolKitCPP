@@ -35,7 +35,7 @@ NPMatrix::NPMatrix(const NPMatrix &m) : NVector(0),
     copy(m);
 }
 
-NPMatrix::NPMatrix(const vector<string> &str) : NVector(0), _n(0), _p(0), _i1(0), _j1(0), _i2(0), _j2(0) {
+NPMatrix::NPMatrix(const string &str) : NVector(0), _n(0), _p(0), _i1(0), _j1(0), _i2(0), _j2(0) {
     parse(str);
     setDefaultBrowseIndices();
 
@@ -414,6 +414,11 @@ NPMatrix &NPMatrix::operator=(const NPMatrix &m) {
     return *this;
 }
 
+NPMatrix &NPMatrix::operator=(const string &str) {
+    parse(str);
+    return *this;
+}
+
 // COMPARAISON OPERATORS
 
 bool operator==(const NPMatrix &m1, const NPMatrix &m2) {
@@ -595,12 +600,18 @@ void NPMatrix::copy(const NPMatrix &m) {
     }
 }
 
-void NPMatrix::parse(const vector<string> &str) {
+void NPMatrix::parse(const string &str) {
+
+    string copy_str{str};
     std::vector<NVector> rows;
-    for (auto &s : str) {
-        rows.push_back(NVector(s));
+
+    unsigned long pos_par;
+    while((pos_par = copy_str.find(')')) != string::npos) {
+        rows.push_back(NVector(copy_str.substr(0, pos_par)));
+        copy_str.erase(copy_str.begin(), copy_str.begin() + pos_par + 1);
     }
-    *this = NPMatrix(rows);
+
+    this->copy(NPMatrix(rows));
 }
 
 
@@ -644,6 +655,8 @@ void NPMatrix::setSubMatrix(const NPMatrix &m) {
     setDefaultBrowseIndices();
     m.setDefaultBrowseIndices();
 }
+
+
 
 
 
