@@ -2,11 +2,11 @@
 
 ### Author : samiBendou
 
-### Last Update : 05/22/2018
+### Last Update : 10/05/2018
 
 ### Current Version : 0.4
 
-MathToolKit is a complete framework for linear algebra and differential equations solving in C++. It's a tool box to ease applied maths and physics in C++. It's the a framework to perform fast and efficient scientific calculation and AI.
+MathToolKit is a framework for linear algebra and differential equations solving in C++. It's a tool box to ease applied maths and physics in C++. It's the a framework to perform fast and efficient scientific calculation and AI.
 
 ### Compatibility
 
