@@ -2,7 +2,19 @@
 // Created by Sami Dahoux on 05/05/2018.
 //
 
+#include <NMatrix.h>
+
 #include "../header/NMatrix.h"
+
+NMatrix::NMatrix(unsigned long n) : NPMatrix(n, n), _a(nullptr), _permutation(nullptr)
+{
+}
+
+
+NMatrix::NMatrix(const std::string &str) : NPMatrix(str), _a(nullptr), _permutation(nullptr) {
+
+}
+
 
 NMatrix::NMatrix(const NPMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _permutation(nullptr) {
 
@@ -125,7 +137,7 @@ void NMatrix::matrixProduct(const NPMatrix &m) {
 
 NMatrix operator^(const NPMatrix &m, long exp) {
     NMatrix res{m};
-    res.pow(exp);
+    res ^= exp;
     return res;
 }
 
@@ -356,50 +368,12 @@ void NMatrix::lupClear() {
     }
 }
 
-NMatrix operator+(const NMatrix &m1, const NMatrix &m2) {
-    NMatrix res{m1};
-    if(m1._n == m2._n && m1._p == m2._p)
-        res.add(m2);
-    return res;
-}
-
-NMatrix operator-(const NMatrix &m1, const NMatrix &m2) {
-    NMatrix res{m1};
-    if(m1._n == m2._n && m1._p == m2._p)
-        res.sub(m2);
-    return res;
-}
-
-NMatrix operator*(double scalar, const NMatrix &matrix) {
-    NMatrix res{matrix};
-    res.prod(scalar);
-    return res;
-}
-
-NMatrix operator*(const NMatrix &matrix, double scalar) {
-    NMatrix res{matrix};
-    res.prod(scalar);
-    return res;
+void NMatrix::copy(const NPMatrix &m) {
+    NPMatrix::copy(m);
+    lupClear();
 }
 
 
-NMatrix operator*(const NMatrix &m1, const NMatrix &m2) {
-    NMatrix res{m1};
-    res.matrixProduct(m2);
-    return res;
-}
-
-NMatrix operator/(const NMatrix &matrix, double scalar) {
-    NMatrix res{matrix};
-    res.div(scalar);
-    return res;
-}
-
-NMatrix operator-(const NMatrix &matrix) {
-    NMatrix res{matrix};
-    res.opp();
-    return res;
-}
 
 
 

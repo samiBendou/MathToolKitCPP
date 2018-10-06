@@ -8,32 +8,6 @@ using namespace std;
 
 const NVector testVector = NVector::canonical(1, DIM_TEST) + 2 * NVector::canonical(2, DIM_TEST);
 
-
-bool testNMatrixAlgebra() {
-    cout << endl << "*** ALGEBRAICAL OPERATIONS ***" << endl << endl;
-    
-    NMatrix matrix = NMatrix::diag(vector<double>{1, 2, 1}, DIM_TEST);
-
-    cout << "matrix : " << matrix << endl;
-    cout << "matrix ^ 2 : " << (matrix ^ 2) << endl;
-    return false;
-}
-
-bool testNMatrixLUP() {
-    cout << endl << "**** LUP ****" << endl;
-
-    NMatrix matrix = NMatrix::nScalar({-1, 2}, 3);
-    NMatrix matrixLupL = matrix.lupL();
-    NMatrix matrixLupU = matrix.lupU();
-
-    cout << "matrix : " << matrix << endl;
-    cout << "matrix.lupL() : " << matrixLupL << endl;
-    cout << "matrix.lupU() : " << matrixLupU << endl;
-    cout << "matrix.lupL() * matrix.lupP() = " << (matrixLupL * matrixLupU) << endl;
-
-    return false;
-}
-
 bool testNMatrixInv() {
     cout << endl << "**** INV ****" << endl;
 

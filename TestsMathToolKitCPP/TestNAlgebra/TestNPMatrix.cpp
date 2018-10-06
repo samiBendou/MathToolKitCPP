@@ -44,6 +44,17 @@ TEST_F(NPMatrixTest, Equality) {
     ASSERT_FALSE(_a != _a);
 }
 
+TEST_F(NPMatrixTest, Affectation) {
+    _a = "  ( 2 1 0) \
+            (-1 2 1) \
+            (0 -1 2)";
+
+    ASSERT_EQ(_a, _b);
+
+    _a = _c;
+    ASSERT_EQ(_a, _c);
+}
+
 TEST_F(NPMatrixTest, Construction) {
 
     _a = NPMatrix(5);

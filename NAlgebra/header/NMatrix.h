@@ -28,7 +28,15 @@
 class NMatrix : public NPMatrix {
 public:
 
+    using NPMatrix::operator=;
+
+
+
     // CONSTRUCTION
+
+    explicit NMatrix(unsigned long n);
+
+    explicit NMatrix(const std::string& str);
 
     NMatrix(const NPMatrix& matrix);
 
@@ -100,20 +108,6 @@ public:
     
     NVector& operator^=(long exp);
 
-    friend NMatrix operator+(const NMatrix& m1, const NMatrix& m2);
-
-    friend NMatrix operator-(const NMatrix& m1, const NMatrix& m2);
-
-    friend NMatrix operator*(double scalar, const NMatrix& matrix);
-
-    friend NMatrix operator*(const NMatrix& matrix, double scalar);
-
-    friend NMatrix operator*(const NMatrix& m1, const NMatrix& m2);
-
-    friend NMatrix operator/(const NMatrix& matrix, double scalar);
-
-
-    friend NMatrix operator-(const NMatrix& matrix);
 
     // STATIC FUNCTIONS
 
@@ -207,6 +201,10 @@ protected:
 
     void lupClear();
     //Clears _a and _permutation
+
+    // SERIALIZATION
+
+    void copy(const NPMatrix& m) override;
 };
 
 

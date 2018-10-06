@@ -417,7 +417,7 @@ protected:
 
     // AFFECTATION
 
-    void copy(const NPMatrix &m);
+    virtual void copy(const NPMatrix &m);
 
     void parse(const string &str) override;
 
