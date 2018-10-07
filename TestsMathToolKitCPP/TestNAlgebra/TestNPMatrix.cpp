@@ -284,3 +284,26 @@ TEST_F(NPMatrixTest, VectorProd) {
 
     ASSERT_EQ(_c * u, expect_prod_cu);
 }
+
+TEST_F(NPMatrixTest, GaussJordan) {
+    _c = _b.shifted(_a);
+    _c.reduce();
+    ASSERT_EQ(_c(0, 0, 2, 2), _a);
+}
+
+TEST_F(NPMatrixTest, StaticGenerators) {
+    NPMatrix expect_zeros{" (0 0 0)\
+                            (0 0 0)"
+    };
+    EXPECT_EQ(NPMatrix::zeros(2, 3), expect_zeros);
+
+    NPMatrix expect_ones{"  (1 1 1)\
+                            (1 1 1)"
+    };
+    EXPECT_EQ(NPMatrix::ones(2, 3), expect_ones);
+
+    NPMatrix expect_canonical{" (0 0 0)\
+                                (0 1 0)"
+    };
+    EXPECT_EQ(NPMatrix::canonical(1, 1, 2, 3), expect_canonical);
+}

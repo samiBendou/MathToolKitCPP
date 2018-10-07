@@ -126,9 +126,35 @@ double NMatrix::det() {
     return det;
 }
 
-void NMatrix::matrixProduct(const NPMatrix &m) {
-    NPMatrix::matrixProduct(m);
-    lupClear();
+
+NMatrix NMatrix::operator+(const NMatrix &m) const {
+    return NPMatrix::operator+(m);
+}
+
+NMatrix NMatrix::operator-(const NMatrix &m) const {
+    return NPMatrix::operator-(m);
+}
+
+NMatrix NMatrix::operator-() const {
+    return NPMatrix::operator-();
+}
+
+NMatrix operator*(double s, const NMatrix &m) {
+    NMatrix res{m};
+    res *= s;
+    return res;
+}
+
+NMatrix operator*(const NMatrix &m, double s) {
+    return s * m;
+}
+
+NMatrix NMatrix::operator*(const NMatrix &m) const {
+    return NPMatrix::operator*(m);
+}
+
+NMatrix NMatrix::operator/(double s) const {
+    return NPMatrix::operator/(s);
 }
 
 
@@ -178,7 +204,7 @@ NMatrix NMatrix::scalar(double s, unsigned long n) {
 
 //Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
 //diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
-NMatrix NMatrix::nDiag(const std::vector< NVector > & data) {
+NMatrix NMatrix::ndiag(const std::vector<NVector> &data) {
     const auto n = (long) data.size();
     const auto middle = (n - 1) / 2;
     const auto dim = data[middle].dim();
@@ -197,7 +223,7 @@ NMatrix NMatrix::nDiag(const std::vector< NVector > & data) {
     return diag;
 }
 
-NMatrix NMatrix::nScalar(const std::vector<double> & scalars, const unsigned long n) {
+NMatrix NMatrix::nscalar(const std::vector<double> &scalars, const unsigned long n) {
     const auto scalarSize = (long) scalars.size();
     const long minSize = n - scalarSize;
 
@@ -210,7 +236,7 @@ NMatrix NMatrix::nScalar(const std::vector<double> & scalars, const unsigned lon
         }
         size++;
     }
-    return NMatrix::nDiag(diags);
+    return NMatrix::ndiag(diags);
 }
 
 
@@ -239,6 +265,11 @@ void NMatrix::prod(double scalar) {
 
 void NMatrix::div(double scalar) {
     NVector::div(scalar);
+    lupClear();
+}
+
+void NMatrix::matrixProduct(const NPMatrix &m) {
+    NPMatrix::matrixProduct(m);
     lupClear();
 }
 
@@ -372,6 +403,10 @@ void NMatrix::copy(const NPMatrix &m) {
     NPMatrix::copy(m);
     lupClear();
 }
+
+
+
+
 
 
 

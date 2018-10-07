@@ -30,8 +30,6 @@ public:
 
     using NPMatrix::operator=;
 
-
-
     // CONSTRUCTION
 
     explicit NMatrix(unsigned long n);
@@ -91,6 +89,22 @@ public:
     
     // OPERATIONS
 
+    NMatrix operator+(const NMatrix &m) const;
+
+    NMatrix operator-(const NMatrix &m) const;
+
+    NMatrix operator-() const;
+
+    using NPMatrix::operator*;
+
+    friend NMatrix operator*(double s, const NMatrix &m);
+
+    friend NMatrix operator*(const NMatrix &m, double s);
+
+    NMatrix operator*(const NMatrix &m) const;
+
+    NMatrix operator/(double s) const;
+
     /**
      *
      * @param m matrix to exponentiate.
@@ -129,7 +143,7 @@ public:
 
     /**
      *
-     * @return a scalar n-th order matrix filled with s value. This is a diagonal matrix filled with s.
+     * @return a scalar n-th order matrix with s value. This is a diagonal matrix filled with s.
      */
     static NMatrix scalar(double s, unsigned long n);
 
@@ -149,7 +163,7 @@ public:
      *          The input data must be ordered such as d[0] has size equal to 1, d[1] to 2, ..., d[middle] to n,
      *          d[middle+1] to n-1, ..., d[end] to 0.
      */
-    static NMatrix nDiag(const std::vector< NVector > & data);
+    static NMatrix ndiag(const std::vector<NVector> &data);
 
 
     /**
@@ -159,7 +173,7 @@ public:
      * @return  a n-scalar Matrix filled with values. If values.length = 2, the matrix is tri-diagonal.
      *          Center diagonal is filled with s1 and the other diagonal are filled with s0.
      */
-    static NMatrix nScalar(const std::vector<double> & scalars, unsigned long n);
+    static NMatrix nscalar(const std::vector<double> &scalars, const unsigned long n);
 
 protected:
     NMatrix* _a;
@@ -168,7 +182,7 @@ protected:
 
     // ALGEBRAICAL OPERATIONS
 
-    void add(const NVector& vector) override;
+    void add(const NVector& vector) override ;
 
     void sub(const NVector& vector) override ;
 
@@ -180,11 +194,10 @@ protected:
 
     void matrixProduct(const NPMatrix &m) override ;
 
+    void pow(long n);
+
     void rPow(long n);
     // Exponentiation by squaring of this matrix : O(log(exp) * n3)
-
-    void pow(long n);
-    // Exponentiation for relative integers
 
     void inv();
     // Inversion of this matrix (O(n3))

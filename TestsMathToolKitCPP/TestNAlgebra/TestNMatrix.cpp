@@ -193,7 +193,7 @@ TEST_F(NMatrixTest, Det) {
     ASSERT_EQ(b_det, expect_b_det);
     ASSERT_EQ(b_inv_det, expect_b_inv_det);
 
-    // ASSERT_EQ((_b * (_b^-1)).det(), 1);
+    ASSERT_EQ((_b * (_b^-1)).det(), b_det * b_inv_det);
 }
 
 TEST_F(NMatrixTest, Solve) {
@@ -209,4 +209,17 @@ TEST_F(NMatrixTest, Solve) {
 
     ASSERT_EQ(_b % u, expect_sol);
     ASSERT_EQ(_b * (_b % u), expect_u);
+}
+
+TEST_F(NMatrixTest, StaticGenerators) {
+    ASSERT_EQ(NMatrix::eye(3), _a);
+    ASSERT_EQ(NMatrix::scalar(1, 3), _a);
+
+    std::vector<NVector> data{NVector("(-1 -1)"),
+                              NVector("(2 2 2)"),
+                              NVector("(-1 -1)")};
+
+    ASSERT_EQ(NMatrix::ndiag(data), _b);
+
+    ASSERT_EQ(NMatrix::nscalar({-1, 2}, 3), _b);
 }
