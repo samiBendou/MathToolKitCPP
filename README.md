@@ -32,7 +32,7 @@ Representing classic linear algebra objects such as euclidean vectors, matrices,
   
   - NPMatrix : NxP matrices. Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination. Setters & getters, swappers and classic matrix generators such as ones, zeros...
   
-  - NMatrix : Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...), linear systems solving, matrix inversion and determinant, fast exponentiation... Under test.
+  - NMatrix : Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...), linear systems solving, matrix inversion and determinant, fast exponentiation...
   
   - Vector3 : 3D Space vectors. Featuring cross product, coordinate transforms and rotation. Fully tested.
   
