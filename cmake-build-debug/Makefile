@@ -273,32 +273,32 @@ TestMathToolKitCPP/fast:
 	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build
 .PHONY : TestMathToolKitCPP/fast
 
-ConsoleMenu.o: ConsoleMenu.cpp.o
+TestsMathToolKitCPP/TestNAlgebra/tests.o: TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
 
-.PHONY : ConsoleMenu.o
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.o
 
 # target to build an object file
-ConsoleMenu.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o
-.PHONY : ConsoleMenu.cpp.o
+TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
 
-ConsoleMenu.i: ConsoleMenu.cpp.i
+TestsMathToolKitCPP/TestNAlgebra/tests.i: TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
 
-.PHONY : ConsoleMenu.i
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.i
 
 # target to preprocess a source file
-ConsoleMenu.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.i
-.PHONY : ConsoleMenu.cpp.i
+TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
 
-ConsoleMenu.s: ConsoleMenu.cpp.s
+TestsMathToolKitCPP/TestNAlgebra/tests.s: TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
 
-.PHONY : ConsoleMenu.s
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.s
 
 # target to generate assembly for a file
-ConsoleMenu.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s
-.PHONY : ConsoleMenu.cpp.s
+TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
+.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
 
 main.o: main.cpp.o
 
@@ -327,33 +327,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-tests.o: tests.cpp.o
-
-.PHONY : tests.o
-
-# target to build an object file
-tests.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/tests.cpp.o
-.PHONY : tests.cpp.o
-
-tests.i: tests.cpp.i
-
-.PHONY : tests.i
-
-# target to preprocess a source file
-tests.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/tests.cpp.i
-.PHONY : tests.cpp.i
-
-tests.s: tests.cpp.s
-
-.PHONY : tests.s
-
-# target to generate assembly for a file
-tests.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/tests.cpp.s
-.PHONY : tests.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -375,15 +348,12 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... TestMathToolKitCPP"
-	@echo "... ConsoleMenu.o"
-	@echo "... ConsoleMenu.i"
-	@echo "... ConsoleMenu.s"
+	@echo "... TestsMathToolKitCPP/TestNAlgebra/tests.o"
+	@echo "... TestsMathToolKitCPP/TestNAlgebra/tests.i"
+	@echo "... TestsMathToolKitCPP/TestNAlgebra/tests.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tests.o"
-	@echo "... tests.i"
-	@echo "... tests.s"
 .PHONY : help
 
 

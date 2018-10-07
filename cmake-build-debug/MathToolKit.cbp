@@ -542,12 +542,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.cpp">
-			<Option target="MathToolKit"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.h">
-			<Option target="MathToolKit"/>
-		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NMatrix.h">
 			<Option target="NAlgebra"/>
 		</Unit>
@@ -644,6 +638,12 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestVector3.cpp">
 			<Option target="TestMathToolKitCPP"/>
 		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/tests.cpp">
+			<Option target="MathToolKit"/>
+		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/tests.h">
+			<Option target="MathToolKit"/>
+		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
@@ -657,12 +657,6 @@
 			<Option target="gtest_main"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/main.cpp">
-			<Option target="MathToolKit"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/tests.cpp">
-			<Option target="MathToolKit"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/tests.h">
 			<Option target="MathToolKit"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/CMakeLists.txt">

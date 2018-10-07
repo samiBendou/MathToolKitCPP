@@ -153,17 +153,60 @@ TEST_F(NMatrixTest, LUP) {
                             (0      -0.666 1)"
 
     };
-    expect_lup_low(2, 1) = -2.0/3.0;
+    expect_lup_low(2, 1) = -0.66666666666666663;
 
     NMatrix expect_lup_up{" (2  -1   0) \
                             (0  1.5  -1) \
                             (0  0    1.333)"
 
     };
-    expect_lup_up(2, 2) = 4.0/3.0;
+    expect_lup_up(2, 2) = 1.3333333333333335;
 
     ASSERT_EQ(b_lup_low, expect_lup_low);
     ASSERT_EQ(b_lup_up, expect_lup_up);
+    ASSERT_EQ(b_lup_low * b_lup_up, _b);
 }
 
+TEST_F(NMatrixTest, Inv) {
 
+    NMatrix expect_b_inv{"  (0.75 0.5 0.25) \
+                            (0.50 1.0 0.50) \
+                            (0.25 0.5 0.75)" };
+    NMatrix expect_a{_a};
+
+    expect_a(1, 0) = 2.7755575615628914e-17;
+    expect_a(2, 0) = -5.5511151231257827e-17;
+    expect_a(2, 1) = -1.1102230246251565e-16;
+    expect_a(2, 2) = 0.99999999999999978;
+
+    ASSERT_EQ(_a^-1, _a);
+    ASSERT_EQ(_b^-1, expect_b_inv);
+    ASSERT_EQ(_b * (_b^-1), expect_a);
+}
+
+TEST_F(NMatrixTest, Det) {
+    double expect_b_det = 4;
+    double expect_b_inv_det = 0.24999999999999994;
+
+    double b_det = _b.det(), b_inv_det = (_b^-1).det();
+
+    ASSERT_EQ(b_det, expect_b_det);
+    ASSERT_EQ(b_inv_det, expect_b_inv_det);
+
+    // ASSERT_EQ((_b * (_b^-1)).det(), 1);
+}
+
+TEST_F(NMatrixTest, Solve) {
+    NVector u{"(1 2 5)"}, expect_sol{3}, expect_u{3};
+
+    expect_sol(0) = 2.9999999999999996;
+    expect_sol(1) = 4.9999999999999991;
+    expect_sol(2) = 4.9999999999999991;
+
+    expect_u(0) = 1;
+    expect_u(1) = 1.9999999999999991;
+    expect_u(2) = 4.9999999999999991;
+
+    ASSERT_EQ(_b % u, expect_sol);
+    ASSERT_EQ(_b * (_b % u), expect_u);
+}

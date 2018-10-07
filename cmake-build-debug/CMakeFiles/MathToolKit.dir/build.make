@@ -70,50 +70,35 @@ CMakeFiles/MathToolKit.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/main.cpp -o CMakeFiles/MathToolKit.dir/main.cpp.s
 
-CMakeFiles/MathToolKit.dir/tests.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/tests.cpp.o: ../tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MathToolKit.dir/tests.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/tests.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/tests.cpp
+CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
+CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o: ../TestsMathToolKitCPP/TestNAlgebra/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/tests.cpp
 
-CMakeFiles/MathToolKit.dir/tests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/tests.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/tests.cpp > CMakeFiles/MathToolKit.dir/tests.cpp.i
+CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/tests.cpp > CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
 
-CMakeFiles/MathToolKit.dir/tests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/tests.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/tests.cpp -o CMakeFiles/MathToolKit.dir/tests.cpp.s
-
-CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o: CMakeFiles/MathToolKit.dir/flags.make
-CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o: ../ConsoleMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o -c /Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.cpp
-
-CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.cpp > CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.i
-
-CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/ConsoleMenu.cpp -o CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.s
+CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/tests.cpp -o CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
 
 # Object files for target MathToolKit
 MathToolKit_OBJECTS = \
 "CMakeFiles/MathToolKit.dir/main.cpp.o" \
-"CMakeFiles/MathToolKit.dir/tests.cpp.o" \
-"CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o"
+"CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o"
 
 # External object files for target MathToolKit
 MathToolKit_EXTERNAL_OBJECTS =
 
 MathToolKit: CMakeFiles/MathToolKit.dir/main.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/tests.cpp.o
-MathToolKit: CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o
+MathToolKit: CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
 MathToolKit: CMakeFiles/MathToolKit.dir/build.make
 MathToolKit: NAnalysis/libNAnalysis.a
 MathToolKit: NGeometry/libNGeometry.a
 MathToolKit: NAlgebra/libNAlgebra.a
 MathToolKit: CMakeFiles/MathToolKit.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable MathToolKit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MathToolKit"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MathToolKit.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

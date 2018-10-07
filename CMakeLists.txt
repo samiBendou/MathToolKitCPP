@@ -3,7 +3,7 @@ project(MathToolKit)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp tests.cpp tests.h ConsoleMenu.cpp ConsoleMenu.h)
+set(SOURCE_FILES main.cpp TestsMathToolKitCPP/TestNAlgebra/tests.cpp TestsMathToolKitCPP/TestNAlgebra/tests.h)
 
 include_directories(NAlgebra/header)
 include_directories(NAnalysis/header)

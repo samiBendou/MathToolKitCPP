@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MathToolKit.dir/main.cpp.o"
-  "CMakeFiles/MathToolKit.dir/tests.cpp.o"
-  "CMakeFiles/MathToolKit.dir/ConsoleMenu.cpp.o"
+  "CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o"
   "MathToolKit.pdb"
   "MathToolKit"
 )
