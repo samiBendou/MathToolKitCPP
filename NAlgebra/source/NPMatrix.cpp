@@ -69,16 +69,17 @@ NPMatrix::NPMatrix(const vector<NVector> &vectors) :
 string NPMatrix::str() const {
     string str = "\n";
     char buffer[6];
-    for (unsigned long i = 0; i < _n; ++i) {
-        str.append("|");
-        for (unsigned long j = 0; j < _p; ++j) {
+    for (unsigned long i = _i1; i <= _i2; ++i) {
+        str.append("(");
+        for (unsigned long j = _j1; j <= _j2; ++j) {
             sprintf(buffer, "%.2e", abs((*this)(i, j)));
             str.append(((*this)(i, j) >= 0 ? "  " : " -"));
             str.append(buffer);
         }
-        str.append("  |\n");
+        str.append("  )\n");
     }
 
+    setDefaultBrowseIndices();
     return str;
 }
 

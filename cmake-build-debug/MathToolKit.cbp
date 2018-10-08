@@ -620,6 +620,15 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNMatrix.cpp">
+			<Option target="TestMathToolKitCPP"/>
+		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNPMatrix.cpp">
+			<Option target="TestMathToolKitCPP"/>
+		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNVector.cpp">
+			<Option target="TestMathToolKitCPP"/>
+		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNMatrix.cpp">
 			<Option target="TestMathToolKitCPP"/>
 		</Unit>

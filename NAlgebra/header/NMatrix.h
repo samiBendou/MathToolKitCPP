@@ -32,7 +32,7 @@ public:
 
     // CONSTRUCTION
 
-    explicit NMatrix(unsigned long n);
+    explicit NMatrix(unsigned long n = 0);
 
     explicit NMatrix(const std::string& str);
 

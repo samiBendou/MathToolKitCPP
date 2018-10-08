@@ -46,7 +46,15 @@ bool testSNewtonianField() {
 bool testODESolver() {
 
     cout << endl<< "**** ODE SOLVER ****" << endl << endl;
-    NConstantField f{Vector3(0, 0, 9.81)};
+    NMatrix base = NMatrix::scalar(5, 3);
+    vector<NVector> baseCols = base.cols();
+    NVector pos = NVector::zeros(3);
+    NVector dx = NVector::scalar(1.0 / 3.0, 3);
+    NParallelepiped para{base, pos};
+    cout << "para : " << para << endl;
+    NConstantField f{&para, Vector3(0, 0, 9.81)};
+    f.h = dx;
+
     std::vector<NVector> solution = NOde::euler(NVector::zeros(6), f);
     for (int k = 0; k <solution.size(); ++k) {
         cout << "solution " << k << " : " << solution[k] << endl;

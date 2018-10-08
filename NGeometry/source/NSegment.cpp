@@ -37,7 +37,7 @@ bool NSegment::isIn(const NVector &x) const {
     const NVector l = (_b - _a);
     const double tol = 1000 * std::numeric_limits<double>::epsilon();
 
-    return (abs(u * l - !u * !l) < tol) &&  !u / !l <= 1;
+    return (abs((u | l) - !u * !l) < tol) &&  !u / !l <= 1;
 }
 
 bool NSegment::isEmpty() const {

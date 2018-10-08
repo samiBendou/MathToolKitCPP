@@ -16,13 +16,9 @@
 using namespace std;
 
 int main() {
+
     NVector vector{"(0 0 1)"};
+    cout << vector << endl;
 
-    NPMatrix matrix{{"|1 0 0|",
-                            "|0 1 0|",
-                            "|0 0 1|"}};
-
-
-    cout << matrix * vector << endl;
     return 0;
 }

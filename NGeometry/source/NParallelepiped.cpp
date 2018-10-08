@@ -71,13 +71,13 @@ std::vector<NVector> NParallelepiped::mesh(const NVector &h) const {
 
     while( x / end >= tol) {
         mesh.push_back(x + _pos);
-        if(x * e[0] <= e[0] * e[0]) {
+        if((x | e[0]) <= (e[0] | e[0])) {
             x += h(0) * e[0];
         }
         for (int i = 0; i < _dim; ++i) {
-            if(x * e[i] > e[i] * e[i]) {
+            if((x | e[i]) > (e[i] | e[i])) {
                 for (int j = 0; j <= i; ++j) {
-                    x -= x * e[j] / (e[j] * e[j]) * e[j];
+                    x -= ((x | e[j]) / (e[j] | e[j])) * e[j];
                 }
                 if(i < _dim - 1) {
                     x += h(i + 1) * e[i + 1];
