@@ -6,30 +6,54 @@
 
 ### Current Version : 0.5
 
-MathToolKit is a linear algebra and differential equations solving framework in C++. It's a tool box to ease applied maths and physics in C++. It's the a framework to perform fast and efficient scientific calculation and AI.
+MathToolKit is C++ maths framework. It provides libraries that ease N-dimensional calculation.
+
+- Linear algebra library (NAlgebra)
+
+- Differential equations solving library (NAnalysis)
+
+- Geometry library (NGeometry)
+
+- Designed to ease dynamic system simulation
+
+- High level syntax and functionality
+
+- Complete integration of STL
+
+- Highly serializable as string or std::vector
+
+- Unit tested with googletest
+
+The framework can be used to produce C++ code for various domains such as applied maths, physics, economics.
 
 ## NAlgebra
 
 #### Overview
 
 - Classic linear algebra objects such as euclidean vectors or dense matrices (tensors coming soon).
-- Java-like syntax
+
 - Very large range of operations such as +, *, linear mapping, matrix inversions... look at TestNAlgebra directory to have an overview.
-
-
-#### Features
 
 ##### NVector
 
-N-dimensional euclidean vectors. Featuring algebraical operations (E, +, *), swaps, shifts and classic vectors generator such as ones, zeros...
+N-dimensional euclidean vectors :
+    - Algebraical operations (E, +, *)
+    - Swaps, shifts, ...
+    - Classic vectors generator such as ones, zeros...
   
 ##### NPMatrix
 
-NxP matrices. Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination. Setters & getters, swappers and classic matrix generators such as ones, zeros...
+NxP dense matrices :
+    - Algebraical operations such as matrix product, linear map, gauss jordan elimination. 
+    - Setters (row, col) & getters (row, col), swappers, shift. 
+    - Classic matrix generators such as ones, zeros...
   
 ##### NMatrix
 
-Featuring LU decomposition, classic matrix recognition & generation (lower, upper, diag, eye...), linear systems solving, matrix inversion and determinant, fast exponentiation...
+Optimized NxN dense matrices :
+    - Inversion, determinant and solve using LU decomposition.
+    - Trace, power, ...
+    - Classic matrix generators such as eye, diag, scalar...
   
 ##### Vector3
 
