@@ -24,7 +24,7 @@ MathToolKit is C++ maths framework. It provides libraries that ease N-dimensiona
 
 - Unit tested with googletest
 
-The framework can be used to produce C++ code for various domains such as applied maths, physics, economics.
+The framework can be used to produce quick and efficient C++ code in various domains such as applied maths, physics, economics...
 
 ## NAlgebra
 
@@ -37,23 +37,23 @@ The framework can be used to produce C++ code for various domains such as applie
 ##### NVector
 
 N-dimensional euclidean vectors :
-    - Algebraical operations (E, +, *)
-    - Swaps, shifts, ...
-    - Classic vectors generator such as ones, zeros...
+- Algebraical operations (E, +, *)
+- Swaps, shifts, max, min...
+- Classic vectors generator such as ones, zeros...
   
 ##### NPMatrix
 
 NxP dense matrices :
-    - Algebraical operations such as matrix product, linear map, gauss jordan elimination. 
-    - Setters (row, col) & getters (row, col), swappers, shift. 
-    - Classic matrix generators such as ones, zeros...
+- Algebraical operations such as matrix product, linear map, gauss jordan elimination. 
+- Setters (row, col) & getters (row, col), swappers, shift. 
+- Classic matrix generators such as ones, zeros...
   
 ##### NMatrix
 
 Optimized NxN dense matrices :
-    - Inversion, determinant and solve using LU decomposition.
-    - Trace, power, ...
-    - Classic matrix generators such as eye, diag, scalar...
+- Inversion, determinant and solve using LU decomposition.
+- Trace, power, ...
+- Classic matrix generators such as eye, diag, scalar...
   
 ##### Vector3
 
