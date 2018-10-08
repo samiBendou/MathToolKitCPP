@@ -273,32 +273,32 @@ TestMathToolKitCPP/fast:
 	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build
 .PHONY : TestMathToolKitCPP/fast
 
-TestsMathToolKitCPP/TestNAlgebra/tests.o: TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
+TestsMathToolKitCPP/tests.o: TestsMathToolKitCPP/tests.cpp.o
 
-.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.o
+.PHONY : TestsMathToolKitCPP/tests.o
 
 # target to build an object file
-TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
-.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.cpp.o
+TestsMathToolKitCPP/tests.cpp.o:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/tests.cpp.o
+.PHONY : TestsMathToolKitCPP/tests.cpp.o
 
-TestsMathToolKitCPP/TestNAlgebra/tests.i: TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
+TestsMathToolKitCPP/tests.i: TestsMathToolKitCPP/tests.cpp.i
 
-.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.i
+.PHONY : TestsMathToolKitCPP/tests.i
 
 # target to preprocess a source file
-TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
-.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.cpp.i
+TestsMathToolKitCPP/tests.cpp.i:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/tests.cpp.i
+.PHONY : TestsMathToolKitCPP/tests.cpp.i
 
-TestsMathToolKitCPP/TestNAlgebra/tests.s: TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
+TestsMathToolKitCPP/tests.s: TestsMathToolKitCPP/tests.cpp.s
 
-.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.s
+.PHONY : TestsMathToolKitCPP/tests.s
 
 # target to generate assembly for a file
-TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
-.PHONY : TestsMathToolKitCPP/TestNAlgebra/tests.cpp.s
+TestsMathToolKitCPP/tests.cpp.s:
+	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/tests.cpp.s
+.PHONY : TestsMathToolKitCPP/tests.cpp.s
 
 main.o: main.cpp.o
 
@@ -348,9 +348,9 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... TestMathToolKitCPP"
-	@echo "... TestsMathToolKitCPP/TestNAlgebra/tests.o"
-	@echo "... TestsMathToolKitCPP/TestNAlgebra/tests.i"
-	@echo "... TestsMathToolKitCPP/TestNAlgebra/tests.s"
+	@echo "... TestsMathToolKitCPP/tests.o"
+	@echo "... TestsMathToolKitCPP/tests.i"
+	@echo "... TestsMathToolKitCPP/tests.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
