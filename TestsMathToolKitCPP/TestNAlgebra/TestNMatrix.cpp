@@ -29,7 +29,6 @@ protected:
     NMatrix _c{3};
 };
 
-
 TEST_F(NMatrixTest, Equality) {
     ASSERT_FALSE(_a == _b);
     ASSERT_TRUE(_a != _b);
@@ -59,7 +58,7 @@ TEST_F(NMatrixTest, Construction) {
     _a = NMatrix(_b);
     ASSERT_EQ(_a, _b);
 
-    _a = NMatrix(" (0 0 0) \
+    _a = NMatrix("  (0 0 0) \
                     (1 2 1) \
                     (5 10 2)"
     );
@@ -124,17 +123,17 @@ TEST_F(NMatrixTest, LUP) {
                             (0      -0.666 1)"
 
     };
-    expect_lup_low(2, 1) = -0.66666666666666663;
+    expect_lup_low(2, 1) = -2.0/3.0;
+    ASSERT_NEAR(b_lup_low / expect_lup_low, 0, 0);
 
-    NMatrix expect_lup_up{" (2  -1   0) \
-                            (0  1.5  -1) \
-                            (0  0    1.333)"
+    NMatrix expect_lup_up{" (2  -1   0      ) \
+                            (0  1.5  -1     ) \
+                            (0  0    1.333  )"
 
     };
-    expect_lup_up(2, 2) = 1.3333333333333335;
+    expect_lup_up(2, 2) = 4.0/3.0;
+    ASSERT_NEAR(b_lup_up / expect_lup_up, 0, 2.2204460492503131e-16);
 
-    ASSERT_EQ(b_lup_low, expect_lup_low);
-    ASSERT_EQ(b_lup_up, expect_lup_up);
     ASSERT_EQ(b_lup_low * b_lup_up, _b);
 }
 
@@ -145,50 +144,27 @@ TEST_F(NMatrixTest, Inv) {
                             (0.25 0.5 0.75)" };
     NMatrix expect_a{_a};
 
-    expect_a(1, 0) = 2.7755575615628914e-17;
-    expect_a(2, 0) = -5.5511151231257827e-17;
-    expect_a(2, 1) = -1.1102230246251565e-16;
-    expect_a(2, 2) = 0.99999999999999978;
-
     ASSERT_EQ(_a^-1, _a);
     ASSERT_EQ(_b^-1, expect_b_inv);
-    ASSERT_EQ(_b * (_b^-1), expect_a);
+    ASSERT_NEAR(_b * (_b^-1) / expect_a, 0, 2.5589376332604516e-16);
 }
 
 TEST_F(NMatrixTest, Det) {
-    double expect_a_det = 1;
-    double expect_a_opp_det = -1;
+    ASSERT_DOUBLE_EQ(_a.det(), 1);
+    ASSERT_DOUBLE_EQ((-_a).det(), -1);
 
-    double expect_b_det = 4;
-    double expect_b_inv_det = 0.25;
+    ASSERT_DOUBLE_EQ(_b.det(), 4);
+    ASSERT_DOUBLE_EQ((_b^-1).det(), 0.25);
+    ASSERT_DOUBLE_EQ((_b * (_b^-1)).det(), 1);
 
-    double expect_c_det = 0;
-
-    ASSERT_DOUBLE_EQ((-_a).det(), expect_a_opp_det);
-    ASSERT_DOUBLE_EQ(_a.det(), expect_a_det);
-
-
-    double b_det = _b.det(), b_inv_det = (_b^-1).det();
-    ASSERT_DOUBLE_EQ(b_det, expect_b_det);
-    ASSERT_DOUBLE_EQ(b_inv_det, expect_b_inv_det);
-    ASSERT_DOUBLE_EQ((_b * (_b^-1)).det(), b_det * b_inv_det);
-
-    ASSERT_DOUBLE_EQ(_c.det(), expect_c_det);
+    ASSERT_DOUBLE_EQ(_c.det(), 0);
 }
 
 TEST_F(NMatrixTest, Solve) {
-    NVector u{"(1 2 5)"}, expect_sol{3}, expect_u{3};
+    NVector u{"(1 2 5)"}, expect_sol{"(3 5 5)"};
 
-    expect_sol(0) = 2.9999999999999996;
-    expect_sol(1) = 4.9999999999999991;
-    expect_sol(2) = 4.9999999999999991;
-
-    expect_u(0) = 1;
-    expect_u(1) = 1.9999999999999991;
-    expect_u(2) = 4.9999999999999991;
-
-    ASSERT_EQ(_b % u, expect_sol);
-    ASSERT_EQ(_b * (_b % u), expect_u);
+    ASSERT_NEAR(_b % u / expect_sol, 0, 1.3322676295501878e-15);
+    ASSERT_NEAR(_b * (_b % u) / u, 0, 1.2560739669470201e-15);
 }
 
 TEST_F(NMatrixTest, StaticGenerators) {

@@ -50,24 +50,20 @@ TEST_F(NMatrixFuncOpTest, Pow) {
 }
 
 TEST_F(NMatrixFuncOpTest, Inv) {
+    NMatrix expect_b0011_inv{"  (2 1) \
+                                (1 2)"};
     NMatrix expect_b_inv{_b};
     NMatrix expect_a{_a};
 
     NMatrix b0011_inv = _b(0, 0, 1, 1)^-1;
 
-    expect_b_inv(0, 0) = 2.0/3.0;
-    expect_b_inv(0, 1) = 1.0/3.0;
-    expect_b_inv(1, 0) = 1.0/3.0;
-    expect_b_inv(1, 1) = 2.0/3.0;
+    expect_b0011_inv /= 3;
 
-    expect_a(1, 0) = 2.7755575615628914e-17;
-    expect_a(2, 0) = -5.5511151231257827e-17;
-    expect_a(2, 1) = -1.1102230246251565e-16;
-    expect_a(2, 2) = 0.99999999999999978;
+    expect_b_inv(0, 0, 1, 1) = expect_b0011_inv;
 
-    ASSERT_EQ(b0011_inv, expect_b_inv(0, 0, 1, 1));
+    ASSERT_EQ(b0011_inv, expect_b0011_inv);
 
-    ASSERT_EQ(_b(0, 0, 1, 1) * b0011_inv, expect_a(0, 0, 1, 1));
+    ASSERT_DOUBLE_EQ((_b(0, 0, 1, 1) * b0011_inv) / _a(0, 0, 1, 1), 0);
 
     _b(0, 0, 1, 1) ^= -1;
     ASSERT_EQ(_b, expect_b_inv);
@@ -78,16 +74,12 @@ TEST_F(NMatrixFuncOpTest, Det) {
 }
 
 TEST_F(NMatrixFuncOpTest, Solve) {
-    NVector u{"(1 2 5)"}, expect_sol{2}, expect_u{2};
+    NVector u{"(1 2 5)"}, sol{"(4 5)"};
     NMatrix copy_b0011{_b(0, 0, 1, 1)};
 
-    expect_sol(0) = 1.3333333333333335;
-    expect_sol(1) = 1.6666666666666667;
+    sol /= 3;
 
-    expect_u(0) = 1.0000000000000002;
-    expect_u(1) = 2;
-
-    EXPECT_EQ(_b(0, 0, 1, 1) * (copy_b0011 % u(0, 1)), expect_u);
-    ASSERT_EQ(_b(0, 0, 1, 1) % u(0, 1), expect_sol);
+    EXPECT_NEAR(_b(0, 0, 1, 1) * (copy_b0011 % u(0, 1)) / u(0, 1), 0, 2.2204460492503131e-16);
+    ASSERT_NEAR(_b(0, 0, 1, 1) % u(0, 1) / sol, 0, 2.2204460492503131e-16);
 }
 
