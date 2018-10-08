@@ -59,36 +59,7 @@ TEST_F(NMatrixTest, Construction) {
     _a = NMatrix(_b);
     ASSERT_EQ(_a, _b);
 
-    _a.det();
-
-    _a = NPMatrix("(0 0 0)");
-    ASSERT_EQ(_a.n(), 1);
-    ASSERT_EQ(_a.p(), 3);
-    ASSERT_TRUE(_a == 0);
-
-
-    _a = NPMatrix(NVector("(0 0 0 1 2 1 5 10 2)"), 3, 3);
-    ASSERT_EQ(_a.n(), 3);
-    ASSERT_EQ(_a.p(), 3);
-    ASSERT_EQ(_a, _c);
-
-
-    std::vector<std::vector<double> > expect_c{{0, 0, 0},
-                                               {1, 2, 1},
-                                               {5, 10, 2}};
-    _a = NPMatrix(expect_c);
-    ASSERT_EQ(_a, _c);
-
-
-    std::vector<NVector> expect_b{
-            NVector("( 2 -1 0)"),
-            NVector("( -1 2 -1)"),
-            NVector("( 0 -1 2)")
-    };
-    _a = NPMatrix(expect_b);
-    ASSERT_EQ(_a, _b);
-
-    _a = NPMatrix(" (0 0 0) \
+    _a = NMatrix(" (0 0 0) \
                     (1 2 1) \
                     (5 10 2)"
     );
@@ -189,20 +160,20 @@ TEST_F(NMatrixTest, Det) {
     double expect_a_opp_det = -1;
 
     double expect_b_det = 4;
-    double expect_b_inv_det = 0.24999999999999994;
+    double expect_b_inv_det = 0.25;
 
     double expect_c_det = 0;
 
-    ASSERT_EQ((-_a).det(), expect_a_opp_det);
-    ASSERT_EQ(_a.det(), expect_a_det);
+    ASSERT_DOUBLE_EQ((-_a).det(), expect_a_opp_det);
+    ASSERT_DOUBLE_EQ(_a.det(), expect_a_det);
 
 
     double b_det = _b.det(), b_inv_det = (_b^-1).det();
-    ASSERT_EQ(b_det, expect_b_det);
-    ASSERT_EQ(b_inv_det, expect_b_inv_det);
-    ASSERT_EQ((_b * (_b^-1)).det(), b_det * b_inv_det);
+    ASSERT_DOUBLE_EQ(b_det, expect_b_det);
+    ASSERT_DOUBLE_EQ(b_inv_det, expect_b_inv_det);
+    ASSERT_DOUBLE_EQ((_b * (_b^-1)).det(), b_det * b_inv_det);
 
-    ASSERT_EQ(_c.det(), expect_c_det);
+    ASSERT_DOUBLE_EQ(_c.det(), expect_c_det);
 }
 
 TEST_F(NMatrixTest, Solve) {

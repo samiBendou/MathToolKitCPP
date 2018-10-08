@@ -27,19 +27,24 @@ protected:
 
 TEST_F(NVectorFuncOpTest, Dim) {
     ASSERT_EQ(_u(0, 1).dim(), 2);
+    ASSERT_EQ(_u.dim(), 3);
 }
 
 TEST_F(NVectorFuncOpTest, Equality) {
     ASSERT_TRUE(_u(0, 1) == _v(1, 2));
+    ASSERT_EQ(_u.dim(), 3);
     ASSERT_TRUE(_u(0, 1) == "(1 0)");
+    ASSERT_EQ(_u.dim(), 3);
 
     ASSERT_FALSE(_u(0, 1) != _v(1, 2));
+
     ASSERT_FALSE(_u(0, 1) != "(1 0)");
 }
 
 TEST_F(NVectorFuncOpTest, Serialization) {
     std::vector<double> expect{1, 0};
     ASSERT_EQ(_u(0, 1).array(), expect);
+    ASSERT_EQ(_u.dim(), 3);
 }
 
 TEST_F(NVectorFuncOpTest, AffectationAccess) {
@@ -58,10 +63,6 @@ TEST_F(NVectorFuncOpTest, AffectationAccess) {
     _v = _u(0, 1);
     ASSERT_EQ(_v, "(1 0)");
 
-    _w = _u;
-    ASSERT_EQ(_w, "(1 0 0)");
-
-    _w = "(0 0 1)";
     _v(0, 1) = _w(1, 2);
     ASSERT_EQ(_v, "(0 1)");
 

@@ -20,13 +20,17 @@ NMatrix::NMatrix(const NPMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(
     assert(isSquare());
 }
 
-NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(nullptr){
+NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(nullptr) {
     //Hard copy constructor
     if(matrix._a != nullptr && matrix._perm != nullptr) {
         _a = new NMatrix(*(matrix._a));
         _perm = new std::vector<unsigned long>(matrix._n);
         std::copy(matrix._perm, matrix._perm + matrix._n, _perm);
     }
+}
+
+NMatrix::~NMatrix() {
+    lupClear();
 }
 
 // CHARACTERIZATION

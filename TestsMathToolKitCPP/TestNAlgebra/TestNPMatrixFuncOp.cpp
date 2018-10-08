@@ -36,28 +36,32 @@ TEST_F(NPMatrixFuncOpTest, Dim) {
 
 TEST_F(NPMatrixFuncOpTest, Equality) {
 
-    NPMatrix expect_sub_b{
+    NPMatrix expect_b1122{
             "(2  1) \
              (-1 2)"
     };
     NPMatrix copy_b{_b};
 
-    ASSERT_TRUE(_b(1, 1, 2, 2) == expect_sub_b);
+    ASSERT_TRUE(_b(1, 1, 2, 2) == expect_b1122);
     ASSERT_TRUE(_b(1, 1, 2, 2) == copy_b(1, 1, 2, 2));
     ASSERT_TRUE(_b == copy_b(0, 0, 2, 2));
 }
 
 TEST_F(NPMatrixFuncOpTest, AffectationAccess) {
 
-    NPMatrix expect_access_b{"  (3  1) \
-                                (-1 2)"
+    NPMatrix expect_b0011{" (3  1) \
+                            (-1 2)"
     };
 
-    NPMatrix sub_a{"(1 0) \
-                    (0 1)"
+    NPMatrix new_b0011{"    (6  1) \
+                            (-1 2)"
     };
 
-    NPMatrix expect_sub_a{" (1  1) \
+    NPMatrix expect_a0011{" (1  0) \
+                            (0  1)"
+    };
+
+    NPMatrix expect_b1122{" (1  1) \
                             (-1 2)"
     };
 
@@ -68,18 +72,27 @@ TEST_F(NPMatrixFuncOpTest, AffectationAccess) {
     _b(0, 0) = 3;
     ASSERT_EQ(_b(0, 0), 3);
 
-    ASSERT_EQ(_b(0, 0, 1, 1), expect_access_b);
+    ASSERT_EQ(_b(0, 0, 1, 1), expect_b0011);
 
-    expect_access_b *= 2;
-    _b(0, 0, 1, 1) = expect_access_b;
-    ASSERT_EQ(_b(0, 0, 1, 1), expect_access_b);
+    ASSERT_EQ(_b.n(), 3);
+    ASSERT_EQ(_b.p(), 3);
+
+    _b(0, 0, 1, 1) = new_b0011;
+
+    ASSERT_EQ(_b.n(), 3);
+    ASSERT_EQ(_b.p(), 3);
+
+    ASSERT_EQ(_b(0, 0, 1, 1), new_b0011);
 
     _b(0, 0, 1, 1) = _a(0, 0, 1, 1);
-    ASSERT_EQ(_b(0, 0, 1, 1), sub_a);
 
+    ASSERT_EQ(_b.n(), 3);
+    ASSERT_EQ(_b.p(), 3);
 
-    sub_a = _b(1, 1, 2, 2);
-    ASSERT_EQ(sub_a, expect_sub_a);
+    ASSERT_EQ(_b(0, 0, 1, 1), expect_a0011);
+
+    _c = _b(0, 0, 2, 2);
+    ASSERT_EQ(_c, _b);
 }
 
 TEST_F(NPMatrixFuncOpTest, Add) {
@@ -87,15 +100,15 @@ TEST_F(NPMatrixFuncOpTest, Add) {
                             (-1 3)"
     };
 
-    NPMatrix expect_a0011{" (3  1) \
-                            (-1 5)"
+    NPMatrix expect_a{"     (3  1   0) \
+                            (-1 3   0) \
+                            (0  0   1)"
     };
 
-    _a(1, 1, 2, 2) = _a(1, 1, 2, 2) + _b(0, 0, 1, 1);
-    EXPECT_EQ(_a(1, 1, 2, 2), expect_a1122);
+    EXPECT_EQ(_a(1, 1, 2, 2) + _b(0, 0, 1, 1), expect_a1122);
 
     _a(0, 0, 1, 1) += _b(0, 0, 1, 1);
-    ASSERT_EQ(_a(0, 0, 1, 1), expect_a0011);
+    ASSERT_EQ(_a, expect_a);
 }
 
 TEST_F(NPMatrixFuncOpTest, Sub) {
@@ -103,74 +116,72 @@ TEST_F(NPMatrixFuncOpTest, Sub) {
                             ( 1 -1)"
     };
 
-    NPMatrix expect_a0011{" (-1 -1) \
-                            ( 1 -3)"
+    NPMatrix expect_a{"     (-1 -1  0) \
+                            (1  -1  0) \
+                            (0  0   1)"
     };
-
-    _a(1, 1, 2, 2) = _a(1, 1, 2, 2) - _b(0, 0, 1, 1);
-    EXPECT_EQ(_a(1, 1, 2, 2), expect_a1122);
+    EXPECT_EQ(_a(1, 1, 2, 2) - _b(0, 0, 1, 1), expect_a1122);
 
     _a(0, 0, 1, 1) -= _b(0, 0, 1, 1);
-    ASSERT_EQ(_a(0, 0, 1, 1), expect_a0011);
+    ASSERT_EQ(_a, expect_a);
 }
 
 TEST_F(NPMatrixFuncOpTest, Prod) {
 
-    NPMatrix expect_a0011{" (10  5) \
+    NPMatrix expect_b0011{" (10 5) \
                             (-5 10)"
     };
 
-    NPMatrix expect_a1122{"(50 0) \
-                           (0  5)"
+    NPMatrix expect_a{"     (1  0   0) \
+                            (0  5   0) \
+                            (0  0   5)"
     };
 
     double x = 5;
-    _a(0, 0, 1, 1) = _b(0, 0, 1, 1) * x;
-    ASSERT_EQ(_a(0, 0, 1, 1), expect_a0011);
+    ASSERT_EQ( _b(0, 0, 1, 1) * x, expect_b0011);
 
     _a(1, 1, 2, 2) *= x;
-    ASSERT_EQ(_a(1, 1, 2, 2), expect_a1122);
-
+    ASSERT_EQ(_a, expect_a);
 }
 
 TEST_F(NPMatrixFuncOpTest, Div) {
-    NPMatrix expect_a0011{" (1  0.5) \
-                            (-0.5 1)"
+    NPMatrix expect_b0011{" (1      0.5 ) \
+                            (-0.5   1   )"
     };
 
-    NPMatrix expect_a1122{"(0.5  0) \
-                           (0  0.5)"
+    NPMatrix expect_a{"     (1  0   0   ) \
+                            (0  0.5 0   ) \
+                            (0  0   0.5 )"
     };
 
     double x = 2;
-    _a(0, 0, 1, 1) = _b(0, 0, 1, 1) / x;
-    ASSERT_EQ(_a(0, 0, 1, 1), expect_a0011);
+
+    ASSERT_EQ(_b(0, 0, 1, 1) / x, expect_b0011);
 
     _a(1, 1, 2, 2) /= x;
-    ASSERT_EQ(_a(1, 1, 2, 2), expect_a1122);
+    ASSERT_EQ(_a, expect_a);
 
 }
 
-
 TEST_F(NPMatrixFuncOpTest, Shift) {
-    NPMatrix expect_shift_row_a{
+    NPMatrix expect_a_shift_row_01{
             "(0 1 0) \
              (0 1 0) \
              (0 0 1)"
     };
 
-    NPMatrix expect_shift_col_a{
+    NPMatrix expect_a_shift_col_1m1{
             "(0 1 0) \
              (0 1 1) \
              (0 0 0)"
     };
 
     _a(0, 0, 1, 1).shiftRow(0, 1);
-    ASSERT_EQ(_a, expect_shift_row_a);
+    ASSERT_EQ(_a, expect_a_shift_row_01);
 
 
     _a(1, 1, 2, 2).shiftCol(1, -1);
-    ASSERT_EQ(_a, expect_shift_col_a);
+    ASSERT_EQ(_a, expect_a_shift_col_1m1);
 }
 
 TEST_F(NPMatrixFuncOpTest, Transposed) {

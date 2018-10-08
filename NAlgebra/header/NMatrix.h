@@ -40,6 +40,8 @@ public:
 
     NMatrix(const NMatrix& matrix);
 
+   ~NMatrix();
+
 
     // CHARACTERIZATION
 

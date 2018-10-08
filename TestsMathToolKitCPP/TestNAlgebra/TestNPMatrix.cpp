@@ -140,19 +140,28 @@ TEST_F(NPMatrixTest, Setters) {
 }
 
 TEST_F(NPMatrixTest, Swap) {
-    NPMatrix mat_b{_b};
+    NPMatrix expect_a_swap_1110{"   (1  0  0) \
+                                    (1  0  0) \
+                                    (0  0  1)"
+    };
+    NPMatrix expect_b_swap_col_01{" (1  2   0) \
+                                    (2  -1  1) \
+                                    (-1 0   2)"
+    };
 
-    _b.swap(0, 1, 1, 0);
-    _b.swap(0, 1, 1, 0);
-    ASSERT_EQ(_b, mat_b);
+    NPMatrix expect_c_swap_row_01{" (1  2   1) \
+                                    (0  0   0) \
+                                    (5  10  2)"
+    };
+
+    _a.swap(1, 1, 1, 0);
+    ASSERT_EQ(_a, expect_a_swap_1110);
 
     _b.swapCol(0, 1);
-    _b.swapCol(0, 1);
-    ASSERT_EQ(_b, mat_b);
+    ASSERT_EQ(_b, expect_b_swap_col_01);
 
-    _b.swapRow(0, 1);
-    _b.swapRow(0, 1);
-    ASSERT_EQ(_b, mat_b);
+    _c.swapRow(0, 1);
+    ASSERT_EQ(_c, expect_c_swap_row_01);
 }
 
 TEST_F(NPMatrixTest, Shift) {
@@ -182,18 +191,6 @@ TEST_F(NPMatrixTest, Shift) {
     _b.shiftCol(0, -2);
     ASSERT_EQ(_b, copy_b);
 }
-
-/*
-TEST_F(NPMatrixTest, MaxAbsIndexRowCol) {
-    ASSERT_EQ(_b.maxAbsIndexRow(0, 0), 0);
-    ASSERT_EQ(_b.maxAbsIndexRow(0, 1), 1);
-    ASSERT_EQ(_b.maxAbsIndexRow(0, 2), 2);
-
-    ASSERT_EQ(_c.maxAbsIndexRow(0, 0), 0);
-    ASSERT_EQ(_c.maxAbsIndexRow(0, 1), 1);
-    ASSERT_EQ(_c.maxAbsIndexRow(0, 2), 2);
-}
-*/
 
 TEST_F(NPMatrixTest, Add) {
     NPMatrix copy_b{_b};
