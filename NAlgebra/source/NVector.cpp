@@ -609,4 +609,3 @@ void NVector::setSubVector(const NVector &u) {
 
 
 
-

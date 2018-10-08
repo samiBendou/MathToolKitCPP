@@ -293,7 +293,8 @@ NPMatrix operator*(const NPMatrix &m, double s) {
 
 
 NPMatrix NPMatrix::operator*(const NPMatrix &m) const {
-    NPMatrix res{*this}, sub_m{m};
+    NPMatrix res{*this};
+    NPMatrix sub_m{this != &m ? m : res};
     res *= sub_m;
     return res;
 }
@@ -359,6 +360,9 @@ NPMatrix &NPMatrix::operator-=(const NPMatrix &m) {
 
 NPMatrix &NPMatrix::operator*=(const NPMatrix &m) {
     matrixProduct(m);
+
+    setDefaultBrowseIndices();
+    m.setDefaultBrowseIndices();
     return *this;
 }
 
@@ -515,17 +519,18 @@ void NPMatrix::vectorProduct(NVector &u) const {
 
 void NPMatrix::matrixProduct(const NPMatrix &m) {
     assert(isCompatible(m));
+    assert(isSquare() || hasDefaultBrowseIndices());
 
     vector<NVector> vector_rows = rows();
     vector<NVector> vector_cols = m.cols();
 
-    NPMatrix res = NPMatrix::zeros(_n, m._p);
-    for (unsigned long i = 0; i < _n; ++i) {
-        for (unsigned long j = 0; j < m._p; ++j) {
-            res(i, j) = vector_rows[i] | vector_cols[j];
+    NPMatrix res = NPMatrix::zeros(_i2 - _i1 + 1, m._j2 - m._j1  + 1);
+    for (unsigned long i = _i1; i <= _i2; ++i) {
+        for (unsigned long j = m._j1; j <= m._j2; ++j) {
+            res(i - _i1, j - m._j1) = vector_rows[i](_j1, _j2) | vector_cols[j](m._i1, m._i2);
         }
     }
-    (*this) = res;
+    this->copy(res);
 }
 
 // PRIVATE METHODS

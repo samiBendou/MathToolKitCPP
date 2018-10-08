@@ -185,15 +185,24 @@ TEST_F(NMatrixTest, Inv) {
 }
 
 TEST_F(NMatrixTest, Det) {
+    double expect_a_det = 1;
+    double expect_a_opp_det = -1;
+
     double expect_b_det = 4;
     double expect_b_inv_det = 0.24999999999999994;
 
-    double b_det = _b.det(), b_inv_det = (_b^-1).det();
+    double expect_c_det = 0;
 
+    ASSERT_EQ((-_a).det(), expect_a_opp_det);
+    ASSERT_EQ(_a.det(), expect_a_det);
+
+
+    double b_det = _b.det(), b_inv_det = (_b^-1).det();
     ASSERT_EQ(b_det, expect_b_det);
     ASSERT_EQ(b_inv_det, expect_b_inv_det);
-
     ASSERT_EQ((_b * (_b^-1)).det(), b_det * b_inv_det);
+
+    ASSERT_EQ(_c.det(), expect_c_det);
 }
 
 TEST_F(NMatrixTest, Solve) {

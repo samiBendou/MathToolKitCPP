@@ -7,7 +7,7 @@
  *                   It allow to reduce complexity to get invert or determinant. Precisely the LU decomposition is
  *                   represented by :
  *
- *                      -a : is matrix A = L + U where PA = LU = this. a points to the A NMatrix or points to nullptr if
+ *                      -a : is matrix A = L * U where PA = LU = this. a points to the A NMatrix or points to nullptr if
  *                           the matrix has never calculated LU decomposition or if the decomposition failed.
  *                      -permutation : permutation vector P such as PA = LU. Represented as unsigned long array.
  *
@@ -122,6 +122,13 @@ public:
     
     NVector& operator^=(long exp);
 
+    double &operator()(unsigned long i, unsigned long j);
+
+    double operator()(unsigned long i, unsigned long j) const;
+
+    NMatrix operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const;
+
+    NMatrix &operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
 
     // STATIC FUNCTIONS
 
@@ -178,7 +185,7 @@ public:
 protected:
     NMatrix* _a;
 
-    unsigned long* _permutation;
+    std::vector<unsigned long>* _perm;
 
     // ALGEBRAICAL OPERATIONS
 
@@ -210,10 +217,10 @@ protected:
 
     void lupUpdate();
     //LUP decomposition of a Matrix
-    //Stores P (_permutation) and A (_a) such as PA = LU where P is a row permutation array and A = L + U;
+    //Stores P (_perm) and A (_a) such as PA = LU where P is a row permutation array and A = L + U;
 
     void lupClear();
-    //Clears _a and _permutation
+    //Clears _a and _perm
 
     // SERIALIZATION
 

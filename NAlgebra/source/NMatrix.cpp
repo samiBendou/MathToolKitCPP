@@ -6,61 +6,73 @@
 
 #include "../header/NMatrix.h"
 
-NMatrix::NMatrix(unsigned long n) : NPMatrix(n, n), _a(nullptr), _permutation(nullptr)
+NMatrix::NMatrix(unsigned long n) : NPMatrix(n, n), _a(nullptr), _perm(nullptr)
 {
 }
 
 
-NMatrix::NMatrix(const std::string &str) : NPMatrix(str), _a(nullptr), _permutation(nullptr) {
-
+NMatrix::NMatrix(const std::string &str) : NPMatrix(str), _a(nullptr), _perm(nullptr) {
+    assert(isSquare());
 }
 
 
-NMatrix::NMatrix(const NPMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _permutation(nullptr) {
-
+NMatrix::NMatrix(const NPMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(nullptr) {
+    assert(isSquare());
 }
 
-NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _permutation(nullptr){
+NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(nullptr){
     //Hard copy constructor
-    if(matrix._a != nullptr && matrix._permutation != nullptr) {
+    if(matrix._a != nullptr && matrix._perm != nullptr) {
         _a = new NMatrix(*(matrix._a));
-        _permutation = new unsigned long[matrix._n];
-        std::copy(matrix._permutation, matrix._permutation + matrix._n, _permutation);
+        _perm = new std::vector<unsigned long>(matrix._n);
+        std::copy(matrix._perm, matrix._perm + matrix._n, _perm);
     }
 }
 
 // CHARACTERIZATION
 
 bool NMatrix::isUpper() const {
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = 0; j < i; j++) {
+    for(unsigned long i = _i1; i <= _i2; ++i) {
+        for(unsigned long j = i + 1; j <= _j2; ++j) {
             if(abs((*this)(i, j)) > std::numeric_limits<double>::epsilon()) {
+                setDefaultBrowseIndices();
                 return false;
             }
         }
     }
+
+    setDefaultBrowseIndices();
+
     return true;
 }
 
 bool NMatrix::isLower() const {
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = i + 1; j < _n; j++) {
+    for(unsigned long i = _i1; i <= _i2; ++i) {
+        for(unsigned long j = i + 1; j <= _j2; ++j) {
             if(abs((*this)(i, j)) > std::numeric_limits<double>::epsilon()) {
+                setDefaultBrowseIndices();
                 return false;
             }
         }
     }
+
+    setDefaultBrowseIndices();
+
     return true;
 }
 
 bool NMatrix::isDiagonal() const {
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j =0; j < _n; j++) {
+    for(unsigned long i = _i1; i <= _i2; i++) {
+        for(unsigned long j = _j1; j <= _j2; j++) {
             if(i != j && abs((*this)(i, j)) > std::numeric_limits<double>::epsilon()) {
+                setDefaultBrowseIndices();
                 return false;
             }
         }
     }
+
+    setDefaultBrowseIndices();
+
     return true;
 }
 
@@ -69,35 +81,58 @@ bool NMatrix::isDiagonal() const {
 
 
 NMatrix NMatrix::upper() const {
-    NMatrix upper = NPMatrix::zeros(_n);
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = i; j < _n; j++)
+
+    NMatrix upper = NPMatrix::zeros(_i2 - _i1 + 1);
+    for(unsigned long i = _i1; i <= _i2; ++i) {
+        for(unsigned long j = i; j <= _j2; ++j)
             upper(i, j) = (*this)(i, j);
     }
+
+    setDefaultBrowseIndices();
     return upper;
 }
 
 NMatrix NMatrix::lower() const {
-    NMatrix lower = NPMatrix::zeros(_n);
-    for(unsigned long i = 0; i < _n; i++) {
-        for(unsigned long j = 0; j <= i; j++)
+
+    NMatrix lower = NPMatrix::zeros(_i2 - _i1 + 1);
+    for(unsigned long i = _i1; i <= _i2; ++i) {
+        for(unsigned long j = _j1; j <= i; ++j)
             lower(i, j) = (*this)(i, j);
     }
+
+    setDefaultBrowseIndices();
     return lower;
 }
 
 NMatrix NMatrix::lupL() {
     if(_a == nullptr) { lupUpdate(); }
+
+    assert(_a != nullptr);
+
     NMatrix l = _a->lower();
-    for(unsigned long i = 0; i < _n; i++) {
+    for(unsigned long i = 0; i < _a->_n; ++i) {
         l(i, i) = 1.0;
+    }
+
+    if(_a->_n != _n) {
+        lupClear();
+        setDefaultBrowseIndices();
     }
     return l;
 }
 
 NMatrix NMatrix::lupU() {
     if(_a == nullptr) { lupUpdate(); }
-    return _a->upper();
+
+    assert(_a != nullptr);
+
+    NMatrix u = _a->upper();
+
+    if(_a->_n != _n) {
+        lupClear();
+        setDefaultBrowseIndices();
+    }
+    return u;
 }
 
 
@@ -106,9 +141,10 @@ NMatrix NMatrix::lupU() {
 
 double NMatrix::trace() const {
     double trace = 0.0;
-    for(unsigned long i = 0; i < _n; i++) {
+    for(unsigned long i = _i1; i <= _i2; i++) {
         trace += (*this)(i, i);
     }
+    setDefaultBrowseIndices();
     return trace;
 }
 
@@ -118,10 +154,14 @@ double NMatrix::det() {
 
     if(_a != nullptr) {
         det = (*_a)(0, 0);
-        for(unsigned long i = 1; i < _n; i++) {
+        for(unsigned long i = 1; i < _a->_n; i++) {
             det *= (*_a)(i, i);
         }
-        det = ((_permutation[_n - 1] - (_n - 1)) % 2 == 0) ? det : -det;
+        det = (((*_perm)[_a->_n - 1] - (_a->_n - 1)) % 2 == 0) ? det : -det;
+
+        if(_a->_n != _n) {
+            lupClear();
+        }
     }
     return det;
 }
@@ -170,14 +210,34 @@ NMatrix operator^(const NPMatrix &m, long exp) {
 NVector operator%(NMatrix &matrix, const NVector &vector) {
     NVector b{vector};
     matrix.solve(b);
+    matrix.setDefaultBrowseIndices();
     return b;
 }
 
 NVector &NMatrix::operator^=(const long exp) {
     pow(exp);
+    setDefaultBrowseIndices();
     return *this;
 }
 
+double &NMatrix::operator()(unsigned long i, unsigned long j) {
+    return NPMatrix::operator()(i, j);
+}
+
+double NMatrix::operator()(unsigned long i, unsigned long j) const {
+    return NPMatrix::operator()(i, j);
+}
+
+NMatrix NMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const {
+    assert(_i2 - _i1 == _j2 - _j1);
+    return NPMatrix::operator()(i1, j1, i2, j2);
+}
+
+NMatrix &NMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) {
+    assert(_i2 - _i1 == _j2 - _j1);
+    NPMatrix::operator()(i1, j1, i2, j2);
+    return *this;
+}
 
 // STATIC FUNCTIONS
 
@@ -283,21 +343,21 @@ void NMatrix::pow(const long n) {
         rPow(-n);
     }
     else {
-        *this = NPMatrix::zeros(_n);
+        *this = NMatrix::eye(_i2 - _i1 + 1);
     }
     lupClear();
 }
 
 void NMatrix::rPow(const long n) {
     if(n > 1) {
-        const NMatrix copy = NMatrix(*this);
-        *this *= *this;
+        const NMatrix copy{this->subMatrix(_i1, _j1, _i2, _j2)};
+        (*this)(_i1, _j1, _i2, _j2).matrixProduct(copy);
         if(n % 2 == 0) {
             rPow(n / 2);
         }
         else if(n % 2 == 1) {
             rPow((n - 1) / 2);
-            *this *= copy;
+            (*this)(_i1, _j1, _i2, _j2).matrixProduct(copy);
         }
     }
 }
@@ -307,46 +367,49 @@ void NMatrix::inv() {
 
     if(_a == nullptr) { lupUpdate(); }
 
-    assert(abs(det()) > std::numeric_limits<double>::epsilon());
-
-    if(det() != 0.0) {
-        for (j = 0; j < _n; j++) {
-            for (i = 0; i < _n; i++) {
-                (*this)(i, j) = ((_permutation[i] == j) ? 1.0 : 0.0);
+    if(_a != nullptr) {
+        for (j = 0; j < _a->_n; j++) {
+            for (i = 0; i < _a->_n; i++) {
+                (*this)(i + _i1, j + _j1) = (((*_perm)[i] == j) ? 1.0 : 0.0);
                 for (l = 0; l < i; ++l) {
-                    (*this)(i, j) -= (*_a)(i, l) * (*this)(l, j);
+                    (*this)(i + _i1, j + _j1) -= (*_a)(i, l) * (*this)(l, j);
                 }
-
             }
-            for (i = 0; i < _n; i++) {
-                k = _n - 1 - i;
-                for (l = k + 1; l < _n; l++) {
-                    (*this)(k, j) -= (*_a)(k, l) * (*this)(l, j);
+            for (i = 0; i < _a->_n; i++) {
+                k = _a->_n - 1 - i;
+                for (l = k + 1; l < _a->_n; l++) {
+                    (*this)(k + _i1, j + _j1) -= (*_a)(k, l) * (*this)(l, j);
                 }
-                (*this)(k, j) /= (*_a)(k, k);
+                (*this)(k + _i1, j + _j1) /= (*_a)(k, k);
             }
         }
-        lupClear();
+        if(_a->_n != _n) {
+            lupClear();
+        }
     }
 }
 
 void NMatrix::solve(NVector& vector) {
     unsigned long i, l, k;
+
     if(_a == nullptr) { lupUpdate(); }
 
-    if(_n == vector.dim() && det() != 0.0) {
-        for(i = 0; i < _n; i++) {
-            vector(i) = vector(_permutation[i]);
+    if(_i2 - _i1 + 1 == vector.dim() && _a != nullptr) {
+        for(i = 0; i < _a->_n; i++) {
+            vector(i) = vector((*_perm)[i]);
             for (l = 0; l < i; ++l) {
                 vector(i) -= (*_a)(i, l) * vector(l);
             }
         }
-        for (i = 0; i < _n; i++) {
-            k = _n - 1 - i;
-            for (l = k + 1; l < _n; ++l) {
+        for (i = 0; i < _a->_n; i++) {
+            k = _a->_n - 1 - i;
+            for (l = k + 1; l < _a->_n; ++l) {
                 vector(k) -= (*_a)(k, l) * vector(l);
             }
             vector(k) /= (*_a)(k, k);
+        }
+        if(_a->_n != _n) {
+            lupClear();
         }
     }
 }
@@ -354,48 +417,51 @@ void NMatrix::solve(NVector& vector) {
 // LUP MANAGEMENT
 
 void NMatrix::lupUpdate() {
-    //Returns PA such as PA = LU where P is a row p array and A = L + U;
+    //Returns PA such as PA = LU where P is a row p array and A = L * U;
     unsigned long i, j, k, iMax;
 
     lupClear();
-    _a = new NMatrix(*this);
-    auto* p = new unsigned long[_n + 1];
 
-    for (i = 0; i <= _n; i++)
-        p[i] = i; //Unit p permutation, p[i] initialized with i
-    if(!this->isUpper() || !this->isLower()) {
-        for (i = 0; i < _n; i++) {
+    _a = new NMatrix(this->subMatrix(_i1, _j1, _i2, _j2));
+    auto* p = new std::vector<unsigned long>();
+
+    for (i = 0; i <= _a->_n; ++i)
+        p->push_back(i); //Unit p permutation, p[i] initialized with i
+
+    if(!_a->isUpper() || !_a->isLower()) {
+        for (i = 0; i < _a->_n; ++i) {
             iMax = _a->maxAbsIndexCol(i, i);
             if (abs((*_a)(iMax, i)) > std::numeric_limits<double>::epsilon()) { //matrix is not degenerate
                 if (iMax != i) {
-                    i = p[i];
-                    p[i] = p[iMax];
+                    j = (*p)[i];
+                    (*p)[i] = (*p)[iMax];
+                    (*p)[iMax] = j;
+
                     _a->swapRow(i, iMax);
-                    //counting pivots starting from _n (for determinant)
-                    p[_n]++;
+
+                    (*p)[_a->_n]++; //counting pivots starting from a->_n (for determinant)
                 }
+            } else {
+                lupClear();
+                return;
             }
-            for (j = i + 1; j < _n; j++) {
-                if(abs((*_a)(i, i)) < std::numeric_limits<double>::epsilon()) {
-                    lupClear();
-                    return;
-                }
+            for (j = i + 1; j < _a->_n; ++j) {
                 (*_a)(j, i) /= (*_a)(i, i);
-                for (k = i + 1; k < _n; k++) {
+                for (k = i + 1; k < _a->_n; ++k) {
                     (*_a)(j, k) -= (*_a)(j, i) * (*_a)(i, k);
                 }
             }
         }
     }
-    _permutation = p;
+    _perm = p;
 }
 
 void NMatrix::lupClear() {
     if(_a != nullptr) {
         delete _a;
-        delete[] _permutation;
+        delete _perm;
         _a = nullptr;
-        _permutation = nullptr;
+        _perm = nullptr;
     }
 }
 
@@ -403,6 +469,7 @@ void NMatrix::copy(const NPMatrix &m) {
     NPMatrix::copy(m);
     lupClear();
 }
+
 
 
 
