@@ -25,6 +25,8 @@
 
 #define MAX_SIZE 4294967295
 
+typedef unsigned long ul_t;
+
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -32,6 +34,8 @@
 #include <cstdarg>
 #include <cassert>
 #include <algorithm>
+
+template <class T>
 
 class NVector : public std::vector<double> {
 
@@ -51,7 +55,7 @@ public:
      * @return  a NVector by giving the dimension. This method uses the std::vector constructor
      *          to create a vector.
      */
-    explicit NVector(unsigned long dim = 0);
+    explicit NVector(ul_t dim = 0);
 
     /**
      *
@@ -75,7 +79,7 @@ public:
      *
      * @return n, the dimension of the vector which is the size of this std::vector instance.
      */
-    unsigned long dim() const;
+    ul_t dim() const;
 
     /**
      *
@@ -97,9 +101,9 @@ public:
      *
      * @return Respectively the index of max and min of the coordinates of vector (x0, x1, .. x(n-1)).
      */
-    unsigned long maxIndex() const;
+    ul_t maxIndex() const;
 
-    unsigned long minIndex() const;
+    ul_t minIndex() const;
 
     // ABSOLUTE VALUE MAX / MIN
 
@@ -116,9 +120,9 @@ public:
      *
      * @return Respectively index of min and max of absolute value of vector ie. (|x0|, |x1|, ..., |x(n-1)|)
      */
-    unsigned long maxAbsIndex() const;
+    ul_t maxAbsIndex() const;
 
-    unsigned long minAbsIndex() const;
+    ul_t minAbsIndex() const;
 
     // MANIPULATORS
 
@@ -128,7 +132,7 @@ public:
      * @param k2 Second index to swap
      * @details Permutation of two elements (x(k1 - 1), xk2, ..., x(k2 - 1), xk1, ..., x(n-1))
      */
-    void swap(unsigned long k1, unsigned long k2);
+    void swap(ul_t k1, ul_t k2);
 
     /**
      *
@@ -241,9 +245,9 @@ public:
      *
      *          - See unit tests for more details.
      */
-    NVector operator()(unsigned long k1, unsigned long k2) const;
+    NVector operator()(ul_t k1, ul_t k2) const;
 
-    NVector &operator()(unsigned long k1, unsigned long k2);
+    NVector &operator()(ul_t k1, ul_t k2);
 
 
     // STREAM EXTRACT/INSERT
@@ -302,14 +306,14 @@ public:
      * @param dim : dimension of the vector
      * @return a 0 vector (0, 0, ..., 0).
      */
-    static NVector zeros(unsigned long dim);
+    static NVector zeros(ul_t dim);
 
     /**
      *
      * @param dim : dimension of the vector
      * @return Returns vector filled with 1 (1, 1, ..., 1).
      */
-    static NVector ones(unsigned long dim);
+    static NVector ones(ul_t dim);
 
     /**
      *
@@ -317,7 +321,7 @@ public:
      * @param dim dimension of the scalar vector
      * @return a vector filled with s (s, s, ..., s).
      */
-    static NVector scalar(double s, unsigned long dim);
+    static NVector scalar(double s, ul_t dim);
 
     /**
      *
@@ -326,7 +330,7 @@ public:
      * @return  return the kth vector of canonical base. ie (e0, e1, ..., e(n-1)) where :
      *          e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n - 1) = (0, 0, ..., 1).
      */
-    static NVector canonical(unsigned long k, unsigned long dim);
+    static NVector canonical(ul_t k, ul_t dim);
 
     /**
      *
@@ -368,9 +372,9 @@ protected:
 
     //CHARACTERIZATION
 
-    bool isValidIndex(unsigned long k) const;
+    bool isValidIndex(ul_t k) const;
 
-    bool isBetweenK12(unsigned long k) const;
+    bool isBetweenK12(ul_t k) const;
 
     bool isNull() const;
 
@@ -390,15 +394,15 @@ protected:
 
     //SUB-VECTORS
 
-    NVector subVector(unsigned long k1, unsigned long k2) const;
+    NVector subVector(ul_t k1, ul_t k2) const;
 
     void setSubVector(const NVector &u);
 
     //BROWSE INDICES
 
-    mutable unsigned long _k1;
+    mutable ul_t _k1;
 
-    mutable unsigned long _k2;
+    mutable ul_t _k2;
 };
 
 

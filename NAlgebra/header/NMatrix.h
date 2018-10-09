@@ -9,7 +9,7 @@
  *
  *                      -a : is matrix A = L * U where PA = LU = this. a points to the A NMatrix or points to nullptr if
  *                           the matrix has never calculated LU decomposition or if the decomposition failed.
- *                      -permutation : permutation vector P such as PA = LU. Represented as unsigned long array.
+ *                      -permutation : permutation vector P such as PA = LU. Represented as ul_t array.
  *
 *                    The *a object never is never used directly so it's own a pointer a->a always points to nullptr.
  *
@@ -32,7 +32,7 @@ public:
 
     // CONSTRUCTION
 
-    explicit NMatrix(unsigned long n = 0);
+    explicit NMatrix(ul_t n = 0);
 
     explicit NMatrix(const std::string& str);
 
@@ -124,13 +124,13 @@ public:
     
     NVector& operator^=(long exp);
 
-    double &operator()(unsigned long i, unsigned long j);
+    double &operator()(ul_t i, ul_t j);
 
-    double operator()(unsigned long i, unsigned long j) const;
+    double operator()(ul_t i, ul_t j) const;
 
-    NMatrix operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const;
+    NMatrix operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const;
 
-    NMatrix &operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
+    NMatrix &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
 
     // STATIC FUNCTIONS
 
@@ -139,7 +139,7 @@ public:
      * @param n size of the matrix
      * @return n-th order Identity matrix
      */
-    static NMatrix eye(unsigned long n);
+    static NMatrix eye(ul_t n);
 
     /**
      *
@@ -147,14 +147,14 @@ public:
      * @param n size of the matrix
      * @return Returns diagonal n-th order diagonal matrix filled with data array
      */
-    static NMatrix diag(const std::vector<double> &data, unsigned long  n);
+    static NMatrix diag(const std::vector<double> &data, ul_t  n);
 
 
     /**
      *
      * @return a scalar n-th order matrix with s value. This is a diagonal matrix filled with s.
      */
-    static NMatrix scalar(double s, unsigned long n);
+    static NMatrix scalar(double s, ul_t n);
 
     /**
      *
@@ -182,12 +182,12 @@ public:
      * @return  a n-scalar Matrix filled with values. If values.length = 2, the matrix is tri-diagonal.
      *          Center diagonal is filled with s1 and the other diagonal are filled with s0.
      */
-    static NMatrix nscalar(const std::vector<double> &scalars, const unsigned long n);
+    static NMatrix nscalar(const std::vector<double> &scalars, const ul_t n);
 
 protected:
     NMatrix* _a;
 
-    std::vector<unsigned long>* _perm;
+    std::vector<ul_t>* _perm;
 
     // ALGEBRAICAL OPERATIONS
 

@@ -6,7 +6,7 @@
 
 #include "../header/NMatrix.h"
 
-NMatrix::NMatrix(unsigned long n) : NPMatrix(n, n), _a(nullptr), _perm(nullptr)
+NMatrix::NMatrix(ul_t n) : NPMatrix(n, n), _a(nullptr), _perm(nullptr)
 {
 }
 
@@ -24,7 +24,7 @@ NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(n
     //Hard copy constructor
     if(matrix._a != nullptr && matrix._perm != nullptr) {
         _a = new NMatrix(*(matrix._a));
-        _perm = new std::vector<unsigned long>(matrix._n);
+        _perm = new std::vector<ul_t>(matrix._n);
         std::copy(matrix._perm, matrix._perm + matrix._n, _perm);
     }
 }
@@ -36,8 +36,8 @@ NMatrix::~NMatrix() {
 // CHARACTERIZATION
 
 bool NMatrix::isUpper() const {
-    for(unsigned long i = _i1; i <= _i2; ++i) {
-        for(unsigned long j = i + 1; j <= _j2; ++j) {
+    for(ul_t i = _i1; i <= _i2; ++i) {
+        for(ul_t j = i + 1; j <= _j2; ++j) {
             if(abs((*this)(i, j)) > std::numeric_limits<double>::epsilon()) {
                 setDefaultBrowseIndices();
                 return false;
@@ -51,8 +51,8 @@ bool NMatrix::isUpper() const {
 }
 
 bool NMatrix::isLower() const {
-    for(unsigned long i = _i1; i <= _i2; ++i) {
-        for(unsigned long j = i + 1; j <= _j2; ++j) {
+    for(ul_t i = _i1; i <= _i2; ++i) {
+        for(ul_t j = i + 1; j <= _j2; ++j) {
             if(abs((*this)(i, j)) > std::numeric_limits<double>::epsilon()) {
                 setDefaultBrowseIndices();
                 return false;
@@ -66,8 +66,8 @@ bool NMatrix::isLower() const {
 }
 
 bool NMatrix::isDiagonal() const {
-    for(unsigned long i = _i1; i <= _i2; i++) {
-        for(unsigned long j = _j1; j <= _j2; j++) {
+    for(ul_t i = _i1; i <= _i2; i++) {
+        for(ul_t j = _j1; j <= _j2; j++) {
             if(i != j && abs((*this)(i, j)) > std::numeric_limits<double>::epsilon()) {
                 setDefaultBrowseIndices();
                 return false;
@@ -87,8 +87,8 @@ bool NMatrix::isDiagonal() const {
 NMatrix NMatrix::upper() const {
 
     NMatrix upper = NPMatrix::zeros(_i2 - _i1 + 1);
-    for(unsigned long i = _i1; i <= _i2; ++i) {
-        for(unsigned long j = i; j <= _j2; ++j)
+    for(ul_t i = _i1; i <= _i2; ++i) {
+        for(ul_t j = i; j <= _j2; ++j)
             upper(i, j) = (*this)(i, j);
     }
 
@@ -99,8 +99,8 @@ NMatrix NMatrix::upper() const {
 NMatrix NMatrix::lower() const {
 
     NMatrix lower = NPMatrix::zeros(_i2 - _i1 + 1);
-    for(unsigned long i = _i1; i <= _i2; ++i) {
-        for(unsigned long j = _j1; j <= i; ++j)
+    for(ul_t i = _i1; i <= _i2; ++i) {
+        for(ul_t j = _j1; j <= i; ++j)
             lower(i, j) = (*this)(i, j);
     }
 
@@ -114,7 +114,7 @@ NMatrix NMatrix::lupL() {
     assert(_a != nullptr);
 
     NMatrix l = _a->lower();
-    for(unsigned long i = 0; i < _a->_n; ++i) {
+    for(ul_t i = 0; i < _a->_n; ++i) {
         l(i, i) = 1.0;
     }
 
@@ -145,7 +145,7 @@ NMatrix NMatrix::lupU() {
 
 double NMatrix::trace() const {
     double trace = 0.0;
-    for(unsigned long i = _i1; i <= _i2; i++) {
+    for(ul_t i = _i1; i <= _i2; i++) {
         trace += (*this)(i, i);
     }
     setDefaultBrowseIndices();
@@ -158,7 +158,7 @@ double NMatrix::det() {
 
     if(_a != nullptr) {
         det = (*_a)(0, 0);
-        for(unsigned long i = 1; i < _a->_n; i++) {
+        for(ul_t i = 1; i < _a->_n; i++) {
             det *= (*_a)(i, i);
         }
         det = (((*_perm)[_a->_n - 1] - (_a->_n - 1)) % 2 == 0) ? det : -det;
@@ -224,20 +224,20 @@ NVector &NMatrix::operator^=(const long exp) {
     return *this;
 }
 
-double &NMatrix::operator()(unsigned long i, unsigned long j) {
+double &NMatrix::operator()(ul_t i, ul_t j) {
     return NPMatrix::operator()(i, j);
 }
 
-double NMatrix::operator()(unsigned long i, unsigned long j) const {
+double NMatrix::operator()(ul_t i, ul_t j) const {
     return NPMatrix::operator()(i, j);
 }
 
-NMatrix NMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const {
+NMatrix NMatrix::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
     assert(_i2 - _i1 == _j2 - _j1);
     return NPMatrix::operator()(i1, j1, i2, j2);
 }
 
-NMatrix &NMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) {
+NMatrix &NMatrix::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
     assert(_i2 - _i1 == _j2 - _j1);
     NPMatrix::operator()(i1, j1, i2, j2);
     return *this;
@@ -246,23 +246,23 @@ NMatrix &NMatrix::operator()(unsigned long i1, unsigned long j1, unsigned long i
 // STATIC FUNCTIONS
 
 
-NMatrix NMatrix::eye(unsigned long n) {
+NMatrix NMatrix::eye(ul_t n) {
     NMatrix eye = NPMatrix::zeros(n);
-    for (unsigned long k = 0; k < eye.n(); ++k) {
+    for (ul_t k = 0; k < eye.n(); ++k) {
         eye(k, k) = 1.0;
     }
     return eye;
 }
 
-NMatrix NMatrix::diag(const std::vector<double> &data, unsigned long n) {
+NMatrix NMatrix::diag(const std::vector<double> &data, ul_t n) {
     NMatrix diag = NPMatrix::zeros(n);
-    for (unsigned long k = 0; k < n; ++k) {
+    for (ul_t k = 0; k < n; ++k) {
         diag(k, k) = data[k];
     }
     return diag;
 }
 
-NMatrix NMatrix::scalar(double s, unsigned long n) {
+NMatrix NMatrix::scalar(double s, ul_t n) {
     return s * NMatrix::eye(n);
 }
 
@@ -275,7 +275,7 @@ NMatrix NMatrix::ndiag(const std::vector<NVector> &data) {
     NPMatrix diag = NPMatrix::zeros(dim);
 
     for(long l = -middle; l <= middle; l++) {
-        for(unsigned long k = 0; k < dim - abs(l); k++) {
+        for(ul_t k = 0; k < dim - abs(l); k++) {
             if(l < 0) {
                 diag(k - l, k) = data[l + middle](k);
             }
@@ -287,13 +287,13 @@ NMatrix NMatrix::ndiag(const std::vector<NVector> &data) {
     return diag;
 }
 
-NMatrix NMatrix::nscalar(const std::vector<double> &scalars, const unsigned long n) {
+NMatrix NMatrix::nscalar(const std::vector<double> &scalars, const ul_t n) {
     const auto scalarSize = (long) scalars.size();
     const long minSize = n - scalarSize;
 
-    std::vector< NVector > diags((unsigned long) (2 * scalarSize - 1));
-    unsigned long size = 1;
-    for(unsigned long l = 0; l < scalarSize; l++) {
+    std::vector< NVector > diags((ul_t) (2 * scalarSize - 1));
+    ul_t size = 1;
+    for(ul_t l = 0; l < scalarSize; l++) {
         diags[l] = NVector::scalar(scalars[l], size + minSize);
         if(l > 0) {
             diags[l + scalarSize - 1] = NVector::scalar(scalars[scalarSize - l - 1], n - size + 1);
@@ -367,7 +367,7 @@ void NMatrix::rPow(const long n) {
 }
 
 void NMatrix::inv() {
-    unsigned long i, j, k, l;
+    ul_t i, j, k, l;
 
     if(_a == nullptr) { lupUpdate(); }
 
@@ -394,7 +394,7 @@ void NMatrix::inv() {
 }
 
 void NMatrix::solve(NVector& vector) {
-    unsigned long i, l, k;
+    ul_t i, l, k;
 
     if(_a == nullptr) { lupUpdate(); }
 
@@ -422,12 +422,12 @@ void NMatrix::solve(NVector& vector) {
 
 void NMatrix::lupUpdate() {
     //Returns PA such as PA = LU where P is a row p array and A = L * U;
-    unsigned long i, j, k, iMax;
+    ul_t i, j, k, iMax;
 
     lupClear();
 
     _a = new NMatrix(this->subMatrix(_i1, _j1, _i2, _j2));
-    auto* p = new std::vector<unsigned long>();
+    auto* p = new std::vector<ul_t>();
 
     for (i = 0; i <= _a->_n; ++i)
         p->push_back(i); //Unit p permutation, p[i] initialized with i

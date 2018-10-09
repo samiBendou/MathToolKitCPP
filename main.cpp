@@ -18,6 +18,7 @@ using namespace std;
 int main() {
 
     NVector vector{"(0 0 1)"};
+
     cout << vector << endl;
 
     return 0;

@@ -93,7 +93,7 @@ public:
 
     static Vector3 scalar(double scalar);
 
-    static Vector3 canonical(unsigned int k);
+    static Vector3 canonical(ul_t k);
 
 
 protected:

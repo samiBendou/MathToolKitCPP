@@ -45,7 +45,7 @@ public:
      *
      * @return a n x p matrix constructed using a std::vector of size n * p.
      */
-    explicit NPMatrix(unsigned long n = 0, unsigned long p = 0);
+    explicit NPMatrix(ul_t n = 0, ul_t p = 0);
 
     /**
      *
@@ -77,7 +77,7 @@ public:
      *
      * @return a n x p matrix constructed using a NVector having u.dim() = n * p
      */
-    NPMatrix(const NVector &u, unsigned long n, unsigned long p = 0);
+    NPMatrix(const NVector &u, ul_t n, ul_t p = 0);
 
     /**
      *
@@ -115,17 +115,17 @@ public:
 
     // GETTERS
 
-    unsigned long n() const;
+    ul_t n() const;
 
-    unsigned long p() const;
+    ul_t p() const;
 
     /**
      *
      * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a NVector.
      */
-    NVector row(unsigned long i) const;
+    NVector row(ul_t i) const;
 
-    NVector col(unsigned long j) const;
+    NVector col(ul_t j) const;
 
     /**
      *
@@ -136,9 +136,9 @@ public:
      *          -rows(i1)/cols(j1) returns the rows [Ri1, R(i1+1),..., R(n-1)]/ cols [Rj1, R(j1+1),..., C(p-1)]
      *          -rows(i1, i2)/cols(j1, j2) returns the rows [Ri1, R(i1+1),..., Ri2]/ cols [Cj1, C(j1+1),..., Cj2]
      */
-    std::vector<NVector> rows(unsigned long i1 = 0, unsigned long i2 = MAX_SIZE) const;
+    std::vector<NVector> rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
 
-    std::vector<NVector> cols(unsigned long j1 = 0, unsigned long j2 = MAX_SIZE) const;
+    std::vector<NVector> cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
 
 
     // SETTERS
@@ -148,10 +148,10 @@ public:
      * @param u row/col seen as NVector. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const NVector &u, unsigned long i1);
+    void setRow(const NVector &u, ul_t i1);
 
 
-    void setCol(const NVector &u, unsigned long j1);
+    void setCol(const NVector &u, ul_t j1);
 
     /**
      *
@@ -170,9 +170,9 @@ public:
      *
      *                  Where q is the size of the vector array.
      */
-    void setRows(const std::vector<NVector> &vectors, unsigned long i1 = 0);
+    void setRows(const std::vector<NVector> &vectors, ul_t i1 = 0);
 
-    void setCols(const std::vector<NVector> &vectors, unsigned long j1 = 0);
+    void setCols(const std::vector<NVector> &vectors, ul_t j1 = 0);
 
 
 
@@ -187,7 +187,7 @@ public:
      * @param i2/j2 second row/col indices to swap
      * @description : Swap Ai1j1 and Ai2j2.
      */
-    void swap(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
+    void swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
 
     /**
      *
@@ -195,9 +195,9 @@ public:
      * @param i2/j2 second row/col indices to swap
      * @description : Swap Ri1/Cj1 and Ri2/Cj2.
      */
-    void swapRow(unsigned long i1, unsigned long i2);
+    void swapRow(ul_t i1, ul_t i2);
 
-    void swapCol(unsigned long j1, unsigned long j2);
+    void swapCol(ul_t j1, ul_t j2);
 
 
     // SHIFT
@@ -216,9 +216,9 @@ public:
     *                  |A00, ..., ...|
     *                  |A10, ..., ...|
     */
-    void shiftRow(unsigned long i, long iterations = 1);
+    void shiftRow(ul_t i, long iterations = 1);
 
-    void shiftCol(unsigned long j, long iterations = 1);
+    void shiftCol(ul_t j, long iterations = 1);
 
     // TRANSPOSED
 
@@ -312,9 +312,9 @@ public:
      *
      * @return component ij of matrix. Operator can be used to read/write values.
      */
-    double &operator()(unsigned long i, unsigned long j);
+    double &operator()(ul_t i, ul_t j);
 
-    double operator()(unsigned long i, unsigned long j) const;
+    double operator()(ul_t i, ul_t j) const;
 
     /**
      *
@@ -329,9 +329,9 @@ public:
      * Operations on a sub matrix can be applied this way matrix(i1, j1, i2, j2).shift(0, 1)
      * See unit tests for mor details.
      */
-    NPMatrix operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2) const;
+    NPMatrix operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const;
 
-    NPMatrix &operator()(unsigned long i1, unsigned long j1, unsigned long i2, unsigned long j2);
+    NPMatrix &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
 
     // AFFECTATION
 
@@ -351,13 +351,13 @@ public:
      *
      * @return zero nxp matrix, ie. filled with 0.
      */
-    static NPMatrix zeros(unsigned long n, unsigned long p = 0);
+    static NPMatrix zeros(ul_t n, ul_t p = 0);
 
     /**
      *
      * @return nxp matrix filled with 1
      */
-    static NPMatrix ones(unsigned long n, unsigned long p = 0);
+    static NPMatrix ones(ul_t n, ul_t p = 0);
 
     /**
      * @param i row where to put 1.
@@ -365,25 +365,25 @@ public:
      *
      * @return canonical matrices Eij  of Mnp(R) which contains 1 in position ij and 0 elsewhere.
      */
-    static NPMatrix canonical(unsigned long i, unsigned long j, unsigned long n, unsigned long p = 0);
+    static NPMatrix canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
 
 protected:
 
     // MANIPULATORS
 
-    void swap(ElementEnum element, unsigned long k1, unsigned long k2);
+    void swap(ElementEnum element, ul_t k1, ul_t k2);
 
-    void shift(ElementEnum element, unsigned long k, long iterations);
+    void shift(ElementEnum element, ul_t k, long iterations);
 
     // MAX/MIN
 
-    unsigned long maxAbsIndex(ElementEnum element, unsigned long k, unsigned long r) const;
+    ul_t maxAbsIndex(ElementEnum element, ul_t k, ul_t r) const;
 
     // MAX / MIN
 
-    unsigned long maxAbsIndexRow(unsigned long i, unsigned long r = 0) const;
+    ul_t maxAbsIndexRow(ul_t i, ul_t r = 0) const;
 
-    unsigned long maxAbsIndexCol(unsigned long j, unsigned long r = 0) const;
+    ul_t maxAbsIndexCol(ul_t j, ul_t r = 0) const;
 
     // ALGEBRAICAL OPERATIONS
 
@@ -395,15 +395,15 @@ protected:
 
     // CHARACTERIZATION
 
-    bool isValidRowIndex(unsigned long i) const;
+    bool isValidRowIndex(ul_t i) const;
 
-    bool isValidColIndex(unsigned long j) const;
+    bool isValidColIndex(ul_t j) const;
 
-    bool isValidIndex(unsigned long i, unsigned long j) const;
+    bool isValidIndex(ul_t i, ul_t j) const;
 
-    bool isBetweenI12(unsigned long i) const;
+    bool isBetweenI12(ul_t i) const;
 
-    bool isBetweenJ12(unsigned long j) const;
+    bool isBetweenJ12(ul_t j) const;
 
     bool isCompatible(const NVector &u) const;
 
@@ -423,34 +423,34 @@ protected:
 
     // INDEX GETTERS
 
-    unsigned long getVectorIndex(unsigned long i, unsigned long j) const;
+    ul_t getVectorIndex(ul_t i, ul_t j) const;
 
-    unsigned long getRowFromVectorIndex(unsigned long k) const;
+    ul_t getRowFromVectorIndex(ul_t k) const;
 
-    unsigned long getColFromVectorIndex(unsigned long k) const;
+    ul_t getColFromVectorIndex(ul_t k) const;
 
     // SUB-MATRICES
 
-    NPMatrix subMatrix(unsigned long i1 = 0, unsigned long j1 = MAX_SIZE,
-                       unsigned long i2 = 0, unsigned long j2 = MAX_SIZE) const;
+    NPMatrix subMatrix(ul_t i1 = 0, ul_t j1 = MAX_SIZE,
+                       ul_t i2 = 0, ul_t j2 = MAX_SIZE) const;
 
     void setSubMatrix(const NPMatrix &m);
 
     // SIZE
 
-    unsigned long _n;
+    ul_t _n;
 
-    unsigned long _p;
+    ul_t _p;
 
     // BROWSE INDICES
 
-    mutable unsigned long _i1;
+    mutable ul_t _i1;
 
-    mutable unsigned long _j1;
+    mutable ul_t _j1;
 
-    mutable unsigned long _i2;
+    mutable ul_t _i2;
 
-    mutable unsigned long _j2;
+    mutable ul_t _j2;
 };
 
 

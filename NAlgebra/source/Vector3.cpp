@@ -104,7 +104,7 @@ Vector3 Vector3::scalar(double scalar) {
     return Vector3(NVector::scalar(scalar, 3));
 }
 
-Vector3 Vector3::canonical(unsigned int k) {
+Vector3 Vector3::canonical(ul_t k) {
     return Vector3(NVector::canonical(k, 3));
 }
 
