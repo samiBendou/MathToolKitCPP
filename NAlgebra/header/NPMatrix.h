@@ -529,9 +529,9 @@ protected:
 
     virtual void matrixProduct(const NPMatrix<T> &m);
 
-    void add(const NVector<T> &vector) override;
+    void add(const NPMatrix<T> &m);
 
-    void sub(const NVector<T> &vector) override;
+    void sub(const NPMatrix<T> &m);
 
     void opp() override;
 

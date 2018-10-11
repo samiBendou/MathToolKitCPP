@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include <NPMatrix.h>
 
-#define SMALL_N_TEST 100
+#define SMALL_N_TEST 1000
 #define SMALL_EXP_TEST 5
 
 using namespace std;
@@ -40,6 +40,56 @@ TEST_F(NPMatrixBenchTest, Serialization) {
     _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
 
     cout << endl << "DESERIALIZATION ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+}
+
+TEST_F(NPMatrixBenchTest, Add) {
+    _t0 = clock();
+    _a += _b;
+    _t1 = clock();
+    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+
+    cout << endl << "+ ELAPSED TIME (sec) : " << _elapsed_time << endl;
+
+    _t0 = clock(); // or gettimeofday or whatever
+    _a -= _b;
+    _t1 = clock();
+    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+
+    cout << endl << "- ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+}
+
+TEST_F(NPMatrixBenchTest, Prod) {
+    _t0 = clock();
+    _a *= 5.0;
+    _t1 = clock();
+    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+
+    cout << endl << "* ELAPSED TIME (sec) : " << _elapsed_time << endl;
+
+    _t0 = clock();
+    _a /= 5.0;
+    _t1 = clock();
+    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+
+    cout << endl << "/ ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+}
+
+TEST_F(NPMatrixBenchTest, DotProduct) {
+    _t0 = clock();
+    _a | _b;
+    _t1 = clock();
+    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+
+    cout << endl << "| ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+}
+
+TEST_F(NPMatrixBenchTest, Max) {
+    _t0 = clock();
+    _a.max();
+    _t1 = clock();
+    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+
+    cout << endl << "max() ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
 }
 
 TEST_F(NPMatrixBenchTest, MatrixProd) {

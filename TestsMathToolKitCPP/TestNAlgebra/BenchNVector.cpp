@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include <NVector.h>
 
-#define SMALL_DIM_TEST 100000
+#define SMALL_DIM_TEST 1000000
 
 using namespace std;
 

@@ -512,22 +512,15 @@ NPMatrix<T> NPMatrix<T>::operator-() const {
 // COMPOUND OPERATORS
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator+=(const NPMatrix<T> &m1) {
-    assert(hasSameSize(m1));
-
-    NPMatrix<T> sub_this{this->subMatrix(_i1, _j1, _i2, _j2)};
-    sub_this.NVector<T>::operator+=(m1(m1._i1, m1._j1, m1._i2, m1._j2));
-    (*this)(_i1, _j1, _i2, _j2) = sub_this;
-
-    setDefaultBrowseIndices();
-    m1.setDefaultBrowseIndices();
-
+NPMatrix<T> &NPMatrix<T>::operator+=(const NPMatrix<T> &m) {
+    add(m);
     return *this;
 }
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::operator-=(const NPMatrix<T> &m) {
-    return *this += (-m);
+    sub(m);
+    return *this;
 }
 
 template<typename T>
@@ -779,14 +772,38 @@ void NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
 // PRIVATE ALGEBRAICAL OPERATIONS
 
 template<typename T>
-void NPMatrix<T>::add(const NVector<T> &vector) {
-    NVector<T>::add(vector);
+void NPMatrix<T>::add(const NPMatrix<T> &m) {
+    assert(hasSameSize(m));
+    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
+        std::transform(
+                this->begin() + getVectorIndex(i + _i1, _j1),
+                this->begin() + getVectorIndex(i + _i1, _j2) + 1,
+                m.begin() + m.getVectorIndex(i + m._i1, m._j1),
+                this->begin() + getVectorIndex(i + _i1, _j1),
+                std::plus<T>()
+                        );
+    }
+
+    setDefaultBrowseIndices();
+    m.setDefaultBrowseIndices();
     lupClear();
 }
 
 template<typename T>
-void NPMatrix<T>::sub(const NVector<T> &vector) {
-    NVector<T>::sub(vector);
+void NPMatrix<T>::sub(const NPMatrix<T> &m) {
+    assert(hasSameSize(m));
+    for (ul_t j = 0; j <= _i2 - _i1; ++j) {
+        std::transform(
+                this->begin() + getVectorIndex(j + _i1, _j1),
+                this->begin() + getVectorIndex(j + _i1, _j2) + 1,
+                m.begin() + m.getVectorIndex(j + m._i1, m._j1),
+                this->begin() + getVectorIndex(j + _i1, _j1),
+                std::minus<T>()
+        );
+    }
+
+    setDefaultBrowseIndices();
+    m.setDefaultBrowseIndices();
     lupClear();
 }
 
