@@ -4,8 +4,6 @@
 
 #include <NVector.h>
 
-#include "../header/NVector.h"
-
 using namespace std;
 
 
@@ -578,6 +576,7 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
 }
 
 template class NVector<double>;
+
 
 
 

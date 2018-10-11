@@ -23,9 +23,9 @@ protected:
                 (5 10 2)";
     }
 
-    NPMatrix _a{0, 0};
-    NPMatrix _b{0, 0};
-    NPMatrix _c{0, 0};
+    NPMatrix<double> _a{0, 0};
+    NPMatrix<double> _b{0, 0};
+    NPMatrix<double> _c{0, 0};
 };
 
 
@@ -36,11 +36,11 @@ TEST_F(NPMatrixFuncOpTest, Dim) {
 
 TEST_F(NPMatrixFuncOpTest, Equality) {
 
-    NPMatrix expect_b1122{
+    NPMatrix<double> expect_b1122{
             "(2  1) \
              (-1 2)"
     };
-    NPMatrix copy_b{_b};
+    NPMatrix<double> copy_b{_b};
 
     ASSERT_TRUE(_b(1, 1, 2, 2) == expect_b1122);
     ASSERT_TRUE(_b(1, 1, 2, 2) == copy_b(1, 1, 2, 2));
@@ -49,19 +49,19 @@ TEST_F(NPMatrixFuncOpTest, Equality) {
 
 TEST_F(NPMatrixFuncOpTest, AffectationAccess) {
 
-    NPMatrix expect_b0011{" (3  1) \
+    NPMatrix<double> expect_b0011{" (3  1) \
                             (-1 2)"
     };
 
-    NPMatrix new_b0011{"    (6  1) \
+    NPMatrix<double> new_b0011{"    (6  1) \
                             (-1 2)"
     };
 
-    NPMatrix expect_a0011{" (1  0) \
+    NPMatrix<double> expect_a0011{" (1  0) \
                             (0  1)"
     };
 
-    NPMatrix expect_b1122{" (1  1) \
+    NPMatrix<double> expect_b1122{" (1  1) \
                             (-1 2)"
     };
 
@@ -96,11 +96,11 @@ TEST_F(NPMatrixFuncOpTest, AffectationAccess) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Add) {
-    NPMatrix expect_a1122{" (3  1) \
+    NPMatrix<double> expect_a1122{" (3  1) \
                             (-1 3)"
     };
 
-    NPMatrix expect_a{"     (3  1   0) \
+    NPMatrix<double> expect_a{"     (3  1   0) \
                             (-1 3   0) \
                             (0  0   1)"
     };
@@ -112,11 +112,11 @@ TEST_F(NPMatrixFuncOpTest, Add) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Sub) {
-    NPMatrix expect_a1122{" (-1 -1) \
+    NPMatrix<double> expect_a1122{" (-1 -1) \
                             ( 1 -1)"
     };
 
-    NPMatrix expect_a{"     (-1 -1  0) \
+    NPMatrix<double> expect_a{"     (-1 -1  0) \
                             (1  -1  0) \
                             (0  0   1)"
     };
@@ -128,11 +128,11 @@ TEST_F(NPMatrixFuncOpTest, Sub) {
 
 TEST_F(NPMatrixFuncOpTest, Prod) {
 
-    NPMatrix expect_b0011{" (10 5) \
+    NPMatrix<double> expect_b0011{" (10 5) \
                             (-5 10)"
     };
 
-    NPMatrix expect_a{"     (1  0   0) \
+    NPMatrix<double> expect_a{"     (1  0   0) \
                             (0  5   0) \
                             (0  0   5)"
     };
@@ -145,11 +145,11 @@ TEST_F(NPMatrixFuncOpTest, Prod) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Div) {
-    NPMatrix expect_b0011{" (1      0.5 ) \
+    NPMatrix<double> expect_b0011{" (1      0.5 ) \
                             (-0.5   1   )"
     };
 
-    NPMatrix expect_a{"     (1  0   0   ) \
+    NPMatrix<double> expect_a{"     (1  0   0   ) \
                             (0  0.5 0   ) \
                             (0  0   0.5 )"
     };
@@ -164,13 +164,13 @@ TEST_F(NPMatrixFuncOpTest, Div) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Shift) {
-    NPMatrix expect_a_shift_row_01{
+    NPMatrix<double> expect_a_shift_row_01{
             "(0 1 0) \
              (0 1 0) \
              (0 0 1)"
     };
 
-    NPMatrix expect_a_shift_col_1m1{
+    NPMatrix<double> expect_a_shift_col_1m1{
             "(0 1 0) \
              (0 1 1) \
              (0 0 0)"
@@ -185,7 +185,7 @@ TEST_F(NPMatrixFuncOpTest, Shift) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Transposed) {
-    NPMatrix expect_c1122{" (2 10) \
+    NPMatrix<double> expect_c1122{" (2 10) \
                             (1  2)"
     };
 

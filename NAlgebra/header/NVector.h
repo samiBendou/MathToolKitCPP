@@ -27,6 +27,9 @@
 
 
 typedef unsigned long ul_t;
+typedef unsigned char uc_t;
+typedef unsigned int ui_t;
+typedef unsigned short us_t;
 
 #include <iostream>
 #include <string>
@@ -35,6 +38,7 @@ typedef unsigned long ul_t;
 #include <cstdarg>
 #include <cassert>
 #include <algorithm>
+#include <complex>
 
 template <typename T>
 

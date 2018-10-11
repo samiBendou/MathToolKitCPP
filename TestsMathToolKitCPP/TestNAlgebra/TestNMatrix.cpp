@@ -38,7 +38,7 @@ TEST_F(NMatrixTest, Equality) {
 }
 
 TEST_F(NMatrixTest, Affectation) {
-    NPMatrix copy_b{_b};
+    NMatrix copy_b{_b};
 
     _a = copy_b;
     ASSERT_EQ(_a, _b);

@@ -13,16 +13,16 @@ class NPMatrixBenchTest : public ::testing::Test {
 
 protected:
     void SetUp() override {
-        _a = NPMatrix::ones(SMALL_N_TEST);
-        _b = 2 * NPMatrix::ones(SMALL_N_TEST);
+        _a = NPMatrix<double>::ones(SMALL_N_TEST);
+        _b = 2 * NPMatrix<double>::ones(SMALL_N_TEST);
     }
 
     clock_t _t0;
     clock_t _t1;
     double _elapsed_time;
 
-    NPMatrix _a;
-    NPMatrix _b;
+    NPMatrix<double> _a;
+    NPMatrix<double> _b;
 };
 
 TEST_F(NPMatrixBenchTest, Serialization) {

@@ -2,7 +2,7 @@
  * @class          : NMatrix
  * @date           : 05/05/2018
  * @author         : samiBendou
- * @description    : A NMatrix inherits from NPMatrix. It's a representation of a numerical square matrices.
+ * @description    : A NMatrix inherits from NPMatrix<double>. It's a representation of a numerical square matrices.
  *                   The LU decomposition is stored as property of square matrices. It is auto-updated only on need.
  *                   It allow to reduce complexity to get invert or determinant. Precisely the LU decomposition is
  *                   represented by :
@@ -25,10 +25,10 @@
 #include "NVector.h"
 #include "NPMatrix.h"
 
-class NMatrix : public NPMatrix {
+class NMatrix : public NPMatrix<double> {
 public:
 
-    using NPMatrix::operator=;
+    using NPMatrix<double>::operator=;
 
     // CONSTRUCTION
 
@@ -36,7 +36,7 @@ public:
 
     explicit NMatrix(const std::string& str);
 
-    NMatrix(const NPMatrix& matrix);
+    NMatrix(const NPMatrix<double>& matrix);
 
     NMatrix(const NMatrix& matrix);
 
@@ -97,7 +97,7 @@ public:
 
     NMatrix operator-() const;
 
-    using NPMatrix::operator*;
+    using NPMatrix<double>::operator*;
 
     friend NMatrix operator*(double s, const NMatrix &m);
 
@@ -113,7 +113,7 @@ public:
      * @param exp long integer exponent. If exp < 0 we calculate the power of the inverse matrix m^-1 (O(n3)).
      * @return m^exp using fast exponentiation algorithm.
      */
-    friend NMatrix operator^(const NPMatrix &m, long exp);
+    friend NMatrix operator^(const NPMatrix<double> &m, long exp);
 
     /**
      * @param m matrix of the equation system.
@@ -201,7 +201,7 @@ protected:
 
     void div(double scalar) override ;
 
-    void matrixProduct(const NPMatrix &m) override ;
+    void matrixProduct(const NPMatrix<double> &m) override ;
 
     void pow(long n);
 
@@ -226,7 +226,7 @@ protected:
 
     // SERIALIZATION
 
-    void copy(const NPMatrix& m) override;
+    void copy(const NPMatrix<double>& m) override;
 };
 
 

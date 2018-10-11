@@ -24,9 +24,9 @@ protected:
                 (5 10 2)";
     }
 
-    NPMatrix _a{0, 0};
-    NPMatrix _b{0, 0};
-    NPMatrix _c{0, 0};
+    NPMatrix<double> _a{0, 0};
+    NPMatrix<double> _b{0, 0};
+    NPMatrix<double> _c{0, 0};
 };
 
 
@@ -57,23 +57,23 @@ TEST_F(NPMatrixTest, Affectation) {
 
 TEST_F(NPMatrixTest, Construction) {
 
-    _a = NPMatrix(5);
+    _a = NPMatrix<double>(5);
     ASSERT_EQ(_a.n(), 5);
     ASSERT_EQ(_a.p(), 5);
     ASSERT_TRUE(_a == 0);
 
 
-    _a = NPMatrix(_b);
+    _a = NPMatrix<double>(_b);
     ASSERT_EQ(_a, _b);
 
 
-    _a = NPMatrix(NVector<double>("(0 0 0)"));
+    _a = NPMatrix<double>(NVector<double>("(0 0 0)"));
     ASSERT_EQ(_a.n(), 1);
     ASSERT_EQ(_a.p(), 3);
     ASSERT_TRUE(_a == 0);
 
 
-    _a = NPMatrix(NVector<double>("(0 0 0 1 2 1 5 10 2)"), 3, 3);
+    _a = NPMatrix<double>(NVector<double>("(0 0 0 1 2 1 5 10 2)"), 3, 3);
     ASSERT_EQ(_a.n(), 3);
     ASSERT_EQ(_a.p(), 3);
     ASSERT_EQ(_a, _c);
@@ -82,7 +82,7 @@ TEST_F(NPMatrixTest, Construction) {
     std::vector<std::vector<double> > expect_c{{0, 0, 0},
                                                {1, 2, 1},
                                                {5, 10, 2}};
-    _a = NPMatrix(expect_c);
+    _a = NPMatrix<double>(expect_c);
     ASSERT_EQ(_a, _c);
 
 
@@ -91,11 +91,11 @@ TEST_F(NPMatrixTest, Construction) {
             NVector<double>("( -1 2 1)"),
             NVector<double>("( 0 -1 2)")
     };
-    _a = NPMatrix(expect_b);
+    _a = NPMatrix<double>(expect_b);
     ASSERT_EQ(_a, _b);
 
 
-    _a = NPMatrix(" (0 0 0) \
+    _a = NPMatrix<double>(" (0 0 0) \
                     (1 2 1) \
                     (5 10 2)"
                   );
@@ -140,16 +140,16 @@ TEST_F(NPMatrixTest, Setters) {
 }
 
 TEST_F(NPMatrixTest, Swap) {
-    NPMatrix expect_a_swap_1110{"   (1  0  0) \
+    NPMatrix<double> expect_a_swap_1110{"   (1  0  0) \
                                     (1  0  0) \
                                     (0  0  1)"
     };
-    NPMatrix expect_b_swap_col_01{" (1  2   0) \
+    NPMatrix<double> expect_b_swap_col_01{" (1  2   0) \
                                     (2  -1  1) \
                                     (-1 0   2)"
     };
 
-    NPMatrix expect_c_swap_row_01{" (1  2   1) \
+    NPMatrix<double> expect_c_swap_row_01{" (1  2   1) \
                                     (0  0   0) \
                                     (5  10  2)"
     };
@@ -165,7 +165,7 @@ TEST_F(NPMatrixTest, Swap) {
 }
 
 TEST_F(NPMatrixTest, Shift) {
-    NPMatrix copy_b{_b};
+    NPMatrix<double> copy_b{_b};
 
     _b.shiftRow(0, 1);
     ASSERT_EQ(_b.row(0), "(1 0 2)");
@@ -193,8 +193,8 @@ TEST_F(NPMatrixTest, Shift) {
 }
 
 TEST_F(NPMatrixTest, Add) {
-    NPMatrix copy_b{_b};
-    NPMatrix expect_add_b{" ( 4 2 0) \
+    NPMatrix<double> copy_b{_b};
+    NPMatrix<double> expect_add_b{" ( 4 2 0) \
                             (-2 4 2) \
                             (0 -2 4)"
                         };
@@ -212,8 +212,8 @@ TEST_F(NPMatrixTest, Add) {
 }
 
 TEST_F(NPMatrixTest, Prod) {
-    NPMatrix copy_b{_b};
-    NPMatrix expect_prod_b{"( 4 2 0) \
+    NPMatrix<double> copy_b{_b};
+    NPMatrix<double> expect_prod_b{"( 4 2 0) \
                             (-2 4 2) \
                             (0 -2 4)"
                         };
@@ -239,7 +239,7 @@ TEST_F(NPMatrixTest, EuclideanOperations) {
 }
 
 TEST_F(NPMatrixTest, Transposed) {
-    NPMatrix expect_trans_c{"   (0 1 5) \
+    NPMatrix<double> expect_trans_c{"   (0 1 5) \
                                 (0 2 10) \
                                 (0 1 2)"
                                   };
@@ -247,8 +247,8 @@ TEST_F(NPMatrixTest, Transposed) {
 
     ASSERT_EQ(_c.transposed(), expect_trans_c);
 
-    NPMatrix u = NPMatrix(_c.col(1));
-    NPMatrix v = u.transposed();
+    NPMatrix<double> u = NPMatrix<double>(_c.col(1));
+    NPMatrix<double> v = u.transposed();
 
     EXPECT_EQ(u.n(), 1);
     ASSERT_EQ(u.p(), 3);
@@ -259,18 +259,18 @@ TEST_F(NPMatrixTest, Transposed) {
 
 TEST_F(NPMatrixTest, MatrixProd) {
     auto expect_prod_b{2 * _b};
-    NPMatrix expect_prod_vu{"   (1 2) \
+    NPMatrix<double> expect_prod_vu{"   (1 2) \
                                 (2 4)" };
 
     EXPECT_EQ(_b * (2 * _a), expect_prod_b);
     _b *= (2 * _a);
     ASSERT_EQ(_b, expect_prod_b);
 
-    NPMatrix u = NPMatrix("(1 2)");
-    NPMatrix v{u.transposed()};
+    NPMatrix<double> u = NPMatrix<double>("(1 2)");
+    NPMatrix<double> v{u.transposed()};
 
 
-    ASSERT_EQ(u * v, NPMatrix("(5)"));
+    ASSERT_EQ(u * v, NPMatrix<double>("(5)"));
 
     ASSERT_EQ(v * u, expect_prod_vu);
 }
@@ -289,18 +289,18 @@ TEST_F(NPMatrixTest, GaussJordan) {
 }
 
 TEST_F(NPMatrixTest, StaticGenerators) {
-    NPMatrix expect_zeros{" (0 0 0)\
+    NPMatrix<double> expect_zeros{" (0 0 0)\
                             (0 0 0)"
     };
-    EXPECT_EQ(NPMatrix::zeros(2, 3), expect_zeros);
+    EXPECT_EQ(NPMatrix<double>::zeros(2, 3), expect_zeros);
 
-    NPMatrix expect_ones{"  (1 1 1)\
+    NPMatrix<double> expect_ones{"  (1 1 1)\
                             (1 1 1)"
     };
-    EXPECT_EQ(NPMatrix::ones(2, 3), expect_ones);
+    EXPECT_EQ(NPMatrix<double>::ones(2, 3), expect_ones);
 
-    NPMatrix expect_canonical{" (0 0 0)\
+    NPMatrix<double> expect_canonical{" (0 0 0)\
                                 (0 1 0)"
     };
-    EXPECT_EQ(NPMatrix::canonical(1, 1, 2, 3), expect_canonical);
+    EXPECT_EQ(NPMatrix<double>::canonical(1, 1, 2, 3), expect_canonical);
 }

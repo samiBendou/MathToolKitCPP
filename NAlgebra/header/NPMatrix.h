@@ -2,7 +2,7 @@
  * @class          : NPMatrix
  * @date           : 04/05/2018
  * @author         : samiBendou
- * @description    : A NPMatrix inherits from NVector<double>. It's a representation of a numerical matrices of arbitrary
+ * @description    : A NPMatrix<T> inherits from NVector<T>. It's a representation of a numerical matrices of arbitrary
  *                   size. We will use the following definitions :
  *
  *                      - n : Number of Rows
@@ -15,7 +15,7 @@
  *
  *                   The matrix components are stored in a linear form with the index transformation k = p * i + j.
  *                   The underlying std::vector is represented as t[p * i + j].
- *                   The underlying NVector<double> is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
+ *                   The underlying NVector<T> is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
  *
  *                   Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination.
  *                   setters & getters, swappers and classic matrix generators such as ones, zeros...
@@ -36,7 +36,8 @@ enum ElementEnum {
     Row, Col
 };
 
-class NPMatrix : public NVector<double> {
+template <typename T>
+class NPMatrix : public NVector<T> {
 
 public:
     // CONSTRUCTION
@@ -54,12 +55,12 @@ public:
      */
     explicit NPMatrix(const vector<vector<double> > &data);
 
-    NPMatrix(const NPMatrix &m);
+    NPMatrix(const NPMatrix<T> &m);
 
     /**
      *
      * @param str an array of string containing the rows of the matrix in a form like "|0 2 3|".
-     * @details initialize a NPMatrix by parsing a string representing matrix rows. Use the following
+     * @details initialize a NPMatrix<T> by parsing a string representing matrix rows. Use the following
      *          syntax : {"(A00  A01  ...  A0(P-1)) \
      *                     (A10  A1   ...  A1(P-1)) \
      *                     (...  ...   A(N-1)(P-1))"}
@@ -71,21 +72,21 @@ public:
      *
      * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
      */
-    explicit NPMatrix(const NVector<double> &u);
+    explicit NPMatrix(const NVector<T> &u);
 
     /**
      *
-     * @return a n x p matrix constructed using a NVector<double> having u.dim() = n * p
+     * @return a n x p matrix constructed using a NVector<T> having u.dim() = n * p
      */
-    NPMatrix(const NVector<double> &u, ul_t n, ul_t p = 0);
+    NPMatrix(const NVector<T> &u, ul_t n, ul_t p = 0);
 
     /**
      *
-     * @return a n x p matrix constructed using a std::vector<NVector<double> >. All the vectors must have the same dimension.
+     * @return a n x p matrix constructed using a std::vector<NVector<T> >. All the vectors must have the same dimension.
      * They represent the rows of the matrix.
      */
 
-    explicit NPMatrix(const vector<NVector<double> > &vectors);
+    explicit NPMatrix(const vector<NVector<T> > &vectors);
 
 
 
@@ -121,45 +122,45 @@ public:
 
     /**
      *
-     * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a NVector<double>.
+     * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a NVector<T>.
      */
-    NVector<double> row(ul_t i) const;
+    NVector<T> row(ul_t i) const;
 
-    NVector<double> col(ul_t j) const;
+    NVector<T> col(ul_t j) const;
 
     /**
      *
      * @param i1/j1 start index of rows/cols
      * @param i2/j2 end index i2/j2 >= i1/j1 of rows/cols
-     * @return the rows/cols of the matrix in the form of std::vector<NVector<double> >.
+     * @return the rows/cols of the matrix in the form of std::vector<NVector<T> >.
      *          -rows()/cols() return all the rows/cols.
      *          -rows(i1)/cols(j1) returns the rows [Ri1, R(i1+1),..., R(n-1)]/ cols [Rj1, R(j1+1),..., C(p-1)]
      *          -rows(i1, i2)/cols(j1, j2) returns the rows [Ri1, R(i1+1),..., Ri2]/ cols [Cj1, C(j1+1),..., Cj2]
      */
-    std::vector<NVector<double> > rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
+    std::vector<NVector<T> > rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
 
-    std::vector<NVector<double> > cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
+    std::vector<NVector<T> > cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
 
 
     // SETTERS
 
     /**
      *
-     * @param u row/col seen as NVector<double>. The dimension of the vector must be equal to the number of cols/rows
+     * @param u row/col seen as NVector<T>. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const NVector<double> &u, ul_t i1);
+    void setRow(const NVector<T> &u, ul_t i1);
 
 
-    void setCol(const NVector<double> &u, ul_t j1);
+    void setCol(const NVector<T> &u, ul_t j1);
 
     /**
      *
-     * @param vectors : std::vector of NVector<double> representing rows/cols to set on the matrix.
+     * @param vectors : std::vector of NVector<T> representing rows/cols to set on the matrix.
      *                  - The length of each row/col must be inferior or equal to the number of cols/rows.
      *                  - The total number of rows/cols must be inferior or equal to the number of rows/cols.
      * @param i1/j1 :   start index to set row/col. If i1/j1 + vectors.size() > n/p Then the algorithm truncate the
-     *                  array of NVector<double>.
+     *                  array of NVector<T>.
      * @description :   Replace the components of the matrix with the array of vectors. For example setCols will change
      *                  the matrix this way :
      *
@@ -170,9 +171,9 @@ public:
      *
      *                  Where q is the size of the vector array.
      */
-    void setRows(const std::vector<NVector<double> > &vectors, ul_t i1 = 0);
+    void setRows(const std::vector<NVector<T> > &vectors, ul_t i1 = 0);
 
-    void setCols(const std::vector<NVector<double> > &vectors, ul_t j1 = 0);
+    void setCols(const std::vector<NVector<T> > &vectors, ul_t j1 = 0);
 
 
 
@@ -222,7 +223,7 @@ public:
 
     // TRANSPOSED
 
-    NPMatrix transposed();
+    NPMatrix<T> transposed();
 
     // ALGEBRA
 
@@ -230,7 +231,7 @@ public:
      * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
      * and m2 columns. m1 and m2 must have the same number of rows.
      */
-    NPMatrix shifted(const NPMatrix &m) const;
+    NPMatrix<T> shifted(const NPMatrix<T> &m) const;
 
 
     /**
@@ -247,64 +248,82 @@ public:
     /**
      * @return this + m where + is usual addition for matrices. The matrices must have the length.
      */
-    NPMatrix operator+(const NPMatrix &m) const;
+    NPMatrix<T> operator+(const NPMatrix<T> &m) const;
 
     /**
      * @return m1 - m2 where - is substraction based on + for matrices. The matrices must have the length.
      */
-    NPMatrix operator-(const NPMatrix &m) const;
+    NPMatrix<T> operator-(const NPMatrix<T> &m) const;
 
     /**
      * @return the usual opposite of the matrix -m.
      */
-    NPMatrix operator-() const;
+    NPMatrix<T> operator-() const;
 
     /**
      *
      * @return s * m where * is usual scalar multiplication
      */
-    friend NPMatrix operator*(double s, const NPMatrix &m);
+    friend NPMatrix<T> operator*(double s, const NPMatrix<T> &m) {
+        NPMatrix<T> res{m};
+        res *= s;
+        return res;
+    }
 
-    friend NPMatrix operator*(const NPMatrix &m, double s);
+    friend NPMatrix<T> operator*(const NPMatrix<T> &m, double s) {
+        return s * m;
+    }
 
     /**
      * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
      *          Natural O(n3) matrix product is used.
      */
-    NPMatrix operator*(const NPMatrix &m) const;
+    NPMatrix<T> operator*(const NPMatrix<T> &m) const;
 
     /**
      *
      * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
      *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
      */
-    NVector<double> operator*(const NVector<double> &v) const;
+    NVector<T> operator*(const NVector<T> &v) const;
 
     /**
      *
      * @return (1 / s) * m
      */
-    NPMatrix operator/(double s) const;
+    NPMatrix<T> operator/(double s) const;
 
     // SCALAR PRODUCT BASED OPERATIONS
 
-    friend double operator|(const NPMatrix &m1, const NPMatrix &m2);
+    friend double operator|(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
+        NVector<T> sub_m1 = m1(m1._i1, m1._j1, m1._i2, m1._j2);
+        NVector<T> sub_m2 = m2(m2._i1, m2._j1, m2._i2, m2._j2);
+        auto res = sub_m1 | sub_m2;
 
-    friend double operator!(const NPMatrix &m);
+        m1.setDefaultBrowseIndices();
+        m2.setDefaultBrowseIndices();
+        return res;
+    }
 
-    friend double operator/(const NPMatrix &m1, const NPMatrix &m2);
+    friend double operator!(const NPMatrix<T> &m) {
+        return sqrt(m | m);
+    }
+
+    friend double operator/(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
+        return !(m1 - m2);
+    }
 
     // COMPOUND OPERATORS
 
-    NPMatrix &operator+=(const NPMatrix &m);
+    NPMatrix<T> &operator+=(const NPMatrix<T> &m);
 
-    NPMatrix &operator-=(const NPMatrix &m);
+    NPMatrix<T> &operator-=(const NPMatrix<T> &m);
 
-    NPMatrix &operator*=(const NPMatrix &m);
+    NPMatrix<T> &operator*=(const NPMatrix<T> &m);
 
-    NPMatrix &operator*=(double s) override;
+    NPMatrix<T> &operator*=(double s) override;
 
-    NPMatrix &operator/=(double s) override;
+    NPMatrix<T> &operator/=(double s) override;
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -329,21 +348,29 @@ public:
      * Operations on a sub matrix can be applied this way matrix(i1, j1, i2, j2).shift(0, 1)
      * See unit tests for mor details.
      */
-    NPMatrix operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const;
+    NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const;
 
-    NPMatrix &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
+    NPMatrix<T> &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
 
     // AFFECTATION
 
-    NPMatrix &operator=(const NPMatrix &m);
+    NPMatrix<T> &operator=(const NPMatrix<T> &m);
 
-    NPMatrix &operator=(const string &str);
+    NPMatrix<T> &operator=(const string &str);
 
     // COMPARAISON OPERATORS
 
-    friend bool operator==(const NPMatrix &m1, const NPMatrix &m2);
+    friend bool operator==(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
+        bool res = m1(m1._i1, m1._j1, m1._i2, m1._j2).isEqual(m2(m2._i1, m2._j1, m2._i2, m2._j2));
 
-    friend bool operator!=(const NPMatrix &m1, const NPMatrix &m2);
+        m1.setDefaultBrowseIndices();
+        m2.setDefaultBrowseIndices();
+        return res;
+    }
+
+    friend bool operator!=(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
+        return !(m1 == m2);
+    }
 
     // STATIC FUNCTIONS
 
@@ -351,13 +378,13 @@ public:
      *
      * @return zero nxp matrix, ie. filled with 0.
      */
-    static NPMatrix zeros(ul_t n, ul_t p = 0);
+    static NPMatrix<T> zeros(ul_t n, ul_t p = 0);
 
     /**
      *
      * @return nxp matrix filled with 1
      */
-    static NPMatrix ones(ul_t n, ul_t p = 0);
+    static NPMatrix<T> ones(ul_t n, ul_t p = 0);
 
     /**
      * @param i row where to put 1.
@@ -365,7 +392,7 @@ public:
      *
      * @return canonical matrices Eij  of Mnp(R) which contains 1 in position ij and 0 elsewhere.
      */
-    static NPMatrix canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
+    static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
 
 protected:
 
@@ -387,9 +414,9 @@ protected:
 
     // ALGEBRAICAL OPERATIONS
 
-    void vectorProduct(NVector<double> &u) const;
+    void vectorProduct(NVector<T> &u) const;
 
-    virtual void matrixProduct(const NPMatrix &m);
+    virtual void matrixProduct(const NPMatrix<T> &m);
 
     // OPERATIONS
 
@@ -405,11 +432,11 @@ protected:
 
     bool isBetweenJ12(ul_t j) const;
 
-    bool isCompatible(const NVector<double> &u) const;
+    bool isCompatible(const NVector<T> &u) const;
 
-    bool isCompatible(const NPMatrix &u) const;
+    bool isCompatible(const NPMatrix<T> &u) const;
 
-    bool hasSameSize(const NPMatrix &m) const;
+    bool hasSameSize(const NPMatrix<T> &m) const;
 
     bool hasDefaultBrowseIndices() const override;
 
@@ -417,7 +444,7 @@ protected:
 
     // AFFECTATION
 
-    virtual void copy(const NPMatrix &m);
+    virtual void copy(const NPMatrix<T> &m);
 
     void parse(const string &str) override;
 
@@ -431,10 +458,10 @@ protected:
 
     // SUB-MATRICES
 
-    NPMatrix subMatrix(ul_t i1 = 0, ul_t j1 = MAX_SIZE,
+    NPMatrix<T> subMatrix(ul_t i1 = 0, ul_t j1 = MAX_SIZE,
                        ul_t i2 = 0, ul_t j2 = MAX_SIZE) const;
 
-    void setSubMatrix(const NPMatrix &m);
+    void setSubMatrix(const NPMatrix<T> &m);
 
     // SIZE
 

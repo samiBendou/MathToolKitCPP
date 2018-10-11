@@ -5,21 +5,21 @@
 #include <NMatrix.h>
 
 
-NMatrix::NMatrix(ul_t n) : NPMatrix(n, n), _a(nullptr), _perm(nullptr)
+NMatrix::NMatrix(ul_t n) : NPMatrix<double>(n, n), _a(nullptr), _perm(nullptr)
 {
 }
 
 
-NMatrix::NMatrix(const std::string &str) : NPMatrix(str), _a(nullptr), _perm(nullptr) {
+NMatrix::NMatrix(const std::string &str) : NPMatrix<double>(str), _a(nullptr), _perm(nullptr) {
     assert(isSquare());
 }
 
 
-NMatrix::NMatrix(const NPMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(nullptr) {
+NMatrix::NMatrix(const NPMatrix<double> &matrix) : NPMatrix<double>(matrix), _a(nullptr), _perm(nullptr) {
     assert(isSquare());
 }
 
-NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix(matrix), _a(nullptr), _perm(nullptr) {
+NMatrix::NMatrix(const NMatrix &matrix) : NPMatrix<double>(matrix), _a(nullptr), _perm(nullptr) {
     //Hard copy constructor
     if(matrix._a != nullptr && matrix._perm != nullptr) {
         _a = new NMatrix(*(matrix._a));
@@ -85,7 +85,7 @@ bool NMatrix::isDiagonal() const {
 
 NMatrix NMatrix::upper() const {
 
-    NMatrix upper = NPMatrix::zeros(_i2 - _i1 + 1);
+    NMatrix upper = NPMatrix<double>::zeros(_i2 - _i1 + 1);
     for(ul_t i = _i1; i <= _i2; ++i) {
         for(ul_t j = i; j <= _j2; ++j)
             upper(i, j) = (*this)(i, j);
@@ -97,7 +97,7 @@ NMatrix NMatrix::upper() const {
 
 NMatrix NMatrix::lower() const {
 
-    NMatrix lower = NPMatrix::zeros(_i2 - _i1 + 1);
+    NMatrix lower = NPMatrix<double>::zeros(_i2 - _i1 + 1);
     for(ul_t i = _i1; i <= _i2; ++i) {
         for(ul_t j = _j1; j <= i; ++j)
             lower(i, j) = (*this)(i, j);
@@ -171,15 +171,15 @@ double NMatrix::det() {
 
 
 NMatrix NMatrix::operator+(const NMatrix &m) const {
-    return NPMatrix::operator+(m);
+    return NPMatrix<double>::operator+(m);
 }
 
 NMatrix NMatrix::operator-(const NMatrix &m) const {
-    return NPMatrix::operator-(m);
+    return NPMatrix<double>::operator-(m);
 }
 
 NMatrix NMatrix::operator-() const {
-    return NPMatrix::operator-();
+    return NPMatrix<double>::operator-();
 }
 
 NMatrix operator*(double s, const NMatrix &m) {
@@ -193,18 +193,18 @@ NMatrix operator*(const NMatrix &m, double s) {
 }
 
 NMatrix NMatrix::operator*(const NMatrix &m) const {
-    return NPMatrix::operator*(m);
+    return NPMatrix<double>::operator*(m);
 }
 
 NMatrix NMatrix::operator/(double s) const {
-    return NPMatrix::operator/(s);
+    return NPMatrix<double>::operator/(s);
 }
 
 
 // OPERATORS
 
 
-NMatrix operator^(const NPMatrix &m, long exp) {
+NMatrix operator^(const NPMatrix<double> &m, long exp) {
     NMatrix res{m};
     res ^= exp;
     return res;
@@ -224,21 +224,21 @@ NVector<double> &NMatrix::operator^=(const long exp) {
 }
 
 double &NMatrix::operator()(ul_t i, ul_t j) {
-    return NPMatrix::operator()(i, j);
+    return NPMatrix<double>::operator()(i, j);
 }
 
 double NMatrix::operator()(ul_t i, ul_t j) const {
-    return NPMatrix::operator()(i, j);
+    return NPMatrix<double>::operator()(i, j);
 }
 
 NMatrix NMatrix::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
     assert(_i2 - _i1 == _j2 - _j1);
-    return NPMatrix::operator()(i1, j1, i2, j2);
+    return NPMatrix<double>::operator()(i1, j1, i2, j2);
 }
 
 NMatrix &NMatrix::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
     assert(_i2 - _i1 == _j2 - _j1);
-    NPMatrix::operator()(i1, j1, i2, j2);
+    NPMatrix<double>::operator()(i1, j1, i2, j2);
     return *this;
 }
 
@@ -246,7 +246,7 @@ NMatrix &NMatrix::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
 
 
 NMatrix NMatrix::eye(ul_t n) {
-    NMatrix eye = NPMatrix::zeros(n);
+    NMatrix eye = NPMatrix<double>::zeros(n);
     for (ul_t k = 0; k < eye.n(); ++k) {
         eye(k, k) = 1.0;
     }
@@ -254,7 +254,7 @@ NMatrix NMatrix::eye(ul_t n) {
 }
 
 NMatrix NMatrix::diag(const std::vector<double> &data, ul_t n) {
-    NMatrix diag = NPMatrix::zeros(n);
+    NMatrix diag = NPMatrix<double>::zeros(n);
     for (ul_t k = 0; k < n; ++k) {
         diag(k, k) = data[k];
     }
@@ -271,7 +271,7 @@ NMatrix NMatrix::ndiag(const std::vector<NVector<double>> &data) {
     const auto n = (long) data.size();
     const auto middle = (n - 1) / 2;
     const auto dim = data[middle].dim();
-    NPMatrix diag = NPMatrix::zeros(dim);
+    NPMatrix<double> diag = NPMatrix<double>::zeros(dim);
 
     for(long l = -middle; l <= middle; l++) {
         for(ul_t k = 0; k < dim - abs(l); k++) {
@@ -331,8 +331,8 @@ void NMatrix::div(double scalar) {
     lupClear();
 }
 
-void NMatrix::matrixProduct(const NPMatrix &m) {
-    NPMatrix::matrixProduct(m);
+void NMatrix::matrixProduct(const NPMatrix<double> &m) {
+    NPMatrix<double>::matrixProduct(m);
     lupClear();
 }
 
@@ -468,8 +468,8 @@ void NMatrix::lupClear() {
     }
 }
 
-void NMatrix::copy(const NPMatrix &m) {
-    NPMatrix::copy(m);
+void NMatrix::copy(const NPMatrix<double> &m) {
+    NPMatrix<double>::copy(m);
     lupClear();
 }
 
