@@ -5,13 +5,11 @@
 #include "../header/NDSet.h"
 
 
-NDSet::NDSet() : NCompact(0), _data()
-{
+NDSet::NDSet() : NCompact(0), _data() {
 
 }
 
-NDSet::NDSet(std::vector<NVector>& vectors) : NCompact(vectors[0].dim()), _data(vectors)
-{
+NDSet::NDSet(std::vector<NVector<double>> &vectors) : NCompact(vectors[0].dim()), _data(vectors) {
 
 }
 
@@ -24,9 +22,9 @@ std::string NDSet::str() const {
     return str;
 }
 
-bool NDSet::isIn(const NVector &x) const {
+bool NDSet::isIn(const NVector<double> &x) const {
     for (int k = 0; k < card(); ++k) {
-        if(x == _data[k]) {
+        if (x == _data[k]) {
             return true;
         }
     }
@@ -37,20 +35,20 @@ bool NDSet::isEmpty() const {
     return card() == 0;
 }
 
-void NDSet::uni(const NSet* set) {
-    std::vector<NVector> data = ((NDSet*) set)->_data;
-    for(int k = 0; k < data.size(); ++k) {
-        if(!isIn(data[k]))
+void NDSet::uni(const NSet *set) {
+    std::vector<NVector<double>> data = ((NDSet *) set)->_data;
+    for (int k = 0; k < data.size(); ++k) {
+        if (!isIn(data[k]))
             _data.push_back(data[k]);
     }
 }
 
-void NDSet::inter(const NSet* set) {
-    std::vector<NVector> data = ((NDSet*) set)->_data;
-    std::vector<NVector> dataInter;
-    for(int k = 0; k < data.size(); ++k) {
+void NDSet::inter(const NSet *set) {
+    std::vector<NVector<double>> data = ((NDSet *) set)->_data;
+    std::vector<NVector<double>> dataInter;
+    for (int k = 0; k < data.size(); ++k) {
         for (int l = 0; l < _data.size(); ++l) {
-            if(isIn(data[k]) && set->isIn(_data[l]))
+            if (isIn(data[k]) && set->isIn(_data[l]))
                 dataInter.push_back(data[k]);
         }
     }
@@ -62,24 +60,24 @@ int NDSet::card() const {
 }
 
 NCompact *NDSet::border() const {
-    NDSet* newThis{new NDSet(*this)};
+    NDSet *newThis{new NDSet(*this)};
     return newThis;
 }
 
-std::vector<NVector> NDSet::mesh() const {
-    return std::vector<NVector>(_data);
+std::vector<NVector<double> > NDSet::mesh() const {
+    return std::vector<NVector<double>>(_data);
 }
 
-std::vector<NVector> NDSet::mesh(const NVector &h) const {
+std::vector<NVector<double> > NDSet::mesh(const NVector<double> &h) const {
     return NDSet::mesh();
 }
 
-void NDSet::push(const NVector &x) {
+void NDSet::push(const NVector<double> &x) {
     _data.push_back(x);
 }
 
-NVector NDSet::pop() {
-    NVector ret = NVector(_data[card() - 1]);
+NVector<double> NDSet::pop() {
+    NVector<double> ret = NVector<double>(_data[card() - 1]);
     _data.pop_back();
     return ret;
 }

@@ -5,14 +5,14 @@
 #ifndef MATHTOOLKIT_NPARALLELEPIPED_H
 #define MATHTOOLKIT_NPARALLELEPIPED_H
 
+#include <NPMatrix.h>
 
 #include "NCompact.h"
-#include "../../NAlgebra/header/NMatrix.h"
 #include "NSegment.h"
 
-class NParallelepiped : public NCompact{
+class NParallelepiped : public NCompact {
 public:
-    NParallelepiped(NMatrix& base, const NVector& _pos);
+    NParallelepiped(NPMatrix<double> &base, const NVector<double> &_pos);
 
     std::string str() const override;
 
@@ -20,23 +20,23 @@ public:
 
     double volume() const;
 
-    bool isIn(const NVector& x) const override;
+    bool isIn(const NVector<double> &x) const override;
 
     bool isEmpty() const override;
 
-    void uni(const NSet* set) override;
+    void uni(const NSet *set) override;
 
-    void inter(const NSet* set) override;
+    void inter(const NSet *set) override;
 
     int card() const override;
 
-    NCompact* border() const override;
+    NCompact *border() const override;
 
-    std::vector<NVector> mesh(const NVector& h) const override;
+    std::vector<NVector<double> > mesh(const NVector<double> &h) const override;
 
 protected:
-    NMatrix _base;
-    NVector _pos;
+    NPMatrix<double> _base;
+    NVector<double> _pos;
     double _vol;
 };
 

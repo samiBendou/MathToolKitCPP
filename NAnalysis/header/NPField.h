@@ -5,33 +5,34 @@
 #ifndef MATHTOOLKIT_NFIELD_H
 #define MATHTOOLKIT_NFIELD_H
 
-#include "../../NAlgebra/header/NVector.h"
+#include <NVector.h>
+#include <NPMatrix.h>
+
 #include "../../NGeometry/header/NCompact.h"
-#include "../../NAlgebra/header/NPMatrix.h"
 #include "../../NGeometry/header/NDSet.h"
 
-class NPField : public NVector {
+class NPField : public NVector<double> {
 public:
-    NVector h;
+    NVector<double> h;
 
-    NPField(NCompact* doaminIn, unsigned long dimOut);
+    NPField(NCompact *doaminIn, unsigned long dimOut);
 
-    virtual NVector g(const NVector& x) = 0;
+    virtual NVector<double> g(const NVector<double> &x) = 0;
 
-    NVector operator()(const NVector& u);
+    NVector<double> operator()(const NVector<double> &u);
 
-    NPMatrix meshMatrix();
+    NPMatrix<double> meshMatrix();
 
-    std::vector<NVector> meshVectors();
+    std::vector<NVector<double>> meshVectors();
 
 protected:
     void mesh();
 
-    std::vector<unsigned long> meshArround(const NVector& x);
+    std::vector<unsigned long> meshArround(const NVector<double> &x);
 
-    NCompact* _domainIn;
+    NCompact *_domainIn;
 
-    std::vector<NVector> _meshIn;
+    std::vector<NVector<double> > _meshIn;
 
     unsigned long _dimOut;
 

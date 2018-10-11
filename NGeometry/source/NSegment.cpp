@@ -5,50 +5,50 @@
 #include "../header/NSegment.h"
 
 
-NSegment::NSegment(const NVector &a, const NVector &b) : NCompact(1), _a(a), _b(b)
-{
+NSegment::NSegment(const NVector<double> &a, const NVector<double> &b) : NCompact(1), _a(a), _b(b) {
 
 }
+
 std::string NSegment::str() const {
     return "[ " + _a.str() + ", " + _b.str() + " ]";
 }
 
 
-NVector NSegment::a() const {
-    return NVector(_a);
+NVector<double> NSegment::a() const {
+    return NVector<double>(_a);
 }
 
-NVector NSegment::b() const {
-    return NVector(_b);
+NVector<double> NSegment::b() const {
+    return NVector<double>(_b);
 }
 
-void NSegment::setA(const NVector &a) {
-    _a = NVector(a);
+void NSegment::setA(const NVector<double> &a) {
+    _a = NVector<double>(a);
 }
 
-void NSegment::setB(const NVector &b) {
-    _b = NVector(b);
+void NSegment::setB(const NVector<double> &b) {
+    _b = NVector<double>(b);
 }
 
 // CHARACTERIZATION
 
-bool NSegment::isIn(const NVector &x) const {
-    const NVector u = (x - _a);
-    const NVector l = (_b - _a);
+bool NSegment::isIn(const NVector<double> &x) const {
+    const NVector<double> u = (x - _a);
+    const NVector<double> l = (_b - _a);
     const double tol = 1000 * std::numeric_limits<double>::epsilon();
 
-    return (abs((u | l) - !u * !l) < tol) &&  !u / !l <= 1;
+    return (abs((u | l) - !u * !l) < tol) && !u / !l <= 1;
 }
 
 bool NSegment::isEmpty() const {
     return false;
 }
 
-void NSegment::uni(const NSet* set) {
+void NSegment::uni(const NSet *set) {
 
 }
 
-void NSegment::inter(const NSet* set) {
+void NSegment::inter(const NSet *set) {
 
 }
 
@@ -56,10 +56,10 @@ NCompact *NSegment::border() const {
     return nullptr;
 }
 
-std::vector<NVector> NSegment::mesh(double h) const {
-    const NVector v = h * (_b - _a) / !NVector(_b - _a);
-    NVector u = NVector(_a);
-    std::vector<NVector> mesh;
+std::vector<NVector<double> > NSegment::mesh(double h) const {
+    const NVector<double> v = h * (_b - _a) / !NVector<double>(_b - _a);
+    NVector<double> u = NVector<double>(_a);
+    std::vector<NVector<double>> mesh;
     while (u / _b > h) {
         mesh.push_back(u);
         u += v;
@@ -68,7 +68,7 @@ std::vector<NVector> NSegment::mesh(double h) const {
 
 }
 
-std::vector<NVector> NSegment::mesh(const NVector& h) const {
+std::vector<NVector<double> > NSegment::mesh(const NVector<double> &h) const {
     return mesh(h(0));
 }
 

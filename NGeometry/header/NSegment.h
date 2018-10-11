@@ -6,44 +6,42 @@
 #define MATHTOOLKIT_SEGMENT_H
 
 
-#include "../../NAlgebra/header/NVector.h"
+#include <NVector.h>
 #include "NCompact.h"
 
 
 class NSegment : NCompact {
 public:
-    explicit NSegment(const NVector& a, const NVector& b);
+    explicit NSegment(const NVector<double> &a, const NVector<double> &b);
 
-    std::string str()const override;
+    std::string str() const override;
 
-    NVector a() const;
+    NVector<double> a() const;
 
-    NVector b() const;
+    NVector<double> b() const;
 
-    void setA(const NVector& a);
+    void setA(const NVector<double> &a);
 
-    void setB(const NVector& b);
+    void setB(const NVector<double> &b);
 
-    std::vector<NVector> mesh(double h) const;
+    std::vector<NVector<double> > mesh(double h) const;
 
-    std::vector<NVector> mesh(const NVector& h) const override;
+    std::vector<NVector<double> > mesh(const NVector<double> &h) const override;
 
-    bool isIn(const NVector& x) const override;
+    bool isIn(const NVector<double> &x) const override;
 
     bool isEmpty() const override;
 
 protected:
-    NVector _a;
-    NVector _b;
+    NVector<double> _a;
+    NVector<double> _b;
 
 
+    void uni(const NSet *set) override;
 
-    void uni(const NSet* set) override;
+    void inter(const NSet *set) override;
 
-    void inter(const NSet* set) override;
-
-    NCompact* border() const override;
-
+    NCompact *border() const override;
 
 
     int card() const override;

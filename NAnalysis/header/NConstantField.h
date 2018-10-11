@@ -5,20 +5,21 @@
 #ifndef MATHTOOLKIT_GCFIELD_H
 #define MATHTOOLKIT_GCFIELD_H
 
+#include <NVector.h>
+#include <Vector3.h>
 
 #include "NPField.h"
-#include "../../NAlgebra/header/NVector.h"
-#include "../../NAlgebra/header/Vector3.h"
+
 
 class NConstantField : public NPField {
 public:
-    NConstantField(NCompact* domain, const NVector& cst);
+    NConstantField(NCompact *domain, const NVector<double> &cst);
 
-    NVector g(const NVector& x) override;
+    NVector<double> g(const NVector<double> &x) override;
 
 
 protected:
-    NVector _cst;
+    NVector<double> _cst;
 };
 
 

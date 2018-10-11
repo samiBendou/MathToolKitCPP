@@ -5,7 +5,8 @@
 #ifndef MATHTOOLKIT_SET_H
 #define MATHTOOLKIT_SET_H
 
-#include "../../NAlgebra/header/NVector.h"
+#include <iostream>
+#include <NVector.h>
 
 class NSet {
 public:
@@ -19,15 +20,16 @@ public:
 
     virtual bool isEmpty() const = 0;
 
-    virtual bool isIn(const NVector& x) const = 0;
+    virtual bool isIn(const NVector<double> &x) const = 0;
 
-    virtual void uni(const NSet* set) = 0;
+    virtual void uni(const NSet *set) = 0;
 
-    virtual void inter(const NSet* set) = 0;
+    virtual void inter(const NSet *set) = 0;
 
     virtual int card() const = 0;
 
-    friend std::ostream & operator<<(std::ostream& os, const NSet& set);
+    friend std::ostream &operator<<(std::ostream &os, const NSet &set);
+
 protected:
     unsigned long _dim;
 };

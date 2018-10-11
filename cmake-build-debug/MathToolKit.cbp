@@ -542,9 +542,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NMatrix.h">
-			<Option target="NAlgebra"/>
-		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NPMatrix.h">
 			<Option target="NAlgebra"/>
 		</Unit>
@@ -552,9 +549,6 @@
 			<Option target="NAlgebra"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/Vector3.h">
-			<Option target="NAlgebra"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NMatrix.cpp">
 			<Option target="NAlgebra"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp">
@@ -620,19 +614,10 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNMatrix.cpp">
-			<Option target="TestMathToolKitCPP"/>
-		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNPMatrix.cpp">
 			<Option target="TestMathToolKitCPP"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNVector.cpp">
-			<Option target="TestMathToolKitCPP"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNMatrix.cpp">
-			<Option target="TestMathToolKitCPP"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNMatrixFuncOp.cpp">
 			<Option target="TestMathToolKitCPP"/>
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">

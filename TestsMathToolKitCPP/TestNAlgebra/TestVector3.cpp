@@ -13,11 +13,13 @@ protected:
         _v = "(0 1 0)";
         _w = "(0 0 1)";
     }
+
     void TearDown() override {
         _u = "(1 0 0)";
         _v = "(0 1 0)";
         _w = "(0 0 1)";
     }
+
     Vector3 _u;
     Vector3 _v;
     Vector3 _w;
@@ -25,12 +27,12 @@ protected:
 
 TEST_F(Vector3Test, Getters) {
     ASSERT_EQ(_u.r(), 1);
-    ASSERT_TRUE(_u.rXY() == NVector<double>("(1 0 0)"));
+    ASSERT_TRUE(_u.rXY() == "(1 0 0)");
     ASSERT_EQ(_u.theta(), 0);
     ASSERT_EQ(_u.phi(), M_PI_2);
 
     ASSERT_EQ(_v.r(), 1);
-    ASSERT_TRUE(_v.rXY() == NVector<double>("(0 1 0)"));
+    ASSERT_TRUE(_v.rXY() == "(0 1 0)");
     ASSERT_EQ(_v.theta(), M_PI_2);
     ASSERT_EQ(_v.phi(), M_PI_2);
 
@@ -42,13 +44,13 @@ TEST_F(Vector3Test, Getters) {
 
 TEST_F(Vector3Test, Setters) {
     _u.setR(2);
-    ASSERT_TRUE(_u == NVector<double>("(2 0 0)"));
+    ASSERT_TRUE(_u == "(2 0 0)");
 
     _u.setTheta(M_PI_2);
-    ASSERT_TRUE(_u == NVector<double>("(0 2 0)"));
+    ASSERT_TRUE(_u == "(0 2 0)");
 
     _u.setPhi(0);
-    ASSERT_TRUE(_u == NVector<double>("(0 0 2)"));
+    ASSERT_TRUE(_u == "(0 0 2)");
 }
 
 TEST_F(Vector3Test, VectorProduct) {

@@ -47,13 +47,10 @@ NxP dense matrices :
 - Algebraical operations such as matrix product, linear map, gauss jordan elimination. 
 - Setters (row, col) & getters (row, col), swappers, shift. 
 - Classic matrix generators such as ones, zeros...
-  
-##### NMatrix
-
-Optimized NxN dense matrices :
-- Inversion, determinant and solve using LU decomposition.
+- Optimized inversion, determinant and solve using LU decomposition.
 - Trace, power, ...
 - Classic matrix generators such as eye, diag, scalar...
+  
   
 ##### Vector3
 

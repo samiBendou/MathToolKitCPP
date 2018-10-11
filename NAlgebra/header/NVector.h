@@ -23,14 +23,6 @@
 #ifndef MATHTOOLKIT_VECTOR_H
 #define MATHTOOLKIT_VECTOR_H
 
-#define MAX_SIZE 4294967295
-
-
-typedef unsigned long ul_t;
-typedef unsigned char uc_t;
-typedef unsigned int ui_t;
-typedef unsigned short us_t;
-
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -40,12 +32,19 @@ typedef unsigned short us_t;
 #include <algorithm>
 #include <complex>
 
-template <typename T>
+#define MAX_SIZE 4294967295
+#define EPSILON (std::numeric_limits<T>::epsilon())
+
+typedef unsigned long ul_t;
+
+template<typename T>
 
 
 class NVector : public std::vector<T> {
 
+
 public:
+
     // CONSTRUCTORS
 
     /**
@@ -276,7 +275,10 @@ public:
 
     // STREAM EXTRACT/INSERT
 
-    friend std::ostream &operator<<(std::ostream &os, const NVector<T> &vector);
+    friend std::ostream &operator<<(std::ostream &os, const NVector<T> &vector) {
+        os << vector.str();
+        return os;
+    }
 
 
     // AFFECTATION
@@ -327,9 +329,9 @@ public:
      */
     friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
-    friend bool operator!=(const NVector<T> &u, const std::string &str){ return !(u == str); }
+    friend bool operator!=(const NVector<T> &u, const std::string &str) { return !(u == str); }
 
-    friend bool operator!=(const std::string &str, const NVector<T> &u){ return u != str; }
+    friend bool operator!=(const std::string &str, const NVector<T> &u) { return u != str; }
 
     friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
@@ -440,5 +442,6 @@ protected:
     mutable ul_t _k2;
 };
 
+typedef NVector<double> vec_t;
 
 #endif //MATHTOOLKIT_VECTOR_H

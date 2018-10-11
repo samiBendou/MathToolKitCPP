@@ -13,16 +13,16 @@ class NVectorBenchTest : public ::testing::Test {
 
 protected:
     void SetUp() override {
-        _u = NVector<double>::scalar(3, SMALL_DIM_TEST);
-        _v = NVector<double>::scalar(6, SMALL_DIM_TEST);
+        _u = vec_t::scalar(3, SMALL_DIM_TEST);
+        _v = vec_t::scalar(6, SMALL_DIM_TEST);
     }
 
     clock_t _t0;
     clock_t _t1;
     double _elapsed_time;
 
-    NVector<double> _u;
-    NVector<double> _v;
+    vec_t _u;
+    vec_t _v;
 };
 
 TEST_F(NVectorBenchTest, Serialization) {

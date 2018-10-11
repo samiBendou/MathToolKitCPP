@@ -6,12 +6,15 @@
 #define MATHTOOLKIT_NODE_H
 
 
-#include "../../NAlgebra/header/NVector.h"
+#include <NVector.h>
 #include "NPField.h"
 
 class NOde {
 public:
-    static std::vector<NVector> euler(const NVector& u0, NPField& f, double t0 = 0, double t1 = 1, double h = 0.1);
+    static std::vector<NVector<double>> euler(const NVector<double> &u0, NPField &f,
+                                              double t0 = 0,
+                                              double t1 = 1,
+                                              double h = 0.1);
 };
 
 

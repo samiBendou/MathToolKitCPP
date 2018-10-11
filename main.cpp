@@ -5,7 +5,6 @@
 #include <NVector.h>
 #include <Vector3.h>
 #include <NPMatrix.h>
-#include <NMatrix.h>
 #include <NSegment.h>
 #include <NParallelepiped.h>
 #include <NDSet.h>
@@ -17,10 +16,8 @@ using namespace std;
 
 int main() {
 
-    NVector<double> vector_double{"(0 0 1)"};
-    NVector<int> vector_int{"(0 0 1)"};
-
-    cout << vector_double << endl;
+    vec_t vector{"(0 0 1)"};
+    cout << vector << endl;
 
     return 0;
 }

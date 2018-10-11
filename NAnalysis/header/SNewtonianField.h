@@ -5,19 +5,20 @@
 #ifndef MATHTOOLKIT_NEWTONIANFIELD_H
 #define MATHTOOLKIT_NEWTONIANFIELD_H
 
-
+#include <Vector3.h>
 #include "NPField.h"
-#include "../../NAlgebra/header/Vector3.h"
+
 
 class SNewtonianField : public NPField {
 public:
 
 
-    SNewtonianField(NCompact* domain, double k, const std::vector<double>& mu, const std::vector<Vector3>& r);
+    SNewtonianField(NCompact *domain, double k, const std::vector<double> &mu, const std::vector<Vector3> &r);
 
-    Vector3 g(const Vector3& r);
+    Vector3 g(const Vector3 &r);
 
-    NVector g(const NVector& x) override;
+    NVector<double> g(const NVector<double> &x) override;
+
 protected:
     const std::vector<double> _mu;
 
@@ -27,7 +28,6 @@ protected:
 
     const unsigned long _size;
 };
-
 
 
 #endif //MATHTOOLKIT_NEWTONIANFIELD_H

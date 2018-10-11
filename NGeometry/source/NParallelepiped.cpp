@@ -5,11 +5,10 @@
 #include "../header/NParallelepiped.h"
 #include "../header/NSegment.h"
 
-NParallelepiped::NParallelepiped(NMatrix &base, const NVector& pos) : NCompact(base.n()),
-                                                                             _base(NMatrix(base)),
-                                                                             _pos(pos),
-                                                                             _vol(base.det())
-{
+NParallelepiped::NParallelepiped(NPMatrix<double> &base, const NVector<double> &pos) : NCompact(base.n()),
+                                                                                       _base(NPMatrix<double>(base)),
+                                                                                       _pos(pos),
+                                                                                       _vol(base.det()) {
 
 }
 
@@ -26,12 +25,12 @@ std::string NParallelepiped::str() const {
 }
 
 
-bool NParallelepiped::isIn(const NVector &x) const {
-    NVector u = x - _pos;
-    NMatrix pInv = _base ^- 1;
+bool NParallelepiped::isIn(const NVector<double> &x) const {
+    NVector<double> u = x - _pos;
+    NPMatrix<double> pInv = _base ^-1;
     u = pInv * u;
     for (int k = 0; k < _dim; ++k) {
-        if(u(k) > 1.0 ||  u(k) < 0.0) {
+        if (u(k) > 1.0 || u(k) < 0.0) {
             return false;
         }
     }
@@ -42,11 +41,11 @@ bool NParallelepiped::isEmpty() const {
     return abs(_vol) > std::numeric_limits<double>::epsilon();
 }
 
-void NParallelepiped::uni(const NSet* set) {
+void NParallelepiped::uni(const NSet *set) {
 
 }
 
-void NParallelepiped::inter(const NSet* set) {
+void NParallelepiped::inter(const NSet *set) {
 
 }
 
@@ -60,26 +59,26 @@ NCompact *NParallelepiped::border() const {
 }
 
 
-std::vector<NVector> NParallelepiped::mesh(const NVector &h) const {
-    const std::vector<NVector> e = _base.cols();
-    const NVector end = NVector::sum(e);
+std::vector<NVector<double>> NParallelepiped::mesh(const NVector<double> &h) const {
+    const std::vector<NVector<double>> e = _base.cols();
+    const NVector<double> end = NVector<double>::sum(e);
     const double tol = h.maxAbs();
     double d = std::numeric_limits<double>::infinity();
 
-    std::vector<NVector> mesh{};
-    NVector x = NVector::zeros(_dim);
+    std::vector<NVector<double>> mesh{};
+    NVector<double> x = NVector<double>::zeros(_dim);
 
-    while( x / end >= tol) {
+    while (x / end >= tol) {
         mesh.push_back(x + _pos);
-        if((x | e[0]) <= (e[0] | e[0])) {
+        if ((x | e[0]) <= (e[0] | e[0])) {
             x += h(0) * e[0];
         }
         for (int i = 0; i < _dim; ++i) {
-            if((x | e[i]) > (e[i] | e[i])) {
+            if ((x | e[i]) > (e[i] | e[i])) {
                 for (int j = 0; j <= i; ++j) {
                     x -= ((x | e[j]) / (e[j] | e[j])) * e[j];
                 }
-                if(i < _dim - 1) {
+                if (i < _dim - 1) {
                     x += h(i + 1) * e[i + 1];
                 }
             }
@@ -91,7 +90,7 @@ std::vector<NVector> NParallelepiped::mesh(const NVector &h) const {
 
 
 std::vector<NSegment> NParallelepiped::segments() const {
-    const std::vector<NVector> e = _base.cols();
+    const std::vector<NVector<double> > e = _base.cols();
     std::vector<NSegment> seg;
     for (int k = 0; k < _dim; ++k) {
         seg.emplace_back(NSegment(_pos, _pos + e[k]));

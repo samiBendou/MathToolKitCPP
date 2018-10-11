@@ -13,15 +13,16 @@ protected:
         _v = "(0 1 0)";
         _w = "(0 0 1)";
     }
+
     void TearDown() override {
         _u = "(1 0 0)";
         _v = "(0 1 0)";
         _w = "(0 0 1)";
     }
 
-    NVector<double> _u;
-    NVector<double> _v;
-    NVector<double> _w;
+    vec_t _u;
+    vec_t _v;
+    vec_t _w;
 };
 
 

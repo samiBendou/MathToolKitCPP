@@ -15,9 +15,9 @@ protected:
         _w = "(0 0 1)";
     }
 
-    NVector<double> _u;
-    NVector<double> _v;
-    NVector<double> _w;
+    vec_t _u;
+    vec_t _v;
+    vec_t _w;
 };
 
 TEST_F(NVectorTest, Dim) {
@@ -38,16 +38,16 @@ TEST_F(NVectorTest, Equality) {
 
 
 TEST_F(NVectorTest, Construction) {
-    _u = NVector<double>(std::vector<double>{0, 1, 0});
+    _u = vec_t(std::vector<double>{0, 1, 0});
     ASSERT_EQ(_u, _v);
 
-    _u = NVector<double>(_w);
+    _u = vec_t(_w);
     ASSERT_EQ(_u, _w);
 
     _u = "(0 1 0)";
     ASSERT_EQ(_u, _v);
 
-    _u = NVector<double>(3);
+    _u = vec_t(3);
     ASSERT_EQ(_u, "(0 0 0)");
 
 }
@@ -69,7 +69,7 @@ TEST_F(NVectorTest, Serialization) {
 
     ASSERT_EQ(_u.str(), "(  1.00e+00  0.00e+00  0.00e+00  )");
 
-    ASSERT_EQ(NVector<double>(_u.str()), _u);
+    ASSERT_EQ(vec_t(_u.str()), _u);
 
     ASSERT_EQ(_u.array(), expect);
 }
@@ -194,15 +194,15 @@ TEST_F(NVectorTest, Fill) {
 }
 
 TEST_F(NVectorTest, StaticGenerators) {
-    ASSERT_EQ(NVector<double>::zeros(3), "(0 0 0)");
-    ASSERT_EQ(NVector<double>::ones(3), "(1 1 1)");
-    ASSERT_EQ(NVector<double>::scalar(5, 3), "(5 5 5)");
-    ASSERT_EQ(NVector<double>::canonical(0, 3), "(1 0 0)");
+    ASSERT_EQ(vec_t::zeros(3), "(0 0 0)");
+    ASSERT_EQ(vec_t::ones(3), "(1 1 1)");
+    ASSERT_EQ(vec_t::scalar(5, 3), "(5 5 5)");
+    ASSERT_EQ(vec_t::canonical(0, 3), "(1 0 0)");
 }
 
 TEST_F(NVectorTest, StaticFunctions) {
-    ASSERT_EQ(NVector<double>::sum({_u, _v, _w}), "(1 1 1)");
-    ASSERT_EQ(NVector<double>::sumProd({1, 2, 3}, {_u, _v, _w}), "(1 2 3)");
+    ASSERT_EQ(vec_t::sum({_u, _v, _w}), "(1 1 1)");
+    ASSERT_EQ(vec_t::sumProd({1, 2, 3}, {_u, _v, _w}), "(1 2 3)");
 }
 
 

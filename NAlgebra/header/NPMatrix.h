@@ -20,6 +20,16 @@
  *                   Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination.
  *                   setters & getters, swappers and classic matrix generators such as ones, zeros...
  *
+ *                   The LU decomposition is stored as property if the matrix is square. It is auto-updated only on need.
+ *                   It allow to reduce complexity to get inverse or determinant. Precisely the LU decomposition is
+ *                   represented by :
+
+ *                      -a : is matrix A = L * U where PA = LU = this. a points to the A NMatrix or points to nullptr if
+ *                           the matrix has never calculated LU decomposition or if the decomposition failed.
+ *                      -permu : permutation vector P such as PA = LU. Represented as ul_t array.
+ *
+ *                  The *a object never is protected and pointer m->a always points to nullptr.
+ *
  * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */
 
@@ -36,7 +46,7 @@ enum ElementEnum {
     Row, Col
 };
 
-template <typename T>
+template<typename T>
 class NPMatrix : public NVector<T> {
 
 public:
@@ -53,7 +63,7 @@ public:
      * @return a n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
      * must have the same length. They represent the rows of A matrix.
      */
-    explicit NPMatrix(const vector<vector<double> > &data);
+    explicit NPMatrix(const vector<vector<T> > &data);
 
     NPMatrix(const NPMatrix<T> &m);
 
@@ -88,6 +98,7 @@ public:
 
     explicit NPMatrix(const vector<NVector<T> > &vectors);
 
+    ~NPMatrix();
 
 
     // SERIALIZATION
@@ -107,12 +118,19 @@ public:
      */
     std::string str() const override;
 
+    // CHARACTERIZATION
+
     /**
      *
      * @return true if n = p.
      */
     bool isSquare() const;
 
+    bool isUpper() const;
+
+    bool isLower() const;
+
+    bool isDiagonal() const;
 
     // GETTERS
 
@@ -140,6 +158,26 @@ public:
     std::vector<NVector<T> > rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
 
     std::vector<NVector<T> > cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
+
+    /**
+     *
+     * @return upper part of this matrix as a upper matrix.
+     */
+    NPMatrix<T> upper() const;
+
+    /**
+     *
+     * @return lower part of this matrix as a lower matrix.
+     */
+    NPMatrix<T> lower() const;
+
+    /**
+     *
+     * @return L/U matrix of LU decomposition of this matrix
+     */
+    NPMatrix<T> lupL();
+
+    NPMatrix<T> lupU();
 
 
     // SETTERS
@@ -221,11 +259,15 @@ public:
 
     void shiftCol(ul_t j, long iterations = 1);
 
-    // TRANSPOSED
+    // ALGEBRA
 
     NPMatrix<T> transposed();
 
-    // ALGEBRA
+    /**
+     *
+     * @return trace of this matrix A00 + A11 + ... + A(n-1)(n-1)
+     */
+    T trace() const;
 
     /**
      * @return Returns the shifted matrix m1 | m2 which is the matrix obtained after concatenation of m1 columns
@@ -233,44 +275,36 @@ public:
      */
     NPMatrix<T> shifted(const NPMatrix<T> &m) const;
 
-
     /**
      * @description :   Apply Gauss Jordan elimination on matrix to calculate inverse for non square matrix.
      *                  To perform this, shift the matrix you want to invert than apply this function.
      */
     void reduce();
 
+    /**
+     *
+     * @return determinant of this matrix det(A). Using the LU decomposition O(n).
+     */
+    T det();
+
 
     // OPERATORS
 
     // ALGEBRAICAL OPERATORS
 
-    /**
-     * @return this + m where + is usual addition for matrices. The matrices must have the length.
-     */
     NPMatrix<T> operator+(const NPMatrix<T> &m) const;
 
-    /**
-     * @return m1 - m2 where - is substraction based on + for matrices. The matrices must have the length.
-     */
     NPMatrix<T> operator-(const NPMatrix<T> &m) const;
 
-    /**
-     * @return the usual opposite of the matrix -m.
-     */
     NPMatrix<T> operator-() const;
 
-    /**
-     *
-     * @return s * m where * is usual scalar multiplication
-     */
-    friend NPMatrix<T> operator*(double s, const NPMatrix<T> &m) {
+    friend NPMatrix<T> operator*(T s, const NPMatrix<T> &m) {
         NPMatrix<T> res{m};
         res *= s;
         return res;
     }
 
-    friend NPMatrix<T> operator*(const NPMatrix<T> &m, double s) {
+    friend NPMatrix<T> operator*(const NPMatrix<T> &m, T s) {
         return s * m;
     }
 
@@ -291,11 +325,36 @@ public:
      *
      * @return (1 / s) * m
      */
-    NPMatrix<T> operator/(double s) const;
+    NPMatrix<T> operator/(T s) const;
+
+    /**
+     *
+     * @param m matrix to exponentiate.
+     * @param exp long integer exponent. If exp < 0 we calculate the power of the inverse matrix m^-1 (O(n3)).
+     * @return m^exp using fast exponentiation algorithm.
+     */
+    friend NPMatrix<T> operator^(const NPMatrix<T> &m, long exp) {
+        NPMatrix<T> res{m};
+        res ^= exp;
+        return res;
+    }
+
+    /**
+     * @param m matrix of the equation system.
+     * @param v second member of the equation system.
+     * @return the solution of m * x = v by inverting the m matrix.
+     */
+    friend NVector<T> operator%(NPMatrix<T> &m, const NVector<T> &v) {
+        NVector<T> b{v};
+        m.solve(b);
+        m.setDefaultBrowseIndices();
+        return b;
+    }
+
 
     // SCALAR PRODUCT BASED OPERATIONS
 
-    friend double operator|(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
+    friend T operator|(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
         NVector<T> sub_m1 = m1(m1._i1, m1._j1, m1._i2, m1._j2);
         NVector<T> sub_m2 = m2(m2._i1, m2._j1, m2._i2, m2._j2);
         auto res = sub_m1 | sub_m2;
@@ -305,11 +364,11 @@ public:
         return res;
     }
 
-    friend double operator!(const NPMatrix<T> &m) {
+    friend T operator!(const NPMatrix<T> &m) {
         return sqrt(m | m);
     }
 
-    friend double operator/(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
+    friend T operator/(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
         return !(m1 - m2);
     }
 
@@ -321,9 +380,11 @@ public:
 
     NPMatrix<T> &operator*=(const NPMatrix<T> &m);
 
-    NPMatrix<T> &operator*=(double s) override;
+    NPMatrix<T> &operator*=(T s) override;
 
-    NPMatrix<T> &operator/=(double s) override;
+    NPMatrix<T> &operator/=(T s) override;
+
+    NVector<T> &operator^=(long exp);
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -331,9 +392,9 @@ public:
      *
      * @return component ij of matrix. Operator can be used to read/write values.
      */
-    double &operator()(ul_t i, ul_t j);
+    T &operator()(ul_t i, ul_t j);
 
-    double operator()(ul_t i, ul_t j) const;
+    T operator()(ul_t i, ul_t j) const;
 
     /**
      *
@@ -394,6 +455,56 @@ public:
      */
     static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
 
+    /**
+     *
+     * @param n size of the matrix
+     * @return n-th order Identity matrix
+     */
+    static NPMatrix<T> eye(ul_t n);
+
+    /**
+     *
+     * @param data values of diagonal [d0, d1, ..., d(n-1)]
+     * @param n size of the matrix
+     * @return Returns diagonal n-th order diagonal matrix filled with data array
+     */
+    static NPMatrix<T> diag(const std::vector<T> &data, ul_t n);
+
+
+    /**
+     *
+     * @return a scalar n-th order matrix with s value. This is a diagonal matrix filled with s.
+     */
+    static NPMatrix<T> scalar(T s, ul_t n);
+
+    /**
+     *
+     * @param data values of multiple diagonal such as :
+     *          -data[l] is the values of coefficients of the l-th diagonal from the left.
+     *          -data[middle] is the values of coefficients on the diagonal.
+     *
+     * @return a n-diagonal matrix filled with data bi-dimensional array which looks like :
+     *
+     *          |d[middle]0,    d[middle+1]0,   ...|
+     *          |d[middle-1]0,  d[middle]1,     ...|
+     *          |               ...                |
+     *          |d[0]0, d[1]1,  ..., d[middle](n-1)|
+     *
+     *          The input data must be ordered such as d[0] has size equal to 1, d[1] to 2, ..., d[middle] to n,
+     *          d[middle+1] to n-1, ..., d[end] to 0.
+     */
+    static NPMatrix<T> ndiag(const std::vector<NVector<T> > &data);
+
+
+    /**
+     *
+     * @param scalars array of scalars values to fill diagonals [s0, s1, ..., sq]
+     * @param n size of the matrix
+     * @return  a n-scalar Matrix filled with values. If values.length = 2, the matrix is tri-diagonal.
+     *          Center diagonal is filled with s1 and the other diagonal are filled with s0.
+     */
+    static NPMatrix<T> nscalar(const std::vector<T> &scalars, const ul_t n);
+
 protected:
 
     // MANIPULATORS
@@ -418,7 +529,31 @@ protected:
 
     virtual void matrixProduct(const NPMatrix<T> &m);
 
-    // OPERATIONS
+    void add(const NVector<T> &vector) override;
+
+    void sub(const NVector<T> &vector) override;
+
+    void opp() override;
+
+    void prod(T scalar) override;
+
+    void div(T scalar) override;
+
+    void pow(long n);
+
+    void rPow(long n);
+
+    void inv();
+
+    void solve(NVector<T> &vector);
+
+    // LUP MANAGEMENT
+
+    void lupCopy();
+
+    void lupUpdate();
+
+    void lupClear();
 
     // CHARACTERIZATION
 
@@ -459,7 +594,7 @@ protected:
     // SUB-MATRICES
 
     NPMatrix<T> subMatrix(ul_t i1 = 0, ul_t j1 = MAX_SIZE,
-                       ul_t i2 = 0, ul_t j2 = MAX_SIZE) const;
+                          ul_t i2 = 0, ul_t j2 = MAX_SIZE) const;
 
     void setSubMatrix(const NPMatrix<T> &m);
 
@@ -478,7 +613,16 @@ protected:
     mutable ul_t _i2;
 
     mutable ul_t _j2;
+
+    // LU STORAGE
+
+    NPMatrix<T> *_a;
+
+    std::vector<ul_t> *_perm;
+
 };
+
+typedef NPMatrix<double> mat_t;
 
 
 #endif //MATHTOOLKIT_NPMATRIX_H

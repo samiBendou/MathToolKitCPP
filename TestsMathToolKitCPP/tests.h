@@ -10,7 +10,6 @@
 #include <NVector.h>
 #include <Vector3.h>
 #include <NPMatrix.h>
-#include <NMatrix.h>
 #include <NSegment.h>
 #include <NParallelepiped.h>
 #include <NDSet.h>
