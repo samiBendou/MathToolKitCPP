@@ -67,13 +67,13 @@ TEST_F(NPMatrixTest, Construction) {
     ASSERT_EQ(_a, _b);
 
 
-    _a = NPMatrix(NVector("(0 0 0)"));
+    _a = NPMatrix(NVector<double>("(0 0 0)"));
     ASSERT_EQ(_a.n(), 1);
     ASSERT_EQ(_a.p(), 3);
     ASSERT_TRUE(_a == 0);
 
 
-    _a = NPMatrix(NVector("(0 0 0 1 2 1 5 10 2)"), 3, 3);
+    _a = NPMatrix(NVector<double>("(0 0 0 1 2 1 5 10 2)"), 3, 3);
     ASSERT_EQ(_a.n(), 3);
     ASSERT_EQ(_a.p(), 3);
     ASSERT_EQ(_a, _c);
@@ -86,10 +86,10 @@ TEST_F(NPMatrixTest, Construction) {
     ASSERT_EQ(_a, _c);
 
 
-    std::vector<NVector> expect_b{
-            NVector("( 2 1 0)"),
-            NVector("( -1 2 1)"),
-            NVector("( 0 -1 2)")
+    std::vector<NVector<double> > expect_b{
+            NVector<double>("( 2 1 0)"),
+            NVector<double>("( -1 2 1)"),
+            NVector<double>("( 0 -1 2)")
     };
     _a = NPMatrix(expect_b);
     ASSERT_EQ(_a, _b);
@@ -276,8 +276,8 @@ TEST_F(NPMatrixTest, MatrixProd) {
 }
 
 TEST_F(NPMatrixTest, VectorProd) {
-    NVector u{"(1 2 3)"};
-    NVector expect_prod_cu{"(0 8 31)"};
+    NVector<double> u{"(1 2 3)"};
+    NVector<double> expect_prod_cu{"(0 8 31)"};
 
     ASSERT_EQ(_c * u, expect_prod_cu);
 }

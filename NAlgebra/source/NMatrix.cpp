@@ -4,7 +4,6 @@
 
 #include <NMatrix.h>
 
-#include "../header/NMatrix.h"
 
 NMatrix::NMatrix(ul_t n) : NPMatrix(n, n), _a(nullptr), _perm(nullptr)
 {
@@ -211,14 +210,14 @@ NMatrix operator^(const NPMatrix &m, long exp) {
     return res;
 }
 
-NVector operator%(NMatrix &matrix, const NVector &vector) {
-    NVector b{vector};
+NVector<double> operator%(NMatrix &matrix, const NVector<double> &vector) {
+    NVector<double> b{vector};
     matrix.solve(b);
     matrix.setDefaultBrowseIndices();
     return b;
 }
 
-NVector &NMatrix::operator^=(const long exp) {
+NVector<double> &NMatrix::operator^=(const long exp) {
     pow(exp);
     setDefaultBrowseIndices();
     return *this;
@@ -268,7 +267,7 @@ NMatrix NMatrix::scalar(double s, ul_t n) {
 
 //Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
 //diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
-NMatrix NMatrix::ndiag(const std::vector<NVector> &data) {
+NMatrix NMatrix::ndiag(const std::vector<NVector<double>> &data) {
     const auto n = (long) data.size();
     const auto middle = (n - 1) / 2;
     const auto dim = data[middle].dim();
@@ -291,12 +290,12 @@ NMatrix NMatrix::nscalar(const std::vector<double> &scalars, const ul_t n) {
     const auto scalarSize = (long) scalars.size();
     const long minSize = n - scalarSize;
 
-    std::vector< NVector > diags((ul_t) (2 * scalarSize - 1));
+    std::vector< NVector<double> > diags((ul_t) (2 * scalarSize - 1));
     ul_t size = 1;
     for(ul_t l = 0; l < scalarSize; l++) {
-        diags[l] = NVector::scalar(scalars[l], size + minSize);
+        diags[l] = NVector<double>::scalar(scalars[l], size + minSize);
         if(l > 0) {
-            diags[l + scalarSize - 1] = NVector::scalar(scalars[scalarSize - l - 1], n - size + 1);
+            diags[l + scalarSize - 1] = NVector<double>::scalar(scalars[scalarSize - l - 1], n - size + 1);
         }
         size++;
     }
@@ -307,28 +306,28 @@ NMatrix NMatrix::nscalar(const std::vector<double> &scalars, const ul_t n) {
 // PRIVATE ALGEBRAICAL OPERATIONS
 
 
-void NMatrix::add(const NVector &vector) {
-    NVector::add(vector);
+void NMatrix::add(const NVector<double> &vector) {
+    NVector<double>::add(vector);
     lupClear();
 }
 
-void NMatrix::sub(const NVector &vector) {
-    NVector::sub(vector);
+void NMatrix::sub(const NVector<double> &vector) {
+    NVector<double>::sub(vector);
     lupClear();
 }
 
 void NMatrix::opp() {
-    NVector::opp();
+    NVector<double>::opp();
     lupClear();
 }
 
 void NMatrix::prod(double scalar) {
-    NVector::prod(scalar);
+    NVector<double>::prod(scalar);
     lupClear();
 }
 
 void NMatrix::div(double scalar) {
-    NVector::div(scalar);
+    NVector<double>::div(scalar);
     lupClear();
 }
 
@@ -393,7 +392,7 @@ void NMatrix::inv() {
     }
 }
 
-void NMatrix::solve(NVector& vector) {
+void NMatrix::solve(NVector<double>& vector) {
     ul_t i, l, k;
 
     if(_a == nullptr) { lupUpdate(); }

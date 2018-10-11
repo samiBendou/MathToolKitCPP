@@ -51,7 +51,7 @@ TEST_F(NPMatrixBenchTest, MatrixProd) {
 }
 
 TEST_F(NPMatrixBenchTest, VectorProd) {
-    NVector u = NVector::scalar(2, SMALL_N_TEST);
+    NVector<double> u = NVector<double>::scalar(2, SMALL_N_TEST);
 
     _t0 = clock();
     _a * u;

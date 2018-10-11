@@ -17,9 +17,10 @@ using namespace std;
 
 int main() {
 
-    NVector vector{"(0 0 1)"};
+    NVector<double> vector_double{"(0 0 1)"};
+    NVector<int> vector_int{"(0 0 1)"};
 
-    cout << vector << endl;
+    cout << vector_double << endl;
 
     return 0;
 }

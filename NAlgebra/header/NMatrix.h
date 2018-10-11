@@ -120,9 +120,9 @@ public:
      * @param v second member of the equation system.
      * @return the solution of m * x = v by inverting the m matrix.
      */
-    friend NVector operator%(NMatrix &m, const NVector &v);
+    friend NVector<double> operator%(NMatrix &m, const NVector<double> &v);
     
-    NVector& operator^=(long exp);
+    NVector<double>& operator^=(long exp);
 
     double &operator()(ul_t i, ul_t j);
 
@@ -172,7 +172,7 @@ public:
      *          The input data must be ordered such as d[0] has size equal to 1, d[1] to 2, ..., d[middle] to n,
      *          d[middle+1] to n-1, ..., d[end] to 0.
      */
-    static NMatrix ndiag(const std::vector<NVector> &data);
+    static NMatrix ndiag(const std::vector<NVector<double> > &data);
 
 
     /**
@@ -191,9 +191,9 @@ protected:
 
     // ALGEBRAICAL OPERATIONS
 
-    void add(const NVector& vector) override ;
+    void add(const NVector<double>& vector) override ;
 
-    void sub(const NVector& vector) override ;
+    void sub(const NVector<double>& vector) override ;
 
     void opp() override ;
 
@@ -211,7 +211,7 @@ protected:
     void inv();
     // Inversion of this matrix (O(n3))
 
-    void solve(NVector& vector);
+    void solve(NVector<double>& vector);
     //Solve this * X = b stores X in b vector
 
 

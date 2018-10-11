@@ -161,7 +161,7 @@ TEST_F(NMatrixTest, Det) {
 }
 
 TEST_F(NMatrixTest, Solve) {
-    NVector u{"(1 2 5)"}, expect_sol{"(3 5 5)"};
+    NVector<double> u{"(1 2 5)"}, expect_sol{"(3 5 5)"};
 
     ASSERT_NEAR(_b % u / expect_sol, 0, 1.3322676295501878e-15);
     ASSERT_NEAR(_b * (_b % u) / u, 0, 1.2560739669470201e-15);
@@ -171,9 +171,9 @@ TEST_F(NMatrixTest, StaticGenerators) {
     ASSERT_EQ(NMatrix::eye(3), _a);
     ASSERT_EQ(NMatrix::scalar(1, 3), _a);
 
-    std::vector<NVector> data{NVector("(-1 -1)"),
-                              NVector("(2 2 2)"),
-                              NVector("(-1 -1)")};
+    std::vector<NVector<double>> data{  NVector<double>("(-1 -1)"),
+                                        NVector<double>("(2 2 2)"),
+                                        NVector<double>("(-1 -1)")};
 
     ASSERT_EQ(NMatrix::ndiag(data), _b);
 

@@ -199,8 +199,8 @@ TEST_F(NPMatrixFuncOpTest, MatrixProd) {
 }
 
 TEST_F(NPMatrixFuncOpTest, VectorProd) {
-    NVector u{"(1 2 3)"};
-    NVector expect_prod_cu{"(0 5)"};
+    NVector<double> u{"(1 2 3)"};
+    NVector<double> expect_prod_cu{"(0 5)"};
 
     ASSERT_EQ(_c(0, 0, 1, 1) * u(0, 1), expect_prod_cu);
 }

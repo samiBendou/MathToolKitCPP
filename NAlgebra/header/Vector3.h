@@ -2,7 +2,7 @@
  * @class          : Vector3
  * @date           : 04/05/2018
  * @author         : samiBendou
- * @description    : Class inheriting from NVector representing 3D Euclidean space. Featuring cross product, coordinate
+ * @description    : Class inheriting from NVector<double> representing 3D Euclidean space. Featuring cross product, coordinate
  *                   transforms and rotations. We will use the following 3D systems of coordinates :
  *
  *                   - X, Y, Z       : Cartesian coordinates.
@@ -25,12 +25,12 @@
 
 #include "NVector.h"
 
-class Vector3 : public NVector {
+class Vector3 : public NVector<double> {
 public:
 
-    using NVector::operator=;
+    using NVector<double>::operator=;
 
-    Vector3(const NVector &vector);
+    Vector3(const NVector<double> &vector);
 
     Vector3(const Vector3 &vector);
 

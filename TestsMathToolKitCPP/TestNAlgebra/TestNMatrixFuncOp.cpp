@@ -74,7 +74,7 @@ TEST_F(NMatrixFuncOpTest, Det) {
 }
 
 TEST_F(NMatrixFuncOpTest, Solve) {
-    NVector u{"(1 2 5)"}, sol{"(4 5)"};
+    NVector<double> u{"(1 2 5)"}, sol{"(4 5)"};
     NMatrix copy_b0011{_b(0, 0, 1, 1)};
 
     sol /= 3;

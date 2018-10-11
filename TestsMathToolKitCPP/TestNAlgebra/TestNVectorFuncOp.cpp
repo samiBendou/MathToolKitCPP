@@ -19,9 +19,9 @@ protected:
         _w = "(0 0 1)";
     }
 
-    NVector _u;
-    NVector _v;
-    NVector _w;
+    NVector<double> _u;
+    NVector<double> _v;
+    NVector<double> _w;
 };
 
 

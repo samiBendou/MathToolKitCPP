@@ -3,15 +3,15 @@
  * @date    03/05/2018
  * @author  samiBendou
  *
- * @details A NVector object stores the coordinates of a finite dimension vector x in an arbitrary base.
- *          Theses are stored in the form [x0, x1, ..., x(n-1)]. where [...] is a std::vector<double>,
+ * @details A NVector<T> object stores the coordinates of a finite dimension vector x in an arbitrary base.
+ *          Theses are stored in the form [x0, x1, ..., x(n-1)]. where [...] is a std::vector<T>,
  *          n is the dimension and (x0, x1, ..., x(n-1)) are the coordinates.
  *          We will be using the following definitions :
  *              - x/u : this vector.
- *              - s : a scalar (double)
+ *              - s : a scalar (T)
  *
  *          Representation of a finite dimension vector space. This object is the base object of every
- *          other object in NAlgebra module. It inherits from std::vector<double> so it's kind of memory
+ *          other object in NAlgebra module. It inherits from std::vector<T> so it's kind of memory
  *          support for every object in NAlgebra module.
  *
  *          Featuring algebraical operations (E, +, *), swaps, shifts and
@@ -25,6 +25,7 @@
 
 #define MAX_SIZE 4294967295
 
+
 typedef unsigned long ul_t;
 
 #include <iostream>
@@ -35,24 +36,25 @@ typedef unsigned long ul_t;
 #include <cassert>
 #include <algorithm>
 
-template <class T>
+template <typename T>
 
-class NVector : public std::vector<double> {
+
+class NVector : public std::vector<T> {
 
 public:
     // CONSTRUCTORS
 
     /**
      *
-     * @return a NVector with an array of data. The dimension is the size of the array.
+     * @return a NVector<T> with an array of data. The dimension is the size of the array.
      */
-    NVector(const std::vector<double> &data);
+    NVector(const std::vector<T> &data);
 
-    NVector(const NVector &u);
+    NVector(const NVector<T> &u);
 
     /**
      *
-     * @return  a NVector by giving the dimension. This method uses the std::vector constructor
+     * @return  a NVector<T> by giving the dimension. This method uses the std::vector constructor
      *          to create a vector.
      */
     explicit NVector(ul_t dim = 0);
@@ -85,7 +87,7 @@ public:
      *
      * @return an std::vector representing the base object of this instance of NVector.
      */
-    std::vector<double> array() const;
+    std::vector<T> array() const;
 
     // MAX / MIN
 
@@ -93,9 +95,9 @@ public:
      *
      * @return Respectively max and min of the coordinates of the vector (x0, x1, .. x(n-1)).
      */
-    double max() const;
+    T max() const;
 
-    double min() const;
+    T min() const;
 
     /**
      *
@@ -111,9 +113,9 @@ public:
      *
      * @return Respectively min and max of absolute value of vector ie. (|x0|, |x1|, ..., |x(n-1)|)
      */
-    double maxAbs() const;
+    T maxAbs() const;
 
-    double minAbs() const;
+    T minAbs() const;
 
 
     /**
@@ -147,7 +149,7 @@ public:
      * @param s : value to fill the vector with
      * @details : Fill vector with a scalar : ie. with scalar = 3, (3, 3, 3, ..., 3).
      */
-    void fill(double s);
+    void fill(T s);
 
     // OPERATORS
 
@@ -156,31 +158,41 @@ public:
     /**
      * @return result of u + v where + is the usual addition (u0 + v0, u1 + v1, ...).
      */
-    NVector operator+(const NVector &u) const;
+    NVector<T> operator+(const NVector<T> &u) const;
 
 
     /**
      * @return return u - v where - is difference based on usual addition.
      */
-    NVector operator-(const NVector &u) const;
+    NVector<T> operator-(const NVector<T> &u) const;
 
 
     /**
      * @return opposite of u (-u0, -u1, ...).
      */
-    NVector operator-() const;
+    NVector<T> operator-() const;
 
     /**
      * @return s * u where * is usual scalar multiplication (s * u0, s * u1, ...).
      */
-    friend NVector operator*(double s, const NVector &u);
+    friend NVector<T> operator*(T s, const NVector<T> &u) {
+        NVector<T> res{u};
+        res *= s;
+        return res;
+    }
 
-    friend NVector operator*(const NVector &u, double s);
+    friend NVector<T> operator*(const NVector<T> &u, T s) {
+        return operator*(s, u);
+    }
 
     /**
      * @return return (1 / s) * u where * is the usual scalar multiplication (s * u0, s * u1, ...).
      */
-    friend NVector operator/(const NVector &u, double s);
+    friend NVector<T> operator/(const NVector<T> &u, T s) {
+        NVector<T> res{u};
+        res /= s;
+        return res;
+    }
 
     // SCALAR PRODUCT BASED OPERATIONS
 
@@ -188,32 +200,40 @@ public:
      *
      * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
      */
-    friend double operator|(const NVector &u, const NVector &v);
+
+    friend T operator|(const NVector<T> &u, const NVector<T> &v) {
+        return u.dotProduct(v);
+    }
 
     /**
      *
      * @return the norm of vector ||.|| dervied from dot product.
      */
-    friend double operator!(const NVector &u);
 
+    friend T operator!(const NVector<T> &u) {
+        return u.norm();
+    }
 
     /**
      *
      * @return distance between u & v, ||u - v||.
      */
-    friend double operator/(const NVector &u, const NVector &v);
+
+    friend T operator/(const NVector<T> &u, const NVector<T> &v) {
+        return u.distance(v);
+    }
 
 
     // COMPOUND OPERATORS
 
 
-    NVector &operator+=(const NVector &u);
+    NVector<T> &operator+=(const NVector<T> &u);
 
-    NVector &operator-=(const NVector &u);
+    NVector<T> &operator-=(const NVector<T> &u);
 
-    virtual NVector &operator*=(double s);
+    virtual NVector<T> &operator*=(T s);
 
-    virtual NVector &operator/=(double s);
+    virtual NVector<T> &operator/=(T s);
 
 
     // ACCES OPERATOR
@@ -225,9 +245,9 @@ public:
      * @return  the kth coordinate of the vector xk if k < 0, returns x(n - 1 - k).
      *          Operator can be used to read/write values.
      */
-    double &operator()(long k);
+    T &operator()(long k);
 
-    double operator()(long k) const;
+    T operator()(long k) const;
 
     /**
      *
@@ -245,27 +265,27 @@ public:
      *
      *          - See unit tests for more details.
      */
-    NVector operator()(ul_t k1, ul_t k2) const;
+    NVector<T> operator()(ul_t k1, ul_t k2) const;
 
-    NVector &operator()(ul_t k1, ul_t k2);
+    NVector<T> &operator()(ul_t k1, ul_t k2);
 
 
     // STREAM EXTRACT/INSERT
 
-    friend std::ostream &operator<<(std::ostream &os, const NVector &vector);
+    friend std::ostream &operator<<(std::ostream &os, const NVector<T> &vector);
 
 
     // AFFECTATION
 
     /**
      *
-     * @param u source NVector object
+     * @param u source NVector<T> object
      * @return reference to this.
      * @details Copy source object on this object using copy().
      */
-    NVector &operator=(const NVector &u);
+    NVector<T> &operator=(const NVector<T> &u);
 
-    NVector &operator=(const std::string &str);
+    NVector<T> &operator=(const std::string &str);
 
     // NORM BASED COMPARISON OPERATORS
 
@@ -274,29 +294,40 @@ public:
      * @return return true if ||u - v|| < epsilon.
      */
 
-    friend bool operator==(const NVector &u, const NVector &v);
+    friend bool operator==(const NVector<T> &u, const NVector<T> &v) {
+        bool result = u.isEqual(v);
+        return result;
+    }
 
-    friend bool operator==(const NVector &u, const std::string &str);
+    friend bool operator==(const NVector<T> &u, const std::string &str) {
+        return u == NVector<T>(str);
+    }
 
-    friend bool operator==(const std::string &str, const NVector &u);
+    friend bool operator==(const std::string &str, const NVector<T> &u) {
+        return u == str;
+    }
 
     /**
      *
      * @return true if s is 0 and u is null vector.
      */
-    friend bool operator==(const NVector &u, double s);
+    friend bool operator==(const NVector<T> &u, T s) {
+        bool res = s < std::numeric_limits<T>::epsilon() && u.isNull();
+        u.setDefaultBrowseIndices();
+        return res;
+    }
 
     /**
      *
      * @return return true if ||v1 - v2|| >= epsilon.
      */
-    friend bool operator!=(const NVector &u, const NVector &v);
+    friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
-    friend bool operator!=(const NVector &u, const std::string &str);
+    friend bool operator!=(const NVector<T> &u, const std::string &str){ return !(u == str); }
 
-    friend bool operator!=(const std::string &str, const NVector &u);
+    friend bool operator!=(const std::string &str, const NVector<T> &u){ return u != str; }
 
-    friend bool operator!=(const NVector &u, double s);
+    friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
 
     // STATIC FUNCTIONS
@@ -306,14 +337,14 @@ public:
      * @param dim : dimension of the vector
      * @return a 0 vector (0, 0, ..., 0).
      */
-    static NVector zeros(ul_t dim);
+    static NVector<T> zeros(ul_t dim);
 
     /**
      *
      * @param dim : dimension of the vector
      * @return Returns vector filled with 1 (1, 1, ..., 1).
      */
-    static NVector ones(ul_t dim);
+    static NVector<T> ones(ul_t dim);
 
     /**
      *
@@ -321,7 +352,7 @@ public:
      * @param dim dimension of the scalar vector
      * @return a vector filled with s (s, s, ..., s).
      */
-    static NVector scalar(double s, ul_t dim);
+    static NVector<T> scalar(T s, ul_t dim);
 
     /**
      *
@@ -330,14 +361,14 @@ public:
      * @return  return the kth vector of canonical base. ie (e0, e1, ..., e(n-1)) where :
      *          e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n - 1) = (0, 0, ..., 1).
      */
-    static NVector canonical(ul_t k, ul_t dim);
+    static NVector<T> canonical(ul_t k, ul_t dim);
 
     /**
      *
      * @param vectors : an array of vectors [u0, u1, ..., u(r-1)] where r is the size of the array
      * @return the sum of the vectors : u0 + u1 + ... + u(r-1). where + is usual addition
      */
-    static NVector sum(const std::vector<NVector> &vectors);
+    static NVector<T> sum(const std::vector<NVector> &vectors);
 
     /**
      *
@@ -346,29 +377,29 @@ public:
      * @return  the linear combination s0 * u0 + s1 * u1 + ... + s(r-1) * u(r-1). where + and * are
      *          usual addition and scalar multiplication.
      */
-    static NVector sumProd(const std::vector<double> &scalars, const std::vector<NVector> &vectors);
+    static NVector<T> sumProd(const std::vector<T> &scalars, const std::vector<NVector> &vectors);
 
 protected:
 
     // VECTOR SPACE OPERATIONS
 
-    virtual void add(const NVector &u);
+    virtual void add(const NVector<T> &u);
 
-    virtual void sub(const NVector &u);
+    virtual void sub(const NVector<T> &u);
 
     virtual void opp();
 
-    virtual void prod(double s);
+    virtual void prod(T s);
 
-    virtual void div(double s);
+    virtual void div(T s);
 
     // EUCLIDEAN SPACE OPERATIONS
 
-    double dotProduct(const NVector &u) const;
+    T dotProduct(const NVector<T> &u) const;
 
-    double norm() const;
+    T norm() const;
 
-    double distance(const NVector &u) const;
+    T distance(const NVector<T> &u) const;
 
     //CHARACTERIZATION
 
@@ -378,9 +409,9 @@ protected:
 
     bool isNull() const;
 
-    bool isEqual(const NVector &u) const;
+    bool isEqual(const NVector<T> &u) const;
 
-    bool hasSameSize(const NVector &u) const;
+    bool hasSameSize(const NVector<T> &u) const;
 
     virtual bool hasDefaultBrowseIndices() const;
 
@@ -388,15 +419,15 @@ protected:
 
     // AFFECTATION
 
-    void copy(const NVector &u);
+    void copy(const NVector<T> &u);
 
     virtual void parse(const std::string &str);
 
     //SUB-VECTORS
 
-    NVector subVector(ul_t k1, ul_t k2) const;
+    NVector<T> subVector(ul_t k1, ul_t k2) const;
 
-    void setSubVector(const NVector &u);
+    void setSubVector(const NVector<T> &u);
 
     //BROWSE INDICES
 

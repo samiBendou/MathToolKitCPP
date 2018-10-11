@@ -44,7 +44,7 @@ TEST_F(NMatrixBenchTest, Inv) {
 }
 
 TEST_F(NMatrixBenchTest, Det) {
-    NVector u = NVector::scalar(2, SMALL_N_TEST);
+    NVector<double> u = NVector<double>::scalar(2, SMALL_N_TEST);
 
     _t0 = clock();
     _a.det();
@@ -55,7 +55,7 @@ TEST_F(NMatrixBenchTest, Det) {
 }
 
 TEST_F(NMatrixBenchTest, Solve) {
-    NVector u = NVector::scalar(2, SMALL_N_TEST);
+    NVector<double> u = NVector<double>::scalar(2, SMALL_N_TEST);
 
     _t0 = clock();
     _a % u;

@@ -2,7 +2,7 @@
  * @class          : NPMatrix
  * @date           : 04/05/2018
  * @author         : samiBendou
- * @description    : A NPMatrix inherits from NVector. It's a representation of a numerical matrices of arbitrary
+ * @description    : A NPMatrix inherits from NVector<double>. It's a representation of a numerical matrices of arbitrary
  *                   size. We will use the following definitions :
  *
  *                      - n : Number of Rows
@@ -15,7 +15,7 @@
  *
  *                   The matrix components are stored in a linear form with the index transformation k = p * i + j.
  *                   The underlying std::vector is represented as t[p * i + j].
- *                   The underlying NVector is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
+ *                   The underlying NVector<double> is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
  *
  *                   Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination.
  *                   setters & getters, swappers and classic matrix generators such as ones, zeros...
@@ -28,7 +28,7 @@
 #define MATHTOOLKIT_NPMATRIX_H
 
 
-#include "NVector.h"
+#include <NVector.h>
 
 using namespace std;
 
@@ -36,7 +36,7 @@ enum ElementEnum {
     Row, Col
 };
 
-class NPMatrix : public NVector {
+class NPMatrix : public NVector<double> {
 
 public:
     // CONSTRUCTION
@@ -71,21 +71,21 @@ public:
      *
      * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
      */
-    explicit NPMatrix(const NVector &u);
+    explicit NPMatrix(const NVector<double> &u);
 
     /**
      *
-     * @return a n x p matrix constructed using a NVector having u.dim() = n * p
+     * @return a n x p matrix constructed using a NVector<double> having u.dim() = n * p
      */
-    NPMatrix(const NVector &u, ul_t n, ul_t p = 0);
+    NPMatrix(const NVector<double> &u, ul_t n, ul_t p = 0);
 
     /**
      *
-     * @return a n x p matrix constructed using a std::vector<NVector>. All the vectors must have the same dimension.
+     * @return a n x p matrix constructed using a std::vector<NVector<double> >. All the vectors must have the same dimension.
      * They represent the rows of the matrix.
      */
 
-    explicit NPMatrix(const vector<NVector> &vectors);
+    explicit NPMatrix(const vector<NVector<double> > &vectors);
 
 
 
@@ -121,45 +121,45 @@ public:
 
     /**
      *
-     * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a NVector.
+     * @return return the ith row Ri of (resp. the jth col Cj) the matrix as a NVector<double>.
      */
-    NVector row(ul_t i) const;
+    NVector<double> row(ul_t i) const;
 
-    NVector col(ul_t j) const;
+    NVector<double> col(ul_t j) const;
 
     /**
      *
      * @param i1/j1 start index of rows/cols
      * @param i2/j2 end index i2/j2 >= i1/j1 of rows/cols
-     * @return the rows/cols of the matrix in the form of std::vector<NVector>.
+     * @return the rows/cols of the matrix in the form of std::vector<NVector<double> >.
      *          -rows()/cols() return all the rows/cols.
      *          -rows(i1)/cols(j1) returns the rows [Ri1, R(i1+1),..., R(n-1)]/ cols [Rj1, R(j1+1),..., C(p-1)]
      *          -rows(i1, i2)/cols(j1, j2) returns the rows [Ri1, R(i1+1),..., Ri2]/ cols [Cj1, C(j1+1),..., Cj2]
      */
-    std::vector<NVector> rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
+    std::vector<NVector<double> > rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
 
-    std::vector<NVector> cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
+    std::vector<NVector<double> > cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
 
 
     // SETTERS
 
     /**
      *
-     * @param u row/col seen as NVector. The dimension of the vector must be equal to the number of cols/rows
+     * @param u row/col seen as NVector<double>. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const NVector &u, ul_t i1);
+    void setRow(const NVector<double> &u, ul_t i1);
 
 
-    void setCol(const NVector &u, ul_t j1);
+    void setCol(const NVector<double> &u, ul_t j1);
 
     /**
      *
-     * @param vectors : std::vector of NVector representing rows/cols to set on the matrix.
+     * @param vectors : std::vector of NVector<double> representing rows/cols to set on the matrix.
      *                  - The length of each row/col must be inferior or equal to the number of cols/rows.
      *                  - The total number of rows/cols must be inferior or equal to the number of rows/cols.
      * @param i1/j1 :   start index to set row/col. If i1/j1 + vectors.size() > n/p Then the algorithm truncate the
-     *                  array of NVector.
+     *                  array of NVector<double>.
      * @description :   Replace the components of the matrix with the array of vectors. For example setCols will change
      *                  the matrix this way :
      *
@@ -170,9 +170,9 @@ public:
      *
      *                  Where q is the size of the vector array.
      */
-    void setRows(const std::vector<NVector> &vectors, ul_t i1 = 0);
+    void setRows(const std::vector<NVector<double> > &vectors, ul_t i1 = 0);
 
-    void setCols(const std::vector<NVector> &vectors, ul_t j1 = 0);
+    void setCols(const std::vector<NVector<double> > &vectors, ul_t j1 = 0);
 
 
 
@@ -278,7 +278,7 @@ public:
      * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
      *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
      */
-    NVector operator*(const NVector &v) const;
+    NVector<double> operator*(const NVector<double> &v) const;
 
     /**
      *
@@ -387,7 +387,7 @@ protected:
 
     // ALGEBRAICAL OPERATIONS
 
-    void vectorProduct(NVector &u) const;
+    void vectorProduct(NVector<double> &u) const;
 
     virtual void matrixProduct(const NPMatrix &m);
 
@@ -405,7 +405,7 @@ protected:
 
     bool isBetweenJ12(ul_t j) const;
 
-    bool isCompatible(const NVector &u) const;
+    bool isCompatible(const NVector<double> &u) const;
 
     bool isCompatible(const NPMatrix &u) const;
 
