@@ -2,11 +2,11 @@
 
 ### Author : samiBendou
 
-### Last Update : 08/10/2018
+### Last Update : 11/10/2018
 
-### Current Version : 0.5
+### Current Version : 1.0
 
-MathToolKit is C++ maths framework. It provides libraries that ease N-dimensional calculation.
+MathToolKit is C++ maths framework. It provides libraries that ease N-dimensional scientifical calculation and simulation.
 
 - Linear algebra library (NAlgebra)
 
@@ -24,7 +24,8 @@ MathToolKit is C++ maths framework. It provides libraries that ease N-dimensiona
 
 - Unit tested with googletest
 
-The framework can be used to produce quick and efficient C++ code in various domains such as applied maths, physics, economics...
+The framework can be used to produce quickly and easily efficient C++ code. 
+Can be used in production in various domains such as applied maths, physics, economics...
 
 ## NAlgebra
 
