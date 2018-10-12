@@ -535,9 +535,9 @@ protected:
 
     void opp() override;
 
-    void prod(T scalar) override;
+    void prod(T s) override;
 
-    void div(T scalar) override;
+    void div(T s) override;
 
     void pow(long n);
 
@@ -585,7 +585,7 @@ protected:
 
     // INDEX GETTERS
 
-    ul_t getVectorIndex(ul_t i, ul_t j) const;
+    ul_t vectorIndex(ul_t i, ul_t j) const;
 
     ul_t getRowFromVectorIndex(ul_t k) const;
 

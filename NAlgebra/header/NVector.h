@@ -31,11 +31,15 @@
 #include <cassert>
 #include <algorithm>
 #include <complex>
+#include <functional>
 
 #define MAX_SIZE 4294967295
 #define EPSILON (std::numeric_limits<T>::epsilon())
 
 typedef unsigned long ul_t;
+
+
+
 
 template<typename T>
 

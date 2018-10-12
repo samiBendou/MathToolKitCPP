@@ -343,7 +343,7 @@ template<typename T>
 void NPMatrix<T>::swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
     assert(isValidIndex(i1, j1) && isValidIndex(i2, j2));
 
-    NVector<T>::swap(getVectorIndex(i1, j1), getVectorIndex(i2, j2));
+    NVector<T>::swap(vectorIndex(i1, j1), vectorIndex(i2, j2));
     lupClear();
 }
 
@@ -503,9 +503,8 @@ NPMatrix<T> NPMatrix<T>::operator/(T s) const {
 
 template<typename T>
 NPMatrix<T> NPMatrix<T>::operator-() const {
-    NPMatrix<T> res = this->subMatrix(_i1, _j1, _i2, _j2);
+    NPMatrix<T> res{*this};
     res.opp();
-    setDefaultBrowseIndices();
     return res;
 }
 
@@ -534,23 +533,19 @@ NPMatrix<T> &NPMatrix<T>::operator*=(const NPMatrix<T> &m) {
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::operator*=(T s) {
-    NPMatrix<T> sub_this{this->subMatrix(_i1, _j1, _i2, _j2)};
-    sub_this.NVector<T>::operator*=(s);
-    (*this)(_i1, _j1, _i2, _j2) = sub_this;
-    setDefaultBrowseIndices();
-
+    prod(s);
     return *this;
 }
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::operator/=(T s) {
-    return operator*=(1 / s);
+    div(s);
+    return *this;
 }
 
 template<typename T>
 NVector<T> &NPMatrix<T>::operator^=(const long exp) {
     pow(exp);
-    setDefaultBrowseIndices();
     return *this;
 }
 
@@ -560,14 +555,14 @@ NVector<T> &NPMatrix<T>::operator^=(const long exp) {
 template<typename T>
 T &NPMatrix<T>::operator()(ul_t i, ul_t j) {
     assert(isValidIndex(i, j));
-    return (*this)[getVectorIndex(i, j)];
+    return (*this)[vectorIndex(i, j)];
 
 }
 
 template<typename T>
 T NPMatrix<T>::operator()(ul_t i, ul_t j) const {
     assert(isValidIndex(i, j));
-    return (*this).at(getVectorIndex(i, j));
+    return (*this).at(vectorIndex(i, j));
 }
 
 template<typename T>
@@ -773,15 +768,16 @@ void NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
 
 template<typename T>
 void NPMatrix<T>::add(const NPMatrix<T> &m) {
+
     assert(hasSameSize(m));
-    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
-        std::transform(
-                this->begin() + getVectorIndex(i + _i1, _j1),
-                this->begin() + getVectorIndex(i + _i1, _j2) + 1,
-                m.begin() + m.getVectorIndex(i + m._i1, m._j1),
-                this->begin() + getVectorIndex(i + _i1, _j1),
-                std::plus<T>()
-                        );
+
+
+    typename std::vector<T>::iterator begin, end;
+
+    for (ul_t i = _i1; i < _i2; ++i) {
+        begin = this->begin() + vectorIndex(i + _i1, _j1);
+        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
+        std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::plus<T>());
     }
 
     setDefaultBrowseIndices();
@@ -792,36 +788,66 @@ void NPMatrix<T>::add(const NPMatrix<T> &m) {
 template<typename T>
 void NPMatrix<T>::sub(const NPMatrix<T> &m) {
     assert(hasSameSize(m));
-    for (ul_t j = 0; j <= _i2 - _i1; ++j) {
-        std::transform(
-                this->begin() + getVectorIndex(j + _i1, _j1),
-                this->begin() + getVectorIndex(j + _i1, _j2) + 1,
-                m.begin() + m.getVectorIndex(j + m._i1, m._j1),
-                this->begin() + getVectorIndex(j + _i1, _j1),
-                std::minus<T>()
-        );
+
+    typename std::vector<T>::iterator begin, end;
+
+    for (ul_t i = _i1; i < _i2; ++i) {
+        begin = this->begin() + vectorIndex(i + _i1, _j1);
+        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
+        std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::plus<T>());
     }
 
     setDefaultBrowseIndices();
     m.setDefaultBrowseIndices();
     lupClear();
-}
+ }
 
 template<typename T>
 void NPMatrix<T>::opp() {
-    NVector<T>::opp();
+
+    typename std::vector<T>::iterator begin, end;
+
+    for (ul_t i = _i1; i < _i2; ++i) {
+        begin = this->begin() + vectorIndex(i + _i1, _j1);
+        begin = this->begin() + vectorIndex(i + _i1, _j1);
+        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
+        std::transform(begin, end, begin, std::negate<T>());
+    }
+
+    setDefaultBrowseIndices();
+    lupClear();
+}
+
+
+template<typename T>
+void NPMatrix<T>::prod(T s) {
+
+    typename std::vector<T>::iterator begin, end;
+
+    for (ul_t i = _i1; i < _i2; ++i) {
+        begin = this->begin() + vectorIndex(i + _i1, _j1);
+        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
+        std::transform(begin, end, begin,
+                std::bind(std::multiplies<T>(), std::placeholders::_1, s));
+    }
+
+    setDefaultBrowseIndices();
     lupClear();
 }
 
 template<typename T>
-void NPMatrix<T>::prod(T scalar) {
-    NVector<T>::prod(scalar);
-    lupClear();
-}
+void NPMatrix<T>::div(T s) {
 
-template<typename T>
-void NPMatrix<T>::div(T scalar) {
-    NVector<T>::div(scalar);
+    typename std::vector<T>::iterator begin, end;
+
+    for (ul_t i = _i1; i < _i2; ++i) {
+        begin = this->begin() + vectorIndex(i + _i1, _j1);
+        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
+        std::transform(begin, end, begin,
+                       std::bind(std::divides<T>(), std::placeholders::_1, s));
+    }
+
+    setDefaultBrowseIndices();
     lupClear();
 }
 
@@ -835,6 +861,7 @@ void NPMatrix<T>::pow(const long n) {
     } else {
         *this = NPMatrix<T>::eye(_i2 - _i1 + 1);
     }
+    setDefaultBrowseIndices();
     lupClear();
 }
 
@@ -912,7 +939,7 @@ void NPMatrix<T>::solve(NVector<T> &vector) {
 template<typename T>
 void NPMatrix<T>::lupUpdate() {
     //Returns PA such as PA = LU where P is a row p array and A = L * U;
-    ul_t i, j, k, iMax;
+    ul_t i, j, k, i_max;
 
     lupClear();
 
@@ -924,14 +951,15 @@ void NPMatrix<T>::lupUpdate() {
 
     if (!_a->isUpper() || !_a->isLower()) {
         for (i = 0; i < _a->_n; ++i) {
-            iMax = _a->col(i)(i, _a->_n - 1).maxAbsIndex() + i;
-            if (abs((*_a)(iMax, i)) > EPSILON) { //matrix is not degenerate
-                if (iMax != i) {
+            i_max = _a->col(i)(i, _a->_n - 1).maxAbsIndex() + i;
+            if (abs((*_a)(i_max, i)) > EPSILON) { //matrix is not de
+                // generate
+                if (i_max != i) {
                     j = (*p)[i];
-                    (*p)[i] = (*p)[iMax];
-                    (*p)[iMax] = j;
+                    (*p)[i] = (*p)[i_max];
+                    (*p)[i_max] = j;
 
-                    _a->swapRow(i, iMax);
+                    _a->swapRow(i, i_max);
 
                     (*p)[_a->_n]++; //counting pivots starting from a->_n (for determinant)
                 }
@@ -1069,7 +1097,7 @@ void NPMatrix<T>::parse(const string &str) {
 }
 
 template<typename T>
-ul_t NPMatrix<T>::getVectorIndex(ul_t i, ul_t j) const {
+ul_t NPMatrix<T>::vectorIndex(ul_t i, ul_t j) const {
     return _p * i + j;
 }
 

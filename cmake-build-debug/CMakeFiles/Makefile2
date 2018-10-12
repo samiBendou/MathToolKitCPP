@@ -68,9 +68,9 @@ CMAKE_BINARY_DIR = /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug
 # Target rules for target CMakeFiles/MathToolKit.dir
 
 # All Build rule for target.
+CMakeFiles/MathToolKit.dir/all: NGeometry/CMakeFiles/NGeometry.dir/all
 CMakeFiles/MathToolKit.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
 CMakeFiles/MathToolKit.dir/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
-CMakeFiles/MathToolKit.dir/all: NGeometry/CMakeFiles/NGeometry.dir/all
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/depend
 	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target MathToolKit"
@@ -520,9 +520,9 @@ TestsMathToolKitCPP/TestNAlgebra/preinstall:
 # Target rules for target TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir
 
 # All Build rule for target.
-TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
 TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
+TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
 	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/depend
 	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles --progress-num=19,20,21,22,23,24,25,26 "Built target TestMathToolKitCPP"

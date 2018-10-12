@@ -474,14 +474,14 @@ bool NVector<T>::isValidIndex(ul_t k) const {
 
 template<typename T>
 bool NVector<T>::isNull() const {
-    return norm() < numeric_limits<T>::epsilon();
+    return norm() < EPSILON;
 }
 
 template<typename T>
 bool NVector<T>::isEqual(const NVector<T> &u) const {
     if (!hasSameSize(u))
         return false;
-    return distance(u) < numeric_limits<T>::epsilon();
+    return distance(u) < EPSILON;
 }
 
 template<typename T>
