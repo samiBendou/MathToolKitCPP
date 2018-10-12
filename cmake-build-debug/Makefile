@@ -261,44 +261,30 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named TestMathToolKitCPP
+# Target rules for targets named TestNAlgebra
 
 # Build rule for target.
-TestMathToolKitCPP: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TestMathToolKitCPP
-.PHONY : TestMathToolKitCPP
+TestNAlgebra: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestNAlgebra
+.PHONY : TestNAlgebra
 
 # fast build rule for target.
-TestMathToolKitCPP/fast:
-	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/build
-.PHONY : TestMathToolKitCPP/fast
+TestNAlgebra/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir/build
+.PHONY : TestNAlgebra/fast
 
-TestsMathToolKitCPP/tests.o: TestsMathToolKitCPP/tests.cpp.o
+#=============================================================================
+# Target rules for targets named TestNAnalysis
 
-.PHONY : TestsMathToolKitCPP/tests.o
+# Build rule for target.
+TestNAnalysis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestNAnalysis
+.PHONY : TestNAnalysis
 
-# target to build an object file
-TestsMathToolKitCPP/tests.cpp.o:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/tests.cpp.o
-.PHONY : TestsMathToolKitCPP/tests.cpp.o
-
-TestsMathToolKitCPP/tests.i: TestsMathToolKitCPP/tests.cpp.i
-
-.PHONY : TestsMathToolKitCPP/tests.i
-
-# target to preprocess a source file
-TestsMathToolKitCPP/tests.cpp.i:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/tests.cpp.i
-.PHONY : TestsMathToolKitCPP/tests.cpp.i
-
-TestsMathToolKitCPP/tests.s: TestsMathToolKitCPP/tests.cpp.s
-
-.PHONY : TestsMathToolKitCPP/tests.s
-
-# target to generate assembly for a file
-TestsMathToolKitCPP/tests.cpp.s:
-	$(MAKE) -f CMakeFiles/MathToolKit.dir/build.make CMakeFiles/MathToolKit.dir/TestsMathToolKitCPP/tests.cpp.s
-.PHONY : TestsMathToolKitCPP/tests.cpp.s
+# fast build rule for target.
+TestNAnalysis/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/build.make TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/build
+.PHONY : TestNAnalysis/fast
 
 main.o: main.cpp.o
 
@@ -347,10 +333,8 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... TestMathToolKitCPP"
-	@echo "... TestsMathToolKitCPP/tests.o"
-	@echo "... TestsMathToolKitCPP/tests.i"
-	@echo "... TestsMathToolKitCPP/tests.s"
+	@echo "... TestNAlgebra"
+	@echo "... TestNAnalysis"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -49,6 +49,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../NGeometry/CMakeLists.txt"
   "../TestsMathToolKitCPP/CMakeLists.txt"
   "../TestsMathToolKitCPP/TestNAlgebra/CMakeLists.txt"
+  "../TestsMathToolKitCPP/TestNAnalysis/CMakeLists.txt"
   "../TestsMathToolKitCPP/lib/googletest/CMakeLists.txt"
   "../TestsMathToolKitCPP/lib/googletest/googlemock/CMakeLists.txt"
   "../TestsMathToolKitCPP/lib/googletest/googlemock/cmake/gmock.pc.in"
@@ -80,6 +81,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -92,5 +94,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "TestsMathToolKitCPP/lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   "TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestMathToolKitCPP.dir/DependInfo.cmake"
+  "TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir/DependInfo.cmake"
+  "TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/DependInfo.cmake"
   )

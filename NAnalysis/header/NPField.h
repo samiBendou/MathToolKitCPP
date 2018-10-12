@@ -6,38 +6,32 @@
 #define MATHTOOLKIT_NFIELD_H
 
 #include <NVector.h>
-#include <NPMatrix.h>
+#include <NCompact.h>
+#include <NDSet.h>
 
-#include "../../NGeometry/header/NCompact.h"
-#include "../../NGeometry/header/NDSet.h"
-
-class NPField : public NVector<double> {
+template<typename T>
+class NPField : public NVector<T> {
 public:
-    NVector<double> h;
+    NVector<T> h;
 
-    NPField(NCompact *doaminIn, unsigned long dimOut);
+    NPField(ul_t dim_in, ul_t dim_out, NVector<T> h);
 
-    virtual NVector<double> g(const NVector<double> &x) = 0;
+    NVector<T> operator()(const NVector<T> &u) const;
 
-    NVector<double> operator()(const NVector<double> &u);
+    std::vector<NVector<T>> operator()(const std::vector<NVector<T>>& vectors) const;
 
-    NPMatrix<double> meshMatrix();
-
-    std::vector<NVector<double>> meshVectors();
+    std::vector<NVector<T>> operator()(const NCompact& domain) const;
 
 protected:
-    void mesh();
 
-    std::vector<unsigned long> meshArround(const NVector<double> &x);
+    virtual NVector<T> g(const NVector<T> &x) const = 0;
 
-    NCompact *_domainIn;
+    std::vector<NVector<T>> map(const std::vector<NVector<T>>& vectors) const;
 
-    std::vector<NVector<double> > _meshIn;
+    std::vector<NVector<T>> mesh(const NCompact& domain) const;
 
-    unsigned long _dimOut;
-
-    // ACCES OPERATOR
-
+    ul_t _dim_in;
+    ul_t _dim_out;
 };
 
 

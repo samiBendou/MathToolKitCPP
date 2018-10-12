@@ -2,32 +2,27 @@
 // Created by Sami Dahoux on 08/05/2018.
 //
 
-#ifndef MATHTOOLKIT_NEWTONIANFIELD_H
-#define MATHTOOLKIT_NEWTONIANFIELD_H
+#ifndef MATHTOOLKIT_SNEWTONIANFIELD_H
+#define MATHTOOLKIT_SNEWTONIANFIELD_H
 
-#include <Vector3.h>
-#include "NPField.h"
+#include <NVector.h>
+#include <NPField.h>
 
 
-class SNewtonianField : public NPField {
+class SNewtonianField : public NPField<double> {
 public:
 
-
-    SNewtonianField(NCompact *domain, double k, const std::vector<double> &mu, const std::vector<Vector3> &r);
-
-    Vector3 g(const Vector3 &r);
-
-    NVector<double> g(const NVector<double> &x) override;
+    SNewtonianField(ul_t dim, vec_t h, const std::vector<double> &mu, const std::vector<vec_t> &r, double k);
 
 protected:
+    vec_t g(const vec_t &x) const override;
+
     const std::vector<double> _mu;
 
-    const std::vector<Vector3> _r;
+    const std::vector<vec_t> _r;
 
     double _k;
-
-    const unsigned long _size;
 };
 
 
-#endif //MATHTOOLKIT_NEWTONIANFIELD_H
+#endif //MATHTOOLKIT_SNEWTONIANFIELD_H

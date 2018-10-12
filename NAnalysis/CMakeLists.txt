@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.12)
 project(NAnalysis)
 
+set(CMAKE_CXX_STANDARD 11)
+
 add_library(NAnalysis STATIC
         source/NPField.cpp header/NPField.h
         source/NOde.cpp header/NOde.h
@@ -8,4 +10,3 @@ add_library(NAnalysis STATIC
         source/SNewtonianField.cpp header/SNewtonianField.h
         )
 
-set(CMAKE_CXX_STANDARD 11)

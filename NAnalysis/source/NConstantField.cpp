@@ -2,14 +2,17 @@
 // Created by Sami Dahoux on 07/05/2018.
 //
 
-#include "../header/NConstantField.h"
+#include <NConstantField.h>
 
-NConstantField::NConstantField(NCompact *domain, const NVector<double> &cst) : NPField(domain, cst.dim()), _cst(cst) {
+NConstantField::NConstantField(ul_t dim_in, vec_t h, vec_t k) : NPField<double>(dim_in, k.dim(), h),
+                                                                _k(k) {
 
 }
 
-NVector<double> NConstantField::g(const NVector<double> &x) {
-    return _cst;
+vec_t NConstantField::g(const vec_t &x) const {
+    return _k;
 }
+
+
 
 

@@ -63,7 +63,6 @@ std::vector<NVector<double>> NParallelepiped::mesh(const NVector<double> &h) con
     const std::vector<NVector<double>> e = _base.cols();
     const NVector<double> end = NVector<double>::sum(e);
     const double tol = h.maxAbs();
-    double d = std::numeric_limits<double>::infinity();
 
     std::vector<NVector<double>> mesh{};
     NVector<double> x = NVector<double>::zeros(_dim);

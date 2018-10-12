@@ -2,17 +2,16 @@
 // Created by Sami Dahoux on 07/05/2018.
 //
 
-#include "../header/NOde.h"
+#include <NOde.h>
 
-std::vector<NVector<double> >
-NOde::euler(const NVector<double> &u0, NPField &f, const double t0, const double t1, const double h) {
+std::vector<vec_t> NOde::euler(const vec_t &u0, const NPField<double> &f, double t0, double t1, double dt) {
 
-    const auto n = (int) floor((t1 - t0) / h);
+    ul_t n = (ul_t) floor((t1 - t0) / dt);
 
-    std::vector<NVector<double> > trajectory((unsigned long) n);
+    std::vector<vec_t> trajectory(n);
     trajectory[0] = u0;
     for (int k = 1; k < n; k++) {
-        trajectory[k] = trajectory[k - 1] + h * f(trajectory[k - 1]);
+        trajectory[k] = trajectory[k - 1] + dt * f(trajectory[k - 1]);
     }
     return trajectory;
 }

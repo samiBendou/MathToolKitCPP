@@ -6,20 +6,17 @@
 #define MATHTOOLKIT_GCFIELD_H
 
 #include <NVector.h>
-#include <Vector3.h>
-
-#include "NPField.h"
+#include <NPField.h>
 
 
-class NConstantField : public NPField {
+class NConstantField : public NPField<double> {
 public:
-    NConstantField(NCompact *domain, const NVector<double> &cst);
-
-    NVector<double> g(const NVector<double> &x) override;
-
+    NConstantField(ul_t dim_in, vec_t h, vec_t k);
 
 protected:
-    NVector<double> _cst;
+    vec_t g(const vec_t &x) const override;
+
+    vec_t _k;
 };
 
 

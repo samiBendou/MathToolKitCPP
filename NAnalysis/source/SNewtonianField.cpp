@@ -2,20 +2,19 @@
 // Created by Sami Dahoux on 08/05/2018.
 //
 
-#include "../header/SNewtonianField.h"
+#include <SNewtonianField.h>
 
-SNewtonianField::SNewtonianField(NCompact *domain, const double k, const std::vector<double> &mu,
-                                 const std::vector<Vector3> &r) :
-        NPField(domain, 3), _k(k), _size(mu.size()), _mu(mu), _r(r) {
-    mesh();
+SNewtonianField::SNewtonianField(ul_t dim, vec_t h, const std::vector<double> &mu,
+                                 const std::vector<vec_t> &r, double k) : NPField(dim, dim, h), _mu(mu), _r(r), _k(k){
+
 }
 
-Vector3 SNewtonianField::g(const Vector3 &r) {
-    Vector3 g{0, 0, 0};
-    Vector3 rj{0, 0, 0};
+vec_t SNewtonianField::g(const vec_t &r) const {
+    vec_t g = vec_t::zeros(_dim_out);
+    vec_t rj = vec_t::zeros(_dim_in);
     double d;
 
-    for (int j = 0; j < _size; j++) {
+    for (int j = 0; j < _mu.size(); j++) {
         if ((d = (r / _r[j])) > std::numeric_limits<double>::epsilon()) {
             g += _k * _mu[j] * (r - _r[j]) / pow(d, 3);
         }
@@ -23,6 +22,4 @@ Vector3 SNewtonianField::g(const Vector3 &r) {
     return g;
 }
 
-NVector<double> SNewtonianField::g(const NVector<double> &x) {
-    return g((Vector3) x);
-}
+

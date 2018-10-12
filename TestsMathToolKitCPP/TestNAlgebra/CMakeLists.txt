@@ -5,9 +5,9 @@ endif (APPLE)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_executable(TestMathToolKitCPP TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp TestNPMatrix.cpp TestNPMatrixFuncOp.cpp BenchNVector.cpp BenchNPMatrix.cpp)
+add_executable(TestNAlgebra TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp TestNPMatrix.cpp TestNPMatrixFuncOp.cpp BenchNVector.cpp BenchNPMatrix.cpp)
 
-target_link_libraries(TestMathToolKitCPP gtest gtest_main)
-target_link_libraries(TestMathToolKitCPP NAlgebra)
+target_link_libraries(TestNAlgebra gtest gtest_main)
+target_link_libraries(TestNAlgebra NAlgebra)
 
 
