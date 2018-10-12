@@ -774,7 +774,7 @@ void NPMatrix<T>::add(const NPMatrix<T> &m) {
 
     typename std::vector<T>::iterator begin, end;
 
-    for (ul_t i = _i1; i < _i2; ++i) {
+    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         begin = this->begin() + vectorIndex(i + _i1, _j1);
         end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
         std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::plus<T>());
@@ -791,10 +791,10 @@ void NPMatrix<T>::sub(const NPMatrix<T> &m) {
 
     typename std::vector<T>::iterator begin, end;
 
-    for (ul_t i = _i1; i < _i2; ++i) {
+    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         begin = this->begin() + vectorIndex(i + _i1, _j1);
         end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
-        std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::plus<T>());
+        std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::minus<T>());
     }
 
     setDefaultBrowseIndices();
@@ -807,7 +807,7 @@ void NPMatrix<T>::opp() {
 
     typename std::vector<T>::iterator begin, end;
 
-    for (ul_t i = _i1; i < _i2; ++i) {
+    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         begin = this->begin() + vectorIndex(i + _i1, _j1);
         begin = this->begin() + vectorIndex(i + _i1, _j1);
         end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
@@ -824,7 +824,7 @@ void NPMatrix<T>::prod(T s) {
 
     typename std::vector<T>::iterator begin, end;
 
-    for (ul_t i = _i1; i < _i2; ++i) {
+    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         begin = this->begin() + vectorIndex(i + _i1, _j1);
         end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
         std::transform(begin, end, begin,
@@ -840,7 +840,7 @@ void NPMatrix<T>::div(T s) {
 
     typename std::vector<T>::iterator begin, end;
 
-    for (ul_t i = _i1; i < _i2; ++i) {
+    for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         begin = this->begin() + vectorIndex(i + _i1, _j1);
         end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
         std::transform(begin, end, begin,
