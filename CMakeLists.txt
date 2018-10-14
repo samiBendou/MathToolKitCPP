@@ -16,4 +16,5 @@ add_subdirectory(NGeometry)
 add_subdirectory(TestsMathToolKitCPP)
 
 add_executable(MathToolKit ${SOURCE_FILES})
+
 target_link_libraries(MathToolKit NAnalysis NGeometry NAlgebra)

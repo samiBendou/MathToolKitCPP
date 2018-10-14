@@ -286,6 +286,19 @@ TestNAnalysis/fast:
 	$(MAKE) -f TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/build.make TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/build
 .PHONY : TestNAnalysis/fast
 
+#=============================================================================
+# Target rules for targets named TestNGeometry
+
+# Build rule for target.
+TestNGeometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestNGeometry
+.PHONY : TestNGeometry
+
+# fast build rule for target.
+TestNGeometry/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNGeometry/CMakeFiles/TestNGeometry.dir/build.make TestsMathToolKitCPP/TestNGeometry/CMakeFiles/TestNGeometry.dir/build
+.PHONY : TestNGeometry/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -335,6 +348,7 @@ help:
 	@echo "... gtest"
 	@echo "... TestNAlgebra"
 	@echo "... TestNAnalysis"
+	@echo "... TestNGeometry"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -68,3 +68,10 @@
 /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/edit_cache.dir
 /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/install/local.dir
 /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/install/local.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/install/strip.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/install.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/list_install_components.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/rebuild_cache.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/edit_cache.dir
+/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/CMakeFiles/TestNGeometry.dir

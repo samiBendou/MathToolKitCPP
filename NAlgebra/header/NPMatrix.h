@@ -175,9 +175,9 @@ public:
      *
      * @return L/U matrix of LU decomposition of this matrix
      */
-    NPMatrix<T> lupL();
+    NPMatrix<T> lupL() const;
 
-    NPMatrix<T> lupU();
+    NPMatrix<T> lupU() const;
 
 
     // SETTERS
@@ -261,7 +261,7 @@ public:
 
     // ALGEBRA
 
-    NPMatrix<T> transposed();
+    NPMatrix<T> transposed() const;
 
     /**
      *
@@ -285,7 +285,7 @@ public:
      *
      * @return determinant of this matrix det(A). Using the LU decomposition O(n).
      */
-    T det();
+    T det() const;
 
 
     // OPERATORS
@@ -549,11 +549,11 @@ protected:
 
     // LUP MANAGEMENT
 
-    void lupCopy();
+    void lupCopy() const;
 
-    void lupUpdate();
+    void lupUpdate() const;
 
-    void lupClear();
+    void lupClear() const;
 
     // CHARACTERIZATION
 
@@ -616,9 +616,9 @@ protected:
 
     // LU STORAGE
 
-    NPMatrix<T> *_a;
+    mutable NPMatrix<T> *_a;
 
-    std::vector<ul_t> *_perm;
+    mutable std::vector<ul_t> *_perm;
 
 };
 

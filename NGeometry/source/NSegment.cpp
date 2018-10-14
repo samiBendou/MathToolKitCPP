@@ -5,7 +5,7 @@
 #include "../header/NSegment.h"
 
 
-NSegment::NSegment(const NVector<double> &a, const NVector<double> &b) : NCompact(1), _a(a), _b(b) {
+NSegment::NSegment(const vec_t &a, const vec_t &b) : NCompact(1), _a(a), _b(b) {
 
 }
 
@@ -14,27 +14,27 @@ std::string NSegment::str() const {
 }
 
 
-NVector<double> NSegment::a() const {
-    return NVector<double>(_a);
+vec_t NSegment::a() const {
+    return vec_t(_a);
 }
 
-NVector<double> NSegment::b() const {
-    return NVector<double>(_b);
+vec_t NSegment::b() const {
+    return vec_t(_b);
 }
 
-void NSegment::setA(const NVector<double> &a) {
-    _a = NVector<double>(a);
+void NSegment::setA(const vec_t &a) {
+    _a = vec_t(a);
 }
 
-void NSegment::setB(const NVector<double> &b) {
-    _b = NVector<double>(b);
+void NSegment::setB(const vec_t &b) {
+    _b = vec_t(b);
 }
 
 // CHARACTERIZATION
 
-bool NSegment::isIn(const NVector<double> &x) const {
-    const NVector<double> u = (x - _a);
-    const NVector<double> l = (_b - _a);
+bool NSegment::isIn(const vec_t &x) const {
+    const vec_t u = (x - _a);
+    const vec_t l = (_b - _a);
     const double tol = 1000 * std::numeric_limits<double>::epsilon();
 
     return (abs((u | l) - !u * !l) < tol) && !u / !l <= 1;
@@ -56,10 +56,10 @@ NCompact *NSegment::border() const {
     return nullptr;
 }
 
-std::vector<NVector<double> > NSegment::mesh(double h) const {
-    const NVector<double> v = h * (_b - _a) / !NVector<double>(_b - _a);
-    NVector<double> u = NVector<double>(_a);
-    std::vector<NVector<double>> mesh;
+std::vector<vec_t > NSegment::mesh(double h) const {
+    const vec_t v = h * (_b - _a) / !vec_t(_b - _a);
+    vec_t u = vec_t(_a);
+    std::vector<vec_t> mesh;
     while (u / _b > h) {
         mesh.push_back(u);
         u += v;
@@ -68,7 +68,7 @@ std::vector<NVector<double> > NSegment::mesh(double h) const {
 
 }
 
-std::vector<NVector<double> > NSegment::mesh(const NVector<double> &h) const {
+std::vector<vec_t > NSegment::mesh(const vec_t &h) const {
     return mesh(h(0));
 }
 

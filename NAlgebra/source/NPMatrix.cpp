@@ -259,7 +259,7 @@ NPMatrix<T> NPMatrix<T>::lower() const {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::lupL() {
+NPMatrix<T> NPMatrix<T>::lupL() const {
     if (_a == nullptr) { lupUpdate(); }
 
     assert(_a != nullptr);
@@ -277,7 +277,7 @@ NPMatrix<T> NPMatrix<T>::lupL() {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::lupU() {
+NPMatrix<T> NPMatrix<T>::lupU() const {
     if (_a == nullptr) { lupUpdate(); }
 
     assert(_a != nullptr);
@@ -379,7 +379,7 @@ void NPMatrix<T>::shiftCol(ul_t j, const long iterations) {
 
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::transposed() {
+NPMatrix<T> NPMatrix<T>::transposed() const {
     NPMatrix<T> temp{_j2 - _j1 + 1, _i2 - _i1 + 1};
 
     for (auto i = _i1; i <= _i2; ++i) {
@@ -443,7 +443,7 @@ void NPMatrix<T>::reduce() {
 }
 
 template<typename T>
-T NPMatrix<T>::det() {
+T NPMatrix<T>::det() const {
     T det = 0.0;
     if (_a == nullptr) { lupUpdate(); }
 
@@ -937,7 +937,7 @@ void NPMatrix<T>::solve(NVector<T> &vector) {
 // LUP MANAGEMENT
 
 template<typename T>
-void NPMatrix<T>::lupUpdate() {
+void NPMatrix<T>::lupUpdate() const {
     //Returns PA such as PA = LU where P is a row p array and A = L * U;
     ul_t i, j, k, i_max;
 
@@ -979,7 +979,7 @@ void NPMatrix<T>::lupUpdate() {
 }
 
 template<typename T>
-void NPMatrix<T>::lupCopy() {
+void NPMatrix<T>::lupCopy() const {
     if (_a != nullptr && _perm != nullptr) {
         _a = new NPMatrix<T>(*(_a));
         _perm = new std::vector<ul_t>(_n);
@@ -988,7 +988,7 @@ void NPMatrix<T>::lupCopy() {
 }
 
 template<typename T>
-void NPMatrix<T>::lupClear() {
+void NPMatrix<T>::lupClear() const {
     if (_a != nullptr) {
         delete _a;
         delete _perm;

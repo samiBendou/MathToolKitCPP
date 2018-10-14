@@ -6,21 +6,20 @@
 #define MATHTOOLKIT_NPARALLELEPIPED_H
 
 #include <NPMatrix.h>
+#include <math.h>
 
-#include "NCompact.h"
-#include "NSegment.h"
+#include <NCompact.h>
+#include <NSegment.h>
 
 class NParallelepiped : public NCompact {
 public:
-    NParallelepiped(NPMatrix<double> &base, const NVector<double> &_pos);
+    NParallelepiped(const mat_t &base, const vec_t &pos);
 
     std::string str() const override;
 
     std::vector<NSegment> segments() const;
 
-    double volume() const;
-
-    bool isIn(const NVector<double> &x) const override;
+    bool isIn(const vec_t &x) const override;
 
     bool isEmpty() const override;
 
@@ -32,11 +31,16 @@ public:
 
     NCompact *border() const override;
 
-    std::vector<NVector<double> > mesh(const NVector<double> &h) const override;
+    std::vector<vec_t > mesh(const vec_t &h) const override;
+
+    double vol() const;
 
 protected:
-    NPMatrix<double> _base;
-    NVector<double> _pos;
+
+    ul_t meshSize(const vec_t &h) const;
+
+    mat_t _base;
+    vec_t _pos;
     double _vol;
 };
 

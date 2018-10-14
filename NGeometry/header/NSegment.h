@@ -10,31 +10,31 @@
 #include "NCompact.h"
 
 
-class NSegment : NCompact {
+class NSegment : public NCompact {
 public:
-    explicit NSegment(const NVector<double> &a, const NVector<double> &b);
+    explicit NSegment(const vec_t &a, const vec_t &b);
 
     std::string str() const override;
 
-    NVector<double> a() const;
+    vec_t a() const;
 
-    NVector<double> b() const;
+    vec_t b() const;
 
-    void setA(const NVector<double> &a);
+    void setA(const vec_t &a);
 
-    void setB(const NVector<double> &b);
+    void setB(const vec_t &b);
 
-    std::vector<NVector<double> > mesh(double h) const;
+    std::vector<vec_t > mesh(double h) const;
 
-    std::vector<NVector<double> > mesh(const NVector<double> &h) const override;
+    std::vector<vec_t > mesh(const vec_t &h) const override;
 
-    bool isIn(const NVector<double> &x) const override;
+    bool isIn(const vec_t &x) const override;
 
     bool isEmpty() const override;
 
 protected:
-    NVector<double> _a;
-    NVector<double> _b;
+    vec_t _a;
+    vec_t _b;
 
 
     void uni(const NSet *set) override;

@@ -5,7 +5,7 @@
 		<Option title="MathToolKit"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\NAlgebra\;CMake Files\NAnalysis\;CMake Files\NGeometry\;CMake Files\TestsMathToolKitCPP\;CMake Files\TestsMathToolKitCPP\lib\;CMake Files\TestsMathToolKitCPP\lib\googletest\;CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\;CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\cmake\;CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\;CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\;CMake Files\TestsMathToolKitCPP\TestNAlgebra\;CMake Files\TestsMathToolKitCPP\TestNAnalysis\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\NAlgebra\;CMake Files\NAnalysis\;CMake Files\NGeometry\;CMake Files\TestsMathToolKitCPP\;CMake Files\TestsMathToolKitCPP\lib\;CMake Files\TestsMathToolKitCPP\lib\googletest\;CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\;CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\cmake\;CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\;CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\;CMake Files\TestsMathToolKitCPP\TestNAlgebra\;CMake Files\TestsMathToolKitCPP\TestNAnalysis\;CMake Files\TestsMathToolKitCPP\TestNGeometry\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
@@ -597,6 +597,62 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="TestNGeometry">
+				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/TestNGeometry" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
+					<Add option="-D__GLIBCXX__"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 TestNGeometry"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TestNGeometry/fast">
+				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/TestNGeometry" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
+					<Add option="-D__GLIBCXX__"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 TestNGeometry/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NPMatrix.h">
 			<Option target="NAlgebra"/>
@@ -694,6 +750,9 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAnalysis/TestNPField.cpp">
 			<Option target="TestNAnalysis"/>
 		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNGeometry/TestNParallelepiped.cpp">
+			<Option target="TestNGeometry"/>
+		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
@@ -756,6 +815,9 @@
 		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAnalysis/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\TestNAnalysis\"/>
+		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNGeometry/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\TestNGeometry\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

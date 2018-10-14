@@ -2,13 +2,15 @@
 // Created by Sami Dahoux on 06/05/2018.
 //
 
+#include <NParallelepiped.h>
+
 #include "../header/NParallelepiped.h"
 #include "../header/NSegment.h"
 
-NParallelepiped::NParallelepiped(NPMatrix<double> &base, const NVector<double> &pos) : NCompact(base.n()),
-                                                                                       _base(NPMatrix<double>(base)),
-                                                                                       _pos(pos),
-                                                                                       _vol(base.det()) {
+NParallelepiped::NParallelepiped(const mat_t &base, const vec_t &pos) : NCompact(base.n()),
+                                                                        _base(base),
+                                                                        _pos(pos),
+                                                                        _vol(base.det()) {
 
 }
 
@@ -25,9 +27,9 @@ std::string NParallelepiped::str() const {
 }
 
 
-bool NParallelepiped::isIn(const NVector<double> &x) const {
-    NVector<double> u = x - _pos;
-    NPMatrix<double> pInv = _base ^-1;
+bool NParallelepiped::isIn(const vec_t &x) const {
+    vec_t u = x - _pos;
+    mat_t pInv = _base ^-1;
     u = pInv * u;
     for (int k = 0; k < _dim; ++k) {
         if (u(k) > 1.0 || u(k) < 0.0) {
@@ -59,37 +61,37 @@ NCompact *NParallelepiped::border() const {
 }
 
 
-std::vector<NVector<double>> NParallelepiped::mesh(const NVector<double> &h) const {
-    const std::vector<NVector<double>> e = _base.cols();
-    const NVector<double> end = NVector<double>::sum(e);
-    const double tol = h.maxAbs();
+std::vector<vec_t> NParallelepiped::mesh(const vec_t &h) const {
+    std::vector<vec_t> e = _base.rows();
+    vec_t end = vec_t::sum(e);
 
-    std::vector<NVector<double>> mesh{};
-    NVector<double> x = NVector<double>::zeros(_dim);
+    ul_t mesh_size = meshSize(h);
 
-    while (x / end >= tol) {
-        mesh.push_back(x + _pos);
-        if ((x | e[0]) <= (e[0] | e[0])) {
-            x += h(0) * e[0];
+    std::vector<vec_t> mesh{};
+    vec_t x = vec_t::zeros(_dim);
+
+    for (int k = 0; k < mesh_size; ++k) {
+        mesh.push_back(_base * x + _pos);
+        if (x(0) <= 1) {
+            x(0) += h(0);
         }
-        for (int i = 0; i < _dim; ++i) {
-            if ((x | e[i]) > (e[i] | e[i])) {
-                for (int j = 0; j <= i; ++j) {
-                    x -= ((x | e[j]) / (e[j] | e[j])) * e[j];
+        for (ul_t i = 0; i < _dim; ++i) {
+            if (x(i) > 1) {
+                for (ul_t j = 0; j <= i; ++j) {
+                    x(j) = 0;
                 }
                 if (i < _dim - 1) {
-                    x += h(i + 1) * e[i + 1];
+                    x(i + 1) += h(i + 1);
                 }
             }
         }
     }
-    mesh.push_back(x + _pos);
     return mesh;
 }
 
 
 std::vector<NSegment> NParallelepiped::segments() const {
-    const std::vector<NVector<double> > e = _base.cols();
+    const std::vector<vec_t> e = _base.cols();
     std::vector<NSegment> seg;
     for (int k = 0; k < _dim; ++k) {
         seg.emplace_back(NSegment(_pos, _pos + e[k]));
@@ -97,9 +99,19 @@ std::vector<NSegment> NParallelepiped::segments() const {
     return seg;
 }
 
-double NParallelepiped::volume() const {
+double NParallelepiped::vol() const {
     return _vol;
 }
+
+ul_t NParallelepiped::meshSize(const vec_t &h) const {
+    ul_t res = 1;
+    for (int k = 0; k < _base.p(); ++k) {
+        res *= (ul_t) ceil(1 / abs(h(k)));
+    }
+    return res;
+}
+
+
 
 
 
