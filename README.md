@@ -6,7 +6,10 @@
 
 ### Current Version : 1.0
 
-MathToolKit is C++ maths framework. It provides libraries that ease N-dimensional scientifical calculation and simulation.
+MathToolKit is C++ maths framework. 
+It provides libraries that ease N-dimensional scientific calculation and simulation.
+Can be used in various domains such as applied maths, physics, economics... 
+The framework can be used to produce quickly and easily efficient C++ code. 
 
 - Linear algebra library (NAlgebra)
 
@@ -16,7 +19,7 @@ MathToolKit is C++ maths framework. It provides libraries that ease N-dimensiona
 
 - Designed to ease dynamic system simulation
 
-- High level syntax and functionality
+- High level syntax and functionality (numpy/Matlab like)
 
 - Complete integration of STL
 
@@ -24,50 +27,37 @@ MathToolKit is C++ maths framework. It provides libraries that ease N-dimensiona
 
 - Unit tested with googletest
 
-The framework can be used to produce quickly and easily efficient C++ code. 
-Can be used in production in various domains such as applied maths, physics, economics...
-
 ## NAlgebra
 
 #### Overview
 
-- Classic linear algebra objects such as euclidean vectors or dense matrices (tensors coming soon).
+- Matrix and vector classes.
 
-- Very large range of operations such as +, *, linear mapping, matrix inversions... look at TestNAlgebra directory to have an overview.
+- Manipulators : shift, swap, ...
 
-##### NVector
+- Linear Algebra : +, *, linear mapping, inversion, ...
 
-N-dimensional euclidean vectors :
-- Algebraical operations (E, +, *)
-- Swaps, shifts, max, min...
-- Classic vectors generator such as ones, zeros...
-  
-##### NPMatrix
-
-NxP dense matrices :
-- Algebraical operations such as matrix product, linear map, gauss jordan elimination. 
-- Setters (row, col) & getters (row, col), swappers, shift. 
-- Classic matrix generators such as ones, zeros...
-- Optimized inversion, determinant and solve using LU decomposition.
-- Trace, power, ...
-- Classic matrix generators such as eye, diag, scalar...
-  
-  
-##### Vector3
-
-3D Space vectors. Featuring cross product, coordinate transforms and rotations.
+- Generators : eye, ones, diag, ...
   
  ### NAnalysis
  
  #### Overview
  
- Representing numerical vector fields in finite dimension vector space. WIP.
+- Representing numerical vector fields.
+
+- Easy ode solving.
+
+- Create your own fields by overloading NPField class g(u) function.
+
+- Calculate fields on compact numerical domains.
  
  ### NGeometry
  
  #### Overview
  
- Representing compact domains in N-dimension and mesh theses. WIP.
+ - Representing compact numerical domains.
+ 
+ - Create mesh of domains.
  
  ### Compatibility
  
