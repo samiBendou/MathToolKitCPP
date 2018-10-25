@@ -39,16 +39,16 @@ NVector<T>::NVector(const std::string &str) :
 
 template<typename T>
 string NVector<T>::str() const {
-    string str = "(";
-    char buffer[6];
+    stringstream stream;
+
+    stream << '(';
     for (auto k = _k1; k <= _k2; ++k) {
-        sprintf(buffer, "%.2e", abs((*this)[k]));
-        str += ((*this)[k] >= 0 ? "  " : " -");
-        str += buffer;
+        stream << ((*this)[k] >= 0 ? ' ' : '-');
+        stream << (*this)[k];
     }
-    str += "  )";
+    stream << " )";
     setDefaultBrowseIndices();
-    return str;
+    return stream.str();
 }
 
 // GETTERS
@@ -339,12 +339,12 @@ bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
 template<typename T>
 NVector<T> NVector<T>::zeros(ul_t dim) {
-    return scalar(0.0, dim);
+    return scalar(0, dim);
 }
 
 template<typename T>
 NVector<T> NVector<T>::ones(ul_t dim) {
-    return scalar(1.0, dim);
+    return scalar(1, dim);
 }
 
 template<typename T>
@@ -474,14 +474,14 @@ bool NVector<T>::isValidIndex(ul_t k) const {
 
 template<typename T>
 bool NVector<T>::isNull() const {
-    return norm() < EPSILON;
+    return norm() <= EPSILON;
 }
 
 template<typename T>
 bool NVector<T>::isEqual(const NVector<T> &u) const {
     if (!hasSameSize(u))
         return false;
-    return distance(u) < EPSILON;
+    return distance(u) <= EPSILON;
 }
 
 template<typename T>
@@ -502,7 +502,7 @@ bool NVector<T>::hasDefaultBrowseIndices() const {
 template<typename T>
 void NVector<T>::setDefaultBrowseIndices() const {
     _k1 = 0;
-    _k2 = (this->size() > 0) ? this->size() - 1 : 0;
+    _k2 = (!this->empty()) ? this->size() - 1 : 0;
 }
 
 // AFFECTATION
@@ -528,7 +528,7 @@ void NVector<T>::parse(const std::string &str) {
     string::size_type sz = 1;
     ul_t i = 0;
 
-    assert(str.find(",") == string::npos);
+    assert(str.find(',') == string::npos);
 
     while (i < str.size() && str[i] != ')') {
         try {
@@ -571,6 +571,11 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
 template
 class NVector<double>;
 
+template
+class NVector<char>;
+
+template
+class NVector<AESByte>;
 
 
 

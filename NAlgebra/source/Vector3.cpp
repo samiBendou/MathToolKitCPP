@@ -2,7 +2,7 @@
 // Created by Sami Dahoux on 04/05/2018.
 //
 
-#include "../header/Vector3.h"
+#include <Vector3.h>
 
 Vector3::Vector3(const NVector &vector) : NVector(vector) {
 

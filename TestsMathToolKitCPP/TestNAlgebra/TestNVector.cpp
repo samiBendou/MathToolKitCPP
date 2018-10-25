@@ -67,7 +67,7 @@ TEST_F(NVectorTest, Serialization) {
 
     ASSERT_EQ(_u, "(1 0 0)");
 
-    ASSERT_EQ(_u.str(), "(  1.00e+00  0.00e+00  0.00e+00  )");
+    ASSERT_EQ(_u.str(), "( 1 0 0 )");
 
     ASSERT_EQ(vec_t(_u.str()), _u);
 

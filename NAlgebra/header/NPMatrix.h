@@ -623,6 +623,7 @@ protected:
 };
 
 typedef NPMatrix<double> mat_t;
-
+typedef NPMatrix<char> mat_char_t;
+typedef NPMatrix<AESByte> mat_aes_t;
 
 #endif //MATHTOOLKIT_NPMATRIX_H

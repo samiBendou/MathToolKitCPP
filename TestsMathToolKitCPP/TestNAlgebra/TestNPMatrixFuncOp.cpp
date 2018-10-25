@@ -243,11 +243,9 @@ TEST_F(NPMatrixFuncOpTest, Det) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Solve) {
-    vec_t u{"(1 2 5)"}, sol{"(4 5)"};
+    const vec_t u{"(1 2 5)"}, sol = vec_t("(4 5)") / 3;
     mat_t copy_b0011{_b(0, 0, 1, 1)};
 
-    sol /= 3;
-
-    EXPECT_NEAR(_b(0, 0, 1, 1) * (copy_b0011 % u(0, 1)) / u(0, 1), 0, 2.2204460492503131e-16);
-    ASSERT_NEAR(_b(0, 0, 1, 1) % u(0, 1) / sol, 0, 2.2204460492503131e-16);
+    EXPECT_NEAR(_b(0, 0, 1, 1) * (copy_b0011 % u(0, 1)) / u(0, 1), 0, 5e-16);
+    ASSERT_NEAR(_b(0, 0, 1, 1) % u(0, 1) / sol, 0, 5e-16);
 }
