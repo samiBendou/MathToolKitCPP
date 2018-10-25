@@ -41,14 +41,20 @@ NPMatrix<T>::NPMatrix(const NPMatrix<T> &m) : NVector<T>(0),
 }
 
 template<typename T>
-NPMatrix<T>::NPMatrix(const string &str) : NVector<T>(0),
-                                           _n(0), _p(0),
-                                           _i1(0), _j1(0), _i2(0), _j2(0),
-                                           _a(nullptr), _perm(nullptr) {
+NPMatrix<T>::NPMatrix(initializer_list<initializer_list<T>> list): NVector<T>((list.size() * list.begin()->size())),
+                                                                   _n(list.size()), _p(list.begin()->size()),
+                                                                   _i1(0), _j1(0), _i2(0), _j2(0),
+                                                                   _a(nullptr), _perm(nullptr) {
 
-    parse(str);
+    ul_t i = 0;
+    for (auto it = list.begin(); it != list.end(); ++it) {
+
+        assert(it->size() == list.begin()->size());
+
+        setRow(*it, i);
+        ++i;
+    }
     setDefaultBrowseIndices();
-
 }
 
 template<typename T>
@@ -66,7 +72,7 @@ NPMatrix<T>::NPMatrix(const NVector<T> &u, ul_t n, ul_t p) : NVector<T>(u),
                                                              _i1(0), _j1(0), _i2(0), _j2(0),
                                                              _a(nullptr), _perm(nullptr) {
 
-    assert(u.dim() == _n * _p);
+    assert(this->dim() == _n * _p);
     setDefaultBrowseIndices();
 }
 
@@ -93,20 +99,14 @@ NPMatrix<T>::~NPMatrix() {
 
 template<typename T>
 string NPMatrix<T>::str() const {
-    string str = "\n";
-    char buffer[6];
-    for (ul_t i = _i1; i <= _i2; ++i) {
-        str.append("(");
-        for (ul_t j = _j1; j <= _j2; ++j) {
-            sprintf(buffer, "%.2e", abs((*this)(i, j)));
-            str.append(((*this)(i, j) >= 0 ? "  " : " -"));
-            str.append(buffer);
-        }
-        str.append("  )\n");
-    }
+    stringstream stream;
 
+    for (ul_t i = _i1; i <= _i2; ++i) {
+        stream << "\n";
+        stream << row(i)(_j1, _j2);
+    }
     setDefaultBrowseIndices();
-    return str;
+    return stream.str();
 }
 
 
@@ -591,12 +591,6 @@ NPMatrix<T> &NPMatrix<T>::operator=(const NPMatrix<T> &m) {
     return *this;
 }
 
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator=(const string &str) {
-    parse(str);
-    return *this;
-}
-
 // STATIC FUNCTIONS
 
 template<typename T>
@@ -755,11 +749,13 @@ void NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
     vector<NVector<T> > vector_cols = m.cols();
 
     NPMatrix<T> res = NPMatrix<T>::zeros(_i2 - _i1 + 1, m._j2 - m._j1 + 1);
+
     for (ul_t i = _i1; i <= _i2; ++i) {
         for (ul_t j = m._j1; j <= m._j2; ++j) {
             res(i - _i1, j - m._j1) = vector_rows[i](_j1, _j2) | vector_cols[j](m._i1, m._i2);
         }
     }
+
     this->copy(res);
     lupClear();
 }
@@ -771,13 +767,10 @@ void NPMatrix<T>::add(const NPMatrix<T> &m) {
 
     assert(hasSameSize(m));
 
-
-    typename std::vector<T>::iterator begin, end;
-
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
-        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
-        std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::plus<T>());
+        for (ul_t j = 0; j <= _j2 - _j1; ++j) {
+            (*this)(i + _i1, j + _j1) += m(i + m._i1, j + m._j1);
+        }
     }
 
     setDefaultBrowseIndices();
@@ -792,26 +785,23 @@ void NPMatrix<T>::sub(const NPMatrix<T> &m) {
     typename std::vector<T>::iterator begin, end;
 
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
-        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
-        std::transform(begin, end, m.begin() + m.vectorIndex(i + m._i1, m._j1), begin, std::minus<T>());
+        for (ul_t j = 0; j <= _j2 - _j1; ++j) {
+            (*this)(i + _i1, j + _j1) -= m(i + m._i1, j + m._j1);
+        }
     }
 
     setDefaultBrowseIndices();
     m.setDefaultBrowseIndices();
     lupClear();
- }
+}
 
 template<typename T>
 void NPMatrix<T>::opp() {
 
-    typename std::vector<T>::iterator begin, end;
-
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
-        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
-        std::transform(begin, end, begin, std::negate<T>());
+        for (ul_t j = 0; j <= _j2 - _j1; ++j) {
+            (*this)(i + _i1, j + _j1) = -(*this)(i + _i1, j + _j1);
+        }
     }
 
     setDefaultBrowseIndices();
@@ -821,14 +811,10 @@ void NPMatrix<T>::opp() {
 
 template<typename T>
 void NPMatrix<T>::prod(T s) {
-
-    typename std::vector<T>::iterator begin, end;
-
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
-        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
-        std::transform(begin, end, begin,
-                std::bind(std::multiplies<T>(), std::placeholders::_1, s));
+        for (ul_t j = 0; j <= _j2 - _j1; ++j) {
+            (*this)(i + _i1, j + _j1) *= s;
+        }
     }
 
     setDefaultBrowseIndices();
@@ -837,16 +823,11 @@ void NPMatrix<T>::prod(T s) {
 
 template<typename T>
 void NPMatrix<T>::div(T s) {
-
-    typename std::vector<T>::iterator begin, end;
-
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
-        end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
-        std::transform(begin, end, begin,
-                       std::bind(std::divides<T>(), std::placeholders::_1, s));
+        for (ul_t j = 0; j <= _j2 - _j1; ++j) {
+            (*this)(i + _i1, j + _j1) /= s;
+        }
     }
-
     setDefaultBrowseIndices();
     lupClear();
 }
@@ -1082,21 +1063,6 @@ void NPMatrix<T>::copy(const NPMatrix<T> &m) {
 }
 
 template<typename T>
-void NPMatrix<T>::parse(const string &str) {
-
-    string copy_str{str};
-    std::vector<NVector<T> > rows;
-
-    ul_t pos_par;
-    while ((pos_par = copy_str.find(')')) != string::npos) {
-        rows.push_back(NVector<T>(copy_str.substr(0, pos_par)));
-        copy_str.erase(copy_str.begin(), copy_str.begin() + pos_par + 1);
-    }
-
-    this->copy(NPMatrix<T>(rows));
-}
-
-template<typename T>
 ul_t NPMatrix<T>::vectorIndex(ul_t i, ul_t j) const {
     return _p * i + j;
 }
@@ -1142,10 +1108,15 @@ void NPMatrix<T>::setSubMatrix(const NPMatrix<T> &m) {
     m.setDefaultBrowseIndices();
 }
 
+
 template
 class NPMatrix<double>;
 
+template
+class NPMatrix<char>;
 
+template
+class NPMatrix<AESByte>;
 
 
 

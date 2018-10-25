@@ -8,815 +8,803 @@
 		<Option virtualFolders="CMake Files\;CMake Files\NAlgebra\;CMake Files\NAnalysis\;CMake Files\NGeometry\;CMake Files\TestsMathToolKitCPP\;CMake Files\TestsMathToolKitCPP\lib\;CMake Files\TestsMathToolKitCPP\lib\googletest\;CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\;CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\cmake\;CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\;CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\;CMake Files\TestsMathToolKitCPP\TestNAlgebra\;CMake Files\TestsMathToolKitCPP\TestNAnalysis\;CMake Files\TestsMathToolKitCPP\TestNGeometry\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/local">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/strip">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MathToolKit">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/MathToolKit" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/MathToolKit.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="MathToolKit/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/MathToolKit" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/MathToolKit.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 MathToolKit/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="install">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="list_install_components">
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NAlgebra">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/libNAlgebra.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/libNAlgebra.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 NAlgebra"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 NAlgebra"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NAlgebra/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/libNAlgebra.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/libNAlgebra.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 NAlgebra/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 NAlgebra/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NAnalysis">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/libNAnalysis.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/libNAnalysis.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 NAnalysis"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 NAnalysis"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NAnalysis/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/libNAnalysis.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/libNAnalysis.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 NAnalysis/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 NAnalysis/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NGeometry">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/libNGeometry.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/libNGeometry.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 NGeometry"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 NGeometry"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="NGeometry/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/libNGeometry.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/libNGeometry.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 NGeometry/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gmock">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/libgmockd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="gmock/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/libgmockd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 NGeometry/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/NGeometry/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gmock_main/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgmock_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="gtest_main">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
+			<Target title="gmock">
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="gtest_main/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
+			<Target title="gmock/fast">
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgmockd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/lib/googletest/googlemock/gtest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TestNAlgebra">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
-					<Add option="-D__GLIBCXX__"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 TestNAlgebra"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 TestNAlgebra"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TestNAlgebra/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
-					<Add option="-D__GLIBCXX__"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 TestNAlgebra/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 TestNAlgebra/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAlgebra/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TestNAnalysis">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/TestNAnalysis" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/TestNAnalysis.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
-					<Add option="-D__GLIBCXX__"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 TestNAnalysis"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 TestNAnalysis"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TestNAnalysis/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/TestNAnalysis" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/TestNAnalysis.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
-					<Add option="-D__GLIBCXX__"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 TestNAnalysis/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 TestNAnalysis/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNAnalysis/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TestNGeometry">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/TestNGeometry" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/TestNGeometry.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
-					<Add option="-D__GLIBCXX__"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 TestNGeometry"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 TestNGeometry"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TestNGeometry/fast">
-				<Option output="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/TestNGeometry" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry"/>
+				<Option output="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/TestNGeometry.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DGTEST_USE_OWN_TR1_TUPLE"/>
-					<Add option="-D__GLIBCXX__"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
-					<Add directory="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/include"/>
+					<Add directory="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 TestNGeometry/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 TestNGeometry/fast"/>
+					<CompileFile command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/TestsMathToolKitCPP/TestNGeometry/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NPMatrix.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/AESByte.h">
 			<Option target="NAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/NVector.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/NPMatrix.h">
 			<Option target="NAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/header/Vector3.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/NVector.h">
 			<Option target="NAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/Vector3.h">
 			<Option target="NAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/NVector.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/source/AESByte.cpp">
 			<Option target="NAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/source/Vector3.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp">
 			<Option target="NAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/NConstantField.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/source/NVector.cpp">
+			<Option target="NAlgebra"/>
+		</Unit>
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/source/Vector3.cpp">
+			<Option target="NAlgebra"/>
+		</Unit>
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header/NConstantField.h">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/NOde.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header/NOde.h">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/NPField.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header/NPField.h">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/header/SNewtonianField.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/header/SNewtonianField.h">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NConstantField.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/source/NConstantField.cpp">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NOde.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/source/NOde.cpp">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/NPField.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/source/NPField.cpp">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/source/SNewtonianField.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/source/SNewtonianField.cpp">
 			<Option target="NAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NCompact.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NCompact.h">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NDSet.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NDSet.h">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NParallelepiped.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NParallelepiped.h">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NSegment.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NSegment.h">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/header/NSet.h">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NSet.h">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NDSet.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NDSet.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NParallelepiped.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NParallelepiped.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNPMatrix.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNVector.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrixFuncOp.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNVector.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrixFuncOp.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNVectorFuncOp.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNVector.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestVector3.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNVectorFuncOp.cpp">
-			<Option target="TestNAlgebra"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestVector3.cpp">
-			<Option target="TestNAlgebra"/>
-		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAnalysis/TestNPField.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAnalysis/TestNPField.cpp">
 			<Option target="TestNAnalysis"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNGeometry/TestNParallelepiped.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNGeometry/TestNParallelepiped.cpp">
 			<Option target="TestNGeometry"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/src/gmock-all.cc">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/src/gmock_main.cc">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/src/gmock_main.cc">
 			<Option target="gmock_main"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/src/gtest-all.cc">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/src/gtest_main.cc">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/main.cpp">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/main.cpp">
 			<Option target="MathToolKit"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAlgebra/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\NAlgebra\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NAnalysis/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAnalysis/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\NAnalysis\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\NGeometry\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/cmake/gmock.pc.in">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/cmake/gmock.pc.in">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/cmake/gmock_main.pc.in">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googlemock/cmake/gmock_main.pc.in">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googlemock\cmake\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/Config.cmake.in">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/Config.cmake.in">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/gtest.pc.in">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/gtest.pc.in">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/gtest_main.pc.in">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/gtest_main.pc.in">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/internal_utils.cmake">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/lib/googletest/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\lib\googletest\googletest\cmake\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\TestNAlgebra\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAnalysis/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAnalysis/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\TestNAnalysis\"/>
 		</Unit>
-		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNGeometry/CMakeLists.txt">
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNGeometry/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\TestsMathToolKitCPP\TestNGeometry\"/>
 		</Unit>
 	</Project>

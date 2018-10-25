@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MathToolKit.dir/main.cpp.o"
+  "CMakeFiles/MathToolKit.dir/main.cpp.obj"
   "MathToolKit.pdb"
-  "MathToolKit"
+  "MathToolKit.exe"
+  "MathToolKit.exe.manifest"
+  "libMathToolKit.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

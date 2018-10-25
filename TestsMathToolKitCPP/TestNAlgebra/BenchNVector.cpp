@@ -25,22 +25,6 @@ protected:
     vec_t _v;
 };
 
-TEST_F(NVectorBenchTest, Serialization) {
-    _t0 = clock();
-    _u.str();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "SERIALIZATION ELAPSED TIME (sec) : " << _elapsed_time << endl;
-
-    _t0 = clock();
-    _u = _v.str();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "DESERIALIZATION ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
-}
-
 TEST_F(NVectorBenchTest, Add) {
     _t0 = clock();
     _u += _v;
