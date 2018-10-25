@@ -1064,7 +1064,7 @@ void NPMatrix<T>::copy(const NPMatrix<T> &m) {
 
 template<typename T>
 void NPMatrix<T>::parse(const string &str) {
-
+    /*
     string copy_str{str};
     std::vector<NVector<T> > rows;
 
@@ -1075,6 +1075,7 @@ void NPMatrix<T>::parse(const string &str) {
     }
 
     this->copy(NPMatrix<T>(rows));
+     */
 }
 
 template<typename T>

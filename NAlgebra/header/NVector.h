@@ -42,8 +42,6 @@
 typedef unsigned long ul_t;
 
 
-
-
 template<typename T>
 
 
@@ -60,6 +58,8 @@ public:
      */
     NVector(const std::vector<T> &data);
 
+    NVector(std::initializer_list<T> list);
+
     NVector(const NVector<T> &u);
 
     /**
@@ -68,13 +68,6 @@ public:
      *          to create a vector.
      */
     explicit NVector(ul_t dim = 0);
-
-    /**
-     *
-     * @param   str a string containing the components of vector in the form "(0 1 2)".
-     *          The character '(' and ')' can't be replaced. Use spaces to separate values.
-     */
-    explicit NVector(const std::string &str);
 
     // SERIALIZATION
 
@@ -298,7 +291,7 @@ public:
      */
     NVector<T> &operator=(const NVector<T> &u);
 
-    NVector<T> &operator=(const std::string &str);
+    //NVector<T> &operator=(const std::string &str);
 
     // NORM BASED COMPARISON OPERATORS
 
@@ -310,14 +303,6 @@ public:
     friend bool operator==(const NVector<T> &u, const NVector<T> &v) {
         bool result = u.isEqual(v);
         return result;
-    }
-
-    friend bool operator==(const NVector<T> &u, const std::string &str) {
-        return u == NVector<T>(str);
-    }
-
-    friend bool operator==(const std::string &str, const NVector<T> &u) {
-        return u == str;
     }
 
     /**
