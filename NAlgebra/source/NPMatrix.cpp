@@ -809,7 +809,6 @@ void NPMatrix<T>::opp() {
 
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         begin = this->begin() + vectorIndex(i + _i1, _j1);
-        begin = this->begin() + vectorIndex(i + _i1, _j1);
         end = this->begin() + vectorIndex(i + _i1, _j2) + 1;
         std::transform(begin, end, begin, std::negate<T>());
     }

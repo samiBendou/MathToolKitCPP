@@ -312,7 +312,7 @@ TEST_F(NPMatrixTest, LUP) {
 
     };
     expect_lup_up(2, 2) = 4.0 / 3.0;
-    ASSERT_NEAR(b_lup_up / expect_lup_up, 0, 2.2204460492503131e-16);
+    ASSERT_NEAR(b_lup_up / expect_lup_up, 0, 5e-16);
 
     ASSERT_EQ(b_lup_low * b_lup_up, _b);
 }
@@ -326,7 +326,7 @@ TEST_F(NPMatrixTest, Inv) {
 
     ASSERT_EQ(_a ^ -1, _a);
     ASSERT_EQ(_b ^ -1, expect_b_inv);
-    ASSERT_NEAR(_b * (_b ^ -1) / expect_a, 0, 2.5589376332604516e-16);
+    ASSERT_NEAR(_b * (_b ^ -1) / expect_a, 0, 5e-16);
 }
 
 TEST_F(NPMatrixTest, Det) {
@@ -343,8 +343,8 @@ TEST_F(NPMatrixTest, Det) {
 TEST_F(NPMatrixTest, Solve) {
     vec_t u{"(1 2 5)"}, expect_sol{"(3 5 5)"};
 
-    ASSERT_NEAR(_b % u / expect_sol, 0, 1.3322676295501878e-15);
-    ASSERT_NEAR(_b * (_b % u) / u, 0, 1.2560739669470201e-15);
+    ASSERT_NEAR(_b % u / expect_sol, 0, 5e-15);
+    ASSERT_NEAR(_b * (_b % u) / u, 0, 5e-15);
 }
 
 TEST_F(NPMatrixTest, StaticGenerators) {
