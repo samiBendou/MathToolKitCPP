@@ -419,8 +419,6 @@ protected:
 
     void copy(const NVector<T> &u);
 
-    virtual void parse(const std::string &str);
-
     //SUB-VECTORS
 
     NVector<T> subVector(ul_t k1, ul_t k2) const;

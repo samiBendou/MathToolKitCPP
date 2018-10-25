@@ -720,12 +720,6 @@
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNPMatrix.cpp">
-			<Option target="TestNAlgebra"/>
-		</Unit>
-		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNVector.cpp">
-			<Option target="TestNAlgebra"/>
-		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>

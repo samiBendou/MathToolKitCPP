@@ -68,7 +68,7 @@ TEST_F(NVectorTest, Affectation) {
 }
 
 TEST_F(NVectorTest, Serialization) {
-    ASSERT_EQ(_u.array(), std::vector<double>({1, 0, 0}););
+    ASSERT_EQ(_u.array(), std::vector<double>({1, 0, 0}));
 }
 
 TEST_F(NVectorTest, Add) {

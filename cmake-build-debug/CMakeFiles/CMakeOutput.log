@@ -28,32 +28,32 @@ The CXX compiler identification is GNU, found in "D:/Users/Bendou/CLionProjects/
 Determining if the C compiler works passed with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_d089c/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_d089c.dir\build.make CMakeFiles/cmTC_d089c.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_22df3/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_22df3.dir\build.make CMakeFiles/cmTC_22df3.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d089c.dir/testCCompiler.c.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_d089c.dir\testCCompiler.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
-Linking C executable cmTC_d089c.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d089c.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_d089c.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_d089c.dir/objects.a @CMakeFiles\cmTC_d089c.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_d089c.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d089c.exe -Wl,--out-implib,libcmTC_d089c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_d089c.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_22df3.dir/testCCompiler.c.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_22df3.dir\testCCompiler.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_22df3.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_22df3.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_22df3.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_22df3.dir/objects.a @CMakeFiles\cmTC_22df3.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_22df3.dir/objects.a -Wl,--no-whole-archive  -o cmTC_22df3.exe -Wl,--out-implib,libcmTC_22df3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_22df3.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_ce33c/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_ce33c.dir\build.make CMakeFiles/cmTC_ce33c.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_3d37f/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_3d37f.dir\build.make CMakeFiles/cmTC_3d37f.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ce33c.dir/CMakeCCompilerABI.c.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_ce33c.dir\CMakeCCompilerABI.c.obj   -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCCompilerABI.c
-Linking C executable cmTC_ce33c.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_ce33c.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_ce33c.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_ce33c.dir/objects.a @CMakeFiles\cmTC_ce33c.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_ce33c.dir/objects.a -Wl,--no-whole-archive  -o cmTC_ce33c.exe -Wl,--out-implib,libcmTC_ce33c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Building C object CMakeFiles/cmTC_3d37f.dir/CMakeCCompilerABI.c.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_3d37f.dir\CMakeCCompilerABI.c.obj   -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCCompilerABI.c
+Linking C executable cmTC_3d37f.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_3d37f.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_3d37f.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_3d37f.dir/objects.a @CMakeFiles\cmTC_3d37f.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_3d37f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3d37f.exe -Wl,--out-implib,libcmTC_3d37f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe
 COLLECT_LTO_WRAPPER=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe
@@ -63,9 +63,9 @@ Thread model: posix
 gcc version 8.1.0 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 
 COMPILER_PATH=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/bin/
 LIBRARY_PATH=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ce33c.exe' '-mtune=generic' '-march=i686'
- D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccTjGIIg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_ce33c.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_ce33c.dir/objects.a --no-whole-archive --out-implib libcmTC_ce33c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ce33c.exe' '-mtune=generic' '-march=i686'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3d37f.exe' '-mtune=generic' '-march=i686'
+ D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccAfVbjl.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_3d37f.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_3d37f.dir/objects.a --no-whole-archive --out-implib libcmTC_3d37f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3d37f.exe' '-mtune=generic' '-march=i686'
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -73,16 +73,16 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_ce33c/fast"]
-  ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_ce33c.dir\build.make CMakeFiles/cmTC_ce33c.dir/build]
+  ignore line: [Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_3d37f/fast"]
+  ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_3d37f.dir\build.make CMakeFiles/cmTC_3d37f.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_ce33c.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_ce33c.dir\CMakeCCompilerABI.c.obj   -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_ce33c.exe]
-  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_ce33c.dir\link.txt --verbose=1]
-  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_ce33c.dir/objects.a]
-  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_ce33c.dir/objects.a @CMakeFiles\cmTC_ce33c.dir\objects1.rsp]
-  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_ce33c.dir/objects.a -Wl,--no-whole-archive  -o cmTC_ce33c.exe -Wl,--out-implib,libcmTC_ce33c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Building C object CMakeFiles/cmTC_3d37f.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe    -o CMakeFiles\cmTC_3d37f.dir\CMakeCCompilerABI.c.obj   -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_3d37f.exe]
+  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_3d37f.dir\link.txt --verbose=1]
+  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_3d37f.dir/objects.a]
+  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_3d37f.dir/objects.a @CMakeFiles\cmTC_3d37f.dir\objects1.rsp]
+  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_3d37f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3d37f.exe -Wl,--out-implib,libcmTC_3d37f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe]
@@ -99,13 +99,13 @@ Parsed C implicit link information from above output:
   ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib/]
   ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/]
   ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ce33c.exe' '-mtune=generic' '-march=i686']
-  link line: [ D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccTjGIIg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_ce33c.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_ce33c.dir/objects.a --no-whole-archive --out-implib libcmTC_ce33c.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3d37f.exe' '-mtune=generic' '-march=i686']
+  link line: [ D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccAfVbjl.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_3d37f.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_3d37f.dir/objects.a --no-whole-archive --out-implib libcmTC_3d37f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o]
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccTjGIIg.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccAfVbjl.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -129,7 +129,7 @@ Parsed C implicit link information from above output:
     arg [i386pe] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_ce33c.exe] ==> ignore
+    arg [cmTC_3d37f.exe] ==> ignore
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o] ==> ignore
     arg [-LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0] ==> dir [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0]
@@ -139,10 +139,10 @@ Parsed C implicit link information from above output:
     arg [-LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib] ==> dir [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib]
     arg [-LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../..] ==> dir [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_ce33c.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_3d37f.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_ce33c.dll.a] ==> ignore
+    arg [libcmTC_3d37f.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -186,16 +186,16 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_6dd85/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_6dd85.dir\build.make CMakeFiles/cmTC_6dd85.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_e3a56/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_e3a56.dir\build.make CMakeFiles/cmTC_e3a56.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6dd85.dir/feature_tests.c.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe   -std=c11 -o CMakeFiles\cmTC_6dd85.dir\feature_tests.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.c
-Linking C executable cmTC_6dd85.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_6dd85.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_6dd85.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_6dd85.dir/objects.a @CMakeFiles\cmTC_6dd85.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_6dd85.dir/objects.a -Wl,--no-whole-archive  -o cmTC_6dd85.exe -Wl,--out-implib,libcmTC_6dd85.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_6dd85.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_e3a56.dir/feature_tests.c.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe   -std=c11 -o CMakeFiles\cmTC_e3a56.dir\feature_tests.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_e3a56.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_e3a56.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_e3a56.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_e3a56.dir/objects.a @CMakeFiles\cmTC_e3a56.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_e3a56.dir/objects.a -Wl,--no-whole-archive  -o cmTC_e3a56.exe -Wl,--out-implib,libcmTC_e3a56.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_e3a56.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -208,16 +208,16 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_a660e/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_a660e.dir\build.make CMakeFiles/cmTC_a660e.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_4bc99/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_4bc99.dir\build.make CMakeFiles/cmTC_4bc99.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a660e.dir/feature_tests.c.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe   -std=c99 -o CMakeFiles\cmTC_a660e.dir\feature_tests.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.c
-Linking C executable cmTC_a660e.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_a660e.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_a660e.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_a660e.dir/objects.a @CMakeFiles\cmTC_a660e.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_a660e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_a660e.exe -Wl,--out-implib,libcmTC_a660e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_a660e.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_4bc99.dir/feature_tests.c.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe   -std=c99 -o CMakeFiles\cmTC_4bc99.dir\feature_tests.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_4bc99.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_4bc99.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_4bc99.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_4bc99.dir/objects.a @CMakeFiles\cmTC_4bc99.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_4bc99.dir/objects.a -Wl,--no-whole-archive  -o cmTC_4bc99.exe -Wl,--out-implib,libcmTC_4bc99.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_4bc99.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -230,16 +230,16 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_ad8ac/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_ad8ac.dir\build.make CMakeFiles/cmTC_ad8ac.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_3e558/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_3e558.dir\build.make CMakeFiles/cmTC_3e558.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ad8ac.dir/feature_tests.c.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe   -std=c90 -o CMakeFiles\cmTC_ad8ac.dir\feature_tests.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.c
-Linking C executable cmTC_ad8ac.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_ad8ac.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_ad8ac.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_ad8ac.dir/objects.a @CMakeFiles\cmTC_ad8ac.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_ad8ac.dir/objects.a -Wl,--no-whole-archive  -o cmTC_ad8ac.exe -Wl,--out-implib,libcmTC_ad8ac.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_ad8ac.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_3e558.dir/feature_tests.c.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe   -std=c90 -o CMakeFiles\cmTC_3e558.dir\feature_tests.c.obj   -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.c
+Linking C executable cmTC_3e558.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_3e558.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_3e558.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_3e558.dir/objects.a @CMakeFiles\cmTC_3e558.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_3e558.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3e558.exe -Wl,--out-implib,libcmTC_3e558.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_3e558.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -250,32 +250,32 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Determining if the CXX compiler works passed with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_b11e3/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_b11e3.dir\build.make CMakeFiles/cmTC_b11e3.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_80935/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_80935.dir\build.make CMakeFiles/cmTC_80935.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b11e3.dir/testCXXCompiler.cxx.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -o CMakeFiles\cmTC_b11e3.dir\testCXXCompiler.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
-Linking CXX executable cmTC_b11e3.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_b11e3.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_b11e3.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_b11e3.dir/objects.a @CMakeFiles\cmTC_b11e3.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_b11e3.dir/objects.a -Wl,--no-whole-archive  -o cmTC_b11e3.exe -Wl,--out-implib,libcmTC_b11e3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b11e3.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_80935.dir/testCXXCompiler.cxx.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -o CMakeFiles\cmTC_80935.dir\testCXXCompiler.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_80935.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_80935.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_80935.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_80935.dir/objects.a @CMakeFiles\cmTC_80935.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_80935.dir/objects.a -Wl,--no-whole-archive  -o cmTC_80935.exe -Wl,--out-implib,libcmTC_80935.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_80935.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_44a65/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_44a65.dir\build.make CMakeFiles/cmTC_44a65.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_07598/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_07598.dir\build.make CMakeFiles/cmTC_07598.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_44a65.dir/CMakeCXXCompilerABI.cpp.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -o CMakeFiles\cmTC_44a65.dir\CMakeCXXCompilerABI.cpp.obj -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_44a65.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_44a65.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_44a65.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_44a65.dir/objects.a @CMakeFiles\cmTC_44a65.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -v -Wl,--whole-archive CMakeFiles\cmTC_44a65.dir/objects.a -Wl,--no-whole-archive  -o cmTC_44a65.exe -Wl,--out-implib,libcmTC_44a65.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Building CXX object CMakeFiles/cmTC_07598.dir/CMakeCXXCompilerABI.cpp.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -o CMakeFiles\cmTC_07598.dir\CMakeCXXCompilerABI.cpp.obj -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_07598.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_07598.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_07598.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_07598.dir/objects.a @CMakeFiles\cmTC_07598.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -v -Wl,--whole-archive CMakeFiles\cmTC_07598.dir/objects.a -Wl,--no-whole-archive  -o cmTC_07598.exe -Wl,--out-implib,libcmTC_07598.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE
 COLLECT_LTO_WRAPPER=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe
@@ -285,9 +285,9 @@ Thread model: posix
 gcc version 8.1.0 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 
 COMPILER_PATH=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/bin/
 LIBRARY_PATH=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/;D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_44a65.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
- D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccqwgceg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_44a65.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_44a65.dir/objects.a --no-whole-archive --out-implib libcmTC_44a65.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_44a65.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_07598.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccKAYCqB.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_07598.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_07598.dir/objects.a --no-whole-archive --out-implib libcmTC_07598.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_07598.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -295,16 +295,16 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_44a65/fast"]
-  ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_44a65.dir\build.make CMakeFiles/cmTC_44a65.dir/build]
+  ignore line: [Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_07598/fast"]
+  ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_07598.dir\build.make CMakeFiles/cmTC_07598.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_44a65.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -o CMakeFiles\cmTC_44a65.dir\CMakeCXXCompilerABI.cpp.obj -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_44a65.exe]
-  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_44a65.dir\link.txt --verbose=1]
-  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_44a65.dir/objects.a]
-  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_44a65.dir/objects.a @CMakeFiles\cmTC_44a65.dir\objects1.rsp]
-  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -v -Wl,--whole-archive CMakeFiles\cmTC_44a65.dir/objects.a -Wl,--no-whole-archive  -o cmTC_44a65.exe -Wl,--out-implib,libcmTC_44a65.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_07598.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -o CMakeFiles\cmTC_07598.dir\CMakeCXXCompilerABI.cpp.obj -c D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_07598.exe]
+  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_07598.dir\link.txt --verbose=1]
+  ignore line: [D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_07598.dir/objects.a]
+  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_07598.dir/objects.a @CMakeFiles\cmTC_07598.dir\objects1.rsp]
+  ignore line: [D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE     -v -Wl,--whole-archive CMakeFiles\cmTC_07598.dir/objects.a -Wl,--no-whole-archive  -o cmTC_07598.exe -Wl,--out-implib,libcmTC_07598.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE]
   ignore line: [COLLECT_LTO_WRAPPER=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe]
@@ -321,13 +321,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib/]
   ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/]
   ignore line: [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_44a65.exe' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  link line: [ D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccqwgceg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_44a65.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_44a65.dir/objects.a --no-whole-archive --out-implib libcmTC_44a65.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_07598.exe' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  link line: [ D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe -plugin D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll -plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccKAYCqB.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw810/i686-810-posix-dwarf-rt_v6-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_07598.exe D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0 -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib -LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../.. --whole-archive CMakeFiles\cmTC_07598.dir/objects.a --no-whole-archive --out-implib libcmTC_07598.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtend.o]
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../libexec/gcc/i686-w64-mingw32/8.1.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccqwgceg.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\Bendou\AppData\Local\Temp\ccKAYCqB.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -355,7 +355,7 @@ Parsed CXX implicit link information from above output:
     arg [-u] ==> ignore
     arg [___deregister_frame_info] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_44a65.exe] ==> ignore
+    arg [cmTC_07598.exe] ==> ignore
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/crtbegin.o] ==> ignore
     arg [-LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0] ==> dir [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0]
@@ -365,10 +365,10 @@ Parsed CXX implicit link information from above output:
     arg [-LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib] ==> dir [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/lib]
     arg [-LD:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../..] ==> dir [D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_44a65.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_07598.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_44a65.dll.a] ==> ignore
+    arg [libcmTC_07598.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -411,16 +411,16 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++2a] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_8ce22/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_8ce22.dir\build.make CMakeFiles/cmTC_8ce22.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_ba84e/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_ba84e.dir\build.make CMakeFiles/cmTC_ba84e.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8ce22.dir/feature_tests.cxx.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++2a -o CMakeFiles\cmTC_8ce22.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_8ce22.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_8ce22.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_8ce22.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_8ce22.dir/objects.a @CMakeFiles\cmTC_8ce22.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_8ce22.dir/objects.a -Wl,--no-whole-archive  -o cmTC_8ce22.exe -Wl,--out-implib,libcmTC_8ce22.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_8ce22.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_ba84e.dir/feature_tests.cxx.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++2a -o CMakeFiles\cmTC_ba84e.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_ba84e.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_ba84e.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_ba84e.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_ba84e.dir/objects.a @CMakeFiles\cmTC_ba84e.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_ba84e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_ba84e.exe -Wl,--out-implib,libcmTC_ba84e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_ba84e.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -486,16 +486,16 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Detecting CXX [-std=c++17] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_9c032/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_9c032.dir\build.make CMakeFiles/cmTC_9c032.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_f1aa8/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_f1aa8.dir\build.make CMakeFiles/cmTC_f1aa8.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_9c032.dir/feature_tests.cxx.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++17 -o CMakeFiles\cmTC_9c032.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_9c032.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_9c032.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_9c032.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_9c032.dir/objects.a @CMakeFiles\cmTC_9c032.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_9c032.dir/objects.a -Wl,--no-whole-archive  -o cmTC_9c032.exe -Wl,--out-implib,libcmTC_9c032.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_9c032.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_f1aa8.dir/feature_tests.cxx.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++17 -o CMakeFiles\cmTC_f1aa8.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_f1aa8.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_f1aa8.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_f1aa8.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_f1aa8.dir/objects.a @CMakeFiles\cmTC_f1aa8.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_f1aa8.dir/objects.a -Wl,--no-whole-archive  -o cmTC_f1aa8.exe -Wl,--out-implib,libcmTC_f1aa8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_f1aa8.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -561,16 +561,16 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_65406/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_65406.dir\build.make CMakeFiles/cmTC_65406.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_b5a77/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_b5a77.dir\build.make CMakeFiles/cmTC_b5a77.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_65406.dir/feature_tests.cxx.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++14 -o CMakeFiles\cmTC_65406.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_65406.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_65406.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_65406.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_65406.dir/objects.a @CMakeFiles\cmTC_65406.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_65406.dir/objects.a -Wl,--no-whole-archive  -o cmTC_65406.exe -Wl,--out-implib,libcmTC_65406.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_65406.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_b5a77.dir/feature_tests.cxx.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++14 -o CMakeFiles\cmTC_b5a77.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_b5a77.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_b5a77.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_b5a77.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_b5a77.dir/objects.a @CMakeFiles\cmTC_b5a77.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_b5a77.dir/objects.a -Wl,--no-whole-archive  -o cmTC_b5a77.exe -Wl,--out-implib,libcmTC_b5a77.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b5a77.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -636,16 +636,16 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_b088a/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_b088a.dir\build.make CMakeFiles/cmTC_b088a.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_d20e6/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_d20e6.dir\build.make CMakeFiles/cmTC_d20e6.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b088a.dir/feature_tests.cxx.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++11 -o CMakeFiles\cmTC_b088a.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_b088a.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_b088a.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_b088a.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_b088a.dir/objects.a @CMakeFiles\cmTC_b088a.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_b088a.dir/objects.a -Wl,--no-whole-archive  -o cmTC_b088a.exe -Wl,--out-implib,libcmTC_b088a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b088a.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_d20e6.dir/feature_tests.cxx.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++11 -o CMakeFiles\cmTC_d20e6.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_d20e6.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d20e6.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_d20e6.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_d20e6.dir/objects.a @CMakeFiles\cmTC_d20e6.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_d20e6.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d20e6.exe -Wl,--out-implib,libcmTC_d20e6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_d20e6.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -711,16 +711,16 @@ mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKi
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_4fc70/fast"
-D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_4fc70.dir\build.make CMakeFiles/cmTC_4fc70.dir/build
+Run Build Command:"D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe" "cmTC_3e5d6/fast"
+D:/PROGRA~1/MINGW-~1/I686-8~1.0-P/mingw32/bin/mingw32-make.exe -f CMakeFiles\cmTC_3e5d6.dir\build.make CMakeFiles/cmTC_3e5d6.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4fc70.dir/feature_tests.cxx.obj
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++98 -o CMakeFiles\cmTC_4fc70.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
-Linking CXX executable cmTC_4fc70.exe
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_4fc70.dir\link.txt --verbose=1
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_4fc70.dir/objects.a
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_4fc70.dir/objects.a @CMakeFiles\cmTC_4fc70.dir\objects1.rsp
-D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_4fc70.dir/objects.a -Wl,--no-whole-archive  -o cmTC_4fc70.exe -Wl,--out-implib,libcmTC_4fc70.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_4fc70.dir\linklibs.rsp
+Building CXX object CMakeFiles/cmTC_3e5d6.dir/feature_tests.cxx.obj
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE    -std=c++98 -o CMakeFiles\cmTC_3e5d6.dir\feature_tests.cxx.obj -c D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles\feature_tests.cxx
+Linking CXX executable cmTC_3e5d6.exe
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_3e5d6.dir\link.txt --verbose=1
+D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\cmTC_3e5d6.dir/objects.a
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cmTC_3e5d6.dir/objects.a @CMakeFiles\cmTC_3e5d6.dir\objects1.rsp
+D:\PROGRA~1\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE      -Wl,--whole-archive CMakeFiles\cmTC_3e5d6.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3e5d6.exe -Wl,--out-implib,libcmTC_3e5d6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_3e5d6.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 

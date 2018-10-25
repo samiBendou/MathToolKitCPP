@@ -42,7 +42,7 @@ string NVector<T>::str() const {
     stream << '(';
     for (auto k = _k1; k <= _k2; ++k) {
         stream << ((*this)[k] >= 0 ? ' ' : '-');
-        stream << (*this)[k];
+        stream << abs((*this)[k]);
     }
     stream << " )";
     setDefaultBrowseIndices();
@@ -512,27 +512,6 @@ void NVector<T>::copy(const NVector<T> &u) {
         setDefaultBrowseIndices();
         u.setDefaultBrowseIndices();
     }
-}
-
-template<typename T>
-void NVector<T>::parse(const std::string &str) {
-    vector<T> data{};
-    string::size_type sz = 1;
-    ul_t i = 0;
-
-    assert(str.find(',') == string::npos);
-
-    while (i < str.size() && str[i] != ')') {
-        try {
-            data.push_back(std::stod(str.substr(i, str.size() - i), &sz));
-            i += sz;
-        }
-        catch (const std::exception &e) {
-            i++;
-        }
-    }
-
-    this->copy(NVector(data));
 }
 
 // SUB-VECTORS

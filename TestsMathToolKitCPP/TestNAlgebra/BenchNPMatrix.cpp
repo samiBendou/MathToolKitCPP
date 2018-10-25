@@ -18,29 +18,13 @@ protected:
         _b = 2 * mat_t::ones(SMALL_N_TEST);
     }
 
-    clock_t _t0;
-    clock_t _t1;
-    double _elapsed_time;
+    clock_t _t0{};
+    clock_t _t1{};
+    double _elapsed_time{};
 
     mat_t _a;
     mat_t _b;
 };
-
-TEST_F(NPMatrixBenchTest, Serialization) {
-    _t0 = clock();
-    _a.str();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "SERIALIZATION ELAPSED TIME (sec) : " << _elapsed_time << endl;
-
-    _t0 = clock(); // or gettimeofday or whatever
-    _a = _b.str();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "DESERIALIZATION ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
-}
 
 TEST_F(NPMatrixBenchTest, Add) {
     _t0 = clock();

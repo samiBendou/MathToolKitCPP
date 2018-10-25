@@ -63,20 +63,11 @@ public:
      * @return a n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
      * must have the same length. They represent the rows of A matrix.
      */
-    explicit NPMatrix(const vector<vector<T> > &data);
+    NPMatrix(const vector<vector<T> > &data);
 
     NPMatrix(const NPMatrix<T> &m);
 
-    /**
-     *
-     * @param str an array of string containing the rows of the matrix in a form like "|0 2 3|".
-     * @details initialize a NPMatrix<T> by parsing a string representing matrix rows. Use the following
-     *          syntax : {"(A00  A01  ...  A0(P-1)) \
-     *                     (A10  A1   ...  A1(P-1)) \
-     *                     (...  ...   A(N-1)(P-1))"}
-     *          The separation character | can be replaced by any one. Don't use comma at all.
-     */
-    explicit NPMatrix(const string &str);
+    NPMatrix(initializer_list<initializer_list<T>> list);
 
     /**
      *
@@ -417,8 +408,6 @@ public:
 
     NPMatrix<T> &operator=(const NPMatrix<T> &m);
 
-    NPMatrix<T> &operator=(const string &str);
-
     // COMPARAISON OPERATORS
 
     friend bool operator==(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
@@ -580,8 +569,6 @@ protected:
     // AFFECTATION
 
     virtual void copy(const NPMatrix<T> &m);
-
-    void parse(const string &str) override;
 
     // INDEX GETTERS
 
