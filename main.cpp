@@ -16,8 +16,5 @@ using namespace std;
 
 int main() {
 
-    vec_t vector{"(0 0 1)"};
-    cout << vector << sqrt(10000000) << endl;
-
     return 0;
 }

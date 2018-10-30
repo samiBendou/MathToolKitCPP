@@ -10,14 +10,20 @@ using namespace std;
 // CONSTRUCTORS
 
 template<typename T>
-NVector<T>::NVector(ul_t dim) :
-        vector<T>(dim), _k1(0), _k2(0) {
+NVector<T>::NVector(const std::vector<T> &data) :
+        vector<T>(data), _k1(0), _k2(0) {
     setDefaultBrowseIndices();
 }
 
 template<typename T>
-NVector<T>::NVector(const std::vector<T> &data) :
-        vector<T>(data), _k1(0), _k2(0) {
+NVector<T>::NVector(initializer_list<T> list) :
+        vector<T>(list), _k1(0), _k2(0) {
+    setDefaultBrowseIndices();
+}
+
+template<typename T>
+NVector<T>::NVector(ul_t dim) :
+        vector<T>(dim), _k1(0), _k2(0) {
     setDefaultBrowseIndices();
 }
 
@@ -27,28 +33,20 @@ NVector<T>::NVector(const NVector<T> &u) :
     copy(u);
 }
 
-template<typename T>
-NVector<T>::NVector(const std::string &str) :
-        std::vector<T>(0), _k1(0), _k2(0) {
-    parse(str);
-    setDefaultBrowseIndices();
-}
-
-
 // SERIALIZATION
 
 template<typename T>
 string NVector<T>::str() const {
-    string str = "(";
-    char buffer[6];
+    stringstream stream;
+
+    stream << '(';
     for (auto k = _k1; k <= _k2; ++k) {
-        sprintf(buffer, "%.2e", abs((*this)[k]));
-        str += ((*this)[k] >= 0 ? "  " : " -");
-        str += buffer;
+        stream << ((*this)[k] >= 0 ? ' ' : '-');
+        stream << abs((*this)[k]);
     }
-    str += "  )";
+    stream << " )";
     setDefaultBrowseIndices();
-    return str;
+    return stream.str();
 }
 
 // GETTERS
@@ -302,12 +300,6 @@ NVector<T> &NVector<T>::operator=(const NVector<T> &u) {
     return *this;
 }
 
-template<typename T>
-NVector<T> &NVector<T>::operator=(const std::string &str) {
-    parse(str);
-    return *this;
-}
-
 // NORM BASED COMPARISON OPERATORS
 
 template<typename T>
@@ -339,17 +331,17 @@ bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
 template<typename T>
 NVector<T> NVector<T>::zeros(ul_t dim) {
-    return scalar(0.0, dim);
+    return scalar(0, dim);
 }
 
 template<typename T>
 NVector<T> NVector<T>::ones(ul_t dim) {
-    return scalar(1.0, dim);
+    return scalar(1, dim);
 }
 
 template<typename T>
 NVector<T> NVector<T>::scalar(T s, ul_t dim) {
-    NVector<T> scalar{dim};
+    NVector<T> scalar(dim);
     scalar.fill(s);
     return scalar;
 }
@@ -474,14 +466,14 @@ bool NVector<T>::isValidIndex(ul_t k) const {
 
 template<typename T>
 bool NVector<T>::isNull() const {
-    return norm() < EPSILON;
+    return norm() <= EPSILON;
 }
 
 template<typename T>
 bool NVector<T>::isEqual(const NVector<T> &u) const {
     if (!hasSameSize(u))
         return false;
-    return distance(u) < EPSILON;
+    return distance(u) <= EPSILON;
 }
 
 template<typename T>
@@ -502,7 +494,7 @@ bool NVector<T>::hasDefaultBrowseIndices() const {
 template<typename T>
 void NVector<T>::setDefaultBrowseIndices() const {
     _k1 = 0;
-    _k2 = (this->size() > 0) ? this->size() - 1 : 0;
+    _k2 = (!this->empty()) ? this->size() - 1 : 0;
 }
 
 // AFFECTATION
@@ -520,27 +512,6 @@ void NVector<T>::copy(const NVector<T> &u) {
         setDefaultBrowseIndices();
         u.setDefaultBrowseIndices();
     }
-}
-
-template<typename T>
-void NVector<T>::parse(const std::string &str) {
-    vector<T> data{};
-    string::size_type sz = 1;
-    ul_t i = 0;
-
-    assert(str.find(",") == string::npos);
-
-    while (i < str.size() && str[i] != ')') {
-        try {
-            data.push_back(std::stod(str.substr(i, str.size() - i), &sz));
-            i += sz;
-        }
-        catch (const std::exception &e) {
-            i++;
-        }
-    }
-
-    this->copy(NVector(data));
 }
 
 // SUB-VECTORS
@@ -568,9 +539,16 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
     u.setDefaultBrowseIndices();
 }
 
+
+
 template
 class NVector<double>;
 
+template
+class NVector<char>;
+
+template
+class NVector<AESByte>;
 
 
 

@@ -642,6 +642,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/AESByte.h">
+			<Option target="NAlgebra"/>
+		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/NPMatrix.h">
 			<Option target="NAlgebra"/>
 		</Unit>
@@ -649,6 +652,9 @@
 			<Option target="NAlgebra"/>
 		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/header/Vector3.h">
+			<Option target="NAlgebra"/>
+		</Unit>
+		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/source/AESByte.cpp">
 			<Option target="NAlgebra"/>
 		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NAlgebra/source/NPMatrix.cpp">
@@ -713,12 +719,6 @@
 		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="NGeometry"/>
-		</Unit>
-		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNPMatrix.cpp">
-			<Option target="TestNAlgebra"/>
-		</Unit>
-		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNVector.cpp">
-			<Option target="TestNAlgebra"/>
 		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">
 			<Option target="TestNAlgebra"/>

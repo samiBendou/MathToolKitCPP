@@ -25,6 +25,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <cmath>
 #include <vector>
 #include <cstdarg>
@@ -33,12 +34,12 @@
 #include <complex>
 #include <functional>
 
+#include <AESByte.h>
+
 #define MAX_SIZE 4294967295
 #define EPSILON (std::numeric_limits<T>::epsilon())
 
 typedef unsigned long ul_t;
-
-
 
 
 template<typename T>
@@ -57,6 +58,8 @@ public:
      */
     NVector(const std::vector<T> &data);
 
+    NVector(std::initializer_list<T> list);
+
     NVector(const NVector<T> &u);
 
     /**
@@ -65,13 +68,6 @@ public:
      *          to create a vector.
      */
     explicit NVector(ul_t dim = 0);
-
-    /**
-     *
-     * @param   str a string containing the components of vector in the form "(0 1 2)".
-     *          The character '(' and ')' can't be replaced. Use spaces to separate values.
-     */
-    explicit NVector(const std::string &str);
 
     // SERIALIZATION
 
@@ -295,7 +291,7 @@ public:
      */
     NVector<T> &operator=(const NVector<T> &u);
 
-    NVector<T> &operator=(const std::string &str);
+    //NVector<T> &operator=(const std::string &str);
 
     // NORM BASED COMPARISON OPERATORS
 
@@ -307,14 +303,6 @@ public:
     friend bool operator==(const NVector<T> &u, const NVector<T> &v) {
         bool result = u.isEqual(v);
         return result;
-    }
-
-    friend bool operator==(const NVector<T> &u, const std::string &str) {
-        return u == NVector<T>(str);
-    }
-
-    friend bool operator==(const std::string &str, const NVector<T> &u) {
-        return u == str;
     }
 
     /**
@@ -431,8 +419,6 @@ protected:
 
     void copy(const NVector<T> &u);
 
-    virtual void parse(const std::string &str);
-
     //SUB-VECTORS
 
     NVector<T> subVector(ul_t k1, ul_t k2) const;
@@ -447,5 +433,7 @@ protected:
 };
 
 typedef NVector<double> vec_t;
+typedef NVector<char> vec_char_t;
+typedef NVector<AESByte> vec_aes_t;
 
 #endif //MATHTOOLKIT_VECTOR_H
