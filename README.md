@@ -44,42 +44,37 @@ The documentation of the framework is currently contained in header files.
 
 ## NAlgebra
 
-Linear algebra library providing vectors and matrix classes.
+Linear algebra library providing vectors and matrix template classes.
 
 #### Overview
 
-- Matrix and vector classes.
-
 - Manipulators : shift, swap, ...
 
-- Linear Algebra : +, *, linear mapping, inversion, ...
+- Linear Algebra : +, *, mapping, inversion, pow, ...
 
 - Generators : eye, ones, diag, ...
   
  ### NAnalysis
  
- Differential calculus library
+ Differential calculus library providing numerical vector fields representation and easy ode solving.
  
  #### Overview
  
-- Representing numerical vector fields.
+- Mesh fields on various domains (see NGeometry)
 
-- Easy ode solving.
-
-- Create your own fields by overloading NPField class g(u) function.
-
-- Calculate fields on compact numerical domains.
+- Solve differential equations using fields representation
  
  ### NGeometry
  
- Geometry library.
+ Geometry library. Representing compact numerical domains such as parallelepiped, spheres...
  
  #### Overview
  
- - Representing compact numerical domains.
+ - Represent operations between domains
  
+ - Calculate domains volume, area...
+  
  - Create mesh of domains.
- 
 
  ### Install
  
