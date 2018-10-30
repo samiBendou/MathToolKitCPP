@@ -2,32 +2,49 @@
 
 ### Author : samiBendou
 
-### Last Update : 11/10/2018
+### Last Update : 30/10/2018
 
-### Current Version : 1.0
+### Current Version : 1.0.1
 
-MathToolKit is C++ maths framework. 
-It provides libraries that ease N-dimensional scientific calculation and simulation.
-Can be used in various domains such as applied maths, physics, economics... 
-The framework can be used to produce quickly and easily efficient C++ code. 
+## General overivew
 
-- Linear algebra library (NAlgebra)
+MathToolKit is a C++ maths framework. 
 
-- Differential equations solving library (NAnalysis)
+It introduces common mathematical abstractions such as matrix, vector, fields...
 
-- Geometry library (NGeometry)
+It's designed to save time solving commons mathematical problems for engineering.
 
-- Designed to ease dynamic system simulation
+Featuring :
 
-- High level syntax and functionality (numpy/Matlab like)
+- High level syntax and operators
+
+- Large range of operations
+
+- Lightweight code
 
 - Complete integration of STL
 
-- Highly serializable as string or std::vector
+- Template based implementation
 
 - Unit tested with googletest
 
+### Introduction
+
+MathToolKit contains multiples libraries providing API that ease N-dimensional scientific calculation and simulation.
+It's though for produce efficient numeric calculation with an intuitive syntax. 
+It can be used in various domains such as cryptography, theoretical physics, finance...
+
+The documentation of the framework is currently contained in header files.
+
+### Compatibility
+
+- Written in C++11
+
+- Using CMake 3.12
+
 ## NAlgebra
+
+Linear algebra library providing vectors and matrix classes.
 
 #### Overview
 
@@ -41,6 +58,8 @@ The framework can be used to produce quickly and easily efficient C++ code.
   
  ### NAnalysis
  
+ Differential calculus library
+ 
  #### Overview
  
 - Representing numerical vector fields.
@@ -53,20 +72,32 @@ The framework can be used to produce quickly and easily efficient C++ code.
  
  ### NGeometry
  
+ Geometry library.
+ 
  #### Overview
  
  - Representing compact numerical domains.
  
  - Create mesh of domains.
  
- ### Compatibility
- 
- The framework is written in C++11. It's recommended to use CMake and g++ to compile sources. I had some issues with Cygwin and Mingwin... Project has been coded using CLion, it provides easy to handle unit testing with googletest and stock build configuration.
- 
+
  ### Install
  
- - Make sure you have CMake version 3.12 at least;
- - Clone googletest : https://github.com/google/googletest;
- - Clone the project;
- - Put the googletest library at TestMathToolKit/lib/googletest where googletest is the root of the previously downloaded googletest;
- - Compile using CMake.
+- Clone the project on your computer or IDE
+
+- Copy the directories of the libraries you want to import onto your project
+
+### Run Unit Tests
+
+If you want to run unit tests you have to import googletest onto the cloned project.
+
+- Clone the project
+
+- Download googletest last version : https://github.com/google/googletest
+
+- Create a directory named lib in TestMathToolKitCPP
+
+- Copy googletest-master directory on lib directory
+
+- Rename googletest-master googletest
+
