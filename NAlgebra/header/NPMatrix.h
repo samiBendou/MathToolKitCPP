@@ -442,7 +442,7 @@ public:
      *
      * @return canonical matrices Eij  of Mnp(R) which contains 1 in position ij and 0 elsewhere.
      */
-    static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
+    static NPMatrix<T> can(ul_t i, ul_t j, ul_t n, ul_t p = 0);
 
     /**
      *

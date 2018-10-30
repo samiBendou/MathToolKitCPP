@@ -321,10 +321,6 @@ public:
      */
     friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
-    friend bool operator!=(const NVector<T> &u, const std::string &str) { return !(u == str); }
-
-    friend bool operator!=(const std::string &str, const NVector<T> &u) { return u != str; }
-
     friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
 
@@ -359,7 +355,7 @@ public:
      * @return  return the kth vector of canonical base. ie (e0, e1, ..., e(n-1)) where :
      *          e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n - 1) = (0, 0, ..., 1).
      */
-    static NVector<T> canonical(ul_t k, ul_t dim);
+    static NVector<T> can(ul_t k, ul_t dim);
 
     /**
      *

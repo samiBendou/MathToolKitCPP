@@ -200,7 +200,7 @@ TEST_F(NVectorTest, StaticGenerators) {
     ASSERT_EQ(vec_t::zeros(3), vec_t({0, 0, 0}));
     ASSERT_EQ(vec_t::ones(3), vec_t({1, 1, 1}));
     ASSERT_EQ(vec_t::scalar(5, 3), vec_t({5, 5, 5}));
-    ASSERT_EQ(vec_t::canonical(0, 3), vec_t({1, 0, 0}));
+    ASSERT_EQ(vec_t::can(0, 3), vec_t({1, 0, 0}));
 }
 
 TEST_F(NVectorTest, StaticFunctions) {
