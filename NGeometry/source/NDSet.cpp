@@ -32,14 +32,14 @@ bool NDSet::isEmpty() const {
 }
 
 void NDSet::uni(const NDSet &set) {
-    //TODO : Implement union using std::set_union
-    std::vector<vec_t> res = NCompact::uni(set);
+    std::vector<vec_t> data{mesh()}, data_set{set.mesh()}, res;
+    std::set_union(data.begin(), data.end(), data_set.begin(), data_set.end(), res.begin());
     *this = NDSet(res);
 }
 
 void NDSet::inter(const NDSet &set) {
-    //TODO : Implement intersection using std::set_intersection
-    std::vector<vec_t> res = NCompact::inter(set);
+    std::vector<vec_t> data{mesh()}, data_set{set.mesh()}, res;
+    std::set_intersection(data.begin(), data.end(), data_set.begin(), data_set.end(), res.begin());
     *this = NDSet(res);
 }
 

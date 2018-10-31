@@ -33,6 +33,7 @@
 #include <algorithm>
 #include <complex>
 #include <functional>
+#include <numeric>
 
 #include <AESByte.h>
 

@@ -424,9 +424,10 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
     T dot = 0.0;
 
     assert(hasSameSize(u));
-    for (ul_t k = 0; k <= _k2 - _k1; ++k) {
-        dot += u[k + u._k1] * (*this)[k + _k1];
-    }
+
+    dot = std::inner_product(this->begin() + _k1, this->begin() + _k2 + 1,
+                        u.begin() + u._k1, dot);
+
     setDefaultBrowseIndices();
     u.setDefaultBrowseIndices();
     return dot;
