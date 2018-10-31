@@ -43,16 +43,8 @@ bool NParallelepiped::isEmpty() const {
     return abs(_vol) > std::numeric_limits<double>::epsilon();
 }
 
-void NParallelepiped::uni(const NSet *set) {
-
-}
-
-void NParallelepiped::inter(const NSet *set) {
-
-}
-
 int NParallelepiped::card() const {
-    return 0;
+    return std::numeric_limits<int>::infinity();
 }
 
 NCompact *NParallelepiped::border() const {

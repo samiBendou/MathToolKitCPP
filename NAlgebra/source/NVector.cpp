@@ -353,6 +353,11 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
     return sum_prod;
 }
 
+template<typename T>
+bool NVector<T>::areNear(const NVector<T> &u, const NVector<T> &v) {
+    return  u / v < NEAR_TOL;
+}
+
 // PROTECTED METHODS
 
 // VECTOR SPACE METHODS
@@ -514,7 +519,6 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
     setDefaultBrowseIndices();
     u.setDefaultBrowseIndices();
 }
-
 
 template
 class NVector<double>;

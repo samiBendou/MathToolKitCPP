@@ -102,8 +102,7 @@ string NPMatrix<T>::str() const {
     stringstream stream;
 
     for (ul_t i = _i1; i <= _i2; ++i) {
-        stream << "\n";
-        stream << row(i)(_j1, _j2);
+        stream << "\n" << row(i)(_j1, _j2);
     }
     setDefaultBrowseIndices();
     return stream.str();

@@ -35,20 +35,20 @@ bool NDSet::isEmpty() const {
     return card() == 0;
 }
 
-void NDSet::uni(const NSet *set) {
-    std::vector<NVector<double>> data = ((NDSet *) set)->_data;
+void NDSet::uni(const NDSet &set) {
+    std::vector<NVector<double>> data = set._data;
     for (int k = 0; k < data.size(); ++k) {
         if (!isIn(data[k]))
             _data.push_back(data[k]);
     }
 }
 
-void NDSet::inter(const NSet *set) {
-    std::vector<NVector<double>> data = ((NDSet *) set)->_data;
+void NDSet::inter(const NDSet &set) {
+    std::vector<NVector<double>> data =set._data;
     std::vector<NVector<double>> dataInter;
     for (int k = 0; k < data.size(); ++k) {
         for (int l = 0; l < _data.size(); ++l) {
-            if (isIn(data[k]) && set->isIn(_data[l]))
+            if (isIn(data[k]) && set.isIn(_data[l]))
                 dataInter.push_back(data[k]);
         }
     }

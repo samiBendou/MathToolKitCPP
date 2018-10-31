@@ -702,9 +702,6 @@
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NSegment.h">
 			<Option target="NGeometry"/>
 		</Unit>
-		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/header/NSet.h">
-			<Option target="NGeometry"/>
-		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NCompact.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
@@ -715,9 +712,6 @@
 			<Option target="NGeometry"/>
 		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp">
-			<Option target="NGeometry"/>
-		</Unit>
-		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/NGeometry/source/NSet.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
 		<Unit filename="D:/Users/Bendou/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">

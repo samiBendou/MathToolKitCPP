@@ -23,10 +23,6 @@ public:
 
     bool isEmpty() const override;
 
-    void uni(const NSet *set) override;
-
-    void inter(const NSet *set) override;
-
     int card() const override;
 
     NCompact *border() const override;

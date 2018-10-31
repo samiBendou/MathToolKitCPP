@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_library(NGeometry STATIC
         source/NSegment.cpp header/NSegment.h
-        source/NSet.cpp header/NSet.h
         source/NCompact.cpp header/NCompact.h
         source/NDSet.cpp header/NDSet.h
         source/NParallelepiped.cpp header/NParallelepiped.h

@@ -44,14 +44,6 @@ bool NSegment::isEmpty() const {
     return false;
 }
 
-void NSegment::uni(const NSet *set) {
-
-}
-
-void NSegment::inter(const NSet *set) {
-
-}
-
 NCompact *NSegment::border() const {
     return nullptr;
 }

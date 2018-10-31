@@ -4,12 +4,12 @@
 
 #include <NConstantField.h>
 
-NConstantField::NConstantField(ul_t dim_in, vec_t h, vec_t k) : NPField<double>(dim_in, k.dim(), h),
+NConstantField::NConstantField(vec_t h, vec_t k) : NPField<double>(h),
                                                                 _k(k) {
 
 }
 
-vec_t NConstantField::g(const vec_t &x) const {
+vec_t NConstantField::apply(const vec_t &x) const {
     return _k;
 }
 

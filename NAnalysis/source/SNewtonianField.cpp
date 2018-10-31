@@ -4,14 +4,12 @@
 
 #include <SNewtonianField.h>
 
-SNewtonianField::SNewtonianField(ul_t dim, vec_t h, const std::vector<double> &mu,
-                                 const std::vector<vec_t> &r, double k) : NPField(dim, dim, h), _mu(mu), _r(r), _k(k){
+SNewtonianField::SNewtonianField(vec_t h, const std::vector<double> &mu, const std::vector<vec_t> &r, double k) :
+        NPField<double>(h), _mu(mu), _r(r), _k(k) {}
 
-}
-
-vec_t SNewtonianField::g(const vec_t &r) const {
-    vec_t g = vec_t::zeros(_dim_out);
-    vec_t rj = vec_t::zeros(_dim_in);
+vec_t SNewtonianField::apply(const vec_t &r) const {
+    vec_t g = vec_t::zeros(h.dim());
+    vec_t rj = vec_t::zeros(h.dim());
     double d;
 
     for (int j = 0; j < _mu.size(); j++) {

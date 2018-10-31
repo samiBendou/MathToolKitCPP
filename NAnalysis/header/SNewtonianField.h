@@ -12,10 +12,10 @@
 class SNewtonianField : public NPField<double> {
 public:
 
-    SNewtonianField(ul_t dim, vec_t h, const std::vector<double> &mu, const std::vector<vec_t> &r, double k);
+    SNewtonianField(vec_t h, const std::vector<double> &mu, const std::vector<vec_t> &r, double k);
 
 protected:
-    vec_t g(const vec_t &x) const override;
+    vec_t apply(const vec_t &x) const override;
 
     const std::vector<double> _mu;
 

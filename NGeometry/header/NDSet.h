@@ -19,9 +19,9 @@ public:
 
     bool isEmpty() const override;
 
-    void uni(const NSet *set) override;
+    void uni(const NDSet &set);
 
-    void inter(const NSet *set) override;
+    void inter(const NDSet &set);
 
     int card() const override;
 

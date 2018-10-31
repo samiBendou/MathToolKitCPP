@@ -23,7 +23,7 @@ TEST(NPFieldTest, NConstantField) {
 
     vec_t g = 9.81 * vec_t::can(dim - 1, dim);
 
-    NConstantField field = NConstantField(dim, h, g);
+    NConstantField field = NConstantField(h, g);
 
     vector<vec_t> out = field(para);
 
@@ -47,7 +47,7 @@ TEST(NPFieldTest, SNewtonianField) {
     std::vector<double> mass{sun_mass};
     std::vector<vec_t> r{vec_t::zeros(3)};
 
-    SNewtonianField field = SNewtonianField(dim, h, mass, r, G);
+    SNewtonianField field = SNewtonianField(h, mass, r, G);
 
     vector<vec_t> out = field(para);
 
@@ -66,7 +66,7 @@ TEST(NOde, Euler) {
 
     vec_t g = 9.81 * vec_t::can(dim - 1, dim);
 
-    NConstantField field = NConstantField(dim, h, g);
+    NConstantField field = NConstantField(h, g);
 
     std::vector<vec_t> solution = NOde::euler(vec_t::zeros(dim), field);
 

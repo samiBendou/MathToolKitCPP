@@ -11,10 +11,10 @@
 
 class NConstantField : public NPField<double> {
 public:
-    NConstantField(ul_t dim_in, vec_t h, vec_t k);
+    NConstantField(vec_t h, vec_t k);
 
 protected:
-    vec_t g(const vec_t &x) const override;
+    vec_t apply(const vec_t &x) const override;
 
     vec_t _k;
 };

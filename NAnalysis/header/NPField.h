@@ -9,29 +9,26 @@
 #include <NCompact.h>
 #include <NDSet.h>
 
-template<typename T>
-class NPField : public NVector<T> {
+template<typename T, typename P = T>
+class NPField {
 public:
     NVector<T> h;
 
-    NPField(ul_t dim_in, ul_t dim_out, NVector<T> h);
+    explicit NPField(NVector<T> h);
 
-    NVector<T> operator()(const NVector<T> &u) const;
+    NVector<P> operator()(const NVector<T> &u) const;
 
-    std::vector<NVector<T>> operator()(const std::vector<NVector<T>>& vectors) const;
+    std::vector<NVector<P>> operator()(const std::vector<NVector<T>>& vectors) const;
 
-    std::vector<NVector<T>> operator()(const NCompact& domain) const;
+    std::vector<NVector<P>> operator()(const NCompact& domain) const;
 
 protected:
 
-    virtual NVector<T> g(const NVector<T> &x) const = 0;
+    virtual NVector<P> apply(const NVector<T> &x) const = 0;
 
-    std::vector<NVector<T>> map(const std::vector<NVector<T>>& vectors) const;
+    std::vector<NVector<P>> map(const std::vector<NVector<T>>& vectors) const;
 
-    std::vector<NVector<T>> mesh(const NCompact& domain) const;
-
-    ul_t _dim_in;
-    ul_t _dim_out;
+    std::vector<NVector<P>> mesh(const NCompact& domain) const;
 };
 
 

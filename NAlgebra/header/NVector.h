@@ -38,6 +38,7 @@
 
 #define MAX_SIZE 4294967295
 #define EPSILON (std::numeric_limits<T>::epsilon())
+#define NEAR_TOL 0.5
 
 typedef unsigned long ul_t;
 
@@ -372,6 +373,8 @@ public:
      *          usual addition and scalar multiplication.
      */
     static NVector<T> sumProd(const std::vector<T> &scalars, const std::vector<NVector> &vectors);
+
+    static bool areNear(const NVector<T>& u, const NVector<T>& v);
 
 protected:
 

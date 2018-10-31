@@ -7,7 +7,7 @@
 
 
 #include <NVector.h>
-#include "NCompact.h"
+#include <NCompact.h>
 
 
 class NSegment : public NCompact {
@@ -36,13 +36,7 @@ protected:
     vec_t _a;
     vec_t _b;
 
-
-    void uni(const NSet *set) override;
-
-    void inter(const NSet *set) override;
-
     NCompact *border() const override;
-
 
     int card() const override;
 };
