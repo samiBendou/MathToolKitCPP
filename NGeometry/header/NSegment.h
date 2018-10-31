@@ -12,7 +12,7 @@
 
 class NSegment : public NCompact {
 public:
-    explicit NSegment(const vec_t &a, const vec_t &b);
+    explicit NSegment(const vec_t &a = vec_t::zeros(0), const vec_t &b = vec_t::zeros(0));
 
     std::string str() const override;
 
@@ -23,6 +23,8 @@ public:
     void setA(const vec_t &a);
 
     void setB(const vec_t &b);
+
+    std::vector<vec_t> border() const override;
 
     std::vector<vec_t > mesh(double h) const;
 
@@ -36,7 +38,7 @@ protected:
     vec_t _a;
     vec_t _b;
 
-    NCompact *border() const override;
+
 
     int card() const override;
 };

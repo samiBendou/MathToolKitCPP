@@ -35,17 +35,16 @@ void NSegment::setB(const vec_t &b) {
 bool NSegment::isIn(const vec_t &x) const {
     const vec_t u = (x - _a);
     const vec_t l = (_b - _a);
-    const double tol = 1000 * std::numeric_limits<double>::epsilon();
 
-    return (abs((u | l) - !u * !l) < tol) && !u / !l <= 1;
+    return (abs((u | l) - !u * !l) < D_EPSILON) && !u / !l <= 1;
 }
 
 bool NSegment::isEmpty() const {
     return false;
 }
 
-NCompact *NSegment::border() const {
-    return nullptr;
+std::vector<vec_t> NSegment::border() const {
+    return std::vector<vec_t>{_a, _b};
 }
 
 std::vector<vec_t > NSegment::mesh(double h) const {
@@ -57,7 +56,6 @@ std::vector<vec_t > NSegment::mesh(double h) const {
         u += v;
     }
     return mesh;
-
 }
 
 std::vector<vec_t > NSegment::mesh(const vec_t &h) const {

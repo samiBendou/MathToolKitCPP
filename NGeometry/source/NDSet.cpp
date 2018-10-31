@@ -5,30 +5,26 @@
 #include "../header/NDSet.h"
 
 
-NDSet::NDSet() : NCompact(0), _data() {
+NDSet::NDSet() : NCompact(0), std::set<vec_t>() {
 
 }
 
-NDSet::NDSet(std::vector<NVector<double>> &vectors) : NCompact(vectors[0].dim()), _data(vectors) {
-
+NDSet::NDSet(std::vector<vec_t> &vectors) : NCompact(vectors[0].dim()), std::set<vec_t>() {
 }
 
 std::string NDSet::str() const {
-    std::string str = "{ ";
-    for (int k = 0; k < card() - 1; ++k) {
-        str += _data[k].str() + ", ";
+    std::stringstream stream;
+    iterator it;
+    stream << "{ ";
+    for (it = this->begin(); it != this->end(); ++it) {
+        stream << (*it).str() << ", ";
     }
-    str += _data[card() - 1].str() + " }";
-    return str;
+    stream << (*it).str() << " }";
+    return stream.str();
 }
 
-bool NDSet::isIn(const NVector<double> &x) const {
-    for (int k = 0; k < card(); ++k) {
-        if (x == _data[k]) {
-            return true;
-        }
-    }
-    return false;
+bool NDSet::isIn(const vec_t &x) const {
+    return std::find(this->begin(), this->end(), x) != this->end();
 }
 
 bool NDSet::isEmpty() const {
@@ -36,50 +32,32 @@ bool NDSet::isEmpty() const {
 }
 
 void NDSet::uni(const NDSet &set) {
-    std::vector<NVector<double>> data = set._data;
-    for (int k = 0; k < data.size(); ++k) {
-        if (!isIn(data[k]))
-            _data.push_back(data[k]);
-    }
+    //TODO : Implement union using std::set_union
+    std::vector<vec_t> res = NCompact::uni(set);
+    *this = NDSet(res);
 }
 
 void NDSet::inter(const NDSet &set) {
-    std::vector<NVector<double>> data =set._data;
-    std::vector<NVector<double>> dataInter;
-    for (int k = 0; k < data.size(); ++k) {
-        for (int l = 0; l < _data.size(); ++l) {
-            if (isIn(data[k]) && set.isIn(_data[l]))
-                dataInter.push_back(data[k]);
-        }
-    }
-    _data = dataInter;
+    //TODO : Implement intersection using std::set_intersection
+    std::vector<vec_t> res = NCompact::inter(set);
+    *this = NDSet(res);
 }
 
 int NDSet::card() const {
-    return (int) _data.size();
+    return this->size();
 }
 
-NCompact *NDSet::border() const {
-    NDSet *newThis{new NDSet(*this)};
-    return newThis;
+std::vector<vec_t> NDSet::border() const {
+    //TODO : Implement border calculation from points contained in underlying set
+    return mesh();
 }
 
-std::vector<NVector<double> > NDSet::mesh() const {
-    return std::vector<NVector<double>>(_data);
+std::vector<vec_t > NDSet::mesh() const {
+    return std::vector<vec_t>(this->begin(), this->end());
 }
 
-std::vector<NVector<double> > NDSet::mesh(const NVector<double> &h) const {
+std::vector<vec_t > NDSet::mesh(const vec_t &h) const {
     return NDSet::mesh();
-}
-
-void NDSet::push(const NVector<double> &x) {
-    _data.push_back(x);
-}
-
-NVector<double> NDSet::pop() {
-    NVector<double> ret = NVector<double>(_data[card() - 1]);
-    _data.pop_back();
-    return ret;
 }
 
 

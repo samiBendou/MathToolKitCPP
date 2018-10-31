@@ -8,6 +8,8 @@
 #include<iostream>
 #include <NVector.h>
 
+#define D_EPSILON std::numeric_limits<double>::epsilon()
+
 class NCompact {
 public:
     NCompact(unsigned long dim);
@@ -28,7 +30,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const NCompact &set);
 
-    virtual NCompact *border() const = 0;
+    virtual std::vector<vec_t> border() const = 0;
 
     virtual std::vector<vec_t> mesh(const vec_t &h) const = 0;
 

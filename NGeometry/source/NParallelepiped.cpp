@@ -10,27 +10,23 @@
 NParallelepiped::NParallelepiped(const mat_t &base, const vec_t &pos) : NCompact(base.n()),
                                                                         _base(base),
                                                                         _pos(pos),
-                                                                        _vol(base.det()) {
-
-}
+                                                                        _vol(base.det()) {}
 
 std::string NParallelepiped::str() const {
-    const std::vector<NSegment> segs = segments();
+    const std::vector<NSegment> seg = segments();
 
-    std::string str = "NParallelepiped";
-    char buffer[2];
-    for (int k = 0; k < segs.size(); ++k) {
-        sprintf(buffer, "%d", k);
-        str += "\nsegment " + std::string(buffer) + " : " + segs[k].str();
+    std::stringstream stream;
+    for (int k = 0; k < seg.size(); ++k) {
+        stream << "\nsegment " << k << " : " << seg[k];
     }
-    return str;
+    return stream.str();
 }
 
 
 bool NParallelepiped::isIn(const vec_t &x) const {
     vec_t u = x - _pos;
-    mat_t pInv = _base ^-1;
-    u = pInv * u;
+    mat_t base_inv = _base ^-1;
+    u = base_inv * u;
     for (int k = 0; k < _dim; ++k) {
         if (u(k) > 1.0 || u(k) < 0.0) {
             return false;
@@ -40,18 +36,17 @@ bool NParallelepiped::isIn(const vec_t &x) const {
 }
 
 bool NParallelepiped::isEmpty() const {
-    return abs(_vol) > std::numeric_limits<double>::epsilon();
+    return abs(_vol) < D_EPSILON;
 }
 
 int NParallelepiped::card() const {
     return std::numeric_limits<int>::infinity();
 }
 
-NCompact *NParallelepiped::border() const {
-
-    return nullptr;
+vector<vec_t> NParallelepiped::border() const {
+    //TODO : Implement parallelepiped triangulation algorithm
+    return vector<vec_t>();
 }
-
 
 std::vector<vec_t> NParallelepiped::mesh(const vec_t &h) const {
     std::vector<vec_t> e = _base.rows();
@@ -84,9 +79,9 @@ std::vector<vec_t> NParallelepiped::mesh(const vec_t &h) const {
 
 std::vector<NSegment> NParallelepiped::segments() const {
     const std::vector<vec_t> e = _base.cols();
-    std::vector<NSegment> seg;
+    std::vector<NSegment> seg(_dim);
     for (int k = 0; k < _dim; ++k) {
-        seg.emplace_back(NSegment(_pos, _pos + e[k]));
+        seg[k] = NSegment(_pos, _pos + e[k]);
     }
     return seg;
 }

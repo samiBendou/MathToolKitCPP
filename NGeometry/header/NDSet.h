@@ -5,17 +5,18 @@
 #ifndef MATHTOOLKIT_NDSET_H
 #define MATHTOOLKIT_NDSET_H
 
-#include "NCompact.h"
+#include <set>
+#include <NCompact.h>
 
-class NDSet : public NCompact {
+class NDSet : public NCompact, std::set<vec_t> {
 public:
     NDSet();
 
-    explicit NDSet(std::vector<NVector<double>> &vectors);
+    explicit NDSet(std::vector<vec_t> &vectors);
 
     std::string str() const override;
 
-    bool isIn(const NVector<double> &x) const override;
+    bool isIn(const vec_t &x) const override;
 
     bool isEmpty() const override;
 
@@ -25,18 +26,12 @@ public:
 
     int card() const override;
 
-    NCompact *border() const override;
+    std::vector<vec_t> border() const override;
 
-    std::vector<NVector<double> > mesh() const;
+    std::vector<vec_t > mesh() const;
 
-    std::vector<NVector<double> > mesh(const NVector<double> &h) const override;
+    std::vector<vec_t > mesh(const vec_t &h) const override;
 
-    void push(const NVector<double> &x);
-
-    NVector<double> pop();
-
-protected:
-    std::vector<NVector<double>> _data;
 };
 
 

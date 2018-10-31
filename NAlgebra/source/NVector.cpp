@@ -318,16 +318,20 @@ NVector<T> NVector<T>::ones(ul_t dim) {
 template<typename T>
 NVector<T> NVector<T>::scalar(T s, ul_t dim) {
     NVector<T> scalar(dim);
-    scalar.fill(s);
+    if(dim > 0)
+        scalar.fill(s);
     return scalar;
 }
 
 template<typename T>
 NVector<T> NVector<T>::can(ul_t k, ul_t dim) {
-    assert(k < dim);
-
     NVector<T> canonical = NVector<T>::zeros(dim);
-    canonical(k) = 1.0;
+
+    if(dim > 0) {
+        assert(k < dim);
+        canonical(k) = 1.0;
+    }
+
     return canonical;
 }
 
@@ -356,6 +360,11 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 template<typename T>
 bool NVector<T>::areNear(const NVector<T> &u, const NVector<T> &v) {
     return  u / v < NEAR_TOL;
+}
+
+template<typename T>
+bool NVector<T>::areEqual(const NVector<T> &u, const NVector<T> &v) {
+    return u == v;
 }
 
 // PROTECTED METHODS

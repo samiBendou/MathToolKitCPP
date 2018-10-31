@@ -13,11 +13,11 @@
 
 class NParallelepiped : public NCompact {
 public:
-    NParallelepiped(const mat_t &base, const vec_t &pos);
+    NParallelepiped(const mat_t &base = mat_t::zeros(0), const vec_t &pos = vec_t::zeros(0));
 
     std::string str() const override;
 
-    std::vector<NSegment> segments() const;
+
 
     bool isIn(const vec_t &x) const override;
 
@@ -25,9 +25,11 @@ public:
 
     int card() const override;
 
-    NCompact *border() const override;
+    std::vector<vec_t> border() const override;
 
     std::vector<vec_t > mesh(const vec_t &h) const override;
+
+    std::vector<NSegment> segments() const;
 
     double vol() const;
 

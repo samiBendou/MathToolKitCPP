@@ -376,6 +376,8 @@ public:
 
     static bool areNear(const NVector<T>& u, const NVector<T>& v);
 
+    static bool areEqual(const NVector<T>& u, const NVector<T>& v);
+
 protected:
 
     // VECTOR SPACE OPERATIONS

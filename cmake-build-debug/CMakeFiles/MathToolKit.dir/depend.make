@@ -13,6 +13,5 @@ CMakeFiles/MathToolKit.dir/main.cpp.obj: ../NGeometry/header/NCompact.h
 CMakeFiles/MathToolKit.dir/main.cpp.obj: ../NGeometry/header/NDSet.h
 CMakeFiles/MathToolKit.dir/main.cpp.obj: ../NGeometry/header/NParallelepiped.h
 CMakeFiles/MathToolKit.dir/main.cpp.obj: ../NGeometry/header/NSegment.h
-CMakeFiles/MathToolKit.dir/main.cpp.obj: ../NGeometry/header/NSet.h
 CMakeFiles/MathToolKit.dir/main.cpp.obj: ../main.cpp
 

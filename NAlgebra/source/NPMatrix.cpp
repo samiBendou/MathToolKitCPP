@@ -392,7 +392,7 @@ NPMatrix<T> NPMatrix<T>::transposed() const {
 
 template<typename T>
 T NPMatrix<T>::trace() const {
-    T trace = 0.0;
+    T trace = 0;
     for (ul_t i = _i1; i <= _i2; i++) {
         trace += (*this)(i, i);
     }
