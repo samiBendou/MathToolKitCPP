@@ -17,17 +17,23 @@ public:
 
     std::string str() const override;
 
-
-
     bool isIn(const vec_t &x) const override;
 
     bool isEmpty() const override;
 
     int card() const override;
 
+    const mat_t &base() const;
+
+    const vec_t &pos() const;
+
+    void setBase(const mat_t &base);
+
+    void setPos(const vec_t &pos);
+
     std::vector<vec_t> border() const override;
 
-    std::vector<vec_t > mesh(const vec_t &h) const override;
+    std::vector<vec_t> mesh(const vec_t &h) const override;
 
     std::vector<NSegment> segments() const;
 
@@ -38,6 +44,10 @@ protected:
     ul_t meshSize(const vec_t &h) const;
 
     mat_t _base;
+public:
+
+
+protected:
     vec_t _pos;
     double _vol;
 };

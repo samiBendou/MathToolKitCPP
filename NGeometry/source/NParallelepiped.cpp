@@ -43,6 +43,23 @@ int NParallelepiped::card() const {
     return std::numeric_limits<int>::infinity();
 }
 
+const mat_t &NParallelepiped::base() const {
+    return _base;
+}
+
+const vec_t &NParallelepiped::pos() const {
+    return _pos;
+}
+
+void NParallelepiped::setBase(const mat_t &base) {
+    NParallelepiped::_base = base;
+    _vol = base.det();
+}
+
+void NParallelepiped::setPos(const vec_t &pos) {
+    NParallelepiped::_pos = pos;
+}
+
 vector<vec_t> NParallelepiped::border() const {
     //TODO : Implement parallelepiped triangulation algorithm
     return vector<vec_t>();
@@ -97,6 +114,8 @@ ul_t NParallelepiped::meshSize(const vec_t &h) const {
     }
     return res;
 }
+
+
 
 
 

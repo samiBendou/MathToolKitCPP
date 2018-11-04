@@ -68,8 +68,8 @@ CMAKE_BINARY_DIR = D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debu
 
 # All Build rule for target.
 CMakeFiles/MathToolKit.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
-CMakeFiles/MathToolKit.dir/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
 CMakeFiles/MathToolKit.dir/all: NGeometry/CMakeFiles/NGeometry.dir/all
+CMakeFiles/MathToolKit.dir/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
 	$(MAKE) -f CMakeFiles\MathToolKit.dir\build.make CMakeFiles/MathToolKit.dir/depend
 	$(MAKE) -f CMakeFiles\MathToolKit.dir\build.make CMakeFiles/MathToolKit.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Users\Bendou\CLionProjects\MathToolKitCPP\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target MathToolKit"
@@ -583,8 +583,8 @@ TestsMathToolKitCPP/TestNAnalysis/preinstall:
 
 # All Build rule for target.
 TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/all: NAlgebra/CMakeFiles/NAlgebra.dir/all
-TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
 TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/all: NGeometry/CMakeFiles/NGeometry.dir/all
+TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/all: NAnalysis/CMakeFiles/NAnalysis.dir/all
 TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/all: TestsMathToolKitCPP/lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) -f TestsMathToolKitCPP\TestNAnalysis\CMakeFiles\TestNAnalysis.dir\build.make TestsMathToolKitCPP/TestNAnalysis/CMakeFiles/TestNAnalysis.dir/depend
