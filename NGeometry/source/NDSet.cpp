@@ -48,7 +48,7 @@ int NDSet::card() const {
 }
 
 std::vector<vec_t> NDSet::border() const {
-    //TODO : Implement border calculation from triangulation of points contained in underlying set
+    //TODO : Implement border calculation from complex hull of points contained in underlying set
     return mesh();
 }
 

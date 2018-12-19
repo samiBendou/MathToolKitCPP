@@ -27,6 +27,8 @@ public:
 
     const vec_t &pos() const;
 
+    double vol() const;
+
     void setBase(const mat_t &base);
 
     void setPos(const vec_t &pos);
@@ -37,17 +39,13 @@ public:
 
     std::vector<NSegment> segments() const;
 
-    double vol() const;
+
 
 protected:
 
     ul_t meshSize(const vec_t &h) const;
 
     mat_t _base;
-public:
-
-
-protected:
     vec_t _pos;
     double _vol;
 };

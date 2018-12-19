@@ -51,6 +51,11 @@ const vec_t &NParallelepiped::pos() const {
     return _pos;
 }
 
+double NParallelepiped::vol() const {
+    return _vol;
+}
+
+
 void NParallelepiped::setBase(const mat_t &base) {
     NParallelepiped::_base = base;
     _vol = base.det();
@@ -103,9 +108,6 @@ std::vector<NSegment> NParallelepiped::segments() const {
     return seg;
 }
 
-double NParallelepiped::vol() const {
-    return _vol;
-}
 
 ul_t NParallelepiped::meshSize(const vec_t &h) const {
     ul_t res = 1;
