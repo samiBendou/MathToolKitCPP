@@ -102,7 +102,8 @@ string NPMatrix<T>::str() const {
     stringstream stream;
 
     for (ul_t i = _i1; i <= _i2; ++i) {
-        stream << "\n" << row(i)(_j1, _j2);
+        stream << "\n";
+        stream << row(i)(_j1, _j2);
     }
     setDefaultBrowseIndices();
     return stream.str();
@@ -846,7 +847,7 @@ void NPMatrix<T>::pow(const long n) {
 }
 
 template<typename T>
-void NPMatrix<T>::rPow(long n) {
+void NPMatrix<T>::rPow(const long n) {
     if (n > 1) {
         const NPMatrix<T> copy{this->subMatrix(_i1, _j1, _i2, _j2)};
         (*this)(_i1, _j1, _i2, _j2).matrixProduct(copy);
@@ -932,7 +933,8 @@ void NPMatrix<T>::lupUpdate() const {
     if (!_a->isUpper() || !_a->isLower()) {
         for (i = 0; i < _a->_n; ++i) {
             i_max = _a->col(i)(i, _a->_n - 1).maxAbsIndex() + i;
-            if (abs((*_a)(i_max, i)) > EPSILON) { //matrix is not degenerate
+            if (abs((*_a)(i_max, i)) > EPSILON) { //matrix is not de
+                // generate
                 if (i_max != i) {
                     j = (*p)[i];
                     (*p)[i] = (*p)[i_max];

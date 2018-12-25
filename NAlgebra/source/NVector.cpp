@@ -40,9 +40,10 @@ string NVector<T>::str() const {
 
     stream << '(';
     for (auto k = _k1; k <= _k2; ++k) {
-        stream << ((*this)[k] >= 0 ? ' ' : '-') << abs((*this)[k]) << " ";
+        stream << ((*this)[k] >= 0 ? ' ' : '-');
+        stream << abs((*this)[k]);
     }
-    stream << ")";
+    stream << " )";
     setDefaultBrowseIndices();
     return stream.str();
 }
@@ -100,21 +101,23 @@ ul_t NVector<T>::minIndex() const {
 template<typename T>
 T NVector<T>::maxAbs() const {
 
-    auto result = std::minmax_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
 
     setDefaultBrowseIndices();
 
-    return abs(*result.second) > abs(*result.first) ? abs(*result.second) : abs(*result.first);
+    return abs(*max_it) > abs(*min_it) ? abs(*max_it) : abs(*min_it);
 }
 
 template<typename T>
 T NVector<T>::minAbs() const {
 
-    auto result = std::minmax_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
 
     setDefaultBrowseIndices();
 
-    return abs(*result.second) <= abs(*result.first) ? abs(*result.second) : abs(*result.first);
+    return abs(*max_it) <= abs(*min_it) ? abs(*max_it) : abs(*min_it);
 }
 
 template<typename T>
