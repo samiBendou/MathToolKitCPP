@@ -23,25 +23,10 @@
 #ifndef MATHTOOLKIT_VECTOR_H
 #define MATHTOOLKIT_VECTOR_H
 
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <cmath>
-#include <vector>
-#include <cstdarg>
-#include <cassert>
-#include <algorithm>
-#include <complex>
-#include <functional>
-#include <numeric>
-
-#include <AESByte.h>
+#include "thirdparty.h"
 
 #define MAX_SIZE 4294967295
 #define EPSILON (std::numeric_limits<T>::epsilon())
-#define NEAR_TOL 0.5
-
-typedef unsigned long ul_t;
 
 
 template<typename T>
@@ -147,7 +132,7 @@ public:
      *                      else to the right.
      * @details : Shifts vector iterations times. ie. with iterations = 2 : (x2, x3, ..., x(n-1), x0, x1).
      */
-    void shift(long iterations);
+    NVector<T> &shift(long iterations);
 
     /**
      *
@@ -323,6 +308,10 @@ public:
      */
     friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
+    friend bool operator!=(const NVector<T> &u, const std::string &str) { return !(u == str); }
+
+    friend bool operator!=(const std::string &str, const NVector<T> &u) { return u != str; }
+
     friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
 
@@ -357,7 +346,7 @@ public:
      * @return  return the kth vector of canonical base. ie (e0, e1, ..., e(n-1)) where :
      *          e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n - 1) = (0, 0, ..., 1).
      */
-    static NVector<T> can(ul_t k, ul_t dim);
+    static NVector<T> canonical(ul_t k, ul_t dim);
 
     /**
      *
@@ -374,10 +363,6 @@ public:
      *          usual addition and scalar multiplication.
      */
     static NVector<T> sumProd(const std::vector<T> &scalars, const std::vector<NVector> &vectors);
-
-    static bool areNear(const NVector<T>& u, const NVector<T>& v);
-
-    static bool areEqual(const NVector<T>& u, const NVector<T>& v);
 
 protected:
 
@@ -437,5 +422,6 @@ protected:
 typedef NVector<double> vec_t;
 typedef NVector<char> vec_char_t;
 typedef NVector<AESByte> vec_aes_t;
+typedef NVector<Pixel> vec_pix_t;
 
 #endif //MATHTOOLKIT_VECTOR_H

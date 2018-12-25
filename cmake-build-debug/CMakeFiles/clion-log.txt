@@ -1,4 +1,4 @@
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Users\Bendou\CLionProjects\MathToolKitCPP
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/lemale/CLionProjects/MathToolKitCPP
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug
+-- Build files have been written to: /Users/lemale/CLionProjects/MathToolKitCPP/cmake-build-debug

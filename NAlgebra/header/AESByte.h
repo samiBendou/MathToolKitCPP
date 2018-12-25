@@ -1,25 +1,32 @@
-//
-// Created by Sami Dahoux on 15/10/2018.
-//
+/**
+ * @class          : Pixel
+ * @date           : 15/10/2018
+ * @author         : samiBendou
+ * @description    : AESByte class is a representation of a byte used in AES algorithm,
+ *                   providing algebraical operation on the specific Gallois field. and
+ *                   interfacing with char primitive type. For more details go to
+ *                   https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf.
+ *
+ * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ */
 
-#ifndef AESTEST_AESBYTE_H
-#define AESTEST_AESBYTE_H
+#ifndef MATHTOOLKIT_AESBYTE_H
+#define MATHTOOLKIT_AESBYTE_H
 
 #include <cmath>
 #include <iostream>
 #include <stdlib.h>
-
-typedef unsigned char uc_t;
-
-typedef unsigned int ui_t;
+#include <typedef.h>
 
 class AESByte {
 
 public:
 
-    friend AESByte abs(const AESByte& b);
+    friend AESByte abs(const AESByte &b);
 
-    friend AESByte sqrt(const AESByte& b);
+    friend AESByte sqrt(const AESByte &b);
+
+    // CONSTRUCTOR
 
     AESByte(char val = 0x00);
 
@@ -27,45 +34,51 @@ public:
 
     AESByte(double val);
 
+    // GETTERS
+
     uc_t val() const;
 
-    AESByte operator+(const AESByte& b);
+    // OPERATORS
 
-    AESByte operator-(const AESByte& b);
+    AESByte operator+(const AESByte &b);
+
+    AESByte operator-(const AESByte &b);
 
     AESByte operator-() const;
 
-    friend AESByte operator*(const AESByte& b1, const AESByte& b2);
+    friend AESByte operator*(const AESByte &b1, const AESByte &b2);
 
-    AESByte& operator+=(const AESByte& b);
+    AESByte &operator+=(const AESByte &b);
 
-    AESByte& operator*=(const AESByte& b);
+    AESByte &operator*=(const AESByte &b);
 
-    AESByte&operator -=(const AESByte& b);
+    AESByte &operator-=(const AESByte &b);
 
-    AESByte&operator /=(const AESByte& b);
+    AESByte &operator/=(const AESByte &b);
 
-    friend bool operator==(const AESByte& b1, const AESByte& b2);
+    friend bool operator==(const AESByte &b1, const AESByte &b2);
 
-    friend bool operator!=(const AESByte& b1, const AESByte& b2);
+    friend bool operator!=(const AESByte &b1, const AESByte &b2);
 
-    friend bool operator>(const AESByte& b1, const AESByte& b2);
+    friend bool operator>(const AESByte &b1, const AESByte &b2);
 
-    friend bool operator<(const AESByte& b1, const AESByte& b2);
+    friend bool operator<(const AESByte &b1, const AESByte &b2);
 
-    friend bool operator>=(const AESByte& b1, const AESByte& b2);
+    friend bool operator>=(const AESByte &b1, const AESByte &b2);
 
-    friend bool operator<=(const AESByte& b1, const AESByte& b2);
+    friend bool operator<=(const AESByte &b1, const AESByte &b2);
 
-    friend std::ostream& operator<<(std::ostream& os, const AESByte& b);
+    friend std::ostream &operator<<(std::ostream &os, const AESByte &b);
 
 private:
 
-    void add(const AESByte& b);
+    // ALGEBRAICAL OPERATIONS
 
-    void prod(const AESByte& b);
+    void add(const AESByte &b);
+
+    void prod(const AESByte &b);
 
     uc_t _val;
 };
 
-#endif //AESTEST_AESBYTE_H
+#endif //MATHTOOLKIT_AESBYTE_H

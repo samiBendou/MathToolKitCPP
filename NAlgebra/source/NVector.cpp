@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 // CONSTRUCTORS
 
 template<typename T>
@@ -124,7 +123,12 @@ ul_t NVector<T>::maxAbsIndex() const {
     auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
     auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
 
-    ul_t res = (ul_t) std::distance(this->begin() + _k1, abs(*max_it) > abs(*min_it) ? max_it : min_it);
+    ul_t res;
+    if (abs(*max_it) > abs(*min_it)) {
+        res = (ul_t) std::distance(this->begin() + _k1, max_it);
+    } else {
+        res = (ul_t) std::distance(this->begin() + _k1, min_it);
+    }
 
     setDefaultBrowseIndices();
 
@@ -137,7 +141,12 @@ ul_t NVector<T>::minAbsIndex() const {
     auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
     auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
 
-    ul_t res = (ul_t) std::distance(this->begin() + _k1, abs(*max_it) <= abs(*min_it) ? max_it : min_it);
+    ul_t res;
+    if (abs(*max_it) <= abs(*min_it)) {
+        res = (ul_t) std::distance(this->begin() + _k1, max_it);
+    } else {
+        res = (ul_t) std::distance(this->begin() + _k1, min_it);
+    }
 
     setDefaultBrowseIndices();
 
@@ -154,7 +163,9 @@ template<typename T>
 void NVector<T>::swap(ul_t k1, ul_t k2) {
     assert(isBetweenK12(k1) && isBetweenK12(k2));
 
-    std::swap(*(this->begin() + k1), *(this->begin() + k2));
+    auto temp = (*this)[k1];
+    (*this)[k1] = (*this)[k2];
+    (*this)[k2] = temp;
 
     setDefaultBrowseIndices();
 }
@@ -163,7 +174,7 @@ void NVector<T>::swap(ul_t k1, ul_t k2) {
 // SHIFT
 
 template<typename T>
-void NVector<T>::shift(long iterations) {
+NVector<T> &NVector<T>::shift(long iterations) {
     auto sized_dim = _k2 - _k1 + 1;
     auto sized_iterations = (abs(iterations) % sized_dim);
     auto shift_index = (iterations >= 0 ? sized_iterations : sized_dim - sized_iterations);
@@ -171,6 +182,7 @@ void NVector<T>::shift(long iterations) {
     std::rotate(this->begin() + _k1, this->begin() + _k1 + shift_index, this->begin() + _k2 + 1);
 
     setDefaultBrowseIndices();
+    return *this;
 }
 
 
@@ -299,6 +311,15 @@ bool operator!=(const NVector<T> &u, const NVector<T> &v) {
     return !(u == v);
 }
 
+template<typename T>
+bool operator!=(const NVector<T> &u, const std::string &str) {
+    return !(u == str);
+}
+
+template<typename T>
+bool operator!=(const std::string &str, const NVector<T> &u) {
+    return u != str;
+}
 
 template<typename T>
 bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
@@ -318,20 +339,16 @@ NVector<T> NVector<T>::ones(ul_t dim) {
 template<typename T>
 NVector<T> NVector<T>::scalar(T s, ul_t dim) {
     NVector<T> scalar(dim);
-    if(dim > 0)
-        scalar.fill(s);
+    scalar.fill(s);
     return scalar;
 }
 
 template<typename T>
-NVector<T> NVector<T>::can(ul_t k, ul_t dim) {
+NVector<T> NVector<T>::canonical(ul_t k, ul_t dim) {
+    assert(k < dim);
+
     NVector<T> canonical = NVector<T>::zeros(dim);
-
-    if(dim > 0) {
-        assert(k < dim);
-        canonical(k) = 1.0;
-    }
-
+    canonical(k) = 1.0;
     return canonical;
 }
 
@@ -355,16 +372,6 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
         sum_prod += scalars[k] * vectors[k];
     }
     return sum_prod;
-}
-
-template<typename T>
-bool NVector<T>::areNear(const NVector<T> &u, const NVector<T> &v) {
-    return  u / v < NEAR_TOL;
-}
-
-template<typename T>
-bool NVector<T>::areEqual(const NVector<T> &u, const NVector<T> &v) {
-    return u == v;
 }
 
 // PROTECTED METHODS
@@ -424,10 +431,9 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
     T dot = 0.0;
 
     assert(hasSameSize(u));
-
-    dot = std::inner_product(this->begin() + _k1, this->begin() + _k2 + 1,
-                        u.begin() + u._k1, dot);
-
+    for (ul_t k = 0; k <= _k2 - _k1; ++k) {
+        dot += u[k + u._k1] * (*this)[k + _k1];
+    }
     setDefaultBrowseIndices();
     u.setDefaultBrowseIndices();
     return dot;
@@ -530,6 +536,7 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
     u.setDefaultBrowseIndices();
 }
 
+
 template
 class NVector<double>;
 
@@ -537,7 +544,16 @@ template
 class NVector<char>;
 
 template
+class NVector<uc_t>;
+
+template
+class NVector<i_t>;
+
+template
 class NVector<AESByte>;
+
+template
+class NVector<Pixel>;
 
 
 

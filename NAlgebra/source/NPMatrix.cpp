@@ -392,7 +392,7 @@ NPMatrix<T> NPMatrix<T>::transposed() const {
 
 template<typename T>
 T NPMatrix<T>::trace() const {
-    T trace = 0;
+    T trace = 0.0;
     for (ul_t i = _i1; i <= _i2; i++) {
         trace += (*this)(i, i);
     }
@@ -605,9 +605,9 @@ NPMatrix<T> NPMatrix<T>::ones(ul_t n, ul_t p) {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::can(ul_t i, ul_t j, ul_t n, ul_t p) {
+NPMatrix<T> NPMatrix<T>::canonical(ul_t i, ul_t j, ul_t n, ul_t p) {
     p = (p > 0) ? p : n;
-    return NPMatrix<T>(NVector<T>::can(p * i + j, n * p), n, p);
+    return NPMatrix<T>(NVector<T>::canonical(p * i + j, n * p), n, p);
 }
 
 template<typename T>
@@ -632,6 +632,9 @@ template<typename T>
 NPMatrix<T> NPMatrix<T>::scalar(T s, ul_t n) {
     return s * NPMatrix<T>::eye(n);
 }
+
+//Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
+//diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
 
 template<typename T>
 NPMatrix<T> NPMatrix<T>::ndiag(const std::vector<NVector<T>> &data) {
@@ -829,7 +832,7 @@ void NPMatrix<T>::div(T s) {
 }
 
 template<typename T>
-void NPMatrix<T>::pow(long n) {
+void NPMatrix<T>::pow(const long n) {
     if (n > 0) {
         rPow(n);
     } else if (n < 0) {
@@ -1111,8 +1114,16 @@ template
 class NPMatrix<char>;
 
 template
+class NPMatrix<uc_t>;
+
+template
+class NPMatrix<i_t>;
+
+template
 class NPMatrix<AESByte>;
 
+template
+class NPMatrix<Pixel>;
 
 
 

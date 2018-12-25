@@ -37,7 +37,7 @@
 #ifndef MATHTOOLKIT_NPMATRIX_H
 #define MATHTOOLKIT_NPMATRIX_H
 
-
+#include "thirdparty.h"
 #include <NVector.h>
 
 using namespace std;
@@ -442,7 +442,7 @@ public:
      *
      * @return canonical matrices Eij  of Mnp(R) which contains 1 in position ij and 0 elsewhere.
      */
-    static NPMatrix<T> can(ul_t i, ul_t j, ul_t n, ul_t p = 0);
+    static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
 
     /**
      *
@@ -612,5 +612,6 @@ protected:
 typedef NPMatrix<double> mat_t;
 typedef NPMatrix<char> mat_char_t;
 typedef NPMatrix<AESByte> mat_aes_t;
+typedef NPMatrix<Pixel> mat_pix_t;
 
 #endif //MATHTOOLKIT_NPMATRIX_H

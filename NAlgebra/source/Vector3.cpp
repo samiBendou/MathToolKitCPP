@@ -104,8 +104,8 @@ Vector3 Vector3::scalar(double scalar) {
     return Vector3(NVector::scalar(scalar, 3));
 }
 
-Vector3 Vector3::can(ul_t k) {
-    return Vector3(NVector::can(k, 3));
+Vector3 Vector3::canonical(ul_t k) {
+    return Vector3(NVector::canonical(k, 3));
 }
 
 void Vector3::cross(const Vector3 &vector) {

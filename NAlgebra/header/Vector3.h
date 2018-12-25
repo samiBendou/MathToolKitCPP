@@ -23,7 +23,7 @@
 #ifndef MATHTOOLKIT_VECTOR3_H
 #define MATHTOOLKIT_VECTOR3_H
 
-#include "NVector.h"
+#include <NVector.h>
 
 class Vector3 : public NVector<double> {
 public:
@@ -93,7 +93,7 @@ public:
 
     static Vector3 scalar(double scalar);
 
-    static Vector3 can(ul_t k);
+    static Vector3 canonical(ul_t k);
 
 
 protected:
