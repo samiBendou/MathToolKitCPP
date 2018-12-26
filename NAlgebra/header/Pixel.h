@@ -58,7 +58,7 @@ public:
 
     int blue() const;
 
-    int greyScale() const;
+    int grey() const;
 
     bool limited() const;
 
@@ -72,7 +72,7 @@ public:
 
     void setBlue(int blue);
 
-    void setGreyScale(int grey);
+    void setGrey(int grey);
 
     void setRGB(int red, int green, int blue);
 
@@ -136,9 +136,9 @@ private:
 
     bool isEqual(int val) const;
 
-    int limitIfLimited(int cmp) const;
+    int limitCmpIfLimited(int cmp) const;
 
-    void setPrivateRGB(int red, int green, int blue);
+    void setRGBWithoutFormatChange(int red, int green, int blue);
 
     int _red;
     int _green;

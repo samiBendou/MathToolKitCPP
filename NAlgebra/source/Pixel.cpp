@@ -32,7 +32,7 @@ int Pixel::blue() const {
     return _blue;
 }
 
-int Pixel::greyScale() const {
+int Pixel::grey() const {
     return (_red + _green + _blue) / 3;
 }
 
@@ -45,27 +45,27 @@ Pixel::Format Pixel::format() const {
 }
 
 void Pixel::setRed(int red) {
-    _red = limitIfLimited(red);
+    _red = limitCmpIfLimited(red);
     _format = RGB;
 }
 
 void Pixel::setGreen(int green) {
-    _green = limitIfLimited(green);
+    _green = limitCmpIfLimited(green);
     _format = RGB;
 }
 
 void Pixel::setBlue(int blue) {
-    _blue = limitIfLimited(blue);
+    _blue = limitCmpIfLimited(blue);
     _format = RGB;
 }
 
-void Pixel::setGreyScale(int grey) {
-    setPrivateRGB(grey, grey, grey);
+void Pixel::setGrey(int grey) {
+    setRGBWithoutFormatChange(grey, grey, grey);
     _format = GScale;
 }
 
 void Pixel::setRGB(int red, int green, int blue) {
-    setPrivateRGB(red, green, blue);
+    setRGBWithoutFormatChange(red, green, blue);
     _format = RGB;
 }
 
@@ -78,7 +78,7 @@ void Pixel::setLimited(bool limited) {
 
 void Pixel::limit() {
     _limited = true;
-    setPrivateRGB(_red, _green, _blue);
+    setRGBWithoutFormatChange(_red, _green, _blue);
 }
 
 void Pixel::conformFormatTo(const Pixel &p) {
@@ -154,19 +154,19 @@ bool operator!=(const Pixel &p1, const Pixel &p2) {
 
 
 bool operator<=(const Pixel &p1, const Pixel &p2) {
-    return p1.greyScale() <= p2.greyScale();
+    return p1.grey() <= p2.grey();
 }
 
 bool operator<(const Pixel &p1, const Pixel &p2) {
-    return p1.greyScale() < p2.greyScale();
+    return p1.grey() < p2.grey();
 }
 
 bool operator>(const Pixel &p1, const Pixel &p2) {
-    return p1.greyScale() > p2.greyScale();
+    return p1.grey() > p2.grey();
 }
 
 bool operator>=(const Pixel &p1, const Pixel &p2) {
-    return p1.greyScale() >= p2.greyScale();
+    return p1.grey() >= p2.grey();
 }
 
 std::ostream &operator<<(std::ostream &os, const Pixel &p) {
@@ -190,38 +190,33 @@ Pixel abs(const Pixel &p) {
 
 Pixel sqrt(const Pixel &p) {
     Pixel p_sqrt = p;
-    p_sqrt.setPrivateRGB((int) floor(sqrt(p._red)), (int) floor(sqrt(p._green)), (int) floor(sqrt(p._blue)));
+    p_sqrt.setRGBWithoutFormatChange((int) floor(sqrt(p._red)), (int) floor(sqrt(p._green)),
+                                     (int) floor(sqrt(p._blue)));
     return p_sqrt;
 }
 
 void Pixel::add(const Pixel &p) {
-    setPrivateRGB(_red + p._red, _green + p._green, _blue + p._blue);
+    setRGBWithoutFormatChange(_red + p._red, _green + p._green, _blue + p._blue);
     conformFormatTo(p);
 }
 
 void Pixel::sub(const Pixel &p) {
-    setPrivateRGB(_red - p._red, _green - p._green, _blue - p._blue);
+    setRGBWithoutFormatChange(_red - p._red, _green - p._green, _blue - p._blue);
     conformFormatTo(p);
 }
 
 void Pixel::opp() {
-    setPrivateRGB(-_red, -_green, -_blue);
+    setRGBWithoutFormatChange(-_red, -_green, -_blue);
 }
 
 void Pixel::prod(const Pixel &p) {
-    setPrivateRGB(_red * p._red, _green * p._green, _blue * p._blue);
+    setRGBWithoutFormatChange(_red * p._red, _green * p._green, _blue * p._blue);
     conformFormatTo(p);
 }
 
 void Pixel::div(const Pixel &p) {
-    setPrivateRGB(_red / p._red, _green / p._green, _blue / p._blue);
+    setRGBWithoutFormatChange(_red / p._red, _green / p._green, _blue / p._blue);
     conformFormatTo(p);
-}
-
-int Pixel::limitIfLimited(int cmp) const {
-    if (_limited)
-        return cmp > 0 ? cmp % (MAX_LIMIT_CMP + 1) : 0;
-    else return cmp;
 }
 
 bool Pixel::isEqual(int val) const {
@@ -232,10 +227,16 @@ bool Pixel::isEqual(int val) const {
     } else return false;
 }
 
-void Pixel::setPrivateRGB(int red, int green, int blue) {
-    _red = limitIfLimited(red);
-    _blue = limitIfLimited(green);
-    _green = limitIfLimited(blue);
+int Pixel::limitCmpIfLimited(int cmp) const {
+    if (_limited)
+        return cmp > 0 ? cmp % (MAX_LIMIT_CMP + 1) : 0;
+    else return cmp;
+}
+
+void Pixel::setRGBWithoutFormatChange(int red, int green, int blue) {
+    _red = limitCmpIfLimited(red);
+    _blue = limitCmpIfLimited(green);
+    _green = limitCmpIfLimited(blue);
 }
 
 

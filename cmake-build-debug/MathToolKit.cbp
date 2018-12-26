@@ -769,6 +769,9 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNVectorFuncOp.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestPixel.cpp">
+			<Option target="TestNAlgebra"/>
+		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestVector3.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>

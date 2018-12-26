@@ -15,10 +15,4 @@
 using namespace std;
 
 int main() {
-
-    vec_aes_t vec{0x01, 0x00, 0x00};
-    cout << vec.maxIndex() << endl;
-    cout << (vec | vec);
-
-    return 0;
 }
