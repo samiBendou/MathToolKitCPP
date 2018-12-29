@@ -177,49 +177,6 @@ NVector<T> &NVector<T>::fill(T s) {
     return *this;
 }
 
-
-
-// OPERATORS
-
-template<typename T>
-NVector<T> NVector<T>::operator-() const {
-    NVector<T> res{*this};
-    res.opp();
-    return res;
-}
-
-// SCALAR PRODUCT BASED OPERATIONS
-
-
-template<typename T>
-T operator/(const NVector<T> &u, const NVector<T> &v) {
-    return u.distance(v);
-}
-
-
-// COMPOUND OPERATORS
-
-
-template<typename T>
-NVector<T> &NVector<T>::operator+=(const NVector<T> &u) {
-    return add(u);
-}
-
-template<typename T>
-NVector<T> &NVector<T>::operator-=(const NVector<T> &u) {
-    return sub(u);
-}
-
-template<typename T>
-NVector<T> &NVector<T>::operator*=(T s) {
-    return prod(s);
-}
-
-template<typename T>
-NVector<T> &NVector<T>::operator/=(T s) {
-    return div(s);
-}
-
 // ACCES OPERATOR
 
 
@@ -238,11 +195,6 @@ T NVector<T>::operator()(long k) const {
 }
 
 template<typename T>
-NVector<T> NVector<T>::operator()(ul_t k1, ul_t k2) const {
-    return subVector(k1, k2);
-}
-
-template<typename T>
 NVector<T> &NVector<T>::operator()(ul_t k1, ul_t k2) {
     assert(isValidIndex(k1) && isValidIndex(k2));
     assert(k2 >= k1);
@@ -255,50 +207,7 @@ NVector<T> &NVector<T>::operator()(ul_t k1, ul_t k2) {
 
 // AFFECTATION
 
-template<typename T>
-NVector<T> &NVector<T>::operator=(const NVector<T> &u) {
-    copy(u);
-    return *this;
-}
-
-// NORM BASED COMPARISON OPERATORS
-
-template<typename T>
-bool operator==(const NVector<T> &u, T s) {
-    bool res = s < EPSILON && u.isNull();
-    u.setDefaultBrowseIndices();
-    return res;
-}
-
-template<typename T>
-bool operator!=(const NVector<T> &u, const NVector<T> &v) {
-    return !(u == v);
-}
-
-template<typename T>
-bool operator!=(const NVector<T> &u, const std::string &str) {
-    return !(u == str);
-}
-
-template<typename T>
-bool operator!=(const std::string &str, const NVector<T> &u) {
-    return u != str;
-}
-
-template<typename T>
-bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
-
 // STATIC METHODS
-
-template<typename T>
-NVector<T> NVector<T>::zeros(ul_t dim) {
-    return scalar(0, dim);
-}
-
-template<typename T>
-NVector<T> NVector<T>::ones(ul_t dim) {
-    return scalar(1, dim);
-}
 
 template<typename T>
 NVector<T> NVector<T>::scalar(T s, ul_t dim) {
@@ -340,33 +249,6 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 
 // PROTECTED METHODS
 
-// VECTOR SPACE METHODS
-
-template<typename T>
-NVector<T> &NVector<T>::add(const NVector<T> &u) {
-    return forEach(u, [](T x, T y) { return x + y; });
-}
-
-template<typename T>
-NVector<T> &NVector<T>::sub(const NVector<T> &u) {
-    return forEach(u, [](T x, T y) { return x - y; });
-}
-
-template<typename T>
-NVector<T> &NVector<T>::opp() {
-    return prod(-1);
-}
-
-template<typename T>
-NVector<T> &NVector<T>::prod(T s) {
-    return forEach(s, [](T x, T s) { return x * s; });
-}
-
-template<typename T>
-NVector<T> &NVector<T>::div(T s) {
-    return forEach(s, [](T x, T s) { return x / s; });
-}
-
 // EUCLIDEAN SPACE OPERATIONS
 
 template<typename T>
@@ -380,11 +262,6 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
     setDefaultBrowseIndices();
     u.setDefaultBrowseIndices();
     return dot;
-}
-
-template<typename T>
-T NVector<T>::norm() const {
-    return sqrt(dotProduct(*this));
 }
 
 template<typename T>
@@ -423,41 +300,10 @@ NVector<T> &NVector<T>::forEach(T s, std::function<T(T, T)> binaryOp) {
 //CHARACTERIZATION
 
 template<typename T>
-bool NVector<T>::isValidIndex(ul_t k) const {
-    return k < this->size();
-}
-
-template<typename T>
-bool NVector<T>::isNull() const {
-    return norm() <= EPSILON;
-}
-
-template<typename T>
 bool NVector<T>::isEqual(const NVector<T> &u) const {
     if (!hasSameSize(u))
         return false;
     return distance(u) <= EPSILON;
-}
-
-template<typename T>
-bool NVector<T>::isBetweenK12(ul_t k) const {
-    return k >= _k1 && k <= _k2;
-}
-
-template<typename T>
-bool NVector<T>::hasSameSize(const NVector<T> &u) const {
-    return _k2 - _k1 == u._k2 - u._k1;
-}
-
-template<typename T>
-bool NVector<T>::hasDefaultBrowseIndices() const {
-    return _k1 == 0 && (_k2 == this->size() - 1 || _k2 == 0);
-}
-
-template<typename T>
-void NVector<T>::setDefaultBrowseIndices() const {
-    _k1 = 0;
-    _k2 = (!this->empty()) ? this->size() - 1 : 0;
 }
 
 // AFFECTATION

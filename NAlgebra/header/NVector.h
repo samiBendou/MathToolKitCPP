@@ -152,7 +152,7 @@ public:
     /**
      * @return result of u + v where + is the usual addition (u0 + v0, u1 + v1, ...).
      */
-    friend NVector<T> operator+(NVector<T> u, const NVector<T> &v) {
+    inline friend NVector<T> operator+(NVector<T> u, const NVector<T> &v) {
         u += v;
         return u;
     }
@@ -161,7 +161,7 @@ public:
     /**
      * @return return u - v where - is difference based on usual addition.
      */
-    friend NVector<T> operator-(NVector<T> u, const NVector<T> &v) {
+    inline friend NVector<T> operator-(NVector<T> u, const NVector<T> &v) {
         u -= v;
         return u;
     }
@@ -170,24 +170,28 @@ public:
     /**
      * @return opposite of u (-u0, -u1, ...).
      */
-    NVector<T> operator-() const;
+    NVector<T> operator-() const {
+        NVector<T> res{*this};
+        res.opp();
+        return res;
+    }
 
     /**
      * @return s * u where * is usual scalar multiplication (s * u0, s * u1, ...).
      */
-    friend NVector<T> operator*(T s, NVector<T> u) {
+    inline friend NVector<T> operator*(T s, NVector<T> u) {
         u *= s;
         return u;
     }
 
-    friend NVector<T> operator*(const NVector<T> &u, T s) {
+    inline friend NVector<T> operator*(const NVector<T> &u, T s) {
         return s * u;
     }
 
     /**
      * @return return (1 / s) * u where * is the usual scalar multiplication (s * u0, s * u1, ...).
      */
-    friend NVector<T> operator/(NVector<T> u, T s) {
+    inline friend NVector<T> operator/(NVector<T> u, T s) {
         u /= s;
         return u;
     }
@@ -199,7 +203,7 @@ public:
      * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
      */
 
-    friend T operator|(const NVector<T> &u, const NVector<T> &v) {
+    inline friend T operator|(const NVector<T> &u, const NVector<T> &v) {
         return u.dotProduct(v);
     }
 
@@ -208,7 +212,7 @@ public:
      * @return the norm of vector ||.|| dervied from dot product.
      */
 
-    friend T operator!(const NVector<T> &u) {
+    inline friend T operator!(const NVector<T> &u) {
         return u.norm();
     }
 
@@ -217,7 +221,7 @@ public:
      * @return distance between u & v, ||u - v||.
      */
 
-    friend T operator/(const NVector<T> &u, const NVector<T> &v) {
+    inline friend T operator/(const NVector<T> &u, const NVector<T> &v) {
         return u.distance(v);
     }
 
@@ -225,13 +229,21 @@ public:
     // COMPOUND OPERATORS
 
 
-    NVector<T> &operator+=(const NVector<T> &u);
+    inline NVector<T> &operator+=(const NVector<T> &u) {
+        return add(u);
+    }
 
-    NVector<T> &operator-=(const NVector<T> &u);
+    inline NVector<T> &operator-=(const NVector<T> &u) {
+        return sub(u);
+    }
 
-    virtual NVector<T> &operator*=(T s);
+    inline virtual NVector<T> &operator*=(T s) {
+        return prod(s);
+    }
 
-    virtual NVector<T> &operator/=(T s);
+    inline virtual NVector<T> &operator/=(T s) {
+        return div(s);
+    }
 
 
     // ACCES OPERATOR
@@ -245,7 +257,7 @@ public:
      */
     T &operator()(long k);
 
-    T operator()(long k) const;
+    inline T operator()(long k) const;
 
     /**
      *
@@ -263,7 +275,9 @@ public:
      *
      *          - See unit tests for more details.
      */
-    NVector<T> operator()(ul_t k1, ul_t k2) const;
+    inline NVector<T> operator()(ul_t k1, ul_t k2) const {
+        return subVector(k1, k2);
+    }
 
     NVector<T> &operator()(ul_t k1, ul_t k2);
 
@@ -284,9 +298,9 @@ public:
      * @return reference to this.
      * @details Copy source object on this object using copy().
      */
-    NVector<T> &operator=(const NVector<T> &u);
-
-    //NVector<T> &operator=(const std::string &str);
+    NVector<T> &operator=(const NVector<T> &u) {
+        return copy(u);
+    }
 
     // NORM BASED COMPARISON OPERATORS
 
@@ -305,7 +319,7 @@ public:
      * @return true if s is 0 and u is null vector.
      */
     friend bool operator==(const NVector<T> &u, T s) {
-        bool res = s < std::numeric_limits<T>::epsilon() && u.isNull();
+        bool res = s < EPSILON && u.isNull();
         u.setDefaultBrowseIndices();
         return res;
     }
@@ -314,13 +328,13 @@ public:
      *
      * @return return true if ||v1 - v2|| >= epsilon.
      */
-    friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
+    inline friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
-    friend bool operator!=(const NVector<T> &u, const std::string &str) { return !(u == str); }
+    inline friend bool operator!=(const NVector<T> &u, const std::string &str) { return !(u == str); }
 
-    friend bool operator!=(const std::string &str, const NVector<T> &u) { return u != str; }
+    inline friend bool operator!=(const std::string &str, const NVector<T> &u) { return u != str; }
 
-    friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
+    inline friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
     // ITERATORS
 
@@ -347,14 +361,18 @@ public:
      * @param dim : dimension of the vector
      * @return a 0 vector (0, 0, ..., 0).
      */
-    static NVector<T> zeros(ul_t dim);
+    inline static NVector<T> zeros(ul_t dim) {
+        return scalar(0, dim);
+    }
 
     /**
      *
      * @param dim : dimension of the vector
      * @return Returns vector filled with 1 (1, 1, ..., 1).
      */
-    static NVector<T> ones(ul_t dim);
+    inline static NVector<T> ones(ul_t dim) {
+        return scalar(1, dim);
+    }
 
     /**
      *
@@ -393,39 +411,66 @@ protected:
 
     // VECTOR SPACE OPERATIONS
 
-    NVector<T> &add(const NVector<T> &u);
+    inline NVector<T> &add(const NVector<T> &u) {
+        return forEach(u, [](T x, T y) { return x + y; });
+    }
 
-    NVector<T> &sub(const NVector<T> &u);
+    inline NVector<T> &sub(const NVector<T> &u) {
+        return forEach(u, [](T x, T y) { return x - y; });
+    }
 
-    NVector<T> &opp();
+    inline NVector<T> &opp() {
+        return prod(-1);
+    }
 
-    NVector<T> &prod(T s);
+    inline NVector<T> &prod(T s) {
+        return forEach(s, [](T x, T s) { return x * s; });
+    }
 
-    NVector<T> &div(T s);
+    inline NVector<T> &div(T s) {
+        return forEach(s, [](T x, T s) { return x / s; });
+    }
 
     // EUCLIDEAN SPACE OPERATIONS
 
     T dotProduct(const NVector<T> &u) const;
 
-    T norm() const;
+    T norm() const {
+        return sqrt(dotProduct(*this));
+    }
 
     T distance(const NVector<T> &u) const;
 
     //CHARACTERIZATION
 
-    bool isValidIndex(ul_t k) const;
+    inline bool isValidIndex(ul_t k) const {
+        return k < this->size();
+    }
 
-    bool isBetweenK12(ul_t k) const;
+    inline bool isBetweenK12(ul_t k) const {
+        return k >= _k1 && k <= _k2;
+    }
 
-    bool isNull() const;
+    inline bool isNull() const {
+        return norm() <= EPSILON;
+
+    }
 
     bool isEqual(const NVector<T> &u) const;
 
-    bool hasSameSize(const NVector<T> &u) const;
 
-    virtual bool hasDefaultBrowseIndices() const;
+    inline bool hasSameSize(const NVector<T> &u) const {
+        return _k2 - _k1 == u._k2 - u._k1;
+    }
 
-    virtual void setDefaultBrowseIndices() const;
+    inline virtual bool hasDefaultBrowseIndices() const {
+        return _k1 == 0 && (_k2 == this->size() - 1 || _k2 == 0);
+    }
+
+    inline virtual void setDefaultBrowseIndices() const {
+        _k1 = 0;
+        _k2 = (!this->empty()) ? this->size() - 1 : 0;
+    }
 
     // MANIPULATORS
 

@@ -4,7 +4,15 @@
 
 ### Last Update : 30/10/2018
 
-### Current Version : 1.0.1
+### Current Version : 1.1.0 (WIP)
+
+## Version log :
+
+- 1.1.0 :   Adding cascade calls interface for NAlgebra (vect.shift().swap()). Simplifying code structure.
+            Optimizing execution time by inlining.
+- 1.0.1 : Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data structure
+for geometrical N-dimensional shapes. Minor fixes.
+- 1.0.0 : First release.
 
 ## General overivew
 
