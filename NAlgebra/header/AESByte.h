@@ -46,7 +46,15 @@ public:
 
     AESByte operator-() const;
 
-    friend AESByte operator*(const AESByte &b1, const AESByte &b2);
+    friend AESByte operator*(AESByte b1, const AESByte &b2) {
+        b1.prod(b2);
+        return b1;
+    }
+
+    friend AESByte operator/(AESByte b1, const AESByte &b2) {
+        b1.div(b2);
+        return b1;
+    };
 
     AESByte &operator+=(const AESByte &b);
 
@@ -74,9 +82,11 @@ private:
 
     // ALGEBRAICAL OPERATIONS
 
-    void add(const AESByte &b);
+    AESByte &add(const AESByte &b);
 
-    void prod(const AESByte &b);
+    AESByte &prod(const AESByte &b);
+
+    AESByte &div(const AESByte &b);
 
     uc_t _val;
 };

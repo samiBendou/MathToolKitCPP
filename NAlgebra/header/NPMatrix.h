@@ -13,20 +13,20 @@
  *                      - A/m : This NPMatrix. the components of the matrix in a certain base are noted Aij.
  *                      - R/C : Rows/Columns of A
  *
- *                   The matrix components are stored in a linear form with the index transformation k = p * i + j.
+ *                   The matrix components are stored in a linear form using the index transformation k = p * i + j.
  *                   The underlying std::vector is represented as t[p * i + j].
  *                   The underlying NVector<T> is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
  *
  *                   Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination.
  *                   setters & getters, swappers and classic matrix generators such as ones, zeros...
  *
- *                   The LU decomposition is stored as property if the matrix is square. It is auto-updated only on need.
+ *                   The LU decomposition is stored as a property if the matrix is square. It is auto-updated only when needed.
  *                   It allow to reduce complexity to get inverse or determinant. Precisely the LU decomposition is
  *                   represented by :
 
  *                      -a : is matrix A = L * U where PA = LU = this. a points to the A NMatrix or points to nullptr if
  *                           the matrix has never calculated LU decomposition or if the decomposition failed.
- *                      -permu : permutation vector P such as PA = LU. Represented as ul_t array.
+ *                      -perm : permutation vector P such as PA = LU. Represented as ul_t array.
  *
  *                  The *a object never is protected and pointer m->a always points to nullptr.
  *
@@ -522,11 +522,11 @@ protected:
 
     void sub(const NPMatrix<T> &m);
 
-    void opp() override;
+    void opp();
 
-    void prod(T s) override;
+    void prod(T s);
 
-    void div(T s) override;
+    void div(T s);
 
     void pow(long n);
 
@@ -606,7 +606,6 @@ protected:
     mutable NPMatrix<T> *_a;
 
     mutable std::vector<ul_t> *_perm;
-
 };
 
 typedef NPMatrix<double> mat_t;

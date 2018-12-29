@@ -4,6 +4,7 @@
 
 #include <NCompact.h>
 
+#define NEAR_TOL 0.01
 
 
 NCompact::NCompact(unsigned long dim) : _dim(dim) {
@@ -23,21 +24,11 @@ std::vector<vec_t> NCompact::uni(const NCompact &set) {
 
     assert(_dim == set.dim());
 
-    vec_t h{vec_t::scalar(NEAR_TOL, _dim)};
-
-    std::vector<vec_t> data{mesh(h)}, data_set{set.mesh(h)}, res;
-    std::set_union(data.begin(), data.end(), data_set.begin(), data_set.end(), res.begin(), vec_t::areNear);
-
-    return res;
+    return {};
 }
 
 std::vector<vec_t> NCompact::inter(const NCompact &set) {
     assert(_dim == set.dim());
 
-    vec_t h{vec_t::scalar(NEAR_TOL, _dim)};
-
-    std::vector<vec_t> data{mesh(h)}, data_set{set.mesh(h)}, res;
-    std::set_intersection(data.begin(), data.end(), data_set.begin(), data_set.end(), res.begin(), vec_t::areNear);
-
-    return res;
+    return {};
 }

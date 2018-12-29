@@ -4,6 +4,9 @@
 
 #include <NVector.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wabsolute-value"
+
 using namespace std;
 
 // CONSTRUCTORS
@@ -40,8 +43,7 @@ string NVector<T>::str() const {
 
     stream << '(';
     for (auto k = _k1; k <= _k2; ++k) {
-        stream << ((*this)[k] >= 0 ? ' ' : '-');
-        stream << abs((*this)[k]);
+        stream << ((*this)[k] >= 0 ? ' ' : '-') << abs((*this)[k]);
     }
     stream << " )";
     setDefaultBrowseIndices();
@@ -59,7 +61,7 @@ ul_t NVector<T>::dim() const {
 
 template<typename T>
 std::vector<T> NVector<T>::array() const {
-    std::vector<T> res(this->begin() + _k1, this->begin() + _k2 + 1);
+    std::vector<T> res(begin(), end());
     setDefaultBrowseIndices();
     return res;
 }
@@ -68,30 +70,30 @@ std::vector<T> NVector<T>::array() const {
 
 template<typename T>
 T NVector<T>::max() const {
-    auto res_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto res_it = std::max_element(begin(), end());
     setDefaultBrowseIndices();
     return *res_it;
 }
 
 template<typename T>
 T NVector<T>::min() const {
-    auto res_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto res_it = std::min_element(begin(), end());
     setDefaultBrowseIndices();
     return *res_it;
 }
 
 template<typename T>
 ul_t NVector<T>::maxIndex() const {
-    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
-    auto res = (ul_t) std::distance(this->begin() + _k1, max_it);
+    auto max_it = std::max_element(begin(), end());
+    auto res = (ul_t) std::distance(begin(), max_it);
     setDefaultBrowseIndices();
     return res;
 }
 
 template<typename T>
 ul_t NVector<T>::minIndex() const {
-    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
-    ul_t res = (ul_t) std::distance(this->begin() + _k1, min_it);
+    auto min_it = std::min_element(begin(), end());
+    ul_t res = (ul_t) std::distance(begin(), min_it);
     setDefaultBrowseIndices();
     return res;
 }
@@ -101,38 +103,26 @@ ul_t NVector<T>::minIndex() const {
 template<typename T>
 T NVector<T>::maxAbs() const {
 
-    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
-    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto minmax_it = std::minmax_element(begin(), end());
 
     setDefaultBrowseIndices();
-
-    return abs(*max_it) > abs(*min_it) ? abs(*max_it) : abs(*min_it);
+    return abs(*minmax_it.second) > abs(*minmax_it.first) ? abs(*minmax_it.second) : abs(*minmax_it.first);
 }
 
 template<typename T>
 T NVector<T>::minAbs() const {
 
-    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
-    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
+    auto minmax_it = std::minmax_element(begin(), end());
 
     setDefaultBrowseIndices();
-
-    return abs(*max_it) <= abs(*min_it) ? abs(*max_it) : abs(*min_it);
+    return abs(*minmax_it.second) <= abs(*minmax_it.first) ? abs(*minmax_it.second) : abs(*minmax_it.first);
 }
 
 template<typename T>
 ul_t NVector<T>::maxAbsIndex() const {
+    auto min_it = std::min_element(begin(), end()), max_it = std::max_element(begin(), end());
 
-    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
-    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
-
-    ul_t res;
-    if (abs(*max_it) > abs(*min_it)) {
-        res = (ul_t) std::distance(this->begin() + _k1, max_it);
-    } else {
-        res = (ul_t) std::distance(this->begin() + _k1, min_it);
-    }
-
+    ul_t res = (ul_t) std::distance(begin(), (abs(*min_it) > abs(*max_it)) ? min_it : max_it);
     setDefaultBrowseIndices();
 
     return res;
@@ -140,17 +130,9 @@ ul_t NVector<T>::maxAbsIndex() const {
 
 template<typename T>
 ul_t NVector<T>::minAbsIndex() const {
+    auto min_it = std::min_element(begin(), end()), max_it = std::max_element(begin(), end());
 
-    auto max_it = std::max_element(this->begin() + _k1, this->begin() + _k2 + 1);
-    auto min_it = std::min_element(this->begin() + _k1, this->begin() + _k2 + 1);
-
-    ul_t res;
-    if (abs(*max_it) <= abs(*min_it)) {
-        res = (ul_t) std::distance(this->begin() + _k1, max_it);
-    } else {
-        res = (ul_t) std::distance(this->begin() + _k1, min_it);
-    }
-
+    ul_t res = (ul_t) std::distance(begin(), (abs(*min_it) <= abs(*max_it)) ? min_it : max_it);
     setDefaultBrowseIndices();
 
     return res;
@@ -163,14 +145,11 @@ ul_t NVector<T>::minAbsIndex() const {
 // SWAP
 
 template<typename T>
-void NVector<T>::swap(ul_t k1, ul_t k2) {
+NVector<T> &NVector<T>::swap(ul_t k1, ul_t k2) {
     assert(isBetweenK12(k1) && isBetweenK12(k2));
-
-    auto temp = (*this)[k1];
-    (*this)[k1] = (*this)[k2];
-    (*this)[k2] = temp;
-
+    std::iter_swap(begin() + k1, begin() + k2);
     setDefaultBrowseIndices();
+    return *this;
 }
 
 
@@ -182,7 +161,7 @@ NVector<T> &NVector<T>::shift(long iterations) {
     auto sized_iterations = (abs(iterations) % sized_dim);
     auto shift_index = (iterations >= 0 ? sized_iterations : sized_dim - sized_iterations);
 
-    std::rotate(this->begin() + _k1, this->begin() + _k1 + shift_index, this->begin() + _k2 + 1);
+    std::rotate(begin(), begin() + shift_index, end());
 
     setDefaultBrowseIndices();
     return *this;
@@ -192,28 +171,15 @@ NVector<T> &NVector<T>::shift(long iterations) {
 // FILL
 
 template<typename T>
-void NVector<T>::fill(T s) {
-    std::fill(this->begin() + _k1, this->begin() + _k2 + 1, s);
+NVector<T> &NVector<T>::fill(T s) {
+    std::fill(begin(), end(), s);
     setDefaultBrowseIndices();
+    return *this;
 }
 
 
 
 // OPERATORS
-
-template<typename T>
-NVector<T> NVector<T>::operator+(const NVector<T> &u) const {
-    NVector<T> res{*this};
-    res += u;
-    return res;
-}
-
-template<typename T>
-NVector<T> NVector<T>::operator-(const NVector<T> &u) const {
-    NVector<T> res{*this};
-    res -= u;
-    return res;
-}
 
 template<typename T>
 NVector<T> NVector<T>::operator-() const {
@@ -236,28 +202,23 @@ T operator/(const NVector<T> &u, const NVector<T> &v) {
 
 template<typename T>
 NVector<T> &NVector<T>::operator+=(const NVector<T> &u) {
-    this->add(u);
-    return *this;
+    return add(u);
 }
 
 template<typename T>
 NVector<T> &NVector<T>::operator-=(const NVector<T> &u) {
-    this->sub(u);
-    return *this;
+    return sub(u);
 }
 
 template<typename T>
 NVector<T> &NVector<T>::operator*=(T s) {
-    this->prod(s);
-    return *this;
+    return prod(s);
 }
 
 template<typename T>
 NVector<T> &NVector<T>::operator/=(T s) {
-    this->div(s);
-    return *this;
+    return div(s);
 }
-
 
 // ACCES OPERATOR
 
@@ -382,49 +343,28 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 // VECTOR SPACE METHODS
 
 template<typename T>
-void NVector<T>::add(const NVector<T> &u) {
-    assert(hasSameSize(u));
-
-    for (ul_t k = 0; k <= _k2 - _k1; k++) {
-        (*this)[k + _k1] += u[k + u._k1];
-    }
-    setDefaultBrowseIndices();
-    u.setDefaultBrowseIndices();
+NVector<T> &NVector<T>::add(const NVector<T> &u) {
+    return forEach(u, [](T x, T y) { return x + y; });
 }
 
 template<typename T>
-void NVector<T>::sub(const NVector<T> &u) {
-    assert(hasSameSize(u));
-
-    for (ul_t k = _k1; k <= _k2 - _k1; k++) {
-        (*this)[k + _k1] -= u[k + u._k1];
-    }
-    setDefaultBrowseIndices();
-    u.setDefaultBrowseIndices();
+NVector<T> &NVector<T>::sub(const NVector<T> &u) {
+    return forEach(u, [](T x, T y) { return x - y; });
 }
 
 template<typename T>
-void NVector<T>::opp() {
-    for (ul_t k = _k1; k <= _k2; ++k) {
-        (*this)[k] = -(*this)[k];
-    }
-    setDefaultBrowseIndices();
+NVector<T> &NVector<T>::opp() {
+    return prod(-1);
 }
 
 template<typename T>
-void NVector<T>::prod(T s) {
-    for (ul_t k = _k1; k <= _k2; ++k) {
-        (*this)[k] *= s;
-    }
-    setDefaultBrowseIndices();
+NVector<T> &NVector<T>::prod(T s) {
+    return forEach(s, [](T x, T s) { return x * s; });
 }
 
 template<typename T>
-void NVector<T>::div(T s) {
-    for (ul_t k = _k1; k <= _k2; ++k) {
-        (*this)[k] /= s;
-    }
-    setDefaultBrowseIndices();
+NVector<T> &NVector<T>::div(T s) {
+    return forEach(s, [](T x, T s) { return x / s; });
 }
 
 // EUCLIDEAN SPACE OPERATIONS
@@ -455,6 +395,29 @@ T NVector<T>::distance(const NVector<T> &u) const {
     u.setDefaultBrowseIndices();
 
     return d;
+}
+
+// MANIPULATORS
+
+
+template<typename T>
+NVector<T> &NVector<T>::forEach(const NVector<T> &u, std::function<T(T, T)> binaryOp) {
+    assert(hasSameSize(u));
+    for (ul_t k = 0; k <= _k2 - _k1; k++) {
+        (*this)[k + _k1] = binaryOp((*this)[k + _k1], u[k + u._k1]);
+    }
+    setDefaultBrowseIndices();
+    u.setDefaultBrowseIndices();
+    return *this;
+}
+
+template<typename T>
+NVector<T> &NVector<T>::forEach(T s, std::function<T(T, T)> binaryOp) {
+    for (ul_t k = 0; k <= _k2 - _k1; k++) {
+        (*this)[k + _k1] = binaryOp((*this)[k + _k1], s);
+    }
+    setDefaultBrowseIndices();
+    return *this;
 }
 
 //CHARACTERIZATION
@@ -500,7 +463,7 @@ void NVector<T>::setDefaultBrowseIndices() const {
 // AFFECTATION
 
 template<typename T>
-void NVector<T>::copy(const NVector<T> &u) {
+NVector<T> &NVector<T>::copy(const NVector<T> &u) {
     if (this != &u && u.size() > 0) {
         if (hasDefaultBrowseIndices() && u.hasDefaultBrowseIndices()) {
             this->std::vector<T>::operator=(u);
@@ -512,18 +475,22 @@ void NVector<T>::copy(const NVector<T> &u) {
         setDefaultBrowseIndices();
         u.setDefaultBrowseIndices();
     }
+    return *this;
 }
 
 // SUB-VECTORS
 
 template<typename T>
 NVector<T> NVector<T>::subVector(ul_t k1, ul_t k2) const {
+    _k1 = k1;
+    _k2 = k2;
     ul_t dim = k2 - k1 + 1;
 
     assert(isValidIndex(k1) && isValidIndex(k2) && dim > 0);
 
     vector<T> data(dim);
-    std::copy(this->begin() + k1, this->begin() + k2 + 1, data.begin());
+    std::copy(begin(), end(), data.begin());
+    setDefaultBrowseIndices();
 
     return data;
 }
@@ -559,46 +526,4 @@ template
 class NVector<Pixel>;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#pragma clang diagnostic pop

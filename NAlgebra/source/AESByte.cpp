@@ -22,11 +22,12 @@ uc_t AESByte::val() const {
     return _val;
 }
 
-void AESByte::add(const AESByte &b) {
+AESByte &AESByte::add(const AESByte &b) {
     _val ^= b._val;
+    return *this;
 }
 
-void AESByte::prod(const AESByte &b) {
+AESByte &AESByte::prod(const AESByte &b) {
     AESByte copy_this{*this}, copy_b{b}, res, temp;
 
     while (copy_this != 0x00) {
@@ -42,6 +43,12 @@ void AESByte::prod(const AESByte &b) {
         copy_this = copy_this._val >> 1;
     }
     *this = res;
+    return *this;
+}
+
+AESByte &AESByte::div(const AESByte &b) {
+    // TODO : Implement division in GF(2^8)
+    return *this;
 }
 
 AESByte AESByte::operator+(const AESByte &b) {
@@ -60,30 +67,20 @@ AESByte AESByte::operator-() const {
     return *this;
 }
 
-AESByte operator*(const AESByte &b1, const AESByte &b2) {
-    AESByte res{b1};
-    res.prod(b2);
-    return res;
-}
-
 AESByte &AESByte::operator+=(const AESByte &b) {
-    add(b);
-    return *this;
+    return add(b);
 }
 
 AESByte &AESByte::operator-=(const AESByte &b) {
-    add(b);
-    return *this;
+    return add(b);
 }
 
 AESByte &AESByte::operator*=(const AESByte &b) {
-    prod(b);
-    return *this;
+    return prod(b);
 }
 
 AESByte &AESByte::operator/=(const AESByte &b) {
-    // TODO: Implement Euclide's extended algorithm in Gallois Field
-    return *this;
+    return prod(b);
 }
 
 bool operator==(const AESByte &b1, const AESByte &b2) {
@@ -126,6 +123,8 @@ AESByte abs(const AESByte &b) {
 AESByte sqrt(const AESByte &b) {
     return {sqrt(b._val)};
 }
+
+
 
 
 

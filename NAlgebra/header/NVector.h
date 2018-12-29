@@ -10,8 +10,8 @@
  *              - x/u : this vector.
  *              - s : a scalar (T)
  *
- *          Representation of a finite dimension vector space. This object is the base object of every
- *          other object in NAlgebra module. It inherits from std::vector<T> so it's kind of memory
+ *          This object is the base object of every other object in NAlgebra module.
+ *          It inherits from std::vector<T> so it's kind of memory
  *          support for every object in NAlgebra module.
  *
  *          Featuring algebraical operations (E, +, *), swaps, shifts and
@@ -33,6 +33,10 @@ template<typename T>
 
 
 class NVector : public std::vector<T> {
+
+    typedef typename std::vector<T>::iterator iterator;
+
+    typedef typename std::vector<T>::const_iterator const_iterator;
 
 
 public:
@@ -124,7 +128,7 @@ public:
      * @param k2 Second index to swap
      * @details Permutation of two elements (x(k1 - 1), xk2, ..., x(k2 - 1), xk1, ..., x(n-1))
      */
-    void swap(ul_t k1, ul_t k2);
+    NVector<T> &swap(ul_t k1, ul_t k2);
 
     /**
      *
@@ -139,7 +143,7 @@ public:
      * @param s : value to fill the vector with
      * @details : Fill vector with a scalar : ie. with scalar = 3, (3, 3, 3, ..., 3).
      */
-    void fill(T s);
+    NVector<T> &fill(T s);
 
     // OPERATORS
 
@@ -148,13 +152,19 @@ public:
     /**
      * @return result of u + v where + is the usual addition (u0 + v0, u1 + v1, ...).
      */
-    NVector<T> operator+(const NVector<T> &u) const;
+    friend NVector<T> operator+(NVector<T> u, const NVector<T> &v) {
+        u += v;
+        return u;
+    }
 
 
     /**
      * @return return u - v where - is difference based on usual addition.
      */
-    NVector<T> operator-(const NVector<T> &u) const;
+    friend NVector<T> operator-(NVector<T> u, const NVector<T> &v) {
+        u -= v;
+        return u;
+    }
 
 
     /**
@@ -165,23 +175,21 @@ public:
     /**
      * @return s * u where * is usual scalar multiplication (s * u0, s * u1, ...).
      */
-    friend NVector<T> operator*(T s, const NVector<T> &u) {
-        NVector<T> res{u};
-        res *= s;
-        return res;
+    friend NVector<T> operator*(T s, NVector<T> u) {
+        u *= s;
+        return u;
     }
 
     friend NVector<T> operator*(const NVector<T> &u, T s) {
-        return operator*(s, u);
+        return s * u;
     }
 
     /**
      * @return return (1 / s) * u where * is the usual scalar multiplication (s * u0, s * u1, ...).
      */
-    friend NVector<T> operator/(const NVector<T> &u, T s) {
-        NVector<T> res{u};
-        res /= s;
-        return res;
+    friend NVector<T> operator/(NVector<T> u, T s) {
+        u /= s;
+        return u;
     }
 
     // SCALAR PRODUCT BASED OPERATIONS
@@ -314,6 +322,23 @@ public:
 
     friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
 
+    // ITERATORS
+
+    inline iterator begin() {
+        return this->std::vector<T>::begin() + _k1;
+    };
+
+    inline const_iterator begin() const {
+        return this->std::vector<T>::begin() + _k1;
+    };
+
+    inline iterator end() {
+        return this->std::vector<T>::begin() + _k2 + 1;
+    };
+
+    inline const_iterator end() const {
+        return this->std::vector<T>::begin() + _k2 + 1;
+    };
 
     // STATIC FUNCTIONS
 
@@ -368,15 +393,15 @@ protected:
 
     // VECTOR SPACE OPERATIONS
 
-    virtual void add(const NVector<T> &u);
+    NVector<T> &add(const NVector<T> &u);
 
-    virtual void sub(const NVector<T> &u);
+    NVector<T> &sub(const NVector<T> &u);
 
-    virtual void opp();
+    NVector<T> &opp();
 
-    virtual void prod(T s);
+    NVector<T> &prod(T s);
 
-    virtual void div(T s);
+    NVector<T> &div(T s);
 
     // EUCLIDEAN SPACE OPERATIONS
 
@@ -402,9 +427,16 @@ protected:
 
     virtual void setDefaultBrowseIndices() const;
 
+    // MANIPULATORS
+
+    NVector<T> &forEach(const NVector<T> &u, std::function<T(T, T)> binaryOp);
+
+    NVector<T> &forEach(T s, std::function<T(T, T)> binaryOp);
+
+
     // AFFECTATION
 
-    void copy(const NVector<T> &u);
+    NVector<T> &copy(const NVector<T> &u);
 
     //SUB-VECTORS
 

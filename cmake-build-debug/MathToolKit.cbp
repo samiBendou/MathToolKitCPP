@@ -757,6 +757,9 @@
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/NGeometry/source/NSegment.cpp">
 			<Option target="NGeometry"/>
 		</Unit>
+		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/BenchNVector.cpp">
+			<Option target="TestNAlgebra"/>
+		</Unit>
 		<Unit filename="/Users/lemale/CLionProjects/MathToolKitCPP/TestsMathToolKitCPP/TestNAlgebra/TestNPMatrix.cpp">
 			<Option target="TestNAlgebra"/>
 		</Unit>
