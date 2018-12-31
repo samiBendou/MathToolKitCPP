@@ -255,7 +255,7 @@ public:
      */
     T &operator()(long k);
 
-    inline T operator()(long k) const;
+    T operator()(long k) const;
 
     /**
      *
@@ -322,17 +322,17 @@ public:
         return res;
     }
 
+    inline friend bool operator==(T s, const NVector<T> &u) { return u == s; }
+
     /**
      *
      * @return return true if ||v1 - v2|| >= epsilon.
      */
     inline friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
-    inline friend bool operator!=(const NVector<T> &u, const std::string &str) { return !(u == str); }
-
-    inline friend bool operator!=(const std::string &str, const NVector<T> &u) { return u != str; }
-
     inline friend bool operator!=(const NVector<T> &u, T s) { return !(u == s); }
+
+    inline friend bool operator!=(T s, const NVector<T> &u) { return !(u == s); }
 
     // ITERATORS
 
