@@ -2,8 +2,9 @@
  * @class          : NPMatrix
  * @date           : 04/05/2018
  * @author         : samiBendou
- * @description    : A NPMatrix<T> inherits from NVector<T>. It's a representation of a numerical matrices of arbitrary
- *                   size. We will use the following definitions :
+ * @description    : A NPMatrix<T> inherits from NVector<T>. It's a representation of matrices of arbitrary
+ *                   size in a tempate field T (reals, complex, modular arithemics...).
+ *                   Over this file we will use the following definitions :
  *
  *                      - n : Number of Rows
  *                      - p : Number of Columns
@@ -28,7 +29,7 @@
  *                           the matrix has never calculated LU decomposition or if the decomposition failed.
  *                      -perm : permutation vector P such as PA = LU. Represented as ul_t array.
  *
- *                  The *a object never is protected and pointer m->a always points to nullptr.
+ *                  The *a object never is protected and pointer a->a always points to nullptr (no infinite recursion).
  *
  * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */

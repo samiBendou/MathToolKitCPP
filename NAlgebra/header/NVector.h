@@ -47,18 +47,17 @@ public:
      *
      * @return a NVector<T> with an array of data. The dimension is the size of the array.
      */
-    NVector(const std::vector<T> &data);
+    NVector(const std::vector<T> &data) : NVector(data, 0, 0) {}
 
-    NVector(std::initializer_list<T> list);
-
-    NVector(const NVector<T> &u);
-
+    NVector(std::initializer_list<T> list) : NVector(list, 0, 0) {}
     /**
      *
      * @return  a NVector<T> by giving the dimension. This method uses the std::vector constructor
      *          to create a vector.
      */
-    explicit NVector(ul_t dim = 0);
+    explicit NVector(ul_t dim = 0) : NVector(std::vector<T>(dim), 0, 0) {}
+
+    NVector(const NVector<T> &u) : NVector(0) { copy(u); }
 
     // SERIALIZATION
 
@@ -407,6 +406,8 @@ public:
     static NVector<T> sumProd(const std::vector<T> &scalars, const std::vector<NVector> &vectors);
 
 protected:
+
+    explicit NVector(const std::vector<T> data, ul_t k1, ul_t k2);
 
     // VECTOR SPACE OPERATIONS
 

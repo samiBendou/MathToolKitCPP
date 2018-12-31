@@ -9,32 +9,6 @@
 
 using namespace std;
 
-// CONSTRUCTORS
-
-template<typename T>
-NVector<T>::NVector(const std::vector<T> &data) :
-        vector<T>(data), _k1(0), _k2(0) {
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NVector<T>::NVector(initializer_list<T> list) :
-        vector<T>(list), _k1(0), _k2(0) {
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NVector<T>::NVector(ul_t dim) :
-        vector<T>(dim), _k1(0), _k2(0) {
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NVector<T>::NVector(const NVector<T> &u) :
-        vector<T>(0), _k1(0), _k2(0) {
-    copy(u);
-}
-
 // SERIALIZATION
 
 template<typename T>
@@ -249,6 +223,12 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 
 // PROTECTED METHODS
 
+
+template<typename T>
+NVector<T>::NVector(const vector<T> data, ul_t k1, ul_t k2) : vector<T>(data), _k1(k1), _k2(k2) {
+    setDefaultBrowseIndices();
+}
+
 // EUCLIDEAN SPACE OPERATIONS
 
 template<typename T>
@@ -351,7 +331,6 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
     setDefaultBrowseIndices();
     u.setDefaultBrowseIndices();
 }
-
 
 template
 class NVector<double>;
