@@ -10,11 +10,11 @@ AESByte::AESByte(char val) : _val((uc_t) val) {
 
 }
 
-AESByte::AESByte(int val) : _val((uc_t) abs(val) % 256) {
+AESByte::AESByte(int val) : _val(static_cast<uc_t>(abs(val) % 256)) {
 
 }
 
-AESByte::AESByte(double val) : _val(((uc_t) floor(fabs(val))) % 256) {
+AESByte::AESByte(double val) : _val(static_cast<uc_t>(fmod(floor(fabs(val)), 256))) {
 
 }
 
@@ -49,63 +49,6 @@ AESByte &AESByte::prod(const AESByte &b) {
 AESByte &AESByte::div(const AESByte &b) {
     // TODO : Implement division in GF(2^8)
     return *this;
-}
-
-AESByte AESByte::operator+(const AESByte &b) {
-    AESByte res{*this};
-    res += b;
-    return res;
-}
-
-AESByte AESByte::operator-(const AESByte &b) {
-    AESByte res{*this};
-    res -= b;
-    return res;
-}
-
-AESByte AESByte::operator-() const {
-    return *this;
-}
-
-AESByte &AESByte::operator+=(const AESByte &b) {
-    return add(b);
-}
-
-AESByte &AESByte::operator-=(const AESByte &b) {
-    return add(b);
-}
-
-AESByte &AESByte::operator*=(const AESByte &b) {
-    return prod(b);
-}
-
-AESByte &AESByte::operator/=(const AESByte &b) {
-    return prod(b);
-}
-
-bool operator==(const AESByte &b1, const AESByte &b2) {
-    return b1._val == b2._val;
-}
-
-bool operator!=(const AESByte &b1, const AESByte &b2) {
-    return b1._val != b2._val;
-}
-
-
-bool operator<=(const AESByte &b1, const AESByte &b2) {
-    return b1._val <= b2._val;
-}
-
-bool operator<(const AESByte &b1, const AESByte &b2) {
-    return b1._val < b2._val;
-}
-
-bool operator>(const AESByte &b1, const AESByte &b2) {
-    return b1._val > b2._val;
-}
-
-bool operator>=(const AESByte &b1, const AESByte &b2) {
-    return b1._val >= b2._val;
 }
 
 std::ostream &operator<<(std::ostream &os, const AESByte &b) {

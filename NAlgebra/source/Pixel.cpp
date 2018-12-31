@@ -44,36 +44,42 @@ Pixel::Format Pixel::format() const {
     return _format;
 }
 
-void Pixel::setRed(int red) {
+Pixel &Pixel::setRed(int red) {
     _red = limitCmpIfLimited(red);
     _format = RGB;
+    return *this;
 }
 
-void Pixel::setGreen(int green) {
+Pixel &Pixel::setGreen(int green) {
     _green = limitCmpIfLimited(green);
     _format = RGB;
+    return *this;
 }
 
-void Pixel::setBlue(int blue) {
+Pixel &Pixel::setBlue(int blue) {
     _blue = limitCmpIfLimited(blue);
     _format = RGB;
+    return *this;
 }
 
-void Pixel::setGrey(int grey) {
+Pixel &Pixel::setGrey(int grey) {
     setRGBWithoutFormatChange(grey, grey, grey);
     _format = GScale;
+    return *this;
 }
 
-void Pixel::setRGB(int red, int green, int blue) {
+Pixel &Pixel::setRGB(int red, int green, int blue) {
     setRGBWithoutFormatChange(red, green, blue);
     _format = RGB;
+    return *this;
 }
 
-void Pixel::setLimited(bool limited) {
+Pixel &Pixel::setLimited(bool limited) {
     if (limited)
         limit();
     else
         _limited = false;
+    return *this;
 }
 
 void Pixel::limit() {
@@ -81,93 +87,7 @@ void Pixel::limit() {
     setRGBWithoutFormatChange(_red, _green, _blue);
 }
 
-void Pixel::conformFormatTo(const Pixel &p) {
-    if (_format == GScale && p._format == GScale)
-        _format = GScale;
-    else if (_format == RGB)
-        _format = RGB;
-}
 
-Pixel operator+(const Pixel &p1, const Pixel &p2) {
-    Pixel res{p1};
-    res += p2;
-    return res;
-}
-
-
-Pixel operator-(const Pixel &p1, const Pixel &p2) {
-    Pixel res{p1};
-    res -= p2;
-    return res;
-}
-
-Pixel Pixel::operator-() const {
-    Pixel res{*this};
-    res.opp();
-    return res;
-}
-
-Pixel operator*(const Pixel &p1, const Pixel &p2) {
-    Pixel res{p1};
-    res.prod(p2);
-    return res;
-}
-
-Pixel operator/(const Pixel &p1, const Pixel &p2) {
-    Pixel res{p1};
-    res.div(p2);
-    return res;
-}
-
-Pixel &Pixel::operator+=(const Pixel &p) {
-    add(p);
-    return *this;
-}
-
-Pixel &Pixel::operator*=(const Pixel &p) {
-    prod(p);
-    return *this;
-}
-
-Pixel &Pixel::operator-=(const Pixel &p) {
-    sub(p);
-    return *this;
-}
-
-Pixel &Pixel::operator/=(const Pixel &p) {
-    div(p);
-    return *this;
-}
-
-bool operator==(const Pixel &p, int val) {
-    return p.isEqual(val);
-}
-
-
-bool operator==(const Pixel &p1, const Pixel &p2) {
-    return (p1 - p2) == 0;
-}
-
-bool operator!=(const Pixel &p1, const Pixel &p2) {
-    return !(p1 == p2);
-}
-
-
-bool operator<=(const Pixel &p1, const Pixel &p2) {
-    return p1.grey() <= p2.grey();
-}
-
-bool operator<(const Pixel &p1, const Pixel &p2) {
-    return p1.grey() < p2.grey();
-}
-
-bool operator>(const Pixel &p1, const Pixel &p2) {
-    return p1.grey() > p2.grey();
-}
-
-bool operator>=(const Pixel &p1, const Pixel &p2) {
-    return p1.grey() >= p2.grey();
-}
 
 std::ostream &operator<<(std::ostream &os, const Pixel &p) {
     switch (p._format) {
@@ -195,28 +115,29 @@ Pixel sqrt(const Pixel &p) {
     return p_sqrt;
 }
 
-void Pixel::add(const Pixel &p) {
-    setRGBWithoutFormatChange(_red + p._red, _green + p._green, _blue + p._blue);
+Pixel &Pixel::add(const Pixel &p) {
     conformFormatTo(p);
+    return setRGBWithoutFormatChange(_red + p._red, _green + p._green, _blue + p._blue);
+
 }
 
-void Pixel::sub(const Pixel &p) {
-    setRGBWithoutFormatChange(_red - p._red, _green - p._green, _blue - p._blue);
+Pixel &Pixel::sub(const Pixel &p) {
     conformFormatTo(p);
+    return setRGBWithoutFormatChange(_red - p._red, _green - p._green, _blue - p._blue);
 }
 
-void Pixel::opp() {
+Pixel &Pixel::opp() {
     setRGBWithoutFormatChange(-_red, -_green, -_blue);
 }
 
-void Pixel::prod(const Pixel &p) {
-    setRGBWithoutFormatChange(_red * p._red, _green * p._green, _blue * p._blue);
+Pixel &Pixel::prod(const Pixel &p) {
     conformFormatTo(p);
+    return setRGBWithoutFormatChange(_red * p._red, _green * p._green, _blue * p._blue);
 }
 
-void Pixel::div(const Pixel &p) {
-    setRGBWithoutFormatChange(_red / p._red, _green / p._green, _blue / p._blue);
+Pixel &Pixel::div(const Pixel &p) {
     conformFormatTo(p);
+    return setRGBWithoutFormatChange(_red / p._red, _green / p._green, _blue / p._blue);
 }
 
 bool Pixel::isEqual(int val) const {
@@ -233,10 +154,18 @@ int Pixel::limitCmpIfLimited(int cmp) const {
     else return cmp;
 }
 
-void Pixel::setRGBWithoutFormatChange(int red, int green, int blue) {
+Pixel &Pixel::setRGBWithoutFormatChange(int red, int green, int blue) {
     _red = limitCmpIfLimited(red);
     _blue = limitCmpIfLimited(green);
     _green = limitCmpIfLimited(blue);
+    return *this;
+}
+
+void Pixel::conformFormatTo(const Pixel &p) {
+    if (_format == GScale && p._format == GScale)
+        _format = GScale;
+    else if (_format == RGB)
+        _format = RGB;
 }
 
 

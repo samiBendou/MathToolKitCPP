@@ -170,10 +170,9 @@ public:
     /**
      * @return opposite of u (-u0, -u1, ...).
      */
-    NVector<T> operator-() const {
-        NVector<T> res{*this};
-        res.opp();
-        return res;
+    inline friend NVector<T> operator-(NVector<T> u) {
+        u.opp();
+        return u;
     }
 
     /**

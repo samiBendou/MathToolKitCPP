@@ -13,9 +13,9 @@
  *                                    If the value of a component is set negative the result is 0. Else,
  *                                    the if the value is greater than MAX_LIMIT_CMP than the set value
  *                                    is the original value mod MAX_LIMIT_CMP + 1.
-*                    The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
- *                   setting components generally implies a calculation to translate between RGB and other
- *                   formats.
+ *                   The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
+ *                   setting components generally implies a constant time calculation to translate between RGB
+ *                   and other formats.
  *
  * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */
@@ -66,57 +66,88 @@ public:
 
     // SETTERS
 
-    void setRed(int red);
+    Pixel &setRed(int red);
 
-    void setGreen(int green);
+    Pixel &setGreen(int green);
 
-    void setBlue(int blue);
+    Pixel &setBlue(int blue);
 
-    void setGrey(int grey);
+    Pixel &setGrey(int grey);
 
-    void setRGB(int red, int green, int blue);
+    Pixel &setRGB(int red, int green, int blue);
 
-    void setLimited(bool limited);
-
-    // MANIPULATORS
-
-    void limit();
-
-    void conformFormatTo(const Pixel &p);
+    Pixel &setLimited(bool limited);
 
     // OPERATORS
 
-    friend Pixel operator+(const Pixel &p1, const Pixel &p2);
+    inline friend Pixel operator+(Pixel p1, const Pixel &p2) {
+        p1 += p2;
+        return p1;
+    }
 
-    friend Pixel operator-(const Pixel &p1, const Pixel &p2);
+    inline friend Pixel operator-(Pixel p1, const Pixel &p2) {
+        p1 -= p2;
+        return p1;
+    }
 
-    Pixel operator-() const;
+    inline friend Pixel operator-(Pixel p) {
+        p.opp();
+        return p;
+    }
 
-    friend Pixel operator*(const Pixel &p1, const Pixel &p2);
+    inline friend Pixel operator*(Pixel p1, const Pixel &p2) {
+        p1 *= p2;
+        return p1;
+    }
 
-    friend Pixel operator/(const Pixel &p1, const Pixel &p2);
+    inline friend Pixel operator/(Pixel p1, const Pixel &p2) {
+        p1 /= p2;
+        return p1;
+    }
 
-    Pixel &operator+=(const Pixel &p);
+    inline Pixel &operator+=(const Pixel &p) {
+        return add(p);
+    }
 
-    Pixel &operator*=(const Pixel &p);
+    inline Pixel &operator*=(const Pixel &p) {
+        return prod(p);
+    }
 
-    Pixel &operator-=(const Pixel &p);
+    inline Pixel &operator-=(const Pixel &p) {
+        return sub(p);
+    }
 
-    Pixel &operator/=(const Pixel &p);
+    inline Pixel &operator/=(const Pixel &p) {
+        return div(p);
+    }
 
-    friend bool operator==(const Pixel &p, int val);
+    inline friend bool operator==(const Pixel &p, int val) {
+        return p.isEqual(val);
+    }
 
-    friend bool operator==(const Pixel &p1, const Pixel &p2);
+    inline friend bool operator==(const Pixel &p1, const Pixel &p2) {
+        return (p1 - p2) == 0;
+    }
 
-    friend bool operator!=(const Pixel &p1, const Pixel &p2);
+    inline friend bool operator!=(const Pixel &p1, const Pixel &p2) {
+        return !(p1 == p2);
+    }
 
-    friend bool operator>(const Pixel &p1, const Pixel &p2);
+    inline friend bool operator>(const Pixel &p1, const Pixel &p2) {
+        return p1.grey() <= p2.grey();
+    }
 
-    friend bool operator<(const Pixel &p1, const Pixel &p2);
+    inline friend bool operator<(const Pixel &p1, const Pixel &p2) {
+        return p1.grey() < p2.grey();
+    }
 
-    friend bool operator>=(const Pixel &p1, const Pixel &p2);
+    inline friend bool operator>=(const Pixel &p1, const Pixel &p2) {
+        return p1.grey() > p2.grey();
+    }
 
-    friend bool operator<=(const Pixel &p1, const Pixel &p2);
+    inline friend bool operator<=(const Pixel &p1, const Pixel &p2) {
+        return p1.grey() >= p2.grey();
+    }
 
     friend std::ostream &operator<<(std::ostream &os, const Pixel &p);
 
@@ -124,21 +155,27 @@ private:
 
     // ALGEBRAICAL OPERATIONS
 
-    void add(const Pixel &p);
+    Pixel &add(const Pixel &p);
 
-    void sub(const Pixel &p);
+    Pixel &sub(const Pixel &p);
 
-    void opp();
+    Pixel &opp();
 
-    void prod(const Pixel &p);
+    Pixel &prod(const Pixel &p);
 
-    void div(const Pixel &p);
+    Pixel &div(const Pixel &p);
 
     bool isEqual(int val) const;
 
     int limitCmpIfLimited(int cmp) const;
 
-    void setRGBWithoutFormatChange(int red, int green, int blue);
+    Pixel &setRGBWithoutFormatChange(int red, int green, int blue);
+
+    // MANIPULATORS
+
+    void limit();
+
+    void conformFormatTo(const Pixel &p);
 
     int _red;
     int _green;

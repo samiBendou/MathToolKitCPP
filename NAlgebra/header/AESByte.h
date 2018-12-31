@@ -40,11 +40,19 @@ public:
 
     // OPERATORS
 
-    AESByte operator+(const AESByte &b);
+    inline friend AESByte operator+(AESByte b1, const AESByte &b2) {
+        b1 += b2;
+        return b1;
+    }
 
-    AESByte operator-(const AESByte &b);
+    inline friend AESByte operator-(AESByte b1, const AESByte &b2) {
+        b1 -= b2;
+        return b2;
+    }
 
-    AESByte operator-() const;
+    inline friend AESByte operator-(AESByte b) {
+        return b;
+    }
 
     friend AESByte operator*(AESByte b1, const AESByte &b2) {
         b1.prod(b2);
@@ -56,25 +64,45 @@ public:
         return b1;
     };
 
-    AESByte &operator+=(const AESByte &b);
+    inline AESByte &operator+=(const AESByte &b) {
+        return add(b);
+    }
 
-    AESByte &operator*=(const AESByte &b);
+    inline AESByte &operator*=(const AESByte &b) {
+        return add(b);
+    }
 
-    AESByte &operator-=(const AESByte &b);
+    inline AESByte &operator-=(const AESByte &b) {
+        return prod(b);
+    }
 
-    AESByte &operator/=(const AESByte &b);
+    inline AESByte &operator/=(const AESByte &b) {
+        return div(b);
+    }
 
-    friend bool operator==(const AESByte &b1, const AESByte &b2);
+    inline friend bool operator==(const AESByte &b1, const AESByte &b2) {
+        return b1._val == b2._val;
+    }
 
-    friend bool operator!=(const AESByte &b1, const AESByte &b2);
+    inline friend bool operator!=(const AESByte &b1, const AESByte &b2) {
+        return b1._val != b2._val;
+    }
 
-    friend bool operator>(const AESByte &b1, const AESByte &b2);
+    inline friend bool operator>(const AESByte &b1, const AESByte &b2) {
+        return b1._val > b2._val;
+    }
 
-    friend bool operator<(const AESByte &b1, const AESByte &b2);
+    inline friend bool operator<(const AESByte &b1, const AESByte &b2) {
+        return b1._val < b2._val;
+    }
 
-    friend bool operator>=(const AESByte &b1, const AESByte &b2);
+    inline friend bool operator>=(const AESByte &b1, const AESByte &b2) {
+        return b1._val >= b2._val;
+    }
 
-    friend bool operator<=(const AESByte &b1, const AESByte &b2);
+    inline friend bool operator<=(const AESByte &b1, const AESByte &b2) {
+        return b1._val <= b2._val;
+    }
 
     friend std::ostream &operator<<(std::ostream &os, const AESByte &b);
 
