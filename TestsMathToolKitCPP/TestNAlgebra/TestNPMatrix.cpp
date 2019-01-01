@@ -72,7 +72,7 @@ TEST_F(NPMatrixTest, Construction) {
     ASSERT_TRUE(_a == 0);
 
 
-    _a = mat_t({0, 0, 0, 1, 2, 1, 5, 10, 2}, 3, 3);
+    _a = mat_t({0, 0, 0, 1, 2, 1, 5, 10, 2}, 3);
     ASSERT_EQ(_a.n(), 3);
     ASSERT_EQ(_a.p(), 3);
     ASSERT_EQ(_a, _c);

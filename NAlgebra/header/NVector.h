@@ -407,7 +407,7 @@ public:
 
 protected:
 
-    explicit NVector(const std::vector<T> data, ul_t k1, ul_t k2);
+    explicit NVector(const std::vector<T> &data, ul_t k1, ul_t k2);
 
     // VECTOR SPACE OPERATIONS
 
@@ -481,7 +481,7 @@ protected:
 
     // AFFECTATION
 
-    NVector<T> &copy(const NVector<T> &u);
+    virtual NVector<T> &copy(const NVector<T> &u);
 
     //SUB-VECTORS
 

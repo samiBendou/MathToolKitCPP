@@ -57,30 +57,29 @@ public:
      *
      * @return a n x p matrix constructed using a std::vector of size n * p.
      */
-    explicit NPMatrix(ul_t n = 0, ul_t p = 0);
+    explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * ((p > 0) ? p : n)), n, (p > 0) ? p : n) {}
 
     /**
      *
      * @return a n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
      * must have the same length. They represent the rows of A matrix.
      */
-    NPMatrix(const vector<vector<T> > &data);
+    NPMatrix(const vector<vector<T> > &data) : NPMatrix(NVector<T>(data.size() * data[0].size()), data.size(),
+                                                        data[0].size()) {
+        copy(data);
+    };
 
-    NPMatrix(const NPMatrix<T> &m);
+    NPMatrix(const NPMatrix<T> &m) : NPMatrix(NVector<T>(0), 0, 0) {
+        copy(m);
+    };
 
-    NPMatrix(initializer_list<initializer_list<T>> list);
+    NPMatrix(initializer_list<initializer_list<T>> list) : NPMatrix(vector<vector<T>>(list.begin(), list.end())) {}
 
     /**
      *
-     * @return a 1 x p row matrix constructed using a std::vector of size 1 * vector.dim().
+     * @return a n rows matrix constructed using a std::vector of size 1 * vector.dim().
      */
-    explicit NPMatrix(const NVector<T> &u);
-
-    /**
-     *
-     * @return a n x p matrix constructed using a NVector<T> having u.dim() = n * p
-     */
-    NPMatrix(const NVector<T> &u, ul_t n, ul_t p = 0);
+    explicit NPMatrix(const NVector<T> &u, ul_t n = 1) : NPMatrix(u, n, u.dim() / n) {}
 
     /**
      *
@@ -88,9 +87,10 @@ public:
      * They represent the rows of the matrix.
      */
 
-    explicit NPMatrix(const vector<NVector<T> > &vectors);
+    explicit NPMatrix(const vector<NVector<T> > &vectors) : NPMatrix(
+            vector<vector<T>>(vectors.begin(), vectors.end())) {}
 
-    ~NPMatrix();
+    ~NPMatrix() { lupClear(); }
 
 
     // SERIALIZATION
@@ -497,6 +497,8 @@ public:
 
 protected:
 
+    explicit NPMatrix(const NVector<T> &u, ul_t n, ul_t p, ul_t i1 = 0, ul_t j1 = 0, ul_t i2 = 0, ul_t j2 = 0);
+
     // MANIPULATORS
 
     void swap(ElementEnum element, ul_t k1, ul_t k2);
@@ -569,7 +571,9 @@ protected:
 
     // AFFECTATION
 
-    virtual void copy(const NPMatrix<T> &m);
+    NPMatrix<T> &copy(const NPMatrix<T> &m);
+
+    NPMatrix<T> &copy(const vector<vector<T>> &data);
 
     // INDEX GETTERS
 

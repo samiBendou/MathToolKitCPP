@@ -6,96 +6,6 @@
 
 using namespace std;
 
-template<typename T>
-NPMatrix<T>::NPMatrix(ul_t n, ul_t p) : NVector<T>(n * ((p > 0) ? p : n)),
-                                        _n(n), _p((p > 0) ? p : n),
-                                        _i1(0), _j1(0), _i2(0), _j2(0),
-                                        _a(nullptr), _perm(nullptr) {
-
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NPMatrix<T>::NPMatrix(const vector<vector<T> > &data) : NVector<T>((data.size() * data[0].size())),
-                                                        _n(data.size()), _p(data[0].size()),
-                                                        _i1(0), _j1(0), _i2(0), _j2(0),
-                                                        _a(nullptr), _perm(nullptr) {
-
-    for (ul_t i = 0; i < _n; ++i) {
-
-        assert(data[i].size() == data[0].size());
-
-        for (ul_t j = 0; j < _p; ++j) {
-            (*this)(i, j) = data[i][j];
-        }
-    }
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NPMatrix<T>::NPMatrix(const NPMatrix<T> &m) : NVector<T>(0),
-                                              _n(0), _p(0),
-                                              _i1(0), _j1(0), _i2(0), _j2(0),
-                                              _a(nullptr), _perm(nullptr) {
-    copy(m);
-}
-
-template<typename T>
-NPMatrix<T>::NPMatrix(initializer_list<initializer_list<T>> list): NVector<T>((list.size() * list.begin()->size())),
-                                                                   _n(list.size()), _p(list.begin()->size()),
-                                                                   _i1(0), _j1(0), _i2(0), _j2(0),
-                                                                   _a(nullptr), _perm(nullptr) {
-
-    ul_t i = 0;
-    for (auto it = list.begin(); it != list.end(); ++it) {
-
-        assert(it->size() == list.begin()->size());
-
-        setRow(*it, i);
-        ++i;
-    }
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NPMatrix<T>::NPMatrix(const NVector<T> &u) : NVector<T>(u),
-                                             _n(1), _p(u.dim()),
-                                             _i1(0), _j1(0), _i2(0), _j2(0),
-                                             _a(nullptr), _perm(nullptr) {
-
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NPMatrix<T>::NPMatrix(const NVector<T> &u, ul_t n, ul_t p) : NVector<T>(u),
-                                                             _n(n), _p((p > 0) ? p : n),
-                                                             _i1(0), _j1(0), _i2(0), _j2(0),
-                                                             _a(nullptr), _perm(nullptr) {
-
-    assert(this->dim() == _n * _p);
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NPMatrix<T>::NPMatrix(const vector<NVector<T> > &vectors) : NVector<T>((vectors.size() * vectors[0].dim())),
-                                                            _n(vectors.size()), _p(vectors[0].dim()),
-                                                            _i1(0), _j1(0), _i2(0), _j2(0),
-                                                            _a(nullptr), _perm(nullptr) {
-
-    for (ul_t i = 0; i < _n; ++i) {
-
-        assert(vectors[i].dim() == vectors[0].dim());
-
-        setRow(vectors[i], i);
-    }
-    setDefaultBrowseIndices();
-}
-
-template<typename T>
-NPMatrix<T>::~NPMatrix() {
-    lupClear();
-}
-
 
 template<typename T>
 string NPMatrix<T>::str() const {
@@ -108,8 +18,6 @@ string NPMatrix<T>::str() const {
     setDefaultBrowseIndices();
     return stream.str();
 }
-
-
 
 
 // CHARACTERIZATION
@@ -675,6 +583,16 @@ NPMatrix<T> NPMatrix<T>::nscalar(const std::vector<T> &scalars, const ul_t n) {
 
 // PROTECTED METHODS
 
+
+template<typename T>
+NPMatrix<T>::NPMatrix(const NVector<T> &u, ul_t n, ul_t p, ul_t i1, ul_t j1, ul_t i2, ul_t j2):
+        NVector<T>(u),
+        _n(n), _p(p),
+        _i1(i1), _j1(j1), _i2(i2), _j2(j2),
+        _a(nullptr), _perm(nullptr) {
+    setDefaultBrowseIndices();
+}
+
 // MANIPULATORS
 
 template<typename T>
@@ -1041,7 +959,7 @@ void NPMatrix<T>::setDefaultBrowseIndices() const {
 // SERIALIZATION
 
 template<typename T>
-void NPMatrix<T>::copy(const NPMatrix<T> &m) {
+NPMatrix<T> &NPMatrix<T>::copy(const NPMatrix<T> &m) {
     if (this != &m) {
         if (hasDefaultBrowseIndices() && m.hasDefaultBrowseIndices()) {
             this->std::vector<T>::operator=(m);
@@ -1060,6 +978,21 @@ void NPMatrix<T>::copy(const NPMatrix<T> &m) {
         setDefaultBrowseIndices();
         m.setDefaultBrowseIndices();
     }
+    return *this;
+}
+
+template<typename T>
+NPMatrix<T> &NPMatrix<T>::copy(const vector<vector<T>> &data) {
+    for (ul_t i = 0; i < _n; ++i) {
+
+        assert(data[i].size() == data[0].size());
+
+        for (ul_t j = 0; j < _p; ++j) {
+            (*this)(i, j) = data[i][j];
+        }
+    }
+    setDefaultBrowseIndices();
+    return *this;
 }
 
 template<typename T>

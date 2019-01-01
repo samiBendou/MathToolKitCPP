@@ -225,7 +225,7 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 
 
 template<typename T>
-NVector<T>::NVector(const vector<T> data, ul_t k1, ul_t k2) : vector<T>(data), _k1(k1), _k2(k2) {
+NVector<T>::NVector(const vector<T> &data, ul_t k1, ul_t k2) : vector<T>(data), _k1(k1), _k2(k2) {
     setDefaultBrowseIndices();
 }
 
