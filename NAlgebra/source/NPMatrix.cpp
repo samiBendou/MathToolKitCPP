@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 template<typename T>
 string NPMatrix<T>::str() const {
     stringstream stream;
@@ -21,12 +20,6 @@ string NPMatrix<T>::str() const {
 
 
 // CHARACTERIZATION
-
-
-template<typename T>
-bool NPMatrix<T>::isSquare() const {
-    return _j2 - _j1 == _i2 - _i1;
-}
 
 template<typename T>
 bool NPMatrix<T>::isUpper() const {
@@ -77,20 +70,6 @@ bool NPMatrix<T>::isDiagonal() const {
 }
 
 // GETTERS
-
-template<typename T>
-ul_t NPMatrix<T>::n() const {
-    auto res = _i2 - _i1 + 1;
-    setDefaultBrowseIndices();
-    return res;
-}
-
-template<typename T>
-ul_t NPMatrix<T>::p() const {
-    auto res = _j2 - _j1 + 1;
-    setDefaultBrowseIndices();
-    return res;
-}
 
 template<typename T>
 NVector<T> NPMatrix<T>::row(ul_t i) const {
@@ -204,88 +183,51 @@ NPMatrix<T> NPMatrix<T>::lupU() const {
 
 
 template<typename T>
-void NPMatrix<T>::setRow(const NVector<T> &u, ul_t i1) {
+NPMatrix<T> &NPMatrix<T>::setRow(const NVector<T> &u, ul_t i1) {
     assert(u.dim() <= _p && isValidRowIndex(i1));
 
     std::copy(u.begin(), u.end(), this->begin() + _p * i1);
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::setCol(const NVector<T> &u, ul_t j1) {
+NPMatrix<T> &NPMatrix<T>::setCol(const NVector<T> &u, ul_t j1) {
     assert(u.dim() <= _n && isValidColIndex(j1));
 
     for (ul_t i = 0; i < u.dim(); ++i) {
         (*this)(i, j1) = u(i);
     }
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::setRows(const vector<NVector<T> > &vectors, ul_t i1) {
+NPMatrix<T> &NPMatrix<T>::setRows(const vector<NVector<T>> &vectors, ul_t i1) {
     ul_t size = (vectors.size() + i1 < _n) ? vectors.size() + i1 : _n;
 
     for (auto i = i1; i < size; ++i) {
         setRow(vectors[i - i1], i);
     }
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::setCols(const vector<NVector<T> > &vectors, ul_t j1) {
+NPMatrix<T> &NPMatrix<T>::setCols(const vector<NVector<T>> &vectors, ul_t j1) {
     ul_t size = (vectors.size() + j1 <= _p) ? vectors.size() + j1 : _p;
 
     for (auto j = j1; j < size; ++j) {
         setCol(vectors[j - j1], j);
     }
     lupClear();
+    return *this;
 }
 
 
 // MANIPULATORS
 
-// SWAPS
-
-
-template<typename T>
-void NPMatrix<T>::swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
-    assert(isValidIndex(i1, j1) && isValidIndex(i2, j2));
-
-    NVector<T>::swap(vectorIndex(i1, j1), vectorIndex(i2, j2));
-    lupClear();
-}
-
-template<typename T>
-void NPMatrix<T>::swapRow(ul_t i1, ul_t i2) {
-    swap(Row, i1, i2);
-    lupClear();
-}
-
-template<typename T>
-void NPMatrix<T>::swapCol(ul_t j1, ul_t j2) {
-    swap(Col, j1, j2);
-    lupClear();
-}
-
-
-// SHIFTS
-
-
-template<typename T>
-void NPMatrix<T>::shiftRow(ul_t i, const long iterations) {
-    shift(Row, i, iterations);
-    lupClear();
-}
-
-template<typename T>
-void NPMatrix<T>::shiftCol(ul_t j, const long iterations) {
-    shift(Col, j, iterations);
-    lupClear();
-}
-
 // TRANSPOSED
-
-
 template<typename T>
 NPMatrix<T> NPMatrix<T>::transposed() const {
     NPMatrix<T> temp{_j2 - _j1 + 1, _i2 - _i1 + 1};
@@ -371,112 +313,7 @@ T NPMatrix<T>::det() const {
 
 // OPERATORS
 
-// ALGEBRAICAL OPERATORS
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::operator+(const NPMatrix<T> &matrix) const {
-    NPMatrix<T> res{*this};
-    res += matrix;
-    return res;
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::operator-(const NPMatrix<T> &matrix) const {
-    NPMatrix<T> res{*this};
-    res -= matrix;
-    return res;
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::operator*(const NPMatrix<T> &m) const {
-    NPMatrix<T> res{*this};
-    NPMatrix<T> sub_m{this != &m ? m : res};
-    res *= sub_m;
-    return res;
-}
-
-template<typename T>
-NVector<T> NPMatrix<T>::operator*(const NVector<T> &v) const {
-    NVector<T> res{v};
-    vectorProduct(res);
-    return res;
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::operator/(T s) const {
-    NPMatrix<T> res{*this};
-    res /= s;
-    return res;
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::operator-() const {
-    NPMatrix<T> res{*this};
-    res.opp();
-    return res;
-}
-
-// COMPOUND OPERATORS
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator+=(const NPMatrix<T> &m) {
-    add(m);
-    return *this;
-}
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator-=(const NPMatrix<T> &m) {
-    sub(m);
-    return *this;
-}
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator*=(const NPMatrix<T> &m) {
-    matrixProduct(m);
-
-    setDefaultBrowseIndices();
-    m.setDefaultBrowseIndices();
-    return *this;
-}
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator*=(T s) {
-    prod(s);
-    return *this;
-}
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator/=(T s) {
-    div(s);
-    return *this;
-}
-
-template<typename T>
-NVector<T> &NPMatrix<T>::operator^=(const long exp) {
-    pow(exp);
-    return *this;
-}
-
-
 // BI-DIMENSIONAL ACCESSORS
-
-template<typename T>
-T &NPMatrix<T>::operator()(ul_t i, ul_t j) {
-    assert(isValidIndex(i, j));
-    return (*this)[vectorIndex(i, j)];
-
-}
-
-template<typename T>
-T NPMatrix<T>::operator()(ul_t i, ul_t j) const {
-    assert(isValidIndex(i, j));
-    return (*this).at(vectorIndex(i, j));
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
-    return subMatrix(i1, j1, i2, j2);
-}
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
@@ -491,33 +328,7 @@ NPMatrix<T> &NPMatrix<T>::operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
     return *this;
 }
 
-// AFFECTATION
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::operator=(const NPMatrix<T> &m) {
-    copy(m);
-    return *this;
-}
-
 // STATIC FUNCTIONS
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::zeros(ul_t n, ul_t p) {
-    p = (p > 0) ? p : n;
-    return NPMatrix<T>(NVector<T>::zeros(n * p), n, p);
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::ones(ul_t n, ul_t p) {
-    p = (p > 0) ? p : n;
-    return NPMatrix<T>(NVector<T>::ones(n * p), n, p);
-}
-
-template<typename T>
-NPMatrix<T> NPMatrix<T>::canonical(ul_t i, ul_t j, ul_t n, ul_t p) {
-    p = (p > 0) ? p : n;
-    return NPMatrix<T>(NVector<T>::canonical(p * i + j, n * p), n, p);
-}
 
 template<typename T>
 NPMatrix<T> NPMatrix<T>::eye(ul_t n) {
@@ -537,19 +348,14 @@ NPMatrix<T> NPMatrix<T>::diag(const std::vector<T> &data, ul_t n) {
     return diag;
 }
 
-template<typename T>
-NPMatrix<T> NPMatrix<T>::scalar(T s, ul_t n) {
-    return s * NPMatrix<T>::eye(n);
-}
-
 //Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
 //diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
 
 template<typename T>
 NPMatrix<T> NPMatrix<T>::ndiag(const std::vector<NVector<T>> &data) {
-    const auto n = (long) data.size();
-    const auto middle = (n - 1) / 2;
-    const auto dim = data[middle].dim();
+    auto n = (long) data.size();
+    auto middle = (n - 1) / 2;
+    auto dim = data[middle].dim();
     NPMatrix<T> diag = NPMatrix<T>::zeros(dim);
 
     for (long l = -middle; l <= middle; l++) {
@@ -565,9 +371,9 @@ NPMatrix<T> NPMatrix<T>::ndiag(const std::vector<NVector<T>> &data) {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::nscalar(const std::vector<T> &scalars, const ul_t n) {
-    const auto scalarSize = (long) scalars.size();
-    const long minSize = n - scalarSize;
+NPMatrix<T> NPMatrix<T>::nscalar(const std::vector<T> &scalars, ul_t n) {
+    auto scalarSize = (long) scalars.size();
+    long minSize = n - scalarSize;
 
     std::vector<NVector<T> > diags((ul_t) (2 * scalarSize - 1));
     ul_t size = 1;
@@ -596,7 +402,7 @@ NPMatrix<T>::NPMatrix(const NVector<T> &u, ul_t n, ul_t p, ul_t i1, ul_t j1, ul_
 // MANIPULATORS
 
 template<typename T>
-void NPMatrix<T>::swap(const ElementEnum element, ul_t k1, ul_t k2) {
+NPMatrix<T> &NPMatrix<T>::swap(const ElementEnum element, ul_t k1, ul_t k2) {
 
     NVector<T> temp = (element == Row) ? NPMatrix<T>::row(k1) : col(k1);
 
@@ -604,10 +410,12 @@ void NPMatrix<T>::swap(const ElementEnum element, ul_t k1, ul_t k2) {
     (element == Row) ? setRow(temp, k2) : setCol(temp, k2);
 
     setDefaultBrowseIndices();
+    lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::shift(const ElementEnum element, ul_t k, const long iterations) {
+NPMatrix<T> &NPMatrix<T>::shift(const ElementEnum element, ul_t k, const long iterations) {
 
     assert(element == Row ? isBetweenI12(k + _i1) : isBetweenJ12(k + _j1));
 
@@ -616,6 +424,8 @@ void NPMatrix<T>::shift(const ElementEnum element, ul_t k, const long iterations
     (element == Row) ? setRow(vector, k + _i1) : setCol(vector, k + _j1);
 
     setDefaultBrowseIndices();
+    lupClear();
+    return *this;
 }
 
 // MAX/MIN
@@ -628,60 +438,48 @@ ul_t NPMatrix<T>::maxAbsIndex(const ElementEnum element, ul_t k, ul_t r) const {
     return r + vector.maxAbsIndex();
 }
 
-template<typename T>
-ul_t NPMatrix<T>::maxAbsIndexRow(ul_t i, ul_t r) const {
-    return maxAbsIndex(Row, i, r);
-}
-
-template<typename T>
-ul_t NPMatrix<T>::maxAbsIndexCol(ul_t j, ul_t r) const {
-    return maxAbsIndex(Col, j, r);
-}
-
 // PRIVATE METHODS
 
 // ALGEBRAICAL OPERATIONS
 
 template<typename T>
-void NPMatrix<T>::vectorProduct(NVector<T> &u) const {
+NVector<T> &NPMatrix<T>::vectorProduct(NVector<T> &u) const {
 
     NVector<T> res = NVector<T>::zeros(u.dim());
-    std::vector<NVector<T> > vector_rows = rows(_i1, _i2);
 
-    assert(isCompatible(res));
+    assert(matchSizeForProduct(res));
 
     for (ul_t i = _i1; i <= _i2; ++i) {
-        res(i - _i1) = vector_rows[i](_j1, _j2) | u;
+        res(i - _i1) = row(i)(_j1, _j2) | u;
     }
     u = res;
 
     setDefaultBrowseIndices();
+    return u;
 }
 
 template<typename T>
-void NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
-    assert(isCompatible(m));
-    assert(isSquare() || hasDefaultBrowseIndices());
-
-    vector<NVector<T> > vector_rows = rows();
-    vector<NVector<T> > vector_cols = m.cols();
+NPMatrix<T> &NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
+    assert(matchSizeForProduct(m));
+    assert((_j2 - _j1 == _i2 - _i1) || hasDefaultBrowseIndices());
 
     NPMatrix<T> res = NPMatrix<T>::zeros(_i2 - _i1 + 1, m._j2 - m._j1 + 1);
 
     for (ul_t i = _i1; i <= _i2; ++i) {
         for (ul_t j = m._j1; j <= m._j2; ++j) {
-            res(i - _i1, j - m._j1) = vector_rows[i](_j1, _j2) | vector_cols[j](m._i1, m._i2);
+            res(i - _i1, j - m._j1) = row(i)(_j1, _j2) | m.col(j)(m._i1, m._i2);
         }
     }
 
-    this->copy(res);
+    copy(res);
     lupClear();
+    return *this;
 }
 
 // PRIVATE ALGEBRAICAL OPERATIONS
 
 template<typename T>
-void NPMatrix<T>::add(const NPMatrix<T> &m) {
+NPMatrix<T> &NPMatrix<T>::add(const NPMatrix<T> &m) {
 
     assert(hasSameSize(m));
 
@@ -694,10 +492,11 @@ void NPMatrix<T>::add(const NPMatrix<T> &m) {
     setDefaultBrowseIndices();
     m.setDefaultBrowseIndices();
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::sub(const NPMatrix<T> &m) {
+NPMatrix<T> &NPMatrix<T>::sub(const NPMatrix<T> &m) {
     assert(hasSameSize(m));
 
     typename std::vector<T>::iterator begin, end;
@@ -711,10 +510,11 @@ void NPMatrix<T>::sub(const NPMatrix<T> &m) {
     setDefaultBrowseIndices();
     m.setDefaultBrowseIndices();
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::opp() {
+NPMatrix<T> &NPMatrix<T>::opp() {
 
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         for (ul_t j = 0; j <= _j2 - _j1; ++j) {
@@ -724,11 +524,12 @@ void NPMatrix<T>::opp() {
 
     setDefaultBrowseIndices();
     lupClear();
+    return *this;
 }
 
 
 template<typename T>
-void NPMatrix<T>::prod(T s) {
+NPMatrix<T> &NPMatrix<T>::prod(T s) {
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         for (ul_t j = 0; j <= _j2 - _j1; ++j) {
             (*this)(i + _i1, j + _j1) *= s;
@@ -737,10 +538,11 @@ void NPMatrix<T>::prod(T s) {
 
     setDefaultBrowseIndices();
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::div(T s) {
+NPMatrix<T> &NPMatrix<T>::div(T s) {
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
         for (ul_t j = 0; j <= _j2 - _j1; ++j) {
             (*this)(i + _i1, j + _j1) /= s;
@@ -748,10 +550,11 @@ void NPMatrix<T>::div(T s) {
     }
     setDefaultBrowseIndices();
     lupClear();
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::pow(const long n) {
+NPMatrix<T> &NPMatrix<T>::pow(long n) {
     if (n > 0) {
         rPow(n);
     } else if (n < 0) {
@@ -762,24 +565,25 @@ void NPMatrix<T>::pow(const long n) {
     }
     setDefaultBrowseIndices();
     lupClear();
+    return *this;
 }
 
 template<typename T>
 void NPMatrix<T>::rPow(const long n) {
     if (n > 1) {
-        const NPMatrix<T> copy{this->subMatrix(_i1, _j1, _i2, _j2)};
-        (*this)(_i1, _j1, _i2, _j2).matrixProduct(copy);
+        const NPMatrix<T> this_copy{subMatrix(_i1, _j1, _i2, _j2)};
+        (*this)(_i1, _j1, _i2, _j2).matrixProduct(this_copy);
         if (n % 2 == 0) {
             rPow(n / 2);
         } else if (n % 2 == 1) {
             rPow((n - 1) / 2);
-            (*this)(_i1, _j1, _i2, _j2).matrixProduct(copy);
+            (*this)(_i1, _j1, _i2, _j2).matrixProduct(this_copy);
         }
     }
 }
 
 template<typename T>
-void NPMatrix<T>::inv() {
+NPMatrix<T> &NPMatrix<T>::inv() {
     ul_t i, j, k, l;
 
     if (_a == nullptr) { lupUpdate(); }
@@ -804,10 +608,11 @@ void NPMatrix<T>::inv() {
             lupClear();
         }
     }
+    return *this;
 }
 
 template<typename T>
-void NPMatrix<T>::solve(NVector<T> &vector) {
+NVector<T> &NPMatrix<T>::solve(NVector<T> &vector) const {
     ul_t i, l, k;
 
     if (_a == nullptr) { lupUpdate(); }
@@ -830,6 +635,7 @@ void NPMatrix<T>::solve(NVector<T> &vector) {
             lupClear();
         }
     }
+    return vector;
 }
 
 
@@ -842,7 +648,7 @@ void NPMatrix<T>::lupUpdate() const {
 
     lupClear();
 
-    _a = new NPMatrix<T>(this->subMatrix(_i1, _j1, _i2, _j2));
+    _a = new NPMatrix<T>(subMatrix(_i1, _j1, _i2, _j2));
     auto *p = new std::vector<ul_t>();
 
     for (i = 0; i <= _a->_n; ++i)
@@ -899,46 +705,6 @@ void NPMatrix<T>::lupClear() const {
 // CHARACTERIZATION
 
 template<typename T>
-bool NPMatrix<T>::isValidRowIndex(ul_t i) const {
-    return i < _n;
-}
-
-template<typename T>
-bool NPMatrix<T>::isValidColIndex(ul_t j) const {
-    return j < _p;
-}
-
-template<typename T>
-bool NPMatrix<T>::isValidIndex(ul_t i, ul_t j) const {
-    return isValidRowIndex(i) && isValidColIndex(j);
-}
-
-template<typename T>
-bool NPMatrix<T>::isBetweenI12(ul_t i) const {
-    return i >= _i1 && i <= _i2;
-}
-
-template<typename T>
-bool NPMatrix<T>::isBetweenJ12(ul_t j) const {
-    return j >= _j1 && j <= _j2;
-}
-
-template<typename T>
-bool NPMatrix<T>::isCompatible(const NVector<T> &u) const {
-    return u.dim() - 1 == _j2 - _j1;
-}
-
-template<typename T>
-bool NPMatrix<T>::isCompatible(const NPMatrix<T> &m) const {
-    return m._i2 - m._i1 == _j2 - _j1;
-}
-
-template<typename T>
-bool NPMatrix<T>::hasSameSize(const NPMatrix<T> &m) const {
-    return m._i2 - m._i1 == _i2 - _i1 && m._j2 - m._j1 == _j2 - _j1;
-}
-
-template<typename T>
 bool NPMatrix<T>::hasDefaultBrowseIndices() const {
     return _i1 == 0 &&
            _j1 == 0 &&
@@ -962,12 +728,12 @@ template<typename T>
 NPMatrix<T> &NPMatrix<T>::copy(const NPMatrix<T> &m) {
     if (this != &m) {
         if (hasDefaultBrowseIndices() && m.hasDefaultBrowseIndices()) {
-            this->std::vector<T>::operator=(m);
+            std::vector<T>::operator=(m);
             _n = m._n;
             _p = m._p;
             lupCopy();
         } else if (hasDefaultBrowseIndices()) {
-            this->std::vector<T>::operator=(m.subMatrix(m._i1, m._j1, m._i2, m._j2));
+            std::vector<T>::operator=(m.subMatrix(m._i1, m._j1, m._i2, m._j2));
             _n = m._i2 - m._i1 + 1;
             _p = m._j2 - m._j1 + 1;
             lupClear();
@@ -995,31 +761,11 @@ NPMatrix<T> &NPMatrix<T>::copy(const vector<vector<T>> &data) {
     return *this;
 }
 
-template<typename T>
-ul_t NPMatrix<T>::vectorIndex(ul_t i, ul_t j) const {
-    return _p * i + j;
-}
-
-template<typename T>
-ul_t NPMatrix<T>::getRowFromVectorIndex(ul_t k) const {
-    assert(k < _n * _p);
-    return k / _p;
-}
-
-template<typename T>
-ul_t NPMatrix<T>::getColFromVectorIndex(ul_t k) const {
-    assert(k < _n * _p);
-    return k % _p;
-}
-
-
 // SUB-MATRICES
 
 template<typename T>
 NPMatrix<T> NPMatrix<T>::subMatrix(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
     NPMatrix<T> sub_matrix = NPMatrix<T>::zeros(i2 - i1 + 1, j2 - j1 + 1);
-
-
     for (ul_t i = 0; i <= i2 - i1; ++i) {
         for (ul_t j = 0; j <= j2 - j1; ++j) {
             sub_matrix(i, j) = (*this)(i + i1, j + j1);
@@ -1029,7 +775,7 @@ NPMatrix<T> NPMatrix<T>::subMatrix(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
 }
 
 template<typename T>
-void NPMatrix<T>::setSubMatrix(const NPMatrix<T> &m) {
+NPMatrix<T> &NPMatrix<T>::setSubMatrix(const NPMatrix<T> &m) {
     assert(hasSameSize(m));
 
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
@@ -1039,6 +785,7 @@ void NPMatrix<T>::setSubMatrix(const NPMatrix<T> &m) {
     }
     setDefaultBrowseIndices();
     m.setDefaultBrowseIndices();
+    return *this;
 }
 
 
@@ -1059,28 +806,3 @@ class NPMatrix<AESByte>;
 
 template
 class NPMatrix<Pixel>;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

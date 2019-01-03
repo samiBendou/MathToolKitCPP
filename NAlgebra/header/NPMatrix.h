@@ -57,7 +57,7 @@ public:
      *
      * @return a n x p matrix constructed using a std::vector of size n * p.
      */
-    explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * ((p > 0) ? p : n)), n, (p > 0) ? p : n) {}
+    explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * pIfNotNull(n, p)), n, pIfNotNull(n, p)) {}
 
     /**
      *
@@ -116,7 +116,11 @@ public:
      *
      * @return true if n = p.
      */
-    bool isSquare() const;
+    inline bool isSquare() const {
+        bool cond = _j2 - _j1 == _i2 - _i1;
+        setDefaultBrowseIndices();
+        return cond;
+    }
 
     bool isUpper() const;
 
@@ -126,9 +130,17 @@ public:
 
     // GETTERS
 
-    ul_t n() const;
+    inline ul_t n() const {
+        auto res = _i2 - _i1 + 1;
+        setDefaultBrowseIndices();
+        return res;
+    }
 
-    ul_t p() const;
+    inline ul_t p() const {
+        auto res = _j2 - _j1 + 1;
+        setDefaultBrowseIndices();
+        return res;
+    }
 
     /**
      *
@@ -179,10 +191,10 @@ public:
      * @param u row/col seen as NVector<T>. The dimension of the vector must be equal to the number of cols/rows
      * @param i1/j1 index of row/col to set
      */
-    void setRow(const NVector<T> &u, ul_t i1);
+    NPMatrix<T> &setRow(const NVector<T> &u, ul_t i1);
 
 
-    void setCol(const NVector<T> &u, ul_t j1);
+    NPMatrix<T> &setCol(const NVector<T> &u, ul_t j1);
 
     /**
      *
@@ -201,9 +213,9 @@ public:
      *
      *                  Where q is the size of the vector array.
      */
-    void setRows(const std::vector<NVector<T> > &vectors, ul_t i1 = 0);
+    NPMatrix<T> &setRows(const std::vector<NVector<T> > &vectors, ul_t i1 = 0);
 
-    void setCols(const std::vector<NVector<T> > &vectors, ul_t j1 = 0);
+    NPMatrix<T> &setCols(const std::vector<NVector<T> > &vectors, ul_t j1 = 0);
 
 
 
@@ -218,7 +230,13 @@ public:
      * @param i2/j2 second row/col indices to swap
      * @description : Swap Ai1j1 and Ai2j2.
      */
-    void swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
+    inline NPMatrix<T> &swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
+        assert(isValidIndex(i1, j1) && isValidIndex(i2, j2));
+
+        NVector<T>::swap(vectorIndex(i1, j1), vectorIndex(i2, j2));
+        lupClear();
+        return *this;
+    }
 
     /**
      *
@@ -226,9 +244,13 @@ public:
      * @param i2/j2 second row/col indices to swap
      * @description : Swap Ri1/Cj1 and Ri2/Cj2.
      */
-    void swapRow(ul_t i1, ul_t i2);
+    inline NPMatrix<T> &swapRow(ul_t i1, ul_t i2) {
+        return swap(Row, i1, i2);
+    }
 
-    void swapCol(ul_t j1, ul_t j2);
+    inline NPMatrix<T> &swapCol(ul_t j1, ul_t j2) {
+        return swap(Col, j1, j2);
+    }
 
 
     // SHIFT
@@ -247,9 +269,13 @@ public:
     *                  |A00, ..., ...|
     *                  |A10, ..., ...|
     */
-    void shiftRow(ul_t i, long iterations = 1);
+    inline NPMatrix<T> &shiftRow(ul_t i, long iterations = 1) {
+        return shift(Row, i, iterations);
+    }
 
-    void shiftCol(ul_t j, long iterations = 1);
+    inline NPMatrix<T> &shiftCol(ul_t j, long iterations = 1) {
+        return shift(Col, j, iterations);
+    }
 
     // ALGEBRA
 
@@ -284,19 +310,27 @@ public:
 
     // ALGEBRAICAL OPERATORS
 
-    NPMatrix<T> operator+(const NPMatrix<T> &m) const;
-
-    NPMatrix<T> operator-(const NPMatrix<T> &m) const;
-
-    NPMatrix<T> operator-() const;
-
-    friend NPMatrix<T> operator*(T s, const NPMatrix<T> &m) {
-        NPMatrix<T> res{m};
-        res *= s;
-        return res;
+    inline friend NPMatrix<T> operator+(NPMatrix<T> a, const NPMatrix<T> &b) {
+        a += b;
+        return a;
     }
 
-    friend NPMatrix<T> operator*(const NPMatrix<T> &m, T s) {
+    inline friend NPMatrix<T> operator-(NPMatrix<T> a, const NPMatrix<T> &b) {
+        a -= b;
+        return a;
+    }
+
+    inline friend NPMatrix<T> operator-(NPMatrix<T> m) {
+        m.opp();
+        return m;
+    }
+
+    inline friend NPMatrix<T> operator*(T s, NPMatrix<T> m) {
+        m *= s;
+        return m;
+    }
+
+    inline friend NPMatrix<T> operator*(NPMatrix<T> m, T s) {
         return s * m;
     }
 
@@ -304,20 +338,30 @@ public:
      * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
      *          Natural O(n3) matrix product is used.
      */
-    NPMatrix<T> operator*(const NPMatrix<T> &m) const;
+
+    inline friend NPMatrix<T> operator*(NPMatrix<T> a, const NPMatrix<T> &b) {
+        a *= (&a != &b ? b : a);
+        return a;
+    }
 
     /**
      *
      * @return  m * v where * is usual matrix vector product (linear mapping). The number of rows of m must
      *          be equal to the dimension of v. Natural O(n2) linear mapping is used.
      */
-    NVector<T> operator*(const NVector<T> &v) const;
+    inline friend NVector<T> operator*(const NPMatrix<T> &m, NVector<T> v) {
+        m.vectorProduct(v);
+        return v;
+    }
 
     /**
      *
      * @return (1 / s) * m
      */
-    NPMatrix<T> operator/(T s) const;
+    inline friend NPMatrix<T> operator/(NPMatrix<T> m, T s) {
+        m /= s;
+        return m;
+    }
 
     /**
      *
@@ -325,10 +369,9 @@ public:
      * @param exp long integer exponent. If exp < 0 we calculate the power of the inverse matrix m^-1 (O(n3)).
      * @return m^exp using fast exponentiation algorithm.
      */
-    friend NPMatrix<T> operator^(const NPMatrix<T> &m, long exp) {
-        NPMatrix<T> res{m};
-        res ^= exp;
-        return res;
+    inline friend NPMatrix<T> operator^(NPMatrix<T> m, long exp) {
+        m ^= exp;
+        return m;
     }
 
     /**
@@ -336,23 +379,20 @@ public:
      * @param v second member of the equation system.
      * @return the solution of m * x = v by inverting the m matrix.
      */
-    friend NVector<T> operator%(NPMatrix<T> &m, const NVector<T> &v) {
-        NVector<T> b{v};
-        m.solve(b);
-        m.setDefaultBrowseIndices();
-        return b;
+    inline friend NVector<T> operator%(const NPMatrix<T> &m, NVector<T> v) {
+        v %= m;
+        return v;
     }
 
 
     // SCALAR PRODUCT BASED OPERATIONS
 
-    friend T operator|(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
-        NVector<T> sub_m1 = m1(m1._i1, m1._j1, m1._i2, m1._j2);
-        NVector<T> sub_m2 = m2(m2._i1, m2._j1, m2._i2, m2._j2);
-        auto res = sub_m1 | sub_m2;
+    friend T operator|(const NPMatrix<T> &a, const NPMatrix<T> &b) {
+        NVector<T> sub_a{a(a._i1, a._j1, a._i2, a._j2)}, sub_b{b(b._i1, b._j1, b._i2, b._j2)};
+        auto res = sub_a | sub_b;
 
-        m1.setDefaultBrowseIndices();
-        m2.setDefaultBrowseIndices();
+        a.setDefaultBrowseIndices();
+        b.setDefaultBrowseIndices();
         return res;
     }
 
@@ -360,23 +400,42 @@ public:
         return sqrt(m | m);
     }
 
-    friend T operator/(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
-        return !(m1 - m2);
+    friend T operator/(const NPMatrix<T> &a, const NPMatrix<T> &b) {
+        return !(a - b);
     }
 
     // COMPOUND OPERATORS
 
-    NPMatrix<T> &operator+=(const NPMatrix<T> &m);
+    inline NPMatrix<T> &operator+=(const NPMatrix<T> &m) {
+        return add(m);
+    }
 
-    NPMatrix<T> &operator-=(const NPMatrix<T> &m);
+    inline NPMatrix<T> &operator-=(const NPMatrix<T> &m) {
+        return sub(m);
+    }
 
-    NPMatrix<T> &operator*=(const NPMatrix<T> &m);
+    inline NPMatrix<T> &operator*=(const NPMatrix<T> &m) {
+        matrixProduct(m);
+        setDefaultBrowseIndices();
+        m.setDefaultBrowseIndices();
+        return *this;
+    }
 
-    NPMatrix<T> &operator*=(T s) override;
+    inline NPMatrix<T> &operator*=(T s) override {
+        return prod(s);
+    }
 
-    NPMatrix<T> &operator/=(T s) override;
+    inline NPMatrix<T> &operator/=(T s) override {
+        return div(s);
+    }
 
-    NVector<T> &operator^=(long exp);
+    inline NPMatrix<T> &operator^=(long exp) {
+        return pow(exp);
+    }
+
+    inline friend NVector<T> &operator%=(NVector<T> &u, const NPMatrix<T> &m) {
+        return m.solve(u);
+    }
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -384,9 +443,15 @@ public:
      *
      * @return component ij of matrix. Operator can be used to read/write values.
      */
-    T &operator()(ul_t i, ul_t j);
+    inline T &operator()(ul_t i, ul_t j) {
+        assert(isValidIndex(i, j));
+        return (*this)[vectorIndex(i, j)];
+    }
 
-    T operator()(ul_t i, ul_t j) const;
+    T operator()(ul_t i, ul_t j) const {
+        assert(isValidIndex(i, j));
+        return (*this).at(vectorIndex(i, j));
+    }
 
     /**
      *
@@ -401,26 +466,30 @@ public:
      * Operations on a sub matrix can be applied this way matrix(i1, j1, i2, j2).shift(0, 1)
      * See unit tests for mor details.
      */
-    NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const;
+    inline NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
+        return subMatrix(i1, j1, i2, j2);
+    }
 
     NPMatrix<T> &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
 
     // AFFECTATION
 
-    NPMatrix<T> &operator=(const NPMatrix<T> &m);
+    inline NPMatrix<T> &operator=(const NPMatrix<T> &m) {
+        return copy(m);
+    }
 
     // COMPARAISON OPERATORS
 
-    friend bool operator==(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
-        bool res = m1(m1._i1, m1._j1, m1._i2, m1._j2).isEqual(m2(m2._i1, m2._j1, m2._i2, m2._j2));
+    friend bool operator==(const NPMatrix<T> &a, const NPMatrix<T> &b) {
+        bool res = a(a._i1, a._j1, a._i2, a._j2).isEqual(b(b._i1, b._j1, b._i2, b._j2));
 
-        m1.setDefaultBrowseIndices();
-        m2.setDefaultBrowseIndices();
+        a.setDefaultBrowseIndices();
+        b.setDefaultBrowseIndices();
         return res;
     }
 
-    friend bool operator!=(const NPMatrix<T> &m1, const NPMatrix<T> &m2) {
-        return !(m1 == m2);
+    inline friend bool operator!=(const NPMatrix<T> &a, const NPMatrix<T> &b) {
+        return !(a == b);
     }
 
     // STATIC FUNCTIONS
@@ -429,21 +498,27 @@ public:
      *
      * @return zero nxp matrix, ie. filled with 0.
      */
-    static NPMatrix<T> zeros(ul_t n, ul_t p = 0);
+    inline static NPMatrix<T> zeros(ul_t n, ul_t p = 0) {
+        return NPMatrix<T>(NVector<T>::zeros(n * pIfNotNull(n, p)), n);
+    }
 
     /**
      *
      * @return nxp matrix filled with 1
      */
-    static NPMatrix<T> ones(ul_t n, ul_t p = 0);
+    inline static NPMatrix<T> ones(ul_t n, ul_t p = 0) {
+        return NPMatrix<T>(NVector<T>::ones(n * pIfNotNull(n, p)), n);
+    }
 
     /**
      * @param i row where to put 1.
      * @param j col where to put 1.
      *
-     * @return canonical matrices Eij  of Mnp(R) which contains 1 in position ij and 0 elsewhere.
+     * @return canonical matrices Eij of Mnp(R) which contains 1 in position ij and 0 elsewhere.
      */
-    static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0);
+    inline static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0) {
+        return NPMatrix<T>(NVector<T>::canonical(p * i + j, n * pIfNotNull(n, p)), n);
+    }
 
     /**
      *
@@ -465,7 +540,9 @@ public:
      *
      * @return a scalar n-th order matrix with s value. This is a diagonal matrix filled with s.
      */
-    static NPMatrix<T> scalar(T s, ul_t n);
+    inline static NPMatrix<T> scalar(T s, ul_t n) {
+        return s * NPMatrix<T>::eye(n);
+    }
 
     /**
      *
@@ -493,7 +570,7 @@ public:
      * @return  a n-scalar Matrix filled with values. If values.length = 2, the matrix is tri-diagonal.
      *          Center diagonal is filled with s1 and the other diagonal are filled with s0.
      */
-    static NPMatrix<T> nscalar(const std::vector<T> &scalars, const ul_t n);
+    static NPMatrix<T> nscalar(const std::vector<T> &scalars, ul_t n);
 
 protected:
 
@@ -501,9 +578,9 @@ protected:
 
     // MANIPULATORS
 
-    void swap(ElementEnum element, ul_t k1, ul_t k2);
+    NPMatrix<T> &swap(ElementEnum element, ul_t k1, ul_t k2);
 
-    void shift(ElementEnum element, ul_t k, long iterations);
+    NPMatrix<T> &shift(ElementEnum element, ul_t k, long iterations);
 
     // MAX/MIN
 
@@ -511,33 +588,33 @@ protected:
 
     // MAX / MIN
 
-    ul_t maxAbsIndexRow(ul_t i, ul_t r = 0) const;
+    inline ul_t maxAbsIndexRow(ul_t i, ul_t r = 0) const { return maxAbsIndex(Row, i, r); }
 
-    ul_t maxAbsIndexCol(ul_t j, ul_t r = 0) const;
+    inline ul_t maxAbsIndexCol(ul_t j, ul_t r = 0) const { return maxAbsIndex(Col, j, r); }
 
     // ALGEBRAICAL OPERATIONS
 
-    void vectorProduct(NVector<T> &u) const;
+    NVector<T> &vectorProduct(NVector<T> &u) const;
 
-    virtual void matrixProduct(const NPMatrix<T> &m);
+    NPMatrix<T> &matrixProduct(const NPMatrix<T> &m);
 
-    void add(const NPMatrix<T> &m);
+    NPMatrix<T> &add(const NPMatrix<T> &m);
 
-    void sub(const NPMatrix<T> &m);
+    NPMatrix<T> &sub(const NPMatrix<T> &m);
 
-    void opp();
+    NPMatrix<T> &opp();
 
-    void prod(T s);
+    NPMatrix<T> &prod(T s);
 
-    void div(T s);
+    NPMatrix<T> &div(T s);
 
-    void pow(long n);
+    NPMatrix<T> &pow(long n);
 
     void rPow(long n);
 
-    void inv();
+    NPMatrix<T> &inv();
 
-    void solve(NVector<T> &vector);
+    NVector<T> &solve(NVector<T> &vector) const;
 
     // LUP MANAGEMENT
 
@@ -549,25 +626,29 @@ protected:
 
     // CHARACTERIZATION
 
-    bool isValidRowIndex(ul_t i) const;
+    inline bool isValidRowIndex(ul_t i) const { return i < _n; }
 
-    bool isValidColIndex(ul_t j) const;
+    inline bool isValidColIndex(ul_t j) const { return j < _p; }
 
-    bool isValidIndex(ul_t i, ul_t j) const;
+    inline bool isValidIndex(ul_t i, ul_t j) const { return (isValidRowIndex(i) && isValidColIndex(j)); }
 
-    bool isBetweenI12(ul_t i) const;
+    inline bool isBetweenI12(ul_t i) const { return i >= _i1 && i <= _i2; }
 
-    bool isBetweenJ12(ul_t j) const;
+    inline bool isBetweenJ12(ul_t j) const { return j >= _j1 && j <= _j2; }
 
-    bool isCompatible(const NVector<T> &u) const;
+    inline bool matchSizeForProduct(const NVector<T> &u) const { return u.dim() - 1 == _j2 - _j1; }
 
-    bool isCompatible(const NPMatrix<T> &u) const;
+    inline bool matchSizeForProduct(const NPMatrix<T> &m) const { return m._i2 - m._i1 == _j2 - _j1; }
 
-    bool hasSameSize(const NPMatrix<T> &m) const;
+    inline bool hasSameSize(const NPMatrix<T> &m) const {
+        return m._i2 - m._i1 == _i2 - _i1 && m._j2 - m._j1 == _j2 - _j1;
+    }
 
     bool hasDefaultBrowseIndices() const override;
 
     void setDefaultBrowseIndices() const override;
+
+    inline static ul_t pIfNotNull(ul_t n, ul_t p) { return p > 0 ? p : n; }
 
     // AFFECTATION
 
@@ -575,20 +656,29 @@ protected:
 
     NPMatrix<T> &copy(const vector<vector<T>> &data);
 
+    // MANIPULATIONS
+
+
     // INDEX GETTERS
 
-    ul_t vectorIndex(ul_t i, ul_t j) const;
+    inline ul_t vectorIndex(ul_t i, ul_t j) const { return _p * i + j; }
 
-    ul_t getRowFromVectorIndex(ul_t k) const;
+    inline ul_t getRowFromVectorIndex(ul_t k) const {
+        assert(k < _n * _p);
+        return k / _p;
+    }
 
-    ul_t getColFromVectorIndex(ul_t k) const;
+    inline ul_t getColFromVectorIndex(ul_t k) const {
+        assert(k < _n * _p);
+        return k % _p;
+    }
 
     // SUB-MATRICES
 
     NPMatrix<T> subMatrix(ul_t i1 = 0, ul_t j1 = MAX_SIZE,
                           ul_t i2 = 0, ul_t j2 = MAX_SIZE) const;
 
-    void setSubMatrix(const NPMatrix<T> &m);
+    NPMatrix<T> &setSubMatrix(const NPMatrix<T> &m);
 
     // SIZE
 
