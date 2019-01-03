@@ -261,6 +261,71 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named TestNVector
+
+# Build rule for target.
+TestNVector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestNVector
+.PHONY : TestNVector
+
+# fast build rule for target.
+TestNVector/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNVector.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNVector.dir/build
+.PHONY : TestNVector/fast
+
+#=============================================================================
+# Target rules for targets named BenchNVector
+
+# Build rule for target.
+BenchNVector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BenchNVector
+.PHONY : BenchNVector
+
+# fast build rule for target.
+BenchNVector/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/BenchNVector.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/BenchNVector.dir/build
+.PHONY : BenchNVector/fast
+
+#=============================================================================
+# Target rules for targets named TestNPMatrix
+
+# Build rule for target.
+TestNPMatrix: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestNPMatrix
+.PHONY : TestNPMatrix
+
+# fast build rule for target.
+TestNPMatrix/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNPMatrix.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNPMatrix.dir/build
+.PHONY : TestNPMatrix/fast
+
+#=============================================================================
+# Target rules for targets named BenchNPMatrix
+
+# Build rule for target.
+BenchNPMatrix: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BenchNPMatrix
+.PHONY : BenchNPMatrix
+
+# fast build rule for target.
+BenchNPMatrix/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/BenchNPMatrix.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/BenchNPMatrix.dir/build
+.PHONY : BenchNPMatrix/fast
+
+#=============================================================================
+# Target rules for targets named TestScalarTypes
+
+# Build rule for target.
+TestScalarTypes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TestScalarTypes
+.PHONY : TestScalarTypes
+
+# fast build rule for target.
+TestScalarTypes/fast:
+	$(MAKE) -f TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestScalarTypes.dir/build.make TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestScalarTypes.dir/build
+.PHONY : TestScalarTypes/fast
+
+#=============================================================================
 # Target rules for targets named TestNAlgebra
 
 # Build rule for target.
@@ -346,6 +411,11 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... TestNVector"
+	@echo "... BenchNVector"
+	@echo "... TestNPMatrix"
+	@echo "... BenchNPMatrix"
+	@echo "... TestScalarTypes"
 	@echo "... TestNAlgebra"
 	@echo "... TestNAnalysis"
 	@echo "... TestNGeometry"

@@ -78,7 +78,7 @@ TEST_F(NPMatrixBenchTest, Max) {
 
 TEST_F(NPMatrixBenchTest, MatrixProd) {
     _t0 = clock();
-    _a *_b;
+    _a *= _b;
     _t1 = clock();
     _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
 
@@ -89,7 +89,7 @@ TEST_F(NPMatrixBenchTest, VectorProd) {
     vec_t u = vec_t::scalar(2, SMALL_N_TEST);
 
     _t0 = clock();
-    _a *u;
+    u *= _a;
     _t1 = clock();
     _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
 

@@ -244,24 +244,14 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
     return dot;
 }
 
-template<typename T>
-T NVector<T>::distance(const NVector<T> &u) const {
-    T d = (*this - u).norm();
-
-    setDefaultBrowseIndices();
-    u.setDefaultBrowseIndices();
-
-    return d;
-}
-
 // MANIPULATORS
 
 
 template<typename T>
-NVector<T> &NVector<T>::forEach(const NVector<T> &u, std::function<T(T, T)> binaryOp) {
+NVector<T> &NVector<T>::forEach(const NVector<T> &u, std::function<void(T &, const T &)> binary_op) {
     assert(hasSameSize(u));
     for (ul_t k = 0; k <= _k2 - _k1; k++) {
-        (*this)[k + _k1] = binaryOp((*this)[k + _k1], u[k + u._k1]);
+        binary_op((*this)[k + _k1], u[k + u._k1]);
     }
     setDefaultBrowseIndices();
     u.setDefaultBrowseIndices();
@@ -269,9 +259,9 @@ NVector<T> &NVector<T>::forEach(const NVector<T> &u, std::function<T(T, T)> bina
 }
 
 template<typename T>
-NVector<T> &NVector<T>::forEach(T s, std::function<T(T, T)> binaryOp) {
+NVector<T> &NVector<T>::forEach(T s, std::function<void(T &, T)> binary_op) {
     for (ul_t k = 0; k <= _k2 - _k1; k++) {
-        (*this)[k + _k1] = binaryOp((*this)[k + _k1], s);
+        binary_op((*this)[k + _k1], s);
     }
     setDefaultBrowseIndices();
     return *this;

@@ -50,6 +50,7 @@ public:
     NVector(const std::vector<T> &data) : NVector(data, 0, 0) {}
 
     NVector(std::initializer_list<T> list) : NVector(list, 0, 0) {}
+
     /**
      *
      * @return  a NVector<T> by giving the dimension. This method uses the std::vector constructor
@@ -336,21 +337,13 @@ public:
 
     // ITERATORS
 
-    inline iterator begin() {
-        return this->std::vector<T>::begin() + _k1;
-    };
+    inline iterator begin() { return this->std::vector<T>::begin() + _k1; };
 
-    inline const_iterator begin() const {
-        return this->std::vector<T>::begin() + _k1;
-    };
+    inline const_iterator begin() const { return this->std::vector<T>::begin() + _k1; };
 
-    inline iterator end() {
-        return this->std::vector<T>::begin() + _k2 + 1;
-    };
+    inline iterator end() { return this->std::vector<T>::begin() + _k2 + 1; };
 
-    inline const_iterator end() const {
-        return this->std::vector<T>::begin() + _k2 + 1;
-    };
+    inline const_iterator end() const { return this->std::vector<T>::begin() + _k2 + 1; };
 
     // STATIC FUNCTIONS
 
@@ -359,18 +352,14 @@ public:
      * @param dim : dimension of the vector
      * @return a 0 vector (0, 0, ..., 0).
      */
-    inline static NVector<T> zeros(ul_t dim) {
-        return scalar(0, dim);
-    }
+    inline static NVector<T> zeros(ul_t dim) { return scalar(0, dim); }
 
     /**
      *
      * @param dim : dimension of the vector
      * @return Returns vector filled with 1 (1, 1, ..., 1).
      */
-    inline static NVector<T> ones(ul_t dim) {
-        return scalar(1, dim);
-    }
+    inline static NVector<T> ones(ul_t dim) { return scalar(1, dim); }
 
     /**
      *
@@ -411,61 +400,43 @@ protected:
 
     // VECTOR SPACE OPERATIONS
 
-    inline NVector<T> &add(const NVector<T> &u) {
-        return forEach(u, [](T x, T y) { return x + y; });
-    }
+    inline NVector<T> &add(const NVector<T> &u) { return forEach(u, [](T &x, const T &y) { x += y; }); }
 
-    inline NVector<T> &sub(const NVector<T> &u) {
-        return forEach(u, [](T x, T y) { return x - y; });
-    }
+    inline NVector<T> &sub(const NVector<T> &u) { return forEach(u, [](T &x, const T &y) { x -= y; }); }
 
-    inline NVector<T> &opp() {
-        return prod(-1);
-    }
+    inline NVector<T> &opp() { return prod(-1); }
 
-    inline NVector<T> &prod(T s) {
-        return forEach(s, [](T x, T s) { return x * s; });
-    }
+    inline NVector<T> &prod(T s) { return forEach(s, [](T &x, T s) { return x *= s; }); }
 
-    inline NVector<T> &div(T s) {
-        return forEach(s, [](T x, T s) { return x / s; });
-    }
+    inline NVector<T> &div(T s) { return forEach(s, [](T &x, T s) { return x /= s; }); }
 
     // EUCLIDEAN SPACE OPERATIONS
 
     T dotProduct(const NVector<T> &u) const;
 
-    T norm() const {
-        return sqrt(dotProduct(*this));
-    }
+    inline T norm() const { return sqrt(dotProduct(*this)); }
 
-    T distance(const NVector<T> &u) const;
+    inline T distance(const NVector<T> &u) const {
+        T d = (*this - u).norm();
+        setDefaultBrowseIndices();
+        u.setDefaultBrowseIndices();
+        return d;
+    }
 
     //CHARACTERIZATION
 
-    inline bool isValidIndex(ul_t k) const {
-        return k < this->size();
-    }
+    inline bool isValidIndex(ul_t k) const { return k < this->size(); }
 
-    inline bool isBetweenK12(ul_t k) const {
-        return k >= _k1 && k <= _k2;
-    }
+    inline bool isBetweenK12(ul_t k) const { return k >= _k1 && k <= _k2; }
 
-    inline bool isNull() const {
-        return norm() <= EPSILON;
-
-    }
+    inline bool isNull() const { return norm() <= EPSILON; }
 
     bool isEqual(const NVector<T> &u) const;
 
 
-    inline bool hasSameSize(const NVector<T> &u) const {
-        return _k2 - _k1 == u._k2 - u._k1;
-    }
+    inline bool hasSameSize(const NVector<T> &u) const { return _k2 - _k1 == u._k2 - u._k1; }
 
-    inline virtual bool hasDefaultBrowseIndices() const {
-        return _k1 == 0 && (_k2 == this->size() - 1 || _k2 == 0);
-    }
+    inline virtual bool hasDefaultBrowseIndices() const { return _k1 == 0 && (_k2 == this->size() - 1 || _k2 == 0); }
 
     inline virtual void setDefaultBrowseIndices() const {
         _k1 = 0;
@@ -474,9 +445,9 @@ protected:
 
     // MANIPULATORS
 
-    NVector<T> &forEach(const NVector<T> &u, std::function<T(T, T)> binaryOp);
+    NVector<T> &forEach(const NVector<T> &u, std::function<void(T &, const T &)> binary_op);
 
-    NVector<T> &forEach(T s, std::function<T(T, T)> binaryOp);
+    NVector<T> &forEach(T s, std::function<void(T &, T)> binary_op);
 
 
     // AFFECTATION

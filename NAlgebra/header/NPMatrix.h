@@ -396,23 +396,15 @@ public:
         return res;
     }
 
-    friend T operator!(const NPMatrix<T> &m) {
-        return sqrt(m | m);
-    }
+    friend T operator!(const NPMatrix<T> &m) { return sqrt(m | m); }
 
-    friend T operator/(const NPMatrix<T> &a, const NPMatrix<T> &b) {
-        return !(a - b);
-    }
+    friend T operator/(const NPMatrix<T> &a, const NPMatrix<T> &b) { return !(a - b); }
 
     // COMPOUND OPERATORS
 
-    inline NPMatrix<T> &operator+=(const NPMatrix<T> &m) {
-        return add(m);
-    }
+    inline NPMatrix<T> &operator+=(const NPMatrix<T> &m) { return add(m); }
 
-    inline NPMatrix<T> &operator-=(const NPMatrix<T> &m) {
-        return sub(m);
-    }
+    inline NPMatrix<T> &operator-=(const NPMatrix<T> &m) { return sub(m); }
 
     inline NPMatrix<T> &operator*=(const NPMatrix<T> &m) {
         matrixProduct(m);
@@ -421,21 +413,15 @@ public:
         return *this;
     }
 
-    inline NPMatrix<T> &operator*=(T s) override {
-        return prod(s);
-    }
+    inline NPMatrix<T> &operator*=(T s) override { return prod(s); }
 
-    inline NPMatrix<T> &operator/=(T s) override {
-        return div(s);
-    }
+    inline friend NVector<T> &operator*=(NVector<T> &u, const NPMatrix<T> &m) { return m.vectorProduct(u); }
 
-    inline NPMatrix<T> &operator^=(long exp) {
-        return pow(exp);
-    }
+    inline NPMatrix<T> &operator/=(T s) override { return div(s); }
 
-    inline friend NVector<T> &operator%=(NVector<T> &u, const NPMatrix<T> &m) {
-        return m.solve(u);
-    }
+    inline NPMatrix<T> &operator^=(long exp) { return pow(exp); }
+
+    inline friend NVector<T> &operator%=(NVector<T> &u, const NPMatrix<T> &m) { return m.solve(u); }
 
     // BI-DIMENSIONAL ACCESSORS
 
@@ -466,9 +452,7 @@ public:
      * Operations on a sub matrix can be applied this way matrix(i1, j1, i2, j2).shift(0, 1)
      * See unit tests for mor details.
      */
-    inline NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const {
-        return subMatrix(i1, j1, i2, j2);
-    }
+    inline NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const { return subMatrix(i1, j1, i2, j2); }
 
     NPMatrix<T> &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
 
@@ -488,9 +472,7 @@ public:
         return res;
     }
 
-    inline friend bool operator!=(const NPMatrix<T> &a, const NPMatrix<T> &b) {
-        return !(a == b);
-    }
+    inline friend bool operator!=(const NPMatrix<T> &a, const NPMatrix<T> &b) { return !(a == b); }
 
     // STATIC FUNCTIONS
 
@@ -540,9 +522,7 @@ public:
      *
      * @return a scalar n-th order matrix with s value. This is a diagonal matrix filled with s.
      */
-    inline static NPMatrix<T> scalar(T s, ul_t n) {
-        return s * NPMatrix<T>::eye(n);
-    }
+    inline static NPMatrix<T> scalar(T s, ul_t n) { return s * NPMatrix<T>::eye(n); }
 
     /**
      *
@@ -598,15 +578,15 @@ protected:
 
     NPMatrix<T> &matrixProduct(const NPMatrix<T> &m);
 
-    NPMatrix<T> &add(const NPMatrix<T> &m);
+    inline NPMatrix<T> &add(const NPMatrix<T> &m) { return forEach(m, [](T &x, const T &y) { x += y; }); }
 
-    NPMatrix<T> &sub(const NPMatrix<T> &m);
+    inline NPMatrix<T> &sub(const NPMatrix<T> &m) { return forEach(m, [](T &x, const T &y) { x -= y; }); }
 
-    NPMatrix<T> &opp();
+    inline NPMatrix<T> &opp() { return prod(-1); }
 
-    NPMatrix<T> &prod(T s);
+    inline NPMatrix<T> &prod(T s) { return forEach(s, [](T &x, T s) { x *= s; }); }
 
-    NPMatrix<T> &div(T s);
+    inline NPMatrix<T> &div(T s) { return forEach(s, [](T &x, T s) { x /= s; }); }
 
     NPMatrix<T> &pow(long n);
 
@@ -614,7 +594,7 @@ protected:
 
     NPMatrix<T> &inv();
 
-    NVector<T> &solve(NVector<T> &vector) const;
+    NVector<T> &solve(NVector<T> &u) const;
 
     // LUP MANAGEMENT
 
@@ -623,6 +603,21 @@ protected:
     void lupUpdate() const;
 
     void lupClear() const;
+
+    // MUTABLE VARIABLES MANAGEMENT
+
+    inline NPMatrix<T> &clean() const {
+        setDefaultBrowseIndices();
+        lupClear();
+        return const_cast<NPMatrix<T> &>(*this);
+    }
+
+    inline NPMatrix<T> &cleanBoth(const NPMatrix<T> &m) const {
+        setDefaultBrowseIndices();
+        m.setDefaultBrowseIndices();
+        lupClear();
+        return const_cast<NPMatrix<T> &>(*this);
+    }
 
     // CHARACTERIZATION
 
@@ -636,6 +631,8 @@ protected:
 
     inline bool isBetweenJ12(ul_t j) const { return j >= _j1 && j <= _j2; }
 
+    inline static ul_t pIfNotNull(ul_t n, ul_t p) { return p > 0 ? p : n; }
+
     inline bool matchSizeForProduct(const NVector<T> &u) const { return u.dim() - 1 == _j2 - _j1; }
 
     inline bool matchSizeForProduct(const NPMatrix<T> &m) const { return m._i2 - m._i1 == _j2 - _j1; }
@@ -644,20 +641,17 @@ protected:
         return m._i2 - m._i1 == _i2 - _i1 && m._j2 - m._j1 == _j2 - _j1;
     }
 
+    // SUB MATRIX INDICES MANAGEMENT
+
     bool hasDefaultBrowseIndices() const override;
 
     void setDefaultBrowseIndices() const override;
-
-    inline static ul_t pIfNotNull(ul_t n, ul_t p) { return p > 0 ? p : n; }
 
     // AFFECTATION
 
     NPMatrix<T> &copy(const NPMatrix<T> &m);
 
     NPMatrix<T> &copy(const vector<vector<T>> &data);
-
-    // MANIPULATIONS
-
 
     // INDEX GETTERS
 
@@ -680,13 +674,19 @@ protected:
 
     NPMatrix<T> &setSubMatrix(const NPMatrix<T> &m);
 
+    // MANIPULATORS
+
+    NPMatrix<T> &forEach(const NPMatrix<T> &m, std::function<void(T &, const T &)> binary_op);
+
+    NPMatrix<T> &forEach(T s, std::function<void(T &, T)> binary_op);
+
     // SIZE
 
     ul_t _n;
 
     ul_t _p;
 
-    // BROWSE INDICES
+    // SUB MATRICES INDICES INDICES
 
     mutable ul_t _i1;
 
