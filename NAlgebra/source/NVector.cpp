@@ -248,7 +248,7 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
 
 
 template<typename T>
-NVector<T> &NVector<T>::forEach(const NVector<T> &u, std::function<void(T &, const T &)> binary_op) {
+NVector<T> &NVector<T>::forEach(const NVector<T> &u, const std::function<void(T &, const T &)> &binary_op) {
     assert(hasSameSize(u));
     for (ul_t k = 0; k <= _k2 - _k1; k++) {
         binary_op((*this)[k + _k1], u[k + u._k1]);
@@ -259,7 +259,7 @@ NVector<T> &NVector<T>::forEach(const NVector<T> &u, std::function<void(T &, con
 }
 
 template<typename T>
-NVector<T> &NVector<T>::forEach(T s, std::function<void(T &, T)> binary_op) {
+NVector<T> &NVector<T>::forEach(T s, const std::function<void(T &, T)> &binary_op) {
     for (ul_t k = 0; k <= _k2 - _k1; k++) {
         binary_op((*this)[k + _k1], s);
     }

@@ -202,47 +202,33 @@ public:
      * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
      */
 
-    inline friend T operator|(const NVector<T> &u, const NVector<T> &v) {
-        return u.dotProduct(v);
-    }
+    inline friend T operator|(const NVector<T> &u, const NVector<T> &v) { return u.dotProduct(v); }
 
     /**
      *
      * @return the norm of vector ||.|| dervied from dot product.
      */
 
-    inline friend T operator!(const NVector<T> &u) {
-        return u.norm();
-    }
+    inline friend T operator!(const NVector<T> &u) { return u.norm(); }
 
     /**
      *
      * @return distance between u & v, ||u - v||.
      */
 
-    inline friend T operator/(const NVector<T> &u, const NVector<T> &v) {
-        return u.distance(v);
-    }
+    inline friend T operator/(const NVector<T> &u, const NVector<T> &v) { return u.distance(v); }
 
 
     // COMPOUND OPERATORS
 
 
-    inline NVector<T> &operator+=(const NVector<T> &u) {
-        return add(u);
-    }
+    inline NVector<T> &operator+=(const NVector<T> &u) { return add(u); }
 
-    inline NVector<T> &operator-=(const NVector<T> &u) {
-        return sub(u);
-    }
+    inline NVector<T> &operator-=(const NVector<T> &u) { return sub(u); }
 
-    inline virtual NVector<T> &operator*=(T s) {
-        return prod(s);
-    }
+    inline virtual NVector<T> &operator*=(T s) { return prod(s); }
 
-    inline virtual NVector<T> &operator/=(T s) {
-        return div(s);
-    }
+    inline virtual NVector<T> &operator/=(T s) { return div(s); }
 
 
     // ACCES OPERATOR
@@ -274,9 +260,7 @@ public:
      *
      *          - See unit tests for more details.
      */
-    inline NVector<T> operator()(ul_t k1, ul_t k2) const {
-        return subVector(k1, k2);
-    }
+    inline NVector<T> operator()(ul_t k1, ul_t k2) const { return subVector(k1, k2); }
 
     NVector<T> &operator()(ul_t k1, ul_t k2);
 
@@ -297,9 +281,7 @@ public:
      * @return reference to this.
      * @details Copy source object on this object using copy().
      */
-    NVector<T> &operator=(const NVector<T> &u) {
-        return copy(u);
-    }
+    inline NVector<T> &operator=(const NVector<T> &u) { return copy(u); }
 
     // NORM BASED COMPARISON OPERATORS
 
@@ -445,9 +427,9 @@ protected:
 
     // MANIPULATORS
 
-    NVector<T> &forEach(const NVector<T> &u, std::function<void(T &, const T &)> binary_op);
+    NVector<T> &forEach(const NVector<T> &u, const std::function<void(T &, const T &)> &binary_op);
 
-    NVector<T> &forEach(T s, std::function<void(T &, T)> binary_op);
+    NVector<T> &forEach(T s, const std::function<void(T &, T)> &binary_op);
 
 
     // AFFECTATION

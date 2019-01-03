@@ -693,7 +693,7 @@ NPMatrix<T> &NPMatrix<T>::setSubMatrix(const NPMatrix<T> &m) {
 }
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::forEach(const NPMatrix<T> &m, std::function<void(T &, const T &)> binary_op) {
+NPMatrix<T> &NPMatrix<T>::forEach(const NPMatrix<T> &m, const std::function<void(T &, const T &)> &binary_op) {
     assert(hasSameSize(m));
 
     for (ul_t i = 0; i <= _i2 - _i1; ++i) {
@@ -705,7 +705,7 @@ NPMatrix<T> &NPMatrix<T>::forEach(const NPMatrix<T> &m, std::function<void(T &, 
 }
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::forEach(T s, std::function<void(T &, T)> binary_op) {
+NPMatrix<T> &NPMatrix<T>::forEach(T s, const function<void(T &, T)> &binary_op) {
     for (ul_t i = _i1; i <= _i2; ++i) {
         for (ul_t j = _j1; j <= _j2; ++j) {
             binary_op((*this)(i, j), s);

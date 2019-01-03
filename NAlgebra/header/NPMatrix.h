@@ -676,9 +676,9 @@ protected:
 
     // MANIPULATORS
 
-    NPMatrix<T> &forEach(const NPMatrix<T> &m, std::function<void(T &, const T &)> binary_op);
+    NPMatrix<T> &forEach(const NPMatrix<T> &m, const std::function<void(T &, const T &)> &binary_op);
 
-    NPMatrix<T> &forEach(T s, std::function<void(T &, T)> binary_op);
+    NPMatrix<T> &forEach(T s, const function<void(T &, T)> &binary_op);
 
     // SIZE
 
