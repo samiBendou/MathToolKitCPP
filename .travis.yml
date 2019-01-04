@@ -16,5 +16,5 @@ before_script:
 script:
 - cmake -H. -Bbuild
 - cd build
-- cmake --build
+- cmake --build .
 - ctest
