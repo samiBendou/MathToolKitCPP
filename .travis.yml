@@ -13,8 +13,8 @@ before_install:
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 - pip install --user cpp-coveralls
 
-script:
-- cmake -H. -Bbuild
-- cd build
-- cmake --build .
-- ctest
+before_script:
+- cd "${TRAVIS_BUILD_DIR}"
+- (mkdir build && cd build && cmake .. ${CMAKE_OPTIONS})
+
+script: ctest
