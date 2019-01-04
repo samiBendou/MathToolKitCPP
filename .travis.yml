@@ -10,4 +10,8 @@ before_script:
 - cd "${TRAVIS_BUILD_DIR}"
 - (mkdir build && cd build && cmake .. ${CMAKE_OPTIONS})
 
-script: make && make test
+script:
+- cmake -H. -Bbuild
+- cd build
+- cmake --build .
+- ctest

@@ -5,11 +5,15 @@ endif (APPLE)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-add_executable(TestNAlgebra TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp TestNPMatrix.cpp TestNPMatrixFuncOp.cpp TestPixel.cpp)
+set(TEST_SOURCES_NVECTOR TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp)
+set(TEST_SOURCES_NPMATRIX TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp)
+set(TEST_SOURCES_SCALAR TestPixel.cpp)
 
-add_executable(TestNVector TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp)
-add_executable(TestNPMatrix TestNPMatrix.cpp TestNPMatrixFuncOp.cpp)
-add_executable(TestScalarTypes TestPixel.cpp)
+add_executable(TestNAlgebra ${TEST_SOURCES_NVECTOR} ${TEST_SOURCE_NPMATRIX} ${TEST_SOURCES_SCALAR})
+
+add_executable(TestNVector ${TEST_SOURCES_NVECTOR})
+add_executable(TestNPMatrix ${TEST_SOURCE_NPMATRIX})
+add_executable(TestScalarTypes ${TEST_SOURCES_SCALAR})
 add_executable(BenchNVector BenchNVector.cpp)
 add_executable(BenchNPMatrix BenchNPMatrix.cpp)
 
