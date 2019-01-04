@@ -38,7 +38,7 @@ target_link_libraries(BenchNPMatrix NAlgebra)
 
 add_test(
         NAME
-        unit
+        UnitTestNAlgebra
         COMMAND
-        ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}/TestNAlgebra
+        TestNAlgebra
 )
