@@ -330,9 +330,7 @@ public:
         return m;
     }
 
-    inline friend NPMatrix<T> operator*(NPMatrix<T> m, T s) {
-        return s * m;
-    }
+    inline friend NPMatrix<T> operator*(NPMatrix<T> m, T s) { return s * m; }
 
     /**
      * @return  m1 * m2 where * is usual matrix multiplication. The matrices must have the length.
@@ -434,7 +432,7 @@ public:
         return (*this)[vectorIndex(i, j)];
     }
 
-    T operator()(ul_t i, ul_t j) const {
+    inline T operator()(ul_t i, ul_t j) const {
         assert(isValidIndex(i, j));
         return (*this).at(vectorIndex(i, j));
     }
@@ -582,11 +580,11 @@ protected:
 
     inline NPMatrix<T> &sub(const NPMatrix<T> &m) { return forEach(m, [](T &x, const T &y) { x -= y; }); }
 
-    inline NPMatrix<T> &opp() { return prod(-1); }
+    inline NPMatrix<T> &opp() override { return prod(-1); }
 
-    inline NPMatrix<T> &prod(T s) { return forEach(s, [](T &x, T s) { x *= s; }); }
+    inline NPMatrix<T> &prod(T s) override { return forEach(s, [](T &x, T s) { x *= s; }); }
 
-    inline NPMatrix<T> &div(T s) { return forEach(s, [](T &x, T s) { x /= s; }); }
+    inline NPMatrix<T> &div(T s) override { return forEach(s, [](T &x, T s) { x /= s; }); }
 
     NPMatrix<T> &pow(long n);
 
@@ -678,29 +676,29 @@ protected:
 
     NPMatrix<T> &forEach(const NPMatrix<T> &m, const std::function<void(T &, const T &)> &binary_op);
 
-    NPMatrix<T> &forEach(T s, const function<void(T &, T)> &binary_op);
+    NPMatrix<T> &forEach(T s, const function<void(T &, T)> &binary_op) override;
 
     // SIZE
 
-    ul_t _n;
+    ul_t _n{};
 
-    ul_t _p;
+    ul_t _p{};
 
     // SUB MATRICES INDICES INDICES
 
-    mutable ul_t _i1;
+    mutable ul_t _i1{};
 
-    mutable ul_t _j1;
+    mutable ul_t _j1{};
 
-    mutable ul_t _i2;
+    mutable ul_t _i2{};
 
-    mutable ul_t _j2;
+    mutable ul_t _j2{};
 
     // LU STORAGE
 
     mutable NPMatrix<T> *_a;
 
-    mutable std::vector<ul_t> *_perm;
+    mutable std::vector<ul_t> *_perm{};
 };
 
 typedef NPMatrix<double> mat_t;

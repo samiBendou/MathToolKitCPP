@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include <NPMatrix.h>
 
-#define NPMATRIX_SMALL_DIM_TEST 1000
+#define NPMATRIX_SMALL_DIM_TEST 500
 #define NPMATRIX_ITERATIONS_TEST 100
 #define NPMATRIX_SMALL_EXP_TEST 5
 

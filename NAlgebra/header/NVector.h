@@ -386,11 +386,11 @@ protected:
 
     inline NVector<T> &sub(const NVector<T> &u) { return forEach(u, [](T &x, const T &y) { x -= y; }); }
 
-    inline NVector<T> &opp() { return prod(-1); }
+    inline virtual NVector<T> &opp() { return prod(-1); }
 
-    inline NVector<T> &prod(T s) { return forEach(s, [](T &x, T s) { return x *= s; }); }
+    inline virtual NVector<T> &prod(T s) { return forEach(s, [](T &x, T s) { return x *= s; }); }
 
-    inline NVector<T> &div(T s) { return forEach(s, [](T &x, T s) { return x /= s; }); }
+    inline virtual NVector<T> &div(T s) { return forEach(s, [](T &x, T s) { return x /= s; }); }
 
     // EUCLIDEAN SPACE OPERATIONS
 
@@ -429,7 +429,7 @@ protected:
 
     NVector<T> &forEach(const NVector<T> &u, const std::function<void(T &, const T &)> &binary_op);
 
-    NVector<T> &forEach(T s, const std::function<void(T &, T)> &binary_op);
+    virtual NVector<T> &forEach(T s, const std::function<void(T &, T)> &binary_op);
 
 
     // AFFECTATION

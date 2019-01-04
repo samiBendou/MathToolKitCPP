@@ -4,6 +4,9 @@
 
 #include <NPMatrix.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wabsolute-value"
+
 using namespace std;
 
 template<typename T>
@@ -724,10 +727,12 @@ template
 class NPMatrix<uc_t>;
 
 template
-class NPMatrix<i_t>;
+class NPMatrix<int>;
 
 template
 class NPMatrix<AESByte>;
 
 template
 class NPMatrix<Pixel>;
+
+#pragma clang diagnostic pop

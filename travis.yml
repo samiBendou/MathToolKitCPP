@@ -1,0 +1,5 @@
+lanquage: cpp
+
+compiler:
+- clang++
+- g++
