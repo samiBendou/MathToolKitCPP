@@ -20,7 +20,7 @@ protected:
         _elapsed_time = 0.0;
     }
 
-    void iterateTest(const std::function<void(vec_t &, const vec_t &)> &test, std::string op = "") {
+    void iterateTestVector(const std::function<void(vec_t &, const vec_t &)> &test, std::string op = "") {
         for (int k = 0; k < NVECTOR_ITERATIONS_TEST; ++k) {
             _t0 = clock();
             test(_u, _v);
@@ -30,7 +30,7 @@ protected:
         cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
     }
 
-    void iterateTest(const std::function<void(vec_t &, double)> &test, std::string op = "") {
+    void iterateTestScalar(const std::function<void(vec_t &, double)> &test, std::string op = "") {
         for (int k = 0; k < NVECTOR_ITERATIONS_TEST; ++k) {
             _t0 = clock();
             test(_u, _s);
@@ -50,21 +50,21 @@ protected:
 };
 
 TEST_F(NVectorBenchTest, Add) {
-    iterateTest([](vec_t &u, const vec_t &v) { u += v; }, "+");
+    iterateTestVector([](vec_t &u, const vec_t &v) { u += v; }, "+");
 }
 
 TEST_F(NVectorBenchTest, Sub) {
-    iterateTest([](vec_t &u, const vec_t &v) { u -= v; }, "-");
+    iterateTestVector([](vec_t &u, const vec_t &v) { u -= v; }, "-");
 }
 
 TEST_F(NVectorBenchTest, Prod) {
-    iterateTest([](vec_t &u, double s) { u /= s; }, "*");
+    iterateTestScalar([](vec_t &u, double s) { u /= s; }, "*");
 }
 
 TEST_F(NVectorBenchTest, Div) {
-    iterateTest([](vec_t &u, double s) { u /= s; }, "/");
+    iterateTestScalar([](vec_t &u, double s) { u /= s; }, "/");
 }
 
 TEST_F(NVectorBenchTest, DotProduct) {
-    iterateTest([](vec_t &u, const vec_t &v) { u | v; }, "|");
+    iterateTestVector([](vec_t &u, const vec_t &v) { u | v; }, "|");
 }

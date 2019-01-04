@@ -21,7 +21,7 @@ protected:
         _s = 8;
     }
 
-    void iterateTest(const std::function<void(mat_t &, const mat_t &)> &test, std::string op = "") {
+    void iterateTestMatrix(const std::function<void(mat_t &, const mat_t &)> &test, std::string op = "") {
         for (int k = 0; k < NPMATRIX_ITERATIONS_TEST; ++k) {
             _t0 = clock();
             test(_a, _b);
@@ -31,7 +31,7 @@ protected:
         cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
     }
 
-    void iterateTest(const std::function<void(mat_t &, double)> &test, std::string op = "") {
+    void iterateTestScalar(const std::function<void(mat_t &, double)> &test, std::string op = "") {
         for (int k = 0; k < NPMATRIX_ITERATIONS_TEST; ++k) {
             _t0 = clock();
             test(_a, _s);
@@ -41,7 +41,7 @@ protected:
         cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
     }
 
-    void iterateTest(const std::function<void(vec_t &, const mat_t &)> &test, std::string op = "") {
+    void iterateTestVector(const std::function<void(vec_t &, const mat_t &)> &test, std::string op = "") {
         for (int k = 0; k < NPMATRIX_ITERATIONS_TEST; ++k) {
             _t0 = clock();
             test(_u, _a);
@@ -62,37 +62,37 @@ protected:
 };
 
 TEST_F(NPMatrixBenchTest, Add) {
-    iterateTest([](mat_t &a, const mat_t &b) { a += b; }, "+");
+    iterateTestMatrix([](mat_t &a, const mat_t &b) { a += b; }, "+");
 }
 
 TEST_F(NPMatrixBenchTest, Prod) {
-    iterateTest([](mat_t &a, double s) { a *= s; }, "* (SCALAR)");
+    iterateTestScalar([](mat_t &a, double s) { a *= s; }, "* (SCALAR)");
 }
 
 TEST_F(NPMatrixBenchTest, VectorProd) {
-    iterateTest([](vec_t &u, const mat_t &a) { u *= a; }, "* (VECTOR)");
+    iterateTestVector([](vec_t &u, const mat_t &a) { u *= a; }, "* (VECTOR)");
 }
 
 TEST_F(NPMatrixBenchTest, MatrixProd) {
-    iterateTest([](mat_t &a, const mat_t &b) { a *= b; }, "* (MATRIX)");
+    iterateTestMatrix([](mat_t &a, const mat_t &b) { a *= b; }, "* (MATRIX)");
 }
 
 TEST_F(NPMatrixBenchTest, DotProduct) {
-    iterateTest([](mat_t &a, const mat_t &b) { a | b; }, "|");
+    iterateTestMatrix([](mat_t &a, const mat_t &b) { a | b; }, "|");
 }
 
 TEST_F(NPMatrixBenchTest, Pow) {
-    iterateTest([](mat_t &a, double s) { a ^= NPMATRIX_SMALL_EXP_TEST; }, "*");
+    iterateTestScalar([](mat_t &a, double s) { a ^= NPMATRIX_SMALL_EXP_TEST; }, "*");
 }
 
 TEST_F(NPMatrixBenchTest, Inv) {
-    iterateTest([](mat_t &a, double s) { a ^= -1; }, "INVERSION");
+    iterateTestScalar([](mat_t &a, double s) { a ^= -1; }, "INVERSION");
 }
 
 TEST_F(NPMatrixBenchTest, Det) {
-    iterateTest([](mat_t &a, double s) { a.det(); }, "DETERMINANT");
+    iterateTestScalar([](mat_t &a, double s) { a.det(); }, "DETERMINANT");
 }
 
 TEST_F(NPMatrixBenchTest, Solve) {
-    iterateTest([](vec_t &u, const mat_t &a) { u %= a; }, "% (SOLVE)");
+    iterateTestVector([](vec_t &u, const mat_t &a) { u %= a; }, "% (SOLVE)");
 }
