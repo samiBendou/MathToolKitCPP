@@ -3,4 +3,7 @@ language: cpp
 before_install:
 - git clone --depth 1 https://github.com/google/googletest ./TestMathToolKitCPP/lib/googletest
 
-script: cmake
+before_script:
+- cmake ./
+
+script: make && make test
