@@ -21,7 +21,7 @@ TEST(NPFieldTest, NConstantField) {
     double dx = 1.0/3.0;
     vec_t h = vec_t::scalar(dx, dim);
 
-    vec_t g = 9.81 * vec_t::can(dim - 1, dim);
+    vec_t g = 9.81 * vec_t::canonical(dim - 1, dim);
 
     NConstantField field = NConstantField(h, g);
 
@@ -64,7 +64,7 @@ TEST(NOde, Euler) {
     double dx = 0.333;
     vec_t h = vec_t::scalar(dx, dim);
 
-    vec_t g = 9.81 * vec_t::can(dim - 1, dim);
+    vec_t g = 9.81 * vec_t::canonical(dim - 1, dim);
 
     NConstantField field = NConstantField(h, g);
 
