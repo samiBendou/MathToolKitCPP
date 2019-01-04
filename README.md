@@ -38,7 +38,7 @@ Featuring :
 
 ### Introduction
 
-MathToolKit contains multiples libraries providing API that ease N-dimensional scientific calculation and simulation.
+MathToolKit contain multiples libraries with an API that ease N-dimensional scientific calculation and simulation.
 It can be used in various domains such as cryptography, theoretical physics, finance...
 It's though to produce efficient numeric calculation with an intuitive numpy like syntax. 
 
@@ -90,15 +90,14 @@ Linear algebra library providing vectors and matrix objects.
 
  ### Install
  
-- Clone the project on your computer or IDE
+- Clone the project
 
-- Copy the directories of the libraries you want to import onto your project
-
-cmake-build-debug 
+- Copy the directories of the libraries you want to import onto your project. 
+eg : import NAlgebra if you want to use NPMatrix.
 
 ### Run Unit Tests
 
-The framework is unit tested with googletest. The framework doesn't yet have a code coverage evaluation
+The framework is unit tested with googletest. The framework doesnt yet have a code coverage evaluation
 but NAlgebra tests has been written.
 
 If you want to run unit tests you have to import googletest onto the cloned project.
