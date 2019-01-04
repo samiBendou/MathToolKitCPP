@@ -8,8 +8,6 @@ addons:
     - kalakris-cmake
 
 before_install:
-  -sudo apt-get update
-  -sudo apt-get install cmake
   -git clone --depth 1 https://github.com/google/googletest ./TestMathToolKitCPP/lib/googletest
 
 before_script:
