@@ -6,7 +6,6 @@ before_install:
   #Clone googletest to run unit tests and benchmarks
 - git clone --depth 1 https://github.com/google/googletest ./TestMathToolKitCPP/lib/googletest
 
-install:
   #Install CMAKE 3.10
 - |
   if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
