@@ -11,7 +11,6 @@ set(TEST_SOURCES_SCALAR TestPixel.cpp)
 
 add_executable(TestNAlgebra ${TEST_SOURCES_NVECTOR} ${TEST_SOURCES_NPMATRIX} ${TEST_SOURCES_SCALAR} TestPixel.cpp)
 
-
 add_executable(TestNVector ${TEST_SOURCES_NVECTOR})
 add_executable(TestNPMatrix ${TEST_SOURCES_NPMATRIX})
 add_executable(TestScalarTypes ${TEST_SOURCES_SCALAR})

@@ -1,6 +1,11 @@
 language: cpp
 
 addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.2.1
 
 before_install:
 #Clone googletest to run unit tests and benchmarks
@@ -13,5 +18,5 @@ before_script:
 script:
 - cmake -H. -Bbuild
 - cd build
-- cmake --build .
+- cmake --build
 - ctest
