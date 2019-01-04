@@ -1,5 +1,12 @@
 language: cpp
 
+addons:
+  apt:
+    packages:
+    - cmake
+    sources:
+    - kalakris-cmake
+
 before_install:
   -sudo apt-get update
   -sudo apt-get install cmake
