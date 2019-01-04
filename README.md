@@ -1,13 +1,16 @@
+[![Build Status](https://travis-ci.org/samiBendou/MathToolKitCPP.svg?branch=master)](https://travis-ci.org/samiBendou/MathToolKitCPP/builds)
+
 # MathToolKitCPP
 
 ### Author : samiBendou
 
-### Last Update : 30/10/2018
+### Last Update : 04/01/2019
 
-### Current Version : 1.1.0 (WIP)
+### Current Version : 1.1.1 (WIP)
 
 ## Version log :
 
+- 1.1.1 : Integrating travis.org CI tool
 - 1.1.0 :   Adding cascade calls interface for NAlgebra (vect.shift().swap()). Simplifying code structure.
             Optimizing execution time by inlining.
 - 1.0.1 : Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data structure
@@ -16,43 +19,44 @@ for geometrical N-dimensional shapes. Minor fixes.
 
 ## General overivew
 
-MathToolKit is a C++ maths framework. 
+MathToolKit is a C++ maths framework. It introduces common mathematical abstractions such as matrix, vector, numerical fields, ODE...
 
-It introduces common mathematical abstractions such as matrix, vector, fields...
+Designed to save time solving commons mathematical problems for engineering.
+It provides a mixed style API that gives you flexibility.
+The library uses both STL standardization and low level C++ to provide fast and efficient computing.
+It's designed very lightweight in order to be embedded on microelectronic devices.
+It's template based implementation to provide support for custom scalar types (pixel matrix, AES matrix...).
 
-It's designed to save time solving commons mathematical problems for engineering.
 
 Featuring :
 
-- High level syntax and operators
+- Large range of abstractions from algebra to geometry
 
-- Large range of operations
+- High level syntax (numpy like...)
 
-- Lightweight code
-
-- Complete integration of STL
-
-- Template based implementation
-
-- Unit tested with googletest
+- Cascade calls (matrix.shift().fill(), ...)
 
 ### Introduction
 
 MathToolKit contains multiples libraries providing API that ease N-dimensional scientific calculation and simulation.
-It's though for produce efficient numeric calculation with an intuitive syntax. 
 It can be used in various domains such as cryptography, theoretical physics, finance...
+It's though to produce efficient numeric calculation with an intuitive numpy like syntax. 
 
 The documentation of the framework is currently contained in header files.
 
 ### Compatibility
 
-- Written in C++11
+- Written using C++11
 
-- Using CMake 3.12
+- Using CMake 3.9.2
+
+- Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)
+
+- Tested on travis with : clang 5.0.0
 
 ## NAlgebra
 
-Linear algebra library providing vectors and matrix template classes.
+Linear algebra library providing vectors and matrix objects.
 
 #### Overview
 
@@ -93,6 +97,9 @@ Linear algebra library providing vectors and matrix template classes.
 cmake-build-debug 
 
 ### Run Unit Tests
+
+The framework is unit tested with googletest. The framework doesn't yet have a code coverage evaluation
+but NAlgebra tests has been written.
 
 If you want to run unit tests you have to import googletest onto the cloned project.
 
