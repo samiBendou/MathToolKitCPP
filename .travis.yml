@@ -1,9 +1,11 @@
 language: cpp
 
 before_install:
-- git clone --depth 1 https://github.com/google/googletest ./TestMathToolKitCPP/lib/googletest
+  -sudo apt-get update
+  -sudo apt-get install
+  -git clone --depth 1 https://github.com/google/googletest ./TestMathToolKitCPP/lib/googletest
 
 before_script:
-- cmake ./
+  -cmake ./
 
 script: make && make test
