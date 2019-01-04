@@ -90,17 +90,17 @@ Linear algebra library providing vectors and matrix template classes.
 
 - Copy the directories of the libraries you want to import onto your project
 
+cmake-build-debug 
+
 ### Run Unit Tests
 
 If you want to run unit tests you have to import googletest onto the cloned project.
 
-- Clone the project
+- Clone MathToolKitCPP project
 
-- Download googletest last version : https://github.com/google/googletest
+- Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ : 
 
-- Create a directory named lib in TestMathToolKitCPP
-
-- Copy googletest-master directory on lib directory
-
-- Rename googletest-master googletest
+```commandline
+git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
+```
 
