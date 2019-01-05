@@ -7,6 +7,8 @@ set(SOURCE_FILES main.cpp)
 
 enable_testing()
 
+SET(COVERAGE OFF CACHE BOOL "Coverage")
+
 include_directories(NAlgebra/header)
 include_directories(NAnalysis/header)
 include_directories(NGeometry/header)
@@ -20,3 +22,8 @@ add_subdirectory(TestsMathToolKitCPP)
 add_executable(MathToolKit ${SOURCE_FILES})
 
 target_link_libraries(MathToolKit NAnalysis NGeometry NAlgebra)
+
+if (COVERAGE)
+    target_compile_options(tests PRIVATE --coverage)
+    target_link_libraries(tests PRIVATE --coverage)
+endif ()
