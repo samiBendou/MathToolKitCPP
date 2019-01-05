@@ -3,7 +3,7 @@ if (APPLE)
     add_definitions(-D__GLIBCXX__)
 endif (APPLE)
 
-cmake_policy(SET CMP0023 OLD)
+cmake_policy(SET CMP0023 OLD) # Allow mixed target_link_library
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
