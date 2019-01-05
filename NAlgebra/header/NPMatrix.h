@@ -1,37 +1,37 @@
 /**
- * @class          : NPMatrix
- * @date           : 04/05/2018
- * @author         : samiBendou
- * @description    : A NPMatrix<T> inherits from NVector<T>. It's a representation of matrices of arbitrary
- *                   size in a tempate field T (reals, complex, modular arithemics...).
- *                   Over this file we will use the following definitions :
+ * @class   NPMatrix
+ * @date    04/05/2018
+ * @author  samiBendou
+ * @brief   A NPMatrix<T> inherits from NVector<T>. It's a representation of matrices of arbitrary
+ *          size in a tempate field T (reals, complex, modular arithemics...).
+ *          Over this file we will use the following definitions :
  *
- *                      - n : Number of Rows
- *                      - p : Number of Columns
- *                      - i : Row Index between 0 <= i < n
- *                      - j : Column Index 0 <= j < p
- *                      - k, l : either compound index or underlying std::vector array index.
- *                      - A/m : This NPMatrix. the components of the matrix in a certain base are noted Aij.
- *                      - R/C : Rows/Columns of A
+ *             - n : Number of Rows
+ *             - p : Number of Columns
+ *             - i : Row Index between 0 <= i < n
+ *             - j : Column Index 0 <= j < p
+ *             - k, l : either compound index or underlying std::vector array index.
+ *             - A/m : This NPMatrix. the components of the matrix in a certain base are noted Aij.
+ *             - R/C : Rows/Columns of A
  *
- *                   The matrix components are stored in a linear form using the index transformation k = p * i + j.
- *                   The underlying std::vector is represented as t[p * i + j].
- *                   The underlying NVector<T> is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
+ *          The matrix components are stored in a linear form using the index transformation k = p * i + j.
+ *          The underlying std::vector is represented as t[p * i + j].
+ *          The underlying NVector<T> is (A00, A01, ..., A0(P - 1), A10, ..., A1(P - 1), ..., A(N-1)0, ...).
  *
- *                   Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination.
- *                   setters & getters, swappers and classic matrix generators such as ones, zeros...
+ *          Featuring algebraical operations such as matrix product, linear map, gauss jordan elimination.
+ *          setters & getters, swappers and classic matrix generators such as ones, zeros...
  *
- *                   The LU decomposition is stored as a property if the matrix is square. It is auto-updated only when needed.
- *                   It allow to reduce complexity to get inverse or determinant. Precisely the LU decomposition is
- *                   represented by :
-
- *                      -a : is matrix A = L * U where PA = LU = this. a points to the A NMatrix or points to nullptr if
- *                           the matrix has never calculated LU decomposition or if the decomposition failed.
- *                      -perm : permutation vector P such as PA = LU. Represented as ul_t array.
+ *          The LU decomposition is stored as a property if the matrix is square. It is auto-updated only when needed.
+ *          It allow to reduce complexity to get inverse or determinant. Precisely the LU decomposition is
+ *          represented by :
  *
- *                  The *a object never is protected and pointer a->a always points to nullptr (no infinite recursion).
+ *             -a : is matrix A = L * U where PA = LU = this. a points to the A NMatrix or points to nullptr if
+ *                         the matrix has never calculated LU decomposition or if the decomposition failed.
+ *             -perm : permutation vector P such as PA = LU. Represented as ul_t array.
  *
- * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ *          The *a object never is protected and pointer a->a always points to nullptr (no infinite recursion).
+ *
+ * @license Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */
 
 
@@ -42,7 +42,6 @@
 #include <NVector.h>
 
 using namespace std;
-
 
 
 template<typename T>
@@ -57,13 +56,13 @@ public:
 
     /**
      *
-     * @return a n x p matrix constructed using a std::vector of size n * p.
+     * @brief n x p matrix constructed using a std::vector of size n * p.
      */
     explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * pIfNotNull(n, p)), n, pIfNotNull(n, p)) {}
 
     /**
      *
-     * @return a n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
+     * @brief n x p matrix constructed using a bi-dimensional std::vector such as Aij = data[i][j]. all the data[i]
      * must have the same length. They represent the rows of A matrix.
      */
     NPMatrix(const vector<vector<T> > &data) : NPMatrix(NVector<T>(data.size() * data[0].size()), data.size(),
@@ -79,13 +78,13 @@ public:
 
     /**
      *
-     * @return a n rows matrix constructed using a std::vector of size 1 * vector.dim().
+     * @brief n rows matrix constructed using a std::vector of size 1 * vector.dim().
      */
     explicit NPMatrix(const NVector<T> &u, ul_t n = 1) : NPMatrix(u, n, u.dim() / n) {}
 
     /**
      *
-     * @return a n x p matrix constructed using a std::vector<NVector<T> >. All the vectors must have the same dimension.
+     * @brief n x p matrix constructed using a std::vector<NVector<T> >. All the vectors must have the same dimension.
      * They represent the rows of the matrix.
      */
 
@@ -200,12 +199,12 @@ public:
 
     /**
      *
-     * @param vectors : std::vector of NVector<T> representing rows/cols to set on the matrix.
+     * @param vectors   std::vector of NVector<T> representing rows/cols to set on the matrix.
      *                  - The length of each row/col must be inferior or equal to the number of cols/rows.
      *                  - The total number of rows/cols must be inferior or equal to the number of rows/cols.
-     * @param i1/j1 :   start index to set row/col. If i1/j1 + vectors.size() > n/p Then the algorithm truncate the
+     * @param i1/j1     start index to set row/col. If i1/j1 + vectors.size() > n/p Then the algorithm truncate the
      *                  array of NVector<T>.
-     * @description :   Replace the components of the matrix with the array of vectors. For example setCols will change
+     * @brief           Replace the components of the matrix with the array of vectors. For example setCols will change
      *                  the matrix this way :
      *
      *                  |A00, ..., A0(j1 - 1), v[0]0, ..., v[q-1]0, ..., A0(p-1)|
@@ -227,7 +226,7 @@ public:
      *
      * @param i1/j1 first row/col indices to swap
      * @param i2/j2 second row/col indices to swap
-     * @description : Swap Ai1j1 and Ai2j2.
+     * @brief Swap Ai1j1 and Ai2j2.
      */
     inline NPMatrix<T> &swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
         assert(isValidIndex(i1, j1) && isValidIndex(i2, j2));
@@ -241,7 +240,7 @@ public:
      *
      * @param i1/j1 first row/col indices to swap
      * @param i2/j2 second row/col indices to swap
-     * @description : Swap Ri1/Cj1 and Ri2/Cj2.
+     * @brief Swap Ri1/Cj1 and Ri2/Cj2.
      */
     inline NPMatrix<T> &swapRow(ul_t i1, ul_t i2) { return swap(Row, i1, i2); }
 
@@ -255,7 +254,7 @@ public:
     * @param i index of row/col to shift
     * @param iterations number of times to shift. If iterations is > 0, shift is powered to the left/up,
     *                   else to the right/down.
-    * @desciption : shift a i/j row/col. For example shiftCol(0, 2) will return :
+    * @brief shift a i/j row/col. For example shiftCol(0, 2) will return :
     *
     *                  |A20, ..., ...|
     *                  |A30, ..., ...|
@@ -285,10 +284,10 @@ public:
     NPMatrix<T> shifted(const NPMatrix<T> &m) const;
 
     /**
-     * @description :   Apply Gauss Jordan elimination on matrix to calculate inverse for non square matrix.
-     *                  To perform this, shift the matrix you want to invert than apply this function.
+     * @brief Apply Gauss Jordan elimination on matrix to calculate inverse for non square matrix.
+     *        To perform this, shift the matrix you want to invert than apply this function.
      */
-    void reduce();
+    NPMatrix<T> &reduce();
 
     /**
      *
@@ -430,8 +429,8 @@ public:
 
     /**
      *
-     * @param i1/j1 : start index of rows/cols
-     * @param i2/j2 : end index i2/j2 >= i1/j1 of rows/cols
+     * @param i1/j1 start index of rows/cols
+     * @param i2/j2 end index i2/j2 >= i1/j1 of rows/cols
      * @return a sub matrix with rows starting at i1 and ending at i2 and cols starting at j1 and ending at j2 :
      *
      *  |Ai1j1, ..., Ai2j1|

@@ -1,13 +1,13 @@
 /**
- * @class          : Pixel
- * @date           : 15/10/2018
- * @author         : samiBendou
- * @description    : AESByte class is a representation of a byte used in AES algorithm,
- *                   providing algebraical operation on the specific Gallois field. and
- *                   interfacing with char primitive type. For more details go to
- *                   https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf.
+ * @class   Pixel
+ * @date    15/10/2018
+ * @author  samiBendou
+ * @brief   AESByte class is a representation of a byte used in AES algorithm,
+ *          providing algebraical operation on the specific Gallois field. and
+ *          interfacing with char primitive type. For more details go to
+ *          https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf.
  *
- * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ * @license : Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */
 
 #ifndef MATHTOOLKIT_AESBYTE_H

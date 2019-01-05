@@ -1,23 +1,23 @@
 /**
- * @class          : Vector3
- * @date           : 04/05/2018
- * @author         : samiBendou
- * @description    : Class inheriting from NVector<double> representing 3D Euclidean space. Featuring cross product, coordinate
- *                   transforms and rotations. We will use the following 3D systems of coordinates :
+ * @class   Vector3
+ * @date    04/05/2018
+ * @author  samiBendou
+ * @brief   Class inheriting from NVector<double> representing 3D Euclidean space. Featuring cross product, coordinate
+ *          transforms and rotations. We will use the following 3D systems of coordinates :
  *
- *                   - X, Y, Z       : Cartesian coordinates.
+ *            - X, Y, Z       : Cartesian coordinates.
  *
- *                   - RXY, THETA, Z : Cylindrical coordinates.   |RXY     = sqrt(x2 + y2),
- *                                                                |THETA   = atan(y / x)
- *                                                                |Z       = z
+ *            - RXY, THETA, Z : Cylindrical coordinates.   |RXY     = sqrt(x2 + y2),
+ *                                                         |THETA   = atan(y / x)
+ *                                                         |Z       = z
  *
- *                   - R, THETA, PHI : Spherical coordinates.     |R       = sqrt(x2 + y2 + z2),
- *                                                                |THETA   = atan(y / x),
- *                                                                |PHI     = atan(RXY / Z)
+ *            - R, THETA, PHI : Spherical coordinates.     |R       = sqrt(x2 + y2 + z2),
+ *                                                         |THETA   = atan(y / x),
+ *                                                         |PHI     = atan(RXY / Z)
  *
- *                   The vector is stored in cartesian coordinates.
+ *            The vector is stored in cartesian coordinates.
  *
- * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ * @license Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */
 
 #ifndef MATHTOOLKIT_VECTOR3_H

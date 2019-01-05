@@ -1,23 +1,23 @@
 /**
- * @class          : Pixel
- * @date           : 19/12/2018
- * @author         : samiBendou
- * @description    : Pixel class is a representation of a pixel providing uses of multiple color scale
- *                   and conversion between theses. The class provides an interface with char primitive
- *                   type by converting a char value onto a grey scale pixel and vice versa if needed.
+ * @class   Pixel
+ * @date    19/12/2018
+ * @author  samiBendou
+ * @brief   Pixel class is a representation of a pixel providing uses of multiple color scale
+ *          and conversion between theses. The class provides an interface with char primitive
+ *          type by converting a char value onto a grey scale pixel and vice versa if needed.
  *
- *                   A pixel can be in several states usefull for representing pixel on image processing
- *                   calculation :
- *                      - format    : either Red, Green, Blue (RGB) or Grey Scale (GScale).
- *                      - limited   : the value of each component can be limited to be between 0 and 255.
- *                                    If the value of a component is set negative the result is 0. Else,
- *                                    the if the value is greater than MAX_LIMIT_CMP than the set value
- *                                    is the original value mod MAX_LIMIT_CMP + 1.
- *                   The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
- *                   setting components generally implies a constant time calculation to translate between RGB
- *                   and other formats.
+ *          A pixel can be in several states usefull for representing pixel on image processing
+ *          calculation :
+ *             - format    : either Red, Green, Blue (RGB) or Grey Scale (GScale).
+ *             - limited   : the value of each component can be limited to be between 0 and 255.
+ *                           If the value of a component is set negative the result is 0. Else,
+ *                           the if the value is greater than MAX_LIMIT_CMP than the set value
+ *                           is the original value mod MAX_LIMIT_CMP + 1.
+ *          The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
+ *          setting components generally implies a constant time calculation to translate between RGB
+ *          and other formats.
  *
- * @license        : Dahoux Sami 2018 - © Copyright All Rights Reserved.
+ * @license Dahoux Sami 2018 - © Copyright All Rights Reserved.
  */
 
 #ifndef MATHTOOLKIT_PIXEL_H

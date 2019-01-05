@@ -272,7 +272,7 @@ NPMatrix<T> NPMatrix<T>::shifted(const NPMatrix<T> &m) const {
 }
 
 template<typename T>
-void NPMatrix<T>::reduce() {
+NPMatrix<T> &NPMatrix<T>::reduce() {
     ul_t r = 0, k, i, j;
     NVector<T> spin;
     for (j = 0; j < floor(_p / 2); ++j) {
@@ -290,7 +290,7 @@ void NPMatrix<T>::reduce() {
             r++;
         }
     }
-    lupClear();
+    return clean();
 }
 
 template<typename T>

@@ -3,7 +3,7 @@
  * @date    03/05/2018
  * @author  samiBendou
  *
- * @details A NVector<T> object stores the coordinates of a finite dimension vector x in an arbitrary base.
+ * @brief   A NVector<T> object stores the coordinates of a finite dimension vector x in an arbitrary base.
  *          Theses are stored in the form [x0, x1, ..., x(n-1)]. where [...] is a std::vector<T>,
  *          n is the dimension and (x0, x1, ..., x(n-1)) are the coordinates.
  *          We will be using the following definitions :
@@ -45,7 +45,7 @@ public:
 
     /**
      *
-     * @return a NVector<T> with an array of data. The dimension is the size of the array.
+     * @brief NVector<T> with an array of data. The dimension is the size of the array.
      */
     NVector(const std::vector<T> &data) : NVector(data, 0, 0) {}
 
@@ -53,8 +53,7 @@ public:
 
     /**
      *
-     * @return  a NVector<T> by giving the dimension. This method uses the std::vector constructor
-     *          to create a vector.
+     * @brief NVector<T> by giving the dimension ie the size of the vector.
      */
     explicit NVector(ul_t dim = 0) : NVector(std::vector<T>(dim), 0, 0) {}
 
@@ -126,22 +125,22 @@ public:
      *
      * @param k1 First index to swap
      * @param k2 Second index to swap
-     * @details Permutation of two elements (x(k1 - 1), xk2, ..., x(k2 - 1), xk1, ..., x(n-1))
+     * @brief Permutation of two elements (x(k1 - 1), xk2, ..., x(k2 - 1), xk1, ..., x(n-1))
      */
     NVector<T> &swap(ul_t k1, ul_t k2);
 
     /**
      *
-     * @param iterations :  number of times to shift. If iterations is > 0, shift is powered to the left,
+     * @param iterations number of times to shift. If iterations is > 0, shift is powered to the left,
      *                      else to the right.
-     * @details : Shifts vector iterations times. ie. with iterations = 2 : (x2, x3, ..., x(n-1), x0, x1).
+     * @brief Shifts vector iterations times. ie. with iterations = 2 : (x2, x3, ..., x(n-1), x0, x1).
      */
     NVector<T> &shift(long iterations);
 
     /**
      *
-     * @param s : value to fill the vector with
-     * @details : Fill vector with a scalar : ie. with scalar = 3, (3, 3, 3, ..., 3).
+     * @param s value to fill the vector with
+     * @brief Fill vector with a scalar : ie. with scalar = 3, (3, 3, 3, ..., 3).
      */
     NVector<T> &fill(T s);
 
@@ -236,7 +235,7 @@ public:
 
     /**
      *
-     * @param k : index of the coordinate. Between -(dim() - 1) and dim() - 1
+     * @param k index of the coordinate. Between -(dim() - 1) and dim() - 1
      * @return  the kth coordinate of the vector xk if k < 0, returns x(n - 1 - k).
      *          Operator can be used to read/write values.
      */
@@ -246,8 +245,8 @@ public:
 
     /**
      *
-     * @param k1 : start index for sub-range.
-     * @param k2 : end index for sub-range.
+     * @param k1 start index for sub-range.
+     * @param k2 end index for sub-range.
      * @return  a sub vector in representing coordinates from k1 to k2, (xk1, x(k1+1), ...,xk2).
      *
      *          - 0 <= |k1| <= |k2| <= dim() - 1.
@@ -258,7 +257,7 @@ public:
      *
      *          - Const version returns a sub-vector.
      *
-     *          - See unit tests for more details.
+     *          - See unit tests for more brief.
      */
     inline NVector<T> operator()(ul_t k1, ul_t k2) const { return subVector(k1, k2); }
 
@@ -279,7 +278,7 @@ public:
      *
      * @param u source NVector<T> object
      * @return reference to this.
-     * @details Copy source object on this object using copy().
+     * @brief Copy source object on this object using copy().
      */
     inline NVector<T> &operator=(const NVector<T> &u) { return copy(u); }
 
@@ -331,21 +330,21 @@ public:
 
     /**
      *
-     * @param dim : dimension of the vector
+     * @param dim dimension of the vector
      * @return a 0 vector (0, 0, ..., 0).
      */
     inline static NVector<T> zeros(ul_t dim) { return scalar(0, dim); }
 
     /**
      *
-     * @param dim : dimension of the vector
+     * @param dim dimension of the vector
      * @return Returns vector filled with 1 (1, 1, ..., 1).
      */
     inline static NVector<T> ones(ul_t dim) { return scalar(1, dim); }
 
     /**
      *
-     * @param s : value of the scalar vector
+     * @param s value of the scalar vector
      * @param dim dimension of the scalar vector
      * @return a vector filled with s (s, s, ..., s).
      */
@@ -353,8 +352,8 @@ public:
 
     /**
      *
-     * @param k : index of vector in base
-     * @param dim : dimension of vector space represented by the base.
+     * @param k index of vector in base
+     * @param dim dimension of vector space represented by the base.
      * @return  return the kth vector of canonical base. ie (e0, e1, ..., e(n-1)) where :
      *          e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n - 1) = (0, 0, ..., 1).
      */
@@ -362,15 +361,15 @@ public:
 
     /**
      *
-     * @param vectors : an array of vectors [u0, u1, ..., u(r-1)] where r is the size of the array
+     * @param vectors an array of vectors [u0, u1, ..., u(r-1)] where r is the size of the array
      * @return the sum of the vectors : u0 + u1 + ... + u(r-1). where + is usual addition
      */
     static NVector<T> sum(const std::vector<NVector> &vectors);
 
     /**
      *
-     * @param scalars : coefficients of linear combination [s0, s1, ..., s(r-1)] where r is the size of the array
-     * @param vectors : vectors of linear combination (u0, u1, ..., u(r-1))
+     * @param scalars coefficients of linear combination [s0, s1, ..., s(r-1)] where r is the size of the array
+     * @param vectors vectors of linear combination (u0, u1, ..., u(r-1))
      * @return  the linear combination s0 * u0 + s1 * u1 + ... + s(r-1) * u(r-1). where + and * are
      *          usual addition and scalar multiplication.
      */
