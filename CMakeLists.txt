@@ -22,8 +22,3 @@ add_subdirectory(TestsMathToolKitCPP)
 add_executable(MathToolKit ${SOURCE_FILES})
 
 target_link_libraries(MathToolKit NAnalysis NGeometry NAlgebra)
-
-if (COVERAGE)
-    target_compile_options(tests PRIVATE --coverage)
-    target_link_libraries(tests PRIVATE --coverage)
-endif ()
