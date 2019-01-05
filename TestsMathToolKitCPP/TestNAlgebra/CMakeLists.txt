@@ -19,13 +19,13 @@ add_executable(TestScalarTypes ${TEST_SOURCES_SCALAR})
 add_executable(BenchNVector BenchNVector.cpp)
 add_executable(BenchNPMatrix BenchNPMatrix.cpp)
 
+target_link_libraries(TestNAlgebra gtest gtest_main)
+target_link_libraries(TestNAlgebra NAlgebra)
 
 if (COVERAGE)
     target_compile_options(TestNAlgebra PRIVATE --coverage)
-    target_link_libraries(TestNAlgebra gtest gtest_main PRIVATE --coverage)
+    target_link_libraries(TestNAlgebra PRIVATE --coverage)
 endif ()
-
-target_link_libraries(TestNAlgebra NAlgebra)
 
 target_link_libraries(TestNVector gtest gtest_main)
 target_link_libraries(TestNVector NAlgebra)
