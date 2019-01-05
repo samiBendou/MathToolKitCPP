@@ -14,10 +14,14 @@ before_install:
 - pip install --user cpp-coveralls
 
 script:
-- cmake -H. -Bbuild
+- cmake -H. -Bbuild -DCOVERAGE=1
 - cd build
 - cmake --build .
 - ctest -V
+
+after_success:
+- coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*"
+
 
 notifications:
   email: false
