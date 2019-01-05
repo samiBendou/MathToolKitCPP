@@ -3,6 +3,8 @@ if (APPLE)
     add_definitions(-D__GLIBCXX__)
 endif (APPLE)
 
+cmake_policy(SET CMP0023 OLD)
+
 SET(COVERAGE OFF CACHE BOOL "Coverage")
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
