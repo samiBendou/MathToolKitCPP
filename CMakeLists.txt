@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES main.cpp)
 
 enable_testing()
-
+SET(COVERAGE OFF CACHE BOOL "Coverage")
 
 include_directories(NAlgebra/header)
 include_directories(NAnalysis/header)

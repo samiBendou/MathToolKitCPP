@@ -5,8 +5,6 @@ endif (APPLE)
 
 cmake_policy(SET CMP0023 OLD)
 
-SET(COVERAGE OFF CACHE BOOL "Coverage")
-
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 set(TEST_SOURCES_NVECTOR TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp)
