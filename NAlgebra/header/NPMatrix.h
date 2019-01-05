@@ -43,12 +43,14 @@
 
 using namespace std;
 
-enum ElementEnum {
-    Row, Col
-};
+
 
 template<typename T>
 class NPMatrix : public NVector<T> {
+
+    enum Parts {
+        Row, Col
+    };
 
 public:
     // CONSTRUCTION
@@ -217,9 +219,6 @@ public:
 
     NPMatrix<T> &setCols(const std::vector<NVector<T> > &vectors, ul_t j1 = 0);
 
-
-
-
     // MANIPULATORS
 
     // SWAP
@@ -244,13 +243,9 @@ public:
      * @param i2/j2 second row/col indices to swap
      * @description : Swap Ri1/Cj1 and Ri2/Cj2.
      */
-    inline NPMatrix<T> &swapRow(ul_t i1, ul_t i2) {
-        return swap(Row, i1, i2);
-    }
+    inline NPMatrix<T> &swapRow(ul_t i1, ul_t i2) { return swap(Row, i1, i2); }
 
-    inline NPMatrix<T> &swapCol(ul_t j1, ul_t j2) {
-        return swap(Col, j1, j2);
-    }
+    inline NPMatrix<T> &swapCol(ul_t j1, ul_t j2) { return swap(Col, j1, j2); }
 
 
     // SHIFT
@@ -269,13 +264,9 @@ public:
     *                  |A00, ..., ...|
     *                  |A10, ..., ...|
     */
-    inline NPMatrix<T> &shiftRow(ul_t i, long iterations = 1) {
-        return shift(Row, i, iterations);
-    }
+    inline NPMatrix<T> &shiftRow(ul_t i, long iterations = 1) { return shift(Row, i, iterations); }
 
-    inline NPMatrix<T> &shiftCol(ul_t j, long iterations = 1) {
-        return shift(Col, j, iterations);
-    }
+    inline NPMatrix<T> &shiftCol(ul_t j, long iterations = 1) { return shift(Col, j, iterations); }
 
     // ALGEBRA
 
@@ -556,13 +547,13 @@ protected:
 
     // MANIPULATORS
 
-    NPMatrix<T> &swap(ElementEnum element, ul_t k1, ul_t k2);
+    NPMatrix<T> &swap(Parts element, ul_t k1, ul_t k2);
 
-    NPMatrix<T> &shift(ElementEnum element, ul_t k, long iterations);
+    NPMatrix<T> &shift(Parts element, ul_t k, long iterations);
 
     // MAX/MIN
 
-    ul_t maxAbsIndex(ElementEnum element, ul_t k, ul_t r) const;
+    ul_t maxAbsIndex(Parts element, ul_t k, ul_t r) const;
 
     // MAX / MIN
 

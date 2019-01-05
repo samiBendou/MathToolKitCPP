@@ -36,7 +36,7 @@ bool NSegment::isIn(const vec_t &x) const {
     const vec_t u = (x - _a);
     const vec_t l = (_b - _a);
 
-    return (abs((u | l) - !u * !l) < D_EPSILON) && !u / !l <= 1;
+    return (fabs((u | l) - !u * !l) < D_EPSILON) && !u / !l <= 1;
 }
 
 bool NSegment::isEmpty() const {

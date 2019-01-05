@@ -403,7 +403,7 @@ NPMatrix<T>::NPMatrix(const NVector<T> &u, ul_t n, ul_t p, ul_t i1, ul_t j1, ul_
 // MANIPULATORS
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::swap(const ElementEnum element, ul_t k1, ul_t k2) {
+NPMatrix<T> &NPMatrix<T>::swap(const Parts element, ul_t k1, ul_t k2) {
 
     NVector<T> temp = (element == Row) ? NPMatrix<T>::row(k1) : col(k1);
 
@@ -414,7 +414,7 @@ NPMatrix<T> &NPMatrix<T>::swap(const ElementEnum element, ul_t k1, ul_t k2) {
 }
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::shift(const ElementEnum element, ul_t k, const long iterations) {
+NPMatrix<T> &NPMatrix<T>::shift(const Parts element, ul_t k, const long iterations) {
 
     assert(element == Row ? isBetweenI12(k + _i1) : isBetweenJ12(k + _j1));
 
@@ -428,7 +428,7 @@ NPMatrix<T> &NPMatrix<T>::shift(const ElementEnum element, ul_t k, const long it
 // MAX/MIN
 
 template<typename T>
-ul_t NPMatrix<T>::maxAbsIndex(const ElementEnum element, ul_t k, ul_t r) const {
+ul_t NPMatrix<T>::maxAbsIndex(const Parts element, ul_t k, ul_t r) const {
     NVector<T> elem{(element == Row) ? row(k) : col(k)};
     NVector<T> vector;
     vector = elem(r, (element == Row) ? _p - 1 : _n - 1);

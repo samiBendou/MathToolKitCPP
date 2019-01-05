@@ -127,7 +127,7 @@ Pixel &Pixel::sub(const Pixel &p) {
 }
 
 Pixel &Pixel::opp() {
-    setRGBWithoutFormatChange(-_red, -_green, -_blue);
+    return setRGBWithoutFormatChange(-_red, -_green, -_blue);
 }
 
 Pixel &Pixel::prod(const Pixel &p) {
