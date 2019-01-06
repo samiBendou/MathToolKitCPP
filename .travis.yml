@@ -20,7 +20,7 @@ script:
 - ctest -V
 
 after_success:
-- cd..
+- cd ..
 - |
   coveralls --build-root build --gcov-options '\-lp' \
     -e build/CMakeFiles \
