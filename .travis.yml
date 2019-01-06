@@ -11,17 +11,22 @@ addons:
 before_install:
 #Clone googletest to run unit tests and benchmarks
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
-- pip install --user cpp-coveralls
+- pip install --upgrade --user cpp-coveralls
 
 script:
-- cmake -H. -Bbuild -DCOVERAGE=1
+- cmake -H. -Bbuild --DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="clang"
 - cd build
+- ls
 - cmake --build .
 - ctest -V
 
 after_success:
-- coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*" --gcov-options '\-lp'
-
+- |
+  coveralls --build-root build --gcov-options '\-lp' \
+    -e build/external \
+    -e build/TestMathToolKit/lib \
+    -e build/CMakeFiles/feature_tests.c \
+    -e build/CMakeFiles/feature_tests.cxx
 
 notifications:
   email: false
