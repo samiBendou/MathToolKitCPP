@@ -17,7 +17,7 @@ script:
 - cmake -H. -Bbuild
 - cd build
 - ls
-- cmake --build --DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="clang".
+- cmake --build --DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="clang"
 - ctest -V
 
 after_success:
