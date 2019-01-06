@@ -33,8 +33,6 @@ public:
 
     using NVector<double>::operator=;
 
-    using NVector<double>::operator=;
-
     Vector3(const NVector<double> &vector);
 
     Vector3(const Vector3 &vector);
