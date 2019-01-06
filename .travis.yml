@@ -14,10 +14,10 @@ before_install:
 - pip install --upgrade --user cpp-coveralls
 
 script:
-- cmake -H. -Bbuild --DENABLE_COVERAGE=ON
+- cmake -H. -Bbuild
 - cd build
 - ls
-- cmake --build
+- cmake --build --DCOVERAGE=1
 - ctest -V
 
 after_success:
