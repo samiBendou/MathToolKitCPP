@@ -13,8 +13,6 @@ before_install:
 #Clone googletest to run unit tests and benchmarks
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 - pip install --upgrade --user git+git://github.com/eddyxu/cpp-coveralls.git
-- sudo apt-get install ggcov
-- sudo ln -sf /usr/bin/gcov-4.7 /usr/bin/gcov
 
 script:
 - cmake -H. -Bbuild -DCOVERAGE=1
