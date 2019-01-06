@@ -14,16 +14,16 @@ before_install:
 - pip install --upgrade --user cpp-coveralls
 
 script:
-- cmake -H. -Bbuild
+- cmake -H. -Bbuild --DENABLE_COVERAGE=ON
 - cd build
 - ls
-- cmake --build --DENABLE_COVERAGE=ON
+- cmake --build
 - ctest -V
 
 after_success:
 - |
   coveralls --build-root build --gcov-options '\-lp' \
-    -e build/external \
+    -e build/CMakeFiles \
     -e build/TestMathToolKit/lib \
     -e build/CMakeFiles/feature_tests.c \
     -e build/CMakeFiles/feature_tests.cxx
