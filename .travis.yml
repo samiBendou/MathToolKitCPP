@@ -16,7 +16,6 @@ before_install:
 script:
 - cmake -H. -Bbuild -DCOVERAGE=1
 - cd build
-- configure --enable-gcov
 - cmake --build .
 - ctest -V
 

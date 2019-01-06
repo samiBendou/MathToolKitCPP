@@ -1,23 +1,18 @@
-cmake_minimum_required(VERSION 3.9.2)
-project(MathToolKit)
+cmake_minimum_required(VERSION 3.9)
+project(MathToolKitCPP)
 
 set(CMAKE_CXX_STANDARD 11)
-
-set(SOURCE_FILES main.cpp)
 
 enable_testing()
 SET(COVERAGE OFF CACHE BOOL "Coverage")
 
-include_directories(NAlgebra/header)
-include_directories(NAnalysis/header)
-include_directories(NGeometry/header)
-
-add_subdirectory(NAlgebra)
-add_subdirectory(NAnalysis)
-add_subdirectory(NGeometry)
-
+add_subdirectory(MathToolKit)
 add_subdirectory(TestsMathToolKitCPP)
 
-add_executable(MathToolKit ${SOURCE_FILES})
+set(MATHTOOLKIT_HEADER_PATHS MathToolKit/NAlgebra/header MathToolKit/NAnalysis/header MathToolKit/NGeometry/header)
 
-target_link_libraries(MathToolKit NAnalysis NGeometry NAlgebra)
+include_directories(${MATHTOOLKIT_HEADER_PATHS})
+
+add_executable(MathToolKitRun main.cpp)
+
+target_link_libraries(MathToolKitRun NAnalysis NGeometry NAlgebra)

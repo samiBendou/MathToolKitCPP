@@ -105,4 +105,3 @@ If you want to run unit tests you have to import googletest onto the cloned proj
 ```commandline
 git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 ```
-

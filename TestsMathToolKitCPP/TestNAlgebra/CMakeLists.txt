@@ -5,11 +5,13 @@ endif (APPLE)
 
 cmake_policy(SET CMP0023 OLD) # Allow mixed target_link_library
 
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-
+set(MATHTOOLKIT_HEADER_PATHS ../../MathToolKit/NAlgebra/header ../../MathToolKit/NAnalysis/header ../../MathToolKit/NGeometry/header)
 set(TEST_SOURCES_NVECTOR TestNVector.cpp TestNVectorFuncOp.cpp TestVector3.cpp)
 set(TEST_SOURCES_NPMATRIX TestNPMatrix.cpp TestNPMatrixFuncOp.cpp)
 set(TEST_SOURCES_SCALAR TestPixel.cpp)
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+include_directories(${MATHTOOLKIT_HEADER_PATHS})
 
 add_executable(TestNAlgebra ${TEST_SOURCES_NVECTOR} ${TEST_SOURCES_NPMATRIX} ${TEST_SOURCES_SCALAR} TestPixel.cpp)
 
