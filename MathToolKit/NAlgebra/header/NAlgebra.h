@@ -27,7 +27,7 @@
  *  @endcode
  *
  *  You can use aliases `vec_t`, `vec_char_t`, ... to use common scalar types.
- *  Full documentation of `NVector` is avalaible [here](https://samibendou.github.io/MathToolKitCPP/class_n_vector.html).
+ *  Full documentation of `NVector` is available [here](https://samibendou.github.io/MathToolKitCPP/class_n_vector.html).
  *
  * @subsection AlgclOpVec Algebraical Operations
  *
