@@ -17,7 +17,7 @@ script:
 - cmake -H. -Bbuild
 - cd build
 - ls
-- cmake --build --DCOVERAGE=1
+- cmake --build -DCOVERAGE=1
 - ctest -V
 
 after_success:
