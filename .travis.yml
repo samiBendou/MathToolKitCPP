@@ -14,10 +14,10 @@ before_install:
 - pip install --upgrade --user cpp-coveralls
 
 script:
-- cmake -H. -Bbuild --DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="clang"
+- cmake -H. -Bbuild
 - cd build
 - ls
-- cmake --build .
+- cmake --build --DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="clang".
 - ctest -V
 
 after_success:
