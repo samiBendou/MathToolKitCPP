@@ -26,7 +26,7 @@ Featuring :
 
 The documentation of the framework is currently hosted at : https://samibendou.github.io/MathToolKitCPP/.
 
-### NAlgebra
+#### NAlgebra
 
 Linear algebra library providing vectors and matrix objects : [Documentation](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html)
 
@@ -36,7 +36,7 @@ Linear algebra library providing vectors and matrix objects : [Documentation](ht
 
 - Generators : `eye()`, `ones()`, `diag()`, ...
   
- ### NAnalysis
+ #### NAnalysis
  
  Differential calculus library providing numerical vector fields representation and easy ode solving.
  
@@ -44,7 +44,7 @@ Linear algebra library providing vectors and matrix objects : [Documentation](ht
 
 - Solve differential equations using fields representation
  
- ### NGeometry
+ #### NGeometry
  
  Geometry library. Representing compact numerical domains such as parallelepiped, spheres...
  
@@ -54,23 +54,27 @@ Linear algebra library providing vectors and matrix objects : [Documentation](ht
   
  - Create mesh of domains.
 
- ### Install
- 
-- Clone the project
+## Getting Started
 
-- Copy the directories of the libraries you want to import onto your project. 
+### Install
+ 
+1. Clone the project
+
+2. Copy the directories of the libraries you want to import onto your project. 
 eg : import NAlgebra if you want to use NPMatrix.
+
+### 
 
 ### Run Unit Tests
 
 The framework is unit tested with googletest. The framework doesnt yet have a code coverage evaluation
-but NAlgebra tests has been written.
+but over 60 NAlgebra tests has been written.
 
 If you want to run unit tests you have to import googletest onto the cloned project.
 
-- Clone MathToolKitCPP project
+1. Clone MathToolKitCPP project
 
-- Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ : 
+2. Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ : 
 
 ```commandline
 git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/

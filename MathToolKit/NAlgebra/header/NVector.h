@@ -7,14 +7,14 @@
 #define EPSILON (std::numeric_limits<T>::epsilon())
 
 /**
- * @defgroup NAlgebra Linear Algebra
- *
+ * @ingroup NAlgebra
  * @{
  * @class   NVector
+ * @copyright Dahoux Sami 2018 All rights reserved.
  * @date    03/05/2018
  * @author  samiBendou
  *
- * @brief   A `NVector<T>` object represents the coordinates of a finite dimension vector \f$ x \f$ in an arbitrary base.
+ * @brief   A `NVector<T>` object represents the coordinates of a finite dimension dense vector \f$ x \f$.
  *
  * @details Coordinates are stored in the form `[` \f$ x_0, x_1, ..., x_{(n-1)} \f$ `]`. where `[...]` is a `std::vector<T>`,
  *          \f$ n \f$ is the dimension and \f$ (x_0, x_1, ..., x_{(n-1)}) \f$ are the coordinates.
@@ -570,9 +570,24 @@ protected:
     mutable ul_t _k2;
 };
 
+/**
+ * Real numerical vector
+ */
 typedef NVector<double> vec_t;
+
+/**
+ * `char` vector
+ */
 typedef NVector<char> vec_char_t;
+
+/**
+ * AES vector. See `AESByte` for more details.
+ */
 typedef NVector<AESByte> vec_aes_t;
+
+/**
+ * Pixel vector. See `Pixel` for more details.
+ */
 typedef NVector<Pixel> vec_pix_t;
 
 /** @} */

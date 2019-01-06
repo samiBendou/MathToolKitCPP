@@ -121,38 +121,40 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li>Cascade calls <code>matrix.shift().fill()</code>, ...</li>
 </ul>
 <p>The documentation of the framework is currently hosted at : <a href="https://samibendou.github.io/MathToolKitCPP/">https://samibendou.github.io/MathToolKitCPP/</a>.</p>
-<h3>NAlgebra</h3>
+<h4>NAlgebra</h4>
 <p>Linear algebra library providing vectors and matrix objects : <a href="https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html">Documentation</a></p>
 <ul>
 <li>Manipulators : <code>shift()</code>, <code>swap()</code>, ...</li>
 <li>Linear Algebra : <code>+</code>, <code>*</code>, <code>inv()</code>, <code>pow()</code>, ...</li>
 <li>Generators : <code>eye()</code>, <code>ones()</code>, <code>diag()</code>, ...</li>
 </ul>
-<h3>NAnalysis</h3>
+<h4>NAnalysis</h4>
 <p>Differential calculus library providing numerical vector fields representation and easy ode solving.</p>
 <ul>
 <li>Mesh fields on various domains (see NGeometry)</li>
 <li>Solve differential equations using fields representation</li>
 </ul>
-<h3>NGeometry</h3>
+<h4>NGeometry</h4>
 <p>Geometry library. Representing compact numerical domains such as parallelepiped, spheres...</p>
 <ul>
 <li>Represent operations between domains</li>
 <li>Calculate domains volume, area...</li>
 <li>Create mesh of domains.</li>
 </ul>
+<h2>Getting Started</h2>
 <h3>Install</h3>
-<ul>
+<ol type="1">
 <li>Clone the project</li>
-<li>Copy the directories of the libraries you want to import onto your project. eg : import NAlgebra if you want to use <a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a>.</li>
-</ul>
+<li>Copy the directories of the libraries you want to import onto your project. eg : import NAlgebra if you want to use <a class="el" href="class_n_p_matrix.html" title="Representation of dense matrices of arbitrary size in a template field T.">NPMatrix</a>.</li>
+</ol>
+<h3></h3>
 <h3>Run Unit Tests</h3>
-<p>The framework is unit tested with googletest. The framework doesnt yet have a code coverage evaluation but NAlgebra tests has been written.</p>
+<p>The framework is unit tested with googletest. The framework doesnt yet have a code coverage evaluation but over 60 NAlgebra tests has been written.</p>
 <p>If you want to run unit tests you have to import googletest onto the cloned project.</p>
-<ul>
+<ol type="1">
 <li>Clone MathToolKitCPP project</li>
 <li>Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ :</li>
-</ul>
+</ol>
 <div class="fragment"><div class="line">git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/</div></div><!-- fragment --><h3>Additional information</h3>
 <h4>Author : samiBendou</h4>
 <h4>Last Update : 06/01/2019</h4>

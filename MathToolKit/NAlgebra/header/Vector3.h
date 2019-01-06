@@ -7,6 +7,7 @@
  * @ingroup NAlgebra
  * @{
  * @class   Vector3
+ * @copyright Dahoux Sami 2018 All rights reserved.
  * @date    04/05/2018
  * @author  samiBendou
  * @brief   Class representing 3D Euclidean space.
@@ -14,9 +15,9 @@
  * @details Featuring cross product, coordinate transforms and rotations.
  * We will use the following 3D systems of coordinates :
  *
- *            - \f$ (x, y, z) \f$ Cartesian coordinates.
+ *            - \f$ \vec{u} = (x, y, z) \f$ Cartesian coordinates.
  *
- *            - \f$ (r_{xy}, \theta, z) \f$ Cylindrical coordinates. We have the following transformations :
+ *            - \f$ \vec{u} = (r_{xy}, \theta, z) \f$ Cylindrical coordinates. We have the following transformations :
  *
  *            \f[
  *              \begin{align*}
@@ -26,7 +27,7 @@
  *              \end{align*}
  *            \f]
  *
- *            - \f$ (r, \theta, \phi) \f$ Spherical coordinates. We have the following transformations :
+ *            - \f$ \vec{u} = (r, \theta, \phi) \f$ Spherical coordinates. We have the following transformations :
  *
  *            \f[
  *            \begin{align*}
@@ -148,7 +149,8 @@ public:
      *      & u_x v_y - u_y v_x \\
      * \end{align*}
      * \f]
-     * @return value of \f$ u \times v \f$.
+     *
+     * @return value of \f$ \vec{u} \times \vec{v} \f$.
      */
     inline friend Vector3 operator^(Vector3 u, const Vector3 &v) {
         u ^= v;
@@ -160,6 +162,7 @@ public:
      * @return value of the angle.
      */
     inline friend double operator%(const Vector3 &u, const Vector3 &v) {return u.angle(v);}
+
 
     inline Vector3& operator ^=(const Vector3 &u) {return cross(u);}
 

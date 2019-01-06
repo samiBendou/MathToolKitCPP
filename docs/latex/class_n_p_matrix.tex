@@ -2,7 +2,7 @@
 \label{class_n_p_matrix}\index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 
 
-A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits from {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. It\textquotesingle{}s a representation of matrices of arbitrary size in a template field {\ttfamily T}.  
+Representation of dense matrices of arbitrary size in a template field {\ttfamily T}.  
 
 
 
@@ -18,7 +18,7 @@ Inheritance diagram for N\+P\+Matrix$<$ T $>$\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_n_p_matrix_a911b2434435553b06276977f3a86bb87}{N\+P\+Matrix}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
+\mbox{\hyperlink{class_n_p_matrix_a911b2434435553b06276977f3a86bb87}{N\+P\+Matrix}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
 \begin{DoxyCompactList}\small\item\em Construct a $ n \times p $ matrix initialized with {\ttfamily \mbox{\hyperlink{class_n_vector_a58eee5f012e4e563d477788051fc7f1d}{N\+Vector(ul\+\_\+t dim)}}} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix_ad5fc4003cdc740be5eed12134929101c}{N\+P\+Matrix}} (const vector$<$ vector$<$ T $>$ $>$ \&data)
 \begin{DoxyCompactList}\small\item\em Construct a matrix using a bi-\/dimensional {\ttfamily std\+::vector}. $ Aij $ represents {\ttfamily data\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}}. \end{DoxyCompactList}\item 
@@ -26,7 +26,7 @@ Inheritance diagram for N\+P\+Matrix$<$ T $>$\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Construct a matrix by using {\ttfamily \mbox{\hyperlink{class_n_p_matrix_ad2420de13cf39828daf36fd74aea9d2d}{copy()}}} method. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix_a738c748de3e3615da067264b629652b0}{N\+P\+Matrix}} (initializer\+\_\+list$<$ initializer\+\_\+list$<$ T $>$$>$ list)
 \begin{DoxyCompactList}\small\item\em Construct a $ n \times p $ matrix using a bi-\/dimensional initializer list {\ttfamily \{\{\}\}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix_a70eca6f9b11e5ab39db67edcba220f34}{N\+P\+Matrix}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}=1)
+\mbox{\hyperlink{class_n_p_matrix_a70eca6f9b11e5ab39db67edcba220f34}{N\+P\+Matrix}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}=1)
 \begin{DoxyCompactList}\small\item\em Construct a $ n $ rows matrix using a {\ttfamily std\+::vector}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix_a844e2c006a3e53ea0d07a35bbe5ffd4e}{N\+P\+Matrix}} (const vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \&vectors)
 \begin{DoxyCompactList}\small\item\em Construct a $ n \times p $ matrix using a {\ttfamily std\+::vector$<$\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$$>$}.\`{} All the vectors must have the same dimension. \end{DoxyCompactList}\item 
@@ -47,17 +47,17 @@ bool \mbox{\hyperlink{class_n_p_matrix_aa6e1114bee7818455ee8c2e8bcd55679}{is\+Di
 \begin{Indent}\textbf{ Getters}\par
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}} () const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}} () const
 \begin{DoxyCompactList}\small\item\em Number of rows $ n $. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}} () const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}} () const
 \begin{DoxyCompactList}\small\item\em Number of columns $ p $. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a99ae2d8850ecdb33fbd9a71804ab4ea7}{row}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i) const
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a99ae2d8850ecdb33fbd9a71804ab4ea7}{row}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i) const
 \begin{DoxyCompactList}\small\item\em $ i^{th} $ row of the matrix as a {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_aa137db97da518f1dfb69e7eb8fa1b94d}{col}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_aa137db97da518f1dfb69e7eb8fa1b94d}{col}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
 \begin{DoxyCompactList}\small\item\em $ j^{th} $ column the matrix as a {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix_add861e9e1df81af2546c3eab1fd40d51}{rows}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}) const
+std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix_add861e9e1df81af2546c3eab1fd40d51}{rows}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}) const
 \begin{DoxyCompactList}\small\item\em Create an array containing the rows of the matrix. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix_a30c8ad7b415fa92a23375cbad3ee8e37}{cols}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}) const
+std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix_a30c8ad7b415fa92a23375cbad3ee8e37}{cols}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}) const
 \begin{DoxyCompactList}\small\item\em Create an array containing the columns of the matrix in the form of {\ttfamily std\+::vector$<$\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$$>$}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a986376cd2765f1864fdac8b264f454ef}{upper}} () const
 \begin{DoxyCompactList}\small\item\em Create a new matrix containing upper part of this matrix. \end{DoxyCompactList}\item 
@@ -76,13 +76,13 @@ Setters returns a reference to {\ttfamily $\ast$this}.
 \end{DoxyReturn}
 }\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_aac65ad5cc7a3a73b8eddbd8501957ca6}{set\+Row}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_aac65ad5cc7a3a73b8eddbd8501957ca6}{set\+Row}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1)
 \begin{DoxyCompactList}\small\item\em Set row with given vector. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_ac950c160738743255b84702fca1e521d}{set\+Col}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_ac950c160738743255b84702fca1e521d}{set\+Col}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1)
 \begin{DoxyCompactList}\small\item\em Set column with given vector. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_af3dc4092df58ba94efe38e0c1c4591b7}{set\+Rows}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&vectors, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_af3dc4092df58ba94efe38e0c1c4591b7}{set\+Rows}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&vectors, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0)
 \begin{DoxyCompactList}\small\item\em Replace the components of the matrix with the array of vectors. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a3e3f383b3092d70144e1178da15c5376}{set\+Cols}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&vectors, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=0)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a3e3f383b3092d70144e1178da15c5376}{set\+Cols}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&vectors, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=0)
 \begin{DoxyCompactList}\small\item\em Replace the components of the matrix with the array of vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ Manipulators}\par
@@ -90,15 +90,15 @@ Setters returns a reference to {\ttfamily $\ast$this}.
 
 Manipulators allow cascade calls. The behavior is the same as Setters. }\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a599031f0b0fd352a047f1e87c16e17c6}{swap}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a599031f0b0fd352a047f1e87c16e17c6}{swap}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
 \begin{DoxyCompactList}\small\item\em Swap $ A_{i_1j_1} $ and $ A_{i_2j_2} $. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a85b764f2c21bce5c913c5e0aabb026a1}{swap\+Row}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a85b764f2c21bce5c913c5e0aabb026a1}{swap\+Row}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2)
 \begin{DoxyCompactList}\small\item\em Swap $ R_{i_1} $ and $ R_{i_2} $. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a0df10f5717511bc15429955244b83ea1}{swap\+Col}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a0df10f5717511bc15429955244b83ea1}{swap\+Col}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
 \begin{DoxyCompactList}\small\item\em Swap $ C_{j_1} $ and $ C_{j_2} $. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a8927e2dc64af30c6f619a93678332093}{shift\+Row}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, long iterations=1)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a8927e2dc64af30c6f619a93678332093}{shift\+Row}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, long iterations=1)
 \begin{DoxyCompactList}\small\item\em shift the $ i^{th} $ row {\ttfamily iterations} times. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_ae039695bf1464be6563f81d6e0c502d8}{shift\+Col}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j, long iterations=1)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_ae039695bf1464be6563f81d6e0c502d8}{shift\+Col}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j, long iterations=1)
 \begin{DoxyCompactList}\small\item\em shift the $ j^{th} $ column {\ttfamily iterations} times. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \begin{Indent}\textbf{ Algebra}\par
@@ -122,48 +122,48 @@ T \mbox{\hyperlink{class_n_p_matrix_afea28129e85911922957e9013d81e79a}{det}} () 
 
 C++ function operator are here used to give intuitive access to the matrix. }\begin{DoxyCompactItemize}
 \item 
-T \& \mbox{\hyperlink{class_n_p_matrix_a437ba12a96e979b50f6d579400b20f6f}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j)
+T \& \mbox{\hyperlink{class_n_p_matrix_a437ba12a96e979b50f6d579400b20f6f}{operator()}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j)
 \begin{DoxyCompactList}\small\item\em Bi-\/dimensional access operator. \end{DoxyCompactList}\item 
-T \mbox{\hyperlink{class_n_p_matrix_aa512abe782fac9e6b0d2eb1167df4133}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
+T \mbox{\hyperlink{class_n_p_matrix_aa512abe782fac9e6b0d2eb1167df4133}{operator()}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2) const
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}{operator()}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2) const
 \begin{DoxyCompactList}\small\item\em Manipulate sub-\/matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a5f7e5d337efe283e3f88716bd2205d55}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a5f7e5d337efe283e3f88716bd2205d55}{operator()}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
 \begin{DoxyCompactList}\small\item\em Manipulate sub-\/matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a701c8f60b4b8b727fccb063cd6f0784b}{zeros}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a701c8f60b4b8b727fccb063cd6f0784b}{zeros}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
 \begin{DoxyCompactList}\small\item\em $ n \times p $ matrix filled with {\ttfamily 0}. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a6509ca1d29b8b87f2d437883f48a40c9}{ones}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a6509ca1d29b8b87f2d437883f48a40c9}{ones}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
 \begin{DoxyCompactList}\small\item\em $ n \times p $ matrix filled with {\ttfamily 1}. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_abda10c35b77af6785cb5cf069ff099e7}{canonical}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_abda10c35b77af6785cb5cf069ff099e7}{canonical}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
 \begin{DoxyCompactList}\small\item\em $ n \times p $ canonical matrix \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a38961696b973ca0ff6ac098580c6974f}{eye}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a38961696b973ca0ff6ac098580c6974f}{eye}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
 \begin{DoxyCompactList}\small\item\em $ n^{th} $ order identity matrix \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_ae73ef1ba99fe04c35af30adc3bfbd1dc}{diag}} (const std\+::vector$<$ T $>$ \&data, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_ae73ef1ba99fe04c35af30adc3bfbd1dc}{diag}} (const std\+::vector$<$ T $>$ \&data, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
 \begin{DoxyCompactList}\small\item\em diagonal $ n^{th} $ order diagonal matrix filled with data array. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a3195b8dd4a279c3018122c3053997f8c}{scalar}} (T s, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a3195b8dd4a279c3018122c3053997f8c}{scalar}} (T s, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
 \begin{DoxyCompactList}\small\item\em a scalar $ n^{th} $ order matrix with {\ttfamily s} value \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a16aa6a18c33005300049ab1a39cbfbc2}{ndiag}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \&data)
 \begin{DoxyCompactList}\small\item\em Fills a square matrix matrix by giving diagonal data. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_aa2540f387990e3db6551bd88bc5d43d9}{nscalar}} (const std\+::vector$<$ T $>$ \&scalars, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_aa2540f387990e3db6551bd88bc5d43d9}{nscalar}} (const std\+::vector$<$ T $>$ \&scalars, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}})
 \begin{DoxyCompactList}\small\item\em Generalization of scalar matrix with multiple diagonal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_n_p_matrix_ab8c664f1aa435b8b1bb5e1fdd293423f}{N\+P\+Matrix}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2=0)
+\mbox{\hyperlink{class_n_p_matrix_ab8c664f1aa435b8b1bb5e1fdd293423f}{N\+P\+Matrix}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2=0)
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_aafbf2155265a070f3ae418828e40359e}{swap}} (Parts element, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_aafbf2155265a070f3ae418828e40359e}{swap}} (Parts element, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a83118d4efa26372fd12bd0a2ce77f155}{shift}} (Parts element, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, long iterations)
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a83118d4efa26372fd12bd0a2ce77f155}{shift}} (Parts element, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, long iterations)
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a4bff3c9956c688973307fd9c627e0ebd}{max\+Abs\+Index}} (Parts element, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} r) const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a4bff3c9956c688973307fd9c627e0ebd}{max\+Abs\+Index}} (Parts element, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} r) const
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a332d3f82121d71e1e349aa450af39207}{max\+Abs\+Index\+Row}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} r=0) const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a332d3f82121d71e1e349aa450af39207}{max\+Abs\+Index\+Row}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} r=0) const
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a2b5a2c3d646df900367ad91450d1ef33}{max\+Abs\+Index\+Col}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} r=0) const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a2b5a2c3d646df900367ad91450d1ef33}{max\+Abs\+Index\+Col}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} r=0) const
 \item 
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a8bb14c131409b94a8b52ec6a932098e5}{vector\+Product}} (\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
 \item 
@@ -197,15 +197,15 @@ void \mbox{\hyperlink{class_n_p_matrix_aa10cc45e0f51b547e4b9a9b89e95d007}{lup\+C
 \item 
 \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_abbee6873ebebfb5080a9719e4154f638}{clean\+Both}} (const \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \&m) const
 \item 
-bool \mbox{\hyperlink{class_n_p_matrix_afc5221cb1f5d1e1919801a0ff32751fe}{is\+Valid\+Row\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i) const
+bool \mbox{\hyperlink{class_n_p_matrix_afc5221cb1f5d1e1919801a0ff32751fe}{is\+Valid\+Row\+Index}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i) const
 \item 
-bool \mbox{\hyperlink{class_n_p_matrix_ab3f19d6c9259ef6e0a919ea7ad85a5a1}{is\+Valid\+Col\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
+bool \mbox{\hyperlink{class_n_p_matrix_ab3f19d6c9259ef6e0a919ea7ad85a5a1}{is\+Valid\+Col\+Index}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
 \item 
-bool \mbox{\hyperlink{class_n_p_matrix_a3d584ab75f97711997f39ffefef1f78b}{is\+Valid\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
+bool \mbox{\hyperlink{class_n_p_matrix_a3d584ab75f97711997f39ffefef1f78b}{is\+Valid\+Index}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
 \item 
-bool \mbox{\hyperlink{class_n_p_matrix_a0c1a788260180b0df60b8d049d121859}{is\+Between\+I12}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i) const
+bool \mbox{\hyperlink{class_n_p_matrix_a0c1a788260180b0df60b8d049d121859}{is\+Between\+I12}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i) const
 \item 
-bool \mbox{\hyperlink{class_n_p_matrix_aeb0ca9af7c136d9ffa4d27226c922591}{is\+Between\+J12}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
+bool \mbox{\hyperlink{class_n_p_matrix_aeb0ca9af7c136d9ffa4d27226c922591}{is\+Between\+J12}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
 \item 
 bool \mbox{\hyperlink{class_n_p_matrix_a748282f2d472970dbd20e3b2f6d62032}{match\+Size\+For\+Product}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
 \item 
@@ -221,13 +221,13 @@ void \mbox{\hyperlink{class_n_p_matrix_a58e138e518c03a4f9751fafdf7e43bcb}{set\+D
 \item 
 \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_aea56ed6b8852d53ddedce7d9f0ea5a08}{copy}} (const vector$<$ vector$<$ T $>$$>$ \&data)
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a1edc980b44c5b898ba3feb7d4f5ab625}{vector\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a1edc980b44c5b898ba3feb7d4f5ab625}{vector\+Index}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_aa8f30ca3523d088186e8320f9e21b772}{get\+Row\+From\+Vector\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k) const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_aa8f30ca3523d088186e8320f9e21b772}{get\+Row\+From\+Vector\+Index}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k) const
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3ef7e9e257ba6119e369a9a3c633d35d}{get\+Col\+From\+Vector\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k) const
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3ef7e9e257ba6119e369a9a3c633d35d}{get\+Col\+From\+Vector\+Index}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k) const
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a1af1b395e03d5009666214eb7f954afb}{sub\+Matrix}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}) const
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_a1af1b395e03d5009666214eb7f954afb}{sub\+Matrix}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2=0, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2=\mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}) const
 \item 
 \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a8165acb25f0b56c909cb4995824d3f76}{set\+Sub\+Matrix}} (const \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \&m)
 \item 
@@ -238,26 +238,26 @@ void \mbox{\hyperlink{class_n_p_matrix_a58e138e518c03a4f9751fafdf7e43bcb}{set\+D
 \subsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a761d47321d5f60e32cdb55ffe98eaf2f}{p\+If\+Not\+Null}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}})
+static \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a761d47321d5f60e32cdb55ffe98eaf2f}{p\+If\+Not\+Null}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}})
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a6ead143a6f35fc3247c26c2442841ba9}{\+\_\+n}} \{\}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a6ead143a6f35fc3247c26c2442841ba9}{\+\_\+n}} \{\}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_aa1571de5d091b0b2e71fd665da3eb7e1}{\+\_\+p}} \{\}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_aa1571de5d091b0b2e71fd665da3eb7e1}{\+\_\+p}} \{\}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a0cae48bb6660c2d00136ce8600d0fc28}{\+\_\+i1}} \{\}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a0cae48bb6660c2d00136ce8600d0fc28}{\+\_\+i1}} \{\}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_aa95383d682a70d44dc268164c46c2e1f}{\+\_\+j1}} \{\}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_aa95383d682a70d44dc268164c46c2e1f}{\+\_\+j1}} \{\}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a232044cf8aba4ad59c69c465822aed59}{\+\_\+i2}} \{\}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a232044cf8aba4ad59c69c465822aed59}{\+\_\+i2}} \{\}
 \item 
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_ad5307914390ebfd2e7760146bd10d8d4}{\+\_\+j2}} \{\}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_ad5307914390ebfd2e7760146bd10d8d4}{\+\_\+j2}} \{\}
 \item 
 \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ $\ast$ \mbox{\hyperlink{class_n_p_matrix_aef296b7e9a4688acd83e0cf2d9e5dfef}{\+\_\+a}}
 \begin{DoxyCompactList}\small\item\em Matrix $ A = LU $ where $ PA = LU $ = this. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} $>$ $\ast$ \mbox{\hyperlink{class_n_p_matrix_adae969b094e97895a62412765b50fb6f}{\+\_\+perm}} \{\}
+std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} $>$ $\ast$ \mbox{\hyperlink{class_n_p_matrix_adae969b094e97895a62412765b50fb6f}{\+\_\+perm}} \{\}
 \begin{DoxyCompactList}\small\item\em permutation vector $ P $ such as $ PA = LU $. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -320,8 +320,11 @@ T \mbox{\hyperlink{class_n_p_matrix_a12aeb8ceae55cbd9937701cb056b113b}{operator/
 \subsubsection*{template$<$typename T$>$\newline
 class N\+P\+Matrix$<$ T $>$}
 
-A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits from {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. It\textquotesingle{}s a representation of matrices of arbitrary size in a template field {\ttfamily T}. 
+Representation of dense matrices of arbitrary size in a template field {\ttfamily T}. 
 
+\begin{DoxyCopyright}{Copyright}
+Dahoux Sami 2018 All rights reserved. 
+\end{DoxyCopyright}
 \begin{DoxyDate}{Date}
 04/05/2018 
 \end{DoxyDate}
@@ -330,7 +333,7 @@ sami\+Bendou
 \end{DoxyAuthor}
 The matrix components are stored in a linear form using the index transformation $ k = p i + j $. The underlying {\ttfamily std\+::vector$<$T$>$} is represented as {\ttfamily t\mbox{[}p $\ast$ i + j\mbox{]}}. The underlying {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$} is $ (A_{00}, A_{01}, ..., A_{0(P - 1)}, A_{10}, ..., A_{1(P - 1)}, ..., A_{(N-1)0}, ...) $.\hypertarget{class_n_vector_Features}{}\subsection{Features}\label{class_n_vector_Features}
 Featuring algebraical operations such as matrix product, linear map, Gauss Jordan elimination. setters \& getters, swappers and classic matrix generators such as ones, zeros...\hypertarget{class_n_p_matrix_LUDecomp}{}\subsubsection{L\+U Decomposition}\label{class_n_p_matrix_LUDecomp}
-The $ LU $ decomposition is stored as a property if the matrix is inversible. It is auto-\/updated only when needed. It allow to compute inverse, determinant and other inversion related operations more efficiently.\hypertarget{class_n_p_matrix_FuncOp}{}\subsubsection{Sub-\/range operators}\label{class_n_p_matrix_FuncOp}
+The $ LU $ decomposition is stored as a property if the matrix is inversible. It is auto-\/updated only when needed. It allow to compute inverse, determinant and other inversion related operations more efficiently.\hypertarget{group___n_algebra_FuncOp}{}\subsubsection{Function Operator}\label{group___n_algebra_FuncOp}
 The {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}} class provides a function operator similar to \mbox{\hyperlink{class_n_vector_FuncOpVec}{Sub-\/range operators}}\hypertarget{class_n_vector_Definitions}{}\subsection{Definitions}\label{class_n_vector_Definitions}
 All along this page we will use the following definitions \+:
 \begin{DoxyItemize}
@@ -350,7 +353,7 @@ All along this page we will use the following definitions \+:
 \index{NPMatrix@{NPMatrix}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{NPMatrix()}{NPMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -409,7 +412,7 @@ Convert {\ttfamily list} and uses \mbox{\hyperlink{class_n_p_matrix_ad5fc4003cdc
 \index{NPMatrix@{NPMatrix}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{NPMatrix()}{NPMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -450,7 +453,7 @@ Convert {\ttfamily vectors} and uses \mbox{\hyperlink{class_n_p_matrix_ad5fc4003
 \index{NPMatrix@{NPMatrix}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{NPMatrix()}{NPMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
 
 
 
@@ -517,7 +520,7 @@ bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Diagonal 
 \index{n@{n}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{n()}{n()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::n (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::n (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -528,7 +531,7 @@ Number of rows $ n $.
 \index{p@{p}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{p()}{p()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -539,7 +542,7 @@ Number of columns $ p $.
 \index{row@{row}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{row()}{row()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i }\end{DoxyParamCaption}) const}
 
 
 
@@ -550,7 +553,7 @@ $ i^{th} $ row of the matrix as a {\ttfamily \mbox{\hyperlink{class_n_vector}{N\
 \index{col@{col}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{col()}{col()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const}
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const}
 
 
 
@@ -561,7 +564,7 @@ $ j^{th} $ column the matrix as a {\ttfamily \mbox{\hyperlink{class_n_vector}{N\
 \index{rows@{rows}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{rows()}{rows()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}} }\end{DoxyParamCaption}) const}
+vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}} }\end{DoxyParamCaption}) const}
 
 
 
@@ -589,7 +592,7 @@ Returns an array containing the rows of the matrix as {\ttfamily \mbox{\hyperlin
 \index{cols@{cols}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{cols()}{cols()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}} }\end{DoxyParamCaption}) const}
+vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}} }\end{DoxyParamCaption}) const}
 
 
 
@@ -662,7 +665,7 @@ $ U $ matrix of $ LU $ decomposition of the matrix.
 \index{setRow@{setRow}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{setRow()}{setRow()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 }\end{DoxyParamCaption})}
 
 
 
@@ -680,7 +683,7 @@ The dimension of the vector must be inferior or equal to the number of columns. 
 \index{setCol@{setCol}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{setCol()}{setCol()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Col (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Col (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 }\end{DoxyParamCaption})}
 
 
 
@@ -698,7 +701,7 @@ Same behavior as {\ttfamily \mbox{\hyperlink{class_n_p_matrix_aac65ad5cc7a3a73b8
 \index{setRows@{setRows}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{setRows()}{setRows()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Rows (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&}]{vectors,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0} }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Rows (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&}]{vectors,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -726,7 +729,7 @@ If the size of {\ttfamily vectors} is $ n \times q $ than the {\ttfamily set\+Ro
 \index{setCols@{setCols}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{setCols()}{setCols()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Cols (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&}]{vectors,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily 0} }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::set\+Cols (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&}]{vectors,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
@@ -744,7 +747,7 @@ The behavior of {\ttfamily \mbox{\hyperlink{class_n_p_matrix_a3e3f383b3092d70144
 \index{swap@{swap}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -766,7 +769,7 @@ Swap $ A_{i_1j_1} $ and $ A_{i_2j_2} $.
 \index{swapRow@{swapRow}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{swapRow()}{swapRow()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -784,7 +787,7 @@ Swap $ R_{i_1} $ and $ R_{i_2} $.
 \index{swapCol@{swapCol}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{swapCol()}{swapCol()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -802,7 +805,7 @@ Swap $ C_{j_1} $ and $ C_{j_2} $.
 \index{shiftRow@{shiftRow}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{shiftRow()}{shiftRow()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::shift\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{long}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::shift\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{long}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -820,7 +823,7 @@ If {\ttfamily iterations} is positive, shift is powered to the left, else to the
 \index{shiftCol@{shiftCol}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{shiftCol()}{shiftCol()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::shift\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j,  }\item[{long}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::shift\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j,  }\item[{long}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -963,7 +966,7 @@ Reimplemented from \mbox{\hyperlink{class_n_vector_ac6dc40f82bad305c159643de675e
 \index{operator()@{operator()}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-T\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+T\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -977,14 +980,14 @@ component $ A_{ij} $ of the matrix.
 \index{operator()@{operator()}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-T \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+T \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}\label{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1013,7 +1016,7 @@ value of the sub matrix.
 \index{operator()@{operator()}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 }\end{DoxyParamCaption})}
 
 
 
@@ -1034,7 +1037,7 @@ reference to {\ttfamily $\ast$this}.
 \index{zeros@{zeros}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{zeros()}{zeros()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::zeros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::zeros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1045,7 +1048,7 @@ $ n \times p $ matrix filled with {\ttfamily 0}.
 \index{ones@{ones}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{ones()}{ones()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::ones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::ones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1056,7 +1059,7 @@ $ n \times p $ matrix filled with {\ttfamily 1}.
 \index{canonical@{canonical}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{canonical()}{canonical()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1074,7 +1077,7 @@ canonical matrices $ E_{ij} $ of $ M_{np}(K) $ which contains {\ttfamily 1} in p
 \index{eye@{eye}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{eye()}{eye()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::eye (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::eye (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1093,7 +1096,7 @@ $ Id $ identity matrix.
 \index{diag@{diag}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{diag()}{diag()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::diag (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{data,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::diag (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{data,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1111,7 +1114,7 @@ diagonal $ n^{th} $ order diagonal matrix filled with data array.
 \index{scalar@{scalar}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{scalar()}{scalar()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::scalar (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::scalar (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -1165,7 +1168,7 @@ a n-\/diagonal matrix filled with {\ttfamily data}.
 \index{nscalar@{nscalar}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{nscalar()}{nscalar()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::nscalar (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{scalars,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::nscalar (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{scalars,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -1192,35 +1195,35 @@ a n-\/scalar Matrix filled with given {\ttfamily scalars}.
 \index{swap@{swap}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{Parts}]{element,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{Parts}]{element,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a83118d4efa26372fd12bd0a2ce77f155}\label{class_n_p_matrix_a83118d4efa26372fd12bd0a2ce77f155}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!shift@{shift}}
 \index{shift@{shift}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{shift()}{shift()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::shift (\begin{DoxyParamCaption}\item[{Parts}]{element,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::shift (\begin{DoxyParamCaption}\item[{Parts}]{element,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{long}]{iterations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a4bff3c9956c688973307fd9c627e0ebd}\label{class_n_p_matrix_a4bff3c9956c688973307fd9c627e0ebd}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!maxAbsIndex@{maxAbsIndex}}
 \index{maxAbsIndex@{maxAbsIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{maxAbsIndex()}{maxAbsIndex()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::max\+Abs\+Index (\begin{DoxyParamCaption}\item[{Parts}]{element,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::max\+Abs\+Index (\begin{DoxyParamCaption}\item[{Parts}]{element,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a332d3f82121d71e1e349aa450af39207}\label{class_n_p_matrix_a332d3f82121d71e1e349aa450af39207}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!maxAbsIndexRow@{maxAbsIndexRow}}
 \index{maxAbsIndexRow@{maxAbsIndexRow}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{maxAbsIndexRow()}{maxAbsIndexRow()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::max\+Abs\+Index\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{r = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::max\+Abs\+Index\+Row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{r = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a2b5a2c3d646df900367ad91450d1ef33}\label{class_n_p_matrix_a2b5a2c3d646df900367ad91450d1ef33}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!maxAbsIndexCol@{maxAbsIndexCol}}
 \index{maxAbsIndexCol@{maxAbsIndexCol}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{maxAbsIndexCol()}{maxAbsIndexCol()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::max\+Abs\+Index\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{r = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::max\+Abs\+Index\+Col (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{r = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a8bb14c131409b94a8b52ec6a932098e5}\label{class_n_p_matrix_a8bb14c131409b94a8b52ec6a932098e5}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!vectorProduct@{vectorProduct}}
@@ -1351,42 +1354,42 @@ void \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::lup\+Clear (\
 \index{isValidRowIndex@{isValidRowIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{isValidRowIndex()}{isValidRowIndex()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Valid\+Row\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Valid\+Row\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_ab3f19d6c9259ef6e0a919ea7ad85a5a1}\label{class_n_p_matrix_ab3f19d6c9259ef6e0a919ea7ad85a5a1}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!isValidColIndex@{isValidColIndex}}
 \index{isValidColIndex@{isValidColIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{isValidColIndex()}{isValidColIndex()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Valid\+Col\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Valid\+Col\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a3d584ab75f97711997f39ffefef1f78b}\label{class_n_p_matrix_a3d584ab75f97711997f39ffefef1f78b}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!isValidIndex@{isValidIndex}}
 \index{isValidIndex@{isValidIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{isValidIndex()}{isValidIndex()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Valid\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Valid\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a0c1a788260180b0df60b8d049d121859}\label{class_n_p_matrix_a0c1a788260180b0df60b8d049d121859}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!isBetweenI12@{isBetweenI12}}
 \index{isBetweenI12@{isBetweenI12}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{isBetweenI12()}{isBetweenI12()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Between\+I12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Between\+I12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_aeb0ca9af7c136d9ffa4d27226c922591}\label{class_n_p_matrix_aeb0ca9af7c136d9ffa4d27226c922591}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!isBetweenJ12@{isBetweenJ12}}
 \index{isBetweenJ12@{isBetweenJ12}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{isBetweenJ12()}{isBetweenJ12()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Between\+J12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+bool \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::is\+Between\+J12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a761d47321d5f60e32cdb55ffe98eaf2f}\label{class_n_p_matrix_a761d47321d5f60e32cdb55ffe98eaf2f}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!pIfNotNull@{pIfNotNull}}
 \index{pIfNotNull@{pIfNotNull}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{pIfNotNull()}{pIfNotNull()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-static \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::p\+If\+Not\+Null (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+static \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::p\+If\+Not\+Null (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{n,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a748282f2d472970dbd20e3b2f6d62032}\label{class_n_p_matrix_a748282f2d472970dbd20e3b2f6d62032}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!matchSizeForProduct@{matchSizeForProduct}}
@@ -1450,28 +1453,28 @@ Reimplemented from \mbox{\hyperlink{class_n_vector_a7f7d365d6ba6e62f627828a52897
 \index{vectorIndex@{vectorIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{vectorIndex()}{vectorIndex()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::vector\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::vector\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_aa8f30ca3523d088186e8320f9e21b772}\label{class_n_p_matrix_aa8f30ca3523d088186e8320f9e21b772}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!getRowFromVectorIndex@{getRowFromVectorIndex}}
 \index{getRowFromVectorIndex@{getRowFromVectorIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{getRowFromVectorIndex()}{getRowFromVectorIndex()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::get\+Row\+From\+Vector\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::get\+Row\+From\+Vector\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a3ef7e9e257ba6119e369a9a3c633d35d}\label{class_n_p_matrix_a3ef7e9e257ba6119e369a9a3c633d35d}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!getColFromVectorIndex@{getColFromVectorIndex}}
 \index{getColFromVectorIndex@{getColFromVectorIndex}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{getColFromVectorIndex()}{getColFromVectorIndex()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::get\+Col\+From\+Vector\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::get\+Col\+From\+Vector\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a1af1b395e03d5009666214eb7f954afb}\label{class_n_p_matrix_a1af1b395e03d5009666214eb7f954afb}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!subMatrix@{subMatrix}}
 \index{subMatrix@{subMatrix}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{subMatrix()}{subMatrix()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::sub\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::sub\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j1 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{i2 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{j2 = {\ttfamily \mbox{\hyperlink{_n_vector_8h_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a8165acb25f0b56c909cb4995824d3f76}\label{class_n_p_matrix_a8165acb25f0b56c909cb4995824d3f76}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!setSubMatrix@{setSubMatrix}}
@@ -1666,42 +1669,42 @@ bool \mbox{\hyperlink{class_n_p_matrix_a0f6cfdff016d49df6c2dbb79e85b9842}{operat
 \index{\_n@{\_n}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_n}{\_n}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+n \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+n \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_aa1571de5d091b0b2e71fd665da3eb7e1}\label{class_n_p_matrix_aa1571de5d091b0b2e71fd665da3eb7e1}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!\_p@{\_p}}
 \index{\_p@{\_p}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_p}{\_p}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+p \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+p \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a0cae48bb6660c2d00136ce8600d0fc28}\label{class_n_p_matrix_a0cae48bb6660c2d00136ce8600d0fc28}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!\_i1@{\_i1}}
 \index{\_i1@{\_i1}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_i1}{\_i1}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+i1 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+i1 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_aa95383d682a70d44dc268164c46c2e1f}\label{class_n_p_matrix_aa95383d682a70d44dc268164c46c2e1f}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!\_j1@{\_j1}}
 \index{\_j1@{\_j1}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_j1}{\_j1}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+j1 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+j1 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_a232044cf8aba4ad59c69c465822aed59}\label{class_n_p_matrix_a232044cf8aba4ad59c69c465822aed59}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!\_i2@{\_i2}}
 \index{\_i2@{\_i2}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_i2}{\_i2}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+i2 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+i2 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_ad5307914390ebfd2e7760146bd10d8d4}\label{class_n_p_matrix_ad5307914390ebfd2e7760146bd10d8d4}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!\_j2@{\_j2}}
 \index{\_j2@{\_j2}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_j2}{\_j2}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+j2 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+j2 \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_p_matrix_aef296b7e9a4688acd83e0cf2d9e5dfef}\label{class_n_p_matrix_aef296b7e9a4688acd83e0cf2d9e5dfef}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!\_a@{\_a}}
@@ -1719,7 +1722,7 @@ Matrix $ A = LU $ where $ PA = LU $ = this.
 \index{\_perm@{\_perm}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{\_perm}{\_perm}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-std\+::vector$<$\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}$>$$\ast$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+perm \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+std\+::vector$<$\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}$>$$\ast$ \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::\+\_\+perm \{\}\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
 
 
 

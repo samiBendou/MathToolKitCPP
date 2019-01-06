@@ -10,11 +10,14 @@
  * @ingroup NAlgebra
  * @{
  * @class   AESByte
+ * @copyright Dahoux Sami 2018 All rights reserved.
  * @date    15/10/2018
  * @author  samiBendou
- * @brief   AESByte class is a representation of an element of Gallois's finite field \f$ GF(2^8) \f$.
+ * @brief   Representation of a byte in AES.
  *
- * @details providing algebraical operation on the specific field. and
+ * @details Byte in AES algorithm can be seen as elements of Gallois's finite field \f$ GF(2^8) \f$.
+ *
+ *          This class provides algebraical operation on the specific field. and
  *          interfacing with integers primitive types. For more details go to
  *          https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf.
  *

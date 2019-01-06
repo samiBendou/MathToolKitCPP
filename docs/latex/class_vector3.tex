@@ -60,11 +60,11 @@ void \mbox{\hyperlink{class_vector3_a8f5b7f22c561c335017ad3a76bcd1808}{set\+R\+T
 \begin{DoxyCompactList}\small\item\em Construct a vector using a {\ttfamily std\+::vector}. $ x_k $ represents {\ttfamily data\mbox{[}k\mbox{]}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector3_a44c7b132c668c2aac890b66fe7ab0262}{N\+Vector}} (std\+::initializer\+\_\+list$<$ T $>$ list)
 \begin{DoxyCompactList}\small\item\em Construct a vector using an initializer list {\ttfamily \{\}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vector3_a58eee5f012e4e563d477788051fc7f1d}{N\+Vector}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}}=0)
+\mbox{\hyperlink{class_vector3_a58eee5f012e4e563d477788051fc7f1d}{N\+Vector}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}}=0)
 \begin{DoxyCompactList}\small\item\em Construct a vector of a given size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vector3_a7f648402b0fc9006ce9ced7ca647e600}{N\+Vector}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
 \begin{DoxyCompactList}\small\item\em Construct a vector by using {\ttfamily \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy()}}} method. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_vector3_a402111a5a467efd5741e6a17fbd5c903}{N\+Vector}} (const std\+::vector$<$ T $>$ \&data, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
+\mbox{\hyperlink{class_vector3_a402111a5a467efd5741e6a17fbd5c903}{N\+Vector}} (const std\+::vector$<$ T $>$ \&data, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -75,7 +75,7 @@ static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_
 \item 
 static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_af757c4bd03bd4ddfa74c99fd5a3eee94}{scalar}} (double scalar)
 \item 
-static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_ab8c97969179c890acca9f18d457e06e6}{canonical}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k)
+static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_ab8c97969179c890acca9f18d457e06e6}{canonical}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -121,6 +121,9 @@ double \mbox{\hyperlink{class_vector3_ab7427dc980f710e550fb4de32f0dfcbb}{operato
 \subsection{Detailed Description}
 Class representing 3D Euclidean space. 
 
+\begin{DoxyCopyright}{Copyright}
+Dahoux Sami 2018 All rights reserved. 
+\end{DoxyCopyright}
 \begin{DoxyDate}{Date}
 04/05/2018 
 \end{DoxyDate}
@@ -131,15 +134,15 @@ Featuring cross product, coordinate transforms and rotations. We will use the fo
 
 
 \begin{DoxyItemize}
-\item $ (x, y, z) $ Cartesian coordinates.
-\item $ (r_{xy}, \theta, z) $ Cylindrical coordinates. We have the following transformations \+:
+\item $ \vec{u} = (x, y, z) $ Cartesian coordinates.
+\item $ \vec{u} = (r_{xy}, \theta, z) $ Cylindrical coordinates. We have the following transformations \+:
 \end{DoxyItemize}
 
 \[ \begin{align*} & r_{xy} & = & \sqrt{x^2 + y^2} \\ & \theta & = & atan(y / x) \\ & z & = & z \\ \end{align*} \]
 
 
 \begin{DoxyItemize}
-\item $ (r, \theta, \phi) $ Spherical coordinates. We have the following transformations \+:
+\item $ \vec{u} = (r, \theta, \phi) $ Spherical coordinates. We have the following transformations \+:
 \end{DoxyItemize}
 
 \[ \begin{align*} & r & = & \sqrt{x^2 + y^2 + z^2} \\ & \theta & = & atan(y / x) \\ & \phi & = & atan(r_{xy} / z) \\ \end{align*} \]
@@ -282,7 +285,7 @@ The {\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}}} class doesn\textquotes
 \index{Vector3@{Vector3}!canonical@{canonical}}
 \index{canonical@{canonical}!Vector3@{Vector3}}
 \subsubsection{\texorpdfstring{canonical()}{canonical()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_vector3}{Vector3}} Vector3\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_vector3}{Vector3}} Vector3\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_vector3_ab4221b101df67f562347dde6738c66fc}\label{class_vector3_ab4221b101df67f562347dde6738c66fc}} 
 \index{Vector3@{Vector3}!cross@{cross}}
@@ -467,8 +470,10 @@ Vector product between two vectors.
 
 usual vector product given by \+:
 
-\[ \begin{align*} & u_y v_z - u_z v_y \\ & u_z v_x - u_x v_z \\ & u_x v_y - u_y v_x \\ \end{align*} \] \begin{DoxyReturn}{Returns}
-value of $ u \times v $. 
+\[ \begin{align*} & u_y v_z - u_z v_y \\ & u_z v_x - u_x v_z \\ & u_x v_y - u_y v_x \\ \end{align*} \]
+
+\begin{DoxyReturn}{Returns}
+value of $ \vec{u} \times \vec{v} $. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_vector3_ab7427dc980f710e550fb4de32f0dfcbb}\label{class_vector3_ab7427dc980f710e550fb4de32f0dfcbb}} 
 \index{Vector3@{Vector3}!operator\%@{operator\%}}

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['i_5ft',['i_t',['../typedef_8h.html#a72a56cddd77907733a7766bd5e332f53',1,'typedef.h']]],
+  ['i_5ft',['i_t',['../group___n_algebra.html#ga72a56cddd77907733a7766bd5e332f53',1,'typedef.h']]],
   ['inter',['inter',['../class_n_compact.html#a5806924822793fdd89f4168e1e8c4d3c',1,'NCompact::inter()'],['../class_n_d_set.html#abf13bbb9169af9e4b507fc8fcfb83232',1,'NDSet::inter()']]],
   ['inv',['inv',['../class_n_p_matrix.html#ac672c69c4b0ec298ac3e8326fcce48cb',1,'NPMatrix']]],
   ['isbetweeni12',['isBetweenI12',['../class_n_p_matrix.html#a0c1a788260180b0df60b8d049d121859',1,'NPMatrix']]],
@@ -16,5 +16,6 @@ var searchData=
   ['isupper',['isUpper',['../class_n_p_matrix.html#aa1baeec21546add3c67f0d330c9d0016',1,'NPMatrix']]],
   ['isvalidcolindex',['isValidColIndex',['../class_n_p_matrix.html#ab3f19d6c9259ef6e0a919ea7ad85a5a1',1,'NPMatrix']]],
   ['isvalidindex',['isValidIndex',['../class_n_p_matrix.html#a3d584ab75f97711997f39ffefef1f78b',1,'NPMatrix::isValidIndex()'],['../class_n_vector.html#ad993b3d62002abc9d89ebf053003341d',1,'NVector::isValidIndex()']]],
-  ['isvalidrowindex',['isValidRowIndex',['../class_n_p_matrix.html#afc5221cb1f5d1e1919801a0ff32751fe',1,'NPMatrix']]]
+  ['isvalidrowindex',['isValidRowIndex',['../class_n_p_matrix.html#afc5221cb1f5d1e1919801a0ff32751fe',1,'NPMatrix']]],
+  ['introduction',['Introduction',['../group___n_algebra.html',1,'']]]
 ];

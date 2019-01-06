@@ -10,4 +10,5 @@ add_library(NAlgebra STATIC
         header/Vector3.h
         source/NPMatrix.cpp header/NPMatrix.h
         source/AESByte.cpp header/AESByte.h
-        source/Pixel.cpp header/Pixel.h header/typedef.h)
+        source/Pixel.cpp header/Pixel.h header/typedef.h
+        header/NAlgebra.h)

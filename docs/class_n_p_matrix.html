@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('class_n_p_matrix.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>A <code><a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a>&lt;T&gt;</code> inherits from <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>. It's a representation of matrices of arbitrary size in a template field <code>T</code>.  
+<p>Representation of dense matrices of arbitrary size in a template field <code>T</code>.  
  <a href="class_n_p_matrix.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_n_p_matrix_8h_source.html">NPMatrix.h</a>&gt;</code></p>
@@ -126,13 +126,13 @@ Inheritance diagram for NPMatrix&lt; T &gt;:</div>
  <div class="center">
   <img src="class_n_p_matrix.png" usemap="#NPMatrix_3C_20T_20_3E_map" alt=""/>
   <map id="NPMatrix_3C_20T_20_3E_map" name="NPMatrix_3C_20T_20_3E_map">
-<area href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base." alt="NVector&lt; T &gt;" shape="rect" coords="0,56,101,80"/>
+<area href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector ." alt="NVector&lt; T &gt;" shape="rect" coords="0,56,101,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a911b2434435553b06276977f3a86bb87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a911b2434435553b06276977f3a86bb87">NPMatrix</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
+<tr class="memitem:a911b2434435553b06276977f3a86bb87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a911b2434435553b06276977f3a86bb87">NPMatrix</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
 <tr class="memdesc:a911b2434435553b06276977f3a86bb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a \( n \times p \) matrix initialized with <code><a class="el" href="class_n_vector.html#a58eee5f012e4e563d477788051fc7f1d" title="Construct a vector of a given size.">NVector(ul_t dim)</a></code> constructor.  <a href="#a911b2434435553b06276977f3a86bb87">More...</a><br /></td></tr>
 <tr class="separator:a911b2434435553b06276977f3a86bb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5fc4003cdc740be5eed12134929101c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ad5fc4003cdc740be5eed12134929101c">NPMatrix</a> (const vector&lt; vector&lt; T &gt; &gt; &amp;data)</td></tr>
@@ -144,11 +144,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a738c748de3e3615da067264b629652b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a738c748de3e3615da067264b629652b0">NPMatrix</a> (initializer_list&lt; initializer_list&lt; T &gt;&gt; list)</td></tr>
 <tr class="memdesc:a738c748de3e3615da067264b629652b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a \( n \times p \) matrix using a bi-dimensional initializer list <code>{{}}</code>.  <a href="#a738c748de3e3615da067264b629652b0">More...</a><br /></td></tr>
 <tr class="separator:a738c748de3e3615da067264b629652b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70eca6f9b11e5ab39db67edcba220f34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a70eca6f9b11e5ab39db67edcba220f34">NPMatrix</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>=1)</td></tr>
+<tr class="memitem:a70eca6f9b11e5ab39db67edcba220f34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a70eca6f9b11e5ab39db67edcba220f34">NPMatrix</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>=1)</td></tr>
 <tr class="memdesc:a70eca6f9b11e5ab39db67edcba220f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a \( n \) rows matrix using a <code>std::vector</code>.  <a href="#a70eca6f9b11e5ab39db67edcba220f34">More...</a><br /></td></tr>
 <tr class="separator:a70eca6f9b11e5ab39db67edcba220f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a844e2c006a3e53ea0d07a35bbe5ffd4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a844e2c006a3e53ea0d07a35bbe5ffd4e">NPMatrix</a> (const vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt; &amp;vectors)</td></tr>
-<tr class="memdesc:a844e2c006a3e53ea0d07a35bbe5ffd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a \( n \times p \) matrix using a <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;&gt;</code>.` All the vectors must have the same dimension.  <a href="#a844e2c006a3e53ea0d07a35bbe5ffd4e">More...</a><br /></td></tr>
+<tr class="memdesc:a844e2c006a3e53ea0d07a35bbe5ffd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a \( n \times p \) matrix using a <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;&gt;</code>.` All the vectors must have the same dimension.  <a href="#a844e2c006a3e53ea0d07a35bbe5ffd4e">More...</a><br /></td></tr>
 <tr class="separator:a844e2c006a3e53ea0d07a35bbe5ffd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8679cd5ef65eea15ae5128b0e69fdd6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a8679cd5ef65eea15ae5128b0e69fdd6e">~NPMatrix</a> ()</td></tr>
 <tr class="separator:a8679cd5ef65eea15ae5128b0e69fdd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,23 +166,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae0724a09ace6b15bd36f9d8b02bd5e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ae0724a09ace6b15bd36f9d8b02bd5e53">operator=</a> (const <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;m)</td></tr>
 <tr class="separator:ae0724a09ace6b15bd36f9d8b02bd5e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
-<tr class="memitem:afc181b7652d9427125c72c38d7c1498d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a> () const</td></tr>
+<tr class="memitem:afc181b7652d9427125c72c38d7c1498d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a> () const</td></tr>
 <tr class="memdesc:afc181b7652d9427125c72c38d7c1498d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows \( n \).  <a href="#afc181b7652d9427125c72c38d7c1498d">More...</a><br /></td></tr>
 <tr class="separator:afc181b7652d9427125c72c38d7c1498d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3beee8acb5babf62d2b4f212ac5d18e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a> () const</td></tr>
+<tr class="memitem:a3beee8acb5babf62d2b4f212ac5d18e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a> () const</td></tr>
 <tr class="memdesc:a3beee8acb5babf62d2b4f212ac5d18e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns \( p \).  <a href="#a3beee8acb5babf62d2b4f212ac5d18e8">More...</a><br /></td></tr>
 <tr class="separator:a3beee8acb5babf62d2b4f212ac5d18e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ae2d8850ecdb33fbd9a71804ab4ea7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a99ae2d8850ecdb33fbd9a71804ab4ea7">row</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i) const</td></tr>
-<tr class="memdesc:a99ae2d8850ecdb33fbd9a71804ab4ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( i^{th} \) row of the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>.  <a href="#a99ae2d8850ecdb33fbd9a71804ab4ea7">More...</a><br /></td></tr>
+<tr class="memitem:a99ae2d8850ecdb33fbd9a71804ab4ea7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a99ae2d8850ecdb33fbd9a71804ab4ea7">row</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i) const</td></tr>
+<tr class="memdesc:a99ae2d8850ecdb33fbd9a71804ab4ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( i^{th} \) row of the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>.  <a href="#a99ae2d8850ecdb33fbd9a71804ab4ea7">More...</a><br /></td></tr>
 <tr class="separator:a99ae2d8850ecdb33fbd9a71804ab4ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa137db97da518f1dfb69e7eb8fa1b94d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa137db97da518f1dfb69e7eb8fa1b94d">col</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
-<tr class="memdesc:aa137db97da518f1dfb69e7eb8fa1b94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( j^{th} \) column the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>.  <a href="#aa137db97da518f1dfb69e7eb8fa1b94d">More...</a><br /></td></tr>
+<tr class="memitem:aa137db97da518f1dfb69e7eb8fa1b94d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa137db97da518f1dfb69e7eb8fa1b94d">col</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
+<tr class="memdesc:aa137db97da518f1dfb69e7eb8fa1b94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( j^{th} \) column the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>.  <a href="#aa137db97da518f1dfb69e7eb8fa1b94d">More...</a><br /></td></tr>
 <tr class="separator:aa137db97da518f1dfb69e7eb8fa1b94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add861e9e1df81af2546c3eab1fd40d51"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#add861e9e1df81af2546c3eab1fd40d51">rows</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>) const</td></tr>
+<tr class="memitem:add861e9e1df81af2546c3eab1fd40d51"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#add861e9e1df81af2546c3eab1fd40d51">rows</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>) const</td></tr>
 <tr class="memdesc:add861e9e1df81af2546c3eab1fd40d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an array containing the rows of the matrix.  <a href="#add861e9e1df81af2546c3eab1fd40d51">More...</a><br /></td></tr>
 <tr class="separator:add861e9e1df81af2546c3eab1fd40d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30c8ad7b415fa92a23375cbad3ee8e37"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a30c8ad7b415fa92a23375cbad3ee8e37">cols</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>) const</td></tr>
-<tr class="memdesc:a30c8ad7b415fa92a23375cbad3ee8e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an array containing the columns of the matrix in the form of <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;&gt;</code>.  <a href="#a30c8ad7b415fa92a23375cbad3ee8e37">More...</a><br /></td></tr>
+<tr class="memitem:a30c8ad7b415fa92a23375cbad3ee8e37"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a30c8ad7b415fa92a23375cbad3ee8e37">cols</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>) const</td></tr>
+<tr class="memdesc:a30c8ad7b415fa92a23375cbad3ee8e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an array containing the columns of the matrix in the form of <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;&gt;</code>.  <a href="#a30c8ad7b415fa92a23375cbad3ee8e37">More...</a><br /></td></tr>
 <tr class="separator:a30c8ad7b415fa92a23375cbad3ee8e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a986376cd2765f1864fdac8b264f454ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a986376cd2765f1864fdac8b264f454ef">upper</a> () const</td></tr>
 <tr class="memdesc:a986376cd2765f1864fdac8b264f454ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new matrix containing upper part of this matrix.  <a href="#a986376cd2765f1864fdac8b264f454ef">More...</a><br /></td></tr>
@@ -197,38 +197,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8da21c409841e612b72232d1159eec21"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( U \) matrix of \( LU \) decomposition of the matrix.  <a href="#a8da21c409841e612b72232d1159eec21">More...</a><br /></td></tr>
 <tr class="separator:a8da21c409841e612b72232d1159eec21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Setters</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Setters of a <code><a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a></code>.</p>
+<tr><td colspan="2"><div class="groupText"><p>Setters of a <code><a class="el" href="class_n_p_matrix.html" title="Representation of dense matrices of arbitrary size in a template field T.">NPMatrix</a></code>.</p>
 <p>All the setters return a reference to <code>*this</code> in order to allow cascade calls eg <code><a class="el" href="class_n_p_matrix.html#aac65ad5cc7a3a73b8eddbd8501957ca6" title="Set row with given vector.">setRow()</a>.<a class="el" href="class_n_p_matrix.html#ac950c160738743255b84702fca1e521d" title="Set column with given vector.">setCol()</a></code>. Setters cannot be used with <code><a class="el" href="class_n_p_matrix.html#a5f7e5d337efe283e3f88716bd2205d55" title="Manipulate sub-matrix.">operator()(ul_t, ul_t, ul_t, ul_t)</a></code>. </p><dl class="section return"><dt>Returns</dt><dd>Setters returns a reference to <code>*this</code>. </dd></dl>
 </div></td></tr>
-<tr class="memitem:aac65ad5cc7a3a73b8eddbd8501957ca6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aac65ad5cc7a3a73b8eddbd8501957ca6">setRow</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1)</td></tr>
+<tr class="memitem:aac65ad5cc7a3a73b8eddbd8501957ca6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aac65ad5cc7a3a73b8eddbd8501957ca6">setRow</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1)</td></tr>
 <tr class="memdesc:aac65ad5cc7a3a73b8eddbd8501957ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set row with given vector.  <a href="#aac65ad5cc7a3a73b8eddbd8501957ca6">More...</a><br /></td></tr>
 <tr class="separator:aac65ad5cc7a3a73b8eddbd8501957ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac950c160738743255b84702fca1e521d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ac950c160738743255b84702fca1e521d">setCol</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1)</td></tr>
+<tr class="memitem:ac950c160738743255b84702fca1e521d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ac950c160738743255b84702fca1e521d">setCol</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1)</td></tr>
 <tr class="memdesc:ac950c160738743255b84702fca1e521d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set column with given vector.  <a href="#ac950c160738743255b84702fca1e521d">More...</a><br /></td></tr>
 <tr class="separator:ac950c160738743255b84702fca1e521d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3dc4092df58ba94efe38e0c1c4591b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#af3dc4092df58ba94efe38e0c1c4591b7">setRows</a> (const std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&gt; &amp;vectors, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0)</td></tr>
+<tr class="memitem:af3dc4092df58ba94efe38e0c1c4591b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#af3dc4092df58ba94efe38e0c1c4591b7">setRows</a> (const std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&gt; &amp;vectors, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0)</td></tr>
 <tr class="memdesc:af3dc4092df58ba94efe38e0c1c4591b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the components of the matrix with the array of vectors.  <a href="#af3dc4092df58ba94efe38e0c1c4591b7">More...</a><br /></td></tr>
 <tr class="separator:af3dc4092df58ba94efe38e0c1c4591b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e3f383b3092d70144e1178da15c5376"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3e3f383b3092d70144e1178da15c5376">setCols</a> (const std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&gt; &amp;vectors, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=0)</td></tr>
+<tr class="memitem:a3e3f383b3092d70144e1178da15c5376"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3e3f383b3092d70144e1178da15c5376">setCols</a> (const std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&gt; &amp;vectors, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=0)</td></tr>
 <tr class="memdesc:a3e3f383b3092d70144e1178da15c5376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the components of the matrix with the array of vectors.  <a href="#a3e3f383b3092d70144e1178da15c5376">More...</a><br /></td></tr>
 <tr class="separator:a3e3f383b3092d70144e1178da15c5376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Manipulators</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Manipulators such as swap, shift...</p>
 <p>Manipulators allow cascade calls. The behavior is the same as Setters. </p>
 </div></td></tr>
-<tr class="memitem:a599031f0b0fd352a047f1e87c16e17c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a599031f0b0fd352a047f1e87c16e17c6">swap</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2)</td></tr>
+<tr class="memitem:a599031f0b0fd352a047f1e87c16e17c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a599031f0b0fd352a047f1e87c16e17c6">swap</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2)</td></tr>
 <tr class="memdesc:a599031f0b0fd352a047f1e87c16e17c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap \( A_{i_1j_1} \) and \( A_{i_2j_2} \).  <a href="#a599031f0b0fd352a047f1e87c16e17c6">More...</a><br /></td></tr>
 <tr class="separator:a599031f0b0fd352a047f1e87c16e17c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85b764f2c21bce5c913c5e0aabb026a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a85b764f2c21bce5c913c5e0aabb026a1">swapRow</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2)</td></tr>
+<tr class="memitem:a85b764f2c21bce5c913c5e0aabb026a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a85b764f2c21bce5c913c5e0aabb026a1">swapRow</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2)</td></tr>
 <tr class="memdesc:a85b764f2c21bce5c913c5e0aabb026a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap \( R_{i_1} \) and \( R_{i_2} \).  <a href="#a85b764f2c21bce5c913c5e0aabb026a1">More...</a><br /></td></tr>
 <tr class="separator:a85b764f2c21bce5c913c5e0aabb026a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df10f5717511bc15429955244b83ea1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a0df10f5717511bc15429955244b83ea1">swapCol</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2)</td></tr>
+<tr class="memitem:a0df10f5717511bc15429955244b83ea1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a0df10f5717511bc15429955244b83ea1">swapCol</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2)</td></tr>
 <tr class="memdesc:a0df10f5717511bc15429955244b83ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap \( C_{j_1} \) and \( C_{j_2} \).  <a href="#a0df10f5717511bc15429955244b83ea1">More...</a><br /></td></tr>
 <tr class="separator:a0df10f5717511bc15429955244b83ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8927e2dc64af30c6f619a93678332093"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a8927e2dc64af30c6f619a93678332093">shiftRow</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, long iterations=1)</td></tr>
+<tr class="memitem:a8927e2dc64af30c6f619a93678332093"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a8927e2dc64af30c6f619a93678332093">shiftRow</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, long iterations=1)</td></tr>
 <tr class="memdesc:a8927e2dc64af30c6f619a93678332093"><td class="mdescLeft">&#160;</td><td class="mdescRight">shift the \( i^{th} \) row <code>iterations</code> times.  <a href="#a8927e2dc64af30c6f619a93678332093">More...</a><br /></td></tr>
 <tr class="separator:a8927e2dc64af30c6f619a93678332093"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae039695bf1464be6563f81d6e0c502d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ae039695bf1464be6563f81d6e0c502d8">shiftCol</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j, long iterations=1)</td></tr>
+<tr class="memitem:ae039695bf1464be6563f81d6e0c502d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ae039695bf1464be6563f81d6e0c502d8">shiftCol</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j, long iterations=1)</td></tr>
 <tr class="memdesc:ae039695bf1464be6563f81d6e0c502d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">shift the \( j^{th} \) column <code>iterations</code> times.  <a href="#ae039695bf1464be6563f81d6e0c502d8">More...</a><br /></td></tr>
 <tr class="separator:ae039695bf1464be6563f81d6e0c502d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Algebra</div></td></tr>
@@ -254,15 +254,15 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Access to components and sub-matrix</p>
 <p>C++ function operator are here used to give intuitive access to the matrix. </p>
 </div></td></tr>
-<tr class="memitem:a437ba12a96e979b50f6d579400b20f6f"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a437ba12a96e979b50f6d579400b20f6f">operator()</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j)</td></tr>
+<tr class="memitem:a437ba12a96e979b50f6d579400b20f6f"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a437ba12a96e979b50f6d579400b20f6f">operator()</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j)</td></tr>
 <tr class="memdesc:a437ba12a96e979b50f6d579400b20f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bi-dimensional access operator.  <a href="#a437ba12a96e979b50f6d579400b20f6f">More...</a><br /></td></tr>
 <tr class="separator:a437ba12a96e979b50f6d579400b20f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa512abe782fac9e6b0d2eb1167df4133"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa512abe782fac9e6b0d2eb1167df4133">operator()</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
+<tr class="memitem:aa512abe782fac9e6b0d2eb1167df4133"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa512abe782fac9e6b0d2eb1167df4133">operator()</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
 <tr class="separator:aa512abe782fac9e6b0d2eb1167df4133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab99139270be6ffff19fdf3b5765f321c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ab99139270be6ffff19fdf3b5765f321c">operator()</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2) const</td></tr>
+<tr class="memitem:ab99139270be6ffff19fdf3b5765f321c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ab99139270be6ffff19fdf3b5765f321c">operator()</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2) const</td></tr>
 <tr class="memdesc:ab99139270be6ffff19fdf3b5765f321c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manipulate sub-matrix.  <a href="#ab99139270be6ffff19fdf3b5765f321c">More...</a><br /></td></tr>
 <tr class="separator:ab99139270be6ffff19fdf3b5765f321c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f7e5d337efe283e3f88716bd2205d55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a5f7e5d337efe283e3f88716bd2205d55">operator()</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2)</td></tr>
+<tr class="memitem:a5f7e5d337efe283e3f88716bd2205d55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a5f7e5d337efe283e3f88716bd2205d55">operator()</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2)</td></tr>
 <tr class="memdesc:a5f7e5d337efe283e3f88716bd2205d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manipulate sub-matrix.  <a href="#a5f7e5d337efe283e3f88716bd2205d55">More...</a><br /></td></tr>
 <tr class="separator:a5f7e5d337efe283e3f88716bd2205d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_n_vector"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_n_vector')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_n_vector.html">NVector&lt; T &gt;</a></td></tr>
@@ -272,13 +272,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a44c7b132c668c2aac890b66fe7ab0262 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a44c7b132c668c2aac890b66fe7ab0262">NVector</a> (std::initializer_list&lt; T &gt; list)</td></tr>
 <tr class="memdesc:a44c7b132c668c2aac890b66fe7ab0262 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector using an initializer list <code>{}</code>.  <a href="class_n_vector.html#a44c7b132c668c2aac890b66fe7ab0262">More...</a><br /></td></tr>
 <tr class="separator:a44c7b132c668c2aac890b66fe7ab0262 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58eee5f012e4e563d477788051fc7f1d inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a58eee5f012e4e563d477788051fc7f1d">NVector</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>=0)</td></tr>
+<tr class="memitem:a58eee5f012e4e563d477788051fc7f1d inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a58eee5f012e4e563d477788051fc7f1d">NVector</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>=0)</td></tr>
 <tr class="memdesc:a58eee5f012e4e563d477788051fc7f1d inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector of a given size.  <a href="class_n_vector.html#a58eee5f012e4e563d477788051fc7f1d">More...</a><br /></td></tr>
 <tr class="separator:a58eee5f012e4e563d477788051fc7f1d inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f648402b0fc9006ce9ced7ca647e600 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a7f648402b0fc9006ce9ced7ca647e600">NVector</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u)</td></tr>
 <tr class="memdesc:a7f648402b0fc9006ce9ced7ca647e600 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector by using <code><a class="el" href="class_n_vector.html#a67128d2ff536b8ccd7a95cb680bd0431">copy()</a></code> method.  <a href="class_n_vector.html#a7f648402b0fc9006ce9ced7ca647e600">More...</a><br /></td></tr>
 <tr class="separator:a7f648402b0fc9006ce9ced7ca647e600 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7589027db20509ac4d93490bb9a1979a inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a> () const</td></tr>
+<tr class="memitem:a7589027db20509ac4d93490bb9a1979a inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a> () const</td></tr>
 <tr class="memdesc:a7589027db20509ac4d93490bb9a1979a inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the vector.  <a href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">More...</a><br /></td></tr>
 <tr class="separator:a7589027db20509ac4d93490bb9a1979a inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa99d9fea7e30357df42f736013506fe1 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#aa99d9fea7e30357df42f736013506fe1">array</a> () const</td></tr>
@@ -297,10 +297,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab81d84a1fce6b8647e5fd4e34ec90db7 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ab81d84a1fce6b8647e5fd4e34ec90db7">min</a> () const</td></tr>
 <tr class="memdesc:ab81d84a1fce6b8647e5fd4e34ec90db7 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum of the coordinates of the vector \( (x_0, x_1, .. x_{(n-1)}) \).  <a href="class_n_vector.html#ab81d84a1fce6b8647e5fd4e34ec90db7">More...</a><br /></td></tr>
 <tr class="separator:ab81d84a1fce6b8647e5fd4e34ec90db7 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0521dd8dc4af0e9167770f85084d2d6 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ab0521dd8dc4af0e9167770f85084d2d6">maxIndex</a> () const</td></tr>
+<tr class="memitem:ab0521dd8dc4af0e9167770f85084d2d6 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ab0521dd8dc4af0e9167770f85084d2d6">maxIndex</a> () const</td></tr>
 <tr class="memdesc:ab0521dd8dc4af0e9167770f85084d2d6 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of maximum of the coordinates of vector \( (x_0, x_1, ..., x_{(n-1)}) \).  <a href="class_n_vector.html#ab0521dd8dc4af0e9167770f85084d2d6">More...</a><br /></td></tr>
 <tr class="separator:ab0521dd8dc4af0e9167770f85084d2d6 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea9d0e6c8b20628b5e09f8194484a8d3 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#aea9d0e6c8b20628b5e09f8194484a8d3">minIndex</a> () const</td></tr>
+<tr class="memitem:aea9d0e6c8b20628b5e09f8194484a8d3 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#aea9d0e6c8b20628b5e09f8194484a8d3">minIndex</a> () const</td></tr>
 <tr class="memdesc:aea9d0e6c8b20628b5e09f8194484a8d3 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of minimum of the coordinates of vector \( (x_0, x_1, ..., x_{(n-1)}) \).  <a href="class_n_vector.html#aea9d0e6c8b20628b5e09f8194484a8d3">More...</a><br /></td></tr>
 <tr class="separator:aea9d0e6c8b20628b5e09f8194484a8d3 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d77a1ff10574ae5ca33fb3c11a087e2 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a2d77a1ff10574ae5ca33fb3c11a087e2">maxAbs</a> () const</td></tr>
@@ -309,13 +309,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a857878b360cede51eb87924cd46d5a54 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a857878b360cede51eb87924cd46d5a54">minAbs</a> () const</td></tr>
 <tr class="memdesc:a857878b360cede51eb87924cd46d5a54 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum of the coordinates of the vector \( (|x_0|, |x_1|, ..., |x_{(n-1)}|) \).  <a href="class_n_vector.html#a857878b360cede51eb87924cd46d5a54">More...</a><br /></td></tr>
 <tr class="separator:a857878b360cede51eb87924cd46d5a54 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7d7d39b68956da9018684a3706a70c2 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ac7d7d39b68956da9018684a3706a70c2">maxAbsIndex</a> () const</td></tr>
+<tr class="memitem:ac7d7d39b68956da9018684a3706a70c2 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ac7d7d39b68956da9018684a3706a70c2">maxAbsIndex</a> () const</td></tr>
 <tr class="memdesc:ac7d7d39b68956da9018684a3706a70c2 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of maximum of the coordinates of vector \( (|x_0|, |x_1|, ..., |x_{(n-1)}|) \).  <a href="class_n_vector.html#ac7d7d39b68956da9018684a3706a70c2">More...</a><br /></td></tr>
 <tr class="separator:ac7d7d39b68956da9018684a3706a70c2 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9147431ee1f9c5a25c6e0b2f793c40 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8b9147431ee1f9c5a25c6e0b2f793c40">minAbsIndex</a> () const</td></tr>
+<tr class="memitem:a8b9147431ee1f9c5a25c6e0b2f793c40 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8b9147431ee1f9c5a25c6e0b2f793c40">minAbsIndex</a> () const</td></tr>
 <tr class="memdesc:a8b9147431ee1f9c5a25c6e0b2f793c40 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of minimum of the coordinates of vector \( (|x_0|, |x_1|, ..., |x_{(n-1)}|) \).  <a href="class_n_vector.html#a8b9147431ee1f9c5a25c6e0b2f793c40">More...</a><br /></td></tr>
 <tr class="separator:a8b9147431ee1f9c5a25c6e0b2f793c40 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ea2e2cffa2c3053d835d05a571dac88 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8ea2e2cffa2c3053d835d05a571dac88">swap</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
+<tr class="memitem:a8ea2e2cffa2c3053d835d05a571dac88 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8ea2e2cffa2c3053d835d05a571dac88">swap</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
 <tr class="memdesc:a8ea2e2cffa2c3053d835d05a571dac88 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permutation of two elements.  <a href="class_n_vector.html#a8ea2e2cffa2c3053d835d05a571dac88">More...</a><br /></td></tr>
 <tr class="separator:a8ea2e2cffa2c3053d835d05a571dac88 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabe8585ef2659ce3fa7872c2b96e3b20 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#aabe8585ef2659ce3fa7872c2b96e3b20">shift</a> (long iterations)</td></tr>
@@ -329,10 +329,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3ed21b63fd97af9c63bfacb372f733a5 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51d4a2c505c1434f45e8f80d1d77eda5 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a51d4a2c505c1434f45e8f80d1d77eda5">operator()</a> (long k) const</td></tr>
 <tr class="separator:a51d4a2c505c1434f45e8f80d1d77eda5 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8778fdc3c0a27a7930fda3f2a7155e96 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8778fdc3c0a27a7930fda3f2a7155e96">operator()</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2) const</td></tr>
+<tr class="memitem:a8778fdc3c0a27a7930fda3f2a7155e96 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8778fdc3c0a27a7930fda3f2a7155e96">operator()</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2) const</td></tr>
 <tr class="memdesc:a8778fdc3c0a27a7930fda3f2a7155e96 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manipulate sub-vector.  <a href="class_n_vector.html#a8778fdc3c0a27a7930fda3f2a7155e96">More...</a><br /></td></tr>
 <tr class="separator:a8778fdc3c0a27a7930fda3f2a7155e96 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98f95a46c34ceaf355e86e9dad9863e1 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a98f95a46c34ceaf355e86e9dad9863e1">operator()</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
+<tr class="memitem:a98f95a46c34ceaf355e86e9dad9863e1 inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a98f95a46c34ceaf355e86e9dad9863e1">operator()</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
 <tr class="memdesc:a98f95a46c34ceaf355e86e9dad9863e1 inherit pub_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manipulate sub-vector.  <a href="class_n_vector.html#a98f95a46c34ceaf355e86e9dad9863e1">More...</a><br /></td></tr>
 <tr class="separator:a98f95a46c34ceaf355e86e9dad9863e1 inherit pub_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae71ea78f955c0512a1dd005c335f956a inherit pub_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ae71ea78f955c0512a1dd005c335f956a">begin</a> ()</td></tr>
@@ -346,38 +346,38 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a701c8f60b4b8b727fccb063cd6f0784b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a701c8f60b4b8b727fccb063cd6f0784b">zeros</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
+<tr class="memitem:a701c8f60b4b8b727fccb063cd6f0784b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a701c8f60b4b8b727fccb063cd6f0784b">zeros</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
 <tr class="memdesc:a701c8f60b4b8b727fccb063cd6f0784b"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( n \times p \) matrix filled with <code>0</code>.  <a href="#a701c8f60b4b8b727fccb063cd6f0784b">More...</a><br /></td></tr>
 <tr class="separator:a701c8f60b4b8b727fccb063cd6f0784b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6509ca1d29b8b87f2d437883f48a40c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a6509ca1d29b8b87f2d437883f48a40c9">ones</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
+<tr class="memitem:a6509ca1d29b8b87f2d437883f48a40c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a6509ca1d29b8b87f2d437883f48a40c9">ones</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
 <tr class="memdesc:a6509ca1d29b8b87f2d437883f48a40c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( n \times p \) matrix filled with <code>1</code>.  <a href="#a6509ca1d29b8b87f2d437883f48a40c9">More...</a><br /></td></tr>
 <tr class="separator:a6509ca1d29b8b87f2d437883f48a40c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda10c35b77af6785cb5cf069ff099e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#abda10c35b77af6785cb5cf069ff099e7">canonical</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
+<tr class="memitem:abda10c35b77af6785cb5cf069ff099e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#abda10c35b77af6785cb5cf069ff099e7">canonical</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>=0)</td></tr>
 <tr class="memdesc:abda10c35b77af6785cb5cf069ff099e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( n \times p \) canonical matrix  <a href="#abda10c35b77af6785cb5cf069ff099e7">More...</a><br /></td></tr>
 <tr class="separator:abda10c35b77af6785cb5cf069ff099e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38961696b973ca0ff6ac098580c6974f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a38961696b973ca0ff6ac098580c6974f">eye</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
+<tr class="memitem:a38961696b973ca0ff6ac098580c6974f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a38961696b973ca0ff6ac098580c6974f">eye</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
 <tr class="memdesc:a38961696b973ca0ff6ac098580c6974f"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( n^{th} \) order identity matrix  <a href="#a38961696b973ca0ff6ac098580c6974f">More...</a><br /></td></tr>
 <tr class="separator:a38961696b973ca0ff6ac098580c6974f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae73ef1ba99fe04c35af30adc3bfbd1dc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ae73ef1ba99fe04c35af30adc3bfbd1dc">diag</a> (const std::vector&lt; T &gt; &amp;data, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
+<tr class="memitem:ae73ef1ba99fe04c35af30adc3bfbd1dc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ae73ef1ba99fe04c35af30adc3bfbd1dc">diag</a> (const std::vector&lt; T &gt; &amp;data, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
 <tr class="memdesc:ae73ef1ba99fe04c35af30adc3bfbd1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">diagonal \( n^{th} \) order diagonal matrix filled with data array.  <a href="#ae73ef1ba99fe04c35af30adc3bfbd1dc">More...</a><br /></td></tr>
 <tr class="separator:ae73ef1ba99fe04c35af30adc3bfbd1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3195b8dd4a279c3018122c3053997f8c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3195b8dd4a279c3018122c3053997f8c">scalar</a> (T s, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
+<tr class="memitem:a3195b8dd4a279c3018122c3053997f8c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3195b8dd4a279c3018122c3053997f8c">scalar</a> (T s, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
 <tr class="memdesc:a3195b8dd4a279c3018122c3053997f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">a scalar \( n^{th} \) order matrix with <code>s</code> value  <a href="#a3195b8dd4a279c3018122c3053997f8c">More...</a><br /></td></tr>
 <tr class="separator:a3195b8dd4a279c3018122c3053997f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16aa6a18c33005300049ab1a39cbfbc2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a16aa6a18c33005300049ab1a39cbfbc2">ndiag</a> (const std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt; &amp;data)</td></tr>
 <tr class="memdesc:a16aa6a18c33005300049ab1a39cbfbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a square matrix matrix by giving diagonal data.  <a href="#a16aa6a18c33005300049ab1a39cbfbc2">More...</a><br /></td></tr>
 <tr class="separator:a16aa6a18c33005300049ab1a39cbfbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2540f387990e3db6551bd88bc5d43d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa2540f387990e3db6551bd88bc5d43d9">nscalar</a> (const std::vector&lt; T &gt; &amp;scalars, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
+<tr class="memitem:aa2540f387990e3db6551bd88bc5d43d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa2540f387990e3db6551bd88bc5d43d9">nscalar</a> (const std::vector&lt; T &gt; &amp;scalars, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>)</td></tr>
 <tr class="memdesc:aa2540f387990e3db6551bd88bc5d43d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generalization of scalar matrix with multiple diagonal.  <a href="#aa2540f387990e3db6551bd88bc5d43d9">More...</a><br /></td></tr>
 <tr class="separator:aa2540f387990e3db6551bd88bc5d43d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_n_vector"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_n_vector')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_n_vector.html">NVector&lt; T &gt;</a></td></tr>
-<tr class="memitem:a6253cef3c39dd9d388bbf7d17069bc51 inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a6253cef3c39dd9d388bbf7d17069bc51">zeros</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
+<tr class="memitem:a6253cef3c39dd9d388bbf7d17069bc51 inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a6253cef3c39dd9d388bbf7d17069bc51">zeros</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
 <tr class="separator:a6253cef3c39dd9d388bbf7d17069bc51 inherit pub_static_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb6358454a8dfaac4963352843b17bbc inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#afb6358454a8dfaac4963352843b17bbc">ones</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
+<tr class="memitem:afb6358454a8dfaac4963352843b17bbc inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#afb6358454a8dfaac4963352843b17bbc">ones</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
 <tr class="separator:afb6358454a8dfaac4963352843b17bbc inherit pub_static_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6abbdea5f58e6887367860aa0f619d inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#add6abbdea5f58e6887367860aa0f619d">scalar</a> (T s, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
+<tr class="memitem:add6abbdea5f58e6887367860aa0f619d inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#add6abbdea5f58e6887367860aa0f619d">scalar</a> (T s, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
 <tr class="separator:add6abbdea5f58e6887367860aa0f619d inherit pub_static_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37b19eb888023546363e952cd39ea3a1 inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a37b19eb888023546363e952cd39ea3a1">canonical</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
+<tr class="memitem:a37b19eb888023546363e952cd39ea3a1 inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a37b19eb888023546363e952cd39ea3a1">canonical</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_vector.html#a7589027db20509ac4d93490bb9a1979a">dim</a>)</td></tr>
 <tr class="separator:a37b19eb888023546363e952cd39ea3a1 inherit pub_static_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0f5749405554fc23a0af67ad4f9e9e5 inherit pub_static_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#af0f5749405554fc23a0af67ad4f9e9e5">sum</a> (const std::vector&lt; <a class="el" href="class_n_vector.html">NVector</a> &gt; &amp;vectors)</td></tr>
 <tr class="memdesc:af0f5749405554fc23a0af67ad4f9e9e5 inherit pub_static_methods_class_n_vector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum of multiples vectors.  <a href="class_n_vector.html#af0f5749405554fc23a0af67ad4f9e9e5">More...</a><br /></td></tr>
@@ -388,17 +388,17 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab8c664f1aa435b8b1bb5e1fdd293423f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ab8c664f1aa435b8b1bb5e1fdd293423f">NPMatrix</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2=0)</td></tr>
+<tr class="memitem:ab8c664f1aa435b8b1bb5e1fdd293423f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ab8c664f1aa435b8b1bb5e1fdd293423f">NPMatrix</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2=0)</td></tr>
 <tr class="separator:ab8c664f1aa435b8b1bb5e1fdd293423f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafbf2155265a070f3ae418828e40359e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aafbf2155265a070f3ae418828e40359e">swap</a> (Parts element, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
+<tr class="memitem:aafbf2155265a070f3ae418828e40359e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aafbf2155265a070f3ae418828e40359e">swap</a> (Parts element, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
 <tr class="separator:aafbf2155265a070f3ae418828e40359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83118d4efa26372fd12bd0a2ce77f155"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a83118d4efa26372fd12bd0a2ce77f155">shift</a> (Parts element, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k, long iterations)</td></tr>
+<tr class="memitem:a83118d4efa26372fd12bd0a2ce77f155"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a83118d4efa26372fd12bd0a2ce77f155">shift</a> (Parts element, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k, long iterations)</td></tr>
 <tr class="separator:a83118d4efa26372fd12bd0a2ce77f155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bff3c9956c688973307fd9c627e0ebd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a4bff3c9956c688973307fd9c627e0ebd">maxAbsIndex</a> (Parts element, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> r) const</td></tr>
+<tr class="memitem:a4bff3c9956c688973307fd9c627e0ebd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a4bff3c9956c688973307fd9c627e0ebd">maxAbsIndex</a> (Parts element, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> r) const</td></tr>
 <tr class="separator:a4bff3c9956c688973307fd9c627e0ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a332d3f82121d71e1e349aa450af39207"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a332d3f82121d71e1e349aa450af39207">maxAbsIndexRow</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> r=0) const</td></tr>
+<tr class="memitem:a332d3f82121d71e1e349aa450af39207"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a332d3f82121d71e1e349aa450af39207">maxAbsIndexRow</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> r=0) const</td></tr>
 <tr class="separator:a332d3f82121d71e1e349aa450af39207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5a2c3d646df900367ad91450d1ef33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a2b5a2c3d646df900367ad91450d1ef33">maxAbsIndexCol</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> r=0) const</td></tr>
+<tr class="memitem:a2b5a2c3d646df900367ad91450d1ef33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a2b5a2c3d646df900367ad91450d1ef33">maxAbsIndexCol</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> r=0) const</td></tr>
 <tr class="separator:a2b5a2c3d646df900367ad91450d1ef33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bb14c131409b94a8b52ec6a932098e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a8bb14c131409b94a8b52ec6a932098e5">vectorProduct</a> (<a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u) const</td></tr>
 <tr class="separator:a8bb14c131409b94a8b52ec6a932098e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -432,15 +432,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ad6c14f6a92b15709ddee8213067c8955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbee6873ebebfb5080a9719e4154f638"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#abbee6873ebebfb5080a9719e4154f638">cleanBoth</a> (const <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;m) const</td></tr>
 <tr class="separator:abbee6873ebebfb5080a9719e4154f638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc5221cb1f5d1e1919801a0ff32751fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#afc5221cb1f5d1e1919801a0ff32751fe">isValidRowIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i) const</td></tr>
+<tr class="memitem:afc5221cb1f5d1e1919801a0ff32751fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#afc5221cb1f5d1e1919801a0ff32751fe">isValidRowIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i) const</td></tr>
 <tr class="separator:afc5221cb1f5d1e1919801a0ff32751fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f19d6c9259ef6e0a919ea7ad85a5a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ab3f19d6c9259ef6e0a919ea7ad85a5a1">isValidColIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
+<tr class="memitem:ab3f19d6c9259ef6e0a919ea7ad85a5a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ab3f19d6c9259ef6e0a919ea7ad85a5a1">isValidColIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
 <tr class="separator:ab3f19d6c9259ef6e0a919ea7ad85a5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d584ab75f97711997f39ffefef1f78b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3d584ab75f97711997f39ffefef1f78b">isValidIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
+<tr class="memitem:a3d584ab75f97711997f39ffefef1f78b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3d584ab75f97711997f39ffefef1f78b">isValidIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
 <tr class="separator:a3d584ab75f97711997f39ffefef1f78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c1a788260180b0df60b8d049d121859"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a0c1a788260180b0df60b8d049d121859">isBetweenI12</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i) const</td></tr>
+<tr class="memitem:a0c1a788260180b0df60b8d049d121859"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a0c1a788260180b0df60b8d049d121859">isBetweenI12</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i) const</td></tr>
 <tr class="separator:a0c1a788260180b0df60b8d049d121859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb0ca9af7c136d9ffa4d27226c922591"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aeb0ca9af7c136d9ffa4d27226c922591">isBetweenJ12</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
+<tr class="memitem:aeb0ca9af7c136d9ffa4d27226c922591"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aeb0ca9af7c136d9ffa4d27226c922591">isBetweenJ12</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
 <tr class="separator:aeb0ca9af7c136d9ffa4d27226c922591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748282f2d472970dbd20e3b2f6d62032"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a748282f2d472970dbd20e3b2f6d62032">matchSizeForProduct</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u) const</td></tr>
 <tr class="separator:a748282f2d472970dbd20e3b2f6d62032"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -456,13 +456,13 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ad2420de13cf39828daf36fd74aea9d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea56ed6b8852d53ddedce7d9f0ea5a08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aea56ed6b8852d53ddedce7d9f0ea5a08">copy</a> (const vector&lt; vector&lt; T &gt;&gt; &amp;data)</td></tr>
 <tr class="separator:aea56ed6b8852d53ddedce7d9f0ea5a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1edc980b44c5b898ba3feb7d4f5ab625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a1edc980b44c5b898ba3feb7d4f5ab625">vectorIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
+<tr class="memitem:a1edc980b44c5b898ba3feb7d4f5ab625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a1edc980b44c5b898ba3feb7d4f5ab625">vectorIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j) const</td></tr>
 <tr class="separator:a1edc980b44c5b898ba3feb7d4f5ab625"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f30ca3523d088186e8320f9e21b772"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa8f30ca3523d088186e8320f9e21b772">getRowFromVectorIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
+<tr class="memitem:aa8f30ca3523d088186e8320f9e21b772"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa8f30ca3523d088186e8320f9e21b772">getRowFromVectorIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
 <tr class="separator:aa8f30ca3523d088186e8320f9e21b772"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ef7e9e257ba6119e369a9a3c633d35d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3ef7e9e257ba6119e369a9a3c633d35d">getColFromVectorIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
+<tr class="memitem:a3ef7e9e257ba6119e369a9a3c633d35d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a3ef7e9e257ba6119e369a9a3c633d35d">getColFromVectorIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
 <tr class="separator:a3ef7e9e257ba6119e369a9a3c633d35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1af1b395e03d5009666214eb7f954afb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a1af1b395e03d5009666214eb7f954afb">subMatrix</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2=0, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>) const</td></tr>
+<tr class="memitem:a1af1b395e03d5009666214eb7f954afb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a1af1b395e03d5009666214eb7f954afb">subMatrix</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i1=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j1=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> i2=0, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> j2=<a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a>) const</td></tr>
 <tr class="separator:a1af1b395e03d5009666214eb7f954afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8165acb25f0b56c909cb4995824d3f76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a8165acb25f0b56c909cb4995824d3f76">setSubMatrix</a> (const <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;m)</td></tr>
 <tr class="separator:a8165acb25f0b56c909cb4995824d3f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -471,7 +471,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7e0cf952e89982bda492df887945ef9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a7e0cf952e89982bda492df887945ef9c">forEach</a> (T s, const function&lt; void(T &amp;, T)&gt; &amp;binary_op) override</td></tr>
 <tr class="separator:a7e0cf952e89982bda492df887945ef9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_n_vector"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_n_vector')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_n_vector.html">NVector&lt; T &gt;</a></td></tr>
-<tr class="memitem:a402111a5a467efd5741e6a17fbd5c903 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a402111a5a467efd5741e6a17fbd5c903">NVector</a> (const std::vector&lt; T &gt; &amp;data, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
+<tr class="memitem:a402111a5a467efd5741e6a17fbd5c903 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a402111a5a467efd5741e6a17fbd5c903">NVector</a> (const std::vector&lt; T &gt; &amp;data, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2)</td></tr>
 <tr class="separator:a402111a5a467efd5741e6a17fbd5c903 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82d1863c00d57ccfed9e2d74a8d1bfd5 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a82d1863c00d57ccfed9e2d74a8d1bfd5">add</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u)</td></tr>
 <tr class="separator:a82d1863c00d57ccfed9e2d74a8d1bfd5 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -483,9 +483,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a99c134693de1e2b5f9d8f524d9cfd07a inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac9fc2b4c051f5011398a9fad6f7d452 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#aac9fc2b4c051f5011398a9fad6f7d452">distance</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u) const</td></tr>
 <tr class="separator:aac9fc2b4c051f5011398a9fad6f7d452 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad993b3d62002abc9d89ebf053003341d inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ad993b3d62002abc9d89ebf053003341d">isValidIndex</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
+<tr class="memitem:ad993b3d62002abc9d89ebf053003341d inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#ad993b3d62002abc9d89ebf053003341d">isValidIndex</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
 <tr class="separator:ad993b3d62002abc9d89ebf053003341d inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c23df071f027cb26f1af69910159aa5 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a5c23df071f027cb26f1af69910159aa5">isBetweenK12</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
+<tr class="memitem:a5c23df071f027cb26f1af69910159aa5 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a5c23df071f027cb26f1af69910159aa5">isBetweenK12</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k) const</td></tr>
 <tr class="separator:a5c23df071f027cb26f1af69910159aa5 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2566f587ad233770ada3aeae0481e1 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a6d2566f587ad233770ada3aeae0481e1">isNull</a> () const</td></tr>
 <tr class="separator:a6d2566f587ad233770ada3aeae0481e1 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -499,40 +499,40 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:af5cd7c64bfd8eb2335f61d698d6dbf21 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67128d2ff536b8ccd7a95cb680bd0431 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a67128d2ff536b8ccd7a95cb680bd0431">copy</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u)</td></tr>
 <tr class="separator:a67128d2ff536b8ccd7a95cb680bd0431 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f24d84b8dafde55ba650fd02c188c06 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8f24d84b8dafde55ba650fd02c188c06">subVector</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2) const</td></tr>
+<tr class="memitem:a8f24d84b8dafde55ba650fd02c188c06 inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a8f24d84b8dafde55ba650fd02c188c06">subVector</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k1, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> k2) const</td></tr>
 <tr class="separator:a8f24d84b8dafde55ba650fd02c188c06 inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fd08a3790831a9ada035f720cb0b11f inherit pro_methods_class_n_vector"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a6fd08a3790831a9ada035f720cb0b11f">setSubVector</a> (const <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &amp;u)</td></tr>
 <tr class="separator:a6fd08a3790831a9ada035f720cb0b11f inherit pro_methods_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a761d47321d5f60e32cdb55ffe98eaf2f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a761d47321d5f60e32cdb55ffe98eaf2f">pIfNotNull</a> (<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>)</td></tr>
+<tr class="memitem:a761d47321d5f60e32cdb55ffe98eaf2f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a761d47321d5f60e32cdb55ffe98eaf2f">pIfNotNull</a> (<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d">n</a>, <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html#a3beee8acb5babf62d2b4f212ac5d18e8">p</a>)</td></tr>
 <tr class="separator:a761d47321d5f60e32cdb55ffe98eaf2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a6ead143a6f35fc3247c26c2442841ba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a6ead143a6f35fc3247c26c2442841ba9">_n</a> {}</td></tr>
+<tr class="memitem:a6ead143a6f35fc3247c26c2442841ba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a6ead143a6f35fc3247c26c2442841ba9">_n</a> {}</td></tr>
 <tr class="separator:a6ead143a6f35fc3247c26c2442841ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1571de5d091b0b2e71fd665da3eb7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa1571de5d091b0b2e71fd665da3eb7e1">_p</a> {}</td></tr>
+<tr class="memitem:aa1571de5d091b0b2e71fd665da3eb7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa1571de5d091b0b2e71fd665da3eb7e1">_p</a> {}</td></tr>
 <tr class="separator:aa1571de5d091b0b2e71fd665da3eb7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cae48bb6660c2d00136ce8600d0fc28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a0cae48bb6660c2d00136ce8600d0fc28">_i1</a> {}</td></tr>
+<tr class="memitem:a0cae48bb6660c2d00136ce8600d0fc28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a0cae48bb6660c2d00136ce8600d0fc28">_i1</a> {}</td></tr>
 <tr class="separator:a0cae48bb6660c2d00136ce8600d0fc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa95383d682a70d44dc268164c46c2e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa95383d682a70d44dc268164c46c2e1f">_j1</a> {}</td></tr>
+<tr class="memitem:aa95383d682a70d44dc268164c46c2e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aa95383d682a70d44dc268164c46c2e1f">_j1</a> {}</td></tr>
 <tr class="separator:aa95383d682a70d44dc268164c46c2e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a232044cf8aba4ad59c69c465822aed59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a232044cf8aba4ad59c69c465822aed59">_i2</a> {}</td></tr>
+<tr class="memitem:a232044cf8aba4ad59c69c465822aed59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a232044cf8aba4ad59c69c465822aed59">_i2</a> {}</td></tr>
 <tr class="separator:a232044cf8aba4ad59c69c465822aed59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5307914390ebfd2e7760146bd10d8d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ad5307914390ebfd2e7760146bd10d8d4">_j2</a> {}</td></tr>
+<tr class="memitem:ad5307914390ebfd2e7760146bd10d8d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#ad5307914390ebfd2e7760146bd10d8d4">_j2</a> {}</td></tr>
 <tr class="separator:ad5307914390ebfd2e7760146bd10d8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef296b7e9a4688acd83e0cf2d9e5dfef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#aef296b7e9a4688acd83e0cf2d9e5dfef">_a</a></td></tr>
 <tr class="memdesc:aef296b7e9a4688acd83e0cf2d9e5dfef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix \( A = LU \) where \( PA = LU \) = this.  <a href="#aef296b7e9a4688acd83e0cf2d9e5dfef">More...</a><br /></td></tr>
 <tr class="separator:aef296b7e9a4688acd83e0cf2d9e5dfef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adae969b094e97895a62412765b50fb6f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#adae969b094e97895a62412765b50fb6f">_perm</a> {}</td></tr>
+<tr class="memitem:adae969b094e97895a62412765b50fb6f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#adae969b094e97895a62412765b50fb6f">_perm</a> {}</td></tr>
 <tr class="memdesc:adae969b094e97895a62412765b50fb6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">permutation vector \( P \) such as \( PA = LU \).  <a href="#adae969b094e97895a62412765b50fb6f">More...</a><br /></td></tr>
 <tr class="separator:adae969b094e97895a62412765b50fb6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_n_vector"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_n_vector')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_n_vector.html">NVector&lt; T &gt;</a></td></tr>
-<tr class="memitem:a355ee9ef9436669e52d0ff4538f85e27 inherit pro_attribs_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a355ee9ef9436669e52d0ff4538f85e27">_k1</a></td></tr>
+<tr class="memitem:a355ee9ef9436669e52d0ff4538f85e27 inherit pro_attribs_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a355ee9ef9436669e52d0ff4538f85e27">_k1</a></td></tr>
 <tr class="separator:a355ee9ef9436669e52d0ff4538f85e27 inherit pro_attribs_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6591512e0566996c42f3d74c8174385e inherit pro_attribs_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a6591512e0566996c42f3d74c8174385e">_k2</a></td></tr>
+<tr class="memitem:a6591512e0566996c42f3d74c8174385e inherit pro_attribs_class_n_vector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_vector.html#a6591512e0566996c42f3d74c8174385e">_k2</a></td></tr>
 <tr class="separator:a6591512e0566996c42f3d74c8174385e inherit pro_attribs_class_n_vector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -545,7 +545,7 @@ Friends</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Algebraical Operators</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp3551c228ed792030edc3367553a30343"></a>Commons algebraical operations for matrix</p>
-<p>New algebraical operations are documented here. the operations that already exist in <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code> are implemented the same way as they are in <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code>. </p>
+<p>New algebraical operations are documented here. the operations that already exist in <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code> are implemented the same way as they are in <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code>. </p>
 </td></tr>
 <tr class="memitem:a80155cd4a89df4bffcce2e67dad5d163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_n_p_matrix.html#a80155cd4a89df4bffcce2e67dad5d163">operator+=</a> (const <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp;m)</td></tr>
 <tr class="separator:a80155cd4a89df4bffcce2e67dad5d163"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -598,10 +598,11 @@ Algebraical Operators</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
 class NPMatrix&lt; T &gt;</h3>
 
-<p>A <code><a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a>&lt;T&gt;</code> inherits from <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>. It's a representation of matrices of arbitrary size in a template field <code>T</code>. </p>
+<p>Representation of dense matrices of arbitrary size in a template field <code>T</code>. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Dahoux Sami 2018 All rights reserved. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>04/05/2018 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>samiBendou</dd></dl>
-<p>The matrix components are stored in a linear form using the index transformation \( k = p i + j \). The underlying <code>std::vector&lt;T&gt;</code> is represented as <code>t[p * i + j]</code>. The underlying <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code> is \( (A_{00}, A_{01}, ..., A_{0(P - 1)}, A_{10}, ..., A_{1(P - 1)}, ..., A_{(N-1)0}, ...) \).</p>
+<p>The matrix components are stored in a linear form using the index transformation \( k = p i + j \). The underlying <code>std::vector&lt;T&gt;</code> is represented as <code>t[p * i + j]</code>. The underlying <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code> is \( (A_{00}, A_{01}, ..., A_{0(P - 1)}, A_{10}, ..., A_{1(P - 1)}, ..., A_{(N-1)0}, ...) \).</p>
 <h1><a class="anchor" id="Features"></a>
 Features</h1>
 <p>Featuring algebraical operations such as matrix product, linear map, Gauss Jordan elimination. setters &amp; getters, swappers and classic matrix generators such as ones, zeros...</p>
@@ -609,12 +610,12 @@ Features</h1>
 LU Decomposition</h2>
 <p>The \( LU \) decomposition is stored as a property if the matrix is inversible. It is auto-updated only when needed. It allow to compute inverse, determinant and other inversion related operations more efficiently.</p>
 <h2><a class="anchor" id="FuncOp"></a>
-Sub-range operators</h2>
-<p>The <code><a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a></code> class provides a function operator similar to <a class="el" href="class_n_vector.html#FuncOpVec">Sub-range operators</a></p>
+Function Operator</h2>
+<p>The <code><a class="el" href="class_n_p_matrix.html" title="Representation of dense matrices of arbitrary size in a template field T.">NPMatrix</a></code> class provides a function operator similar to <a class="el" href="class_n_vector.html#FuncOpVec">Sub-range operators</a></p>
 <h1><a class="anchor" id="Definitions"></a>
 Definitions</h1>
 <p>All along this page we will use the following definitions :</p><ul>
-<li><code>a</code>/<code>b</code>/<code>m</code>: A given <code><a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a></code>. The components are noted are noted \( A_{ij} \). By default, \( A \) denote <code>this</code> matrix.</li>
+<li><code>a</code>/<code>b</code>/<code>m</code>: A given <code><a class="el" href="class_n_p_matrix.html" title="Representation of dense matrices of arbitrary size in a template field T.">NPMatrix</a></code>. The components are noted are noted \( A_{ij} \). By default, \( A \) denote <code>this</code> matrix.</li>
 <li><code>R</code> : Row of a matrix</li>
 <li><code>C</code> : Col of a matrix</li>
 <li><code>n</code> : Number of rows</li>
@@ -638,13 +639,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::<a class="el" href="class_n_p_matrix.html">NPMatrix</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>p</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -730,7 +731,7 @@ template&lt;typename T&gt; </div>
 <p>Construct a matrix by using <code><a class="el" href="class_n_p_matrix.html#ad2420de13cf39828daf36fd74aea9d2d">copy()</a></code> method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td><code><a class="el" href="class_n_p_matrix.html" title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a></code> source. </td></tr>
+    <tr><td class="paramname">m</td><td><code><a class="el" href="class_n_p_matrix.html" title="Representation of dense matrices of arbitrary size in a template field T.">NPMatrix</a></code> source. </td></tr>
   </table>
   </dd>
 </dl>
@@ -794,7 +795,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
@@ -813,7 +814,7 @@ template&lt;typename T&gt; </div>
 <p>Construct a \( n \) rows matrix using a <code>std::vector</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td><code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code> source of size \( q \) </td></tr>
+    <tr><td class="paramname">u</td><td><code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code> source of size \( q \) </td></tr>
     <tr><td class="paramname">n</td><td>number of rows formed by u</td></tr>
   </table>
   </dd>
@@ -848,7 +849,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a \( n \times p \) matrix using a <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;&gt;</code>.` All the vectors must have the same dimension. </p>
+<p>Construct a \( n \times p \) matrix using a <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;&gt;</code>.` All the vectors must have the same dimension. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vectors</td><td>bi-dimensional <code>std::vector</code> source.</td></tr>
@@ -906,37 +907,37 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1085,7 +1086,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::n </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::n </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1114,7 +1115,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::p </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::p </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1142,14 +1143,14 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::row </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>\( i^{th} \) row of the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>. </p>
+<p>\( i^{th} \) row of the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>. </p>
 
 </div>
 </div>
@@ -1164,14 +1165,14 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::col </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>\( j^{th} \) column the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>. </p>
+<p>\( j^{th} \) column the matrix as a <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>. </p>
 
 </div>
 </div>
@@ -1186,13 +1187,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::rows </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em> = <code><a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a></code>&#160;</td>
         </tr>
         <tr>
@@ -1216,7 +1217,7 @@ template&lt;typename T &gt; </div>
 <li><code>rows(i1)</code> returns the rows \( [R_{i1}, R_{(i1+1)},..., R_{(n-1)}] \)</li>
 <li><code>rows(i1, i2)</code> returns the rows \( [R_{i1}, R_{(i1+1)},..., R_{i2}] \)</li>
 </ul>
-<dl class="section return"><dt>Returns</dt><dd>Returns an array containing the rows of the matrix as <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns an array containing the rows of the matrix as <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -1231,13 +1232,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">vector&lt; <a class="el" href="class_n_vector.html">NVector</a>&lt; T &gt; &gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::cols </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em> = <code><a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a></code>&#160;</td>
         </tr>
         <tr>
@@ -1248,7 +1249,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Create an array containing the columns of the matrix in the form of <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;&gt;</code>. </p>
+<p>Create an array containing the columns of the matrix in the form of <code>std::vector&lt;<a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;&gt;</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">j1</td><td>First column to be taken. </td></tr>
@@ -1257,7 +1258,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <p>The behavior of <code><a class="el" href="class_n_p_matrix.html#a30c8ad7b415fa92a23375cbad3ee8e37" title="Create an array containing the columns of the matrix in the form of std::vector&lt;NVector&lt;T&gt;&gt;.">cols()</a></code> is the analog to <code><a class="el" href="class_n_p_matrix.html#add861e9e1df81af2546c3eab1fd40d51" title="Create an array containing the rows of the matrix.">rows()</a></code>.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns an array containing the column of the matrix as <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns an array containing the column of the matrix as <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -1364,7 +1365,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em>&#160;</td>
         </tr>
         <tr>
@@ -1378,7 +1379,7 @@ template&lt;typename T&gt; </div>
 <p>Set row with given vector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td>source <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code>. </td></tr>
+    <tr><td class="paramname">u</td><td>source <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code>. </td></tr>
     <tr><td class="paramname">i1</td><td>index of row to set.</td></tr>
   </table>
   </dd>
@@ -1404,7 +1405,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em>&#160;</td>
         </tr>
         <tr>
@@ -1418,7 +1419,7 @@ template&lt;typename T&gt; </div>
 <p>Set column with given vector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">u</td><td>source <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code>. </td></tr>
+    <tr><td class="paramname">u</td><td>source <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code>. </td></tr>
     <tr><td class="paramname">j1</td><td>index of column to set.</td></tr>
   </table>
   </dd>
@@ -1444,7 +1445,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1458,16 +1459,16 @@ template&lt;typename T&gt; </div>
 <p>Replace the components of the matrix with the array of vectors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vectors</td><td>Rows to set on the matrix. <code>std::vector</code> of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>.</td></tr>
+    <tr><td class="paramname">vectors</td><td>Rows to set on the matrix. <code>std::vector</code> of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>.</td></tr>
     <tr><td class="paramname">i1</td><td>First row to set.</td></tr>
   </table>
   </dd>
 </dl>
 <p>The input <code>vectors</code> must verify the following conditions :</p><ul>
-<li>The length of each <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code> must be inferior or equal to the number of columns.</li>
+<li>The length of each <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code> must be inferior or equal to the number of columns.</li>
 <li>The total size of vectors must be inferior or equal to the number of rows.</li>
 </ul>
-<p>If <code>i1 + vectors.size()</code> is greater than <code>n</code> Then the algorithm truncate the array of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>.</p>
+<p>If <code>i1 + vectors.size()</code> is greater than <code>n</code> Then the algorithm truncate the array of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>.</p>
 <p>If the size of <code>vectors</code> is \( n \times q \) than the <code>setRows(vectors)</code> will return :</p>
 <p class="formulaDsp">
 \[ \begin{bmatrix} v_{00} &amp; ... &amp; ... &amp; ... &amp; v_{0(p-1)} \\ v_{10} &amp; ... &amp; ... &amp; ... &amp; v_{1(p-1)} \\ ... &amp; ... &amp; ... &amp; ... &amp; ... \\ v_{(q-1)0} &amp; ... &amp; ... &amp; ... &amp; v_{(q-1)(p-1)} \\ A_{q0} &amp; ... &amp; ... &amp; ... &amp; A_{q(p-1)} \\ ... &amp; ... &amp; ... &amp; ... &amp; ... \\ A_{(n-1)0} &amp; ... &amp; ... &amp; ... &amp; A_{(n-1)(j1 - 1)} \\ \end{bmatrix} \]
@@ -1493,7 +1494,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -1507,7 +1508,7 @@ template&lt;typename T&gt; </div>
 <p>Replace the components of the matrix with the array of vectors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vectors</td><td>Rows to set on the matrix. <code>std::vector</code> of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a>&lt;T&gt;</code>.</td></tr>
+    <tr><td class="paramname">vectors</td><td>Rows to set on the matrix. <code>std::vector</code> of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a>&lt;T&gt;</code>.</td></tr>
     <tr><td class="paramname">j1</td><td>Start index to set row.</td></tr>
   </table>
   </dd>
@@ -1530,25 +1531,25 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt;&amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::swap </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em>&#160;</td>
         </tr>
         <tr>
@@ -1591,13 +1592,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt;&amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::swapRow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em>&#160;</td>
         </tr>
         <tr>
@@ -1638,13 +1639,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt;&amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::swapCol </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em>&#160;</td>
         </tr>
         <tr>
@@ -1685,7 +1686,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt;&amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::shiftRow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
@@ -1735,7 +1736,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt;&amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::shiftCol </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
@@ -2072,13 +2073,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T&amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -2113,13 +2114,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -2151,25 +2152,25 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em>&#160;</td>
         </tr>
         <tr>
@@ -2216,25 +2217,25 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; &amp; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em>&#160;</td>
         </tr>
         <tr>
@@ -2246,7 +2247,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Manipulate sub-matrix. </p>
-<p>This operator is similar to previous <a class="el" href="class_n_p_matrix.html#ab99139270be6ffff19fdf3b5765f321c">operator</a> except that it sets browse indices. See <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code> <a class="el" href="class_n_p_matrix.html#a437ba12a96e979b50f6d579400b20f6f">operator</a> for more details. </p><dl class="section return"><dt>Returns</dt><dd>reference to <code>*this</code>. </dd></dl>
+<p>This operator is similar to previous <a class="el" href="class_n_p_matrix.html#ab99139270be6ffff19fdf3b5765f321c">operator</a> except that it sets browse indices. See <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code> <a class="el" href="class_n_p_matrix.html#a437ba12a96e979b50f6d579400b20f6f">operator</a> for more details. </p><dl class="section return"><dt>Returns</dt><dd>reference to <code>*this</code>. </dd></dl>
 
 </div>
 </div>
@@ -2292,13 +2293,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::zeros </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>p</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -2332,13 +2333,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::ones </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>p</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -2372,25 +2373,25 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">static <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt;T&gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::canonical </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>p</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -2432,7 +2433,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::eye </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2475,7 +2476,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
@@ -2522,7 +2523,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
@@ -2579,7 +2580,7 @@ template&lt;typename T&gt; </div>
 <p>Fills a square matrix matrix by giving diagonal data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>values of diagonals as <code>std::vector</code> of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension vector  in an arbitrary base.">NVector</a></code>.</td></tr>
+    <tr><td class="paramname">data</td><td>values of diagonals as <code>std::vector</code> of <code><a class="el" href="class_n_vector.html" title="A NVector&lt;T&gt; object represents the coordinates of a finite dimension dense vector .">NVector</a></code>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -2617,7 +2618,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
@@ -2670,13 +2671,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>k1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>k2</em>&#160;</td>
         </tr>
         <tr>
@@ -2714,7 +2715,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
@@ -2750,7 +2751,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::maxAbsIndex </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::maxAbsIndex </td>
           <td>(</td>
           <td class="paramtype">Parts&#160;</td>
           <td class="paramname"><em>element</em>, </td>
@@ -2758,13 +2759,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>r</em>&#160;</td>
         </tr>
         <tr>
@@ -2794,15 +2795,15 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::maxAbsIndexRow </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::maxAbsIndexRow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>r</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -2832,15 +2833,15 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::maxAbsIndexCol </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::maxAbsIndexCol </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>r</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -3320,7 +3321,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::isValidRowIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3348,7 +3349,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::isValidColIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3376,13 +3377,13 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::isValidIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -3414,7 +3415,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::isBetweenI12 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3442,7 +3443,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::isBetweenJ12 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3468,15 +3469,15 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::pIfNotNull </td>
+          <td class="memname">static <a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::pIfNotNull </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
@@ -3704,15 +3705,15 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::vectorIndex </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::vectorIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j</em>&#160;</td>
         </tr>
         <tr>
@@ -3742,9 +3743,9 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::getRowFromVectorIndex </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::getRowFromVectorIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>k</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3770,9 +3771,9 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::getColFromVectorIndex </td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::getColFromVectorIndex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>k</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3800,25 +3801,25 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt; <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::subMatrix </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i1</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j1</em> = <code><a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>i2</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&#160;</td>
           <td class="paramname"><em>j2</em> = <code><a class="el" href="_n_vector_8h.html#a0592dba56693fad79136250c11e5a7fe">MAX_SIZE</a></code>&#160;</td>
         </tr>
         <tr>
@@ -4606,7 +4607,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_n {}</td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_n {}</td>
         </tr>
       </table>
   </td>
@@ -4630,7 +4631,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_p {}</td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_p {}</td>
         </tr>
       </table>
   </td>
@@ -4654,7 +4655,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_i1 {}</td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_i1 {}</td>
         </tr>
       </table>
   </td>
@@ -4678,7 +4679,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_j1 {}</td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_j1 {}</td>
         </tr>
       </table>
   </td>
@@ -4702,7 +4703,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_i2 {}</td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_i2 {}</td>
         </tr>
       </table>
   </td>
@@ -4726,7 +4727,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_j2 {}</td>
+          <td class="memname"><a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a> <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_j2 {}</td>
         </tr>
       </table>
   </td>
@@ -4777,7 +4778,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="typedef_8h.html#a1b140a2034db3f5dfe18a987745df43a">ul_t</a>&gt;* <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_perm {}</td>
+          <td class="memname">std::vector&lt;<a class="el" href="group___n_algebra.html#ga1b140a2034db3f5dfe18a987745df43a">ul_t</a>&gt;* <a class="el" href="class_n_p_matrix.html">NPMatrix</a>&lt; T &gt;::_perm {}</td>
         </tr>
       </table>
   </td>

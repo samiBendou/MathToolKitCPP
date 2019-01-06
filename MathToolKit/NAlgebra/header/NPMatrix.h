@@ -8,10 +8,10 @@
  * @ingroup NAlgebra
  * @{
  * @class   NPMatrix
+ * @copyright Dahoux Sami 2018 All rights reserved.
  * @date    04/05/2018
  * @author  samiBendou
- * @brief   A `NPMatrix<T>` inherits from `NVector<T>`. It's a representation of matrices of arbitrary
- *          size in a template field `T`.
+ * @brief   Representation of dense matrices of arbitrary size in a template field `T`.
  *
  * @details The matrix components are stored in a linear form using the index transformation \f$ k = p i + j \f$.
  *          The underlying `std::vector<T>` is represented as `t[p * i + j]`.
@@ -916,10 +916,21 @@ protected:
     mutable std::vector<ul_t> *_perm{};
 };
 
-
+/**
+ * Real matrix
+ */
 typedef NPMatrix<double> mat_t;
+/**
+ * `char` matrix
+ */
 typedef NPMatrix<char> mat_char_t;
+/**
+ * AES matrix. See `AESByte` for more details.
+ */
 typedef NPMatrix<AESByte> mat_aes_t;
+/**
+ * Pixel matrix. See `Pixel` for more details.
+ */
 typedef NPMatrix<Pixel> mat_pix_t;
 
 /** @} */

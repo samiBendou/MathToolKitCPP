@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('class_pixel.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_pixel.html" title="Pixel class is a representation of a pixel providing support of multiple color scale and conversion b...">Pixel</a> class is a representation of a pixel providing support of multiple color scale and conversion between theses.  
+<p>Representation of a pixel.  
  <a href="class_pixel.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_pixel_8h_source.html">Pixel.h</a>&gt;</code></p>
@@ -200,15 +200,25 @@ Friends</h2></td></tr>
 <tr class="separator:af9850b2e5c78fc7f7e841c490713168e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_pixel.html" title="Pixel class is a representation of a pixel providing support of multiple color scale and conversion b...">Pixel</a> class is a representation of a pixel providing support of multiple color scale and conversion between theses. </p>
+<div class="textblock"><p>Representation of a pixel. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Dahoux Sami 2018 All rights reserved. </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>19/12/2018 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>samiBendou</dd></dl>
-<p>The class provides an interface with char primitive type by converting a char value onto a grey scale pixel and vice versa if needed.</p>
-<p>A pixel can be in several states theses can be used for image processing computation :</p><ul>
-<li>format : either Red, Green, Blue (RGB) or Grey Scale (GScale).</li>
-<li>limited : the value of each component can be limited to be between 0 and 255. If the value of a component is set negative the result is 0. Else, the if the value is greater than MAX_LIMIT_CMP than the set value is the original value mod <code>MAX_LIMIT_CMP + 1</code>. The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and setting components generally implies a constant time calculation to translate between RGB and other formats. </li>
-</ul>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<p>Providing multiple color scale and conversion between theses. </p><pre class="fragment">     The class provides an interface with char primitive
+     type by converting a char value onto a grey scale pixel and vice versa if needed.
+
+     A pixel can be in several states theses can be used for image processing computation :
+
+        - `format`    : either Red, Green, Blue (RGB) or Grey Scale (GScale).
+        - `limited`   : the value of each component can be limited to be between 0 and 255.
+                        If the value of a component is set negative the result is 0. Else,
+                        the if the value is greater than MAX_LIMIT_CMP than the set value
+                        is the original value mod `MAX_LIMIT_CMP + 1`.
+
+     The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
+     setting components generally implies a constant time calculation to translate between RGB
+     and other formats.
+</pre> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa1531d5d16ab3ab809a8e071145f0a50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1531d5d16ab3ab809a8e071145f0a50">&#9670;&nbsp;</a></span>Format</h2>
 

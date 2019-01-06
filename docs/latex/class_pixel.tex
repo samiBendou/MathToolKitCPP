@@ -2,7 +2,7 @@
 \label{class_pixel}\index{Pixel@{Pixel}}
 
 
-\mbox{\hyperlink{class_pixel}{Pixel}} class is a representation of a pixel providing support of multiple color scale and conversion between theses.  
+Representation of a pixel.  
 
 
 
@@ -93,21 +93,33 @@ std\+::ostream \& \mbox{\hyperlink{class_pixel_af9850b2e5c78fc7f7e841c490713168e
 
 
 \subsection{Detailed Description}
-\mbox{\hyperlink{class_pixel}{Pixel}} class is a representation of a pixel providing support of multiple color scale and conversion between theses. 
+Representation of a pixel. 
 
+\begin{DoxyCopyright}{Copyright}
+Dahoux Sami 2018 All rights reserved. 
+\end{DoxyCopyright}
 \begin{DoxyDate}{Date}
 19/12/2018 
 \end{DoxyDate}
 \begin{DoxyAuthor}{Author}
 sami\+Bendou
 \end{DoxyAuthor}
-The class provides an interface with char primitive type by converting a char value onto a grey scale pixel and vice versa if needed.
+Providing multiple color scale and conversion between theses. \begin{DoxyVerb}     The class provides an interface with char primitive
+     type by converting a char value onto a grey scale pixel and vice versa if needed.
 
-A pixel can be in several states theses can be used for image processing computation \+:
-\begin{DoxyItemize}
-\item format \+: either Red, Green, Blue (R\+GB) or Grey Scale (G\+Scale).
-\item limited \+: the value of each component can be limited to be between 0 and 255. If the value of a component is set negative the result is 0. Else, the if the value is greater than M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP than the set value is the original value mod {\ttfamily M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP + 1}. The pixel is stored in memory as a R\+GB value even if the format is not R\+GB. Getting and setting components generally implies a constant time calculation to translate between R\+GB and other formats. 
-\end{DoxyItemize}
+     A pixel can be in several states theses can be used for image processing computation :
+
+        - `format`    : either Red, Green, Blue (RGB) or Grey Scale (GScale).
+        - `limited`   : the value of each component can be limited to be between 0 and 255.
+                        If the value of a component is set negative the result is 0. Else,
+                        the if the value is greater than MAX_LIMIT_CMP than the set value
+                        is the original value mod `MAX_LIMIT_CMP + 1`.
+
+     The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
+     setting components generally implies a constant time calculation to translate between RGB
+     and other formats.
+\end{DoxyVerb}
+ 
 
 \subsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}\label{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}} 

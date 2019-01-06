@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['nalgebra_2eh',['NAlgebra.h',['../_n_algebra_8h.html',1,'']]],
   ['ncompact_2ecpp',['NCompact.cpp',['../_n_compact_8cpp.html',1,'']]],
   ['ncompact_2eh',['NCompact.h',['../_n_compact_8h.html',1,'']]],
   ['nconstantfield_2ecpp',['NConstantField.cpp',['../_n_constant_field_8cpp.html',1,'']]],
