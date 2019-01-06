@@ -20,13 +20,14 @@ script:
 - ctest -V
 
 after_success:
+- cd..
 - |
   coveralls --build-root build --gcov-options '\-lp' \
-    -e CMakeFiles \
-    -e TestMathToolKit/lib \
-    -e lib \
-    -e MathToolKitRun \
-    -e Testing \
+    -e build/CMakeFiles \
+    -e build/TestMathToolKit/lib \
+    -e build/lib \
+    -e build/MathToolKitRun \
+    -e build/Testing \
 
 notifications:
   email: false
