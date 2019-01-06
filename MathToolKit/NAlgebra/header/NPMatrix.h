@@ -17,23 +17,33 @@
  *          The underlying `std::vector<T>` is represented as `t[p * i + j]`.
  *          The underlying `NVector<T>` is \f$ (A_{00}, A_{01}, ..., A_{0(P - 1)}, A_{10}, ..., A_{1(P - 1)}, ..., A_{(N-1)0}, ...) \f$.
  *
+ *          @section Features
+ *
  *          Featuring algebraical operations such as matrix product, linear map, Gauss Jordan elimination.
  *          setters & getters, swappers and classic matrix generators such as ones, zeros...
  *
+ *          @subsection LUDecomp LU Decomposition
+ *
  *          The \f$ LU \f$ decomposition is stored as a property if the matrix is inversible. It is auto-updated only when needed.
- *          It allow to reduce complexity to get inverse or determinant.
+ *          It allow to compute inverse, determinant and other inversion related operations more efficiently.
+ *
+ *          @subsection FuncOp Sub-range operators
+ *
+ *          The `NPMatrix` class provides a function operator similar to
+ *          @ref NVector<T>::operator()(long k) "vector sub-range operator".
+ *
+ *          @section Definitions
  *
  *          All along this page we will use the following definitions :
  *             - `a`/`b`/`m`: An arbitrary given NPMatrix. The components are noted are noted \f$ A_{ij} \f$.
  *                            By default, \f$ A \f$ denote `this` matrix.
- *             - `R`        : Row of a matrix, also noted \f$ row_{i}(A) \f$
- *             - `C`        : Col of a matrix, also noted \f$ col_{i}(A) \f$
+ *             - `R`        : Row of a matrix
+ *             - `C`        : Col of a matrix
  *             - `n `       : Number of rows
  *             - `p `       : Number of Columns
  *             - `i `       : Row Index between \f$ 0 \leq i < n \f$
  *             - `j `       : Column Index \f$ 0 \leq j < p \f$
  *             - `k`, `l`   : either compound index or underlying `std::vector` array index.
-
  */
 
 
@@ -57,10 +67,13 @@ public:
     explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * pIfNotNull(n, p)), n, pIfNotNull(n, p)) {}
 
     /**
-     * @param data bi dimensional `std::vector` source.
-     * @brief Construct a matrix using a bi-dimensional 'std::vector'. \f$ Aij \f$ represent `data[i][j]`.
-     * @details All the `data[i]` must have the same length. They represent the rows of the matrix.
+     * @anchor ArrayCopyConstruct
+     * @param data bi-dimensional `std::vector` source.
+     * @brief Construct a matrix using a bi-dimensional `std::vector`. \f$ Aij \f$ represent `data[i][j]`.
+     * @details All the `data[i]` must have the same length. They are seen as the rows of the matrix. `data`
+     * is copied into `this` matrix using `copy()`.
      */
+
     NPMatrix(const vector<vector<T> > &data) : NPMatrix(NVector<T>(data.size() * data[0].size()), data.size(),
                                                         data[0].size()) {
         copy(data);
@@ -69,34 +82,33 @@ public:
     /**
      *
      * @param m `NPMatrix` source.
-     * @brief Construct a matrix by using `copy(m)` method.
+     * @brief Construct a matrix by using `copy()` method.
      */
     NPMatrix(const NPMatrix<T> &m) : NPMatrix(NVector<T>(0), 0, 0) {
         copy(m);
     };
 
     /**
-     * @param list bi dimensional `initializer_list` source.
-     * @brief Construct a \f$ n \times p \f$ matrix using a bi-dimensional 'initializer_list'.
-     * @details All the sub lists must have the same length.
-     * `list` is converted to a bi dimensional `std::vector` before construction.
+     * @param list bi-dimensional `std::initializer_list` source.
+     * @brief Construct a \f$ n \times p \f$ matrix using a bi-dimensional initializer list `{{}}`.
+     * @details Convert `list` and uses @ref NPMatrix(const vector<vector<T> > &data) "bi-dimensional array constructor".
      */
     NPMatrix(initializer_list<initializer_list<T>> list) : NPMatrix(vector<vector<T>>(list.begin(), list.end())) {}
 
     /**
      * @param u `NVector` source of size \f$ q \f$
-     * @param n Number of rows formed by u
-     * @brief Construct a \f$ n \f$ rows matrix using a `std::vector` of size `1 * vector.dim()`.
-     * @details The constructed matrix is of size \f$ n \times p =  q \f$ with \f$ p = q / n \f$. Resulting `p` is computed
+     * @param n number of rows formed by u
+     * @brief Construct a \f$ n \f$ rows matrix using a `std::vector`.
+     * @details The matrix is of size \f$ n \times p =  q \f$ with \f$ p = q / n \f$. Resulting `p` is computed
      * using integer division so if reminder is not null a part of `u` will be truncated.
      */
     explicit NPMatrix(const NVector<T> &u, ul_t n = 1) : NPMatrix(u, n, u.dim() / n) {}
 
     /**
-     *
-     * @brief Construct a \f$ n \times p \f$ matrix using a `std::vector<NVector<T>>`.
-     * All the vectors must have the same dimension. They represent the rows of the matrix.
-     * @details The `NVector` array is converted to a bi dimensional `std::vector` before construction.
+     * @param vectors bi-dimensional `std::vector` source.
+     * @brief Construct a \f$ n \times p \f$ matrix using a `std::vector<NVector<T>>`.`
+     * All the vectors must have the same dimension.
+     * @details Convert `vectors` and uses @ref NPMatrix(const vector<vector<T> > &data) "bi-dimensional array constructor".
      */
 
     explicit NPMatrix(const vector<NVector<T> > &vectors) : NPMatrix(
@@ -112,16 +124,13 @@ public:
      *
      * @details The returned string has the following form :
      *
-     *  ```cpp
-     *  "
-     *  (A(0,0), A(0,1), ..., A(0,(P-1)))
-     *  (A(1,0), A(1,1), ..., A(1,(P-1)))
-     *  (A(i,0), ..., A(i,j, Ai(P-1)))
-     *  (A((N-1),0), ..., ..., ...)
-     *  "
+     *  ```commandline
+     *  "(m(0,0), m(0,1), ..., m(0,(P-1)))
+     *  (m(1,0), m(1,1), ..., m(1,(P-1)))
+     *  (m(i,0), ..., a(i,j, Ai(P-1)))
+     *  (m((N-1),0), ..., ..., ...)"
      *  ```
-     *
-     * Each \f$ A_{ij} \f$ is formatted using the default `<<` operator of the type `T`.
+     * Where `m` is `this` matrix. Each `m(i, j)` is formatted using the default `<<` operator of the type `T`.
      *
      * @return Returns a string representing the matrix.
      */
@@ -129,10 +138,6 @@ public:
 
     // CHARACTERIZATION
 
-    /**
-     *
-     * @return True if \f$ n = p \f$.
-     */
     inline bool isSquare() const {
         bool cond = _j2 - _j1 == _i2 - _i1;
         setDefaultBrowseIndices();
@@ -154,7 +159,7 @@ public:
 
     /**
      *
-     * @brief Number of \f$ n \f$ rows
+     * @brief Number of rows \f$ n \f$.
      */
     inline ul_t n() const {
         auto res = _i2 - _i1 + 1;
@@ -164,7 +169,7 @@ public:
 
     /**
      *
-     * @brief Number of \f$ p \f$ columns
+     * @brief Number of columns \f$ p \f$.
      */
     inline ul_t p() const {
         auto res = _j2 - _j1 + 1;
@@ -174,20 +179,20 @@ public:
 
     /**
      *
-     * @brief \f$ i \f$ row \f$row_i(A) \f$ of the matrix as a `NVector<T>`.
+     * @brief \f$ i^{th} \f$ row of the matrix as a `NVector<T>`.
      */
     NVector<T> row(ul_t i) const;
 
     /**
      *
-     * @brief \f$ j \f$ col  \f$col_j(A) \f$  the matrix as a `NVector<T>`.
+     * @brief \f$ j^{th} \f$ column the matrix as a `NVector<T>`.
      */
     NVector<T> col(ul_t j) const;
 
     /**
      *
      * @param i1 First row to be taken.
-     * @param i2 Last row to be taken \f$ i_1 \lt i_2 \f$.
+     * @param i2 Last row to be taken \f$ i_1 \leq i_2 \f$.
      * @brief Create an array containing the rows of the matrix.
      *
      * @details The behavior of `rows()` is the following :
@@ -195,31 +200,31 @@ public:
      *          - `rows(i1)` returns the rows \f$ [R_{i1}, R_{(i1+1)},..., R_{(n-1)}] \f$
      *          - `rows(i1, i2)` returns the rows \f$ [R_{i1}, R_{(i1+1)},..., R_{i2}] \f$
      *
-     * @return Return an array containing the rows of the matrix as `Nvector`.
+     * @return Returns an array containing the rows of the matrix as `NVector`.
      */
     std::vector<NVector<T> > rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
 
     /**
      *
      * @param j1 First column to be taken.
-     * @param j2 Last column to be taken \f$ j_1 \lt j_2 \f$.
-     * @brief Create an array containing the colomuns of the matrix in the form of `std::vector<NVector<T>>`.
+     * @param j2 Last column to be taken \f$ j_1 \leq j_2 \f$.
+     * @brief Create an array containing the columns of the matrix in the form of `std::vector<NVector<T>>`.
      *
      * @details The behavior of `cols()` is the analog to `rows()`.
      *
-     * @return Return an array containing the column of the matrix as `Nvector`.
+     * @return Returns an array containing the column of the matrix as `NVector`.
      */
     std::vector<NVector<T> > cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
 
     /**
      * @brief Create a new matrix containing upper part of this matrix.
-     * @return upper part of this matrix. The lower part contains `0`.
+     * @return Returns upper part of this matrix. The lower part contains `0`.
      */
     NPMatrix<T> upper() const;
 
     /**
      * @brief Create a new matrix containing lower part of this matrix.
-     * @return lower part of this matrix. The upper part contains `0`.
+     * @return Returns lower part of this matrix. The upper part contains `0`.
      */
     NPMatrix<T> lower() const;
 
@@ -272,7 +277,7 @@ public:
      * @brief           Replace the components of the matrix with the array of vectors.
      *
      * @details         The input `vectors` must verify the following conditions :
-     *                  - The length of each `NVector<T>` must be inferior or equal to the number of cols.
+     *                  - The length of each `NVector<T>` must be inferior or equal to the number of columns.
      *                  - The total size of vectors must be inferior or equal to the number of rows.
      *
      *                  If `i1 + vectors.size()` is greater than `n` Then the algorithm truncate the
@@ -281,28 +286,29 @@ public:
      *                  If the size of `vectors` is \f$ n \times q \f$ than the `setRows(vectors)` will return :
      *
      *                  \f[ \begin{bmatrix}
-     *                      v_{00}      & ... & ... & v_{0(p-1)} \\
-     *                      v_{10}      & ... & ... & v_{1(p-1)} \\
-     *                      v_{(q-1)0}  & ... & ... & v_{(q-1)(p-1)} \\
-     *                      A_{q0}      & ... & ... & A_{q(p-1)} \\
-     *                      ...         & ... & ... & ... \\
-     *                      A_{(n-1)0}  & ... & ... & A_{(n-1)(j1 - 1)} \\
+     *                      v_{00}      & ... & ... & ... & v_{0(p-1)} \\
+     *                      v_{10}      & ... & ... & ... & v_{1(p-1)} \\
+     *                      ...         & ... & ... & ... & ... \\
+     *                      v_{(q-1)0}  & ... & ... & ... & v_{(q-1)(p-1)} \\
+     *                      A_{q0}      & ... & ... & ... & A_{q(p-1)} \\
+     *                      ...         & ... & ... & ... & ... \\
+     *                      A_{(n-1)0}  & ... & ... & ... & A_{(n-1)(j1 - 1)} \\
      *                      \end{bmatrix}
      *                  \f]
      *                  Where \f$ v_{ij} \f$ represent `vectors[i](j)`.
      */
-    NPMatrix<T> &setRows(const std::vector<NVector<T> > &vectors, ul_t i1 = 0);
+    NPMatrix<T> &setRows(const std::vector<NVector<T>> &vectors, ul_t i1 = 0);
 
     /**
      *
      * @param vectors   Rows to set on the matrix. `std::vector` of `NVector<T>`.
      *
-     * @param i1        Start index to set row.
+     * @param j1        Start index to set row.
      * @brief           Replace the components of the matrix with the array of vectors.
      *
      * @details         The behavior of `setCols()` is analog to `setRows()`.
      */
-    NPMatrix<T> &setCols(const std::vector<NVector<T> > &vectors, ul_t j1 = 0);
+    NPMatrix<T> &setCols(const std::vector<NVector<T>> &vectors, ul_t j1 = 0);
 
     /** @} */
 
@@ -337,7 +343,7 @@ public:
      *
      * @param i1 first row indices to swap
      * @param i2 second row indices to swap
-     * @brief Swap \f$ row_{i_1}(A) \f$ and \f$ row_{i_2}(A) \f$.
+     * @brief Swap \f$ R_{i_1} \f$ and \f$ R_{i_2} \f$.
      */
     inline NPMatrix<T> &swapRow(ul_t i1, ul_t i2) { return swap(Row, i1, i2); }
 
@@ -345,7 +351,7 @@ public:
      *
      * @param j1 first col indices to swap
      * @param j2 second col indices to swap
-     * @brief Swap \f$ col_{j_1}(A) \f$ and \f$ col_{j_2}(A) \f$.
+     * @brief Swap \f$ C_{j_1} \f$ and \f$ C_{j_2} \f$.
      */
     inline NPMatrix<T> &swapCol(ul_t j1, ul_t j2) { return swap(Col, j1, j2); }
 
@@ -356,7 +362,7 @@ public:
      *
      * @param i index of row to shift
      * @param iterations number of times to shift.
-     * @brief shift a \f$ i^{th} \f$ row iterations times.
+     * @brief shift the \f$ i^{th} \f$ row `iterations` times.
      * @details If `iterations` is positive, shift is powered to the left, else to the right.
      * For example `shiftRow(0, 2)` will set the matrix to :
      *                  \f[ \begin{bmatrix}
@@ -372,9 +378,9 @@ public:
 
     /**
      *
-     * @param i index of column to shift
+     * @param j index of column to shift
      * @param iterations number of times to shift.
-     * @brief shift a \f$ j^{th} \f$ column iterations times.
+     * @brief shift the \f$ j^{th} \f$ column `iterations` times.
      * @details The behavior is analog to `shiftRow()`. If `iterations` is positive,
      * shift is powered to the up, else to the bottom.
      */
@@ -394,14 +400,14 @@ public:
 
     /**
      * @brief Transposed matrix.
-     * @return Returns the value of transposed matrix.
+     * @return Value of transposed \f$ A^\top \f$.
      */
     NPMatrix<T> transposed() const;
 
     /**
      *
      * @brief Trace of this matrix \f$ A_{00} + A_{11} + ... + A_{(n-1)(n-1)} \f$
-     * @return The value of the trace.
+     * @return Value of the trace.
      */
     T trace() const;
 
@@ -410,20 +416,20 @@ public:
      * @brief Concatenate matrix `m` to `this` matrix.
      * @details The shifted matrix is the matrix obtained after concatenation of \f$ A \f$
      * and \f$ M \f$ columns. \f$ A \f$ and \f$ M \f$ must have the same number of rows.
-     * @return Returns the shifted matrix \f$ [ A | M ] \f$.
+     * @return Returns the value of shifted matrix \f$ [ A | M ] \f$.
      */
     NPMatrix<T> shifted(const NPMatrix<T> &m) const;
 
     /**
      * @brief Apply Gauss Jordan elimination on matrix to calculate inverse without using \f$ LU \f$ decomposition.
      * @details To perform inverse computation, shift the matrix you want to invert than apply this function. If
-     * the matrix is inversible, than the inverse of the matrix is on the right part of the matrix.
+     * the matrix is inversible, than the inverse of the matrix is on the right part of the matrix. \f$ O(n^3) \f$.
      * @return Reference to `*this` the shifted matrix.
      */
     NPMatrix<T> &reduce();
 
     /**
-     * @brief determinant of this matrix det(A). Using the \f$ LU \f$ decomposition \f$ O(n) \f$.
+     * @brief determinant of this matrix \f$ det(A) \f$. Using the \f$ LU \f$ decomposition \f$ O(n) \f$.
      * @return Value of determinant.
      */
     T det() const;
@@ -434,13 +440,14 @@ public:
      *
      * @name Algebraical Operators
      * @brief Commons algebraical operations for matrix
-     * @details All the algebraical operations are implemented the same way as they are on `NVector`. New algebraical
-     * operations are documented here.
+     * @details New algebraical operations are documented here. the operations that already exist in `NVector` are
+     * implemented the same way as they are in `NVector`.
      *
      * @{
      */
 
     // OPERATORS
+
 
     // ALGEBRAICAL OPERATORS
 
@@ -469,7 +476,7 @@ public:
     /**
      * @brief Usual matrix multiplication
      * @details The matrices must have the length. Natural \f$ O(n^3) \f$ matrix product is used.
-     * @return \f$ A \times B \f$ product.
+     * @return value of \f$ A B \f$.
      */
 
     inline friend NPMatrix<T> operator*(NPMatrix<T> a, const NPMatrix<T> &b) {
@@ -479,9 +486,9 @@ public:
 
     /**
      * @brief Usual matrix vector product (linear mapping).
-     * @details The number of rows of m must be equal to the dimension of v.
+     * @details The number of rows of m must be equal to the dimension of \f$ v \f$.
      * Natural \f$ O(n^2) \f$ linear mapping is used.
-     * @return \f$ M v \f$ product.
+     * @return value of \f$ M v \f$.
      */
     inline friend NVector<T> operator*(const NPMatrix<T> &m, NVector<T> v) {
         m.vectorProduct(v);
@@ -500,7 +507,7 @@ public:
      * @brief Exponantiate matrix \f$ M \f$ using given exponent.
      * @details Fast exponentiation implementation.
      * If \f$ exp < 0 \f$ we calculate the power of the inverse matrix using `inv()` method.
-     * @return \f$ M^{exp} \f$ exponentiated matrix.
+     * @return value of \f$ M^{exp} \f$ exponentiated matrix.
      */
     inline friend NPMatrix<T> operator^(NPMatrix<T> m, long exp) {
         m ^= exp;
@@ -513,7 +520,7 @@ public:
      * @brief Solve the linear system formed by \f$ M \f$ and \f$ v \f$.
      * @details The linear system is \f$ MX = v \f$ where \f$ X \f$ is unknown.
      * This algorithm uses \f$ LU \f$ decomposition.
-     * @return Vector solution of the system \f$ X \f$.
+     * @return Value of the solution of the system \f$ X \f$.
      */
     inline friend NVector<T> operator%(const NPMatrix<T> &m, NVector<T> v) {
         v %= m;
@@ -572,8 +579,9 @@ public:
     /**
      * @brief Bi-dimensional access operator
      * @details Access operator equivalent to `[i][j]` on by dimensional arrays.
-     * Operator can be used to read/write values.
-     * @return component ij of matrix.
+     * Operator can be used to read or write values. `const` version returns `const` reference to the element.
+     * For example, `A(0, 0)` return the element located at first row and first column.
+     * @return component \f$ A_{ij} \f$ of the matrix.
      * @{
      */
     inline T &operator()(ul_t i, ul_t j) {
@@ -589,20 +597,33 @@ public:
 
     /**
      *
-     * @param i1 start index of rows
-     * @param j1 start index of cols
-     * @param i2 end index \f$ i2 \gt i1 \f$ of rows
-     * @param j2 end index \f$ j2 \gt j1 \f$ of cols
-     * @brief Manipulate sub-matrix
-     * @details This operator is similar to `NVector<T>::operator() (ul_t, ul_t)`. It allows operations on a restricted
-     * range of the matrix.
-     * @return a sub matrix  :
+     * @param i1 first row to take
+     * @param j1 first col to take
+     * @param i2 last row to take \f$ n \gt i2 \geq i1 \geq 0 \f$
+     * @param j2 last row to take \f$ p \gt j2 \geq j1 \geq 0 \f$ of columns
+     * @brief Manipulate sub-matrix.
+
+     * @details This operator is similar to @ref NVector<T>::operator()(ul_t i1, ul_t i2) const "vector sub-range operator".
+     * It allows operations on a restricted
+     * range of the matrix which is :
      *         \f[ \begin{bmatrix}
      *             A_{i_1j_1}   & ... & A_{i_2j_1} \\
      *             ...          & ... & ... \\
      *             A_{i_2j_1}   & ... & A_{i_2j_2} \\
      *             \end{bmatrix}
      *         \f]
+     * this operator can be chained with method calls such as `a(2, 2, 5, 5).trace()`.
+     * Most of methods or operators can be chained. It will be explicitly specified if it's not the case.
+     * For example, `a(0, 0, 1, 1)` will return the value of the \f$ 2 \times 2 \f$ upper-left matrix :
+     *         \f[ \begin{bmatrix}
+     *             A_{00}   & A_{01} \\
+     *             A_{10}   & A_{11} \\
+     *             \end{bmatrix}
+     *         \f]
+     *
+     *
+     * @return value of the sub matrix.
+
      *
      */
     inline NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const { return subMatrix(i1, j1, i2, j2); }
@@ -610,12 +631,12 @@ public:
     /**
      *
      * @param i1 start index of rows
-     * @param j1 start index of cols
+     * @param j1 start index of columns
      * @param i2 end index \f$ i2 \gt i1 \f$ of rows
-     * @param j2 end index \f$ j2 \gt j1 \f$ of cols
+     * @param j2 end index \f$ j2 \gt j1 \f$ of columns
      * @brief Manipulate sub-matrix
-     * @details This operator is similar to previous `operator()` except that it modify browse indices `_k1` and `_k2`
-     * in order to modify efficiently non `const` lhs using this operator.
+     * @details This operator is similar to previous @ref operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const "operator"
+     * except that it sets browse indices `_k1` and `_k2` in order to modify efficiently non `const` reference.
      * @return reference to `*this`.
      */
     NPMatrix<T> &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
@@ -664,7 +685,7 @@ public:
      * @brief \f$ n \times p \f$ canonical matrix
      * @details canonical matrices \f$ E_{ij} \f$ of \f$ M_{np}(K) \f$
      * which contains `1` in position \f$ ij \f$ and `0` elsewhere.
-     * This matrix is eviqualent to \f$ \delta_{ij} \f$ symbol.
+     * This matrix is eviqualent to \f$ \delta_{ij} \f$ Kronecker's delta symbol.
      */
     inline static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0) {
         return NPMatrix<T>(NVector<T>::canonical(p * i + j, n * pIfNotNull(n, p)), n);
@@ -674,6 +695,7 @@ public:
      *
      * @param n Size of the matrix
      * @brief \f$ n^{th} \f$ order identity matrix
+     * @return \f$ Id \f$ identity matrix.
      */
     static NPMatrix<T> eye(ul_t n);
 
@@ -691,44 +713,55 @@ public:
      * @param s scalar value
      * @brief a scalar \f$ n^{th} \f$ order matrix with `s` value
      * @details Scalar matrices are a diagonal matrix filled a unique value.
+     * @return \f$ n^{th} \f$ order matrix equal to \f$ s \dot Id \f$.
      */
     inline static NPMatrix<T> scalar(T s, ul_t n) { return s * NPMatrix<T>::eye(n); }
 
     /**
      *
-     * @param data values of diagonals such as.
-     *
+     * @param data values of diagonals as `std::vector` of `NVector`.
      * @brief Fills a square matrix matrix by giving diagonal data
-     * @details This method is a generalization of `diag()` method. The matrix looks like :
+     * @details This method is a generalization of `diag()` method. The resulting matrix looks like :
      *
      *         \f[ \begin{bmatrix}
-     *             d_{(mid)0}   & d_{(mid+1)0}  & ... & d_{(2 mid)0} \\
-     *             d_{(mid-1)0} & d_{(mid)1}    & ... & d_{(2 mid-1)1} \\
+     *             d_{(mid)0}   & d_{(mid+1)0}  & ... & d_{(2 mid-1)0} \\
+     *             d_{(mid-1)0} & d_{(mid)1}    & ... & d_{(2 mid-2)1} \\
      *             ...          & ...           & ... & ...\\
      *             d_{(0)0}     & d_{(1)1}      & ... & d_{(mid)(n-1)} \\
      *             \end{bmatrix}
      *         \f]
      *
-     *          The input data must be ordered such as `d[0]` has size equal to `1`, `d[1]` to `2`, ...,
-     *          `d[middle]` to `n`, d[middle+1]` to `n-1`, ..., `d[end]` to `0`.
+     *         Where \f$ d_{lk} \f$ is the representation of `data[l](k)`.
      *
-     *          The data must be entered such as :
-     *
-     *          - `data[l]` is the values of coefficients of the l-th diagonal from the left/up.
+     *         The `data` array should be as following :
+     *          - `data[l]` is the values of coefficients of the \f$ l^{th} \f$ sub-diagonal from the left/up.
      *          - `data[middle]` is the values of coefficients on the diagonal.
      *
-     * @return a n-diagonal matrix filled with data bi-dimensional array.
+     *         The input data must be ordered such as `d[0]` has size equal to `1`, `d[1]` to `2`, ...,
+     *         `d[middle]` to `n`, `d[middle+1]` to `n-1`, ..., `d[2 * middle - 1]` to `1`.
+     *
+     * @return a n-diagonal matrix filled with `data`.
      */
     static NPMatrix<T> ndiag(const std::vector<NVector<T> > &data);
 
 
     /**
      *
-     * @param scalars array of scalars values to fill diagonals `[` \f$ s_0, s_1, ..., s_q \f$ `]`.
+     * @param scalars array of scalars values to fill diagonals `[` \f$ s_0, s_1, ..., s_{q-1} \f$ `]`.
      * @param n size of the matrix.
      * @brief Generalization of scalar matrix with multiple diagonal
      * @details The behavior is a restriction of `ndiag()` method, the matrix is filled using diagonals containing
-     * the same value all along. If `values.size() = 2`, the matrix is tri-diagonal.
+     * the same value all along.
+     *
+     * For example if `nscalar({2, 1}, 3)` will return :
+     *
+     *         \f[ \begin{bmatrix}
+     *             1 & 2 & 0 \\
+     *             2 & 1 & 2 \\
+     *             0 & 2 & 1 \\
+     *             \end{bmatrix}
+     *         \f]
+     *
      * Center diagonal is filled with s1 and the other diagonal are filled with s0.
      * @return  a n-scalar Matrix filled with given `scalars`.
      */

@@ -13,10 +13,10 @@ var hierarchy =
             ["SNewtonianField", "class_s_newtonian_field.html", null]
         ]],
         ["Pixel", "class_pixel.html", null],
-        ["set", null, [
+        ["std::set< K >", null, [
             ["NDSet", "class_n_d_set.html", null]
         ]],
-        ["vector", null, [
+        ["std::vector< T >", null, [
             ["NVector< T >", "class_n_vector.html", [
                 ["NPMatrix< T >", "class_n_p_matrix.html", null]
             ]],

@@ -30,7 +30,7 @@
     </script>
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    extensions: ["tex2jax.js", "amsmath.js", "amsfonts.js"],
+    extensions: ["tex2jax.js", "amsmath.js", "amsfonts.js", "amssymb.js", "amsthm.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
 
@@ -125,20 +125,6 @@
                     class="inline"/>
             </a></p>
                 <h1>MathToolKitCPP</h1>
-                <h3>Author : samiBendou</h3>
-                <h3>Last Update : 04/01/2019</h3>
-                <h3>Current Version : 1.1.1</h3>
-                <h2>Version log :</h2>
-                <ul>
-                    <li>1.1.1 : minor fixes related to integration of CI tool</li>
-                    <li>1.1.0 : Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code
-                        structure. Optimizing execution time.
-                    </li>
-                    <li>1.0.1 : Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data
-                        structure for geometrical N-dimensional shapes. Minor fixes.
-                    </li>
-                    <li>1.0.0 : First release.</li>
-                </ul>
                 <h2>General overivew</h2>
                 <h3>Introduction</h3>
                 <p>MathToolKit is a C++ maths framework. It introduces common mathematical abstractions such as matrix,
@@ -152,37 +138,29 @@
                 <ul>
                     <li>Large range of abstractions from algebra to geometry</li>
                     <li>High level syntax (numpy like...)</li>
-                    <li>Cascade calls (matrix.shift().fill(), ...)</li>
+                    <li>Cascade calls <code>matrix.shift().fill()</code>, ...</li>
                 </ul>
                 <p>The documentation of the framework is currently hosted at : <a
                         href="https://samibendou.github.io/MathToolKitCPP/">https://samibendou.github.io/MathToolKitCPP/</a>.
                 </p>
-                <h3>Compatibility</h3>
+                <h3>NAlgebra</h3>
+                <p>Linear algebra library providing vectors and matrix objects : <a
+                        href="https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html">Documentation</a></p>
                 <ul>
-                    <li>Written using C++11</li>
-                    <li>Using CMake 3.9.2</li>
-                    <li>Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)</li>
-                    <li>Tested on travis with : clang 5.0.0</li>
-                </ul>
-                <h2>NAlgebra</h2>
-                <p>Linear algebra library providing vectors and matrix objects.</p>
-                <h4>Overview</h4>
-                <ul>
-                    <li>Manipulators : shift, swap, ...</li>
-                    <li>Linear Algebra : +, *, mapping, inversion, pow, ...</li>
-                    <li>Generators : eye, ones, diag, ...</li>
+                    <li>Manipulators : <code>shift()</code>, <code>swap()</code>, ...</li>
+                    <li>Linear Algebra : <code>+</code>, <code>*</code>, <code>inv()</code>, <code>pow()</code>, ...
+                    </li>
+                    <li>Generators : <code>eye()</code>, <code>ones()</code>, <code>diag()</code>, ...</li>
                 </ul>
                 <h3>NAnalysis</h3>
                 <p>Differential calculus library providing numerical vector fields representation and easy ode
                     solving.</p>
-                <h4>Overview</h4>
                 <ul>
                     <li>Mesh fields on various domains (see NGeometry)</li>
                     <li>Solve differential equations using fields representation</li>
                 </ul>
                 <h3>NGeometry</h3>
                 <p>Geometry library. Representing compact numerical domains such as parallelepiped, spheres...</p>
-                <h4>Overview</h4>
                 <ul>
                     <li>Represent operations between domains</li>
                     <li>Calculate domains volume, area...</li>
@@ -208,7 +186,29 @@
                 </ul>
                 <div class="fragment">
                     <div class="line">git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/</div>
-                </div><!-- fragment --> </div>
+                </div><!-- fragment --><h3>Additional information</h3>
+                <h4>Author : samiBendou</h4>
+                <h4>Last Update : 06/01/2019</h4>
+                <h4>Current Version : 1.1.1</h4>
+                <h4>Compatibility</h4>
+                <ul>
+                    <li>Written using C++11</li>
+                    <li>Using CMake 3.9.2</li>
+                    <li>Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)</li>
+                    <li>Tested on travis with : clang 5.0.0</li>
+                </ul>
+                <h4>Version log :</h4>
+                <ul>
+                    <li>1.1.1 : minor fixes related to integration of CI tool and generating doc using doxygen.</li>
+                    <li>1.1.0 : Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code
+                        structure. Optimizing execution time.
+                    </li>
+                    <li>1.0.1 : Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data
+                        structure for geometrical N-dimensional shapes. Minor fixes.
+                    </li>
+                    <li>1.0.0 : First release.</li>
+                </ul>
+            </div>
         </div><!-- PageDoc -->
     </div><!-- contents -->
 </div><!-- doc-content -->

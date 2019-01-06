@@ -2,21 +2,7 @@
 
 # MathToolKitCPP
 
-### Author : samiBendou
 
-### Last Update : 04/01/2019
-
-### Current Version : 1.1.1
-
-## Version log :
-
-
-- 1.1.1 :   minor fixes related to integration of CI tool
-- 1.1.0 :   Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code structure.
-            Optimizing execution time.
-- 1.0.1 :   Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data structure
-            for geometrical N-dimensional shapes. Minor fixes.
-- 1.0.0 :   First release.
 
 ## General overivew
 
@@ -36,37 +22,23 @@ Featuring :
 
 - High level syntax (numpy like...)
 
-- Cascade calls (matrix.shift().fill(), ...)
+- Cascade calls `matrix.shift().fill()`, ...
 
 The documentation of the framework is currently hosted at : https://samibendou.github.io/MathToolKitCPP/.
 
-### Compatibility
+### NAlgebra
 
-- Written using C++11
+Linear algebra library providing vectors and matrix objects : [Documentation](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html)
 
-- Using CMake 3.9.2
+- Manipulators : `shift()`, `swap()`, ...
 
-- Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)
+- Linear Algebra : `+`, `*`, `inv()`, `pow()`, ...
 
-- Tested on travis with : clang 5.0.0
-
-## NAlgebra
-
-Linear algebra library providing vectors and matrix objects.
-
-#### Overview
-
-- Manipulators : shift, swap, ...
-
-- Linear Algebra : +, *, mapping, inversion, pow, ...
-
-- Generators : eye, ones, diag, ...
+- Generators : `eye()`, `ones()`, `diag()`, ...
   
  ### NAnalysis
  
  Differential calculus library providing numerical vector fields representation and easy ode solving.
- 
- #### Overview
  
 - Mesh fields on various domains (see NGeometry)
 
@@ -75,8 +47,6 @@ Linear algebra library providing vectors and matrix objects.
  ### NGeometry
  
  Geometry library. Representing compact numerical domains such as parallelepiped, spheres...
- 
- #### Overview
  
  - Represent operations between domains
  
@@ -104,4 +74,33 @@ If you want to run unit tests you have to import googletest onto the cloned proj
 
 ```commandline
 git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
+
 ```
+
+### Additional information
+
+#### Author : samiBendou
+
+#### Last Update : 06/01/2019
+
+#### Current Version : 1.1.1
+
+#### Compatibility
+
+- Written using C++11
+
+- Using CMake 3.9.2
+
+- Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)
+
+- Tested on travis with : clang 5.0.0
+
+#### Version log :
+
+- 1.1.1 :   minor fixes related to integration of CI tool and generating doc using doxygen.
+- 1.1.0 :   Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code structure.
+            Optimizing execution time.
+- 1.0.1 :   Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data structure
+            for geometrical N-dimensional shapes. Minor fixes.
+- 1.0.0 :   First release.
+
