@@ -63,6 +63,7 @@ Linear algebra library providing vectors and matrix objects : [Documentation](ht
 2. Copy the directories of the libraries you want to import onto your project. 
 eg : import NAlgebra if you want to use NPMatrix.
 
+3. Check at tutorials on https://samibendou.github.io/MathToolKitCPP
 ### 
 
 ### Run Unit Tests
