@@ -113,36 +113,103 @@
         </iframe>
     </div>
 
-    <div class="header">
-        <div class="headertitle">
-            <div class="title">MathToolKit Documentation</div>
-        </div>
-    </div><!--header-->
-    <div class="contents">
-        <ul>
-            <li><a href="index.html"><span>Main&#160;Page</span></a>
-            </li>
-            <li><a href="modules.html"><span>Modules</span></a>
-            </li>
-            <li><a href="annotated.html"><span>Classes</span></a>
+    <div class="PageDoc">
+        <div class="header">
+            <div class="headertitle">
+                <div class="title">MathToolKit Documentation</div>
+            </div>
+        </div><!--header-->
+        <div class="contents">
+            <div class="textblock"><p><a href="https://travis-ci.org/samiBendou/MathToolKitCPP/builds"><img
+                    src="https://travis-ci.org/samiBendou/MathToolKitCPP.svg?branch=master" alt="Build Status"
+                    class="inline"/>
+            </a></p>
+                <h1>MathToolKitCPP</h1>
+                <h3>Author : samiBendou</h3>
+                <h3>Last Update : 04/01/2019</h3>
+                <h3>Current Version : 1.1.1</h3>
+                <h2>Version log :</h2>
                 <ul>
-                    <li><a href="annotated.html"><span>Class&#160;List</span></a>
+                    <li>1.1.1 : minor fixes related to integration of CI tool</li>
+                    <li>1.1.0 : Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code
+                        structure. Optimizing execution time.
                     </li>
-                    <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a>
+                    <li>1.0.1 : Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data
+                        structure for geometrical N-dimensional shapes. Minor fixes.
                     </li>
-                    <li><a href="functions.html"><span>Class&#160;Members</span></a>
+                    <li>1.0.0 : First release.</li>
+                </ul>
+                <h2>General overivew</h2>
+                <h3>Introduction</h3>
+                <p>MathToolKit is a C++ maths framework. It introduces common mathematical abstractions such as matrix,
+                    vector, numerical fields, ODE... Designed to save time solving commons mathematical problems for
+                    engineering.</p>
+                <p>It provides a mixed style API that gives you flexibility. The library uses both STL standardization
+                    and low level C++ to provide efficient computing. It's designed very lightweight in order to be
+                    embedded on microelectronic devices. It's template based implementation to provide support for
+                    custom scalar types (pixel matrix, AES matrix...).</p>
+                <p>Featuring :</p>
+                <ul>
+                    <li>Large range of abstractions from algebra to geometry</li>
+                    <li>High level syntax (numpy like...)</li>
+                    <li>Cascade calls (matrix.shift().fill(), ...)</li>
+                </ul>
+                <p>The documentation of the framework is currently hosted at : <a
+                        href="https://samibendou.github.io/MathToolKitCPP/">https://samibendou.github.io/MathToolKitCPP/</a>.
+                </p>
+                <h3>Compatibility</h3>
+                <ul>
+                    <li>Written using C++11</li>
+                    <li>Using CMake 3.9.2</li>
+                    <li>Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)</li>
+                    <li>Tested on travis with : clang 5.0.0</li>
+                </ul>
+                <h2>NAlgebra</h2>
+                <p>Linear algebra library providing vectors and matrix objects.</p>
+                <h4>Overview</h4>
+                <ul>
+                    <li>Manipulators : shift, swap, ...</li>
+                    <li>Linear Algebra : +, *, mapping, inversion, pow, ...</li>
+                    <li>Generators : eye, ones, diag, ...</li>
+                </ul>
+                <h3>NAnalysis</h3>
+                <p>Differential calculus library providing numerical vector fields representation and easy ode
+                    solving.</p>
+                <h4>Overview</h4>
+                <ul>
+                    <li>Mesh fields on various domains (see NGeometry)</li>
+                    <li>Solve differential equations using fields representation</li>
+                </ul>
+                <h3>NGeometry</h3>
+                <p>Geometry library. Representing compact numerical domains such as parallelepiped, spheres...</p>
+                <h4>Overview</h4>
+                <ul>
+                    <li>Represent operations between domains</li>
+                    <li>Calculate domains volume, area...</li>
+                    <li>Create mesh of domains.</li>
+                </ul>
+                <h3>Install</h3>
+                <ul>
+                    <li>Clone the project</li>
+                    <li>Copy the directories of the libraries you want to import onto your project. eg : import NAlgebra
+                        if you want to use <a class="el" href="class_n_p_matrix.html"
+                                              title="A NPMatrix&lt;T&gt; inherits from NVector&lt;T&gt;. It&#39;s a representation of matrices of arbitrary size in a temp...">NPMatrix</a>.
                     </li>
                 </ul>
-            </li>
-            <li><a href="files.html"><span>Files</span></a>
+                <h3>Run Unit Tests</h3>
+                <p>The framework is unit tested with googletest. The framework doesnt yet have a code coverage
+                    evaluation but NAlgebra tests has been written.</p>
+                <p>If you want to run unit tests you have to import googletest onto the cloned project.</p>
                 <ul>
-                    <li><a href="files.html"><span>File&#160;List</span></a>
-                    </li>
-                    <li><a href="globals.html"><span>File&#160;Members</span></a>
+                    <li>Clone MathToolKitCPP project</li>
+                    <li>Download googletest last version and put the googletest directory at
+                        MathToolKit/TestsMathToolKitCPP/lib/ :
                     </li>
                 </ul>
-            </li>
-        </ul>
+                <div class="fragment">
+                    <div class="line">git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/</div>
+                </div><!-- fragment --> </div>
+        </div><!-- PageDoc -->
     </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

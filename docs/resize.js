@@ -142,5 +142,4 @@ function initResizable() {
     $(".ui-resizable-handle").dblclick(collapseExpand);
     $(window).load(resizeHeight);
 }
-
 /* @license-end */
