@@ -18,9 +18,6 @@ script:
 - cd build
 - cmake --build .
 - ctest -V
-
-after_success:
-- cd ..
 - |
   coveralls --build-root build --gcov-options '\-lp' \
     -e build/CMakeFiles \
@@ -28,6 +25,10 @@ after_success:
     -e build/lib \
     -e build/MathToolKitRun \
     -e build/Testing \
+
+after_success:
+- cd ..
+
 
 notifications:
   email: false
