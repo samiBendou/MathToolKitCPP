@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['snewtonianfield', ['SNewtonianField', ['../class_s_newtonian_field.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['snewtonianfield',['SNewtonianField',['../class_s_newtonian_field.html',1,'']]]
+];

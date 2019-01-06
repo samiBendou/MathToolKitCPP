@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scalar',['scalar',['../class_n_p_matrix.html#a3195b8dd4a279c3018122c3053997f8c',1,'NPMatrix::scalar()'],['../class_n_vector.html#add6abbdea5f58e6887367860aa0f619d',1,'NVector::scalar()'],['../class_vector3.html#a9c6df044ff0f0b8e7809d3dbfa84407e',1,'Vector3::scalar()']]],
+  ['scalar',['scalar',['../class_n_p_matrix.html#a3195b8dd4a279c3018122c3053997f8c',1,'NPMatrix::scalar()'],['../class_n_vector.html#add6abbdea5f58e6887367860aa0f619d',1,'NVector::scalar()'],['../class_vector3.html#af757c4bd03bd4ddfa74c99fd5a3eee94',1,'Vector3::scalar()']]],
   ['segments',['segments',['../class_n_parallelepiped.html#a3440b48cfd7491ed747690a9f69dbbe4',1,'NParallelepiped']]],
   ['seta',['setA',['../class_n_segment.html#a423242ff6d7d28acbf6bb0fffb559163',1,'NSegment']]],
   ['setb',['setB',['../class_n_segment.html#a02094cbbe46d7c647299ecdde05ce592',1,'NSegment']]],

@@ -9,7 +9,7 @@
 #define MAX_LIMIT_CMP 255
 
 /**
-* @defgroup NAlgebra
+* @ingroup NAlgebra
 * @{
 *
 * @class   Pixel
@@ -26,7 +26,7 @@
 *             - limited   : the value of each component can be limited to be between 0 and 255.
 *                           If the value of a component is set negative the result is 0. Else,
 *                           the if the value is greater than MAX_LIMIT_CMP than the set value
-*                           is the original value mod MAX_LIMIT_CMP + 1.
+*                           is the original value mod `MAX_LIMIT_CMP + 1`.
 *          The pixel is stored in memory as a RGB value even if the format is not RGB. Getting and
 *          setting components generally implies a constant time calculation to translate between RGB
 *          and other formats.

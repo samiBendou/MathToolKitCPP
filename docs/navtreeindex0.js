@@ -52,9 +52,6 @@ var NAVTREEINDEX0 =
 "_s_newtonian_field_8cpp.html":[2,0,0,1,1,3],
 "_s_newtonian_field_8h.html":[2,0,0,1,0,3],
 "_s_newtonian_field_8h_source.html":[2,0,0,1,0,3],
-"_vector3_8cpp.html":[2,0,0,0,1,4],
-"_vector3_8cpp.html#a3ec8a9ae24e8b79b7d6c360af8d9ad38":[2,0,0,0,1,4,1],
-"_vector3_8cpp.html#a5500ab32f732fd9b9ed9a530b1a2ff06":[2,0,0,0,1,4,0],
 "_vector3_8h.html":[2,0,0,0,0,6],
 "_vector3_8h_source.html":[2,0,0,0,0,6],
 "annotated.html":[1,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX0 =
 "class_n_parallelepiped.html#a99696422faefb6e2f558c794017c95e4":[1,0,5,13],
 "class_n_parallelepiped.html#aabd33c4ffeff864ea342440c08d4702b":[1,0,5,16],
 "class_n_parallelepiped.html#abe05e06f34b0be7d18c098ef7821edf3":[1,0,5,2],
-"class_n_parallelepiped.html#ae1cc22beb853095d8a110c641dd8e005":[1,0,5,15]
+"class_n_parallelepiped.html#ae1cc22beb853095d8a110c641dd8e005":[1,0,5,15],
+"class_n_parallelepiped.html#af50551bef2ecb0d6628a6668824bb2ac":[1,0,5,7],
+"class_n_parallelepiped.html#af80601a4fc3edfeca3e7f1209cc2b704":[1,0,5,0],
+"class_n_segment.html":[1,0,8]
 };

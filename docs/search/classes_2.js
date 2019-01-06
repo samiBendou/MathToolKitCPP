@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['pixel', ['Pixel', ['../class_pixel.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['pixel',['Pixel',['../class_pixel.html',1,'']]]
+];

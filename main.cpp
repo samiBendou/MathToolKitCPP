@@ -16,4 +16,6 @@ using namespace std;
 
 int main() {
 
+    Vector3 u{0, 2, 3}, v{2, 2, 2};
+    (u + v).x();
 }

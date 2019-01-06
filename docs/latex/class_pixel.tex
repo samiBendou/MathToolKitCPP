@@ -106,7 +106,7 @@ The class provides an interface with char primitive type by converting a char va
 A pixel can be in several states theses can be used for image processing computation \+:
 \begin{DoxyItemize}
 \item format \+: either Red, Green, Blue (R\+GB) or Grey Scale (G\+Scale).
-\item limited \+: the value of each component can be limited to be between 0 and 255. If the value of a component is set negative the result is 0. Else, the if the value is greater than M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP than the set value is the original value mod M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP + 1. The pixel is stored in memory as a R\+GB value even if the format is not R\+GB. Getting and setting components generally implies a constant time calculation to translate between R\+GB and other formats. 
+\item limited \+: the value of each component can be limited to be between 0 and 255. If the value of a component is set negative the result is 0. Else, the if the value is greater than M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP than the set value is the original value mod {\ttfamily M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP + 1}. The pixel is stored in memory as a R\+GB value even if the format is not R\+GB. Getting and setting components generally implies a constant time calculation to translate between R\+GB and other formats. 
 \end{DoxyItemize}
 
 \subsection{Member Enumeration Documentation}

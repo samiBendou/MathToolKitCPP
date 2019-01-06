@@ -7,7 +7,7 @@
 #include <typedef.h>
 
 /**
- * @defgroup NAlgebra
+ * @ingroup NAlgebra
  * @{
  * @class   AESByte
  * @date    15/10/2018
