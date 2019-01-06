@@ -1,0 +1,106 @@
+\hypertarget{class_n_p_field}{}\section{N\+P\+Field$<$ T, P $>$ Class Template Reference}
+\label{class_n_p_field}\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+
+
+{\ttfamily \#include $<$N\+P\+Field.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_p_field_a0b08c6aed14b5085470849dd5c1e2aa7}{N\+P\+Field}} (\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_field_a21a56864db47d8589ec917764e3b2b85}{h}})
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ \mbox{\hyperlink{class_n_p_field_a725b9522a0a0657b6923412a597802fd}{operator()}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field_af6e57701609dae20abff2d2186f6359b}{operator()}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&vectors) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field_a072ef720318bdbca19ca0a6602469c87}{operator()}} (const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&domain) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_p_field_a21a56864db47d8589ec917764e3b2b85}{h}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ \mbox{\hyperlink{class_n_p_field_a6b92c4782bf41c0b81751821b93eb445}{apply}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&x) const =0
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field_a4e7809de6a986ea4d5256577a0bff008}{map}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&vectors) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field_a7c95aede4fedefab49c35a25452371a4}{mesh}} (const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&domain) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_p_field_a0b08c6aed14b5085470849dd5c1e2aa7}\label{class_n_p_field_a0b08c6aed14b5085470849dd5c1e2aa7}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!NPField@{NPField}}
+\index{NPField@{NPField}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{NPField()}{NPField()}}
+{\footnotesize\ttfamily template$<$typename T, typename P $>$ \\
+\mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::\mbox{\hyperlink{class_n_p_field}{N\+P\+Field}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_p_field_a725b9522a0a0657b6923412a597802fd}\label{class_n_p_field_a725b9522a0a0657b6923412a597802fd}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T, typename P $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_p_field_af6e57701609dae20abff2d2186f6359b}\label{class_n_p_field_af6e57701609dae20abff2d2186f6359b}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T, typename P $>$ \\
+vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&}]{vectors }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_p_field_a072ef720318bdbca19ca0a6602469c87}\label{class_n_p_field_a072ef720318bdbca19ca0a6602469c87}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T, typename P $>$ \\
+vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&}]{domain }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_p_field_a6b92c4782bf41c0b81751821b93eb445}\label{class_n_p_field_a6b92c4782bf41c0b81751821b93eb445}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!apply@{apply}}
+\index{apply@{apply}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily template$<$typename T, typename P = T$>$ \\
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$P$>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_s_newtonian_field_a1f42f77de6b77085a6a5f018fe44d41e}{S\+Newtonian\+Field}}, and \mbox{\hyperlink{class_n_constant_field_a2b81a6a4f9fa56580002d180ac769c9b}{N\+Constant\+Field}}.
+
+\mbox{\Hypertarget{class_n_p_field_a4e7809de6a986ea4d5256577a0bff008}\label{class_n_p_field_a4e7809de6a986ea4d5256577a0bff008}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!map@{map}}
+\index{map@{map}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily template$<$typename T, typename P $>$ \\
+vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::map (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$$>$ \&}]{vectors }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_p_field_a7c95aede4fedefab49c35a25452371a4}\label{class_n_p_field_a7c95aede4fedefab49c35a25452371a4}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!mesh@{mesh}}
+\index{mesh@{mesh}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{mesh()}{mesh()}}
+{\footnotesize\ttfamily template$<$typename T , typename P $>$ \\
+vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ P $>$ $>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&}]{domain }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_p_field_a21a56864db47d8589ec917764e3b2b85}\label{class_n_p_field_a21a56864db47d8589ec917764e3b2b85}} 
+\index{NPField$<$ T, P $>$@{NPField$<$ T, P $>$}!h@{h}}
+\index{h@{h}!NPField$<$ T, P $>$@{NPField$<$ T, P $>$}}
+\subsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily template$<$typename T, typename P = T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ \mbox{\hyperlink{class_n_p_field}{N\+P\+Field}}$<$ T, P $>$\+::h}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+N\+Analysis/header/\mbox{\hyperlink{_n_p_field_8h}{N\+P\+Field.\+h}}\item 
+N\+Analysis/source/\mbox{\hyperlink{_n_p_field_8cpp}{N\+P\+Field.\+cpp}}\end{DoxyCompactItemize}

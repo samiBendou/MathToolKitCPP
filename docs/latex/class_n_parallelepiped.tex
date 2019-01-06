@@ -1,0 +1,196 @@
+\hypertarget{class_n_parallelepiped}{}\section{N\+Parallelepiped Class Reference}
+\label{class_n_parallelepiped}\index{NParallelepiped@{NParallelepiped}}
+
+
+{\ttfamily \#include $<$N\+Parallelepiped.\+h$>$}
+
+Inheritance diagram for N\+Parallelepiped\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_n_parallelepiped}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_parallelepiped_af80601a4fc3edfeca3e7f1209cc2b704}{N\+Parallelepiped}} (const \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \&\mbox{\hyperlink{class_n_parallelepiped_a59a297106e5f9a9d8cc672dbe685eced}{base}}=\mbox{\hyperlink{class_n_p_matrix_a701c8f60b4b8b727fccb063cd6f0784b}{mat\+\_\+t\+::zeros}}(0), const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&\mbox{\hyperlink{class_n_parallelepiped_a15e7d385482e105caad884697aa2a9ab}{pos}}=\mbox{\hyperlink{class_n_vector_a6253cef3c39dd9d388bbf7d17069bc51}{vec\+\_\+t\+::zeros}}(0))
+\item 
+std\+::string \mbox{\hyperlink{class_n_parallelepiped_a2f5b58b9b80e9b3fda4177fb7703b221}{str}} () const override
+\item 
+bool \mbox{\hyperlink{class_n_parallelepiped_abe05e06f34b0be7d18c098ef7821edf3}{is\+In}} (const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&x) const override
+\item 
+bool \mbox{\hyperlink{class_n_parallelepiped_a7c4271e0cd8678b6904b1f25d116cd57}{is\+Empty}} () const override
+\item 
+int \mbox{\hyperlink{class_n_parallelepiped_a57517e96bd3bc757cfa4e4d1d2768450}{card}} () const override
+\item 
+const \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \& \mbox{\hyperlink{class_n_parallelepiped_a59a297106e5f9a9d8cc672dbe685eced}{base}} () const
+\item 
+const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \& \mbox{\hyperlink{class_n_parallelepiped_a15e7d385482e105caad884697aa2a9ab}{pos}} () const
+\item 
+void \mbox{\hyperlink{class_n_parallelepiped_af50551bef2ecb0d6628a6668824bb2ac}{set\+Base}} (const \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \&\mbox{\hyperlink{class_n_parallelepiped_a59a297106e5f9a9d8cc672dbe685eced}{base}})
+\item 
+void \mbox{\hyperlink{class_n_parallelepiped_a29f55165985609afbc16b91c4143771d}{set\+Pos}} (const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&\mbox{\hyperlink{class_n_parallelepiped_a15e7d385482e105caad884697aa2a9ab}{pos}})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ \mbox{\hyperlink{class_n_parallelepiped_a6cc531927e40a95b48923b56406206d3}{border}} () const override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ \mbox{\hyperlink{class_n_parallelepiped_a0f9ba9f6cab5d2c9472776e69f9aa78d}{mesh}} (const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&h) const override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_n_segment}{N\+Segment}} $>$ \mbox{\hyperlink{class_n_parallelepiped_a3440b48cfd7491ed747690a9f69dbbe4}{segments}} () const
+\item 
+double \mbox{\hyperlink{class_n_parallelepiped_a8529874bae044bdee3e0d805dae1887d}{vol}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_parallelepiped_a99696422faefb6e2f558c794017c95e4}{mesh\+Size}} (const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&h) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \mbox{\hyperlink{class_n_parallelepiped_a02542ae7d5e1d052412eb06a292e0e9d}{\+\_\+base}}
+\item 
+\mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \mbox{\hyperlink{class_n_parallelepiped_ae1cc22beb853095d8a110c641dd8e005}{\+\_\+pos}}
+\item 
+double \mbox{\hyperlink{class_n_parallelepiped_aabd33c4ffeff864ea342440c08d4702b}{\+\_\+vol}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_parallelepiped_af80601a4fc3edfeca3e7f1209cc2b704}\label{class_n_parallelepiped_af80601a4fc3edfeca3e7f1209cc2b704}} 
+\index{NParallelepiped@{NParallelepiped}!NParallelepiped@{NParallelepiped}}
+\index{NParallelepiped@{NParallelepiped}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{NParallelepiped()}{NParallelepiped()}}
+{\footnotesize\ttfamily N\+Parallelepiped\+::\+N\+Parallelepiped (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \&}]{base = {\ttfamily \mbox{\hyperlink{class_n_p_matrix_a701c8f60b4b8b727fccb063cd6f0784b}{mat\+\_\+t\+::zeros}}(0)},  }\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{pos = {\ttfamily \mbox{\hyperlink{class_n_vector_a6253cef3c39dd9d388bbf7d17069bc51}{vec\+\_\+t\+::zeros}}(0)} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_parallelepiped_a2f5b58b9b80e9b3fda4177fb7703b221}\label{class_n_parallelepiped_a2f5b58b9b80e9b3fda4177fb7703b221}} 
+\index{NParallelepiped@{NParallelepiped}!str@{str}}
+\index{str@{str}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily std\+::string N\+Parallelepiped\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_n_compact_af1879d7342bf6d9902ed5473f6e89038}{N\+Compact}}.
+
+\mbox{\Hypertarget{class_n_parallelepiped_abe05e06f34b0be7d18c098ef7821edf3}\label{class_n_parallelepiped_abe05e06f34b0be7d18c098ef7821edf3}} 
+\index{NParallelepiped@{NParallelepiped}!isIn@{isIn}}
+\index{isIn@{isIn}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{isIn()}{isIn()}}
+{\footnotesize\ttfamily bool N\+Parallelepiped\+::is\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_n_compact_a387e86914973c69b292782f640368680}{N\+Compact}}.
+
+\mbox{\Hypertarget{class_n_parallelepiped_a7c4271e0cd8678b6904b1f25d116cd57}\label{class_n_parallelepiped_a7c4271e0cd8678b6904b1f25d116cd57}} 
+\index{NParallelepiped@{NParallelepiped}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool N\+Parallelepiped\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_n_compact_a574764d7ac4fe2393a739b67bf57a7f1}{N\+Compact}}.
+
+\mbox{\Hypertarget{class_n_parallelepiped_a57517e96bd3bc757cfa4e4d1d2768450}\label{class_n_parallelepiped_a57517e96bd3bc757cfa4e4d1d2768450}} 
+\index{NParallelepiped@{NParallelepiped}!card@{card}}
+\index{card@{card}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{card()}{card()}}
+{\footnotesize\ttfamily int N\+Parallelepiped\+::card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_n_compact_a816bb4976567a7bfed57763ce717b685}{N\+Compact}}.
+
+\mbox{\Hypertarget{class_n_parallelepiped_a59a297106e5f9a9d8cc672dbe685eced}\label{class_n_parallelepiped_a59a297106e5f9a9d8cc672dbe685eced}} 
+\index{NParallelepiped@{NParallelepiped}!base@{base}}
+\index{base@{base}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{base()}{base()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \& N\+Parallelepiped\+::base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_parallelepiped_a15e7d385482e105caad884697aa2a9ab}\label{class_n_parallelepiped_a15e7d385482e105caad884697aa2a9ab}} 
+\index{NParallelepiped@{NParallelepiped}!pos@{pos}}
+\index{pos@{pos}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{pos()}{pos()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \& N\+Parallelepiped\+::pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_parallelepiped_af50551bef2ecb0d6628a6668824bb2ac}\label{class_n_parallelepiped_af50551bef2ecb0d6628a6668824bb2ac}} 
+\index{NParallelepiped@{NParallelepiped}!setBase@{setBase}}
+\index{setBase@{setBase}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{setBase()}{setBase()}}
+{\footnotesize\ttfamily void N\+Parallelepiped\+::set\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} \&}]{base }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_n_parallelepiped_a29f55165985609afbc16b91c4143771d}\label{class_n_parallelepiped_a29f55165985609afbc16b91c4143771d}} 
+\index{NParallelepiped@{NParallelepiped}!setPos@{setPos}}
+\index{setPos@{setPos}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void N\+Parallelepiped\+::set\+Pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_n_parallelepiped_a6cc531927e40a95b48923b56406206d3}\label{class_n_parallelepiped_a6cc531927e40a95b48923b56406206d3}} 
+\index{NParallelepiped@{NParallelepiped}!border@{border}}
+\index{border@{border}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{border()}{border()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ N\+Parallelepiped\+::border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_n_compact_af7acc50099e80fc13ce32c97e6857308}{N\+Compact}}.
+
+\mbox{\Hypertarget{class_n_parallelepiped_a0f9ba9f6cab5d2c9472776e69f9aa78d}\label{class_n_parallelepiped_a0f9ba9f6cab5d2c9472776e69f9aa78d}} 
+\index{NParallelepiped@{NParallelepiped}!mesh@{mesh}}
+\index{mesh@{mesh}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{mesh()}{mesh()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ N\+Parallelepiped\+::mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_n_compact_ad4cdc60c75ca433c63f44ec13063e2fe}{N\+Compact}}.
+
+\mbox{\Hypertarget{class_n_parallelepiped_a3440b48cfd7491ed747690a9f69dbbe4}\label{class_n_parallelepiped_a3440b48cfd7491ed747690a9f69dbbe4}} 
+\index{NParallelepiped@{NParallelepiped}!segments@{segments}}
+\index{segments@{segments}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{segments()}{segments()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_n_segment}{N\+Segment}} $>$ N\+Parallelepiped\+::segments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_parallelepiped_a8529874bae044bdee3e0d805dae1887d}\label{class_n_parallelepiped_a8529874bae044bdee3e0d805dae1887d}} 
+\index{NParallelepiped@{NParallelepiped}!vol@{vol}}
+\index{vol@{vol}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{vol()}{vol()}}
+{\footnotesize\ttfamily double N\+Parallelepiped\+::vol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_parallelepiped_a99696422faefb6e2f558c794017c95e4}\label{class_n_parallelepiped_a99696422faefb6e2f558c794017c95e4}} 
+\index{NParallelepiped@{NParallelepiped}!meshSize@{meshSize}}
+\index{meshSize@{meshSize}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{meshSize()}{meshSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} N\+Parallelepiped\+::mesh\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_parallelepiped_a02542ae7d5e1d052412eb06a292e0e9d}\label{class_n_parallelepiped_a02542ae7d5e1d052412eb06a292e0e9d}} 
+\index{NParallelepiped@{NParallelepiped}!\_base@{\_base}}
+\index{\_base@{\_base}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{\_base}{\_base}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___n_algebra_ga44dfb60c1e03b44e98a332fb2ae71947}{mat\+\_\+t}} N\+Parallelepiped\+::\+\_\+base\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_parallelepiped_ae1cc22beb853095d8a110c641dd8e005}\label{class_n_parallelepiped_ae1cc22beb853095d8a110c641dd8e005}} 
+\index{NParallelepiped@{NParallelepiped}!\_pos@{\_pos}}
+\index{\_pos@{\_pos}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{\_pos}{\_pos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} N\+Parallelepiped\+::\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_parallelepiped_aabd33c4ffeff864ea342440c08d4702b}\label{class_n_parallelepiped_aabd33c4ffeff864ea342440c08d4702b}} 
+\index{NParallelepiped@{NParallelepiped}!\_vol@{\_vol}}
+\index{\_vol@{\_vol}!NParallelepiped@{NParallelepiped}}
+\subsubsection{\texorpdfstring{\_vol}{\_vol}}
+{\footnotesize\ttfamily double N\+Parallelepiped\+::\+\_\+vol\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+N\+Geometry/header/\mbox{\hyperlink{_n_parallelepiped_8h}{N\+Parallelepiped.\+h}}\item 
+N\+Geometry/source/\mbox{\hyperlink{_n_parallelepiped_8cpp}{N\+Parallelepiped.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,975 @@
+\hypertarget{class_n_vector}{}\section{N\+Vector$<$ T $>$ Class Template Reference}
+\label{class_n_vector}\index{NVector$<$ T $>$@{NVector$<$ T $>$}}
+
+
+A N\+Vector$<$\+T$>$ object represents the coordinates of a finite dimension vector x in an arbitrary base.  
+
+
+
+
+{\ttfamily \#include $<$N\+Vector.\+h$>$}
+
+Inheritance diagram for N\+Vector$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_n_vector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_vector_a786957fb5d1d9bdec7e6ced65bce03c0}{N\+Vector}} (const std\+::vector$<$ T $>$ \&data)
+\begin{DoxyCompactList}\small\item\em N\+Vector$<$\+T$>$ with an array of data. The dimension is the size of the array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_n_vector_a44c7b132c668c2aac890b66fe7ab0262}{N\+Vector}} (std\+::initializer\+\_\+list$<$ T $>$ list)
+\item 
+\mbox{\hyperlink{class_n_vector_a58eee5f012e4e563d477788051fc7f1d}{N\+Vector}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}}=0)
+\begin{DoxyCompactList}\small\item\em N\+Vector$<$\+T$>$ by giving the dimension ie the size of the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_n_vector_a7f648402b0fc9006ce9ced7ca647e600}{N\+Vector}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+virtual std\+::string \mbox{\hyperlink{class_n_vector_a6d66b06b953197c1b3965ed69f9fd17e}{str}} () const
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}} () const
+\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{class_n_vector_aa99d9fea7e30357df42f736013506fe1}{array}} () const
+\item 
+T \mbox{\hyperlink{class_n_vector_afc7553743872ccb71e902a154eb60dc2}{max}} () const
+\item 
+T \mbox{\hyperlink{class_n_vector_ab81d84a1fce6b8647e5fd4e34ec90db7}{min}} () const
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_ab0521dd8dc4af0e9167770f85084d2d6}{max\+Index}} () const
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_aea9d0e6c8b20628b5e09f8194484a8d3}{min\+Index}} () const
+\item 
+T \mbox{\hyperlink{class_n_vector_a2d77a1ff10574ae5ca33fb3c11a087e2}{max\+Abs}} () const
+\item 
+T \mbox{\hyperlink{class_n_vector_a857878b360cede51eb87924cd46d5a54}{min\+Abs}} () const
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_ac7d7d39b68956da9018684a3706a70c2}{max\+Abs\+Index}} () const
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a8b9147431ee1f9c5a25c6e0b2f793c40}{min\+Abs\+Index}} () const
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a8ea2e2cffa2c3053d835d05a571dac88}{swap}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
+\begin{DoxyCompactList}\small\item\em Permutation of two elements (x(k1 -\/ 1), xk2, ..., x(k2 -\/ 1), xk1, ..., x(n-\/1)) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}{shift}} (long iterations)
+\begin{DoxyCompactList}\small\item\em Shifts vector iterations times. ie. with iterations = 2 \+: (x2, x3, ..., x(n-\/1), x0, x1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}{fill}} (T s)
+\begin{DoxyCompactList}\small\item\em Fill vector with a scalar \+: ie. with scalar = 3, (3, 3, 3, ..., 3). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a493c3ac08bab3361ad475fc0360ee489}{operator+=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_af402cb6a52bf52d08286cfa8edb6afaa}{operator-\/=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a1630b8394837cf1ddf808f2761136771}{operator $\ast$=}} (T s)
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_ac6dc40f82bad305c159643de675e7395}{operator/=}} (T s)
+\item 
+T \& \mbox{\hyperlink{class_n_vector_a3ed21b63fd97af9c63bfacb372f733a5}{operator()}} (long k)
+\item 
+T \mbox{\hyperlink{class_n_vector_a51d4a2c505c1434f45e8f80d1d77eda5}{operator()}} (long k) const
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a8778fdc3c0a27a7930fda3f2a7155e96}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2) const
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a98f95a46c34ceaf355e86e9dad9863e1}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_ab793bf6d3d3fc05f91f435c1c0a8e5ea}{operator=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\begin{DoxyCompactList}\small\item\em Copy source object on this object using \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy()}}. \end{DoxyCompactList}\item 
+iterator \mbox{\hyperlink{class_n_vector_ae71ea78f955c0512a1dd005c335f956a}{begin}} ()
+\item 
+const\+\_\+iterator \mbox{\hyperlink{class_n_vector_a39aa7aecfd17e2db8130f5fbc956bb8f}{begin}} () const
+\item 
+iterator \mbox{\hyperlink{class_n_vector_a11675cb00213e89ae5a563f59d0f4ff3}{end}} ()
+\item 
+const\+\_\+iterator \mbox{\hyperlink{class_n_vector_ac019e1018e5d0dd8113d2f2605aa2987}{end}} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a6253cef3c39dd9d388bbf7d17069bc51}{zeros}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
+\item 
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_afb6358454a8dfaac4963352843b17bbc}{ones}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
+\item 
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_add6abbdea5f58e6887367860aa0f619d}{scalar}} (T s, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
+\item 
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a37b19eb888023546363e952cd39ea3a1}{canonical}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
+\item 
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_af0f5749405554fc23a0af67ad4f9e9e5}{sum}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}} $>$ \&vectors)
+\item 
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a89ea4dcaa84313e6446e0be35ec7bbe1}{sum\+Prod}} (const std\+::vector$<$ T $>$ \&scalars, const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}} $>$ \&vectors)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_vector_a402111a5a467efd5741e6a17fbd5c903}{N\+Vector}} (const std\+::vector$<$ T $>$ \&data, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a82d1863c00d57ccfed9e2d74a8d1bfd5}{add}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a67b62da878e1bfa873d714b87ae3d6ee}{sub}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a92087679da6949a3fd0ce2c8329c5044}{opp}} ()
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a0b7f80da288093be295a09df9720bccc}{prod}} (T s)
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a3a9aa1000751225bc530490bde95b51e}{div}} (T s)
+\item 
+T \mbox{\hyperlink{class_n_vector_abd35a43ccd6973efe24624572570d99f}{dot\+Product}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
+\item 
+T \mbox{\hyperlink{class_n_vector_a99c134693de1e2b5f9d8f524d9cfd07a}{norm}} () const
+\item 
+T \mbox{\hyperlink{class_n_vector_aac9fc2b4c051f5011398a9fad6f7d452}{distance}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
+\item 
+bool \mbox{\hyperlink{class_n_vector_ad993b3d62002abc9d89ebf053003341d}{is\+Valid\+Index}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k) const
+\item 
+bool \mbox{\hyperlink{class_n_vector_a5c23df071f027cb26f1af69910159aa5}{is\+Between\+K12}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k) const
+\item 
+bool \mbox{\hyperlink{class_n_vector_a6d2566f587ad233770ada3aeae0481e1}{is\+Null}} () const
+\item 
+bool \mbox{\hyperlink{class_n_vector_a496fb038e1612ce56c3b91a9c327c509}{is\+Equal}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
+\item 
+bool \mbox{\hyperlink{class_n_vector_aa9bef4cdf1e57cb0f2e7a3571bdb92a7}{has\+Same\+Size}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u) const
+\item 
+virtual bool \mbox{\hyperlink{class_n_vector_a033460137c1098f8477e6a00e9c2872a}{has\+Default\+Browse\+Indices}} () const
+\item 
+virtual void \mbox{\hyperlink{class_n_vector_a7f7d365d6ba6e62f627828a528972268}{set\+Default\+Browse\+Indices}} () const
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a703e598ebcdf39c8f0efa5c619a88d71}{for\+Each}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, const std\+::function$<$ void(T \&, const T \&)$>$ \&binary\+\_\+op)
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_af5cd7c64bfd8eb2335f61d698d6dbf21}{for\+Each}} (T s, const std\+::function$<$ void(T \&, T)$>$ \&binary\+\_\+op)
+\item 
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a8f24d84b8dafde55ba650fd02c188c06}{sub\+Vector}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2) const
+\item 
+void \mbox{\hyperlink{class_n_vector_a6fd08a3790831a9ada035f720cb0b11f}{set\+Sub\+Vector}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a355ee9ef9436669e52d0ff4538f85e27}{\+\_\+k1}}
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a6591512e0566996c42f3d74c8174385e}{\+\_\+k2}}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a302d1dc15ce109264b050fb074518981}{operator+}} (\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ u, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&v)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a870ba98635d7984c826f2d1f60d8b4e3}{operator-\/}} (\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ u, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&v)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a3991d193c344ff47ee71380879b7b2a2}{operator-\/}} (\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ u)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_aee06ce5bbd64e05216ebdf521d77aa35}{operator $\ast$}} (T s, \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ u)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_ab1ec596666b587300410f8fa459f295d}{operator $\ast$}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, T s)
+\item 
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a56643335b5a0b0b07abe89e2cac8a5de}{operator/}} (\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ u, T s)
+\item 
+T \mbox{\hyperlink{class_n_vector_a193c63fac7e6b9528c854fd94ee76030}{operator$\vert$}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&v)
+\item 
+T \mbox{\hyperlink{class_n_vector_a697b7e9e059d8045dc5f682f94521548}{operator!}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+T \mbox{\hyperlink{class_n_vector_a28eb7e90bdbd558f19beb9faebb1de1f}{operator/}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&v)
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_n_vector_a050d56598b76afac2f22094360f46238}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&vector)
+\item 
+bool \mbox{\hyperlink{class_n_vector_aa1c22d1bc3a021b406c61d09f95d5e26}{operator==}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&v)
+\item 
+bool \mbox{\hyperlink{class_n_vector_aaffc8825c70b5e498690e0882d202a65}{operator==}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, T s)
+\item 
+bool \mbox{\hyperlink{class_n_vector_a4f2b795f34a0a21dfcc146ba02899a1b}{operator==}} (T s, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\item 
+bool \mbox{\hyperlink{class_n_vector_adf3470a73ee508e6b7292bdaed2d13ba}{operator!=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&v)
+\item 
+bool \mbox{\hyperlink{class_n_vector_a5f6935537ff657c5c48c14090322e851}{operator!=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u, T s)
+\item 
+bool \mbox{\hyperlink{class_n_vector_ad51fab9cb11a2faf828455d676ee6755}{operator!=}} (T s, const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class N\+Vector$<$ T $>$}
+
+A N\+Vector$<$\+T$>$ object represents the coordinates of a finite dimension vector x in an arbitrary base. 
+
+\begin{DoxyDate}{Date}
+03/05/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+sami\+Bendou
+\end{DoxyAuthor}
+Coordinates are stored in the form \mbox{[}x0, x1, ..., x(n-\/1)\mbox{]}. where \mbox{[}...\mbox{]} is a std\+::vector$<$\+T$>$, n is the dimension and (x0, x1, ..., x(n-\/1)) are the coordinates.
+
+Featuring algebraical operations (E, +, $\ast$), swaps, shifts and classic vectors generator such as ones, zeros...
+
+This object is the base object of every other object in N\+Algebra module. It inherits from std\+::vector$<$\+T$>$ so it\textquotesingle{}s kind of memory support for every object in N\+Algebra module.
+
+We will often refer to the following variable in this page \+:
+\begin{DoxyItemize}
+\item x/u \+: this vector.
+\item s \+: a scalar (T) 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_vector_a786957fb5d1d9bdec7e6ced65bce03c0}\label{class_n_vector_a786957fb5d1d9bdec7e6ced65bce03c0}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!NVector@{NVector}}
+\index{NVector@{NVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{NVector()}{NVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\mbox{\hyperlink{class_n_vector}{N\+Vector}} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+N\+Vector$<$\+T$>$ with an array of data. The dimension is the size of the array. 
+
+\mbox{\Hypertarget{class_n_vector_a44c7b132c668c2aac890b66fe7ab0262}\label{class_n_vector_a44c7b132c668c2aac890b66fe7ab0262}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!NVector@{NVector}}
+\index{NVector@{NVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{NVector()}{NVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\mbox{\hyperlink{class_n_vector}{N\+Vector}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_a58eee5f012e4e563d477788051fc7f1d}\label{class_n_vector_a58eee5f012e4e563d477788051fc7f1d}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!NVector@{NVector}}
+\index{NVector@{NVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{NVector()}{NVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\mbox{\hyperlink{class_n_vector}{N\+Vector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+N\+Vector$<$\+T$>$ by giving the dimension ie the size of the vector. 
+
+\mbox{\Hypertarget{class_n_vector_a7f648402b0fc9006ce9ced7ca647e600}\label{class_n_vector_a7f648402b0fc9006ce9ced7ca647e600}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!NVector@{NVector}}
+\index{NVector@{NVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{NVector()}{NVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\mbox{\hyperlink{class_n_vector}{N\+Vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_a402111a5a467efd5741e6a17fbd5c903}\label{class_n_vector_a402111a5a467efd5741e6a17fbd5c903}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!NVector@{NVector}}
+\index{NVector@{NVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{NVector()}{NVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\mbox{\hyperlink{class_n_vector}{N\+Vector}} (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{data,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_vector_a6d66b06b953197c1b3965ed69f9fd17e}\label{class_n_vector_a6d66b06b953197c1b3965ed69f9fd17e}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!str@{str}}
+\index{str@{str}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+string \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+a string representing the coordinates of the vector in the format \char`\"{}\mbox{[}x0, x1, ..., x(n-\/1)\mbox{]}\char`\"{}. xi is formatted with exponential notation with 2 decimals. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_ac60d089a0a4b6d0a1df3cf549f50028d}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_ac60d089a0a4b6d0a1df3cf549f50028d}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_a7589027db20509ac4d93490bb9a1979a}\label{class_n_vector_a7589027db20509ac4d93490bb9a1979a}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!dim@{dim}}
+\index{dim@{dim}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{dim()}{dim()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+n, the dimension of the vector which is the size of this std\+::vector instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_aa99d9fea7e30357df42f736013506fe1}\label{class_n_vector_aa99d9fea7e30357df42f736013506fe1}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!array@{array}}
+\index{array@{array}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{array()}{array()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+an std\+::vector representing the base object of this instance of \mbox{\hyperlink{class_n_vector}{N\+Vector}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_afc7553743872ccb71e902a154eb60dc2}\label{class_n_vector_afc7553743872ccb71e902a154eb60dc2}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!max@{max}}
+\index{max@{max}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Respectively max and min of the coordinates of the vector (x0, x1, .. x(n-\/1)). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_ab81d84a1fce6b8647e5fd4e34ec90db7}\label{class_n_vector_ab81d84a1fce6b8647e5fd4e34ec90db7}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!min@{min}}
+\index{min@{min}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_vector_ab0521dd8dc4af0e9167770f85084d2d6}\label{class_n_vector_ab0521dd8dc4af0e9167770f85084d2d6}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!maxIndex@{maxIndex}}
+\index{maxIndex@{maxIndex}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{maxIndex()}{maxIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::max\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Respectively the index of max and min of the coordinates of vector (x0, x1, .. x(n-\/1)). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_aea9d0e6c8b20628b5e09f8194484a8d3}\label{class_n_vector_aea9d0e6c8b20628b5e09f8194484a8d3}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!minIndex@{minIndex}}
+\index{minIndex@{minIndex}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{minIndex()}{minIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::min\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_vector_a2d77a1ff10574ae5ca33fb3c11a087e2}\label{class_n_vector_a2d77a1ff10574ae5ca33fb3c11a087e2}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!maxAbs@{maxAbs}}
+\index{maxAbs@{maxAbs}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{maxAbs()}{maxAbs()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::max\+Abs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Respectively min and max of absolute value of vector ie. ($\vert$x0$\vert$, $\vert$x1$\vert$, ..., $\vert$x(n-\/1)$\vert$) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a857878b360cede51eb87924cd46d5a54}\label{class_n_vector_a857878b360cede51eb87924cd46d5a54}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!minAbs@{minAbs}}
+\index{minAbs@{minAbs}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{minAbs()}{minAbs()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::min\+Abs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_vector_ac7d7d39b68956da9018684a3706a70c2}\label{class_n_vector_ac7d7d39b68956da9018684a3706a70c2}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!maxAbsIndex@{maxAbsIndex}}
+\index{maxAbsIndex@{maxAbsIndex}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{maxAbsIndex()}{maxAbsIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::max\+Abs\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Respectively index of min and max of absolute value of vector ie. ($\vert$x0$\vert$, $\vert$x1$\vert$, ..., $\vert$x(n-\/1)$\vert$) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a8b9147431ee1f9c5a25c6e0b2f793c40}\label{class_n_vector_a8b9147431ee1f9c5a25c6e0b2f793c40}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!minAbsIndex@{minAbsIndex}}
+\index{minAbsIndex@{minAbsIndex}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{minAbsIndex()}{minAbsIndex()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::min\+Abs\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_vector_a8ea2e2cffa2c3053d835d05a571dac88}\label{class_n_vector_a8ea2e2cffa2c3053d835d05a571dac88}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption})}
+
+
+
+Permutation of two elements (x(k1 -\/ 1), xk2, ..., x(k2 -\/ 1), xk1, ..., x(n-\/1)) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k1} & First index to swap \\
+\hline
+{\em k2} & Second index to swap \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}\label{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!shift@{shift}}
+\index{shift@{shift}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::shift (\begin{DoxyParamCaption}\item[{long}]{iterations }\end{DoxyParamCaption})}
+
+
+
+Shifts vector iterations times. ie. with iterations = 2 \+: (x2, x3, ..., x(n-\/1), x0, x1). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterations} & number of times to shift. If iterations is $>$ 0, shift is powered to the left, else to the right. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}\label{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!fill@{fill}}
+\index{fill@{fill}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::fill (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})}
+
+
+
+Fill vector with a scalar \+: ie. with scalar = 3, (3, 3, 3, ..., 3). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & value to fill the vector with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_n_vector_a493c3ac08bab3361ad475fc0360ee489}\label{class_n_vector_a493c3ac08bab3361ad475fc0360ee489}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_af402cb6a52bf52d08286cfa8edb6afaa}\label{class_n_vector_af402cb6a52bf52d08286cfa8edb6afaa}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_a1630b8394837cf1ddf808f2761136771}\label{class_n_vector_a1630b8394837cf1ddf808f2761136771}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a7e0436ab2932534fe9f0a15db4a5560e}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_a7e0436ab2932534fe9f0a15db4a5560e}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_ac6dc40f82bad305c159643de675e7395}\label{class_n_vector_ac6dc40f82bad305c159643de675e7395}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a0150ab8322e2ea4a2550531dda3dfabd}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_a0150ab8322e2ea4a2550531dda3dfabd}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_a3ed21b63fd97af9c63bfacb372f733a5}\label{class_n_vector_a3ed21b63fd97af9c63bfacb372f733a5}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{long}]{k }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & index of the coordinate. Between -\/(\mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim()}} -\/ 1) and \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim()}} -\/ 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the kth coordinate of the vector xk if k $<$ 0, returns x(n -\/ 1 -\/ k). Operator can be used to read/write values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a51d4a2c505c1434f45e8f80d1d77eda5}\label{class_n_vector_a51d4a2c505c1434f45e8f80d1d77eda5}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{long}]{k }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_vector_a8778fdc3c0a27a7930fda3f2a7155e96}\label{class_n_vector_a8778fdc3c0a27a7930fda3f2a7155e96}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em k1} & start index for sub-\/range. \\
+\hline
+{\em k2} & end index for sub-\/range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a sub vector in representing coordinates from k1 to k2, (xk1, x(k1+1), ...,xk2). \begin{DoxyVerb}     - 0 <= |k1| <= |k2| <= dim() - 1.
+
+     - Operator can be used to read/write values.
+
+     - Allows operations such as u(0, 1) + v(1, 2) or u(1, 4).max(), ...
+
+     - Const version returns a sub-vector.
+
+     - See unit tests for more brief.
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a98f95a46c34ceaf355e86e9dad9863e1}\label{class_n_vector_a98f95a46c34ceaf355e86e9dad9863e1}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_n_vector_ab793bf6d3d3fc05f91f435c1c0a8e5ea}\label{class_n_vector_ab793bf6d3d3fc05f91f435c1c0a8e5ea}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy source object on this object using \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy()}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & source N\+Vector$<$\+T$>$ object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_ae71ea78f955c0512a1dd005c335f956a}\label{class_n_vector_ae71ea78f955c0512a1dd005c335f956a}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+iterator \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_a39aa7aecfd17e2db8130f5fbc956bb8f}\label{class_n_vector_a39aa7aecfd17e2db8130f5fbc956bb8f}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_a11675cb00213e89ae5a563f59d0f4ff3}\label{class_n_vector_a11675cb00213e89ae5a563f59d0f4ff3}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!end@{end}}
+\index{end@{end}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+iterator \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_ac019e1018e5d0dd8113d2f2605aa2987}\label{class_n_vector_ac019e1018e5d0dd8113d2f2605aa2987}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!end@{end}}
+\index{end@{end}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+const\+\_\+iterator \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_vector_a6253cef3c39dd9d388bbf7d17069bc51}\label{class_n_vector_a6253cef3c39dd9d388bbf7d17069bc51}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!zeros@{zeros}}
+\index{zeros@{zeros}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::zeros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & dimension of the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a 0 vector (0, 0, ..., 0). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_afb6358454a8dfaac4963352843b17bbc}\label{class_n_vector_afb6358454a8dfaac4963352843b17bbc}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!ones@{ones}}
+\index{ones@{ones}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{ones()}{ones()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::ones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & dimension of the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns vector filled with 1 (1, 1, ..., 1). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_add6abbdea5f58e6887367860aa0f619d}\label{class_n_vector_add6abbdea5f58e6887367860aa0f619d}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!scalar@{scalar}}
+\index{scalar@{scalar}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{scalar()}{scalar()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::scalar (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & value of the scalar vector \\
+\hline
+{\em dim} & dimension of the scalar vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector filled with s (s, s, ..., s). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a37b19eb888023546363e952cd39ea3a1}\label{class_n_vector_a37b19eb888023546363e952cd39ea3a1}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!canonical@{canonical}}
+\index{canonical@{canonical}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{canonical()}{canonical()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & index of vector in base \\
+\hline
+{\em dim} & dimension of vector space represented by the base. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the kth vector of canonical base. ie (e0, e1, ..., e(n-\/1)) where \+: e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n -\/ 1) = (0, 0, ..., 1). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_af0f5749405554fc23a0af67ad4f9e9e5}\label{class_n_vector_af0f5749405554fc23a0af67ad4f9e9e5}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!sum@{sum}}
+\index{sum@{sum}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::sum (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \&}]{vectors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vectors} & an array of vectors \mbox{[}u0, u1, ..., u(r-\/1)\mbox{]} where r is the size of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sum of the vectors \+: u0 + u1 + ... + u(r-\/1). where + is usual addition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a89ea4dcaa84313e6446e0be35ec7bbe1}\label{class_n_vector_a89ea4dcaa84313e6446e0be35ec7bbe1}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!sumProd@{sumProd}}
+\index{sumProd@{sumProd}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{sumProd()}{sumProd()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::sum\+Prod (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{scalars,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ $>$ \&}]{vectors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalars} & coefficients of linear combination \mbox{[}s0, s1, ..., s(r-\/1)\mbox{]} where r is the size of the array \\
+\hline
+{\em vectors} & vectors of linear combination (u0, u1, ..., u(r-\/1)) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the linear combination s0 $\ast$ u0 + s1 $\ast$ u1 + ... + s(r-\/1) $\ast$ u(r-\/1). where + and $\ast$ are usual addition and scalar multiplication. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a82d1863c00d57ccfed9e2d74a8d1bfd5}\label{class_n_vector_a82d1863c00d57ccfed9e2d74a8d1bfd5}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!add@{add}}
+\index{add@{add}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a67b62da878e1bfa873d714b87ae3d6ee}\label{class_n_vector_a67b62da878e1bfa873d714b87ae3d6ee}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!sub@{sub}}
+\index{sub@{sub}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::sub (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a92087679da6949a3fd0ce2c8329c5044}\label{class_n_vector_a92087679da6949a3fd0ce2c8329c5044}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!opp@{opp}}
+\index{opp@{opp}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{opp()}{opp()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::opp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a9b38999d88043fa71686351ded183de8}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_a9b38999d88043fa71686351ded183de8}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_a0b7f80da288093be295a09df9720bccc}\label{class_n_vector_a0b7f80da288093be295a09df9720bccc}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!prod@{prod}}
+\index{prod@{prod}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{prod()}{prod()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::prod (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_adb7ad767393a1fc0d240e1bb0c73b1f4}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_adb7ad767393a1fc0d240e1bb0c73b1f4}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_a3a9aa1000751225bc530490bde95b51e}\label{class_n_vector_a3a9aa1000751225bc530490bde95b51e}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!div@{div}}
+\index{div@{div}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{div()}{div()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$\& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::div (\begin{DoxyParamCaption}\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a24b3fd013f74fdbde91f89095e9ca584}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_a24b3fd013f74fdbde91f89095e9ca584}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_abd35a43ccd6973efe24624572570d99f}\label{class_n_vector_abd35a43ccd6973efe24624572570d99f}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!dotProduct@{dotProduct}}
+\index{dotProduct@{dotProduct}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{dotProduct()}{dotProduct()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::dot\+Product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a99c134693de1e2b5f9d8f524d9cfd07a}\label{class_n_vector_a99c134693de1e2b5f9d8f524d9cfd07a}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!norm@{norm}}
+\index{norm@{norm}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_aac9fc2b4c051f5011398a9fad6f7d452}\label{class_n_vector_aac9fc2b4c051f5011398a9fad6f7d452}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!distance@{distance}}
+\index{distance@{distance}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_ad993b3d62002abc9d89ebf053003341d}\label{class_n_vector_ad993b3d62002abc9d89ebf053003341d}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!isValidIndex@{isValidIndex}}
+\index{isValidIndex@{isValidIndex}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{isValidIndex()}{isValidIndex()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::is\+Valid\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a5c23df071f027cb26f1af69910159aa5}\label{class_n_vector_a5c23df071f027cb26f1af69910159aa5}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!isBetweenK12@{isBetweenK12}}
+\index{isBetweenK12@{isBetweenK12}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{isBetweenK12()}{isBetweenK12()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::is\+Between\+K12 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a6d2566f587ad233770ada3aeae0481e1}\label{class_n_vector_a6d2566f587ad233770ada3aeae0481e1}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!isNull@{isNull}}
+\index{isNull@{isNull}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{isNull()}{isNull()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a496fb038e1612ce56c3b91a9c327c509}\label{class_n_vector_a496fb038e1612ce56c3b91a9c327c509}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!isEqual@{isEqual}}
+\index{isEqual@{isEqual}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{isEqual()}{isEqual()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::is\+Equal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_aa9bef4cdf1e57cb0f2e7a3571bdb92a7}\label{class_n_vector_aa9bef4cdf1e57cb0f2e7a3571bdb92a7}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!hasSameSize@{hasSameSize}}
+\index{hasSameSize@{hasSameSize}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{hasSameSize()}{hasSameSize()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::has\+Same\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a033460137c1098f8477e6a00e9c2872a}\label{class_n_vector_a033460137c1098f8477e6a00e9c2872a}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!hasDefaultBrowseIndices@{hasDefaultBrowseIndices}}
+\index{hasDefaultBrowseIndices@{hasDefaultBrowseIndices}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{hasDefaultBrowseIndices()}{hasDefaultBrowseIndices()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual bool \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::has\+Default\+Browse\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a500e7eb470961e8c855ab52264a2c3be}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_a500e7eb470961e8c855ab52264a2c3be}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_a7f7d365d6ba6e62f627828a528972268}\label{class_n_vector_a7f7d365d6ba6e62f627828a528972268}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!setDefaultBrowseIndices@{setDefaultBrowseIndices}}
+\index{setDefaultBrowseIndices@{setDefaultBrowseIndices}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{setDefaultBrowseIndices()}{setDefaultBrowseIndices()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+virtual void \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::set\+Default\+Browse\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a58e138e518c03a4f9751fafdf7e43bcb}{N\+P\+Matrix$<$ T $>$}}, and \mbox{\hyperlink{class_n_p_matrix_a58e138e518c03a4f9751fafdf7e43bcb}{N\+P\+Matrix$<$ double $>$}}.
+
+\mbox{\Hypertarget{class_n_vector_a703e598ebcdf39c8f0efa5c619a88d71}\label{class_n_vector_a703e598ebcdf39c8f0efa5c619a88d71}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!forEach@{forEach}}
+\index{forEach@{forEach}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{forEach()}{forEach()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::for\+Each (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{const std\+::function$<$ void(T \&, const T \&)$>$ \&}]{binary\+\_\+op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_af5cd7c64bfd8eb2335f61d698d6dbf21}\label{class_n_vector_af5cd7c64bfd8eb2335f61d698d6dbf21}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!forEach@{forEach}}
+\index{forEach@{forEach}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{forEach()}{forEach()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::for\+Each (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{const std\+::function$<$ void(T \&, T)$>$ \&}]{binary\+\_\+op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}\label{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!copy@{copy}}
+\index{copy@{copy}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_n_vector_a8f24d84b8dafde55ba650fd02c188c06}\label{class_n_vector_a8f24d84b8dafde55ba650fd02c188c06}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!subVector@{subVector}}
+\index{subVector@{subVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{subVector()}{subVector()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::sub\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k1,  }\item[{\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a6fd08a3790831a9ada035f720cb0b11f}\label{class_n_vector_a6fd08a3790831a9ada035f720cb0b11f}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!setSubVector@{setSubVector}}
+\index{setSubVector@{setSubVector}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{setSubVector()}{setSubVector()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::set\+Sub\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_n_vector_a302d1dc15ce109264b050fb074518981}\label{class_n_vector_a302d1dc15ce109264b050fb074518981}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$}]{u,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+result of u + v where + is the usual addition (u0 + v0, u1 + v1, ...). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a870ba98635d7984c826f2d1f60d8b4e3}\label{class_n_vector_a870ba98635d7984c826f2d1f60d8b4e3}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$}]{u,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+return u -\/ v where -\/ is difference based on usual addition. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a3991d193c344ff47ee71380879b7b2a2}\label{class_n_vector_a3991d193c344ff47ee71380879b7b2a2}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+opposite of u (-\/u0, -\/u1, ...). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_aee06ce5bbd64e05216ebdf521d77aa35}\label{class_n_vector_aee06ce5bbd64e05216ebdf521d77aa35}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$}{operator *}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ operator $\ast$ (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+s $\ast$ u where $\ast$ is usual scalar multiplication (s $\ast$ u0, s $\ast$ u1, ...). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_ab1ec596666b587300410f8fa459f295d}\label{class_n_vector_ab1ec596666b587300410f8fa459f295d}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$}{operator *}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ operator $\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_n_vector_a56643335b5a0b0b07abe89e2cac8a5de}\label{class_n_vector_a56643335b5a0b0b07abe89e2cac8a5de}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$ operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$}]{u,  }\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+return (1 / s) $\ast$ u where $\ast$ is the usual scalar multiplication (s $\ast$ u0, s $\ast$ u1, ...). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a193c63fac7e6b9528c854fd94ee76030}\label{class_n_vector_a193c63fac7e6b9528c854fd94ee76030}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator\texttt{"|}}{operator|}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T operator$\vert$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+u $\ast$ v where $\ast$ is usual dot product u0 $\ast$ v0 + u1 $\ast$ v1 + ... + u(n-\/1) $\ast$ v(n-\/1) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a697b7e9e059d8045dc5f682f94521548}\label{class_n_vector_a697b7e9e059d8045dc5f682f94521548}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator"!}{operator!}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T operator! (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+the norm of vector $\vert$$\vert$.$\vert$$\vert$ dervied from dot product. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a28eb7e90bdbd558f19beb9faebb1de1f}\label{class_n_vector_a28eb7e90bdbd558f19beb9faebb1de1f}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/}{operator/}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+T operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+distance between u \& v, $\vert$$\vert$u -\/ v$\vert$$\vert$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a050d56598b76afac2f22094360f46238}\label{class_n_vector_a050d56598b76afac2f22094360f46238}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_n_vector_aa1c22d1bc3a021b406c61d09f95d5e26}\label{class_n_vector_aa1c22d1bc3a021b406c61d09f95d5e26}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+return true if $\vert$$\vert$u -\/ v$\vert$$\vert$ $<$ epsilon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_aaffc8825c70b5e498690e0882d202a65}\label{class_n_vector_aaffc8825c70b5e498690e0882d202a65}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+true if s is 0 and u is null vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a4f2b795f34a0a21dfcc146ba02899a1b}\label{class_n_vector_a4f2b795f34a0a21dfcc146ba02899a1b}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool operator== (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_n_vector_adf3470a73ee508e6b7292bdaed2d13ba}\label{class_n_vector_adf3470a73ee508e6b7292bdaed2d13ba}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator"!=}{operator!=}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector_a697b7e9e059d8045dc5f682f94521548}{operator!}}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+return true if $\vert$$\vert$v1 -\/ v2$\vert$$\vert$ $>$= epsilon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_n_vector_a5f6935537ff657c5c48c14090322e851}\label{class_n_vector_a5f6935537ff657c5c48c14090322e851}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator"!=}{operator!=}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector_a697b7e9e059d8045dc5f682f94521548}{operator!}}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u,  }\item[{T}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_n_vector_ad51fab9cb11a2faf828455d676ee6755}\label{class_n_vector_ad51fab9cb11a2faf828455d676ee6755}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator"!=}{operator!=}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_n_vector_a697b7e9e059d8045dc5f682f94521548}{operator!}}= (\begin{DoxyParamCaption}\item[{T}]{s,  }\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_vector_a355ee9ef9436669e52d0ff4538f85e27}\label{class_n_vector_a355ee9ef9436669e52d0ff4538f85e27}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!\_k1@{\_k1}}
+\index{\_k1@{\_k1}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{\_k1}{\_k1}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\+\_\+k1\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_vector_a6591512e0566996c42f3d74c8174385e}\label{class_n_vector_a6591512e0566996c42f3d74c8174385e}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!\_k2@{\_k2}}
+\index{\_k2@{\_k2}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{\_k2}{\_k2}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::\+\_\+k2\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+N\+Algebra/header/\mbox{\hyperlink{_n_vector_8h}{N\+Vector.\+h}}\item 
+N\+Algebra/source/\mbox{\hyperlink{_n_vector_8cpp}{N\+Vector.\+cpp}}\end{DoxyCompactItemize}

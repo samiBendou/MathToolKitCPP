@@ -1,0 +1,159 @@
+\hypertarget{class_n_compact}{}\section{N\+Compact Class Reference}
+\label{class_n_compact}\index{NCompact@{NCompact}}
+
+
+{\ttfamily \#include $<$N\+Compact.\+h$>$}
+
+Inheritance diagram for N\+Compact\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_n_compact}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_compact_adca59e9cffb585724a81bb3fa6cc735f}{N\+Compact}} (unsigned long \mbox{\hyperlink{class_n_compact_a795625c0eda03eb2e113b125948224b0}{dim}})
+\item 
+unsigned long \mbox{\hyperlink{class_n_compact_a795625c0eda03eb2e113b125948224b0}{dim}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{class_n_compact_af1879d7342bf6d9902ed5473f6e89038}{str}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_n_compact_a574764d7ac4fe2393a739b67bf57a7f1}{is\+Empty}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_n_compact_a387e86914973c69b292782f640368680}{is\+In}} (const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&x) const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ \mbox{\hyperlink{class_n_compact_a64fb223b2f03a10d80e1290f1947f026}{uni}} (const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&set)
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ \mbox{\hyperlink{class_n_compact_a5806924822793fdd89f4168e1e8c4d3c}{inter}} (const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&set)
+\item 
+virtual int \mbox{\hyperlink{class_n_compact_a816bb4976567a7bfed57763ce717b685}{card}} () const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ \mbox{\hyperlink{class_n_compact_af7acc50099e80fc13ce32c97e6857308}{border}} () const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ \mbox{\hyperlink{class_n_compact_ad4cdc60c75ca433c63f44ec13063e2fe}{mesh}} (const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&h) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_compact_a0f13086af28c4e2dbbcaa308f28ed506}{\+\_\+dim}}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_n_compact_a2afd0750c38a42e4afdc675fb8ac0221}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&set)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_compact_adca59e9cffb585724a81bb3fa6cc735f}\label{class_n_compact_adca59e9cffb585724a81bb3fa6cc735f}} 
+\index{NCompact@{NCompact}!NCompact@{NCompact}}
+\index{NCompact@{NCompact}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{NCompact()}{NCompact()}}
+{\footnotesize\ttfamily N\+Compact\+::\+N\+Compact (\begin{DoxyParamCaption}\item[{unsigned long}]{dim }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_compact_a795625c0eda03eb2e113b125948224b0}\label{class_n_compact_a795625c0eda03eb2e113b125948224b0}} 
+\index{NCompact@{NCompact}!dim@{dim}}
+\index{dim@{dim}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{dim()}{dim()}}
+{\footnotesize\ttfamily unsigned long N\+Compact\+::dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_n_compact_af1879d7342bf6d9902ed5473f6e89038}\label{class_n_compact_af1879d7342bf6d9902ed5473f6e89038}} 
+\index{NCompact@{NCompact}!str@{str}}
+\index{str@{str}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily virtual std\+::string N\+Compact\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_n_parallelepiped_a2f5b58b9b80e9b3fda4177fb7703b221}{N\+Parallelepiped}}, \mbox{\hyperlink{class_n_d_set_ada343b5d74ced1894dfe098c6324d61e}{N\+D\+Set}}, and \mbox{\hyperlink{class_n_segment_a15514dec8420dd1aafda38e7327c9be0}{N\+Segment}}.
+
+\mbox{\Hypertarget{class_n_compact_a574764d7ac4fe2393a739b67bf57a7f1}\label{class_n_compact_a574764d7ac4fe2393a739b67bf57a7f1}} 
+\index{NCompact@{NCompact}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily virtual bool N\+Compact\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_n_segment_ac17e9542c20477269bbcf08286d79d07}{N\+Segment}}, \mbox{\hyperlink{class_n_parallelepiped_a7c4271e0cd8678b6904b1f25d116cd57}{N\+Parallelepiped}}, and \mbox{\hyperlink{class_n_d_set_aafdebcaf09b5efa04872041e4449190c}{N\+D\+Set}}.
+
+\mbox{\Hypertarget{class_n_compact_a387e86914973c69b292782f640368680}\label{class_n_compact_a387e86914973c69b292782f640368680}} 
+\index{NCompact@{NCompact}!isIn@{isIn}}
+\index{isIn@{isIn}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{isIn()}{isIn()}}
+{\footnotesize\ttfamily virtual bool N\+Compact\+::is\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_n_segment_a9370351370e57d265f990b3e9d2ab114}{N\+Segment}}, \mbox{\hyperlink{class_n_parallelepiped_abe05e06f34b0be7d18c098ef7821edf3}{N\+Parallelepiped}}, and \mbox{\hyperlink{class_n_d_set_a0023b3999000c4d5ed05704d7346466d}{N\+D\+Set}}.
+
+\mbox{\Hypertarget{class_n_compact_a64fb223b2f03a10d80e1290f1947f026}\label{class_n_compact_a64fb223b2f03a10d80e1290f1947f026}} 
+\index{NCompact@{NCompact}!uni@{uni}}
+\index{uni@{uni}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{uni()}{uni()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ N\+Compact\+::uni (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_n_compact_a5806924822793fdd89f4168e1e8c4d3c}\label{class_n_compact_a5806924822793fdd89f4168e1e8c4d3c}} 
+\index{NCompact@{NCompact}!inter@{inter}}
+\index{inter@{inter}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{inter()}{inter()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} $>$ N\+Compact\+::inter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_n_compact_a816bb4976567a7bfed57763ce717b685}\label{class_n_compact_a816bb4976567a7bfed57763ce717b685}} 
+\index{NCompact@{NCompact}!card@{card}}
+\index{card@{card}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{card()}{card()}}
+{\footnotesize\ttfamily virtual int N\+Compact\+::card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_n_segment_a2fbe9d64e08f8aaa60d09ba8fe0ca2ba}{N\+Segment}}, \mbox{\hyperlink{class_n_d_set_a683386499ad6a9de65e0197f2846d8de}{N\+D\+Set}}, and \mbox{\hyperlink{class_n_parallelepiped_a57517e96bd3bc757cfa4e4d1d2768450}{N\+Parallelepiped}}.
+
+\mbox{\Hypertarget{class_n_compact_af7acc50099e80fc13ce32c97e6857308}\label{class_n_compact_af7acc50099e80fc13ce32c97e6857308}} 
+\index{NCompact@{NCompact}!border@{border}}
+\index{border@{border}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{border()}{border()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$\mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}}$>$ N\+Compact\+::border (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_n_parallelepiped_a6cc531927e40a95b48923b56406206d3}{N\+Parallelepiped}}, \mbox{\hyperlink{class_n_d_set_a3020476b78835439f6474845d30f00ff}{N\+D\+Set}}, and \mbox{\hyperlink{class_n_segment_a0ef102ed1c0751ae4a9a2e52bf0736da}{N\+Segment}}.
+
+\mbox{\Hypertarget{class_n_compact_ad4cdc60c75ca433c63f44ec13063e2fe}\label{class_n_compact_ad4cdc60c75ca433c63f44ec13063e2fe}} 
+\index{NCompact@{NCompact}!mesh@{mesh}}
+\index{mesh@{mesh}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{mesh()}{mesh()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$\mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}}$>$ N\+Compact\+::mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___n_algebra_ga0a2cfc67e738a3d73e4f12098c4c07f6}{vec\+\_\+t}} \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_n_parallelepiped_a0f9ba9f6cab5d2c9472776e69f9aa78d}{N\+Parallelepiped}}, \mbox{\hyperlink{class_n_d_set_ae57fe6ad1422876fa4256a28c3a26a13}{N\+D\+Set}}, and \mbox{\hyperlink{class_n_segment_ad89a4122b800b15f465f5ca776394721}{N\+Segment}}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_n_compact_a2afd0750c38a42e4afdc675fb8ac0221}\label{class_n_compact_a2afd0750c38a42e4afdc675fb8ac0221}} 
+\index{NCompact@{NCompact}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_n_compact}{N\+Compact}} \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_compact_a0f13086af28c4e2dbbcaa308f28ed506}\label{class_n_compact_a0f13086af28c4e2dbbcaa308f28ed506}} 
+\index{NCompact@{NCompact}!\_dim@{\_dim}}
+\index{\_dim@{\_dim}!NCompact@{NCompact}}
+\subsubsection{\texorpdfstring{\_dim}{\_dim}}
+{\footnotesize\ttfamily \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} N\+Compact\+::\+\_\+dim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+N\+Geometry/header/\mbox{\hyperlink{_n_compact_8h}{N\+Compact.\+h}}\item 
+N\+Geometry/source/\mbox{\hyperlink{_n_compact_8cpp}{N\+Compact.\+cpp}}\end{DoxyCompactItemize}

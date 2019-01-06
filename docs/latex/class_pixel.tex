@@ -1,0 +1,347 @@
+\hypertarget{class_pixel}{}\section{Pixel Class Reference}
+\label{class_pixel}\index{Pixel@{Pixel}}
+
+
+\mbox{\hyperlink{class_pixel}{Pixel}} class is a representation of a pixel providing support of multiple color scale and conversion between theses.  
+
+
+
+
+{\ttfamily \#include $<$Pixel.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}{Format}} \{ \mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50a0067e32761943fc277951f656686ce1a}{G\+Scale}} = 1, 
+\mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50aff2c7eeaaaaf24a83e97388116481444}{R\+GB}} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pixel_ac82279ce9ebca9dde69f1b0c50adab42}{Pixel}} (\mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}{Format}} \mbox{\hyperlink{class_pixel_a83b0f5dce7b7c07c9e482658426eea5f}{format}}=\mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50a0067e32761943fc277951f656686ce1a}{G\+Scale}}, bool \mbox{\hyperlink{class_pixel_a95cb63613222cda3c462a350540bcbc0}{limited}}=false)
+\item 
+\mbox{\hyperlink{class_pixel_a3657c5d595b9eb8d2aab7d5cd4f0c200}{Pixel}} (int \mbox{\hyperlink{class_pixel_ae9b03b6a253f0ba344a7bfaa8d4a17f6}{grey}}, bool \mbox{\hyperlink{class_pixel_a95cb63613222cda3c462a350540bcbc0}{limited}}=false)
+\item 
+\mbox{\hyperlink{class_pixel_ae3cc04f5e89adc67faf1af864338e537}{Pixel}} (int \mbox{\hyperlink{class_pixel_a29d67107325086ef34118afb5dcf440a}{red}}, int \mbox{\hyperlink{class_pixel_a7febfbcec6e4ed1a31e86a78fc493fcf}{green}}, int \mbox{\hyperlink{class_pixel_a2df4c0422c0bfe60e03bbc3496ea6618}{blue}}, bool \mbox{\hyperlink{class_pixel_a95cb63613222cda3c462a350540bcbc0}{limited}}=false)
+\item 
+int \mbox{\hyperlink{class_pixel_a29d67107325086ef34118afb5dcf440a}{red}} () const
+\item 
+int \mbox{\hyperlink{class_pixel_a7febfbcec6e4ed1a31e86a78fc493fcf}{green}} () const
+\item 
+int \mbox{\hyperlink{class_pixel_a2df4c0422c0bfe60e03bbc3496ea6618}{blue}} () const
+\item 
+int \mbox{\hyperlink{class_pixel_ae9b03b6a253f0ba344a7bfaa8d4a17f6}{grey}} () const
+\item 
+bool \mbox{\hyperlink{class_pixel_a95cb63613222cda3c462a350540bcbc0}{limited}} () const
+\item 
+\mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}{Format}} \mbox{\hyperlink{class_pixel_a83b0f5dce7b7c07c9e482658426eea5f}{format}} () const
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_ae0c6a2b07578ee6b54512629b1822195}{set\+Red}} (int \mbox{\hyperlink{class_pixel_a29d67107325086ef34118afb5dcf440a}{red}})
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_a7779ebd5228cd4cde61ebca23b0b4e53}{set\+Green}} (int \mbox{\hyperlink{class_pixel_a7febfbcec6e4ed1a31e86a78fc493fcf}{green}})
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_a3e2e996b337f3ae3e2dcbb748c91abad}{set\+Blue}} (int \mbox{\hyperlink{class_pixel_a2df4c0422c0bfe60e03bbc3496ea6618}{blue}})
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_af37bcc9005e4e4ec116da879a9669d9d}{set\+Grey}} (int \mbox{\hyperlink{class_pixel_ae9b03b6a253f0ba344a7bfaa8d4a17f6}{grey}})
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_a953bc04f4ab0ec1ec2b89a2be8859578}{set\+R\+GB}} (int \mbox{\hyperlink{class_pixel_a29d67107325086ef34118afb5dcf440a}{red}}, int \mbox{\hyperlink{class_pixel_a7febfbcec6e4ed1a31e86a78fc493fcf}{green}}, int \mbox{\hyperlink{class_pixel_a2df4c0422c0bfe60e03bbc3496ea6618}{blue}})
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_a21fcbb0bfec7e485750e41da09737f28}{set\+Limited}} (bool \mbox{\hyperlink{class_pixel_a95cb63613222cda3c462a350540bcbc0}{limited}})
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_a2d175c56e5761b25bb6a6606ec09b4fa}{operator+=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_ab5a1862968e581e773aa468f425693c0}{operator $\ast$=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_ae535886736ebe3cb2418448d554c57fa}{operator-\/=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \& \mbox{\hyperlink{class_pixel_a81f936249561d59938b02e3ab47396c0}{operator/=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_ad6f6806d9c6750a8f5ac23e3d5733209}{abs}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_ac415923df8af4faf916a584a0f610c5a}{sqrt}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_abfbb0a3faab1f6b575e4f28b929eb95c}{operator+}} (\mbox{\hyperlink{class_pixel}{Pixel}} p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_af819541eb6c95a1ee029f62c63e6dbca}{operator-\/}} (\mbox{\hyperlink{class_pixel}{Pixel}} p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_a7936b70523ba5664cf90b70bf566879e}{operator-\/}} (\mbox{\hyperlink{class_pixel}{Pixel}} p)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_abcf09eaa1fe9387b959ea02b003c9d10}{operator $\ast$}} (\mbox{\hyperlink{class_pixel}{Pixel}} p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+\mbox{\hyperlink{class_pixel}{Pixel}} \mbox{\hyperlink{class_pixel_af34817f1230d64fb0bdfbe4641800a7c}{operator/}} (\mbox{\hyperlink{class_pixel}{Pixel}} p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_pixel_a055a296d7cc5f82c9f87fe1ec434a5f7}{operator==}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p, int val)
+\item 
+bool \mbox{\hyperlink{class_pixel_ad9fdc4ca4a54c2cc05f02523eb3a6a9b}{operator==}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_pixel_aaa61dbcbc3587ecba5a49edb8362c311}{operator!=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_pixel_a0ab6a49b7ff1d8f9af27154d09d89352}{operator$>$}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_pixel_a6cc03ea69b84151454e6cb42b066f3c6}{operator$<$}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_pixel_a9564c5098775053d65c9f052b9281388}{operator$>$=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_pixel_a8e1356c4b2066282783d0c03526bd34f}{operator$<$=}} (const \mbox{\hyperlink{class_pixel}{Pixel}} \&p1, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p2)
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_pixel_af9850b2e5c78fc7f7e841c490713168e}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_pixel}{Pixel}} \&p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_pixel}{Pixel}} class is a representation of a pixel providing support of multiple color scale and conversion between theses. 
+
+\begin{DoxyDate}{Date}
+19/12/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+sami\+Bendou
+\end{DoxyAuthor}
+The class provides an interface with char primitive type by converting a char value onto a grey scale pixel and vice versa if needed.
+
+A pixel can be in several states theses can be used for image processing computation \+:
+\begin{DoxyItemize}
+\item format \+: either Red, Green, Blue (R\+GB) or Grey Scale (G\+Scale).
+\item limited \+: the value of each component can be limited to be between 0 and 255. If the value of a component is set negative the result is 0. Else, the if the value is greater than M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP than the set value is the original value mod M\+A\+X\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+MP + 1. The pixel is stored in memory as a R\+GB value even if the format is not R\+GB. Getting and setting components generally implies a constant time calculation to translate between R\+GB and other formats. 
+\end{DoxyItemize}
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}\label{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}} 
+\index{Pixel@{Pixel}!Format@{Format}}
+\index{Format@{Format}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{Format}{Format}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}{Pixel\+::\+Format}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GScale@{GScale}!Pixel@{Pixel}}\index{Pixel@{Pixel}!GScale@{GScale}}}\mbox{\Hypertarget{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50a0067e32761943fc277951f656686ce1a}\label{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50a0067e32761943fc277951f656686ce1a}} 
+G\+Scale&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB@{RGB}!Pixel@{Pixel}}\index{Pixel@{Pixel}!RGB@{RGB}}}\mbox{\Hypertarget{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50aff2c7eeaaaaf24a83e97388116481444}\label{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50aff2c7eeaaaaf24a83e97388116481444}} 
+R\+GB&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pixel_ac82279ce9ebca9dde69f1b0c50adab42}\label{class_pixel_ac82279ce9ebca9dde69f1b0c50adab42}} 
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{Pixel()}{Pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Pixel\+::\+Pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}{Pixel\+::\+Format}}}]{format = {\ttfamily \mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50a0067e32761943fc277951f656686ce1a}{G\+Scale}}},  }\item[{bool}]{limited = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_pixel_a3657c5d595b9eb8d2aab7d5cd4f0c200}\label{class_pixel_a3657c5d595b9eb8d2aab7d5cd4f0c200}} 
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{Pixel()}{Pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Pixel\+::\+Pixel (\begin{DoxyParamCaption}\item[{int}]{grey,  }\item[{bool}]{limited = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_ae3cc04f5e89adc67faf1af864338e537}\label{class_pixel_ae3cc04f5e89adc67faf1af864338e537}} 
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{Pixel()}{Pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Pixel\+::\+Pixel (\begin{DoxyParamCaption}\item[{int}]{red,  }\item[{int}]{green,  }\item[{int}]{blue,  }\item[{bool}]{limited = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pixel_a29d67107325086ef34118afb5dcf440a}\label{class_pixel_a29d67107325086ef34118afb5dcf440a}} 
+\index{Pixel@{Pixel}!red@{red}}
+\index{red@{red}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{red()}{red()}}
+{\footnotesize\ttfamily int Pixel\+::red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pixel_a7febfbcec6e4ed1a31e86a78fc493fcf}\label{class_pixel_a7febfbcec6e4ed1a31e86a78fc493fcf}} 
+\index{Pixel@{Pixel}!green@{green}}
+\index{green@{green}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{green()}{green()}}
+{\footnotesize\ttfamily int Pixel\+::green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pixel_a2df4c0422c0bfe60e03bbc3496ea6618}\label{class_pixel_a2df4c0422c0bfe60e03bbc3496ea6618}} 
+\index{Pixel@{Pixel}!blue@{blue}}
+\index{blue@{blue}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{blue()}{blue()}}
+{\footnotesize\ttfamily int Pixel\+::blue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pixel_ae9b03b6a253f0ba344a7bfaa8d4a17f6}\label{class_pixel_ae9b03b6a253f0ba344a7bfaa8d4a17f6}} 
+\index{Pixel@{Pixel}!grey@{grey}}
+\index{grey@{grey}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{grey()}{grey()}}
+{\footnotesize\ttfamily int Pixel\+::grey (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pixel_a95cb63613222cda3c462a350540bcbc0}\label{class_pixel_a95cb63613222cda3c462a350540bcbc0}} 
+\index{Pixel@{Pixel}!limited@{limited}}
+\index{limited@{limited}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{limited()}{limited()}}
+{\footnotesize\ttfamily bool Pixel\+::limited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pixel_a83b0f5dce7b7c07c9e482658426eea5f}\label{class_pixel_a83b0f5dce7b7c07c9e482658426eea5f}} 
+\index{Pixel@{Pixel}!format@{format}}
+\index{format@{format}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel_aa1531d5d16ab3ab809a8e071145f0a50}{Pixel\+::\+Format}} Pixel\+::format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pixel_ae0c6a2b07578ee6b54512629b1822195}\label{class_pixel_ae0c6a2b07578ee6b54512629b1822195}} 
+\index{Pixel@{Pixel}!setRed@{setRed}}
+\index{setRed@{setRed}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{setRed()}{setRed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} \& Pixel\+::set\+Red (\begin{DoxyParamCaption}\item[{int}]{red }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_a7779ebd5228cd4cde61ebca23b0b4e53}\label{class_pixel_a7779ebd5228cd4cde61ebca23b0b4e53}} 
+\index{Pixel@{Pixel}!setGreen@{setGreen}}
+\index{setGreen@{setGreen}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{setGreen()}{setGreen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} \& Pixel\+::set\+Green (\begin{DoxyParamCaption}\item[{int}]{green }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_a3e2e996b337f3ae3e2dcbb748c91abad}\label{class_pixel_a3e2e996b337f3ae3e2dcbb748c91abad}} 
+\index{Pixel@{Pixel}!setBlue@{setBlue}}
+\index{setBlue@{setBlue}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{setBlue()}{setBlue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} \& Pixel\+::set\+Blue (\begin{DoxyParamCaption}\item[{int}]{blue }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_af37bcc9005e4e4ec116da879a9669d9d}\label{class_pixel_af37bcc9005e4e4ec116da879a9669d9d}} 
+\index{Pixel@{Pixel}!setGrey@{setGrey}}
+\index{setGrey@{setGrey}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{setGrey()}{setGrey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} \& Pixel\+::set\+Grey (\begin{DoxyParamCaption}\item[{int}]{grey }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_a953bc04f4ab0ec1ec2b89a2be8859578}\label{class_pixel_a953bc04f4ab0ec1ec2b89a2be8859578}} 
+\index{Pixel@{Pixel}!setRGB@{setRGB}}
+\index{setRGB@{setRGB}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{setRGB()}{setRGB()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} \& Pixel\+::set\+R\+GB (\begin{DoxyParamCaption}\item[{int}]{red,  }\item[{int}]{green,  }\item[{int}]{blue }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_a21fcbb0bfec7e485750e41da09737f28}\label{class_pixel_a21fcbb0bfec7e485750e41da09737f28}} 
+\index{Pixel@{Pixel}!setLimited@{setLimited}}
+\index{setLimited@{setLimited}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{setLimited()}{setLimited()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} \& Pixel\+::set\+Limited (\begin{DoxyParamCaption}\item[{bool}]{limited }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pixel_a2d175c56e5761b25bb6a6606ec09b4fa}\label{class_pixel_a2d175c56e5761b25bb6a6606ec09b4fa}} 
+\index{Pixel@{Pixel}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}}\& Pixel\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_pixel_ab5a1862968e581e773aa468f425693c0}\label{class_pixel_ab5a1862968e581e773aa468f425693c0}} 
+\index{Pixel@{Pixel}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}}\& Pixel\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_pixel_ae535886736ebe3cb2418448d554c57fa}\label{class_pixel_ae535886736ebe3cb2418448d554c57fa}} 
+\index{Pixel@{Pixel}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}}\& Pixel\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_pixel_a81f936249561d59938b02e3ab47396c0}\label{class_pixel_a81f936249561d59938b02e3ab47396c0}} 
+\index{Pixel@{Pixel}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}}\& Pixel\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_pixel_ad6f6806d9c6750a8f5ac23e3d5733209}\label{class_pixel_ad6f6806d9c6750a8f5ac23e3d5733209}} 
+\index{Pixel@{Pixel}!abs@{abs}}
+\index{abs@{abs}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{abs}{abs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} abs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_ac415923df8af4faf916a584a0f610c5a}\label{class_pixel_ac415923df8af4faf916a584a0f610c5a}} 
+\index{Pixel@{Pixel}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{sqrt}{sqrt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} sqrt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_abfbb0a3faab1f6b575e4f28b929eb95c}\label{class_pixel_abfbb0a3faab1f6b575e4f28b929eb95c}} 
+\index{Pixel@{Pixel}!operator+@{operator+}}
+\index{operator+@{operator+}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pixel}{Pixel}}}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_af819541eb6c95a1ee029f62c63e6dbca}\label{class_pixel_af819541eb6c95a1ee029f62c63e6dbca}} 
+\index{Pixel@{Pixel}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pixel}{Pixel}}}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_a7936b70523ba5664cf90b70bf566879e}\label{class_pixel_a7936b70523ba5664cf90b70bf566879e}} 
+\index{Pixel@{Pixel}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pixel}{Pixel}}}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_abcf09eaa1fe9387b959ea02b003c9d10}\label{class_pixel_abcf09eaa1fe9387b959ea02b003c9d10}} 
+\index{Pixel@{Pixel}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator $\ast$}{operator *}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} operator $\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pixel}{Pixel}}}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_af34817f1230d64fb0bdfbe4641800a7c}\label{class_pixel_af34817f1230d64fb0bdfbe4641800a7c}} 
+\index{Pixel@{Pixel}!operator/@{operator/}}
+\index{operator/@{operator/}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator/}{operator/}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pixel}{Pixel}} operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pixel}{Pixel}}}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_a055a296d7cc5f82c9f87fe1ec434a5f7}\label{class_pixel_a055a296d7cc5f82c9f87fe1ec434a5f7}} 
+\index{Pixel@{Pixel}!operator==@{operator==}}
+\index{operator==@{operator==}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p,  }\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_ad9fdc4ca4a54c2cc05f02523eb3a6a9b}\label{class_pixel_ad9fdc4ca4a54c2cc05f02523eb3a6a9b}} 
+\index{Pixel@{Pixel}!operator==@{operator==}}
+\index{operator==@{operator==}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator==}{operator==}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_aaa61dbcbc3587ecba5a49edb8362c311}\label{class_pixel_aaa61dbcbc3587ecba5a49edb8362c311}} 
+\index{Pixel@{Pixel}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_a0ab6a49b7ff1d8f9af27154d09d89352}\label{class_pixel_a0ab6a49b7ff1d8f9af27154d09d89352}} 
+\index{Pixel@{Pixel}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator$>$}{operator>}}
+{\footnotesize\ttfamily bool operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_a6cc03ea69b84151454e6cb42b066f3c6}\label{class_pixel_a6cc03ea69b84151454e6cb42b066f3c6}} 
+\index{Pixel@{Pixel}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_a9564c5098775053d65c9f052b9281388}\label{class_pixel_a9564c5098775053d65c9f052b9281388}} 
+\index{Pixel@{Pixel}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator$>$=}{operator>=}}
+{\footnotesize\ttfamily bool operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_a8e1356c4b2066282783d0c03526bd34f}\label{class_pixel_a8e1356c4b2066282783d0c03526bd34f}} 
+\index{Pixel@{Pixel}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator$<$=}{operator<=}}
+{\footnotesize\ttfamily bool operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_pixel_af9850b2e5c78fc7f7e841c490713168e}\label{class_pixel_af9850b2e5c78fc7f7e841c490713168e}} 
+\index{Pixel@{Pixel}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pixel@{Pixel}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_pixel}{Pixel}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+N\+Algebra/header/\mbox{\hyperlink{_pixel_8h}{Pixel.\+h}}\item 
+N\+Algebra/source/\mbox{\hyperlink{_pixel_8cpp}{Pixel.\+cpp}}\end{DoxyCompactItemize}
