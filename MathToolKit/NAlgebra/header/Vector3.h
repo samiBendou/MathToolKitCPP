@@ -9,7 +9,7 @@
  * @class   Vector3
  * @date    04/05/2018
  * @author  samiBendou
- * @brief   Class inheriting from NVector<double> representing 3D Euclidean space.
+ * @brief   Class representing 3D Euclidean space.
  *
  * @details Featuring cross product, coordinate
  *          transforms and rotations. We will use the following 3D systems of coordinates :
@@ -30,6 +30,8 @@
 
 class Vector3 : public NVector<double> {
 public:
+
+    using NVector<double>::operator=;
 
     using NVector<double>::operator=;
 

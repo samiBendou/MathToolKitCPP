@@ -2,7 +2,7 @@
 \label{class_n_p_matrix}\index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 
 
-A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits from {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. It\textquotesingle{}s a representation of matrices of arbitrary size in a template field {\ttfamily T} (reals, complex, modular arithemics...).  
+A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits from {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. It\textquotesingle{}s a representation of matrices of arbitrary size in a template field {\ttfamily T}.  
 
 
 
@@ -21,7 +21,7 @@ Inheritance diagram for N\+P\+Matrix$<$ T $>$\+:\begin{figure}[H]
 \mbox{\hyperlink{class_n_p_matrix_a911b2434435553b06276977f3a86bb87}{N\+P\+Matrix}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_afc181b7652d9427125c72c38d7c1498d}{n}}=0, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_p_matrix_a3beee8acb5babf62d2b4f212ac5d18e8}{p}}=0)
 \begin{DoxyCompactList}\small\item\em Construct a $ n \times p $ matrix initialized with {\ttfamily \mbox{\hyperlink{class_n_vector_a58eee5f012e4e563d477788051fc7f1d}{N\+Vector(ul\+\_\+t dim)}}} constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix_ad5fc4003cdc740be5eed12134929101c}{N\+P\+Matrix}} (const vector$<$ vector$<$ T $>$ $>$ \&data)
-\begin{DoxyCompactList}\small\item\em Construct a matrix using a bi-\/dimensional {\ttfamily std\+::vector}. $ Aij $ represent {\ttfamily data\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a matrix using a bi-\/dimensional {\ttfamily std\+::vector}. $ Aij $ represents {\ttfamily data\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix_a0965ea26fdfab766bf993ea79fdad13c}{N\+P\+Matrix}} (const \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \&m)
 \begin{DoxyCompactList}\small\item\em Construct a matrix by using {\ttfamily \mbox{\hyperlink{class_n_p_matrix_ad2420de13cf39828daf36fd74aea9d2d}{copy()}}} method. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix_a738c748de3e3615da067264b629652b0}{N\+P\+Matrix}} (initializer\+\_\+list$<$ initializer\+\_\+list$<$ T $>$$>$ list)
@@ -42,10 +42,6 @@ bool \mbox{\hyperlink{class_n_p_matrix_a6844661ffc6253ad10c104e0069a0a09}{is\+Lo
 \item 
 bool \mbox{\hyperlink{class_n_p_matrix_aa6e1114bee7818455ee8c2e8bcd55679}{is\+Diagonal}} () const
 \item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2) const
-\begin{DoxyCompactList}\small\item\em Manipulate sub-\/matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a5f7e5d337efe283e3f88716bd2205d55}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
-\begin{DoxyCompactList}\small\item\em Manipulate sub-\/matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_ae0724a09ace6b15bd36f9d8b02bd5e53}{operator=}} (const \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \&m)
 \end{DoxyCompactItemize}
 \begin{Indent}\textbf{ Getters}\par
@@ -129,7 +125,11 @@ C++ function operator are here used to give intuitive access to the matrix. }\be
 T \& \mbox{\hyperlink{class_n_p_matrix_a437ba12a96e979b50f6d579400b20f6f}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j)
 \begin{DoxyCompactList}\small\item\em Bi-\/dimensional access operator. \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{class_n_p_matrix_aa512abe782fac9e6b0d2eb1167df4133}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j) const
-\end{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \mbox{\hyperlink{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2) const
+\begin{DoxyCompactList}\small\item\em Manipulate sub-\/matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{class_n_p_matrix_a5f7e5d337efe283e3f88716bd2205d55}{operator()}} (\mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j1, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} i2, \mbox{\hyperlink{typedef_8h_a1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} j2)
+\begin{DoxyCompactList}\small\item\em Manipulate sub-\/matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -320,7 +320,7 @@ T \mbox{\hyperlink{class_n_p_matrix_a12aeb8ceae55cbd9937701cb056b113b}{operator/
 \subsubsection*{template$<$typename T$>$\newline
 class N\+P\+Matrix$<$ T $>$}
 
-A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits from {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. It\textquotesingle{}s a representation of matrices of arbitrary size in a template field {\ttfamily T} (reals, complex, modular arithemics...). 
+A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits from {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$}. It\textquotesingle{}s a representation of matrices of arbitrary size in a template field {\ttfamily T}. 
 
 \begin{DoxyDate}{Date}
 04/05/2018 
@@ -328,13 +328,13 @@ A {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$T$>$} inherits 
 \begin{DoxyAuthor}{Author}
 sami\+Bendou
 \end{DoxyAuthor}
-The matrix components are stored in a linear form using the index transformation $ k = p i + j $. The underlying {\ttfamily std\+::vector$<$T$>$} is represented as {\ttfamily t\mbox{[}p $\ast$ i + j\mbox{]}}. The underlying {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$} is $ (A_{00}, A_{01}, ..., A_{0(P - 1)}, A_{10}, ..., A_{1(P - 1)}, ..., A_{(N-1)0}, ...) $.\hypertarget{class_n_p_matrix_Features}{}\subsection{Features}\label{class_n_p_matrix_Features}
+The matrix components are stored in a linear form using the index transformation $ k = p i + j $. The underlying {\ttfamily std\+::vector$<$T$>$} is represented as {\ttfamily t\mbox{[}p $\ast$ i + j\mbox{]}}. The underlying {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$T$>$} is $ (A_{00}, A_{01}, ..., A_{0(P - 1)}, A_{10}, ..., A_{1(P - 1)}, ..., A_{(N-1)0}, ...) $.\hypertarget{class_n_vector_Features}{}\subsection{Features}\label{class_n_vector_Features}
 Featuring algebraical operations such as matrix product, linear map, Gauss Jordan elimination. setters \& getters, swappers and classic matrix generators such as ones, zeros...\hypertarget{class_n_p_matrix_LUDecomp}{}\subsubsection{L\+U Decomposition}\label{class_n_p_matrix_LUDecomp}
 The $ LU $ decomposition is stored as a property if the matrix is inversible. It is auto-\/updated only when needed. It allow to compute inverse, determinant and other inversion related operations more efficiently.\hypertarget{class_n_p_matrix_FuncOp}{}\subsubsection{Sub-\/range operators}\label{class_n_p_matrix_FuncOp}
-The {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}} class provides a function operator similar to \mbox{\hyperlink{class_n_vector_a3ed21b63fd97af9c63bfacb372f733a5}{vector sub-\/range operator}}.\hypertarget{class_n_p_matrix_Definitions}{}\subsection{Definitions}\label{class_n_p_matrix_Definitions}
+The {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}} class provides a function operator similar to \mbox{\hyperlink{class_n_vector_FuncOpVec}{Sub-\/range operators}}\hypertarget{class_n_vector_Definitions}{}\subsection{Definitions}\label{class_n_vector_Definitions}
 All along this page we will use the following definitions \+:
 \begin{DoxyItemize}
-\item {\ttfamily a}/{\ttfamily b}/{\ttfamily m}\+: An arbitrary given \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}. The components are noted are noted $ A_{ij} $. By default, $ A $ denote {\ttfamily this} matrix.
+\item {\ttfamily a}/{\ttfamily b}/{\ttfamily m}\+: A given {\ttfamily \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}}. The components are noted are noted $ A_{ij} $. By default, $ A $ denote {\ttfamily this} matrix.
 \item {\ttfamily R} \+: Row of a matrix
 \item {\ttfamily C} \+: Col of a matrix
 \item {\ttfamily n} \+: Number of rows
@@ -365,10 +365,8 @@ Construct a $ n \times p $ matrix initialized with {\ttfamily \mbox{\hyperlink{c
 
 
 
-Construct a matrix using a bi-\/dimensional {\ttfamily std\+::vector}. $ Aij $ represent {\ttfamily data\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}}. 
+Construct a matrix using a bi-\/dimensional {\ttfamily std\+::vector}. $ Aij $ represents {\ttfamily data\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}}. 
 
-\label{class_n_p_matrix_ArrayCopyConstruct}%
-\Hypertarget{class_n_p_matrix_ArrayCopyConstruct}%
 
 \begin{DoxyParams}{Parameters}
 {\em data} & bi-\/dimensional {\ttfamily std\+::vector} source.\\
@@ -477,7 +475,7 @@ The returned string has the following form \+:
 \DoxyCodeLine{(m(i,0), ..., a(i,j, Ai(P-1)))}
 \DoxyCodeLine{(m((N-1),0), ..., ..., ...)"}
 \end{DoxyCode}
- Where {\ttfamily m} is {\ttfamily this} matrix. Each {\ttfamily m(i, j)} is formatted using the default {\ttfamily $<$$<$} operator of the type {\ttfamily T}.
+ Where {\ttfamily m} is {\ttfamily this} matrix. Each row of {\ttfamily m} is formatted using {\ttfamily \mbox{\hyperlink{class_n_vector_a6d66b06b953197c1b3965ed69f9fd17e}{N\+Vector\+::str()}}}.
 
 \begin{DoxyReturn}{Returns}
 Returns a string representing the matrix. 
@@ -723,7 +721,7 @@ If {\ttfamily i1 + vectors.\+size()} is greater than {\ttfamily n} Then the algo
 
 If the size of {\ttfamily vectors} is $ n \times q $ than the {\ttfamily set\+Rows(vectors)} will return \+:
 
-\[ \begin{bmatrix} v_{00} & ... & ... & ... & v_{0(p-1)} \\ v_{10} & ... & ... & ... & v_{1(p-1)} \\ ... & ... & ... & ... & ... \\ v_{(q-1)0} & ... & ... & ... & v_{(q-1)(p-1)} \\ A_{q0} & ... & ... & ... & A_{q(p-1)} \\ ... & ... & ... & ... & ... \\ A_{(n-1)0} & ... & ... & ... & A_{(n-1)(j1 - 1)} \\ \end{bmatrix} \] Where $ v_{ij} $ represent {\ttfamily vectors\mbox{[}i\mbox{]}(j)}. \mbox{\Hypertarget{class_n_p_matrix_a3e3f383b3092d70144e1178da15c5376}\label{class_n_p_matrix_a3e3f383b3092d70144e1178da15c5376}} 
+\[ \begin{bmatrix} v_{00} & ... & ... & ... & v_{0(p-1)} \\ v_{10} & ... & ... & ... & v_{1(p-1)} \\ ... & ... & ... & ... & ... \\ v_{(q-1)0} & ... & ... & ... & v_{(q-1)(p-1)} \\ A_{q0} & ... & ... & ... & A_{q(p-1)} \\ ... & ... & ... & ... & ... \\ A_{(n-1)0} & ... & ... & ... & A_{(n-1)(j1 - 1)} \\ \end{bmatrix} \] Where $ v_{ij} $ represents {\ttfamily vectors\mbox{[}i\mbox{]}(j)}. \mbox{\Hypertarget{class_n_p_matrix_a3e3f383b3092d70144e1178da15c5376}\label{class_n_p_matrix_a3e3f383b3092d70144e1178da15c5376}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!setCols@{setCols}}
 \index{setCols@{setCols}!NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}}
 \subsubsection{\texorpdfstring{setCols()}{setCols()}}
@@ -971,7 +969,7 @@ T\& \mbox{\hyperlink{class_n_p_matrix}{N\+P\+Matrix}}$<$ T $>$\+::operator() (\b
 
 Bi-\/dimensional access operator. 
 
-Access operator equivalent to {\ttfamily \mbox{[}i\mbox{]}\mbox{[}j\mbox{]}} on by dimensional arrays. Operator can be used to read or write values. {\ttfamily const} version returns {\ttfamily const} reference to the element. For example, {\ttfamily A(0, 0)} return the element located at first row and first column. \begin{DoxyReturn}{Returns}
+Access operator equivalent to {\ttfamily \mbox{[}i\mbox{]}\mbox{[}j\mbox{]}} on bi-\/dimensional arrays. The behavior is analog to {\ttfamily \mbox{\hyperlink{class_n_vector_a3ed21b63fd97af9c63bfacb372f733a5}{N\+Vector\+::operator()(long)}}} except that negatives values are disallowed. For example, {\ttfamily A(0, 0)} return the element located at first row and first column. \begin{DoxyReturn}{Returns}
 component $ A_{ij} $ of the matrix. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_p_matrix_aa512abe782fac9e6b0d2eb1167df4133}\label{class_n_p_matrix_aa512abe782fac9e6b0d2eb1167df4133}} 
@@ -998,12 +996,14 @@ Manipulate sub-\/matrix.
 \hline
 {\em j1} & first col to take \\
 \hline
-{\em i2} & last row to take $ n \gt i2 \geq i1 \geq 0 $ \\
+{\em i2} & last row to take $ n \gt i_2 \geq i_1 \geq 0 $ \\
 \hline
-{\em j2} & last row to take $ p \gt j2 \geq j1 \geq 0 $ of columns\\
+{\em j2} & last row to take $ p \gt j_2 \geq j_1 \geq 0 $ of columns\\
 \hline
 \end{DoxyParams}
-This operator is similar to \mbox{\hyperlink{class_n_vector_a8778fdc3c0a27a7930fda3f2a7155e96}{vector sub-\/range operator}}. It allows operations on a restricted range of the matrix which is \+: \[ \begin{bmatrix} A_{i_1j_1} & ... & A_{i_2j_1} \\ ... & ... & ... \\ A_{i_2j_1} & ... & A_{i_2j_2} \\ \end{bmatrix} \] this operator can be chained with method calls such as {\ttfamily a(2, 2, 5, 5).\mbox{\hyperlink{class_n_p_matrix_a007a87743223b6dddaa3ec8e44489ffb}{trace()}}}. Most of methods or operators can be chained. It will be explicitly specified if it\textquotesingle{}s not the case. For example, {\ttfamily a(0, 0, 1, 1)} will return the value of the $ 2 \times 2 $ upper-\/left matrix \+: \[ \begin{bmatrix} A_{00} & A_{01} \\ A_{10} & A_{11} \\ \end{bmatrix} \]
+This operator is similar to \mbox{\hyperlink{class_n_vector_a8778fdc3c0a27a7930fda3f2a7155e96}{vector sub-\/range operator}}. It allows operations on a restricted range of the matrix \+: \[ \begin{bmatrix} A_{i_1j_1} & ... & A_{i_2j_1} \\ ... & ... & ... \\ A_{i_2j_1} & ... & A_{i_2j_2} \\ \end{bmatrix} \]
+
+For example, {\ttfamily a(0, 0, 1, 1)} will return the value of the $ 2 \times 2 $ upper-\/left matrix \+: \[ \begin{bmatrix} A_{00} & A_{01} \\ A_{10} & A_{11} \\ \end{bmatrix} \]
 
 \begin{DoxyReturn}{Returns}
 value of the sub matrix. 
@@ -1019,18 +1019,7 @@ value of the sub matrix.
 
 Manipulate sub-\/matrix. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em i1} & start index of rows \\
-\hline
-{\em j1} & start index of columns \\
-\hline
-{\em i2} & end index $ i2 \gt i1 $ of rows \\
-\hline
-{\em j2} & end index $ j2 \gt j1 $ of columns\\
-\hline
-\end{DoxyParams}
-This operator is similar to previous \mbox{\hyperlink{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}{operator}} except that it sets browse indices {\ttfamily \+\_\+k1} and {\ttfamily \+\_\+k2} in order to modify efficiently non {\ttfamily const} reference. \begin{DoxyReturn}{Returns}
+This operator is similar to previous \mbox{\hyperlink{class_n_p_matrix_ab99139270be6ffff19fdf3b5765f321c}{operator}} except that it sets browse indices. See {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}} \mbox{\hyperlink{class_n_p_matrix_a437ba12a96e979b50f6d579400b20f6f}{operator}} for more details. \begin{DoxyReturn}{Returns}
 reference to {\ttfamily $\ast$this}. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_p_matrix_ae0724a09ace6b15bd36f9d8b02bd5e53}\label{class_n_p_matrix_ae0724a09ace6b15bd36f9d8b02bd5e53}} 
@@ -1136,7 +1125,7 @@ a scalar $ n^{th} $ order matrix with {\ttfamily s} value
 \hline
 \end{DoxyParams}
 Scalar matrices are a diagonal matrix filled a unique value. \begin{DoxyReturn}{Returns}
-$ n^{th} $ order matrix equal to $ s \dot Id $. 
+$ n^{th} $ order matrix equal to $ s \cdot Id $. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_p_matrix_a16aa6a18c33005300049ab1a39cbfbc2}\label{class_n_p_matrix_a16aa6a18c33005300049ab1a39cbfbc2}} 
 \index{NPMatrix$<$ T $>$@{NPMatrix$<$ T $>$}!ndiag@{ndiag}}

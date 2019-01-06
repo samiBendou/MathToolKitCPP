@@ -22,39 +22,38 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 for the JavaScript code in this file
 */
 var NAVTREE =
-    [
-        ["MathToolKit", "index.html", [
-            ["Modules", "modules.html", "modules"],
-            ["Classes", "annotated.html", [
-                ["Class List", "annotated.html", "annotated_dup"],
-                ["Class Hierarchy", "hierarchy.html", "hierarchy"],
-                ["Class Members", "functions.html", [
-                    ["All", "functions.html", "functions_dup"],
-                    ["Functions", "functions_func.html", "functions_func"],
-                    ["Variables", "functions_vars.html", null],
-                    ["Enumerations", "functions_enum.html", null],
-                    ["Enumerator", "functions_eval.html", null],
-                    ["Related Functions", "functions_rela.html", null]
-                ]]
-            ]],
-            ["Files", "files.html", [
-                ["File List", "files.html", "files_dup"],
-                ["File Members", "globals.html", [
-                    ["All", "globals.html", null],
-                    ["Functions", "globals_func.html", null],
-                    ["Typedefs", "globals_type.html", null],
-                    ["Macros", "globals_defs.html", null]
-                ]]
-            ]]
-        ]]
-    ];
+[
+  [ "MathToolKit", "index.html", [
+    [ "Modules", "modules.html", "modules" ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
+      ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
+    ] ]
+  ] ]
+];
 
 var NAVTREEINDEX =
-    [
-        "_a_e_s_byte_8cpp.html",
-        "class_n_segment.html#a0ef102ed1c0751ae4a9a2e52bf0736da",
-        "typedef_8h.html#af725d9f5d457c0cbd02e1778cb2294a8"
-    ];
+[
+"_a_e_s_byte_8cpp.html",
+"class_n_parallelepiped.html#af50551bef2ecb0d6628a6668824bb2ac"
+];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
 var SYNCOFFMSG = 'click to enable panel synchronisation';

@@ -7,28 +7,39 @@
 #define EPSILON (std::numeric_limits<T>::epsilon())
 
 /**
- * @defgroup NAlgebra
+ * @defgroup NAlgebra Linear Algebra
+ *
  * @{
  * @class   NVector
  * @date    03/05/2018
  * @author  samiBendou
  *
- * @brief   A NVector<T> object represents the coordinates of a finite dimension vector x in an arbitrary base.
+ * @brief   A `NVector<T>` object represents the coordinates of a finite dimension vector \f$ x \f$ in an arbitrary base.
  *
- * @details Coordinates are stored in the form [x0, x1, ..., x(n-1)]. where [...] is a std::vector<T>,
- *          n is the dimension and (x0, x1, ..., x(n-1)) are the coordinates.
+ * @details Coordinates are stored in the form `[` \f$ x_0, x_1, ..., x_{(n-1)} \f$ `]`. where `[...]` is a `std::vector<T>`,
+ *          \f$ n \f$ is the dimension and \f$ (x_0, x_1, ..., x_{(n-1)}) \f$ are the coordinates.
  *
- *          Featuring algebraical operations (E, +, *), swaps, shifts and
+ *          This object inherits from `std::vector<T>`, it is a STL container, iterators and STL library functions can be
+ *          used.
+ *
+ *          @section Features
+ *
+ *          Featuring algebraical operations \f$ (E, +, *) \f$, swaps, shifts and
  *          classic vectors generator such as ones, zeros...
  *
- *          This object is the base object of every other object in NAlgebra module.
- *          It inherits from std::vector<T> so it's kind of memory
- *          support for every object in NAlgebra module.
+ *          @subsection FuncOpVec Sub-range operators
  *
+ *          The `NVector` class provides a function operator which behaves like a classic array subscript operator
+ *          of `std::vector` except that it comes on two version detailed further in the documentation.
+ *          It allow operation and getting on sub-ranges.
+ *
+ *          @section Definitions
  *          We will often refer to the following variable in this page :
- *              - x/u : this vector.
- *              - s : a scalar (T)
- *
+ *              - `x`/`u`/`v` : An arbitrary given NVector. By default, \f$ x \f$ denotes `this` vector
+ *              - `n`/`dim` : Size of this vector, can be seen as the dimension of the underlying vector space
+ *              - `s` : a scalar of type `T`
+ *              - `k` : index of vector \f$ u_k \f$
+ *              - \f$ |.| \f$ : Absolute value if meaningfull with scalar type `T`
  *
  */
 
@@ -45,133 +56,189 @@ class NVector : public std::vector<T> {
 
 public:
 
-    // CONSTRUCTORS
-
     /**
-     *
-     * @brief NVector<T> with an array of data. The dimension is the size of the array.
+     * @param data `std::vector` source.
+     * @brief Construct a vector using a `std::vector`. \f$ x_k \f$ represents `data[k]`.
      */
     NVector(const std::vector<T> &data) : NVector(data, 0, 0) {}
 
-    NVector(std::initializer_list<T> list) : NVector(list, 0, 0) {}
+    /**
+     * @param list `std::initializer_list` source.
+     * @brief Construct a vector using an initializer list `{}`.
+     * @details Convert `list` and uses @ref NVector(const std::vector<T> &data) "array constructor".
+     */
+    NVector(std::initializer_list<T> list) : NVector(std::vector<T>(list)) {}
 
     /**
-     *
-     * @brief NVector<T> by giving the dimension ie the size of the vector.
+     * @param dim vector size
+     * @brief Construct a vector of a given size.
      */
     explicit NVector(ul_t dim = 0) : NVector(std::vector<T>(dim), 0, 0) {}
 
+    /**
+     *
+     * @param u `NVector` source.
+     * @brief Construct a vector by using `copy()` method.
+     */
     NVector(const NVector<T> &u) : NVector(0) { copy(u); }
 
     // SERIALIZATION
 
     /**
-     * @ingroup SerializationAndGetters
-     * @return a string representing the coordinates of the vector in the format "[x0, x1, ..., x(n-1)]".
-     * xi is formatted with exponential notation with 2 decimals.
+     * @brief Create a string representing the vector.
+     *
+     * @details The returned string has the following form :
+     *
+     *  ```commandline
+     *  "(x(0), x(1), ..., x((n-1)))"
+     *  ```
+     * Each `x(k)` is formatted using the default `<<` operator of the type `T`.
+     *
+     * @return Returns a string representing the vector.
      */
     virtual std::string str() const;
 
-    // GETTERS
-
     /**
-     *
-     * @return n, the dimension of the vector which is the size of this std::vector instance.
+     * @brief Dimension of the vector.
+     * @return \f$ dim \f$
      */
     ul_t dim() const;
 
     /**
-     *
-     * @return an std::vector representing the base object of this instance of NVector.
+     * @brief Create an array with `this` vector.
+     * @return a `std::vector` representing `this`.
      */
     std::vector<T> array() const;
 
-    // MAX / MIN
+    /**
+     *
+     * @name Extremums
+     * @brief Methods related to maximum minimum value research. They all use `std::max` or `std::min`.
+     * @{
+     */
 
     /**
      *
-     * @return Respectively max and min of the coordinates of the vector (x0, x1, .. x(n-1)).
+     * @brief Maximum of the coordinates of the vector \f$ (x_0, x_1, .. x_{(n-1)}) \f$.
+     * @return value of maximum
      */
     T max() const;
 
+    /**
+     *
+     * @brief Minimum of the coordinates of the vector \f$ (x_0, x_1, .. x_{(n-1)}) \f$.
+     * @return value of minimum
+     */
     T min() const;
 
     /**
      *
-     * @return Respectively the index of max and min of the coordinates of vector (x0, x1, .. x(n-1)).
+     * @brief Index of maximum of the coordinates of vector \f$ (x_0, x_1, ..., x_{(n-1)}) \f$.
+     * @return index of maximum
      */
     ul_t maxIndex() const;
 
+    /**
+     *
+     * @brief Index of minimum of the coordinates of vector \f$ (x_0, x_1, ..., x_{(n-1)}) \f$.
+     * @return index of minimum
+     */
     ul_t minIndex() const;
-
-    // ABSOLUTE VALUE MAX / MIN
 
     /**
      *
-     * @return Respectively min and max of absolute value of vector ie. (|x0|, |x1|, ..., |x(n-1)|)
+     * @brief Maximum of the coordinates of the vector  \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
+     * @return value of minimum
      */
     T maxAbs() const;
 
+    /**
+     *
+     * @brief Minimum of the coordinates of the vector  \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
+     * @return value of minimum
+     */
     T minAbs() const;
-
 
     /**
      *
-     * @return Respectively index of min and max of absolute value of vector ie. (|x0|, |x1|, ..., |x(n-1)|)
+     * @brief Index of maximum of the coordinates of vector \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
+     * @return index of maximum
      */
     ul_t maxAbsIndex() const;
 
+    /**
+     *
+     * @brief Index of minimum of the coordinates of vector \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
+     * @return index of minimum
+     */
     ul_t minAbsIndex() const;
 
-    // MANIPULATORS
+    /** @} */
+
+    /**
+     * @name Manipulators
+     * @brief Manipulators such as swap, shift...
+     * @details All the manipulator return a reference to `*this` in order to allow cascade calls eg `swap().shift()`.
+     * @{
+     */
 
     /**
      *
      * @param k1 First index to swap
      * @param k2 Second index to swap
-     * @brief Permutation of two elements (x(k1 - 1), xk2, ..., x(k2 - 1), xk1, ..., x(n-1))
+     * @brief Permutation of two elements.
+     * @details The vector is set to \f$ (x_0, ..., x_{(k_1 - 1)}, x_{k_2}, ..., x_{(k_2 - 1)}, x_{k_1}, ..., x_{(n-1)}) \f$.
      */
     NVector<T> &swap(ul_t k1, ul_t k2);
 
     /**
      *
-     * @param iterations number of times to shift. If iterations is > 0, shift is powered to the left,
-     *                      else to the right.
-     * @brief Shifts vector iterations times. ie. with iterations = 2 : (x2, x3, ..., x(n-1), x0, x1).
+     * @param iterations number of times to shift.
+     * @brief Shifts `this` `iterations` times.
+     * @details If iterations is > 0, shift is powered to the left, else to the right.
+     * For example `shift(2)` will set \f$ (x_2, x_3, ..., x_{(n-1)}, x_0, x_1) \f$.
      */
     NVector<T> &shift(long iterations);
 
     /**
      *
      * @param s value to fill the vector with
-     * @brief Fill vector with a scalar : ie. with scalar = 3, (3, 3, 3, ..., 3).
+     * @brief Fill vector with a scalar. For example `fill(3)` will set \f$ (3, 3, 3, ..., 3) \f$.
      */
     NVector<T> &fill(T s);
 
-    // OPERATORS
-
-    // ALGEBRAICAL OPERATORS
+    /** @} */
 
     /**
-     * @return result of u + v where + is the usual addition (u0 + v0, u1 + v1, ...).
+     * @name Algebra
+     * @brief Vector algebraical operations.
+     * @details Represent euclidean vector space operations such as sum, inner product, distance...
+     * @{
+     */
+
+    /**
+     * @brief Add two vectors.
+     * @details Using usual addition \f$ (u_0 + v_0, u_1 + v_1, ...) \f$.
+     * @return value of \f$ u + v \f$
      */
     inline friend NVector<T> operator+(NVector<T> u, const NVector<T> &v) {
         u += v;
         return u;
     }
 
-
     /**
-     * @return return u - v where - is difference based on usual addition.
+     * @brief Substract two vectors.
+     * @details Using usual difference \f$ (u_0 - v_0, u_1 - v_1, ...) \f$.
+     * @return value of \f$ u - v \f$
      */
     inline friend NVector<T> operator-(NVector<T> u, const NVector<T> &v) {
         u -= v;
         return u;
     }
 
-
     /**
-     * @return opposite of u (-u0, -u1, ...).
+     * @brief Opposite of vector.
+     * @return value of \f$ (-u_0, -u_1, ...). \f$
      */
     inline friend NVector<T> operator-(NVector<T> u) {
         u.opp();
@@ -179,7 +246,9 @@ public:
     }
 
     /**
-     * @return s * u where * is usual scalar multiplication (s * u0, s * u1, ...).
+     * @brief Multiply vector by scalar.
+     * @details Using usual scalar multiplication difference \f$ (s \cdot u_0, s \cdot u_1, ...) \f$.
+     * @return value of \f$ s \cdot u \f$
      */
     inline friend NVector<T> operator*(T s, NVector<T> u) {
         u *= s;
@@ -191,39 +260,37 @@ public:
     }
 
     /**
-     * @return return (1 / s) * u where * is the usual scalar multiplication (s * u0, s * u1, ...).
+     * @brief Divide vector by scalar.
+     * @details Usual scalar division based on multiplication.
+     * @return value of \f$ s^{-1} \cdot u \f$
      */
     inline friend NVector<T> operator/(NVector<T> u, T s) {
         u /= s;
         return u;
     }
 
-    // SCALAR PRODUCT BASED OPERATIONS
-
     /**
-     *
-     * @return u * v where * is usual dot product u0 * v0 + u1 * v1 + ... + u(n-1) * v(n-1)
+     * @brief Dot product of two vectors.
+     * @details Usual inner product \f$ u_0 \cdot v_0 + u_1 \cdot v_1 + ... + u_{(n-1)} \cdot v_{(n-1)} \f$.
+     * @return value of \f$ u \cdot v \f$
      */
-
     inline friend T operator|(const NVector<T> &u, const NVector<T> &v) { return u.dotProduct(v); }
 
     /**
-     *
-     * @return the norm of vector ||.|| dervied from dot product.
+     * @brief Norm of the vector.
+     * @details The norm of vector \f$ ||u|| = \sqrt{u \cdot u} \f$ derived from dot product.
+     * @return value of \f$ ||u|| \f$.
      */
-
     inline friend T operator!(const NVector<T> &u) { return u.norm(); }
 
     /**
-     *
-     * @return distance between u & v, ||u - v||.
+     * @brief Distance between two vectors.
+     * @return value of \f$ ||u - v|| \f$.
      */
-
     inline friend T operator/(const NVector<T> &u, const NVector<T> &v) { return u.distance(v); }
 
 
-    // COMPOUND OPERATORS
-
+    /** @} */
 
     inline NVector<T> &operator+=(const NVector<T> &u) { return add(u); }
 
@@ -234,14 +301,20 @@ public:
     inline virtual NVector<T> &operator/=(T s) { return div(s); }
 
 
-    // ACCES OPERATOR
-
+    /**
+     * @name Function Operator
+     * @brief Access to components and sub-matrix
+     * @details C++ function operator are here used to give intuitive access to the vector. It behaves like numpy `[:]`.
+     *
+     */
 
     /**
-     *
-     * @param k index of the coordinate. Between -(dim() - 1) and dim() - 1
-     * @return  the kth coordinate of the vector xk if k < 0, returns x(n - 1 - k).
-     *          Operator can be used to read/write values.
+     * @brief Simple access operator
+     * @details Access operator equivalent to `[k]` on `std::vector`.
+     * Operator can be used to read or write values. `const` version returns `const` reference to the element.
+     * For example, `x(-1)` returns the last element, `x(0)` returns the first element.
+     * @return component \f$ x_{k} \f$ of the vector.
+     * @{
      */
     T &operator()(long k);
 
@@ -249,29 +322,49 @@ public:
 
     /**
      *
-     * @param k1 start index for sub-range.
-     * @param k2 end index for sub-range.
-     * @return  a sub vector in representing coordinates from k1 to k2, (xk1, x(k1+1), ...,xk2).
+     * @param k1 first element to take
+     * @param k2 last element to take \f$ n \gt k_2 \geq k_1 \geq 0 \f$
+     * @brief Manipulate sub-vector.
      *
-     *          - 0 <= |k1| <= |k2| <= dim() - 1.
+     * @details Allows operations on a restricted range of the vector \f$ (x_{k_1}, x_{(k_1+1)}, ...,x_{k_2}) \f$ .
+     *          The two arguments function operator has the following behavior :
+     *          - It can be used to read/write values.
      *
-     *          - Operator can be used to read/write values.
+     *          - It Allows chaining operations : `u(0, 1) + v(1, 2)`, `x(1, 4).max()`, ...
      *
-     *          - Allows operations such as u(0, 1) + v(1, 2) or u(1, 4).max(), ...
+     *          Most of methods or operators can be chained. It will be explicitly specified if it's not the case.
+     *          For example `x(1, 3)` will return the value of \f$ (x_1, x_2, x_3) \f$.
      *
-     *          - Const version returns a sub-vector.
+     * @return value of the sub-vector.
      *
-     *          - See unit tests for more brief.
+     *
      */
     inline NVector<T> operator()(ul_t k1, ul_t k2) const { return subVector(k1, k2); }
 
+    /**
+     *
+     * @brief Manipulate sub-vector
+     * @details This operator is similar to previous @ref operator()(ul_t k1, ul_t k2) const "operator"
+     * except that it sets browse indices `_k1` and `_k2` in order to modify efficiently non `const` reference.
+     * @return reference to `*this`.
+     */
     NVector<T> &operator()(ul_t k1, ul_t k2);
+
+    /** @} */
 
 
     // STREAM EXTRACT/INSERT
 
-    friend std::ostream &operator<<(std::ostream &os, const NVector<T> &vector) {
-        os << vector.str();
+    /**
+     *
+     * @param os output stream
+     * @param u vector source
+     * @brief Usual stream insertion of vector.
+     * @details Inserts `u.str()` into `os` stream.
+     * @return reference to `os`.
+     */
+    friend std::ostream &operator<<(std::ostream &os, const NVector<T> &u) {
+        os << u.str();
         return os;
     }
 
@@ -280,27 +373,33 @@ public:
 
     /**
      *
-     * @param u source NVector<T> object
-     * @return reference to this.
-     * @brief Copy source object on this object using copy().
+     * @param u source `NVector<T>` object
+     * @brief Copy source object on this object using `copy()`.
+     * @return reference to `this`.
      */
     inline NVector<T> &operator=(const NVector<T> &u) { return copy(u); }
 
     // NORM BASED COMPARISON OPERATORS
 
+
     /**
-     *
-     * @return return true if ||u - v|| < epsilon.
+     * @name Comparaison
+     * @brief Norm based comparaison between two vectors.
+     * @{
      */
 
+    /**
+     * @brief Equality of two vectors.
+     * @return return true if \f$ ||u - v|| < \epsilon \f$.
+     */
     friend bool operator==(const NVector<T> &u, const NVector<T> &v) {
         bool result = u.isEqual(v);
         return result;
     }
 
     /**
-     *
-     * @return true if s is 0 and u is null vector.
+     * @brief Equality to zero.
+     * @return true if `s` is 0 and \f$ u \lt \epsilon \f$.
      */
     friend bool operator==(const NVector<T> &u, T s) {
         bool res = s < EPSILON && u.isNull();
@@ -311,8 +410,8 @@ public:
     inline friend bool operator==(T s, const NVector<T> &u) { return u == s; }
 
     /**
-     *
-     * @return return true if ||v1 - v2|| >= epsilon.
+     * @brief Non equality of two vector.
+     * @return return true if \f$ ||u - v|| \geq \epsilon \f$.
      */
     inline friend bool operator!=(const NVector<T> &u, const NVector<T> &v) { return !(u == v); }
 
@@ -320,8 +419,15 @@ public:
 
     inline friend bool operator!=(T s, const NVector<T> &u) { return !(u == s); }
 
+    /** @} */
+
     // ITERATORS
 
+    /**
+     * @name Iterators
+     * @brief Similar iterators as `std::vector` except that they allow use of `operator()()`.
+     * @{
+     */
     inline iterator begin() { return this->std::vector<T>::begin() + _k1; };
 
     inline const_iterator begin() const { return this->std::vector<T>::begin() + _k1; };
@@ -330,19 +436,21 @@ public:
 
     inline const_iterator end() const { return this->std::vector<T>::begin() + _k2 + 1; };
 
+    /** @} */
+
     // STATIC FUNCTIONS
 
     /**
      *
      * @param dim dimension of the vector
-     * @return a 0 vector (0, 0, ..., 0).
+     * @return a `0` vector \f$ (0, 0, ..., 0) \f$.
      */
     inline static NVector<T> zeros(ul_t dim) { return scalar(0, dim); }
 
     /**
      *
      * @param dim dimension of the vector
-     * @return Returns vector filled with 1 (1, 1, ..., 1).
+     * @return Returns vector filled with `1` \f$ (1, 1, ..., 1) \f$.
      */
     inline static NVector<T> ones(ul_t dim) { return scalar(1, dim); }
 
@@ -350,7 +458,7 @@ public:
      *
      * @param s value of the scalar vector
      * @param dim dimension of the scalar vector
-     * @return a vector filled with s (s, s, ..., s).
+     * @return a vector filled with `s` \f$ (s, s, ..., s) \f$.
      */
     static NVector<T> scalar(T s, ul_t dim);
 
@@ -358,24 +466,34 @@ public:
      *
      * @param k index of vector in base
      * @param dim dimension of vector space represented by the base.
-     * @return  return the kth vector of canonical base. ie (e0, e1, ..., e(n-1)) where :
-     *          e0 = (1, 0, ..., 0), e1 = (0, 1, 0, ..., 0), ..., e(n - 1) = (0, 0, ..., 1).
+     * @return  return the kth vector of canonical base. ie \f$ (e_{0}, e_{1}, ..., e_{(n-1)}) \f$ where :
+     *
+     *          \f[
+     *          \begin{align*}
+     *              & e_{0}         &=& (1, 0, 0, ..., 0) \\
+     *              & e_{1}         &=& (0, 1, 0, ..., 0) \\
+     *              &               &\vdots & \\
+     *              &e_{(n - 1)}    &=& (0, 0, 0, ..., 1) \\
+     *          \end{align*}
+     *          \f]
      */
     static NVector<T> canonical(ul_t k, ul_t dim);
 
     /**
      *
-     * @param vectors an array of vectors [u0, u1, ..., u(r-1)] where r is the size of the array
-     * @return the sum of the vectors : u0 + u1 + ... + u(r-1). where + is usual addition
+     * @param vectors an array of vectors \f$ (u, v, ..., x) \f$.
+     * @brief Sum of multiples vectors.
+     * @details Sum of the vectors contained in `vectors` array.
+     * @return \f$ u + v + ... + x \f$.
      */
     static NVector<T> sum(const std::vector<NVector> &vectors);
 
     /**
      *
-     * @param scalars coefficients of linear combination [s0, s1, ..., s(r-1)] where r is the size of the array
-     * @param vectors vectors of linear combination (u0, u1, ..., u(r-1))
-     * @return  the linear combination s0 * u0 + s1 * u1 + ... + s(r-1) * u(r-1). where + and * are
-     *          usual addition and scalar multiplication.
+     * @param scalars coefficients of linear combination `[` \f$ \alpha,  \beta, ..., \lambda \f$`]`.
+     * @param vectors vectors of linear combination \f$ (u, v, ..., x) \f$
+     * @brief Linear combination of `scalars` and `vectors`.
+     * @return  \f$ \alpha u + \beta v + ... + \lambda x \f$.
      */
     static NVector<T> sumProd(const std::vector<T> &scalars, const std::vector<NVector> &vectors);
 

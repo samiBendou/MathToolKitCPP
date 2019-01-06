@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['nalgebra', ['NAlgebra', ['../group___n_algebra.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['linear_20algebra',['Linear Algebra',['../group___n_algebra.html',1,'']]]
+];

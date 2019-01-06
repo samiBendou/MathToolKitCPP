@@ -5,13 +5,13 @@
 #include <NVector.h>
 
 /**
- * @defgroup NAlgebra
+ * @ingroup NAlgebra
  * @{
  * @class   NPMatrix
  * @date    04/05/2018
  * @author  samiBendou
  * @brief   A `NPMatrix<T>` inherits from `NVector<T>`. It's a representation of matrices of arbitrary
- *          size in a template field `T` (reals, complex, modular arithemics...).
+ *          size in a template field `T`.
  *
  * @details The matrix components are stored in a linear form using the index transformation \f$ k = p i + j \f$.
  *          The underlying `std::vector<T>` is represented as `t[p * i + j]`.
@@ -29,13 +29,12 @@
  *
  *          @subsection FuncOp Sub-range operators
  *
- *          The `NPMatrix` class provides a function operator similar to
- *          @ref NVector<T>::operator()(long k) "vector sub-range operator".
+ *          The `NPMatrix` class provides a function operator similar to @ref FuncOpVec
  *
  *          @section Definitions
  *
  *          All along this page we will use the following definitions :
- *             - `a`/`b`/`m`: An arbitrary given NPMatrix. The components are noted are noted \f$ A_{ij} \f$.
+ *             - `a`/`b`/`m`: A given `NPMatrix`. The components are noted are noted \f$ A_{ij} \f$.
  *                            By default, \f$ A \f$ denote `this` matrix.
  *             - `R`        : Row of a matrix
  *             - `C`        : Col of a matrix
@@ -67,9 +66,8 @@ public:
     explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * pIfNotNull(n, p)), n, pIfNotNull(n, p)) {}
 
     /**
-     * @anchor ArrayCopyConstruct
      * @param data bi-dimensional `std::vector` source.
-     * @brief Construct a matrix using a bi-dimensional `std::vector`. \f$ Aij \f$ represent `data[i][j]`.
+     * @brief Construct a matrix using a bi-dimensional `std::vector`. \f$ Aij \f$ represents `data[i][j]`.
      * @details All the `data[i]` must have the same length. They are seen as the rows of the matrix. `data`
      * is copied into `this` matrix using `copy()`.
      */
@@ -130,7 +128,7 @@ public:
      *  (m(i,0), ..., a(i,j, Ai(P-1)))
      *  (m((N-1),0), ..., ..., ...)"
      *  ```
-     * Where `m` is `this` matrix. Each `m(i, j)` is formatted using the default `<<` operator of the type `T`.
+     * Where `m` is `this` matrix. Each row of `m` is formatted using `NVector::str()`.
      *
      * @return Returns a string representing the matrix.
      */
@@ -295,7 +293,7 @@ public:
      *                      A_{(n-1)0}  & ... & ... & ... & A_{(n-1)(j1 - 1)} \\
      *                      \end{bmatrix}
      *                  \f]
-     *                  Where \f$ v_{ij} \f$ represent `vectors[i](j)`.
+     *                  Where \f$ v_{ij} \f$ represents `vectors[i](j)`.
      */
     NPMatrix<T> &setRows(const std::vector<NVector<T>> &vectors, ul_t i1 = 0);
 
@@ -578,11 +576,10 @@ public:
 
     /**
      * @brief Bi-dimensional access operator
-     * @details Access operator equivalent to `[i][j]` on by dimensional arrays.
-     * Operator can be used to read or write values. `const` version returns `const` reference to the element.
+     * @details Access operator equivalent to `[i][j]` on bi-dimensional arrays. The behavior is analog
+     * to `NVector::operator()(long)` except that negatives values are disallowed.
      * For example, `A(0, 0)` return the element located at first row and first column.
      * @return component \f$ A_{ij} \f$ of the matrix.
-     * @{
      */
     inline T &operator()(ul_t i, ul_t j) {
         assert(isValidIndex(i, j));
@@ -593,27 +590,24 @@ public:
         assert(isValidIndex(i, j));
         return (*this).at(vectorIndex(i, j));
     }
-    /** @} */
 
     /**
      *
      * @param i1 first row to take
      * @param j1 first col to take
-     * @param i2 last row to take \f$ n \gt i2 \geq i1 \geq 0 \f$
-     * @param j2 last row to take \f$ p \gt j2 \geq j1 \geq 0 \f$ of columns
+     * @param i2 last row to take \f$ n \gt i_2 \geq i_1 \geq 0 \f$
+     * @param j2 last row to take \f$ p \gt j_2 \geq j_1 \geq 0 \f$ of columns
      * @brief Manipulate sub-matrix.
 
      * @details This operator is similar to @ref NVector<T>::operator()(ul_t i1, ul_t i2) const "vector sub-range operator".
-     * It allows operations on a restricted
-     * range of the matrix which is :
+     * It allows operations on a restricted range of the matrix :
      *         \f[ \begin{bmatrix}
      *             A_{i_1j_1}   & ... & A_{i_2j_1} \\
      *             ...          & ... & ... \\
      *             A_{i_2j_1}   & ... & A_{i_2j_2} \\
      *             \end{bmatrix}
      *         \f]
-     * this operator can be chained with method calls such as `a(2, 2, 5, 5).trace()`.
-     * Most of methods or operators can be chained. It will be explicitly specified if it's not the case.
+     *
      * For example, `a(0, 0, 1, 1)` will return the value of the \f$ 2 \times 2 \f$ upper-left matrix :
      *         \f[ \begin{bmatrix}
      *             A_{00}   & A_{01} \\
@@ -630,13 +624,9 @@ public:
 
     /**
      *
-     * @param i1 start index of rows
-     * @param j1 start index of columns
-     * @param i2 end index \f$ i2 \gt i1 \f$ of rows
-     * @param j2 end index \f$ j2 \gt j1 \f$ of columns
      * @brief Manipulate sub-matrix
      * @details This operator is similar to previous @ref operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const "operator"
-     * except that it sets browse indices `_k1` and `_k2` in order to modify efficiently non `const` reference.
+     * except that it sets browse indices. See `NVector` @ref operator()(ul_t k1, ul_t k2) "operator" for more details.
      * @return reference to `*this`.
      */
     NPMatrix<T> &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
@@ -713,7 +703,7 @@ public:
      * @param s scalar value
      * @brief a scalar \f$ n^{th} \f$ order matrix with `s` value
      * @details Scalar matrices are a diagonal matrix filled a unique value.
-     * @return \f$ n^{th} \f$ order matrix equal to \f$ s \dot Id \f$.
+     * @return \f$ n^{th} \f$ order matrix equal to \f$ s \cdot Id \f$.
      */
     inline static NPMatrix<T> scalar(T s, ul_t n) { return s * NPMatrix<T>::eye(n); }
 

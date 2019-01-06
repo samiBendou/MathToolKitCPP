@@ -6,5 +6,6 @@ var searchData =
         ['lupcopy', ['lupCopy', ['../class_n_p_matrix.html#a2eba5b3c2096bfb2ccac4e077880942a', 1, 'NPMatrix']]],
         ['lupl', ['lupL', ['../class_n_p_matrix.html#a21088a7eef02d4d0a0781f616037097a', 1, 'NPMatrix']]],
         ['lupu', ['lupU', ['../class_n_p_matrix.html#a8da21c409841e612b72232d1159eec21', 1, 'NPMatrix']]],
-        ['lupupdate', ['lupUpdate', ['../class_n_p_matrix.html#ab0bb16a2c2fb70a2294eb5f64c5530df', 1, 'NPMatrix']]]
+        ['lupupdate', ['lupUpdate', ['../class_n_p_matrix.html#ab0bb16a2c2fb70a2294eb5f64c5530df', 1, 'NPMatrix']]],
+        ['linear_20algebra', ['Linear Algebra', ['../group___n_algebra.html', 1, '']]]
     ];

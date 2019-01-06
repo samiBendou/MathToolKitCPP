@@ -1,10 +1,10 @@
 var searchData =
     [
         ['map', ['map', ['../class_n_p_field.html#a4e7809de6a986ea4d5256577a0bff008', 1, 'NPField']]],
-        ['mat_5faes_5ft', ['mat_aes_t', ['../group___n_algebra.html#gac6131d6d5225e82316dde948e5314ede', 1, 'NPMatrix.h']]],
-        ['mat_5fchar_5ft', ['mat_char_t', ['../group___n_algebra.html#ga8904016e562c4e316f7bcff635bebd4a', 1, 'NPMatrix.h']]],
-        ['mat_5fpix_5ft', ['mat_pix_t', ['../group___n_algebra.html#ga173b3bd738ed7a0a509c8d6f9ad65c5b', 1, 'NPMatrix.h']]],
-        ['mat_5ft', ['mat_t', ['../group___n_algebra.html#ga44dfb60c1e03b44e98a332fb2ae71947', 1, 'NPMatrix.h']]],
+        ['mat_5faes_5ft', ['mat_aes_t', ['../_n_p_matrix_8h.html#ac6131d6d5225e82316dde948e5314ede', 1, 'NPMatrix.h']]],
+        ['mat_5fchar_5ft', ['mat_char_t', ['../_n_p_matrix_8h.html#a8904016e562c4e316f7bcff635bebd4a', 1, 'NPMatrix.h']]],
+        ['mat_5fpix_5ft', ['mat_pix_t', ['../_n_p_matrix_8h.html#a173b3bd738ed7a0a509c8d6f9ad65c5b', 1, 'NPMatrix.h']]],
+        ['mat_5ft', ['mat_t', ['../_n_p_matrix_8h.html#a44dfb60c1e03b44e98a332fb2ae71947', 1, 'NPMatrix.h']]],
         ['matchsizeforproduct', ['matchSizeForProduct', ['../class_n_p_matrix.html#a748282f2d472970dbd20e3b2f6d62032', 1, 'NPMatrix::matchSizeForProduct(const NVector&lt; T &gt; &amp;u) const'], ['../class_n_p_matrix.html#a568a5ab1b6f0d51b3045dc8a81666209', 1, 'NPMatrix::matchSizeForProduct(const NPMatrix&lt; T &gt; &amp;m) const']]],
         ['matrixproduct', ['matrixProduct', ['../class_n_p_matrix.html#a79dfadc3945a91d9083af8da34b7412f', 1, 'NPMatrix']]],
         ['max', ['max', ['../class_n_vector.html#afc7553743872ccb71e902a154eb60dc2', 1, 'NVector']]],
