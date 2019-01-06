@@ -38,7 +38,7 @@ Featuring :
 
 - Cascade calls (matrix.shift().fill(), ...)
 
-The documentation of the framework is currently contained in header files.
+The documentation of the framework is currently hosted at : https://samibendou.github.io/MathToolKitCPP/.
 
 ### Compatibility
 
