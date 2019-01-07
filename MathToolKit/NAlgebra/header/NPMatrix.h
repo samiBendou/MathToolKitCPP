@@ -677,8 +677,8 @@ public:
      * which contains `1` in position \f$ ij \f$ and `0` elsewhere.
      * This matrix is eviqualent to \f$ \delta_{ij} \f$ Kronecker's delta symbol.
      */
-    inline static NPMatrix<T> canonical(ul_t i, ul_t j, ul_t n, ul_t p = 0) {
-        return NPMatrix<T>(NVector<T>::canonical(p * i + j, n * pIfNotNull(n, p)), n);
+    inline static NPMatrix<T> cano(ul_t i, ul_t j, ul_t n, ul_t p = 0) {
+        return NPMatrix<T>(NVector<T>::cano(p * i + j, n * pIfNotNull(n, p)), n);
     }
 
     /**

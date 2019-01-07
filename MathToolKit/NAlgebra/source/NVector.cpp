@@ -191,12 +191,12 @@ NVector<T> NVector<T>::scalar(T s, ul_t dim) {
 }
 
 template<typename T>
-NVector<T> NVector<T>::canonical(ul_t k, ul_t dim) {
+NVector<T> NVector<T>::cano(ul_t k, ul_t dim) {
     assert(k < dim);
 
-    NVector<T> canonical = NVector<T>::zeros(dim);
-    canonical(k) = 1.0;
-    return canonical;
+    NVector<T> cano = NVector<T>::zeros(dim);
+    cano(k) = 1.0;
+    return cano;
 }
 
 template<typename T>

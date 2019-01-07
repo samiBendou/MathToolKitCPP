@@ -31,15 +31,15 @@
  *
  *          The `NVector` class provides a function operator which behaves like a classic array subscript operator
  *          of `std::vector` except that it comes on two version detailed further in the documentation.
- *          It allow operation and getting on sub-ranges.
+ *          It allows operations on sub-ranges.
  *
  *          @section Definitions
- *          We will often refer to the following variable in this page :
+ *          We will often refer to the following variables in this page :
  *              - `x`/`u`/`v` : An arbitrary given NVector. By default, \f$ x \f$ denotes `this` vector
  *              - `n`/`dim` : Size of this vector, can be seen as the dimension of the underlying vector space
  *              - `s` : a scalar of type `T`
  *              - `k` : index of vector \f$ u_k \f$
- *              - \f$ |.| \f$ : Absolute value if meaningfull with scalar type `T`
+ *              - \f$ |.| \f$ : Absolute value, if meaningfull with scalar type `T`
  *
  */
 
@@ -85,7 +85,7 @@ public:
     // SERIALIZATION
 
     /**
-     * @brief Create a string representing the vector.
+     * @brief Creates a string representing the vector.
      *
      * @details The returned string has the following form :
      *
@@ -105,7 +105,7 @@ public:
     ul_t dim() const;
 
     /**
-     * @brief Create an array with `this` vector.
+     * @brief Creates an array with `this` vector.
      * @return a `std::vector` representing `this`.
      */
     std::vector<T> array() const;
@@ -148,28 +148,28 @@ public:
     /**
      *
      * @brief Maximum of the coordinates of the vector  \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
-     * @return value of minimum
+     * @return absolute value of absolute maximum
      */
     T maxAbs() const;
 
     /**
      *
      * @brief Minimum of the coordinates of the vector  \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
-     * @return value of minimum
+     * @return absolute value of absolute minimum
      */
     T minAbs() const;
 
     /**
      *
      * @brief Index of maximum of the coordinates of vector \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
-     * @return index of maximum
+     * @return index of absolute maximum
      */
     ul_t maxAbsIndex() const;
 
     /**
      *
      * @brief Index of minimum of the coordinates of vector \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
-     * @return index of minimum
+     * @return index of absolute minimum
      */
     ul_t minAbsIndex() const;
 
@@ -188,14 +188,15 @@ public:
      * @param k2 Second index to swap
      * @brief Permutation of two elements.
      * @details The vector is set to \f$ (x_0, ..., x_{(k_1 - 1)}, x_{k_2}, ..., x_{(k_2 - 1)}, x_{k_1}, ..., x_{(n-1)}) \f$.
+     * \f$ x_{k_1} \f$ and \f$ x_{k_2} \f$ have been swaped used `std::swap`.
      */
     NVector<T> &swap(ul_t k1, ul_t k2);
 
     /**
      *
      * @param iterations number of times to shift.
-     * @brief Shifts `this` `iterations` times.
-     * @details If iterations is > 0, shift is powered to the left, else to the right.
+     * @brief Shifts `this` vector `iterations` times.
+     * @details If iterations is positive, shift is powered to the left, else to the right.
      * For example `shift(2)` will set \f$ (x_2, x_3, ..., x_{(n-1)}, x_0, x_1) \f$.
      */
     NVector<T> &shift(long iterations);
@@ -477,7 +478,7 @@ public:
      *          \end{align*}
      *          \f]
      */
-    static NVector<T> canonical(ul_t k, ul_t dim);
+    static NVector<T> cano(ul_t k, ul_t dim);
 
     /**
      *
