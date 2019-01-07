@@ -28,7 +28,7 @@ script:
 
 after_success:
 - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-- coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*" -E ".*gtest.*"
+- coveralls --verbose --root . --gcov-options '\-lp' -E ".*gtest.*"
 
 notifications:
   email: false
