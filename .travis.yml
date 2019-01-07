@@ -33,7 +33,7 @@ script:
 after_success:
 - ls
 - |
-  coveralls --verbose --root . --gcov-options '\-lp'  \
+  coveralls --verbose --root . --gcov-options '\--version'  \
     -e CMakeFiles \
 
 notifications:
