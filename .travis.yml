@@ -1,3 +1,4 @@
+dist: trusty
 language: cpp
 
 compiler:
@@ -33,6 +34,7 @@ after_success:
     -e build/lib \
     -e build/MathToolKitRun \
     -e build/Testing \
+    -e build/bin \
 
 notifications:
   email: false
