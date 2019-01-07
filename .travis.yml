@@ -24,7 +24,7 @@ before_install:
 
 install:
 - ls /usr/bin
-- sudo ln -sf /usr/bin/gcov-4.8 /usr/bin/gcov
+- sudo ln -sf /usr/bin/gcov /usr/bin/gcov
 script:
 
 - cmake -H. -Bbuild -DCOVERAGE=1
