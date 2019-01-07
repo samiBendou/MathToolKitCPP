@@ -23,11 +23,11 @@ script:
 - CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -DCOVERAGE=1
 - cd build
 - cmake --build .
-- ctest -V
+- ./TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra
 
 after_success:
 - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-- coveralls --verbose --root . --gcov-options '\-lp' -E ".*gtest.*"
+- coveralls --verbose --root . --gcov-options '\-lp' -E ".*googletest.*"
 
 notifications:
   email: false
