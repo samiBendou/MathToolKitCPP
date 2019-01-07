@@ -509,9 +509,9 @@ protected:
 
     inline virtual NVector<T> &opp() { return prod(-1); }
 
-    inline virtual NVector<T> &prod(T s) { return forEach(s, [](T &x, T s) { return x *= s; }); }
+    inline virtual NVector<T> &prod(T s) { return forEach(s, [](T &x, T t) { return x *= t; }); }
 
-    inline virtual NVector<T> &div(T s) { return forEach(s, [](T &x, T s) { return x /= s; }); }
+    inline virtual NVector<T> &div(T s) { return forEach(s, [](T &x, T t) { return x /= t; }); }
 
     // EUCLIDEAN SPACE OPERATIONS
 
@@ -555,7 +555,7 @@ protected:
 
     // AFFECTATION
 
-    virtual NVector<T> &copy(const NVector<T> &u);
+    NVector<T> &copy(const NVector<T> &u);
 
     //SUB-VECTORS
 

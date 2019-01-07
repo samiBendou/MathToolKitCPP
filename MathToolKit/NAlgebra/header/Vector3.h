@@ -37,7 +37,7 @@
  *            \end{align*}
  *            \f]
  *
- *            The vector is stored in cartesian coordinates. Getting and
+ *            The u is stored in cartesian coordinates. Getting and
  *            setting components generally implies a constant time calculation to translate between cartesian
  *            and other formats.
  *
@@ -139,8 +139,8 @@ public:
 
 
     /**
-     * @brief Vector product between two vectors
-     * @details usual vector product given by :
+     * @brief Vector product between two us
+     * @details usual u product given by :
      *
      * \f[
      * \begin{align*}
@@ -158,7 +158,7 @@ public:
     }
 
     /**
-     * @brief Angle between two vectors.
+     * @brief Angle between two us.
      * @return value of the angle.
      */
     inline friend double operator%(const Vector3 &u, const Vector3 &v) {return u.angle(v);}
@@ -183,13 +183,13 @@ protected:
         return *this;
     }
 
-    double angle(const Vector3 &vector) const {return atan(pTan(vector));}
+    double angle(const Vector3 &u) const {return atan(pTan(u));}
 
-    double pCos(const Vector3 &vector) const {return ((*this != 0 && vector != 0) ? ((*this) | vector) / (!(*this) * !vector) : 1.0);};
+    double pCos(const Vector3 &u) const {return ((*this != 0 && u != 0) ? ((*this) | u) / (!(*this) * !u) : 1.0);};
 
-    double pSin(const Vector3 &vector) const {return ((*this != 0 && vector != 0) ? !((*this) ^ vector) / (!(*this) * !vector) : 0.0);};
+    double pSin(const Vector3 &u) const {return ((*this != 0 && u != 0) ? !((*this) ^ u) / (!(*this) * !u) : 0.0);};
 
-    double pTan(const Vector3 &vector) const {return pSin(vector) / pCos(vector);};
+    double pTan(const Vector3 &u) const {return pSin(u) / pCos(u);};
 };
 
 /** @} */

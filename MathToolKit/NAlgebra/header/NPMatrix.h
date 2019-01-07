@@ -789,9 +789,9 @@ protected:
 
     inline NPMatrix<T> &opp() override { return prod(-1); }
 
-    inline NPMatrix<T> &prod(T s) override { return forEach(s, [](T &x, T s) { x *= s; }); }
+    inline NPMatrix<T> &prod(T s) override { return forEach(s, [](T &x, T t) { x *= t; }); }
 
-    inline NPMatrix<T> &div(T s) override { return forEach(s, [](T &x, T s) { x /= s; }); }
+    inline NPMatrix<T> &div(T s) override { return forEach(s, [](T &x, T t) { x /= t; }); }
 
     NPMatrix<T> &pow(long exp);
 

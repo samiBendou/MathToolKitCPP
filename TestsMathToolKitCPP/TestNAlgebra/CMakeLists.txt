@@ -13,6 +13,8 @@ set(TEST_SOURCES_SCALAR TestPixel.cpp)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 include_directories(${MATHTOOLKIT_HEADER_PATHS})
 
+SET(COVERAGE OFF CACHE BOOL "Coverage")
+
 add_executable(TestNAlgebra ${TEST_SOURCES_NVECTOR} ${TEST_SOURCES_NPMATRIX} ${TEST_SOURCES_SCALAR} TestPixel.cpp)
 
 add_executable(TestNVector ${TEST_SOURCES_NVECTOR})
@@ -28,6 +30,8 @@ if (COVERAGE)
     target_compile_options(TestNAlgebra PRIVATE --coverage)
     target_link_libraries(TestNAlgebra PRIVATE --coverage)
 endif ()
+
+target_compile_options(TestNAlgebra PRIVATE -std=c++11  -g -Wall -Werror -Wextra -Wpedantic -Wconversion -Wswitch-default -Wswitch-enum -Wunreachable-code -Wwrite-strings -Wcast-align -Wshadow -Wundef)
 
 target_link_libraries(TestNVector gtest gtest_main)
 target_link_libraries(TestNVector NAlgebra)
