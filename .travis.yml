@@ -38,7 +38,7 @@ after_success:
   coveralls --verbose --root . --gcov-options '\-lp'  \
     -e CMakeFiles \
     -e TestMathToolKit/lib \
-    -e lib
+    -e Testing
 
 notifications:
   email: false
