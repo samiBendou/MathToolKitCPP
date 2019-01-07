@@ -458,10 +458,12 @@ NVector<T> &NPMatrix<T>::vectorProduct(NVector<T> &u) const {
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
+
     cout << "m size" << m._j1 - m._j2;
     cout << "m size" << m._i1 - m._i2;
     cout << "this size" << _i1 - _i2;
     cout << "this size" << _j1 - _j2;
+
     assert(matchSizeForProduct(m));
     assert((_j2 - _j1 == _i2 - _i1) || hasDefaultBrowseIndices());
 
@@ -480,28 +482,28 @@ NPMatrix<T> &NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
 }
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::pow(long n) {
-    if (n > 0) {
-        rPow(n);
-    } else if (n < 0) {
+NPMatrix<T> &NPMatrix<T>::pow(long exp) {
+    if (exp > 0) {
+        rPow(exp);
+    } else if (exp < 0) {
         inv();
-        rPow(-n);
+        rPow(-exp);
     } else {
-        *this = NPMatrix<T>::eye(_i2 - _i1 + 1);
+        *this = NPMatrix<T>::eye(n());
     }
     return clean();
 }
 
 template<typename T>
-void NPMatrix<T>::rPow(const long n) {
-    if (n > 1) {
+void NPMatrix<T>::rPow(const long exp) {
+    if (exp > 1) {
         const NPMatrix<T> this_copy{subMatrix(_i1, _j1, _i2, _j2)};
-        (*this)(_i1, _j1, _i2, _j2).matrixProduct(this_copy);
-        if (n % 2 == 0) {
-            rPow(n / 2);
-        } else if (n % 2 == 1) {
-            rPow((n - 1) / 2);
-            (*this)(_i1, _j1, _i2, _j2).matrixProduct(this_copy);
+        matrixProduct(this_copy);
+        if (exp % 2 == 0) {
+            rPow(exp / 2);
+        } else if (exp % 2 == 1) {
+            rPow((exp - 1) / 2);
+            matrixProduct(this_copy);
         }
     }
 }

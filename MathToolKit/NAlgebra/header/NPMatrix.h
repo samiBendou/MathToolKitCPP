@@ -793,9 +793,9 @@ protected:
 
     inline NPMatrix<T> &div(T s) override { return forEach(s, [](T &x, T s) { x /= s; }); }
 
-    NPMatrix<T> &pow(long n);
+    NPMatrix<T> &pow(long exp);
 
-    void rPow(long n);
+    void rPow(long exp);
 
     NPMatrix<T> &inv();
 
