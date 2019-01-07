@@ -22,7 +22,7 @@ before_install:
 - pip install --upgrade --user cpp-coveralls
 
 install:
- # - sudo ln -sf /usr/bin/gcov-4.8 /usr/bin/gcov
+- sudo ln -sf /usr/bin/gcov-4.8 /usr/bin/gcov
 script:
 
 - CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -H. -Bbuild -DCOVERAGE=1

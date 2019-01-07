@@ -47,7 +47,7 @@ AESByte &AESByte::prod(const AESByte &b) {
 }
 
 AESByte &AESByte::div(const AESByte &b) {
-    // TODO : Implement division in GF(2^8)
+    // TO DO : Implement division in GF(2^8)
     return *this;
 }
 
