@@ -838,9 +838,9 @@ protected:
 
     inline static ul_t pIfNotNull(ul_t n, ul_t p) { return p > 0 ? p : n; }
 
-    inline bool matchSizeForProduct(const NVector<T> &u) const { return u.dim() - 1 == _j2 - _j1; }
+    inline bool matchSizeForProduct(const NVector<T> &u) const { return (u.dim() - 1) == _j2 - _j1; }
 
-    inline bool matchSizeForProduct(const NPMatrix<T> &m) const { return m._i2 - m._i1 == _j2 - _j1; }
+    inline bool matchSizeForProduct(const NPMatrix<T> &m) const { return (m._i2 - m._i1) == _j2 - _j1; }
 
     inline bool hasSameSize(const NPMatrix<T> &m) const {
         return m._i2 - m._i1 == _i2 - _i1 && m._j2 - m._j1 == _j2 - _j1;
