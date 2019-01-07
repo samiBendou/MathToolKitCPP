@@ -21,8 +21,6 @@ before_install:
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 - pip install --upgrade --user cpp-coveralls
 
-install:
-- sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
 script:
 
 - CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -H. -Bbuild -DCOVERAGE=1
@@ -32,7 +30,9 @@ script:
 
 after_success:
 - ls
+- ls /usr/bin
 - /usr/bin/gcov --version
+- sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
 - |
   coveralls --verbose --root . --gcov-options '\-lp'  \
     -e CMakeFiles \
