@@ -198,8 +198,10 @@ TEST_F(NPMatrixFuncOpTest, Pow) {
 
     mat_t b_pow_2{_b};
     b_pow_2(1, 1, 2, 2) = b_pow_2(1, 1, 2, 2);
+    std::cout << b_pow_2;
     b_pow_2(1, 1, 2, 2) *= b_pow_2(1, 1, 2, 2);
-
+    std::cout << b_pow_2;
+    std::cout << _b;
 
     EXPECT_EQ(_b(1, 1, 2, 2) ^ 2, b_pow_2(1, 1, 2, 2));
 
