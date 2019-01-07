@@ -12,7 +12,7 @@ addons:
 
     packages:
     - g++-8
-    - clang-7.0
+    - clang-5.0
     - lcov
 before_install:
 #Clone googletest to run unit tests and benchmarks
@@ -28,7 +28,7 @@ script:
 
 after_success:
 - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-- coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*"
+- coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*" -E ".*gtest.*"
 
 notifications:
   email: false

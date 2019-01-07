@@ -23,6 +23,14 @@ add_executable(TestNAlgebra ${TEST_SOURCES_NVECTOR} ${TEST_SOURCES_NPMATRIX} ${T
 target_link_libraries(TestNAlgebra gtest gtest_main)
 target_link_libraries(TestNAlgebra NAlgebra)
 
+SET(COVERAGE OFF CACHE BOOL "Coverage")
+
+if (COVERAGE)
+    target_compile_options(TestNAlgebra PRIVATE --coverage)
+    target_link_libraries(TestNAlgebra PRIVATE --coverage)
+endif()
+
+
 
 
 
