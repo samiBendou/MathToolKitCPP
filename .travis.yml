@@ -9,7 +9,7 @@ addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
-  package:
+  packages:
   - g++-6
   - clang++-5
   -lcov
