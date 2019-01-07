@@ -11,7 +11,7 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-6
-    - clang-5
+    - clang
     - lcov
 
 before_install:
@@ -32,7 +32,7 @@ after_success:
 - cd ..
 - ls
 - |
-  coveralls --build-root build --gcov-options '\-lp' \
+  coveralls --verbose --build-root build --gcov-options '\-lp' \
     -e build/CMakeFiles \
     -e build/TestMathToolKit/lib \
     -e build/lib \
