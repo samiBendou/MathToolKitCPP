@@ -9,11 +9,11 @@ addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
-  packages:
-  - g++-6
-  - clang++-5
-  -lcov
-  -gcov
+    packages:
+    - g++-6
+    - clang++-5
+    -lcov
+    -gcov
 
 before_install:
 #Clone googletest to run unit tests and benchmarks
