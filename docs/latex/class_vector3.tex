@@ -75,20 +75,20 @@ static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_
 \item 
 static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_af757c4bd03bd4ddfa74c99fd5a3eee94}{scalar}} (double scalar)
 \item 
-static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_ab8c97969179c890acca9f18d457e06e6}{canonical}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k)
+static \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_a9b119e77ab2040283228425c1c738037}{cano}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_vector3}{Vector3}} \& \mbox{\hyperlink{class_vector3_ab4221b101df67f562347dde6738c66fc}{cross}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u)
 \item 
-double \mbox{\hyperlink{class_vector3_a4ec864436ebac499950f4c06091688db}{angle}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&vector) const
+double \mbox{\hyperlink{class_vector3_ab724696b92eb5f408a7d13de68ce6e8c}{angle}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u) const
 \item 
-double \mbox{\hyperlink{class_vector3_a98422ceb8200829cea11bdeb6417daba}{p\+Cos}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&vector) const
+double \mbox{\hyperlink{class_vector3_aa49b3af23187b6a923870829a65d731c}{p\+Cos}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u) const
 \item 
-double \mbox{\hyperlink{class_vector3_a38053a75ccb2f7415fff046609c52e31}{p\+Sin}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&vector) const
+double \mbox{\hyperlink{class_vector3_acadf5e36328563bc0cc11f1eb985d56a}{p\+Sin}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u) const
 \item 
-double \mbox{\hyperlink{class_vector3_aef71e3e404dd8183e3bd5ed901e91444}{p\+Tan}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&vector) const
+double \mbox{\hyperlink{class_vector3_a1b31e026535ee175589d8f6a16c6ce15}{p\+Tan}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u) const
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -112,9 +112,9 @@ double \mbox{\hyperlink{class_vector3_ae2d5ffacf6098c4c2883e54131fa70c2}{operato
 double \mbox{\hyperlink{class_vector3_a87668fe6d96f1826fb2721883d194ad3}{operator/}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u, const \mbox{\hyperlink{class_vector3}{Vector3}} \&v)
 \item 
 \mbox{\hyperlink{class_vector3}{Vector3}} \mbox{\hyperlink{class_vector3_adb4922062355e087babc81e8d5b7c05f}{operator$^\wedge$}} (\mbox{\hyperlink{class_vector3}{Vector3}} u, const \mbox{\hyperlink{class_vector3}{Vector3}} \&v)
-\begin{DoxyCompactList}\small\item\em Vector product between two vectors. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Vector product between two us. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_vector3_ab7427dc980f710e550fb4de32f0dfcbb}{operator\%}} (const \mbox{\hyperlink{class_vector3}{Vector3}} \&u, const \mbox{\hyperlink{class_vector3}{Vector3}} \&v)
-\begin{DoxyCompactList}\small\item\em Angle between two vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Angle between two us. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -147,7 +147,7 @@ Featuring cross product, coordinate transforms and rotations. We will use the fo
 
 \[ \begin{align*} & r & = & \sqrt{x^2 + y^2 + z^2} \\ & \theta & = & atan(y / x) \\ & \phi & = & atan(r_{xy} / z) \\ \end{align*} \]
 
-The vector is stored in cartesian coordinates. Getting and setting components generally implies a constant time calculation to translate between cartesian and other formats.
+The u is stored in cartesian coordinates. Getting and setting components generally implies a constant time calculation to translate between cartesian and other formats.
 
 The {\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}}} class doesn\textquotesingle{}t support function operator {\ttfamily \mbox{\hyperlink{class_n_vector_a3ed21b63fd97af9c63bfacb372f733a5}{N\+Vector\+::operator()()}}}. 
 
@@ -281,11 +281,11 @@ The {\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}}} class doesn\textquotes
 \subsubsection{\texorpdfstring{scalar()}{scalar()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_vector3}{Vector3}} Vector3\+::scalar (\begin{DoxyParamCaption}\item[{double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_vector3_ab8c97969179c890acca9f18d457e06e6}\label{class_vector3_ab8c97969179c890acca9f18d457e06e6}} 
-\index{Vector3@{Vector3}!canonical@{canonical}}
-\index{canonical@{canonical}!Vector3@{Vector3}}
-\subsubsection{\texorpdfstring{canonical()}{canonical()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_vector3}{Vector3}} Vector3\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{class_vector3_a9b119e77ab2040283228425c1c738037}\label{class_vector3_a9b119e77ab2040283228425c1c738037}} 
+\index{Vector3@{Vector3}!cano@{cano}}
+\index{cano@{cano}!Vector3@{Vector3}}
+\subsubsection{\texorpdfstring{cano()}{cano()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_vector3}{Vector3}} Vector3\+::cano (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{class_vector3_ab4221b101df67f562347dde6738c66fc}\label{class_vector3_ab4221b101df67f562347dde6738c66fc}} 
 \index{Vector3@{Vector3}!cross@{cross}}
@@ -293,29 +293,29 @@ The {\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}}} class doesn\textquotes
 \subsubsection{\texorpdfstring{cross()}{cross()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_vector3}{Vector3}}\& Vector3\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_vector3_a4ec864436ebac499950f4c06091688db}\label{class_vector3_a4ec864436ebac499950f4c06091688db}} 
+\mbox{\Hypertarget{class_vector3_ab724696b92eb5f408a7d13de68ce6e8c}\label{class_vector3_ab724696b92eb5f408a7d13de68ce6e8c}} 
 \index{Vector3@{Vector3}!angle@{angle}}
 \index{angle@{angle}!Vector3@{Vector3}}
 \subsubsection{\texorpdfstring{angle()}{angle()}}
-{\footnotesize\ttfamily double Vector3\+::angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily double Vector3\+::angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_vector3_a98422ceb8200829cea11bdeb6417daba}\label{class_vector3_a98422ceb8200829cea11bdeb6417daba}} 
+\mbox{\Hypertarget{class_vector3_aa49b3af23187b6a923870829a65d731c}\label{class_vector3_aa49b3af23187b6a923870829a65d731c}} 
 \index{Vector3@{Vector3}!pCos@{pCos}}
 \index{pCos@{pCos}!Vector3@{Vector3}}
 \subsubsection{\texorpdfstring{pCos()}{pCos()}}
-{\footnotesize\ttfamily double Vector3\+::p\+Cos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily double Vector3\+::p\+Cos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_vector3_a38053a75ccb2f7415fff046609c52e31}\label{class_vector3_a38053a75ccb2f7415fff046609c52e31}} 
+\mbox{\Hypertarget{class_vector3_acadf5e36328563bc0cc11f1eb985d56a}\label{class_vector3_acadf5e36328563bc0cc11f1eb985d56a}} 
 \index{Vector3@{Vector3}!pSin@{pSin}}
 \index{pSin@{pSin}!Vector3@{Vector3}}
 \subsubsection{\texorpdfstring{pSin()}{pSin()}}
-{\footnotesize\ttfamily double Vector3\+::p\+Sin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily double Vector3\+::p\+Sin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_vector3_aef71e3e404dd8183e3bd5ed901e91444}\label{class_vector3_aef71e3e404dd8183e3bd5ed901e91444}} 
+\mbox{\Hypertarget{class_vector3_a1b31e026535ee175589d8f6a16c6ce15}\label{class_vector3_a1b31e026535ee175589d8f6a16c6ce15}} 
 \index{Vector3@{Vector3}!pTan@{pTan}}
 \index{pTan@{pTan}!Vector3@{Vector3}}
 \subsubsection{\texorpdfstring{pTan()}{pTan()}}
-{\footnotesize\ttfamily double Vector3\+::p\+Tan (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily double Vector3\+::p\+Tan (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3}{Vector3}} \&}]{u }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_vector3_ab793bf6d3d3fc05f91f435c1c0a8e5ea}\label{class_vector3_ab793bf6d3d3fc05f91f435c1c0a8e5ea}} 
 \index{Vector3@{Vector3}!operator=@{operator=}}
@@ -466,9 +466,9 @@ Construct a vector by using {\ttfamily \mbox{\hyperlink{class_n_vector_a67128d2f
 
 
 
-Vector product between two vectors. 
+Vector product between two us. 
 
-usual vector product given by \+:
+usual u product given by \+:
 
 \[ \begin{align*} & u_y v_z - u_z v_y \\ & u_z v_x - u_x v_z \\ & u_x v_y - u_y v_x \\ \end{align*} \]
 
@@ -483,7 +483,7 @@ value of $ \vec{u} \times \vec{v} $.
 
 
 
-Angle between two vectors. 
+Angle between two us. 
 
 \begin{DoxyReturn}{Returns}
 value of the angle. 

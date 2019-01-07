@@ -27,11 +27,11 @@ Inheritance diagram for N\+Vector$<$ T $>$\+:\begin{figure}[H]
 \mbox{\hyperlink{class_n_vector_a7f648402b0fc9006ce9ced7ca647e600}{N\+Vector}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
 \begin{DoxyCompactList}\small\item\em Construct a vector by using {\ttfamily \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy()}}} method. \end{DoxyCompactList}\item 
 virtual std\+::string \mbox{\hyperlink{class_n_vector_a6d66b06b953197c1b3965ed69f9fd17e}{str}} () const
-\begin{DoxyCompactList}\small\item\em Create a string representing the vector. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates a string representing the vector. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}} () const
 \begin{DoxyCompactList}\small\item\em Dimension of the vector. \end{DoxyCompactList}\item 
 std\+::vector$<$ T $>$ \mbox{\hyperlink{class_n_vector_aa99d9fea7e30357df42f736013506fe1}{array}} () const
-\begin{DoxyCompactList}\small\item\em Create an array with {\ttfamily this} vector. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates an array with {\ttfamily this} vector. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a493c3ac08bab3361ad475fc0360ee489}{operator+=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
 \item 
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_af402cb6a52bf52d08286cfa8edb6afaa}{operator-\/=}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
@@ -70,7 +70,7 @@ All the manipulator return a reference to {\ttfamily $\ast$this} in order to all
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a8ea2e2cffa2c3053d835d05a571dac88}{swap}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2)
 \begin{DoxyCompactList}\small\item\em Permutation of two elements. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}{shift}} (long iterations)
-\begin{DoxyCompactList}\small\item\em Shifts {\ttfamily this} {\ttfamily iterations} times. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Shifts {\ttfamily this} vector {\ttfamily iterations} times. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}{fill}} (T s)
 \begin{DoxyCompactList}\small\item\em Fill vector with a scalar. For example {\ttfamily fill(3)} will set $ (3, 3, 3, ..., 3) $. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
@@ -109,7 +109,7 @@ static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{cl
 \item 
 static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_add6abbdea5f58e6887367860aa0f619d}{scalar}} (T s, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
 \item 
-static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a37b19eb888023546363e952cd39ea3a1}{canonical}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
+static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_ac2322798525dfd0aadf87ea51e3f2699}{cano}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} \mbox{\hyperlink{class_n_vector_a7589027db20509ac4d93490bb9a1979a}{dim}})
 \item 
 static \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_af0f5749405554fc23a0af67ad4f9e9e5}{sum}} (const std\+::vector$<$ \mbox{\hyperlink{class_n_vector}{N\+Vector}} $>$ \&vectors)
 \begin{DoxyCompactList}\small\item\em Sum of multiples vectors. \end{DoxyCompactList}\item 
@@ -154,7 +154,7 @@ virtual void \mbox{\hyperlink{class_n_vector_a7f7d365d6ba6e62f627828a528972268}{
 \item 
 virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_af5cd7c64bfd8eb2335f61d698d6dbf21}{for\+Each}} (T s, const std\+::function$<$ void(T \&, T)$>$ \&binary\+\_\+op)
 \item 
-virtual \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector_a67128d2ff536b8ccd7a95cb680bd0431}{copy}} (const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&u)
 \item 
 \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector_a8f24d84b8dafde55ba650fd02c188c06}{sub\+Vector}} (\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k1, \mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}} k2) const
 \item 
@@ -233,14 +233,14 @@ Coordinates are stored in the form {\ttfamily \mbox{[}} $ x_0, x_1, ..., x_{(n-1
 
 This object inherits from {\ttfamily std\+::vector$<$T$>$}, it is a S\+TL container, iterators and S\+TL library functions can be used.\hypertarget{class_n_vector_Features}{}\subsection{Features}\label{class_n_vector_Features}
 Featuring algebraical operations $ (E, +, *) $, swaps, shifts and classic vectors generator such as ones, zeros...\hypertarget{class_n_vector_FuncOpVec}{}\subsubsection{Sub-\/range operators}\label{class_n_vector_FuncOpVec}
-The {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}} class provides a function operator which behaves like a classic array subscript operator of {\ttfamily std\+::vector} except that it comes on two version detailed further in the documentation. It allow operation and getting on sub-\/ranges.\hypertarget{class_n_vector_Definitions}{}\subsection{Definitions}\label{class_n_vector_Definitions}
-We will often refer to the following variable in this page \+:
+The {\ttfamily \mbox{\hyperlink{class_n_vector}{N\+Vector}}} class provides a function operator which behaves like a classic array subscript operator of {\ttfamily std\+::vector} except that it comes on two version detailed further in the documentation. It allows operations on sub-\/ranges.\hypertarget{class_n_vector_Definitions}{}\subsection{Definitions}\label{class_n_vector_Definitions}
+We will often refer to the following variables in this page \+:
 \begin{DoxyItemize}
 \item {\ttfamily x}/{\ttfamily u}/{\ttfamily v} \+: An arbitrary given \mbox{\hyperlink{class_n_vector}{N\+Vector}}. By default, $ x $ denotes {\ttfamily this} vector
 \item {\ttfamily n}/{\ttfamily dim} \+: Size of this vector, can be seen as the dimension of the underlying vector space
 \item {\ttfamily s} \+: a scalar of type {\ttfamily T}
 \item {\ttfamily k} \+: index of vector $ u_k $
-\item $ |.| $ \+: Absolute value if meaningfull with scalar type {\ttfamily T} 
+\item $ |.| $ \+: Absolute value, if meaningfull with scalar type {\ttfamily T} 
 \end{DoxyItemize}
 
 \subsection{Constructor \& Destructor Documentation}
@@ -327,7 +327,7 @@ string \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::str (\begin{Doxy
 
 
 
-Create a string representing the vector. 
+Creates a string representing the vector. 
 
 The returned string has the following form \+:
 
@@ -367,7 +367,7 @@ std\+::vector$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::
 
 
 
-Create an array with {\ttfamily this} vector. 
+Creates an array with {\ttfamily this} vector. 
 
 \begin{DoxyReturn}{Returns}
 a {\ttfamily std\+::vector} representing {\ttfamily this}. 
@@ -440,7 +440,7 @@ T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::max\+Abs (\begin{Doxy
 Maximum of the coordinates of the vector $ (|x_0|, |x_1|, ..., |x_{(n-1)}|) $. 
 
 \begin{DoxyReturn}{Returns}
-value of minimum 
+absolute value of absolute maximum 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_vector_a857878b360cede51eb87924cd46d5a54}\label{class_n_vector_a857878b360cede51eb87924cd46d5a54}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!minAbs@{minAbs}}
@@ -454,7 +454,7 @@ T \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::min\+Abs (\begin{Doxy
 Minimum of the coordinates of the vector $ (|x_0|, |x_1|, ..., |x_{(n-1)}|) $. 
 
 \begin{DoxyReturn}{Returns}
-value of minimum 
+absolute value of absolute minimum 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_vector_ac7d7d39b68956da9018684a3706a70c2}\label{class_n_vector_ac7d7d39b68956da9018684a3706a70c2}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!maxAbsIndex@{maxAbsIndex}}
@@ -468,7 +468,7 @@ value of minimum
 Index of maximum of the coordinates of vector $ (|x_0|, |x_1|, ..., |x_{(n-1)}|) $. 
 
 \begin{DoxyReturn}{Returns}
-index of maximum 
+index of absolute maximum 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_vector_a8b9147431ee1f9c5a25c6e0b2f793c40}\label{class_n_vector_a8b9147431ee1f9c5a25c6e0b2f793c40}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!minAbsIndex@{minAbsIndex}}
@@ -482,7 +482,7 @@ index of maximum
 Index of minimum of the coordinates of vector $ (|x_0|, |x_1|, ..., |x_{(n-1)}|) $. 
 
 \begin{DoxyReturn}{Returns}
-index of minimum 
+index of absolute minimum 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_n_vector_a8ea2e2cffa2c3053d835d05a571dac88}\label{class_n_vector_a8ea2e2cffa2c3053d835d05a571dac88}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!swap@{swap}}
@@ -502,7 +502,7 @@ Permutation of two elements.
 {\em k2} & Second index to swap\\
 \hline
 \end{DoxyParams}
-The vector is set to $ (x_0, ..., x_{(k_1 - 1)}, x_{k_2}, ..., x_{(k_2 - 1)}, x_{k_1}, ..., x_{(n-1)}) $. \mbox{\Hypertarget{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}\label{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}} 
+The vector is set to $ (x_0, ..., x_{(k_1 - 1)}, x_{k_2}, ..., x_{(k_2 - 1)}, x_{k_1}, ..., x_{(n-1)}) $. $ x_{k_1} $ and $ x_{k_2} $ have been swaped used {\ttfamily std\+::swap}. \mbox{\Hypertarget{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}\label{class_n_vector_aabe8585ef2659ce3fa7872c2b96e3b20}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!shift@{shift}}
 \index{shift@{shift}!NVector$<$ T $>$@{NVector$<$ T $>$}}
 \subsubsection{\texorpdfstring{shift()}{shift()}}
@@ -511,14 +511,14 @@ The vector is set to $ (x_0, ..., x_{(k_1 - 1)}, x_{k_2}, ..., x_{(k_2 - 1)}, x_
 
 
 
-Shifts {\ttfamily this} {\ttfamily iterations} times. 
+Shifts {\ttfamily this} vector {\ttfamily iterations} times. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em iterations} & number of times to shift.\\
 \hline
 \end{DoxyParams}
-If iterations is $>$ 0, shift is powered to the left, else to the right. For example {\ttfamily shift(2)} will set $ (x_2, x_3, ..., x_{(n-1)}, x_0, x_1) $. \mbox{\Hypertarget{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}\label{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}} 
+If iterations is positive, shift is powered to the left, else to the right. For example {\ttfamily shift(2)} will set $ (x_2, x_3, ..., x_{(n-1)}, x_0, x_1) $. \mbox{\Hypertarget{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}\label{class_n_vector_ae0e51edea3a6e998c5b6ff5336939e90}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!fill@{fill}}
 \index{fill@{fill}!NVector$<$ T $>$@{NVector$<$ T $>$}}
 \subsubsection{\texorpdfstring{fill()}{fill()}}
@@ -728,12 +728,12 @@ Returns vector filled with {\ttfamily 1} $ (1, 1, ..., 1) $.
 \begin{DoxyReturn}{Returns}
 a vector filled with {\ttfamily s} $ (s, s, ..., s) $. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_n_vector_a37b19eb888023546363e952cd39ea3a1}\label{class_n_vector_a37b19eb888023546363e952cd39ea3a1}} 
-\index{NVector$<$ T $>$@{NVector$<$ T $>$}!canonical@{canonical}}
-\index{canonical@{canonical}!NVector$<$ T $>$@{NVector$<$ T $>$}}
-\subsubsection{\texorpdfstring{canonical()}{canonical()}}
+\mbox{\Hypertarget{class_n_vector_ac2322798525dfd0aadf87ea51e3f2699}\label{class_n_vector_ac2322798525dfd0aadf87ea51e3f2699}} 
+\index{NVector$<$ T $>$@{NVector$<$ T $>$}!cano@{cano}}
+\index{cano@{cano}!NVector$<$ T $>$@{NVector$<$ T $>$}}
+\subsubsection{\texorpdfstring{cano()}{cano()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::canonical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::cano (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{k,  }\item[{\mbox{\hyperlink{group___n_algebra_ga1b140a2034db3f5dfe18a987745df43a}{ul\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -929,7 +929,7 @@ Reimplemented in \mbox{\hyperlink{class_n_p_matrix_a58e138e518c03a4f9751fafdf7e4
 \index{copy@{copy}!NVector$<$ T $>$@{NVector$<$ T $>$}}
 \subsubsection{\texorpdfstring{copy()}{copy()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+\mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \& \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_n_vector}{N\+Vector}}$<$ T $>$ \&}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_n_vector_a8f24d84b8dafde55ba650fd02c188c06}\label{class_n_vector_a8f24d84b8dafde55ba650fd02c188c06}} 
 \index{NVector$<$ T $>$@{NVector$<$ T $>$}!subVector@{subVector}}
