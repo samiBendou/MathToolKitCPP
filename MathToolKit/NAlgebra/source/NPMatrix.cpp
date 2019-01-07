@@ -441,10 +441,6 @@ NVector<T> &NPMatrix<T>::vectorProduct(NVector<T> &u) const {
 
     NVector<T> res = NVector<T>::zeros(u.dim());
 
-    cout << "u size" << u.dim();
-    cout << "this size" << _i1 - _i2;
-    cout << "this size" << _j1 - _j2;
-
     assert(matchSizeForProduct(res));
 
     for (ul_t i = _i1; i <= _i2; ++i) {
@@ -458,12 +454,6 @@ NVector<T> &NPMatrix<T>::vectorProduct(NVector<T> &u) const {
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
-
-    cout << "m size" << m._j1 - m._j2;
-    cout << "m size" << m._i1 - m._i2;
-    cout << "this size" << _i1 - _i2;
-    cout << "this size" << _j1 - _j2;
-
     assert(matchSizeForProduct(m));
     assert((_j2 - _j1 == _i2 - _i1) || hasDefaultBrowseIndices());
 

@@ -9,7 +9,7 @@ addons:
     - llvm-toolchain-trusty-5.0
 
     packages:
-    - g++-7
+    - g++-8
     - clang-5.0
     - lcov
     - ggcov
@@ -20,7 +20,7 @@ before_install:
 - pip install --upgrade --user git+git://github.com/eddyxu/cpp-coveralls.git
 
 script:
-- CXX=/usr/bin/g++-7 CC=/usr/bin/gcc-7 cmake -H. -Bbuild -DCOVERAGE=1
+- CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -H. -Bbuild -DCOVERAGE=1
 - cd build
 - cmake --build .
 - ctest -V
