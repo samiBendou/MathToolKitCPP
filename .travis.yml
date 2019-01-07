@@ -9,6 +9,8 @@ addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
+    - llvm-toolchain-trusty-5.0
+
     packages:
     - g++-6
     - clang-5.0
@@ -28,15 +30,12 @@ script:
 
 
 after_success:
-- ls
-- cd ..
-- ls
+
 - |
-  coveralls --verbose --build-root build --gcov-options '\-lp' \
+  coveralls --verbose --root --gcov-options '\-lp' \
     -e build/CMakeFiles \
     -e build/TestMathToolKit/lib \
     -e build/lib \
-    -e build/MathToolKitRun \
     -e build/Testing \
     -e build/bin \
 
