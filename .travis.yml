@@ -34,8 +34,7 @@ after_success:
 - /usr/bin/gcov --version
 # - sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
 - |
-  coveralls --verbose --root . --gcov-options '\-lp'  \
-    -e CMakeFiles \
+  coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*"
 
 notifications:
   email: false
