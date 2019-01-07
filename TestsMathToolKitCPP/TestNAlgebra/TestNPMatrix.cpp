@@ -35,6 +35,7 @@ TEST_F(NPMatrixTest, Dim) {
     ASSERT_TRUE(_a.isSquare());
 }
 
+
 TEST_F(NPMatrixTest, Equality) {
     ASSERT_FALSE(_a == _b);
     ASSERT_TRUE(_a != _b);
