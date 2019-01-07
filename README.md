@@ -6,7 +6,7 @@
 
 
 
-## General overivew
+## General overview
 
 ### Introduction
 
@@ -18,23 +18,22 @@ The library uses both STL standardization and low level C++ to provide efficient
 It's designed very lightweight in order to be embedded on microelectronic devices.
 It's template based implementation to provide support for custom scalar types (pixel matrix, AES matrix...).
 
-Featuring :
+#### Featuring :
 
 - Large range of abstractions from algebra to geometry
 
-- High level syntax (numpy like...)
+- High level object and operator based API
 
-- Cascade calls `matrix.shift().fill()`, ...
-
-The documentation of the framework is currently hosted at : https://samibendou.github.io/MathToolKitCPP/.
+Currently only NAlgebra library is fully tested and functional. Work in progress on other libraries.
+The full documentation of the framework is hosted [here](https://samibendou.github.io/MathToolKitCPP/).
 
 #### NAlgebra
 
 Linear algebra library providing vectors and matrix objects : [Documentation](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html)
 
-- Manipulators : `shift()`, `swap()`, ...
+- Linear Algebra : `+`, `*`, `/`, `%`, `inv()`, ...
 
-- Linear Algebra : `+`, `*`, `inv()`, `pow()`, ...
+- Manipulators : `shift()`, `swap()`, ...
 
 - Generators : `eye()`, `ones()`, `diag()`, ...
   
@@ -65,7 +64,7 @@ Linear algebra library providing vectors and matrix objects : [Documentation](ht
 2. Copy the directories of the libraries you want to import onto your project. 
 eg : import NAlgebra if you want to use NPMatrix.
 
-3. Check at tutorials on https://samibendou.github.io/MathToolKitCPP
+3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html).
 ### 
 
 ### Run Unit Tests
@@ -94,13 +93,15 @@ git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 
 #### Compatibility
 
-- Written using C++11
+- Written in C++11
 
 - Using CMake 3.9.2
 
-- Tested on local with : clang Apple LLVM version 9.1.0 (clang-902.0.39.2)
+- Tested on local with : clang-9.0
 
-- Tested on travis with : clang 5.0.0
+- Tested on local with : g++-8
+
+- Tested on travis with : g++-8
 
 #### Version log :
 
