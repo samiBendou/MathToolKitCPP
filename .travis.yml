@@ -23,6 +23,7 @@ before_install:
 - pip install --upgrade --user git+git://github.com/eddyxu/cpp-coveralls.git
 
 install:
+- ls /usr/bin
 - sudo ln -sf /usr/bin/gcov /usr/bin/gcov
 script:
 
