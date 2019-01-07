@@ -29,12 +29,10 @@ script:
 - ctest -V
 
 after_success:
-- ls
-- ls /usr/bin
 - /usr/bin/gcov --version
-# - sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
-- |
-  coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*"
+- sudo ln -sf /usr/bin/gcov-4.8 /usr/bin/gcov
+- /usr/bin/gcov --version
+- coveralls --verbose --root . --gcov-options '\-lp' -E/--exclude-pattern ".*CMakeFiles.*"
 
 notifications:
   email: false

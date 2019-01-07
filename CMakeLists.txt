@@ -13,6 +13,6 @@ set(MATHTOOLKIT_HEADER_PATHS MathToolKit/NAlgebra/header MathToolKit/NAnalysis/h
 
 include_directories(${MATHTOOLKIT_HEADER_PATHS})
 
-add_executable(MathToolKitRun main.cpp)
+# add_executable(MathToolKitRun main.cpp)
 
-target_link_libraries(MathToolKitRun NAnalysis NGeometry NAlgebra)
+# target_link_libraries(MathToolKitRun NAnalysis NGeometry NAlgebra)
