@@ -36,8 +36,6 @@ after_success:
     -e build/CMakeFiles \
     -e build/TestMathToolKit/lib \
     -e build/lib \
-    -e build/Testing \
-    -e build/bin \
 
 notifications:
   email: false
