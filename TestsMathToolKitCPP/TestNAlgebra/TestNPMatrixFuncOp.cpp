@@ -195,8 +195,11 @@ TEST_F(NPMatrixFuncOpTest, VectorProd) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Pow) {
+
     mat_t b_pow_2{_b};
-    b_pow_2(1, 1, 2, 2) = b_pow_2(1, 1, 2, 2) * b_pow_2(1, 1, 2, 2);
+    b_pow_2(1, 1, 2, 2) = b_pow_2(1, 1, 2, 2);
+    b_pow_2(1, 1, 2, 2) *= b_pow_2(1, 1, 2, 2);
+
 
     EXPECT_EQ(_b(1, 1, 2, 2) ^ 2, b_pow_2(1, 1, 2, 2));
 
