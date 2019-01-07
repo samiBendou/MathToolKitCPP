@@ -2,10 +2,6 @@ dist: trusty
 sudo: false
 language: cpp
 
-compiler:
-- clang
-- gcc
-
 addons:
   apt:
     sources:
@@ -24,7 +20,7 @@ before_install:
 - pip install --upgrade --user git+git://github.com/eddyxu/cpp-coveralls.git
 
 script:
-- cmake -H. -Bbuild -DCOVERAGE=1
+- CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake -H. -Bbuild -DCOVERAGE=1
 - cd build
 - cmake --build .
 - ctest -V
