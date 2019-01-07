@@ -36,7 +36,6 @@ after_success:
     -e CMakeFiles \
     -e TestMathToolKit/lib \
     -e MathToolKitRun \
-    -e lib
 
 notifications:
   email: false
