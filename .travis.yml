@@ -32,7 +32,7 @@ script:
 after_success:
 
 - |
-  coveralls --verbose --root . \
+  coveralls --verbose --root . --gcov-options '--verbose' \
     -e CMakeFiles \
     -e TestMathToolKit/lib \
 
