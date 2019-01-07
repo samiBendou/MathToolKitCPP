@@ -5,6 +5,10 @@ compiler:
 - clang
 - gcc
 
+branches:
+  only:
+    - debug
+
 addons:
   apt:
     sources:
