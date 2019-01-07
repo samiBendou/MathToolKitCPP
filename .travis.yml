@@ -30,7 +30,6 @@ after_success:
   coveralls --verbose --root . --gcov-options '-lpvw' \
     -e CMakeFiles \
     -e TestMathToolKit/lib \
-    -e lib \
 
 notifications:
   email: false

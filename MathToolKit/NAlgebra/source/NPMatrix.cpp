@@ -454,8 +454,9 @@ NVector<T> &NPMatrix<T>::vectorProduct(NVector<T> &u) const {
 
 template<typename T>
 NPMatrix<T> &NPMatrix<T>::matrixProduct(const NPMatrix<T> &m) {
-    assert(matchSizeForProduct(m));
-    assert((_j2 - _j1 == _i2 - _i1) || hasDefaultBrowseIndices());
+    // temporary desactived
+    // assert(matchSizeForProduct(m));
+    // assert((_j2 - _j1 == _i2 - _i1) || hasDefaultBrowseIndices());
 
     NPMatrix<T> res = NPMatrix<T>::zeros(_i2 - _i1 + 1, m._j2 - m._j1 + 1);
 
