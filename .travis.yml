@@ -33,12 +33,12 @@ script:
 - ctest -V
 
 after_success:
-
+- ls
 - |
   coveralls --verbose --root . --gcov-options '\-lp'  \
     -e CMakeFiles \
     -e TestMathToolKit/lib \
-    -e bin
+    -e lib
 
 notifications:
   email: false
