@@ -29,7 +29,7 @@ script:
 after_success:
 - ls /usr/bin/
 - /usr/bin/gcov --version
-- sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
+- sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
 - /usr/bin/gcov --version
 - coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*"
 
