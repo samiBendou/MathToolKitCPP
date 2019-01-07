@@ -23,7 +23,7 @@ before_install:
 - pip install --upgrade --user git+git://github.com/eddyxu/cpp-coveralls.git
 
 install:
-- sudo ln -sf /usr/bin/gcov-4.7 /usr/bin/gcov
+- sudo ln -sf /usr/bin/gcov /usr/bin/gcov
 script:
 
 - cmake -H. -Bbuild -DCOVERAGE=1
@@ -34,7 +34,7 @@ script:
 after_success:
 
 - |
-  coveralls --verbose --root .  \
+  coveralls --verbose --root . --gcov-options '\-lp'  \
     -e CMakeFiles \
     -e TestMathToolKit/lib \
 
