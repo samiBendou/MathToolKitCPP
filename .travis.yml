@@ -14,8 +14,6 @@ addons:
     - g++-8
     - clang-5.0
     - lcov
-    - ggcov-8
-
 before_install:
 #Clone googletest to run unit tests and benchmarks
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
@@ -29,8 +27,9 @@ script:
 - ctest -V
 
 after_success:
+- ls /usr/bin/
 - /usr/bin/gcov --version
-# - sudo ln -sf /usr/bin/gcov-4.8 /usr/bin/gcov
+- sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
 - /usr/bin/gcov --version
 - coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*"
 
