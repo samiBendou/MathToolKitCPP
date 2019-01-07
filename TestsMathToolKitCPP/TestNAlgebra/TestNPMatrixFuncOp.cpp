@@ -191,7 +191,6 @@ TEST_F(NPMatrixFuncOpTest, VectorProd) {
     vec_t expect_prod_cu{0, 5};
 
     ASSERT_EQ(_c(0, 0, 1, 1) * u(0, 1), expect_prod_cu);
-
 }
 
 TEST_F(NPMatrixFuncOpTest, Pow) {
