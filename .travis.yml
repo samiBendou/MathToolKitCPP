@@ -28,7 +28,7 @@ script:
 after_success:
 - ls ./TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir
 - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-- coveralls --verbose --root . --gcov-options '\-lp' -E ".*googletest.*"
+- coveralls --verbose --root . --gcov-options '\-lp' -E ".*CMakeFiles.*"
 
 notifications:
   email: false
