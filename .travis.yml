@@ -27,7 +27,7 @@ script:
 after_success:
 
 - |
-  coveralls --verbose --root . \
+  coveralls --verbose --root . --gcov-options '-lpvw' \
     -e CMakeFiles \
     -e TestMathToolKit/lib \
     -e lib \
