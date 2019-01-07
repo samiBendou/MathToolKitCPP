@@ -32,7 +32,7 @@ after_success:
 - ls
 - ls /usr/bin
 - /usr/bin/gcov --version
-- sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
+# - sudo ln -sf /usr/bin/gcov-8.0 /usr/bin/gcov
 - |
   coveralls --verbose --root . --gcov-options '\-lp'  \
     -e CMakeFiles \
