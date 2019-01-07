@@ -1,5 +1,4 @@
 dist: trusty
-sudo: false
 language: cpp
 
 compiler:
@@ -23,7 +22,10 @@ before_install:
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 - pip install --upgrade --user git+git://github.com/eddyxu/cpp-coveralls.git
 
+install:
+- sudo ln -sf /usr/bin/gcov-4.7 /usr/bin/gcov
 script:
+
 - cmake -H. -Bbuild -DCOVERAGE=1
 - cd build
 - cmake --build .
