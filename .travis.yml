@@ -8,12 +8,11 @@ addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
-    - llvm-toolchain-trusty-5.0
 
     packages:
     - g++-8
-    - clang-5.0
     - lcov
+
 before_install:
 #Clone googletest to run unit tests and benchmarks
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
@@ -21,7 +20,7 @@ before_install:
 
 script:
 
-- CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -H. -Bbuild -DCOVERAGE=1
+- CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -DCOVERAGE=1
 - cd build
 - cmake --build .
 - ctest -V
