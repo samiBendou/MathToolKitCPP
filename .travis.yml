@@ -13,8 +13,8 @@ addons:
     packages:
     - g++-8
     - clang-5.0
-#    - lcov
-#    - ggcov
+    - lcov
+    - ggcov
 
 before_install:
 #Clone googletest to run unit tests and benchmarks
