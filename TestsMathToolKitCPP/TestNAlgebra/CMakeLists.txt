@@ -17,11 +17,11 @@ SET(COVERAGE OFF CACHE BOOL "Coverage")
 
 add_executable(TestNAlgebra ${TEST_SOURCES_NVECTOR} ${TEST_SOURCES_NPMATRIX} ${TEST_SOURCES_SCALAR} TestPixel.cpp)
 
-add_executable(TestNVector ${TEST_SOURCES_NVECTOR})
-add_executable(TestNPMatrix ${TEST_SOURCES_NPMATRIX})
-add_executable(TestScalarTypes ${TEST_SOURCES_SCALAR})
-add_executable(BenchNVector BenchNVector.cpp)
-add_executable(BenchNPMatrix BenchNPMatrix.cpp)
+#add_executable(TestNVector ${TEST_SOURCES_NVECTOR})
+#add_executable(TestNPMatrix ${TEST_SOURCES_NPMATRIX})
+#add_executable(TestScalarTypes ${TEST_SOURCES_SCALAR})
+#add_executable(BenchNVector BenchNVector.cpp)
+#add_executable(BenchNPMatrix BenchNPMatrix.cpp)
 
 target_link_libraries(TestNAlgebra gtest gtest_main)
 target_link_libraries(TestNAlgebra NAlgebra)
@@ -33,20 +33,20 @@ endif ()
 
 target_compile_options(TestNAlgebra PRIVATE -std=c++11  -g -Wall -Werror -Wextra -Wpedantic -Wconversion -Wswitch-default -Wswitch-enum -Wunreachable-code -Wwrite-strings -Wcast-align -Wshadow -Wundef)
 
-target_link_libraries(TestNVector gtest gtest_main)
-target_link_libraries(TestNVector NAlgebra)
-
-target_link_libraries(TestNPMatrix gtest gtest_main)
-target_link_libraries(TestNPMatrix NAlgebra)
-
-target_link_libraries(TestScalarTypes gtest gtest_main)
-target_link_libraries(TestScalarTypes NAlgebra)
-
-target_link_libraries(BenchNVector gtest gtest_main)
-target_link_libraries(BenchNVector NAlgebra)
-
-target_link_libraries(BenchNPMatrix gtest gtest_main)
-target_link_libraries(BenchNPMatrix NAlgebra)
+#target_link_libraries(TestNVector gtest gtest_main)
+#target_link_libraries(TestNVector NAlgebra)
+#
+#target_link_libraries(TestNPMatrix gtest gtest_main)
+#target_link_libraries(TestNPMatrix NAlgebra)
+#
+#target_link_libraries(TestScalarTypes gtest gtest_main)
+#target_link_libraries(TestScalarTypes NAlgebra)
+#
+#target_link_libraries(BenchNVector gtest gtest_main)
+#target_link_libraries(BenchNVector NAlgebra)
+#
+#target_link_libraries(BenchNPMatrix gtest gtest_main)
+#target_link_libraries(BenchNPMatrix NAlgebra)
 
 
 add_test(
