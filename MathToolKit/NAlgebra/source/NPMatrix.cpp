@@ -349,9 +349,6 @@ NPMatrix<T> NPMatrix<T>::diag(const std::vector<T> &data, ul_t n) {
     return diag;
 }
 
-//Returns a n-diagonal matrix filled with arr bi-dimensional array : arr[l] is the values of coefficients of the l-th
-//diagonal from the left. arr[middle] is the values of coefficients on the diagonal.
-
 template<typename T>
 NPMatrix<T> NPMatrix<T>::ndiag(const std::vector<NVector<T>> &data) {
     auto n = (long) data.size();
