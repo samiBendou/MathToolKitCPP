@@ -345,10 +345,10 @@ TEST_F(NPMatrixTest, StaticGenerators) {
                       {1, 1, 1}};
     EXPECT_EQ(mat_t::ones(2, 3), expect_ones);
 
-    mat_t expect_cano{{0, 0, 0},
+    mat_t expect_canonical{{0, 0, 0},
                            {0, 1, 0}};
 
-    EXPECT_EQ(mat_t::cano(1, 1, 2, 3), expect_cano);
+    EXPECT_EQ(mat_t::canonical(1, 1, 2, 3), expect_canonical);
 
     EXPECT_EQ(mat_t::eye(3), _a);
     EXPECT_EQ(mat_t::scalar(1, 3), _a);
