@@ -3,7 +3,7 @@
 #define MATHTOOLKITCPP_NGEOMETRY_H
 
 /**
- * @defgroup NAnalysis Numerical functions and ODEs
+ * @defgroup NGeometry Geometry
  * @copyright Dahoux Sami 2018 All rights reserved.
  * @brief N-dimensional geometry library.
  * @details Representing compact geometrical domains such as parallelepiped, spheres...
@@ -13,7 +13,6 @@
  *          - Calculate domains volume, area...
  *
  *          - Create mesh of domains.
- *
  * @}
  */
 

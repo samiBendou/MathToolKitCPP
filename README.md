@@ -34,7 +34,7 @@ The full documentation of the framework is hosted [here](https://samibendou.gith
 2. Copy the directories of the libraries you want to import onto your project. 
 eg : import NAlgebra if you want to use NPMatrix.
 
-3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html).
+3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html#details).
 
 ### Run Unit Tests
 

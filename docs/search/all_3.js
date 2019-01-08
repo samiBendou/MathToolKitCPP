@@ -7,5 +7,6 @@ var searchData=
   ['col',['col',['../class_n_p_matrix.html#aa137db97da518f1dfb69e7eb8fa1b94d',1,'NPMatrix']]],
   ['cols',['cols',['../class_n_p_matrix.html#a30c8ad7b415fa92a23375cbad3ee8e37',1,'NPMatrix']]],
   ['copy',['copy',['../class_n_p_matrix.html#ad2420de13cf39828daf36fd74aea9d2d',1,'NPMatrix::copy(const NPMatrix&lt; T &gt; &amp;m)'],['../class_n_p_matrix.html#aea56ed6b8852d53ddedce7d9f0ea5a08',1,'NPMatrix::copy(const vector&lt; vector&lt; T &gt;&gt; &amp;data)'],['../class_n_vector.html#a67128d2ff536b8ccd7a95cb680bd0431',1,'NVector::copy()']]],
-  ['cross',['cross',['../class_vector3.html#ab4221b101df67f562347dde6738c66fc',1,'Vector3']]]
+  ['cross',['cross',['../class_vector3.html#ab4221b101df67f562347dde6738c66fc',1,'Vector3']]],
+  ['calculus_20and_20odes',['Calculus and ODEs',['../group___n_analysis.html',1,'']]]
 ];

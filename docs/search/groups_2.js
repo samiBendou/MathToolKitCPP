@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['serialization_20and_20getters', ['Serialization and getters', ['../group___serialization_and_getters.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['linear_20algebra',['Linear Algebra',['../group___n_algebra.html',1,'']]]
+];

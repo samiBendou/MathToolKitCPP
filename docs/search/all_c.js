@@ -2,7 +2,6 @@ var searchData=
 [
   ['n',['n',['../class_n_p_matrix.html#afc181b7652d9427125c72c38d7c1498d',1,'NPMatrix']]],
   ['nalgebra_2eh',['NAlgebra.h',['../_n_algebra_8h.html',1,'']]],
-  ['numerical_20functions_20and_20odes',['Numerical functions and ODEs',['../group___n_analysis.html',1,'']]],
   ['nanalysis_2eh',['NAnalysis.h',['../_n_analysis_8h.html',1,'']]],
   ['ncompact',['NCompact',['../class_n_compact.html',1,'NCompact'],['../class_n_compact.html#adca59e9cffb585724a81bb3fa6cc735f',1,'NCompact::NCompact()']]],
   ['ncompact_2ecpp',['NCompact.cpp',['../_n_compact_8cpp.html',1,'']]],
