@@ -2,13 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/samiBendou/MathToolKitCPP/badge.svg?branch=master)](https://coveralls.io/github/samiBendou/MathToolKitCPP?branch=master)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-# MathToolKitCPP
-
-#### Last Update : 08/01/2019
-
-#### Current Version : 1.1.2
-
-## General overview
+# MathToolKitCPP 1.1.2
 
 ### Introduction
 
@@ -21,9 +15,9 @@ It's template based implementation to provide .
 
 - **High level** numpy like syntax
 
-- **Efficient** computing thanks to a mix of STL standardization and low level C++
+- **Efficient** computing using a mix of STL standardization and low level C++
 
-- **Large range** of abstractions and methods from algebra to geometry
+- **Many abstractions** from algebra to geometry are introduced
 
 - **Lightweight** enough to be embedded on various microelectronic devices
 
@@ -51,15 +45,16 @@ If you want to run unit tests you have to import googletest onto the cloned proj
 2. Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ : 
 
 ```commandline
-git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
-
+git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/ 
 ```
 
 ### Additional information
 
-#### Author : samiBendou
+**Author :** Sami Dahoux [GitHub](https://github.com/samiBendou/)
 
-#### Version log :
+**Last Update :** 08/01/2019
+
+**Version log :**
 
 - 1.1.2 :   Minor fixes for gcc8
 - 1.1.1 :   minor fixes related to integration of CI tool and generating doc using doxygen.
