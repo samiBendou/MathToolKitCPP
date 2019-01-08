@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['nalgebra', ['NAlgebra', ['../group___n_algebra.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['numerical_20functions_20and_20odes',['Numerical functions and ODEs',['../group___n_analysis.html',1,'']]]
+];

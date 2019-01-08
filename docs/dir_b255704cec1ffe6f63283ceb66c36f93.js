@@ -4,6 +4,7 @@ var dir_b255704cec1ffe6f63283ceb66c36f93 =
     [ "NDSet.h", "_n_d_set_8h.html", [
       [ "NDSet", "class_n_d_set.html", "class_n_d_set" ]
     ] ],
+    [ "NGeometry.h", "_n_geometry_8h.html", null ],
     [ "NParallelepiped.h", "_n_parallelepiped_8h.html", [
       [ "NParallelepiped", "class_n_parallelepiped.html", "class_n_parallelepiped" ]
     ] ],
