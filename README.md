@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/samiBendou/MathToolKitCPP.svg?branch=master)](https://travis-ci.org/samiBendou/MathToolKitCPP/builds)
-
 [![Coverage Status](https://coveralls.io/repos/github/samiBendou/MathToolKitCPP/badge.svg?branch=master)](https://coveralls.io/github/samiBendou/MathToolKitCPP?branch=master)
 
 # MathToolKitCPP
