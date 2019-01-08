@@ -21,7 +21,11 @@
  *  @{
  *  This section is a small tutorial which introduces you to `NAlgebra` objects and shows the basic of `NAlgebra` module.
  *
- *  @section NVectorIntroTutoStart Introduction to NVector
+ *  @section IntroTutoStart Introduction to MathToolKit
+ *
+ *  @subsection NAlgebra
+ *
+ *  @subsubsection NVector
  *
  *  `NVector` objects are abstraction for mathematical vectors :
  *
@@ -33,7 +37,7 @@
  *  You can use aliases `vec_t`, `vec_char_t`, ... to use common scalar types.
  *  Full documentation of `NVector` is available [here](https://samibendou.github.io/MathToolKitCPP/class_n_vector.html).
  *
- * @subsection AlgclOpVec Algebraical Operations
+ * **Algebraical Operations**
  *
  * Common element-wise algebraical operations are provided. Syntax is very similar to C++ primitive types :
  *
@@ -43,7 +47,7 @@
  * std::cout << u + v; //displays "(10, 8, -16, 20)"
  * @endcode
  *
- * @subsection AlgcEucldOp Norm Based Euclidean Operations
+ * **Norm Based Euclidean Operations**
  *
  * Dot product is represented in `NAlgebra` and a set of operators are provided to calculate distance, norm, ...
  *
@@ -52,7 +56,7 @@
  * std::cout << !u; \\ return the norm of u : 2
  * @endcode
  *
- * @subsection ManipVec Manipulators
+ * **ManipVec Manipulators**
  *
  * Common manipulators are provided such as `shift` or `swap`, eg. :
  *
@@ -61,7 +65,7 @@
  * u.swap(0, 1).shift(1); // u = (1, 3, 2)
  * @endcode
  *
- * @subsection StaticVec Static Generators
+ * **StaticVec Static Generators**
  *
  * Generators use a syntax similar to numpy. For example :
  *
@@ -69,7 +73,7 @@
  * vec_t u{vec_t::ones(3)}; // u = (1, 1, 1)
  * @endcode
  *
- * @subsection FuncOp Function Operator
+ * **FuncOp Function Operator**
  *
  * Function operator is used to access and eventually modify sub-ranges of a vector.
  *

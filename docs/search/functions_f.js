@@ -34,7 +34,6 @@ var searchData=
   ['shiftrow',['shiftRow',['../class_n_p_matrix.html#a8927e2dc64af30c6f619a93678332093',1,'NPMatrix']]],
   ['snewtonianfield',['SNewtonianField',['../class_s_newtonian_field.html#a3e0816f9bbfd74f70b881562a0d590b5',1,'SNewtonianField']]],
   ['solve',['solve',['../class_n_p_matrix.html#a416d816f2f0d1f01f739b10c82f42d29',1,'NPMatrix']]],
-  ['sqrt',['sqrt',['../_a_e_s_byte_8cpp.html#abfd90b1a1868876b09f658c44faee894',1,'sqrt(const AESByte &amp;b):&#160;AESByte.cpp'],['../_pixel_8cpp.html#ac415923df8af4faf916a584a0f610c5a',1,'sqrt(const Pixel &amp;p):&#160;Pixel.cpp']]],
   ['str',['str',['../class_n_p_matrix.html#ac60d089a0a4b6d0a1df3cf549f50028d',1,'NPMatrix::str()'],['../class_n_vector.html#a6d66b06b953197c1b3965ed69f9fd17e',1,'NVector::str()'],['../class_n_compact.html#af1879d7342bf6d9902ed5473f6e89038',1,'NCompact::str()'],['../class_n_d_set.html#ada343b5d74ced1894dfe098c6324d61e',1,'NDSet::str()'],['../class_n_parallelepiped.html#a2f5b58b9b80e9b3fda4177fb7703b221',1,'NParallelepiped::str()'],['../class_n_segment.html#a15514dec8420dd1aafda38e7327c9be0',1,'NSegment::str()']]],
   ['sub',['sub',['../class_n_p_matrix.html#adbaf5fc3417b46834bfb5392db7ef92b',1,'NPMatrix::sub()'],['../class_n_vector.html#a67b62da878e1bfa873d714b87ae3d6ee',1,'NVector::sub()']]],
   ['submatrix',['subMatrix',['../class_n_p_matrix.html#a1af1b395e03d5009666214eb7f954afb',1,'NPMatrix']]],

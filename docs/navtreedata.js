@@ -25,12 +25,10 @@ var NAVTREE =
 [
   [ "MathToolKit", "index.html", [
     [ "Getting started", "_n_algebra_tuto_start.html", [
-      [ "Introduction to NVector", "_n_algebra_tuto_start.html#NVectorIntroTutoStart", [
-        [ "Algebraical Operations", "_n_algebra_tuto_start.html#AlgclOpVec", null ],
-        [ "Norm Based Euclidean Operations", "_n_algebra_tuto_start.html#AlgcEucldOp", null ],
-        [ "Manipulators", "_n_algebra_tuto_start.html#ManipVec", null ],
-        [ "Static Generators", "_n_algebra_tuto_start.html#StaticVec", null ],
-        [ "Function Operator", "_n_algebra_tuto_start.html#FuncOp", null ]
+      [ "Introduction to MathToolKit", "_n_algebra_tuto_start.html#IntroTutoStart", [
+        [ "NAlgebra", "_n_algebra_tuto_start.html#NAlgebra", [
+          [ "NVector", "_n_algebra_tuto_start.html#NVector", null ]
+        ] ]
       ] ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
@@ -45,24 +43,14 @@ var NAVTREE =
         [ "Enumerator", "functions_eval.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_a_e_s_byte_8cpp.html",
-"class_n_parallelepiped.html#a0f9ba9f6cab5d2c9472776e69f9aa78d",
-"functions_~.html"
+"_n_algebra_tuto_start.html",
+"class_n_vector.html#a810496e91afe860d48d719dad343060d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

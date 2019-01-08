@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['d_5fepsilon',['D_EPSILON',['../_n_compact_8h.html#a5b6a9857fc543a8eaf7521abb42657dd',1,'NCompact.h']]],
   ['det',['det',['../class_n_p_matrix.html#afea28129e85911922957e9013d81e79a',1,'NPMatrix']]],
   ['diag',['diag',['../class_n_p_matrix.html#ae73ef1ba99fe04c35af30adc3bfbd1dc',1,'NPMatrix']]],
   ['dim',['dim',['../class_n_vector.html#a7589027db20509ac4d93490bb9a1979a',1,'NVector::dim()'],['../class_n_compact.html#a795625c0eda03eb2e113b125948224b0',1,'NCompact::dim()']]],
