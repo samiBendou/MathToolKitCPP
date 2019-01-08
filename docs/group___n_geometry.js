@@ -1,0 +1,65 @@
+var group___n_geometry =
+[
+    [ "NCompact", "class_n_compact.html", [
+      [ "NCompact", "class_n_compact.html#adca59e9cffb585724a81bb3fa6cc735f", null ],
+      [ "dim", "class_n_compact.html#a795625c0eda03eb2e113b125948224b0", null ],
+      [ "str", "class_n_compact.html#af1879d7342bf6d9902ed5473f6e89038", null ],
+      [ "isEmpty", "class_n_compact.html#a574764d7ac4fe2393a739b67bf57a7f1", null ],
+      [ "isIn", "class_n_compact.html#a387e86914973c69b292782f640368680", null ],
+      [ "uni", "class_n_compact.html#a64fb223b2f03a10d80e1290f1947f026", null ],
+      [ "inter", "class_n_compact.html#a5806924822793fdd89f4168e1e8c4d3c", null ],
+      [ "card", "class_n_compact.html#a816bb4976567a7bfed57763ce717b685", null ],
+      [ "border", "class_n_compact.html#af7acc50099e80fc13ce32c97e6857308", null ],
+      [ "mesh", "class_n_compact.html#ad4cdc60c75ca433c63f44ec13063e2fe", null ],
+      [ "operator<<", "class_n_compact.html#a2afd0750c38a42e4afdc675fb8ac0221", null ],
+      [ "_dim", "class_n_compact.html#a0f13086af28c4e2dbbcaa308f28ed506", null ]
+    ] ],
+    [ "NDSet", "class_n_d_set.html", [
+      [ "NDSet", "class_n_d_set.html#a906983146babefe3d4824d282887c083", null ],
+      [ "NDSet", "class_n_d_set.html#a2f01f90688a50dffc1b1b19ab3e34a7f", null ],
+      [ "str", "class_n_d_set.html#ada343b5d74ced1894dfe098c6324d61e", null ],
+      [ "isIn", "class_n_d_set.html#a0023b3999000c4d5ed05704d7346466d", null ],
+      [ "isEmpty", "class_n_d_set.html#aafdebcaf09b5efa04872041e4449190c", null ],
+      [ "uni", "class_n_d_set.html#ae32071d88d0a669e3e397ec20ef16cd5", null ],
+      [ "inter", "class_n_d_set.html#abf13bbb9169af9e4b507fc8fcfb83232", null ],
+      [ "card", "class_n_d_set.html#a683386499ad6a9de65e0197f2846d8de", null ],
+      [ "border", "class_n_d_set.html#a3020476b78835439f6474845d30f00ff", null ],
+      [ "mesh", "class_n_d_set.html#a18273bfd133548e2012d1c8bd7cf566c", null ],
+      [ "mesh", "class_n_d_set.html#ae57fe6ad1422876fa4256a28c3a26a13", null ]
+    ] ],
+    [ "NParallelepiped", "class_n_parallelepiped.html", [
+      [ "NParallelepiped", "class_n_parallelepiped.html#af80601a4fc3edfeca3e7f1209cc2b704", null ],
+      [ "str", "class_n_parallelepiped.html#a2f5b58b9b80e9b3fda4177fb7703b221", null ],
+      [ "isIn", "class_n_parallelepiped.html#abe05e06f34b0be7d18c098ef7821edf3", null ],
+      [ "isEmpty", "class_n_parallelepiped.html#a7c4271e0cd8678b6904b1f25d116cd57", null ],
+      [ "card", "class_n_parallelepiped.html#a57517e96bd3bc757cfa4e4d1d2768450", null ],
+      [ "base", "class_n_parallelepiped.html#a59a297106e5f9a9d8cc672dbe685eced", null ],
+      [ "pos", "class_n_parallelepiped.html#a15e7d385482e105caad884697aa2a9ab", null ],
+      [ "setBase", "class_n_parallelepiped.html#af50551bef2ecb0d6628a6668824bb2ac", null ],
+      [ "setPos", "class_n_parallelepiped.html#a29f55165985609afbc16b91c4143771d", null ],
+      [ "border", "class_n_parallelepiped.html#a6cc531927e40a95b48923b56406206d3", null ],
+      [ "mesh", "class_n_parallelepiped.html#a0f9ba9f6cab5d2c9472776e69f9aa78d", null ],
+      [ "segments", "class_n_parallelepiped.html#a3440b48cfd7491ed747690a9f69dbbe4", null ],
+      [ "vol", "class_n_parallelepiped.html#a8529874bae044bdee3e0d805dae1887d", null ],
+      [ "meshSize", "class_n_parallelepiped.html#a99696422faefb6e2f558c794017c95e4", null ],
+      [ "_base", "class_n_parallelepiped.html#a02542ae7d5e1d052412eb06a292e0e9d", null ],
+      [ "_pos", "class_n_parallelepiped.html#ae1cc22beb853095d8a110c641dd8e005", null ],
+      [ "_vol", "class_n_parallelepiped.html#aabd33c4ffeff864ea342440c08d4702b", null ]
+    ] ],
+    [ "NSegment", "class_n_segment.html", [
+      [ "NSegment", "class_n_segment.html#a15b93ff64168dac284abf4144148b194", null ],
+      [ "str", "class_n_segment.html#a15514dec8420dd1aafda38e7327c9be0", null ],
+      [ "a", "class_n_segment.html#a7a4eccaa9a0746ef758efdde1bfbbd65", null ],
+      [ "b", "class_n_segment.html#aa782c4870899db28cae39616edc86967", null ],
+      [ "setA", "class_n_segment.html#a423242ff6d7d28acbf6bb0fffb559163", null ],
+      [ "setB", "class_n_segment.html#a02094cbbe46d7c647299ecdde05ce592", null ],
+      [ "border", "class_n_segment.html#a0ef102ed1c0751ae4a9a2e52bf0736da", null ],
+      [ "mesh", "class_n_segment.html#a49473aeaa477736a7863e60607e045e0", null ],
+      [ "mesh", "class_n_segment.html#ad89a4122b800b15f465f5ca776394721", null ],
+      [ "isIn", "class_n_segment.html#a9370351370e57d265f990b3e9d2ab114", null ],
+      [ "isEmpty", "class_n_segment.html#ac17e9542c20477269bbcf08286d79d07", null ],
+      [ "card", "class_n_segment.html#a2fbe9d64e08f8aaa60d09ba8fe0ca2ba", null ],
+      [ "_a", "class_n_segment.html#ae97f9d86f36042b6d90f202c266c5fa2", null ],
+      [ "_b", "class_n_segment.html#a46d4842dffd0446c07a92704dd527096", null ]
+    ] ]
+];
