@@ -9,6 +9,11 @@
 #include <NVector.h>
 #include <NPField.h>
 
+/**
+ * @ingroup NAnalysis
+ * @{
+ */
+
 class NOde {
 public:
     static std::vector<vec_t> euler(const vec_t &u0,
@@ -17,5 +22,7 @@ public:
                                     double t1 = 1,
                                     double dt = 0.1);
 };
+
+/** @} */
 
 #endif //MATHTOOLKIT_NODE_H

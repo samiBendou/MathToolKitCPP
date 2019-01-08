@@ -9,6 +9,10 @@
 #include <NVector.h>
 #include <NCompact.h>
 
+/**
+ * @ingroup NGeometry
+ * @{
+ */
 
 class NSegment : public NCompact {
 public:
@@ -43,5 +47,6 @@ protected:
     int card() const override;
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_SEGMENT_H

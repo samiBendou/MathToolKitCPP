@@ -11,6 +11,11 @@
 #include <NCompact.h>
 #include <NSegment.h>
 
+/**
+ * @ingroup NGeometry
+ * @{
+ */
+
 class NParallelepiped : public NCompact {
 public:
     NParallelepiped(const mat_t &base = mat_t::zeros(0), const vec_t &pos = vec_t::zeros(0));
@@ -52,5 +57,6 @@ protected:
     double _vol;
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_NPARALLELEPIPED_H

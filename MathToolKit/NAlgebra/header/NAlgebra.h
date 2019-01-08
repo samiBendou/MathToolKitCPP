@@ -16,12 +16,12 @@
  *
  *  The library offers a code structure that allows you customization by inheritance and template specialization.
  *
- *  @{
- *  @page NAlgebraTutoStart Introduction
  *
+ *  @page NAlgebraTutoStart Getting started
+ *  @{
  *  This section is a small tutorial which introduces you to `NAlgebra` objects and shows the basic of `NAlgebra` module.
  *
- *  @section NVector
+ *  @section NVectorIntroTutoStart Introduction to NVector
  *
  *  `NVector` objects are abstraction for mathematical vectors :
  *

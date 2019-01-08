@@ -16,6 +16,5 @@ var searchData=
   ['isupper',['isUpper',['../class_n_p_matrix.html#aa1baeec21546add3c67f0d330c9d0016',1,'NPMatrix']]],
   ['isvalidcolindex',['isValidColIndex',['../class_n_p_matrix.html#ab3f19d6c9259ef6e0a919ea7ad85a5a1',1,'NPMatrix']]],
   ['isvalidindex',['isValidIndex',['../class_n_p_matrix.html#a3d584ab75f97711997f39ffefef1f78b',1,'NPMatrix::isValidIndex()'],['../class_n_vector.html#ad993b3d62002abc9d89ebf053003341d',1,'NVector::isValidIndex()']]],
-  ['isvalidrowindex',['isValidRowIndex',['../class_n_p_matrix.html#afc5221cb1f5d1e1919801a0ff32751fe',1,'NPMatrix']]],
-  ['introduction',['Introduction',['../group___n_algebra.html',1,'']]]
+  ['isvalidrowindex',['isValidRowIndex',['../class_n_p_matrix.html#afc5221cb1f5d1e1919801a0ff32751fe',1,'NPMatrix']]]
 ];

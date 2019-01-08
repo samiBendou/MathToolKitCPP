@@ -8,6 +8,10 @@
 #include <NVector.h>
 #include <NPField.h>
 
+/**
+ * @ingroup NAnalysis
+ * @{
+ */
 
 class SNewtonianField : public NPField<double> {
 public:
@@ -24,5 +28,6 @@ protected:
     double _k;
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_SNEWTONIANFIELD_H

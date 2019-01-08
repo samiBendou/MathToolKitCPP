@@ -24,6 +24,15 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "MathToolKit", "index.html", [
+    [ "Getting started", "_n_algebra_tuto_start.html", [
+      [ "Introduction to NVector", "_n_algebra_tuto_start.html#NVectorIntroTutoStart", [
+        [ "Algebraical Operations", "_n_algebra_tuto_start.html#AlgclOpVec", null ],
+        [ "Norm Based Euclidean Operations", "_n_algebra_tuto_start.html#AlgcEucldOp", null ],
+        [ "Manipulators", "_n_algebra_tuto_start.html#ManipVec", null ],
+        [ "Static Generators", "_n_algebra_tuto_start.html#StaticVec", null ],
+        [ "Function Operator", "_n_algebra_tuto_start.html#FuncOp", null ]
+      ] ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -52,8 +61,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_e_s_byte_8cpp.html",
-"class_n_parallelepiped.html#a6cc531927e40a95b48923b56406206d3",
-"group___n_algebra.html#AlgcEucldOp"
+"class_n_parallelepiped.html#a0f9ba9f6cab5d2c9472776e69f9aa78d",
+"functions_~.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

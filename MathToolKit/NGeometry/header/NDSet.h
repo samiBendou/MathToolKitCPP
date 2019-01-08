@@ -8,6 +8,11 @@
 #include <set>
 #include <NCompact.h>
 
+/**
+ * @ingroup NGeometry
+ * @{
+ */
+
 class NDSet : public NCompact, std::set<vec_t> {
 public:
     NDSet();
@@ -34,5 +39,6 @@ public:
 
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_NDSET_H

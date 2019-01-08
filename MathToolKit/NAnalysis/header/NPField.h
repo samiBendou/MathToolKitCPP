@@ -9,6 +9,11 @@
 #include <NCompact.h>
 #include <NDSet.h>
 
+/**
+ * @ingroup NAnalysis
+ * @{
+ */
+
 template<typename T, typename P = T>
 class NPField {
 public:
@@ -31,5 +36,6 @@ protected:
     std::vector<NVector<P>> mesh(const NCompact& domain) const;
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_NFIELD_H

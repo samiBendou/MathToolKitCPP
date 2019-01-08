@@ -10,6 +10,11 @@
 
 #define D_EPSILON std::numeric_limits<double>::epsilon()
 
+/**
+ * @ingroup NGeometry
+ * @{
+ */
+
 class NCompact {
 public:
     NCompact(unsigned long dim);
@@ -39,5 +44,6 @@ protected:
     ul_t _dim;
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_NCOMPACT_H

@@ -8,6 +8,10 @@
 #include <NVector.h>
 #include <NPField.h>
 
+/**
+ * @ingroup NAnalysis
+ * @{
+ */
 
 class NConstantField : public NPField<double> {
 public:
@@ -19,5 +23,6 @@ protected:
     vec_t _k;
 };
 
+/** @} */
 
 #endif //MATHTOOLKIT_GCFIELD_H
