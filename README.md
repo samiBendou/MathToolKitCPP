@@ -4,7 +4,9 @@
 
 # MathToolKitCPP
 
+#### Last Update : 08/01/2019
 
+#### Current Version : 1.1.2
 
 ## General overview
 
@@ -13,49 +15,23 @@
 MathToolKit is a C++ maths framework. It introduces common mathematical abstractions such as matrix, vector, numerical fields, ODE...
 Designed to save time solving commons mathematical problems for engineering.
 
-It provides a mixed style API that gives you flexibility.
-The library uses both STL standardization and low level C++ to provide efficient computing.
-It's designed very lightweight in order to be embedded on microelectronic devices.
-It's template based implementation to provide support for custom scalar types (pixel matrix, AES matrix...).
+The library uses both .
+It's designed 
+It's template based implementation to provide .
 
-#### Featuring :
+- **High level** numpy like syntax
 
-- Large range of abstractions from algebra to geometry
+- **Efficient** computing thanks to a mix of STL standardization and low level C++
 
-- High level object and operator based API
+- **Large range** of abstractions and methods from algebra to geometry
+
+- **Lightweight** enough to be embedded on various microelectronic devices
+
+- **Customization** oriented template based implementation
+
 
 Currently only NAlgebra library is fully tested and functional. Work in progress on other libraries.
 The full documentation of the framework is hosted [here](https://samibendou.github.io/MathToolKitCPP/).
-
-#### NAlgebra
-
-Linear algebra library providing vectors and matrix objects : [Documentation](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html)
-
-- Linear Algebra : `+`, `*`, `/`, `%`, `inv()`, ...
-
-- Manipulators : `shift()`, `swap()`, ...
-
-- Generators : `eye()`, `ones()`, `diag()`, ...
-  
- #### NAnalysis
- 
- Differential calculus library providing numerical vector fields representation and easy ode solving.
- 
-- Mesh fields on various domains (see NGeometry)
-
-- Solve differential equations using fields representation
- 
- #### NGeometry
- 
- Geometry library. Representing compact numerical domains such as parallelepiped, spheres...
- 
- - Represent operations between domains
- 
- - Calculate domains volume, area...
-  
- - Create mesh of domains.
-
-## Getting Started
 
 ### Install
  
@@ -65,12 +41,8 @@ Linear algebra library providing vectors and matrix objects : [Documentation](ht
 eg : import NAlgebra if you want to use NPMatrix.
 
 3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html).
-### 
 
 ### Run Unit Tests
-
-The framework is unit tested with googletest. The framework doesnt yet have a code coverage evaluation
-but over 60 NAlgebra tests has been written.
 
 If you want to run unit tests you have to import googletest onto the cloned project.
 
@@ -87,24 +59,9 @@ git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 
 #### Author : samiBendou
 
-#### Last Update : 06/01/2019
-
-#### Current Version : 1.1.1
-
-#### Compatibility
-
-- Written in C++11
-
-- Using CMake 3.9.2
-
-- Tested on local with : clang-9.0
-
-- Tested on local with : g++-8
-
-- Tested on travis with : g++-8
-
 #### Version log :
 
+- 1.1.2 :   Minor fixes for gcc8
 - 1.1.1 :   minor fixes related to integration of CI tool and generating doc using doxygen.
 - 1.1.0 :   Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code structure.
             Optimizing execution time.

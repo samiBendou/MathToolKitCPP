@@ -8,9 +8,13 @@
  * @details NAlgebra is a library designed to provide intuitive and efficient use of common
  * linear object such as matrix or vector.
  *
- *  - It covers a large range of operations
- *  - It offers a code structure that allows you customization by inheritance
- *  - It's designed using templates so you can use custom scalar types
+ *  - Linear Algebra : `+`, `*`, `/`, `%`, `inv()`, ...
+ *
+ *  - Manipulators : `shift()`, `swap()`, ...
+ *
+ *  - Generators : `eye()`, `ones()`, `diag()`, ...
+ *
+ *  The library offers a code structure that allows you customization by inheritance and template specialization.
  *
  *  @{
  *  @page NAlgebraTutoStart Introduction

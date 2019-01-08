@@ -11,4 +11,4 @@ add_library(NGeometry STATIC
         source/NCompact.cpp header/NCompact.h
         source/NDSet.cpp header/NDSet.h
         source/NParallelepiped.cpp header/NParallelepiped.h
-        )
+        header/NGeometry.h)

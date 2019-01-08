@@ -12,5 +12,5 @@ add_library(NAnalysis STATIC
         source/NOde.cpp header/NOde.h
         source/NConstantField.cpp header/NConstantField.h
         source/SNewtonianField.cpp header/SNewtonianField.h
-        )
+        header/NAnalysis.h)
 
