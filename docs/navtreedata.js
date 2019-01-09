@@ -24,13 +24,6 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "MathToolKit", "index.html", [
-    [ "Getting started", "_n_algebra_tuto_start.html", [
-      [ "Introduction to MathToolKit", "_n_algebra_tuto_start.html#IntroTutoStart", [
-        [ "NAlgebra", "_n_algebra_tuto_start.html#NAlgebra", [
-          [ "NVector", "_n_algebra_tuto_start.html#NVector", null ]
-        ] ]
-      ] ]
-    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -49,8 +42,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_n_algebra_tuto_start.html",
-"class_n_vector.html#a810496e91afe860d48d719dad343060d"
+"annotated.html",
+"class_n_vector.html#a8778fdc3c0a27a7930fda3f2a7155e96"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

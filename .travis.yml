@@ -1,6 +1,10 @@
 dist: trusty
 language: cpp
 
+branches:
+  only:
+    - master
+
 compiler:
 - gcc
 
@@ -13,6 +17,7 @@ addons:
     - g++-8
     - lcov
     - ggcov
+    - doxygen
 
 before_install:
 #Clone googletest to run unit tests and benchmarks
@@ -23,11 +28,20 @@ script:
 - CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -DCOVERAGE=1
 - cmake --build .
 - ./TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra
+- doxygen Doxygen
 
 after_success:
 - ls ./TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir
 - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
 - coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: docs
+  github_token: $GH_REPO_TOKEN
+  on:
+    branch: master
 
 notifications:
   email: false
