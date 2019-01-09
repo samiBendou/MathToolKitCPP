@@ -1,4 +1,0 @@
-D:\Users\Bendou\AppData\JetBrains\apps\CLion\ch-0\182.4505.18\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Users\Bendou\CLionProjects\MathToolKitCPP
--- Configuring done
--- Generating done
--- Build files have been written to: D:/Users/Bendou/CLionProjects/MathToolKitCPP/cmake-build-debug

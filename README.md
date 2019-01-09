@@ -1,98 +1,67 @@
-# MathToolKitCPP
+[![Build Status](https://travis-ci.org/samiBendou/MathToolKitCPP.svg?branch=master)](https://travis-ci.org/samiBendou/MathToolKitCPP/builds)
+[![Coverage Status](https://coveralls.io/repos/github/samiBendou/MathToolKitCPP/badge.svg?branch=master)](https://coveralls.io/github/samiBendou/MathToolKitCPP?branch=master)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-### Author : samiBendou
 
-### Last Update : 30/10/2018
-
-### Current Version : 1.0.1
-
-## General overivew
-
-MathToolKit is a C++ maths framework. 
-
-It introduces common mathematical abstractions such as matrix, vector, fields...
-
-It's designed to save time solving commons mathematical problems for engineering.
-
-Featuring :
-
-- High level syntax and operators
-
-- Large range of operations
-
-- Lightweight code
-
-- Complete integration of STL
-
-- Template based implementation
-
-- Unit tested with googletest
+# MathToolKitCPP 1.1.2
 
 ### Introduction
 
-MathToolKit contains multiples libraries providing API that ease N-dimensional scientific calculation and simulation.
-It's though for produce efficient numeric calculation with an intuitive syntax. 
-It can be used in various domains such as cryptography, theoretical physics, finance...
+MathToolKit is a C++ maths framework. It introduces common mathematical abstractions such as matrix, vector, numerical fields, ODE...
+Designed to save time solving commons mathematical problems for engineering.
 
-The documentation of the framework is currently contained in header files.
+The library uses both .
+It's designed 
+It's template based implementation to provide .
 
-### Compatibility
+- **High level** numpy like syntax
 
-- Written in C++11
+- **Efficient** computing using a mix of STL standardization and low level C++
 
-- Using CMake 3.12
+- **Many abstractions** from algebra to geometry are introduced
 
-## NAlgebra
+- **Lightweight** enough to be embedded on various microelectronic devices
 
-Linear algebra library providing vectors and matrix template classes.
+- **Customization** oriented template based implementation
 
-#### Overview
 
-- Manipulators : shift, swap, ...
+Currently only NAlgebra library is fully tested and functional. Work in progress on other libraries.
+The full documentation of the framework is hosted [here](https://samibendou.github.io/MathToolKitCPP/).
 
-- Linear Algebra : +, *, mapping, inversion, pow, ...
-
-- Generators : eye, ones, diag, ...
-  
- ### NAnalysis
+### Install
  
- Differential calculus library providing numerical vector fields representation and easy ode solving.
- 
- #### Overview
- 
-- Mesh fields on various domains (see NGeometry)
+1. Clone the project
 
-- Solve differential equations using fields representation
- 
- ### NGeometry
- 
- Geometry library. Representing compact numerical domains such as parallelepiped, spheres...
- 
- #### Overview
- 
- - Represent operations between domains
- 
- - Calculate domains volume, area...
-  
- - Create mesh of domains.
+2. Copy the directories of the libraries you want to import onto your project. 
+eg : import NAlgebra if you want to use NPMatrix.
 
- ### Install
- 
-- Clone the project on your computer or IDE
-
-- Copy the directories of the libraries you want to import onto your project
+3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html#details).
 
 ### Run Unit Tests
 
 If you want to run unit tests you have to import googletest onto the cloned project.
 
-- Clone the project
+1. Clone MathToolKitCPP project
 
-- Download googletest last version : https://github.com/google/googletest
+2. Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ : 
 
-- Create a directory named lib in TestMathToolKitCPP
+```commandline
+git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/ 
+```
 
-- Copy googletest-master directory on lib directory
+### Additional information
 
-- Rename googletest-master googletest
+**Author :** Sami Dahoux [GitHub](https://github.com/samiBendou/)
+
+**Last Update :** 08/01/2019
+
+**Version log :**
+
+- 1.1.2 :   Minor fixes for gcc8
+- 1.1.1 :   minor fixes related to integration of CI tool and generating doc using doxygen.
+- 1.1.0 :   Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code structure.
+            Optimizing execution time.
+- 1.0.1 :   Adding unit testing for NGeometry and NAnalyis and attempt to create a unified data structure
+            for geometrical N-dimensional shapes. Minor fixes.
+- 1.0.0 :   First release.
 

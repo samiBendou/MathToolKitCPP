@@ -35,6 +35,7 @@ TEST_F(NPMatrixTest, Dim) {
     ASSERT_TRUE(_a.isSquare());
 }
 
+
 TEST_F(NPMatrixTest, Equality) {
     ASSERT_FALSE(_a == _b);
     ASSERT_TRUE(_a != _b);
@@ -72,7 +73,7 @@ TEST_F(NPMatrixTest, Construction) {
     ASSERT_TRUE(_a == 0);
 
 
-    _a = mat_t({0, 0, 0, 1, 2, 1, 5, 10, 2}, 3, 3);
+    _a = mat_t({0, 0, 0, 1, 2, 1, 5, 10, 2}, 3);
     ASSERT_EQ(_a.n(), 3);
     ASSERT_EQ(_a.p(), 3);
     ASSERT_EQ(_a, _c);
@@ -103,7 +104,7 @@ TEST_F(NPMatrixTest, Getters) {
     auto rows_c = _c.rows();
     auto cols_c = _c.cols();
 
-    for (int k = 0; k < 3; ++k) {
+    for (ul_t k = 0; k < 3; ++k) {
         ASSERT_EQ(_c.row(k), expect_rows_c[k]);
         ASSERT_EQ(_c.col(k), expect_col_c[k]);
 
@@ -348,7 +349,7 @@ TEST_F(NPMatrixTest, StaticGenerators) {
     mat_t expect_canonical{{0, 0, 0},
                            {0, 1, 0}};
 
-    EXPECT_EQ(mat_t::can(1, 1, 2, 3), expect_canonical);
+    EXPECT_EQ(mat_t::cano(1, 1, 2, 3), expect_canonical);
 
     EXPECT_EQ(mat_t::eye(3), _a);
     EXPECT_EQ(mat_t::scalar(1, 3), _a);

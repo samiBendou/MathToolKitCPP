@@ -5,8 +5,9 @@
 #include <gtest/gtest.h>
 #include <NPMatrix.h>
 
-#define SMALL_N_TEST 1000
-#define SMALL_EXP_TEST 5
+#define NPMATRIX_SMALL_DIM_TEST 500
+#define NPMATRIX_ITERATIONS_TEST 100
+#define NPMATRIX_SMALL_EXP_TEST 5
 
 using namespace std;
 
@@ -14,8 +15,40 @@ class NPMatrixBenchTest : public ::testing::Test {
 
 protected:
     void SetUp() override {
-        _a = mat_t::nscalar({-1, 2, -1}, SMALL_N_TEST);
-        _b = 2 * mat_t::ones(SMALL_N_TEST);
+        _u = vec_t::scalar(3, NPMATRIX_SMALL_DIM_TEST);
+        _a = mat_t::nscalar({-1, 2, -1}, NPMATRIX_SMALL_DIM_TEST);
+        _b = 2 * mat_t::ones(NPMATRIX_SMALL_DIM_TEST);
+        _s = 8;
+    }
+
+    void iterateTestMatrix(const std::function<void(mat_t &, const mat_t &)> &test, std::string op = "") {
+        for (int k = 0; k < NPMATRIX_ITERATIONS_TEST; ++k) {
+            _t0 = clock();
+            test(_a, _b);
+            _t1 = clock();
+            _elapsed_time += ((_t1 - _t0) / (double) CLOCKS_PER_SEC) / NPMATRIX_ITERATIONS_TEST;
+        }
+        cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
+    }
+
+    void iterateTestScalar(const std::function<void(mat_t &, double)> &test, std::string op = "") {
+        for (int k = 0; k < NPMATRIX_ITERATIONS_TEST; ++k) {
+            _t0 = clock();
+            test(_a, _s);
+            _t1 = clock();
+            _elapsed_time += ((_t1 - _t0) / (double) CLOCKS_PER_SEC) / NPMATRIX_ITERATIONS_TEST;
+        }
+        cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
+    }
+
+    void iterateTestVector(const std::function<void(vec_t &, const mat_t &)> &test, std::string op = "") {
+        for (int k = 0; k < NPMATRIX_ITERATIONS_TEST; ++k) {
+            _t0 = clock();
+            test(_u, _a);
+            _t1 = clock();
+            _elapsed_time += ((_t1 - _t0) / (double) CLOCKS_PER_SEC) / NPMATRIX_ITERATIONS_TEST;
+        }
+        cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
     }
 
     clock_t _t0{};
@@ -24,114 +57,42 @@ protected:
 
     mat_t _a;
     mat_t _b;
+    vec_t _u;
+    double _s;
 };
 
 TEST_F(NPMatrixBenchTest, Add) {
-    _t0 = clock();
-    _a += _b;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "+ ELAPSED TIME (sec) : " << _elapsed_time << endl;
-
-    _t0 = clock(); // or gettimeofday or whatever
-    _a -= _b;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "- ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+    iterateTestMatrix([](mat_t &a, const mat_t &b) { a += b; }, "+");
 }
 
 TEST_F(NPMatrixBenchTest, Prod) {
-    _t0 = clock();
-    _a *= 5.0;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "* ELAPSED TIME (sec) : " << _elapsed_time << endl;
-
-    _t0 = clock();
-    _a /= 5.0;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "/ ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
-}
-
-TEST_F(NPMatrixBenchTest, DotProduct) {
-    _t0 = clock();
-    _a | _b;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "| ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
-}
-
-TEST_F(NPMatrixBenchTest, Max) {
-    _t0 = clock();
-    _a.max();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "max() ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
-}
-
-TEST_F(NPMatrixBenchTest, MatrixProd) {
-    _t0 = clock();
-    _a *_b;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "* (MATRIX) ELAPSED TIME (sec) : " << _elapsed_time << endl;
+    iterateTestScalar([](mat_t &a, double s) { a *= s; }, "* (SCALAR)");
 }
 
 TEST_F(NPMatrixBenchTest, VectorProd) {
-    vec_t u = vec_t::scalar(2, SMALL_N_TEST);
+    iterateTestVector([](vec_t &u, const mat_t &a) { u *= a; }, "* (VECTOR)");
+}
 
-    _t0 = clock();
-    _a *u;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+TEST_F(NPMatrixBenchTest, MatrixProd) {
+    iterateTestMatrix([](mat_t &a, const mat_t &b) { a *= b; }, "* (MATRIX)");
+}
 
-    cout << endl << "* (VECTOR) ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+TEST_F(NPMatrixBenchTest, DotProduct) {
+    iterateTestMatrix([](mat_t &a, const mat_t &b) { a | b; }, "|");
 }
 
 TEST_F(NPMatrixBenchTest, Pow) {
-    _t0 = clock();
-    _a ^= SMALL_EXP_TEST;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "^ ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+    iterateTestScalar([](mat_t &a, double s) { a ^= NPMATRIX_SMALL_EXP_TEST; }, "*");
 }
 
 TEST_F(NPMatrixBenchTest, Inv) {
-    _t0 = clock();
-    _a ^= -1;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "inv() ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+    iterateTestScalar([](mat_t &a, double s) { a ^= -1; }, "INVERSION");
 }
 
 TEST_F(NPMatrixBenchTest, Det) {
-    vec_t u = vec_t::scalar(2, SMALL_N_TEST);
-
-    _t0 = clock();
-    _a.det();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "det() ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+    iterateTestScalar([](mat_t &a, double s) { a.det(); }, "DETERMINANT");
 }
 
 TEST_F(NPMatrixBenchTest, Solve) {
-    vec_t u = vec_t::scalar(2, SMALL_N_TEST);
-
-    _t0 = clock();
-    _a % u;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "solve() ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+    iterateTestVector([](vec_t &u, const mat_t &a) { u %= a; }, "% (SOLVE)");
 }

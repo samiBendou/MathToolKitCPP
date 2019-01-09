@@ -2,10 +2,11 @@
 // Created by Sami Dahoux on 08/10/2018.
 //
 
-#include <gtest/gtest.h>
 #include <NVector.h>
+#include "gtest/gtest.h"
 
-#define SMALL_DIM_TEST 1000000
+#define NVECTOR_SMALL_DIM_TEST 1000000
+#define NVECTOR_ITERATIONS_TEST 1000
 
 using namespace std;
 
@@ -13,8 +14,30 @@ class NVectorBenchTest : public ::testing::Test {
 
 protected:
     void SetUp() override {
-        _u = vec_t::scalar(3, SMALL_DIM_TEST);
-        _v = vec_t::scalar(6, SMALL_DIM_TEST);
+        _u = vec_t::scalar(3, NVECTOR_SMALL_DIM_TEST);
+        _v = vec_t::scalar(6, NVECTOR_SMALL_DIM_TEST);
+        _s = 8;
+        _elapsed_time = 0.0;
+    }
+
+    void iterateTestVector(const std::function<void(vec_t &, const vec_t &)> &test, std::string op = "") {
+        for (int k = 0; k < NVECTOR_ITERATIONS_TEST; ++k) {
+            _t0 = clock();
+            test(_u, _v);
+            _t1 = clock();
+            _elapsed_time += ((_t1 - _t0) / (double) CLOCKS_PER_SEC) / NVECTOR_ITERATIONS_TEST;
+        }
+        cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
+    }
+
+    void iterateTestScalar(const std::function<void(vec_t &, double)> &test, std::string op = "") {
+        for (int k = 0; k < NVECTOR_ITERATIONS_TEST; ++k) {
+            _t0 = clock();
+            test(_u, _s);
+            _t1 = clock();
+            _elapsed_time += ((_t1 - _t0) / (double) CLOCKS_PER_SEC) / NVECTOR_ITERATIONS_TEST;
+        }
+        cout << op << " AVG ELAPSED TIME : " << _elapsed_time << "s" << endl;
     }
 
     clock_t _t0;
@@ -23,54 +46,25 @@ protected:
 
     vec_t _u;
     vec_t _v;
+    double _s;
 };
 
 TEST_F(NVectorBenchTest, Add) {
-    _t0 = clock();
-    _u += _v;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+    iterateTestVector([](vec_t &u, const vec_t &v) { u += v; }, "+");
+}
 
-    cout << endl << "+ ELAPSED TIME (sec) : " << _elapsed_time << endl;
-
-    _t0 = clock(); // or gettimeofday or whatever
-    _u -= _v;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "- ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+TEST_F(NVectorBenchTest, Sub) {
+    iterateTestVector([](vec_t &u, const vec_t &v) { u -= v; }, "-");
 }
 
 TEST_F(NVectorBenchTest, Prod) {
-    _t0 = clock();
-    _u *= 5.0;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
+    iterateTestScalar([](vec_t &u, double s) { u /= s; }, "*");
+}
 
-    cout << endl << "* ELAPSED TIME (sec) : " << _elapsed_time << endl;
-
-    _t0 = clock();
-    _u /= 5.0;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "/ ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+TEST_F(NVectorBenchTest, Div) {
+    iterateTestScalar([](vec_t &u, double s) { u /= s; }, "/");
 }
 
 TEST_F(NVectorBenchTest, DotProduct) {
-    _t0 = clock();
-    _u | _v;
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "| ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
-}
-
-TEST_F(NVectorBenchTest, Max) {
-    _t0 = clock();
-    _u.max();
-    _t1 = clock();
-    _elapsed_time = (_t1 - _t0) / (double) CLOCKS_PER_SEC;
-
-    cout << endl << "max() ELAPSED TIME (sec) : " << _elapsed_time << endl << endl;
+    iterateTestVector([](vec_t &u, const vec_t &v) { u | v; }, "|");
 }

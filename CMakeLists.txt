@@ -1,20 +1,10 @@
-cmake_minimum_required(VERSION 3.10)
-project(MathToolKit)
+cmake_minimum_required(VERSION 3.9)
+project(MathToolKitCPP)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
-
-include_directories(NAlgebra/header)
-include_directories(NAnalysis/header)
-include_directories(NGeometry/header)
-
-add_subdirectory(NAlgebra)
-add_subdirectory(NAnalysis)
-add_subdirectory(NGeometry)
+add_subdirectory(MathToolKit/NAlgebra)
+add_subdirectory(MathToolKit/NAnalysis)
+add_subdirectory(MathToolKit/NGeometry)
 
 add_subdirectory(TestsMathToolKitCPP)
-
-add_executable(MathToolKit ${SOURCE_FILES})
-
-target_link_libraries(MathToolKit NAnalysis NGeometry NAlgebra)

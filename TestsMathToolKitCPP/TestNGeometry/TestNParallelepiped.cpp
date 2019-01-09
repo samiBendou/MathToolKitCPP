@@ -20,7 +20,7 @@ protected:
 
     NParallelepiped _para1{mat_t::eye(DIM_TEST), vec_t::zeros(DIM_TEST)};
     // NParallelepiped _para2{2 * mat_t::eye(DIM_TEST), vec_t::zeros(DIM_TEST)};
-    // NParallelepiped _para3{mat_t::eye(DIM_TEST), vec_t::canonical(0, DIM_TEST)};
+    // NParallelepiped _para3{mat_t::eye(DIM_TEST), vec_t::cano(0, DIM_TEST)};
 };
 
 TEST_F(NParallelepipedTest, IsIn) {
