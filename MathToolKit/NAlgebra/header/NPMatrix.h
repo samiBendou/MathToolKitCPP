@@ -104,7 +104,7 @@ public:
 
     /**
      * @param vectors bi-dimensional `std::vector` source.
-     * @brief Construct a \f$ n \times p \f$ matrix using a `std::vector<NVector<T>>`.`
+     * @brief Construct a \f$ n \times p \f$ matrix using a `vector<NVector<T>>`.`
      * All the vectors must have the same dimension.
      * @details Convert `vectors` and uses @ref NPMatrix(const vector<vector<T> > &data) "bi-dimensional array constructor".
      */
@@ -132,7 +132,7 @@ public:
      *
      * @return Returns a string representing the matrix.
      */
-    std::string str() const override;
+    string str() const override;
 
     // CHARACTERIZATION
 
@@ -200,7 +200,7 @@ public:
      *
      * @return Returns an array containing the rows of the matrix as `NVector`.
      */
-    std::vector<NVector<T> > rows(size_t i1 = 0, size_t i2 = MAX_SIZE) const;
+    vector<NVector<T> > rows(size_t i1 = 0, size_t i2 = MAX_SIZE) const;
 
     /**
      *
@@ -212,7 +212,7 @@ public:
      *
      * @return Returns an array containing the column of the matrix as `NVector`.
      */
-    std::vector<NVector<T> > cols(size_t j1 = 0, size_t j2 = MAX_SIZE) const;
+    vector<NVector<T> > cols(size_t j1 = 0, size_t j2 = MAX_SIZE) const;
 
     /**
      * @brief Create a new matrix containing upper part of this matrix.
@@ -295,7 +295,7 @@ public:
      *                  \f]
      *                  Where \f$ v_{ij} \f$ represents `vectors[i](j)`.
      */
-    NPMatrix<T> &setRows(const std::vector<NVector<T>> &vectors, size_t i1 = 0);
+    NPMatrix<T> &setRows(const vector<NVector<T>> &vectors, size_t i1 = 0);
 
     /**
      *
@@ -306,7 +306,7 @@ public:
      *
      * @details         The behavior of `setCols()` is analog to `setRows()`.
      */
-    NPMatrix<T> &setCols(const std::vector<NVector<T>> &vectors, size_t j1 = 0);
+    NPMatrix<T> &setCols(const vector<NVector<T>> &vectors, size_t j1 = 0);
 
     /** @} */
 
@@ -695,7 +695,7 @@ public:
      * @param n size of the matrix.
      * @brief diagonal \f$ n^{th} \f$ order diagonal matrix filled with data array.
      */
-    static NPMatrix<T> diag(const std::vector<T> &data, size_t n);
+    static NPMatrix<T> diag(const vector<T> &data, size_t n);
 
 
     /**
@@ -732,7 +732,7 @@ public:
      *
      * @return a n-diagonal matrix filled with `data`.
      */
-    static NPMatrix<T> ndiag(const std::vector<NVector<T> > &data);
+    static NPMatrix<T> ndiag(const vector<NVector<T> > &data);
 
 
     /**
@@ -755,7 +755,7 @@ public:
      * Center diagonal is filled with s1 and the other diagonal are filled with s0.
      * @return  a n-scalar Matrix filled with given `scalars`.
      */
-    static NPMatrix<T> nscalar(const std::vector<T> &scalars, size_t n);
+    static NPMatrix<T> nscalar(const vector<T> &scalars, size_t n);
 
 protected:
 

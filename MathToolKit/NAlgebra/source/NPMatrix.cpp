@@ -341,7 +341,7 @@ NPMatrix<T> NPMatrix<T>::eye(size_t n) {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::diag(const std::vector<T> &data, size_t n) {
+NPMatrix<T> NPMatrix<T>::diag(const vector<T> &data, size_t n) {
     NPMatrix<T> diag = NPMatrix<T>::zeros(n);
     for (size_t k = 0; k < n; ++k) {
         diag(k, k) = data[k];
@@ -350,7 +350,7 @@ NPMatrix<T> NPMatrix<T>::diag(const std::vector<T> &data, size_t n) {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::ndiag(const std::vector<NVector<T>> &data) {
+NPMatrix<T> NPMatrix<T>::ndiag(const vector<NVector<T>> &data) {
     auto n = (long) data.size();
     auto middle = (n - 1) / 2;
     auto dim = data[middle].dim();
@@ -369,11 +369,11 @@ NPMatrix<T> NPMatrix<T>::ndiag(const std::vector<NVector<T>> &data) {
 }
 
 template<typename T>
-NPMatrix<T> NPMatrix<T>::nscalar(const std::vector<T> &scalars, size_t n) {
+NPMatrix<T> NPMatrix<T>::nscalar(const vector<T> &scalars, size_t n) {
     auto scalarSize = (long) scalars.size();
     long minSize = n - scalarSize;
 
-    std::vector<NVector<T> > diags((size_t) (2 * scalarSize - 1));
+    vector<NVector<T> > diags((size_t) (2 * scalarSize - 1));
     size_t size = 1;
     for (size_t l = 0; l < scalarSize; l++) {
         diags[l] = NVector<T>::scalar(scalars[l], size + minSize);
@@ -565,7 +565,7 @@ void NPMatrix<T>::lupUpdate() const {
     lupClear();
 
     _a = new NPMatrix<T>(subMatrix(_i1, _j1, _i2, _j2));
-    auto *p = new std::vector<size_t>();
+    auto *p = new vector<size_t>();
 
     for (i = 0; i <= _a->_n; ++i)
         p->push_back(i); //Unit p permutation, p[i] initialized with i
@@ -603,7 +603,7 @@ template<typename T>
 void NPMatrix<T>::lupCopy() const {
     if (_a != nullptr && _perm != nullptr) {
         _a = new NPMatrix<T>(*(_a));
-        _perm = new std::vector<size_t>(_n);
+        _perm = new vector<size_t>(_n);
         std::copy(_perm, _perm + _n, _perm);
     }
 }
@@ -644,12 +644,12 @@ template<typename T>
 NPMatrix<T> &NPMatrix<T>::copy(const NPMatrix<T> &m) {
     if (this != &m) {
         if (hasDefaultBrowseIndices() && m.hasDefaultBrowseIndices()) {
-            std::vector<T>::operator=(m);
+            vector<T>::operator=(m);
             _n = m._n;
             _p = m._p;
             lupCopy();
         } else if (hasDefaultBrowseIndices()) {
-            std::vector<T>::operator=(m.subMatrix(m._i1, m._j1, m._i2, m._j2));
+            vector<T>::operator=(m.subMatrix(m._i1, m._j1, m._i2, m._j2));
             _n = m._i2 - m._i1 + 1;
             _p = m._j2 - m._j1 + 1;
             lupClear();
@@ -693,7 +693,7 @@ NPMatrix<T> &NPMatrix<T>::setSubMatrix(const NPMatrix<T> &m) {
 }
 
 template<typename T>
-NPMatrix<T> &NPMatrix<T>::forEach(const NPMatrix<T> &m, const std::function<void(T &, const T &)> &binary_op) {
+NPMatrix<T> &NPMatrix<T>::forEach(const NPMatrix<T> &m, const function<void(T &, const T &)> &binary_op) {
     assert(hasSameSize(m));
 
     for (size_t i = 0; i <= _i2 - _i1; ++i) {
