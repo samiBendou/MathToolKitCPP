@@ -137,7 +137,6 @@ public:
 
     inline friend double operator/(const Vector3 &u, const Vector3 &v) { return u.distance(v); }
 
-
     /**
      * @brief Vector product between two us
      * @details usual u product given by :
