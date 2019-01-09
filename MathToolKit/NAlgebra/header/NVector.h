@@ -345,7 +345,7 @@ public:
     /**
      *
      * @brief Manipulate sub-vector
-     * @details This operator is similar to previous @ref operator()(size_t k1, size_t k2) const "operator"
+     * @details This operator is similar to previous @ref operator()(size_t, size_t) const "operator"
      * except that it sets browse indices `_k1` and `_k2` in order to modify efficiently non `const` reference.
      * @return reference to `*this`.
      */

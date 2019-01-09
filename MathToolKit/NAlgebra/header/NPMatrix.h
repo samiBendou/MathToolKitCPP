@@ -599,7 +599,7 @@ public:
      * @param j2 last row to take \f$ p \gt j_2 \geq j_1 \geq 0 \f$ of columns
      * @brief Manipulate sub-matrix.
 
-     * @details This operator is similar to @ref NVector<T>::operator()(size_t i1, size_t i2) const "vector sub-range operator".
+     * @details This operator is similar to @ref NVector<T>::operator()(size_t, size_t) const "vector sub-range operator".
      * It allows operations on a restricted range of the matrix :
      *         \f[ \begin{bmatrix}
      *             A_{i_1j_1}   & ... & A_{i_2j_1} \\
@@ -625,7 +625,7 @@ public:
     /**
      *
      * @brief Manipulate sub-matrix
-     * @details This operator is similar to previous @ref operator()(size_t i1, size_t j1, size_t i2, size_t j2) const "operator"
+     * @details This operator is similar to previous @ref operator()(size_t, size_t, size_t, size_t) const "operator"
      * except that it sets browse indices. See `NVector` @ref operator()(size_t k1, size_t k2) "operator" for more details.
      * @return reference to `*this`.
      */
