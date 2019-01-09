@@ -104,7 +104,7 @@ TEST_F(NPMatrixTest, Getters) {
     auto rows_c = _c.rows();
     auto cols_c = _c.cols();
 
-    for (ul_t k = 0; k < 3; ++k) {
+    for (size_t k = 0; k < 3; ++k) {
         ASSERT_EQ(_c.row(k), expect_rows_c[k]);
         ASSERT_EQ(_c.col(k), expect_col_c[k]);
 

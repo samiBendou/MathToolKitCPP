@@ -10,7 +10,7 @@
 #include <gtest/gtest.h>
 
 TEST(NPFieldTest, NConstantField) {
-    ul_t dim = 3;
+    size_t dim = 3;
 
     // Parallelepiped construction
     double l = 5.0;
@@ -34,7 +34,7 @@ TEST(NPFieldTest, NConstantField) {
 }
 
 TEST(NPFieldTest, SNewtonianField) {
-    ul_t dim = 3;
+    size_t dim = 3;
     double sun_mass = 1.9891e+30, d_earth_sun = 1.47098074e+11; //earth_spd = 3.0287e+4;
 
     // Parallelepiped construction
@@ -58,7 +58,7 @@ TEST(NPFieldTest, SNewtonianField) {
 }
 
 TEST(NOde, Euler) {
-    ul_t dim = 3;
+    size_t dim = 3;
 
     // Field construction
     double dx = 0.333;

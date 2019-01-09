@@ -27,7 +27,7 @@ string NVector<T>::str() const {
 // GETTERS
 
 template<typename T>
-ul_t NVector<T>::dim() const {
+size_t NVector<T>::dim() const {
     auto res = _k2 - _k1 + 1;
     setDefaultBrowseIndices();
     return res;
@@ -57,17 +57,17 @@ T NVector<T>::min() const {
 }
 
 template<typename T>
-ul_t NVector<T>::maxIndex() const {
+size_t NVector<T>::maxIndex() const {
     auto max_it = std::max_element(begin(), end());
-    auto res = (ul_t) std::distance(begin(), max_it);
+    auto res = (size_t) std::distance(begin(), max_it);
     setDefaultBrowseIndices();
     return res;
 }
 
 template<typename T>
-ul_t NVector<T>::minIndex() const {
+size_t NVector<T>::minIndex() const {
     auto min_it = std::min_element(begin(), end());
-    ul_t res = (ul_t) std::distance(begin(), min_it);
+    size_t res = (size_t) std::distance(begin(), min_it);
     setDefaultBrowseIndices();
     return res;
 }
@@ -93,20 +93,20 @@ T NVector<T>::minAbs() const {
 }
 
 template<typename T>
-ul_t NVector<T>::maxAbsIndex() const {
+size_t NVector<T>::maxAbsIndex() const {
     auto min_it = std::min_element(begin(), end()), max_it = std::max_element(begin(), end());
 
-    ul_t res = (ul_t) std::distance(begin(), (abs(*min_it) > abs(*max_it)) ? min_it : max_it);
+    size_t res = (size_t) std::distance(begin(), (abs(*min_it) > abs(*max_it)) ? min_it : max_it);
     setDefaultBrowseIndices();
 
     return res;
 }
 
 template<typename T>
-ul_t NVector<T>::minAbsIndex() const {
+size_t NVector<T>::minAbsIndex() const {
     auto min_it = std::min_element(begin(), end()), max_it = std::max_element(begin(), end());
 
-    ul_t res = (ul_t) std::distance(begin(), (abs(*min_it) <= abs(*max_it)) ? min_it : max_it);
+    size_t res = (size_t) std::distance(begin(), (abs(*min_it) <= abs(*max_it)) ? min_it : max_it);
     setDefaultBrowseIndices();
 
     return res;
@@ -119,7 +119,7 @@ ul_t NVector<T>::minAbsIndex() const {
 // SWAP
 
 template<typename T>
-NVector<T> &NVector<T>::swap(ul_t k1, ul_t k2) {
+NVector<T> &NVector<T>::swap(size_t k1, size_t k2) {
     assert(isBetweenK12(k1) && isBetweenK12(k2));
     std::iter_swap(begin() + k1, begin() + k2);
     setDefaultBrowseIndices();
@@ -169,7 +169,7 @@ T NVector<T>::operator()(long k) const {
 }
 
 template<typename T>
-NVector<T> &NVector<T>::operator()(ul_t k1, ul_t k2) {
+NVector<T> &NVector<T>::operator()(size_t k1, size_t k2) {
     assert(isValidIndex(k1) && isValidIndex(k2));
     assert(k2 >= k1);
 
@@ -184,14 +184,14 @@ NVector<T> &NVector<T>::operator()(ul_t k1, ul_t k2) {
 // STATIC METHODS
 
 template<typename T>
-NVector<T> NVector<T>::scalar(T s, ul_t dim) {
+NVector<T> NVector<T>::scalar(T s, size_t dim) {
     NVector<T> scalar(dim);
     scalar.fill(s);
     return scalar;
 }
 
 template<typename T>
-NVector<T> NVector<T>::cano(ul_t k, ul_t dim) {
+NVector<T> NVector<T>::cano(size_t k, size_t dim) {
     assert(k < dim);
 
     NVector<T> cano = NVector<T>::zeros(dim);
@@ -215,7 +215,7 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 
     assert(scalars.size() == vectors.size());
 
-    for (ul_t k = 0; k < scalars.size(); ++k) {
+    for (size_t k = 0; k < scalars.size(); ++k) {
         sum_prod += scalars[k] * vectors[k];
     }
     return sum_prod;
@@ -225,7 +225,7 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
 
 
 template<typename T>
-NVector<T>::NVector(const vector<T> &data, ul_t k1, ul_t k2) : vector<T>(data), _k1(k1), _k2(k2) {
+NVector<T>::NVector(const vector<T> &data, size_t k1, size_t k2) : vector<T>(data), _k1(k1), _k2(k2) {
     setDefaultBrowseIndices();
 }
 
@@ -236,7 +236,7 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
     T dot = 0.0;
 
     assert(hasSameSize(u));
-    for (ul_t k = 0; k <= _k2 - _k1; ++k) {
+    for (size_t k = 0; k <= _k2 - _k1; ++k) {
         dot += u[k + u._k1] * (*this)[k + _k1];
     }
     setDefaultBrowseIndices();
@@ -250,7 +250,7 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
 template<typename T>
 NVector<T> &NVector<T>::forEach(const NVector<T> &u, const std::function<void(T &, const T &)> &binary_op) {
     assert(hasSameSize(u));
-    for (ul_t k = 0; k <= _k2 - _k1; k++) {
+    for (size_t k = 0; k <= _k2 - _k1; k++) {
         binary_op((*this)[k + _k1], u[k + u._k1]);
     }
     setDefaultBrowseIndices();
@@ -260,7 +260,7 @@ NVector<T> &NVector<T>::forEach(const NVector<T> &u, const std::function<void(T 
 
 template<typename T>
 NVector<T> &NVector<T>::forEach(T s, const std::function<void(T &, T)> &binary_op) {
-    for (ul_t k = 0; k <= _k2 - _k1; k++) {
+    for (size_t k = 0; k <= _k2 - _k1; k++) {
         binary_op((*this)[k + _k1], s);
     }
     setDefaultBrowseIndices();
@@ -297,10 +297,10 @@ NVector<T> &NVector<T>::copy(const NVector<T> &u) {
 // SUB-VECTORS
 
 template<typename T>
-NVector<T> NVector<T>::subVector(ul_t k1, ul_t k2) const {
+NVector<T> NVector<T>::subVector(size_t k1, size_t k2) const {
     _k1 = k1;
     _k2 = k2;
-    ul_t dim = k2 - k1 + 1;
+    size_t dim = k2 - k1 + 1;
 
     assert(isValidIndex(k1) && isValidIndex(k2) && dim > 0);
 

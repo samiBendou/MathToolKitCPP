@@ -61,9 +61,9 @@ public:
 
     /**
      *
-     * @brief Construct a \f$ n \times p \f$ matrix initialized with `NVector(ul_t dim)` constructor.
+     * @brief Construct a \f$ n \times p \f$ matrix initialized with `NVector(size_t dim)` constructor.
      */
-    explicit NPMatrix(ul_t n = 0, ul_t p = 0) : NPMatrix(NVector<T>(n * pIfNotNull(n, p)), n, pIfNotNull(n, p)) {}
+    explicit NPMatrix(size_t n = 0, size_t p = 0) : NPMatrix(NVector<T>(n * pIfNotNull(n, p)), n, pIfNotNull(n, p)) {}
 
     /**
      * @param data bi-dimensional `std::vector` source.
@@ -100,7 +100,7 @@ public:
      * @details The matrix is of size \f$ n \times p =  q \f$ with \f$ p = q / n \f$. Resulting `p` is computed
      * using integer division so if reminder is not null a part of `u` will be truncated.
      */
-    explicit NPMatrix(const NVector<T> &u, ul_t n = 1) : NPMatrix(u, n, u.dim() / n) {}
+    explicit NPMatrix(const NVector<T> &u, size_t n = 1) : NPMatrix(u, n, u.dim() / n) {}
 
     /**
      * @param vectors bi-dimensional `std::vector` source.
@@ -159,7 +159,7 @@ public:
      *
      * @brief Number of rows \f$ n \f$.
      */
-    inline ul_t n() const {
+    inline size_t n() const {
         auto res = _i2 - _i1 + 1;
         setDefaultBrowseIndices();
         return res;
@@ -169,7 +169,7 @@ public:
      *
      * @brief Number of columns \f$ p \f$.
      */
-    inline ul_t p() const {
+    inline size_t p() const {
         auto res = _j2 - _j1 + 1;
         setDefaultBrowseIndices();
         return res;
@@ -179,13 +179,13 @@ public:
      *
      * @brief \f$ i^{th} \f$ row of the matrix as a `NVector<T>`.
      */
-    NVector<T> row(ul_t i) const;
+    NVector<T> row(size_t i) const;
 
     /**
      *
      * @brief \f$ j^{th} \f$ column the matrix as a `NVector<T>`.
      */
-    NVector<T> col(ul_t j) const;
+    NVector<T> col(size_t j) const;
 
     /**
      *
@@ -200,7 +200,7 @@ public:
      *
      * @return Returns an array containing the rows of the matrix as `NVector`.
      */
-    std::vector<NVector<T> > rows(ul_t i1 = 0, ul_t i2 = MAX_SIZE) const;
+    std::vector<NVector<T> > rows(size_t i1 = 0, size_t i2 = MAX_SIZE) const;
 
     /**
      *
@@ -212,7 +212,7 @@ public:
      *
      * @return Returns an array containing the column of the matrix as `NVector`.
      */
-    std::vector<NVector<T> > cols(ul_t j1 = 0, ul_t j2 = MAX_SIZE) const;
+    std::vector<NVector<T> > cols(size_t j1 = 0, size_t j2 = MAX_SIZE) const;
 
     /**
      * @brief Create a new matrix containing upper part of this matrix.
@@ -244,7 +244,7 @@ public:
      * @name Setters
      * @brief Setters of a `NPMatrix`.
      * @details All the setters return a reference to `*this` in order to allow cascade calls eg `setRow().setCol()`.
-     * Setters cannot be used with `operator()(ul_t, ul_t, ul_t, ul_t)`.
+     * Setters cannot be used with `operator()(size_t, size_t, size_t, size_t)`.
      * @return Setters returns a reference to `*this`.
      * @{
      */
@@ -257,7 +257,7 @@ public:
      * @brief Set row with given vector.
      * @details The dimension of the vector must be inferior or equal to the number of columns.
      */
-    NPMatrix<T> &setRow(const NVector<T> &u, ul_t i1);
+    NPMatrix<T> &setRow(const NVector<T> &u, size_t i1);
 
     /**
      * @param u source `NVector`.
@@ -265,7 +265,7 @@ public:
      * @brief Set column with given vector.
      * @details Same behavior as `setRow()`.
      */
-    NPMatrix<T> &setCol(const NVector<T> &u, ul_t j1);
+    NPMatrix<T> &setCol(const NVector<T> &u, size_t j1);
 
     /**
      *
@@ -295,7 +295,7 @@ public:
      *                  \f]
      *                  Where \f$ v_{ij} \f$ represents `vectors[i](j)`.
      */
-    NPMatrix<T> &setRows(const std::vector<NVector<T>> &vectors, ul_t i1 = 0);
+    NPMatrix<T> &setRows(const std::vector<NVector<T>> &vectors, size_t i1 = 0);
 
     /**
      *
@@ -306,7 +306,7 @@ public:
      *
      * @details         The behavior of `setCols()` is analog to `setRows()`.
      */
-    NPMatrix<T> &setCols(const std::vector<NVector<T>> &vectors, ul_t j1 = 0);
+    NPMatrix<T> &setCols(const std::vector<NVector<T>> &vectors, size_t j1 = 0);
 
     /** @} */
 
@@ -329,7 +329,7 @@ public:
      * @param j2 second col indices to swap
      * @brief Swap \f$ A_{i_1j_1} \f$ and \f$ A_{i_2j_2} \f$.
      */
-    inline NPMatrix<T> &swap(ul_t i1, ul_t j1, ul_t i2, ul_t j2) {
+    inline NPMatrix<T> &swap(size_t i1, size_t j1, size_t i2, size_t j2) {
         assert(isValidIndex(i1, j1) && isValidIndex(i2, j2));
 
         NVector<T>::swap(vectorIndex(i1, j1), vectorIndex(i2, j2));
@@ -343,7 +343,7 @@ public:
      * @param i2 second row indices to swap
      * @brief Swap \f$ R_{i_1} \f$ and \f$ R_{i_2} \f$.
      */
-    inline NPMatrix<T> &swapRow(ul_t i1, ul_t i2) { return swap(Row, i1, i2); }
+    inline NPMatrix<T> &swapRow(size_t i1, size_t i2) { return swap(Row, i1, i2); }
 
     /**
      *
@@ -351,7 +351,7 @@ public:
      * @param j2 second col indices to swap
      * @brief Swap \f$ C_{j_1} \f$ and \f$ C_{j_2} \f$.
      */
-    inline NPMatrix<T> &swapCol(ul_t j1, ul_t j2) { return swap(Col, j1, j2); }
+    inline NPMatrix<T> &swapCol(size_t j1, size_t j2) { return swap(Col, j1, j2); }
 
 
     // SHIFT
@@ -372,7 +372,7 @@ public:
      *                  \f]
      *
      */
-    inline NPMatrix<T> &shiftRow(ul_t i, long iterations = 1) { return shift(Row, i, iterations); }
+    inline NPMatrix<T> &shiftRow(size_t i, long iterations = 1) { return shift(Row, i, iterations); }
 
     /**
      *
@@ -382,7 +382,7 @@ public:
      * @details The behavior is analog to `shiftRow()`. If `iterations` is positive,
      * shift is powered to the up, else to the bottom.
      */
-    inline NPMatrix<T> &shiftCol(ul_t j, long iterations = 1) { return shift(Col, j, iterations); }
+    inline NPMatrix<T> &shiftCol(size_t j, long iterations = 1) { return shift(Col, j, iterations); }
 
     /** @} */
 
@@ -581,12 +581,12 @@ public:
      * For example, `A(0, 0)` return the element located at first row and first column.
      * @return component \f$ A_{ij} \f$ of the matrix.
      */
-    inline T &operator()(ul_t i, ul_t j) {
+    inline T &operator()(size_t i, size_t j) {
         assert(isValidIndex(i, j));
         return (*this)[vectorIndex(i, j)];
     }
 
-    inline T operator()(ul_t i, ul_t j) const {
+    inline T operator()(size_t i, size_t j) const {
         assert(isValidIndex(i, j));
         return (*this).at(vectorIndex(i, j));
     }
@@ -599,7 +599,7 @@ public:
      * @param j2 last row to take \f$ p \gt j_2 \geq j_1 \geq 0 \f$ of columns
      * @brief Manipulate sub-matrix.
 
-     * @details This operator is similar to @ref NVector<T>::operator()(ul_t i1, ul_t i2) const "vector sub-range operator".
+     * @details This operator is similar to @ref NVector<T>::operator()(size_t i1, size_t i2) const "vector sub-range operator".
      * It allows operations on a restricted range of the matrix :
      *         \f[ \begin{bmatrix}
      *             A_{i_1j_1}   & ... & A_{i_2j_1} \\
@@ -620,16 +620,16 @@ public:
 
      *
      */
-    inline NPMatrix<T> operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const { return subMatrix(i1, j1, i2, j2); }
+    inline NPMatrix<T> operator()(size_t i1, size_t j1, size_t i2, size_t j2) const { return subMatrix(i1, j1, i2, j2); }
 
     /**
      *
      * @brief Manipulate sub-matrix
-     * @details This operator is similar to previous @ref operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2) const "operator"
-     * except that it sets browse indices. See `NVector` @ref operator()(ul_t k1, ul_t k2) "operator" for more details.
+     * @details This operator is similar to previous @ref operator()(size_t i1, size_t j1, size_t i2, size_t j2) const "operator"
+     * except that it sets browse indices. See `NVector` @ref operator()(size_t k1, size_t k2) "operator" for more details.
      * @return reference to `*this`.
      */
-    NPMatrix<T> &operator()(ul_t i1, ul_t j1, ul_t i2, ul_t j2);
+    NPMatrix<T> &operator()(size_t i1, size_t j1, size_t i2, size_t j2);
 
     /** @} */
 
@@ -657,7 +657,7 @@ public:
      *
      * @brief \f$ n \times p \f$ matrix filled with `0`.
      */
-    inline static NPMatrix<T> zeros(ul_t n, ul_t p = 0) {
+    inline static NPMatrix<T> zeros(size_t n, size_t p = 0) {
         return NPMatrix<T>(NVector<T>::zeros(n * pIfNotNull(n, p)), n);
     }
 
@@ -665,7 +665,7 @@ public:
      *
      * @brief \f$ n \times p \f$ matrix filled with `1`.
      */
-    inline static NPMatrix<T> ones(ul_t n, ul_t p = 0) {
+    inline static NPMatrix<T> ones(size_t n, size_t p = 0) {
         return NPMatrix<T>(NVector<T>::ones(n * pIfNotNull(n, p)), n);
     }
 
@@ -677,7 +677,7 @@ public:
      * which contains `1` in position \f$ ij \f$ and `0` elsewhere.
      * This matrix is eviqualent to \f$ \delta_{ij} \f$ Kronecker's delta symbol.
      */
-    inline static NPMatrix<T> cano(ul_t i, ul_t j, ul_t n, ul_t p = 0) {
+    inline static NPMatrix<T> cano(size_t i, size_t j, size_t n, size_t p = 0) {
         return NPMatrix<T>(NVector<T>::cano(p * i + j, n * pIfNotNull(n, p)), n);
     }
 
@@ -687,7 +687,7 @@ public:
      * @brief \f$ n^{th} \f$ order identity matrix
      * @return \f$ Id \f$ identity matrix.
      */
-    static NPMatrix<T> eye(ul_t n);
+    static NPMatrix<T> eye(size_t n);
 
     /**
      *
@@ -695,7 +695,7 @@ public:
      * @param n size of the matrix.
      * @brief diagonal \f$ n^{th} \f$ order diagonal matrix filled with data array.
      */
-    static NPMatrix<T> diag(const std::vector<T> &data, ul_t n);
+    static NPMatrix<T> diag(const std::vector<T> &data, size_t n);
 
 
     /**
@@ -705,7 +705,7 @@ public:
      * @details Scalar matrices are a diagonal matrix filled a unique value.
      * @return \f$ n^{th} \f$ order matrix equal to \f$ s \cdot Id \f$.
      */
-    inline static NPMatrix<T> scalar(T s, ul_t n) { return s * NPMatrix<T>::eye(n); }
+    inline static NPMatrix<T> scalar(T s, size_t n) { return s * NPMatrix<T>::eye(n); }
 
     /**
      *
@@ -755,27 +755,27 @@ public:
      * Center diagonal is filled with s1 and the other diagonal are filled with s0.
      * @return  a n-scalar Matrix filled with given `scalars`.
      */
-    static NPMatrix<T> nscalar(const std::vector<T> &scalars, ul_t n);
+    static NPMatrix<T> nscalar(const std::vector<T> &scalars, size_t n);
 
 protected:
 
-    explicit NPMatrix(const NVector<T> &u, ul_t n, ul_t p, ul_t i1 = 0, ul_t j1 = 0, ul_t i2 = 0, ul_t j2 = 0);
+    explicit NPMatrix(const NVector<T> &u, size_t n, size_t p, size_t i1 = 0, size_t j1 = 0, size_t i2 = 0, size_t j2 = 0);
 
     // MANIPULATORS
 
-    NPMatrix<T> &swap(Parts element, ul_t k1, ul_t k2);
+    NPMatrix<T> &swap(Parts element, size_t k1, size_t k2);
 
-    NPMatrix<T> &shift(Parts element, ul_t k, long iterations);
+    NPMatrix<T> &shift(Parts element, size_t k, long iterations);
 
     // MAX/MIN
 
-    ul_t maxAbsIndex(Parts element, ul_t k, ul_t r) const;
+    size_t maxAbsIndex(Parts element, size_t k, size_t r) const;
 
     // MAX / MIN
 
-    inline ul_t maxAbsIndexRow(ul_t i, ul_t r = 0) const { return maxAbsIndex(Row, i, r); }
+    inline size_t maxAbsIndexRow(size_t i, size_t r = 0) const { return maxAbsIndex(Row, i, r); }
 
-    inline ul_t maxAbsIndexCol(ul_t j, ul_t r = 0) const { return maxAbsIndex(Col, j, r); }
+    inline size_t maxAbsIndexCol(size_t j, size_t r = 0) const { return maxAbsIndex(Col, j, r); }
 
     // ALGEBRAICAL OPERATIONS
 
@@ -826,17 +826,17 @@ protected:
 
     // CHARACTERIZATION
 
-    inline bool isValidRowIndex(ul_t i) const { return i < _n; }
+    inline bool isValidRowIndex(size_t i) const { return i < _n; }
 
-    inline bool isValidColIndex(ul_t j) const { return j < _p; }
+    inline bool isValidColIndex(size_t j) const { return j < _p; }
 
-    inline bool isValidIndex(ul_t i, ul_t j) const { return (isValidRowIndex(i) && isValidColIndex(j)); }
+    inline bool isValidIndex(size_t i, size_t j) const { return (isValidRowIndex(i) && isValidColIndex(j)); }
 
-    inline bool isBetweenI12(ul_t i) const { return i >= _i1 && i <= _i2; }
+    inline bool isBetweenI12(size_t i) const { return i >= _i1 && i <= _i2; }
 
-    inline bool isBetweenJ12(ul_t j) const { return j >= _j1 && j <= _j2; }
+    inline bool isBetweenJ12(size_t j) const { return j >= _j1 && j <= _j2; }
 
-    inline static ul_t pIfNotNull(ul_t n, ul_t p) { return p > 0 ? p : n; }
+    inline static size_t pIfNotNull(size_t n, size_t p) { return p > 0 ? p : n; }
 
     inline bool matchSizeForProduct(const NVector<T> &u) const { return (u.dim() - 1) == (_j2 - _j1); }
 
@@ -860,46 +860,46 @@ protected:
 
     // INDEX GETTERS
 
-    inline ul_t vectorIndex(ul_t i, ul_t j) const { return _p * i + j; }
+    inline size_t vectorIndex(size_t i, size_t j) const { return (size_t) (_p * i + j); }
 
-    inline ul_t getRowFromVectorIndex(ul_t k) const {
+    inline size_t getRowFromVectorIndex(size_t k) const {
         assert(k < _n * _p);
         return k / _p;
     }
 
-    inline ul_t getColFromVectorIndex(ul_t k) const {
+    inline size_t getColFromVectorIndex(size_t k) const {
         assert(k < _n * _p);
         return k % _p;
     }
 
     // SUB-MATRICES
 
-    NPMatrix<T> subMatrix(ul_t i1 = 0, ul_t j1 = MAX_SIZE,
-                          ul_t i2 = 0, ul_t j2 = MAX_SIZE) const;
+    NPMatrix<T> subMatrix(size_t i1 = 0, size_t j1 = MAX_SIZE,
+                          size_t i2 = 0, size_t j2 = MAX_SIZE) const;
 
     NPMatrix<T> &setSubMatrix(const NPMatrix<T> &m);
 
     // MANIPULATORS
 
-    NPMatrix<T> &forEach(const NPMatrix<T> &m, const std::function<void(T &, const T &)> &binary_op);
+    NPMatrix<T> &forEach(const NPMatrix<T> &m, const function<void(T &, const T &)> &binary_op);
 
     NPMatrix<T> &forEach(T s, const function<void(T &, T)> &binary_op) override;
 
     // SIZE
 
-    ul_t _n{};
+    size_t _n{};
 
-    ul_t _p{};
+    size_t _p{};
 
     // SUB MATRICES INDICES INDICES
 
-    mutable ul_t _i1{};
+    mutable size_t _i1{};
 
-    mutable ul_t _j1{};
+    mutable size_t _j1{};
 
-    mutable ul_t _i2{};
+    mutable size_t _i2{};
 
-    mutable ul_t _j2{};
+    mutable size_t _j2{};
 
     // LU STORAGE
 
@@ -913,7 +913,7 @@ protected:
      * @brief permutation vector \f$ P \f$ such as \f$ PA = LU \f$.
      * @details Represented as `unsigned long` array.
      */
-    mutable std::vector<ul_t> *_perm{};
+    mutable vector<size_t> *_perm{};
 };
 
 /**

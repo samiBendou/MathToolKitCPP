@@ -41,7 +41,7 @@ public:
 
 protected:
 
-    ul_t _dim;
+    size_t _dim;
 };
 
 /** @} */

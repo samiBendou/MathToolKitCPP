@@ -48,7 +48,7 @@ public:
 
 protected:
 
-    ul_t meshSize(const vec_t &h) const;
+    size_t meshSize(const vec_t &h) const;
 
     mat_t _base;
     vec_t _pos;

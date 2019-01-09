@@ -73,7 +73,7 @@ public:
      * @param dim vector size
      * @brief Construct a vector of a given size.
      */
-    explicit NVector(ul_t dim = 0) : NVector(std::vector<T>(dim), 0, 0) {}
+    explicit NVector(size_t dim = 0) : NVector(std::vector<T>((size_t) dim), 0, 0) {}
 
     /**
      *
@@ -102,7 +102,7 @@ public:
      * @brief Dimension of the vector.
      * @return \f$ dim \f$
      */
-    ul_t dim() const;
+    size_t dim() const;
 
     /**
      * @brief Creates an array with `this` vector.
@@ -136,14 +136,14 @@ public:
      * @brief Index of maximum of the coordinates of vector \f$ (x_0, x_1, ..., x_{(n-1)}) \f$.
      * @return index of maximum
      */
-    ul_t maxIndex() const;
+    size_t maxIndex() const;
 
     /**
      *
      * @brief Index of minimum of the coordinates of vector \f$ (x_0, x_1, ..., x_{(n-1)}) \f$.
      * @return index of minimum
      */
-    ul_t minIndex() const;
+    size_t minIndex() const;
 
     /**
      *
@@ -164,14 +164,14 @@ public:
      * @brief Index of maximum of the coordinates of vector \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
      * @return index of absolute maximum
      */
-    ul_t maxAbsIndex() const;
+    size_t maxAbsIndex() const;
 
     /**
      *
      * @brief Index of minimum of the coordinates of vector \f$ (|x_0|, |x_1|, ..., |x_{(n-1)}|) \f$.
      * @return index of absolute minimum
      */
-    ul_t minAbsIndex() const;
+    size_t minAbsIndex() const;
 
     /** @} */
 
@@ -190,7 +190,7 @@ public:
      * @details The vector is set to \f$ (x_0, ..., x_{(k_1 - 1)}, x_{k_2}, ..., x_{(k_2 - 1)}, x_{k_1}, ..., x_{(n-1)}) \f$.
      * \f$ x_{k_1} \f$ and \f$ x_{k_2} \f$ have been swaped used `std::swap`.
      */
-    NVector<T> &swap(ul_t k1, ul_t k2);
+    NVector<T> &swap(size_t k1, size_t k2);
 
     /**
      *
@@ -340,16 +340,16 @@ public:
      *
      *
      */
-    inline NVector<T> operator()(ul_t k1, ul_t k2) const { return subVector(k1, k2); }
+    inline NVector<T> operator()(size_t k1, size_t k2) const { return subVector(k1, k2); }
 
     /**
      *
      * @brief Manipulate sub-vector
-     * @details This operator is similar to previous @ref operator()(ul_t k1, ul_t k2) const "operator"
+     * @details This operator is similar to previous @ref operator()(size_t k1, size_t k2) const "operator"
      * except that it sets browse indices `_k1` and `_k2` in order to modify efficiently non `const` reference.
      * @return reference to `*this`.
      */
-    NVector<T> &operator()(ul_t k1, ul_t k2);
+    NVector<T> &operator()(size_t k1, size_t k2);
 
     /** @} */
 
@@ -446,14 +446,14 @@ public:
      * @param dim dimension of the vector
      * @return a `0` vector \f$ (0, 0, ..., 0) \f$.
      */
-    inline static NVector<T> zeros(ul_t dim) { return scalar(0, dim); }
+    inline static NVector<T> zeros(size_t dim) { return scalar(0, dim); }
 
     /**
      *
      * @param dim dimension of the vector
      * @return Returns vector filled with `1` \f$ (1, 1, ..., 1) \f$.
      */
-    inline static NVector<T> ones(ul_t dim) { return scalar(1, dim); }
+    inline static NVector<T> ones(size_t dim) { return scalar(1, dim); }
 
     /**
      *
@@ -461,7 +461,7 @@ public:
      * @param dim dimension of the scalar vector
      * @return a vector filled with `s` \f$ (s, s, ..., s) \f$.
      */
-    static NVector<T> scalar(T s, ul_t dim);
+    static NVector<T> scalar(T s, size_t dim);
 
     /**
      *
@@ -478,7 +478,7 @@ public:
      *          \end{align*}
      *          \f]
      */
-    static NVector<T> cano(ul_t k, ul_t dim);
+    static NVector<T> cano(size_t k, size_t dim);
 
     /**
      *
@@ -500,7 +500,7 @@ public:
 
 protected:
 
-    explicit NVector(const std::vector<T> &data, ul_t k1, ul_t k2);
+    explicit NVector(const std::vector<T> &data, size_t k1, size_t k2);
 
     // VECTOR SPACE OPERATIONS
 
@@ -529,9 +529,9 @@ protected:
 
     //CHARACTERIZATION
 
-    inline bool isValidIndex(ul_t k) const { return k < this->size(); }
+    inline bool isValidIndex(size_t k) const { return k < this->size(); }
 
-    inline bool isBetweenK12(ul_t k) const { return k >= _k1 && k <= _k2; }
+    inline bool isBetweenK12(size_t k) const { return k >= _k1 && k <= _k2; }
 
     inline bool isNull() const { return norm() <= EPSILON; }
 
@@ -560,15 +560,15 @@ protected:
 
     //SUB-VECTORS
 
-    NVector<T> subVector(ul_t k1, ul_t k2) const;
+    NVector<T> subVector(size_t k1, size_t k2) const;
 
     void setSubVector(const NVector<T> &u);
 
     //BROWSE INDICES
 
-    mutable ul_t _k1;
+    mutable size_t _k1{};
 
-    mutable ul_t _k2;
+    mutable size_t _k2{};
 };
 
 /**

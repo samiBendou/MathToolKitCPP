@@ -6,7 +6,7 @@
 
 std::vector<vec_t> NOde::euler(const vec_t &u0, const NPField<double> &f, double t0, double t1, double dt) {
 
-    ul_t n = (ul_t) floor((t1 - t0) / dt);
+    size_t n = (size_t) floor((t1 - t0) / dt);
 
     std::vector<vec_t> trajectory(n);
     trajectory[0] = u0;

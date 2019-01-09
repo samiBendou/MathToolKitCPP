@@ -74,7 +74,7 @@ std::vector<vec_t> NParallelepiped::mesh(const vec_t &h) const {
     std::vector<vec_t> e = _base.rows();
     vec_t end = vec_t::sum(e);
 
-    ul_t mesh_size = meshSize(h);
+    size_t mesh_size = meshSize(h);
 
     std::vector<vec_t> mesh{};
     vec_t x = vec_t::zeros(_dim);
@@ -84,9 +84,9 @@ std::vector<vec_t> NParallelepiped::mesh(const vec_t &h) const {
         if (x(0) <= 1) {
             x(0) += h(0);
         }
-        for (ul_t i = 0; i < _dim; ++i) {
+        for (size_t i = 0; i < _dim; ++i) {
             if (x(i) > 1) {
-                for (ul_t j = 0; j <= i; ++j) {
+                for (size_t j = 0; j <= i; ++j) {
                     x(j) = 0;
                 }
                 if (i < _dim - 1) {
@@ -109,10 +109,10 @@ std::vector<NSegment> NParallelepiped::segments() const {
 }
 
 
-ul_t NParallelepiped::meshSize(const vec_t &h) const {
-    ul_t res = 1;
+size_t NParallelepiped::meshSize(const vec_t &h) const {
+    size_t res = 1;
     for (int k = 0; k < _base.p(); ++k) {
-        res *= (ul_t) ceil(1 / abs(h(k)));
+        res *= (size_t) ceil(1 / abs(h(k)));
     }
     return res;
 }

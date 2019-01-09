@@ -172,7 +172,7 @@ public:
 
     inline static Vector3 scalar(double scalar) {return Vector3(NVector::scalar(scalar, 3));}
 
-    inline static Vector3 cano(ul_t k) {return Vector3(NVector::cano(k, 3));}
+    inline static Vector3 cano(size_t k) {return Vector3(NVector::cano(k, 3));}
 
 
 protected:
