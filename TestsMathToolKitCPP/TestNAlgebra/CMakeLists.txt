@@ -29,9 +29,6 @@ target_link_libraries(TestNAlgebra PRIVATE --coverage)
 
 SET(COVERAGE OFF CACHE BOOL "Coverage")
 
-add_test(UnitTestNAlgebra TestNAlgebra)
-
-
 #add_executable(BenchNVector BenchNVector.cpp)
 
 #target_link_libraries(BenchNVector gtest gtest_main)
