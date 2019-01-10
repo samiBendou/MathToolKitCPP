@@ -82,6 +82,8 @@ public:
      */
     NVector(const NVector<T> &u) : NVector(0) { copy(u); }
 
+    virtual ~NVector() = default;
+
     // SERIALIZATION
 
     /**
