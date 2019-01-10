@@ -28,7 +28,7 @@ bool NParallelepiped::isIn(const vec_t &x) const {
     mat_t base_inv = _base ^-1;
     u = base_inv * u;
     for (int k = 0; k < _dim; ++k) {
-        if (u(k) > 1.0 || u(k) < 0.0) {
+        if (u(k) > 1 || u(k) < 0) {
             return false;
         }
     }
@@ -51,7 +51,7 @@ const vec_t &NParallelepiped::pos() const {
     return _pos;
 }
 
-double NParallelepiped::vol() const {
+double_t NParallelepiped::vol() const {
     return _vol;
 }
 

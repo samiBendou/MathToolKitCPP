@@ -47,7 +47,7 @@ std::vector<vec_t> NSegment::border() const {
     return std::vector<vec_t>{_a, _b};
 }
 
-std::vector<vec_t > NSegment::mesh(double h) const {
+std::vector<vec_t > NSegment::mesh(double_t h) const {
     const vec_t v = h * (_b - _a) / !vec_t(_b - _a);
     vec_t u = vec_t(_a);
     std::vector<vec_t> mesh;

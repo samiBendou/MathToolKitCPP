@@ -45,61 +45,61 @@
  *
  */
 
-class Vector3 : public NVector<double> {
+class Vector3 : public NVector<double_t> {
 public:
 
     using NVector::operator=;
 
     using NVector::NVector;
 
-    explicit Vector3(double x = 0, double y = 0, double z = 0) : NVector(3) { setXYZ(x, y, z); }
+    explicit Vector3(double_t x = 0, double_t y = 0, double_t z = 0) : NVector(3) { setXYZ(x, y, z); }
 
     //3D COORDINATES GETTERS
 
-    inline double x() const { return (*this)[0]; }
+    inline double_t x() const { return (*this)[0]; }
 
-    inline double y() const { return (*this)[1]; }
+    inline double_t y() const { return (*this)[1]; }
 
-    inline double z() const { return (*this)[2]; }
+    inline double_t z() const { return (*this)[2]; }
 
-    inline double r() const { return !(*this); };
+    inline double_t r() const { return !(*this); };
 
-    inline double theta() const { return atan2(y(), x()); }
+    inline double_t theta() const { return atan2((double)y(), (double)x()); }
 
-    inline double phi() const { return atan2(!rXY(), z()); }
+    inline double_t phi() const { return atan2((double)!rXY(), (double)z()); }
 
-    inline Vector3 rXY() const { return Vector3(x(), y(), 0.0); }
+    inline Vector3 rXY() const { return Vector3(x(), y(), 0); }
 
     //3D COORDINATES SETTERS
 
-    inline void setX(double scalar) { (*this)[0] = scalar; }
+    inline void setX(double_t scalar) { (*this)[0] = scalar; }
 
-    inline void setY(double scalar) { (*this)[1] = scalar; }
+    inline void setY(double_t scalar) { (*this)[1] = scalar; }
 
-    inline void setZ(double scalar) { (*this)[2] = scalar; }
+    inline void setZ(double_t scalar) { (*this)[2] = scalar; }
 
-    inline void setR(double scalar) { setRThetaPhi(scalar, theta(), phi()); }
+    inline void setR(double_t scalar) { setRThetaPhi(scalar, theta(), phi()); }
 
-    inline void setTheta(double scalar) { setRThetaPhi(r(), scalar, phi()); }
+    inline void setTheta(double_t scalar) { setRThetaPhi(r(), scalar, phi()); }
 
-    inline void setPhi(double scalar) { setRThetaPhi(r(), theta(), scalar); }
+    inline void setPhi(double_t scalar) { setRThetaPhi(r(), theta(), scalar); }
 
-    inline void setXYZ(double x, double y, double z) {
+    inline void setXYZ(double_t x, double_t y, double_t z) {
         (*this)[0] = x;
         (*this)[1] = y;
         (*this)[2] = z;
     };
 
-    inline void setRThetaZ(double r, double theta, double z) {
-        setXYZ(r * cos(theta),
-               r * sin(theta),
+    inline void setRThetaZ(double_t r, double_t theta, double_t z) {
+        setXYZ(r * cos((double) theta),
+               r * sin((double) theta),
                z);
     };
 
-    inline void setRThetaPhi(double r, double theta, double phi) {
-        setXYZ(r * sin(phi) * cos(theta),
-               r * sin(phi) * sin(theta),
-               r * cos(phi));
+    inline void setRThetaPhi(double_t r, double_t theta, double_t phi) {
+        setXYZ(r * sin((double) phi) * cos((double) theta),
+               r * sin((double) phi) * sin((double) theta),
+               r * cos((double) phi));
     }
 
     inline friend Vector3 operator+(Vector3 u, const Vector3 &v) {
@@ -117,25 +117,25 @@ public:
         return u;
     }
 
-    inline friend Vector3 operator*(double s, Vector3 u) {
+    inline friend Vector3 operator*(double_t s, Vector3 u) {
         u *= s;
         return u;
     }
 
-    inline friend Vector3 operator*(const Vector3 &u, double s) {
+    inline friend Vector3 operator*(const Vector3 &u, double_t s) {
         return s * u;
     }
 
-    inline friend Vector3 operator/(Vector3 u, double s) {
+    inline friend Vector3 operator/(Vector3 u, double_t s) {
         u /= s;
         return u;
     }
 
-    inline friend double operator|(const Vector3 &u, const Vector3 &v) { return u.dotProduct(v); }
+    inline friend double_t operator|(const Vector3 &u, const Vector3 &v) { return u.dotProduct(v); }
 
-    inline friend double operator!(const Vector3 &u) { return u.norm(); }
+    inline friend double_t operator!(const Vector3 &u) { return u.norm(); }
 
-    inline friend double operator/(const Vector3 &u, const Vector3 &v) { return u.distance(v); }
+    inline friend double_t operator/(const Vector3 &u, const Vector3 &v) { return u.distance(v); }
 
     /**
      * @brief Vector product between two us
@@ -160,7 +160,7 @@ public:
      * @brief Angle between two us.
      * @return value of the angle.
      */
-    inline friend double operator%(const Vector3 &u, const Vector3 &v) {return u.angle(v);}
+    inline friend double_t operator%(const Vector3 &u, const Vector3 &v) {return u.angle(v);}
 
 
     inline Vector3& operator ^=(const Vector3 &u) {return cross(u);}
@@ -169,7 +169,7 @@ public:
 
     inline static Vector3 ones() {return Vector3(NVector::ones(3));}
 
-    inline static Vector3 scalar(double scalar) {return Vector3(NVector::scalar(scalar, 3));}
+    inline static Vector3 scalar(double_t scalar) {return Vector3(NVector::scalar(scalar, 3));}
 
     inline static Vector3 cano(size_t k) {return Vector3(NVector::cano(k, 3));}
 
@@ -182,13 +182,13 @@ protected:
         return *this;
     }
 
-    double angle(const Vector3 &u) const {return atan(pTan(u));}
+    inline double_t angle(const Vector3 &u) const {return atan((double) pTan(u));}
 
-    double pCos(const Vector3 &u) const {return ((*this != 0 && u != 0) ? ((*this) | u) / (!(*this) * !u) : 1.0);};
+    inline double_t pCos(const Vector3 &u) const {return ((*this != 0 && u != 0) ? ((*this) | u) / (!(*this) * !u) : 1);};
 
-    double pSin(const Vector3 &u) const {return ((*this != 0 && u != 0) ? !((*this) ^ u) / (!(*this) * !u) : 0.0);};
+    inline double_t pSin(const Vector3 &u) const {return ((*this != 0 && u != 0) ? !((*this) ^ u) / (!(*this) * !u) : 0);};
 
-    double pTan(const Vector3 &u) const {return pSin(u) / pCos(u);};
+    inline double_t pTan(const Vector3 &u) const {return pSin(u) / pCos(u);};
 };
 
 /** @} */

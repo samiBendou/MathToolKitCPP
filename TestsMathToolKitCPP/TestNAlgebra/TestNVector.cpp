@@ -41,7 +41,7 @@ TEST_F(NVectorTest, Construction) {
     _u = vec_t{0, 0, 1};
     ASSERT_EQ(_u, _w);
 
-    _u = vec_t(std::vector<double>{0, 1, 0});
+    _u = vec_t(std::vector<double_t>{0, 1, 0});
     ASSERT_EQ(_u, _v);
 
     _u = vec_t(_w);
@@ -63,12 +63,12 @@ TEST_F(NVectorTest, Affectation) {
     _u = {0, 0, 1};
     ASSERT_EQ(_u, _w);
 
-    _u = std::vector<double>{0, 1, 0};
+    _u = std::vector<double_t>{0, 1, 0};
     ASSERT_EQ(_u, expect_u);
 }
 
 TEST_F(NVectorTest, Serialization) {
-    ASSERT_EQ(_u.array(), std::vector<double>({1, 0, 0}));
+    ASSERT_EQ(_u.array(), std::vector<double_t>({1, 0, 0}));
 }
 
 TEST_F(NVectorTest, Add) {
@@ -88,7 +88,7 @@ TEST_F(NVectorTest, Add) {
 }
 
 TEST_F(NVectorTest, Prod) {
-    double x = 5;
+    double_t x = 5;
 
     vec_t copy_u{{1, 0, 0}}, expect_u{{5, 0, 0}};
 

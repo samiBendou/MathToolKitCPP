@@ -571,10 +571,17 @@ protected:
     mutable size_t _k2{};
 };
 
+template <>
+inline double_t NVector<double_t>::norm() const { return std::sqrt(dotProduct(*this)); }
+
+/** @} */
+
 /**
+ * @ingroup NAlgebra
+ * @{
  * Real numerical vector
  */
-typedef NVector<double> vec_t;
+typedef NVector<double_t> vec_t;
 
 /**
  * `char` vector

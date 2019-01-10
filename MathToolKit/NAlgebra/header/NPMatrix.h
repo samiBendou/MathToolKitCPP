@@ -617,6 +617,7 @@ public:
      *
      *
      * @return value of the sub matrix.
+     * @
 
      *
      */
@@ -915,11 +916,14 @@ protected:
      */
     mutable vector<size_t> *_perm{};
 };
+/** @} */
 
 /**
+ * @ingroup NAlgebra
+ * @{
  * Real matrix
  */
-typedef NPMatrix<double> mat_t;
+typedef NPMatrix<double_t> mat_t;
 /**
  * `char` matrix
  */

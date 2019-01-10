@@ -195,7 +195,7 @@ NVector<T> NVector<T>::cano(size_t k, size_t dim) {
     assert(k < dim);
 
     NVector<T> cano = NVector<T>::zeros(dim);
-    cano(k) = 1.0;
+    cano(k) = 1;
     return cano;
 }
 
@@ -233,7 +233,7 @@ NVector<T>::NVector(const vector<T> &data, size_t k1, size_t k2) : vector<T>(dat
 
 template<typename T>
 T NVector<T>::dotProduct(const NVector<T> &u) const {
-    T dot = 0.0;
+    T dot = 0;
 
     assert(hasSameSize(u));
     for (size_t k = 0; k <= _k2 - _k1; ++k) {
@@ -323,7 +323,7 @@ void NVector<T>::setSubVector(const NVector<T> &u) {
 }
 
 template
-class NVector<double>;
+class NVector<double_t>;
 
 template
 class NVector<char>;

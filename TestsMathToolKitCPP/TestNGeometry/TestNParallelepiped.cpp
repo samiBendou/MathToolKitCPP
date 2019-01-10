@@ -34,7 +34,7 @@ TEST_F(NParallelepipedTest, IsIn) {
 }
 
 TEST_F(NParallelepipedTest, Mesh) {
-    double dx = 0.33;
+    double_t dx = 0.33;
 
     vector<vec_t> mesh_para1 = _para1.mesh(vec_t::scalar(dx, DIM_TEST));
     cout << endl;

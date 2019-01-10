@@ -41,7 +41,7 @@ vector<NVector<P>> NPField<T, P>::mesh(const NCompact &domain) const {
 }
 
 template
-class NPField<double>;
+class NPField<double_t>;
 
 
 

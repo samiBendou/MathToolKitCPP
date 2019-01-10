@@ -4,7 +4,7 @@
 
 #include <NOde.h>
 
-std::vector<vec_t> NOde::euler(const vec_t &u0, const NPField<double> &f, double t0, double t1, double dt) {
+std::vector<vec_t> NOde::euler(const vec_t &u0, const NPField<double_t> &f, double_t t0, double_t t1, double_t dt) {
 
     size_t n = (size_t) floor((t1 - t0) / dt);
 

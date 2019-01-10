@@ -127,7 +127,7 @@ TEST_F(NPMatrixFuncOpTest, Prod) {
                    {0, 5, 0},
                    {0, 0, 5}};
 
-    double x = 5;
+    double_t x = 5;
     ASSERT_EQ(_b(0, 0, 1, 1) * x, expect_b0011);
 
     _a(1, 1, 2, 2) *= x;
@@ -142,7 +142,7 @@ TEST_F(NPMatrixFuncOpTest, Div) {
                    {0, 0.5, 0},
                    {0, 0,   0.5}};
 
-    double x = 2;
+    double_t x = 2;
 
     ASSERT_EQ(_b(0, 0, 1, 1) / x, expect_b0011);
 
@@ -219,7 +219,7 @@ TEST_F(NPMatrixFuncOpTest, Inv) {
 
     ASSERT_EQ(b0011_inv, expect_b0011_inv);
 
-    ASSERT_DOUBLE_EQ((_b(0, 0, 1, 1) * b0011_inv) / _a(0, 0, 1, 1), 0);
+    ASSERT_DOUBLE_EQ((double) ((_b(0, 0, 1, 1) * b0011_inv) / _a(0, 0, 1, 1)), 0);
 
     _b(0, 0, 1, 1) ^= -1;
     ASSERT_EQ(_b, expect_b_inv);
@@ -234,7 +234,7 @@ TEST_F(NPMatrixFuncOpTest, Solve) {
     const vec_t u{1, 2, 5}, sol = vec_t{4.0 / 3.0, 5.0 / 3.0};
     mat_t copy_b0011{_b(0, 0, 1, 1)};
 
-    EXPECT_NEAR(_b(0, 0, 1, 1) * (copy_b0011 % u(0, 1)) / u(0, 1), 0, 5e-16);
-    ASSERT_NEAR(_b(0, 0, 1, 1) % u(0, 1) / sol, 0, 5e-16);
+    EXPECT_NEAR((double) (_b(0, 0, 1, 1) * (copy_b0011 % u(0, 1)) / u(0, 1)), 0, 5e-16);
+    ASSERT_NEAR((double) (_b(0, 0, 1, 1) % u(0, 1) / sol), 0, 5e-16);
 
 }

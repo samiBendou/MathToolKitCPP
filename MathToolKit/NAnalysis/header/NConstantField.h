@@ -13,7 +13,7 @@
  * @{
  */
 
-class NConstantField : public NPField<double> {
+class NConstantField : public NPField<double_t> {
 public:
     NConstantField(vec_t h, vec_t k);
 

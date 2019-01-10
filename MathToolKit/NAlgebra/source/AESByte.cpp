@@ -14,7 +14,7 @@ AESByte::AESByte(int val) : _val(static_cast<uc_t>(abs(val) % 256)) {
 
 }
 
-AESByte::AESByte(double val) : _val(static_cast<uc_t>(fmod(floor(fabs(val)), 256))) {
+AESByte::AESByte(double_t val) : _val(static_cast<uc_t>(fmod(floor(fabs(val)), 256))) {
 
 }
 
@@ -57,14 +57,16 @@ std::ostream &operator<<(std::ostream &os, const AESByte &b) {
     return os;
 }
 
-
 AESByte abs(const AESByte &b) {
     return b;
 }
 
 AESByte sqrt(const AESByte &b) {
-    return {sqrt(b._val)};
+    return {(char) sqrt(b._val)};
 }
+
+
+
 
 
 

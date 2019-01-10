@@ -32,7 +32,7 @@ public:
 
     const vec_t &pos() const;
 
-    double vol() const;
+    double_t vol() const;
 
     void setBase(const mat_t &base);
 
@@ -52,7 +52,7 @@ protected:
 
     mat_t _base;
     vec_t _pos;
-    double _vol;
+    double_t _vol;
 };
 
 /** @} */

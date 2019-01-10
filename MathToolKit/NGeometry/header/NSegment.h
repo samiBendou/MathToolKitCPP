@@ -30,7 +30,7 @@ public:
 
     std::vector<vec_t> border() const override;
 
-    std::vector<vec_t > mesh(double h) const;
+    std::vector<vec_t > mesh(double_t h) const;
 
     std::vector<vec_t > mesh(const vec_t &h) const override;
 

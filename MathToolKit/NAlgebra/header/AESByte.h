@@ -37,7 +37,7 @@ public:
 
     AESByte(int val);
 
-    AESByte(double val);
+    AESByte(double_t val);
 
     // GETTERS
 

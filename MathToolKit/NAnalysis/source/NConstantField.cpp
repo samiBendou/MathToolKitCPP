@@ -4,7 +4,7 @@
 
 #include <NConstantField.h>
 
-NConstantField::NConstantField(vec_t h, vec_t k) : NPField<double>(h),
+NConstantField::NConstantField(vec_t h, vec_t k) : NPField<double_t>(h),
                                                                 _k(k) {
 
 }

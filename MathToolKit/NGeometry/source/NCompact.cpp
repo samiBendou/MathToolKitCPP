@@ -4,7 +4,7 @@
 
 #include <NCompact.h>
 
-#define NEAR_TOL 0.01
+#define NEAR_TOL 01
 
 
 NCompact::NCompact(unsigned long dim) : _dim(dim) {

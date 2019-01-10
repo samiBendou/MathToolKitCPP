@@ -8,7 +8,7 @@
 #include<iostream>
 #include <NVector.h>
 
-#define D_EPSILON std::numeric_limits<double>::epsilon()
+#define D_EPSILON std::numeric_limits<double_t>::epsilon()
 
 /**
  * @ingroup NGeometry

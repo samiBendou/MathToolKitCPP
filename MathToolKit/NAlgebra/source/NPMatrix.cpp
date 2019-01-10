@@ -154,7 +154,7 @@ NPMatrix<T> NPMatrix<T>::lupL() const {
 
     NPMatrix<T> l = _a->lower();
     for (size_t i = 0; i < _a->_n; ++i) {
-        l(i, i) = 1.0;
+        l(i, i) = 1;
     }
 
     if (_a->_n != _n) {
@@ -244,7 +244,7 @@ NPMatrix<T> NPMatrix<T>::transposed() const {
 
 template<typename T>
 T NPMatrix<T>::trace() const {
-    T trace = 0.0;
+    T trace = 0;
     for (size_t i = _i1; i <= _i2; i++) {
         trace += (*this)(i, i);
     }
@@ -295,7 +295,7 @@ NPMatrix<T> &NPMatrix<T>::reduce() {
 
 template<typename T>
 T NPMatrix<T>::det() const {
-    T det = 0.0;
+    T det = 0;
     if (_a == nullptr) { lupUpdate(); }
 
     if (_a != nullptr) {
@@ -335,7 +335,7 @@ template<typename T>
 NPMatrix<T> NPMatrix<T>::eye(size_t n) {
     NPMatrix<T> eye = NPMatrix<T>::zeros(n);
     for (size_t k = 0; k < eye.n(); ++k) {
-        eye(k, k) = 1.0;
+        eye(k, k) = 1;
     }
     return eye;
 }
@@ -507,7 +507,7 @@ NPMatrix<T> &NPMatrix<T>::inv() {
     if (_a != nullptr) {
         for (j = 0; j < _a->_n; j++) {
             for (i = 0; i < _a->_n; i++) {
-                (*this)(i + _i1, j + _j1) = (((*_perm)[i] == j) ? 1.0 : 0.0);
+                (*this)(i + _i1, j + _j1) = (((*_perm)[i] == j) ? 1 : 0);
                 for (l = 0; l < i; ++l) {
                     (*this)(i + _i1, j + _j1) -= (*_a)(i, l) * (*this)(l, j);
                 }
@@ -715,7 +715,7 @@ NPMatrix<T> &NPMatrix<T>::forEach(T s, const function<void(T &, T)> &binary_op) 
 }
 
 template
-class NPMatrix<double>;
+class NPMatrix<double_t>;
 
 template
 class NPMatrix<char>;

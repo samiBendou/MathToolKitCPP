@@ -13,12 +13,12 @@ TEST(NPFieldTest, NConstantField) {
     size_t dim = 3;
 
     // Parallelepiped construction
-    double l = 5.0;
+    double_t l = 5.0;
     NParallelepiped para{mat_t::scalar(l, dim), vec_t::zeros(dim)};
     cout << "para : " << para << endl;
 
     // Field construction
-    double dx = 1.0/3.0;
+    double_t dx = 1.0/3.0;
     vec_t h = vec_t::scalar(dx, dim);
 
     vec_t g = 9.81 * vec_t::cano(dim - 1, dim);
@@ -35,16 +35,16 @@ TEST(NPFieldTest, NConstantField) {
 
 TEST(NPFieldTest, SNewtonianField) {
     size_t dim = 3;
-    double sun_mass = 1.9891e+30, d_earth_sun = 1.47098074e+11; //earth_spd = 3.0287e+4;
+    double_t sun_mass = 1.9891e+30, d_earth_sun = 1.47098074e+11; //earth_spd = 3.0287e+4;
 
     // Parallelepiped construction
     NParallelepiped para{mat_t::scalar(d_earth_sun, dim), vec_t::zeros(dim)};
 
     // Field construction
-    double dx = 1.0/2.0, G = -6.67408e-11;
+    double_t dx = 1.0/2.0, G = -6.67408e-11;
     vec_t h = vec_t::scalar(dx, dim);
 
-    std::vector<double> mass{sun_mass};
+    std::vector<double_t> mass{sun_mass};
     std::vector<vec_t> r{vec_t::zeros(3)};
 
     SNewtonianField field = SNewtonianField(h, mass, r, G);
@@ -61,7 +61,7 @@ TEST(NOde, Euler) {
     size_t dim = 3;
 
     // Field construction
-    double dx = 0.333;
+    double_t dx = 0.333;
     vec_t h = vec_t::scalar(dx, dim);
 
     vec_t g = 9.81 * vec_t::cano(dim - 1, dim);

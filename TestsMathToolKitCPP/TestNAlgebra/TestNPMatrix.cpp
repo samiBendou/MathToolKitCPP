@@ -78,7 +78,7 @@ TEST_F(NPMatrixTest, Construction) {
     ASSERT_EQ(_a.p(), 3);
     ASSERT_EQ(_a, _c);
 
-    std::vector<std::vector<double> > rows_c{{0, 0,  0},
+    std::vector<std::vector<double_t> > rows_c{{0, 0,  0},
                                                {1, 2,  1},
                                                {5, 10, 2}};
     _a = mat_t(rows_c);
@@ -203,7 +203,7 @@ TEST_F(NPMatrixTest, Prod) {
                         {-2, 4,  -2},
                         {0,  -2, 4}};
 
-    double x = 2;
+    double_t x = 2;
 
     EXPECT_EQ(x * _b, expect_prod_b);
 
@@ -218,9 +218,9 @@ TEST_F(NPMatrixTest, Prod) {
 
 
 TEST_F(NPMatrixTest, EuclideanOperations) {
-    ASSERT_EQ(!_a, sqrt(3));
-    ASSERT_EQ(_a | _a, 3);
-    ASSERT_EQ(_a / _b, sqrt(7));
+    ASSERT_DOUBLE_EQ((double) !_a, sqrt(3));
+    ASSERT_DOUBLE_EQ((double) (_a | _a), 3);
+    ASSERT_DOUBLE_EQ((double) (_a / _b), sqrt(7));
 }
 
 TEST_F(NPMatrixTest, Transposed) {
@@ -293,13 +293,13 @@ TEST_F(NPMatrixTest, LUP) {
                          {-1.0 / 2.0, 1,          0},
                          {0,          -2.0 / 3.0, 1}};
 
-    ASSERT_NEAR(b_lup_low / expect_lup_low, 0, 0);
+    ASSERT_NEAR((double)(b_lup_low / expect_lup_low), 0, 5e-16);
 
     mat_t expect_lup_up{{2, -1,        0},
                         {0, 3.0 / 2.0, -1},
                         {0, 0,         4.0 / 3.0}};
 
-    ASSERT_NEAR(b_lup_up / expect_lup_up, 0, 5e-16);
+    ASSERT_NEAR((double) (b_lup_up / expect_lup_up), 0, 5e-16);
 
     ASSERT_EQ(b_lup_low * b_lup_up, _b);
 }
@@ -314,26 +314,26 @@ TEST_F(NPMatrixTest, Inv) {
 
     ASSERT_EQ(_a ^ -1, _a);
     ASSERT_EQ(_b ^ -1, expect_b_inv);
-    ASSERT_NEAR(_b * (_b ^ -1) / expect_a, 0, 5e-16);
+    ASSERT_NEAR((double) (_b * (_b ^ -1) / expect_a), 0, 5e-16);
 }
 
 TEST_F(NPMatrixTest, Det) {
-    ASSERT_DOUBLE_EQ(_a.det(), 1);
-    ASSERT_DOUBLE_EQ((-_a).det(), -1);
+    ASSERT_DOUBLE_EQ((double) _a.det(), 1);
+    ASSERT_DOUBLE_EQ((double) (-_a).det(), -1);
 
-    ASSERT_DOUBLE_EQ(_b.det(), 4);
-    ASSERT_DOUBLE_EQ((_b ^ -1).det(), 0.25);
-    ASSERT_DOUBLE_EQ((_b * (_b ^ -1)).det(), 1);
+    ASSERT_DOUBLE_EQ((double) _b.det(), 4);
+    ASSERT_DOUBLE_EQ((double) (_b ^ -1).det(), 0.25);
+    ASSERT_DOUBLE_EQ((double) (_b * (_b ^ -1)).det(), 1);
 
-    ASSERT_DOUBLE_EQ(_c.det(), 0);
+    ASSERT_DOUBLE_EQ((double) _c.det(), 0);
 }
 
 TEST_F(NPMatrixTest, Solve) {
 
     vec_t u{1, 2, 5}, expect_sol{3, 5, 5};
 
-    ASSERT_NEAR(_b % u / expect_sol, 0, 5e-15);
-    ASSERT_NEAR(_b * (_b % u) / u, 0, 5e-15);
+    ASSERT_NEAR((double) (_b % u / expect_sol), 0, 5e-15);
+    ASSERT_NEAR((double) (_b * (_b % u) / u), 0, 5e-15);
 }
 
 TEST_F(NPMatrixTest, StaticGenerators) {

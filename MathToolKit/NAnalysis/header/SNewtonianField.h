@@ -13,19 +13,19 @@
  * @{
  */
 
-class SNewtonianField : public NPField<double> {
+class SNewtonianField : public NPField<double_t> {
 public:
 
-    SNewtonianField(vec_t h, const std::vector<double> &mu, const std::vector<vec_t> &r, double k);
+    SNewtonianField(vec_t h, const std::vector<double_t> &mu, const std::vector<vec_t> &r, double_t k);
 
 protected:
     vec_t apply(const vec_t &x) const override;
 
-    const std::vector<double> _mu;
+    const std::vector<double_t> _mu;
 
     const std::vector<vec_t> _r;
 
-    double _k;
+    double_t _k;
 };
 
 /** @} */

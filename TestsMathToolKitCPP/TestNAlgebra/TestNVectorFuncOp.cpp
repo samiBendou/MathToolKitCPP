@@ -37,7 +37,7 @@ TEST_F(NVectorFuncOpTest, Equality) {
 }
 
 TEST_F(NVectorFuncOpTest, Serialization) {
-    ASSERT_EQ(_u(0, 1).array(), std::vector<double>({1, 0}));
+    ASSERT_EQ(_u(0, 1).array(), std::vector<double_t>({1, 0}));
     ASSERT_EQ(_u.dim(), 3);
 }
 
@@ -98,7 +98,7 @@ TEST_F(NVectorFuncOpTest, Sub) {
 }
 
 TEST_F(NVectorFuncOpTest, Prod) {
-    double x = 5;
+    double_t x = 5;
 
     _v(0, 1) = _u(0, 1) * x;
     ASSERT_EQ(_v, vec_t({5, 0, 0}));
