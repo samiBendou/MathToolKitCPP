@@ -26,7 +26,14 @@ target_link_libraries(TestNAlgebra PRIVATE --coverage)
 
 SET(COVERAGE OFF CACHE BOOL "Coverage")
 
+enable_testing()
 
+add_test(
+        NAME
+        UnitTestNAlgebra
+        COMMAND
+        TestNAlgebra
+)
 
 
 #add_executable(BenchNVector BenchNVector.cpp)

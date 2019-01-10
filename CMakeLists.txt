@@ -9,9 +9,3 @@ add_subdirectory(MathToolKit/NGeometry)
 
 add_subdirectory(TestsMathToolKitCPP)
 
-add_test(
-        NAME
-        UnitTestNAlgebra
-        COMMAND
-        TestNAlgebra
-)
