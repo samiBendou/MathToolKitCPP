@@ -38,11 +38,3 @@ SET(COVERAGE OFF CACHE BOOL "Coverage")
 
 #target_link_libraries(BenchNPMatrix gtest gtest_main)
 #target_link_libraries(BenchNPMatrix NAlgebra)
-
-
-add_test(
-        NAME
-        UnitTestNAlgebra
-        COMMAND
-        TestNAlgebra
-)
