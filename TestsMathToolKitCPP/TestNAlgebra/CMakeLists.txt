@@ -1,3 +1,6 @@
+
+enable_testing()
+
 if (APPLE)
     add_definitions(-DGTEST_USE_OWN_TR1_TUPLE)
     add_definitions(-D__GLIBCXX__)
@@ -26,14 +29,7 @@ target_link_libraries(TestNAlgebra PRIVATE --coverage)
 
 SET(COVERAGE OFF CACHE BOOL "Coverage")
 
-enable_testing()
-
-add_test(
-        NAME
-        UnitTestNAlgebra
-        COMMAND
-        TestNAlgebra
-)
+add_test(UnitTestNAlgebra TestNAlgebra)
 
 
 #add_executable(BenchNVector BenchNVector.cpp)
