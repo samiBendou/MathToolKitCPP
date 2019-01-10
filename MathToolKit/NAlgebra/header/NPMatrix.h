@@ -804,11 +804,11 @@ protected:
 
     // LUP MANAGEMENT
 
-    void lupCopy() const;
+    void lupClear() const;
+
+    void lupCopy(const NPMatrix &m) const;
 
     void lupUpdate() const;
-
-    void lupClear() const;
 
     // MUTABLE VARIABLES MANAGEMENT
 
@@ -908,13 +908,13 @@ protected:
      * @brief Matrix \f$ A = LU \f$ where \f$ PA = LU \f$ = this.
      * @details `_a` points to the \f$ A \f$ NMatrix or to `nullptr` if the matrix don't have \f$ LU \f$ decomposition.
      */
-    mutable NPMatrix<T> *_a;
+    mutable unique_ptr<NPMatrix<T>> _a{};
 
     /**
      * @brief permutation vector \f$ P \f$ such as \f$ PA = LU \f$.
      * @details Represented as `unsigned long` array.
      */
-    mutable vector<size_t> *_perm{};
+    mutable unique_ptr<vector<size_t>> _perm{};
 };
 /** @} */
 

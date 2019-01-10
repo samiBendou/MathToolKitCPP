@@ -499,6 +499,15 @@ public:
      * @return  \f$ \alpha u + \beta v + ... + \lambda x \f$.
      */
     static NVector<T> sumProd(const std::vector<T> &scalars, const std::vector<NVector> &vectors);
+    /**
+     *
+     * @param x start value of the range
+     * @param y end value of the range
+     * @param h step between elements
+     * @brief Vector with regularly spaced components
+     * @return Returns \f$ ( x, x +  h, x + 2h, ..., y) \f$
+     */
+    static NVector<T> linspace(T x, T y, T h) {return NVector<T>();}
 
 protected:
 
