@@ -27,7 +27,7 @@ before_install:
 script:
 - CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -DCOVERAGE=1
 - cmake --build .
-- ./TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra
+- ctest -V
 - doxygen -u Doxyfile
 - doxygen Doxyfile
 
