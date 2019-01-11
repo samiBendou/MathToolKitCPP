@@ -8,22 +8,21 @@ env:
     sudo: true
 
 matrix:
-  include:
-    compiler :
-      - gcc
-      - clang
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-5.0
-          packages:
-            - g++-8
-            - clang-5.0
-            - lcov
-            - ggcov
-            - doxygen
-
+include:
+compiler:
+  - gcc
+  - clang
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-5.0
+    packages:
+      - g++-8
+      - clang-5.0
+      - lcov
+      - ggcov
+      - doxygen
 
 before_install:
   #Clone googletest to run unit tests and benchmarks
