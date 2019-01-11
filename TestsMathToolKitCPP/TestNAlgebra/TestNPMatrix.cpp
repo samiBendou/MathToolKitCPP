@@ -318,12 +318,15 @@ TEST_F(NPMatrixTest, Inv) {
 }
 
 TEST_F(NPMatrixTest, Det) {
+    mat_t inv_b{_b ^ -1}, opp_a{-_a}, expect_eye{(_b * inv_b)};
+
     ASSERT_DOUBLE_EQ((double) _a.det(), 1);
-    ASSERT_DOUBLE_EQ((double) (-_a).det(), -1);
+    ASSERT_DOUBLE_EQ((double) opp_a.det(), -1);
 
     ASSERT_DOUBLE_EQ((double) _b.det(), 4);
-    ASSERT_DOUBLE_EQ((double) (_b ^ -1).det(), 0.25);
-    ASSERT_DOUBLE_EQ((double) (_b * (_b ^ -1)).det(), 1);
+
+    ASSERT_DOUBLE_EQ((double) inv_b.det(), 0.25);
+    ASSERT_DOUBLE_EQ((double) expect_eye.det(), 1);
 
     ASSERT_DOUBLE_EQ((double) _c.det(), 0);
 }

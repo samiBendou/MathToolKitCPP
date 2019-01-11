@@ -557,6 +557,24 @@ NVector<T> &NPMatrix<T>::solve(NVector<T> &u) const {
 
 // LUP MANAGEMENT
 
+
+template<typename T>
+void NPMatrix<T>::lupClear() const  {
+    if(_a != nullptr){
+        _a.reset(nullptr);
+        _perm.reset(nullptr);
+    }
+}
+
+template<typename T>
+void NPMatrix<T>::lupReset() const {
+    lupClear();
+    _a.reset(new NPMatrix<T>(subMatrix(_i1, _j1, _i2, _j2)));
+    _perm.reset(new vector<size_t>(_a->_n + 1, 0));
+    for (size_t i = 0; i <= _a->_n; ++i)
+        (*_perm)[i] = i; //Unit p permutation, p[i] initialized with i
+}
+
 template<typename T>
 void NPMatrix<T>::lupCopy(const NPMatrix &m) const {
     if(m._a > nullptr) {
@@ -573,14 +591,7 @@ void NPMatrix<T>::lupUpdate() const {
     //Returns PA such as PA = LU where P is a row p array and A = L * U;
     size_t i, j, k, i_max;
 
-    lupClear();
-
-    _a.reset(new NPMatrix<T>(subMatrix(_i1, _j1, _i2, _j2)));
-    _perm.reset(new vector<size_t>(_a->_n, 0));
-
-    for (i = 0; i <= _a->_n; ++i)
-        (*_perm)[i] = i; //Unit p permutation, p[i] initialized with i
-
+    lupReset();
     if (!_a->isUpper() || !_a->isLower()) {
         for (i = 0; i < _a->_n; ++i) {
             i_max = _a->col(i)(i, _a->_n - 1).maxAbsIndex() + i;
@@ -706,13 +717,9 @@ NPMatrix<T> &NPMatrix<T>::forEach(T s, const function<void(T &, T)> &binary_op) 
     return clean();
 }
 
-template<typename T>
-void NPMatrix<T>::lupClear() const  {
-    if(_a != nullptr){
-        _a.reset(nullptr);
-        _perm.reset(nullptr);
-    }
-}
+
+
+
 template
 class NPMatrix<double_t>;
 

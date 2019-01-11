@@ -806,7 +806,11 @@ protected:
 
     void lupClear() const;
 
+    void lupReset() const;
+
     void lupCopy(const NPMatrix &m) const;
+
+    inline void lupSelfCopy() const{ lupCopy(*this);};
 
     void lupUpdate() const;
 
