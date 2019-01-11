@@ -22,7 +22,7 @@ matrix:
         apt:
           packages:
             - g++-8
-            - clang-5.0
+            - clang-5
             - lcov
             - ggcov
             - doxygen
