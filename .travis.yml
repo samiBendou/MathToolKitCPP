@@ -1,16 +1,5 @@
+dist: trusty
 language: cpp
-
-env:
-  global:
-    # Ubuntu version
-    - LINUX_DIST=trusty
-    - DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
-    # Global build options and C++ flags
-    - CXX_FLAGS="-Wall"
-    # Misc
-    - RUN_TESTS=true
-    - COVERAGE=false
-
 
 matrix:
   include:
@@ -31,8 +20,8 @@ before_install:
 - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 - pip install --upgrade --user git+https://github.com/samiBendou/cpp-coveralls
 - # Combine global build options with OS/compiler-dependent options
-- export CMAKE_OPTIONS=${CMAKE_OPTIONS}" "${ENV_CMAKE_OPTIONS}
-- export CXX_FLAGS=${CXX_FLAGS}" "${ENV_CXX_FLAGS}
+- export CMAKE_OPTIONS= ${ENV_CMAKE_OPTIONS}
+- export CXX_FLAGS= ${ENV_CXX_FLAGS}
 
 install:
 - if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0"; fi
