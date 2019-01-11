@@ -896,6 +896,7 @@ protected:
 
     size_t _p{};
 
+
     // SUB MATRICES INDICES INDICES
 
     mutable size_t _i1{};
