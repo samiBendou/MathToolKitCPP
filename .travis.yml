@@ -1,11 +1,17 @@
 dist: trusty
 language: cpp
 
+env:
+  global:
+    os: linux
+    dist: trusty
+    sudo: true
+
 matrix:
   include:
-    - os: linux
-      dist: trusty
-      sudo: true
+    compiler :
+      - gcc
+      - clang
       addons:
         apt:
           sources:
@@ -17,6 +23,7 @@ matrix:
             - lcov
             - ggcov
             - doxygen
+
 
 before_install:
   #Clone googletest to run unit tests and benchmarks
