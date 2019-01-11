@@ -33,7 +33,9 @@ before_install:
   - export CXX_FLAGS= ${ENV_CXX_FLAGS}
 
 install:
-  - if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0"; fi
+  - |
+  -   if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0";
+  -   if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="g++-8.0" CC="gcc-8.0";
   - echo ${PATH}
   - echo ${CXX}
   - ${CXX} --version

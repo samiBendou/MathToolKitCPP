@@ -507,7 +507,7 @@ public:
      * @brief Vector with regularly spaced components
      * @return Returns \f$ ( x, x +  h, x + 2h, ..., y) \f$
      */
-    static NVector<T> linspace(T x, T y, T h) {return NVector<T>();}
+    // static NVector<T> linspace(T x, T y, T h) {return NVector<T>();}
 
 protected:
 
