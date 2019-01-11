@@ -22,13 +22,10 @@ matrix:
         apt:
           packages:
             - g++-8
-            - clang-5
+            - clang-5.0
             - lcov
             - ggcov
             - doxygen
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-5.0
 
 before_install:
 #Clone googletest to run unit tests and benchmarks
