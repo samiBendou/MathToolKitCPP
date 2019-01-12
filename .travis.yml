@@ -33,7 +33,6 @@ before_install:
   - export CXX_FLAGS= ${ENV_CXX_FLAGS}
 
 install:
-  - |
   -   if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0"; fi
   -   if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="g++-8.0" CC="gcc-8.0"; fi
   - echo ${PATH}
@@ -50,7 +49,6 @@ script:
   - doxygen Doxyfile
 
 after_success:
-  - ls ./TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir
   - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
   - coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"
 
