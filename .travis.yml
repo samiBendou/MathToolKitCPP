@@ -1,40 +1,56 @@
 dist: trusty
 language: cpp
 
-branches:
-  only:
-    - master
+env:
+  global:
+    os: linux
+    dist: trusty
+    sudo: true
 
+matrix:
+include:
 compiler:
-- gcc
-
+  - gcc
+  - clang
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
-
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-5.0
     packages:
-    - g++-8
-    - lcov
-    - ggcov
-    - doxygen
+      - g++-8
+      - clang-5.0
+      - lcov
+      - ggcov
+      - doxygen
 
 before_install:
-#Clone googletest to run unit tests and benchmarks
-- git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
-- pip install --upgrade --user git+https://github.com/samiBendou/cpp-coveralls
+  #Clone googletest to run unit tests and benchmarks
+  - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
+  - pip install --upgrade --user git+https://github.com/samiBendou/cpp-coveralls
+  - # Combine global build options with OS/compiler-dependent options
+  - export CMAKE_OPTIONS= ${ENV_CMAKE_OPTIONS}
+  - export CXX_FLAGS= ${ENV_CXX_FLAGS}
+
+install:
+  -   if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0"; fi
+  -   if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="g++-8" CC="gcc-8"; fi
+  - echo ${PATH}
+  - echo ${CXX}
+  - ${CXX} --version
+  - ${CXX} -v
 
 script:
-- CXX=/usr/bin/g++-8 CC=/usr/bin/gcc-8 cmake -DCOVERAGE=1
-- cmake --build .
-- ./TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra
-- doxygen -u Doxyfile
-- doxygen Doxyfile
+
+  - cmake ${CMAKE_OPTIONS} -DCMAKE_CXX_FLAGS=${CXX_FLAGS} -DCOVERAGE=1
+  - cmake --build .
+  - ./TestsMathToolKitCPP/TestNAlgebra/TestNAlgebra
+  - doxygen -u Doxyfile
+  - doxygen Doxyfile
 
 after_success:
-- ls ./TestsMathToolKitCPP/TestNAlgebra/CMakeFiles/TestNAlgebra.dir
-- sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-- coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"
+  - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
+  - coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"
 
 deploy:
   provider: pages

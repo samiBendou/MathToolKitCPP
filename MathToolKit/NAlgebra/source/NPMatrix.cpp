@@ -557,32 +557,53 @@ NVector<T> &NPMatrix<T>::solve(NVector<T> &u) const {
 
 // LUP MANAGEMENT
 
+
+template<typename T>
+void NPMatrix<T>::lupClear() const  {
+    if(_a != nullptr){
+        _a.reset(nullptr);
+        _perm.reset(nullptr);
+    }
+}
+
+template<typename T>
+void NPMatrix<T>::lupReset() const {
+    lupClear();
+    _a.reset(new NPMatrix<T>(subMatrix(_i1, _j1, _i2, _j2)));
+    _perm.reset(new vector<size_t>(_a->_n + 1, 0));
+    for (size_t i = 0; i <= _a->_n; ++i)
+        (*_perm)[i] = i; //Unit p permutation, p[i] initialized with i
+}
+
+template<typename T>
+void NPMatrix<T>::lupCopy(const NPMatrix &m) const {
+    if(m._a > nullptr) {
+        _a.reset(new NPMatrix<T>(*(m._a)));
+        _perm.reset(new vector<size_t>(m._perm->begin(), m._perm->end()));
+    } else {
+        lupClear();
+    }
+
+}
+
 template<typename T>
 void NPMatrix<T>::lupUpdate() const {
     //Returns PA such as PA = LU where P is a row p array and A = L * U;
     size_t i, j, k, i_max;
 
-    lupClear();
-
-    _a = new NPMatrix<T>(subMatrix(_i1, _j1, _i2, _j2));
-    auto *p = new vector<size_t>();
-
-    for (i = 0; i <= _a->_n; ++i)
-        p->push_back(i); //Unit p permutation, p[i] initialized with i
-
+    lupReset();
     if (!_a->isUpper() || !_a->isLower()) {
         for (i = 0; i < _a->_n; ++i) {
             i_max = _a->col(i)(i, _a->_n - 1).maxAbsIndex() + i;
-            if (abs((*_a)(i_max, i)) > EPSILON) { //matrix is not de
-                // generate
+            if (abs((*_a)(i_max, i)) > EPSILON) { //matrix is not degenerate
                 if (i_max != i) {
-                    j = (*p)[i];
-                    (*p)[i] = (*p)[i_max];
-                    (*p)[i_max] = j;
+                    j = (*_perm)[i];
+                    (*_perm)[i] = (*_perm)[i_max];
+                    (*_perm)[i_max] = j;
 
                     _a->swapRow(i, i_max);
 
-                    (*p)[_a->_n]++; //counting pivots starting from a->_n (for determinant)
+                    (*_perm)[_a->_n]++; //counting pivots starting from a->_n (for determinant)
                 }
             } else {
                 lupClear();
@@ -596,27 +617,8 @@ void NPMatrix<T>::lupUpdate() const {
             }
         }
     }
-    _perm = p;
 }
 
-template<typename T>
-void NPMatrix<T>::lupCopy() const {
-    if (_a != nullptr && _perm != nullptr) {
-        _a = new NPMatrix<T>(*(_a));
-        _perm = new vector<size_t>(_n);
-        std::copy(_perm, _perm + _n, _perm);
-    }
-}
-
-template<typename T>
-void NPMatrix<T>::lupClear() const {
-    if (_a != nullptr) {
-        delete _a;
-        delete _perm;
-        _a = nullptr;
-        _perm = nullptr;
-    }
-}
 
 // CHARACTERIZATION
 
@@ -647,7 +649,7 @@ NPMatrix<T> &NPMatrix<T>::copy(const NPMatrix<T> &m) {
             vector<T>::operator=(m);
             _n = m._n;
             _p = m._p;
-            lupCopy();
+            lupCopy(m);
         } else if (hasDefaultBrowseIndices()) {
             vector<T>::operator=(m.subMatrix(m._i1, m._j1, m._i2, m._j2));
             _n = m._i2 - m._i1 + 1;
@@ -657,8 +659,9 @@ NPMatrix<T> &NPMatrix<T>::copy(const NPMatrix<T> &m) {
             setSubMatrix(m);
             lupClear();
         }
-        cleanBoth(m);
     }
+    setDefaultBrowseIndices();
+    m.setDefaultBrowseIndices();
     return *this;
 }
 
@@ -713,6 +716,9 @@ NPMatrix<T> &NPMatrix<T>::forEach(T s, const function<void(T &, T)> &binary_op) 
     }
     return clean();
 }
+
+
+
 
 template
 class NPMatrix<double_t>;

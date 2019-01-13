@@ -18,5 +18,6 @@
 #include <AESByte.h>
 #include <Pixel.h>
 #include <typedef.h>
+#include <memory>
 
 #endif //FACEDETECTION_THIRDPARTY_H
