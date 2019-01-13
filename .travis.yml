@@ -33,8 +33,8 @@ before_install:
   - export CXX_FLAGS= ${ENV_CXX_FLAGS}
 
 install:
-  -   if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0"; fi
-  -   if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="g++-8" CC="gcc-8"; fi
+  - if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-5.0" CC="clang-5.0"; fi
+  - if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="g++-8" CC="gcc-8"; fi
   - echo ${PATH}
   - echo ${CXX}
   - ${CXX} --version
@@ -50,7 +50,7 @@ script:
 
 after_success:
   - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-  - coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"
+  - if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"; fi
 
 deploy:
   provider: pages
