@@ -3,6 +3,7 @@ env:
     os: linux
     dist: trusty
     sudo: true
+    langage: cpp
 
 matrix:
 include:
