@@ -1,9 +1,11 @@
+dist: trusty
+language: cpp
+
 env:
   global:
     os: linux
     dist: trusty
     sudo: true
-    langage: cpp
 
 matrix:
 include:
