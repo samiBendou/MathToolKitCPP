@@ -27,21 +27,21 @@ class AESByte {
 
 public:
 
-    friend AESByte abs(const AESByte &b);
+    inline friend AESByte abs(const AESByte &b) {return b;}
 
     friend AESByte sqrt(const AESByte &b);
 
     // CONSTRUCTOR
 
-    AESByte(char val = 0x00);
+    AESByte(char val = 0x00) : _val((uc_t) val) {}
 
-    AESByte(int val);
+    AESByte(int val) : _val(static_cast<uc_t>(abs(val) % 256)) {}
 
-    AESByte(double_t val);
+    AESByte(double_t val) : _val(static_cast<uc_t>(fmod(floor(fabs(val)), 256))) {}
 
     // GETTERS
 
-    uc_t val() const;
+    inline uc_t val() const {return _val;}
 
     // OPERATORS
 
@@ -115,7 +115,10 @@ private:
 
     // ALGEBRAICAL OPERATIONS
 
-    AESByte &add(const AESByte &b);
+    inline AESByte &add(const AESByte &b) {
+        _val ^= b._val;
+        return *this;
+    }
 
     AESByte &prod(const AESByte &b);
 

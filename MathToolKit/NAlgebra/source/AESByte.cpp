@@ -6,27 +6,6 @@
 
 #include "AESByte.h"
 
-AESByte::AESByte(char val) : _val((uc_t) val) {
-
-}
-
-AESByte::AESByte(int val) : _val(static_cast<uc_t>(abs(val) % 256)) {
-
-}
-
-AESByte::AESByte(double_t val) : _val(static_cast<uc_t>(fmod(floor(fabs(val)), 256))) {
-
-}
-
-uc_t AESByte::val() const {
-    return _val;
-}
-
-AESByte &AESByte::add(const AESByte &b) {
-    _val ^= b._val;
-    return *this;
-}
-
 AESByte &AESByte::prod(const AESByte &b) {
     AESByte copy_this{*this}, copy_b{b}, res, temp;
 
@@ -47,6 +26,7 @@ AESByte &AESByte::prod(const AESByte &b) {
 }
 
 AESByte &AESByte::div(const AESByte &b) {
+    // TODO : Implement real div computing algorithm on GF(2⁸)
     return *this;
 }
 
@@ -57,11 +37,8 @@ std::ostream &operator<<(std::ostream &os, const AESByte &b) {
     return os;
 }
 
-AESByte abs(const AESByte &b) {
-    return b;
-}
-
 AESByte sqrt(const AESByte &b) {
+    // TODO : Implement real sqrt computing algorithm on GF(2⁸)
     return {(char) sqrt(b._val)};
 }
 

@@ -54,43 +54,12 @@ Pixel sqrt(const Pixel &p) {
     return p_sqrt;
 }
 
-Pixel &Pixel::add(const Pixel &p) {
-    conformFormatTo(p);
-    return setRGBWithoutFormatChange(_red + p._red, _green + p._green, _blue + p._blue);
-
-}
-
-Pixel &Pixel::sub(const Pixel &p) {
-    conformFormatTo(p);
-    return setRGBWithoutFormatChange(_red - p._red, _green - p._green, _blue - p._blue);
-}
-
-Pixel &Pixel::opp() {
-    return setRGBWithoutFormatChange(-_red, -_green, -_blue);
-}
-
-Pixel &Pixel::prod(const Pixel &p) {
-    conformFormatTo(p);
-    return setRGBWithoutFormatChange(_red * p._red, _green * p._green, _blue * p._blue);
-}
-
-Pixel &Pixel::div(const Pixel &p) {
-    conformFormatTo(p);
-    return setRGBWithoutFormatChange(_red / p._red, _green / p._green, _blue / p._blue);
-}
-
 bool Pixel::isEqual(int val) const {
     if (_format == Pixel::RGB && val == 0) {
         return _red == 0 && _green == 0 && _blue == 0;
     } else if (_format == Pixel::GScale) {
         return _red == val;
     } else return false;
-}
-
-int Pixel::limitCmpIfLimited(int cmp) const {
-    if (_limited)
-        return cmp > 0 ? cmp % (MAX_LIMIT_CMP + 1) : 0;
-    else return cmp;
 }
 
 void Pixel::conformFormatTo(const Pixel &p) {

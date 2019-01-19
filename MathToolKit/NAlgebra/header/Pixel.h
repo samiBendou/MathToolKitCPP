@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <typedef.h>
 
-#define MAX_LIMIT_CMP 255
+#define MAX_LIMIT_CMP (255)
 
 /**
  * @ingroup NAlgebra
@@ -80,7 +80,6 @@ public:
     inline Pixel &setBlue(int blue) {return setRGB(_red, _green, blue);}
 
     inline Pixel &setGrey(int grey) {
-        grey = limitCmpIfLimited(grey);
         _format = GScale;
         return setRGBWithoutFormatChange(grey, grey, grey);
     }
@@ -167,20 +166,31 @@ public:
 private:
 
     // ALGEBRAICAL OPERATIONS
+    inline Pixel &add(const Pixel &p) {
+        conformFormatTo(p);
+        return setRGBWithoutFormatChange(_red + p._red, _green + p._green, _blue + p._blue);
+    }
 
-    Pixel &add(const Pixel &p);
+    inline Pixel &sub(const Pixel &p) {
+        conformFormatTo(p);
+        return setRGBWithoutFormatChange(_red - p._red, _green - p._green, _blue - p._blue);
+    }
 
-    Pixel &sub(const Pixel &p);
+    inline Pixel &opp() {return setRGBWithoutFormatChange(-_red, -_green, -_blue);}
 
-    Pixel &opp();
+    inline Pixel &prod(const Pixel &p) {
+        conformFormatTo(p);
+        return setRGBWithoutFormatChange(_red * p._red, _green * p._green, _blue * p._blue);
+    }
 
-    Pixel &prod(const Pixel &p);
-
-    Pixel &div(const Pixel &p);
+    inline Pixel &div(const Pixel &p) {
+        conformFormatTo(p);
+        return setRGBWithoutFormatChange(_red / p._red, _green / p._green, _blue / p._blue);
+    }
 
     bool isEqual(int val) const;
 
-    int limitCmpIfLimited(int cmp) const;
+    inline int limitCmpIfLimited(int cmp) const {return _limited ? std::min(abs(cmp), MAX_LIMIT_CMP) : cmp;}
 
     inline Pixel &setRGBWithoutFormatChange(int red, int green, int blue){
         _red = limitCmpIfLimited(red);
