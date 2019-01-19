@@ -50,7 +50,7 @@ script:
 
 after_success:
   - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-  - if [ "$CXX" = "g++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"; fi
+  - coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"; fi
 
 deploy:
   provider: pages
