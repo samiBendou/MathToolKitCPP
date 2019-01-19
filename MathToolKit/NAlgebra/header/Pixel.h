@@ -41,7 +41,7 @@ class Pixel {
 public:
 
     enum Format {
-        GScale = 1, RGB = 3
+        GScale, RGB
     };
 
     friend Pixel abs(const Pixel &p);
@@ -58,32 +58,39 @@ public:
 
     // GETTERS
 
-    int red() const;
+    inline int red() const { return _red;}
 
-    int green() const;
+    inline int green() const { return _green;}
 
-    int blue() const;
+    inline int blue() const { return _blue;}
 
-    int grey() const;
+    inline int grey() const { return (_red + _green + _blue) / 3;}
 
-    bool limited() const;
+    inline bool limited() const { return _limited;}
 
-    Format format() const;
+    inline Format format() const { return _format;}
 
     // SETTERS
 
-    Pixel &setRed(int red);
+    inline Pixel &setRed(int red) { return setRGB(red, _green, _blue);}
 
-    Pixel &setGreen(int green);
+    inline Pixel &setGreen(int green) {return setRGB(_red, green, _blue);}
 
-    Pixel &setBlue(int blue);
 
-    Pixel &setGrey(int grey);
+    inline Pixel &setBlue(int blue) {return setRGB(_red, _green, blue);}
 
-    Pixel &setRGB(int red, int green, int blue);
+    inline Pixel &setGrey(int grey) {
+        grey = limitCmpIfLimited(grey);
+        _format = GScale;
+        return setRGBWithoutFormatChange(grey, grey, grey);
+    }
+
+    Pixel &setRGB(int red, int green, int blue) {
+        _format = RGB;
+        return setRGBWithoutFormatChange(red, green, blue);
+    }
 
     Pixel &setLimited(bool limited);
-
     // OPERATORS
 
     inline friend Pixel operator+(Pixel p1, const Pixel &p2) {
@@ -140,7 +147,7 @@ public:
     }
 
     inline friend bool operator>(const Pixel &p1, const Pixel &p2) {
-        return p1.grey() <= p2.grey();
+        return p1.grey() > p2.grey();
     }
 
     inline friend bool operator<(const Pixel &p1, const Pixel &p2) {
@@ -148,11 +155,11 @@ public:
     }
 
     inline friend bool operator>=(const Pixel &p1, const Pixel &p2) {
-        return p1.grey() > p2.grey();
+        return p1.grey() >= p2.grey();
     }
 
     inline friend bool operator<=(const Pixel &p1, const Pixel &p2) {
-        return p1.grey() >= p2.grey();
+        return p1.grey() <= p2.grey();
     }
 
     friend std::ostream &operator<<(std::ostream &os, const Pixel &p);
@@ -175,11 +182,19 @@ private:
 
     int limitCmpIfLimited(int cmp) const;
 
-    Pixel &setRGBWithoutFormatChange(int red, int green, int blue);
+    inline Pixel &setRGBWithoutFormatChange(int red, int green, int blue){
+        _red = limitCmpIfLimited(red);
+        _blue = limitCmpIfLimited(green);
+        _green = limitCmpIfLimited(blue);
+        return *this;
+    }
 
     // MANIPULATORS
 
-    void limit();
+    inline Pixel& limit() {
+        _limited = true;
+        return setRGBWithoutFormatChange(_red, _green, _blue);
+    }
 
     void conformFormatTo(const Pixel &p);
 
