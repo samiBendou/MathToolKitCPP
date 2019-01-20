@@ -1,17 +1,8 @@
 dist: trusty
 language: cpp
 
-env:
-  global:
-    os: linux
-    dist: trusty
-    sudo: true
-
-matrix:
-include:
 compiler:
   - gcc
-  - clang
 addons:
   apt:
     sources:
