@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <typedef.h>
 
-#define MAX_LIMIT_CMP (255)
+#define PIXEL_LIMIT_CMP (255)
 
 /**
  * @ingroup NAlgebra
@@ -190,7 +190,7 @@ private:
 
     bool isEqual(int val) const;
 
-    inline int limitCmpIfLimited(int cmp) const {return _limited ? std::min(abs(cmp), MAX_LIMIT_CMP) : cmp;}
+    inline int limitCmpIfLimited(int cmp) const {return _limited ? std::min(abs(cmp), PIXEL_LIMIT_CMP) : cmp;}
 
     inline Pixel &setRGBWithoutFormatChange(int red, int green, int blue){
         _red = limitCmpIfLimited(red);
