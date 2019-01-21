@@ -3,7 +3,6 @@
 
 /**
  * @defgroup NAnalysis Calculus and ODEs
- * @copyright Dahoux Sami 2018 All rights reserved.
  * @brief N-dimensional mathematical analysis library.
  * @details Differential calculus library providing numerical vector fields representation and easy ode solving.
  *

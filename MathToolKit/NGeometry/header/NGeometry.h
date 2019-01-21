@@ -4,7 +4,6 @@
 
 /**
  * @defgroup NGeometry Geometry
- * @copyright Dahoux Sami 2018 All rights reserved.
  * @brief N-dimensional geometry library.
  * @details Representing compact geometrical domains such as parallelepiped, spheres...
  *

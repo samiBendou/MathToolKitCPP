@@ -3,7 +3,6 @@
 
 /**
  * @defgroup NAlgebra Linear Algebra
- * @copyright Dahoux Sami 2018 All rights reserved.
  * @brief Linear algebra library.
  * @details NAlgebra is a library designed to provide intuitive and efficient use of common
  * linear object such as matrix or vector.

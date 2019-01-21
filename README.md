@@ -7,6 +7,8 @@
 
 ### Introduction
 
+**Note** Coverage has not been updated and values don't reflect real status of the code (~90% with gcov evaluation on ~70 unit tests). 
+
 MathToolKit is a C++ maths framework. It introduces common mathematical abstractions such as matrix, vector, numerical fields, ODE...
 Designed to save time solving commons mathematical problems for engineering.
 
@@ -51,7 +53,7 @@ git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 
 ### Additional information
 
-**Author :** Sami Dahoux [GitHub](https://github.com/samiBendou/)
+**Copyright :** &copy; 2019-2018 Sami Dahoux [(GitHub)](https://github.com/samiBendou/), All Rights Reserved
 
 **Last Update :** 08/01/2019
 
