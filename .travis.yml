@@ -18,7 +18,6 @@ addons:
 before_install:
   #Clone googletest to run unit tests and benchmarks
   - git clone --depth 1 https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
-  - pip install --upgrade --user git+https://github.com/samiBendou/cpp-coveralls
   - # Combine global build options with OS/compiler-dependent options
   - export CMAKE_OPTIONS= ${ENV_CMAKE_OPTIONS}
   - export CXX_FLAGS= ${ENV_CXX_FLAGS}
@@ -41,7 +40,12 @@ script:
 
 after_success:
   - sudo ln -sf /usr/bin/gcov-8 /usr/bin/gcov
-  - coveralls --root . --gcov-options '\-l' -E ".*CMakeFiles.*" -E ".*gtest.*" -E ".*google*"; fi
+  # Create lcov report
+  - lcov --capture --directory . --output-file coverage.info  --remove '*gtest*'
+  - lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter system-files
+  - lcov --list coverage.info
+  # Uploading to CodeCov
+  - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
 
 deploy:
   provider: pages
