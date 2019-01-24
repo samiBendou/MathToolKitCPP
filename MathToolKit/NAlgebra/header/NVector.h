@@ -112,6 +112,8 @@ public:
      */
     std::vector<T> array() const;
 
+    NVector<T>& resize(size_t n);
+
     /**
      *
      * @name Extremums

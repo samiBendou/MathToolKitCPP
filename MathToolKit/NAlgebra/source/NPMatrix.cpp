@@ -22,6 +22,36 @@ string NPMatrix<T>::str() const {
 }
 
 
+template<typename T>
+vector<vector<T>> NPMatrix<T>::array() const {
+    vector<vector<T>> array{_i2 - _i1 + 1};
+    for (size_t i = _i1; i <= _i2; ++i) {
+        array[i] = row(i);
+    }
+    setDefaultBrowseIndices();
+    return array;
+}
+
+template<typename T>
+NPMatrix<T> &NPMatrix<T>::resizeRow(size_t n) {
+    std::vector<T>::resize(n * _p);
+    _n = n;
+    return clean();
+}
+
+template<typename T>
+NPMatrix<T> &NPMatrix<T>::resizeCol(size_t p) {
+    return *this;
+}
+
+template<typename T>
+NPMatrix<T> &NPMatrix<T>::resize(size_t n, size_t p) {
+    resizeCol(p);
+    resizeRow(n);
+    return *this;
+}
+
+
 // CHARACTERIZATION
 
 template<typename T>
@@ -230,16 +260,15 @@ NPMatrix<T> &NPMatrix<T>::setCols(const vector<NVector<T>> &vectors, size_t j1) 
 
 // TRANSPOSED
 template<typename T>
-NPMatrix<T> NPMatrix<T>::transposed() const {
+NPMatrix<T> & NPMatrix<T>::trans() {
     NPMatrix<T> temp{_j2 - _j1 + 1, _i2 - _i1 + 1};
-
     for (auto i = _i1; i <= _i2; ++i) {
         for (auto j = _j1; j <= _j2; ++j) {
-            temp(j - _j1, i - _i1) = (*this)(i, j);
+            swap(i, j, j, i);
         }
     }
     setDefaultBrowseIndices();
-    return temp;
+    return *this;
 }
 
 template<typename T>
@@ -716,8 +745,6 @@ NPMatrix<T> &NPMatrix<T>::forEach(T s, const function<void(T &, T)> &binary_op) 
     }
     return clean();
 }
-
-
 
 
 template

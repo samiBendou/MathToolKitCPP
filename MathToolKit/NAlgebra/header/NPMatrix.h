@@ -134,6 +134,14 @@ public:
      */
     string str() const override;
 
+    vector<vector<T>> array() const;
+
+    NPMatrix<T>& resizeRow(size_t n);
+
+    NPMatrix<T>& resizeCol(size_t p);
+
+    NPMatrix<T>& resize(size_t n, size_t p);
+
     // CHARACTERIZATION
 
     inline bool isSquare() const {
@@ -400,7 +408,7 @@ public:
      * @brief Transposed matrix.
      * @return Value of transposed \f$ A^\top \f$.
      */
-    NPMatrix<T> transposed() const;
+    NPMatrix<T> & trans();
 
     /**
      *

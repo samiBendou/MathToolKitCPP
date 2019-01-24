@@ -69,6 +69,12 @@ TEST_F(NVectorTest, Affectation) {
 
 TEST_F(NVectorTest, Serialization) {
     ASSERT_EQ(_u.array(), std::vector<double_t>({1, 0, 0}));
+
+}
+
+TEST_F(NVectorTest, Memory) {
+    ASSERT_EQ(_u.resize(4), vec_t({1, 0, 0, 0}));
+    ASSERT_EQ(_u.resize(2), vec_t({1, 0}));
 }
 
 TEST_F(NVectorTest, Add) {

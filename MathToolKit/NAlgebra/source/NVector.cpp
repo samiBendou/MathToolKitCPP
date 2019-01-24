@@ -40,6 +40,13 @@ std::vector<T> NVector<T>::array() const {
     return res;
 }
 
+template<typename T>
+NVector<T> &NVector<T>::resize(size_t n) {
+    std::vector<T>::resize(n);
+    setDefaultBrowseIndices();
+    return *this;
+}
+
 // MAX / MIN
 
 template<typename T>
@@ -102,6 +109,7 @@ size_t NVector<T>::maxAbsIndex() const {
     return res;
 }
 
+
 template<typename T>
 size_t NVector<T>::minAbsIndex() const {
     auto min_it = std::min_element(begin(), end()), max_it = std::max_element(begin(), end());
@@ -115,8 +123,8 @@ size_t NVector<T>::minAbsIndex() const {
 
 // MANIPULATORS
 
-
 // SWAP
+
 
 template<typename T>
 NVector<T> &NVector<T>::swap(size_t k1, size_t k2) {
@@ -126,8 +134,8 @@ NVector<T> &NVector<T>::swap(size_t k1, size_t k2) {
     return *this;
 }
 
-
 // SHIFT
+
 
 template<typename T>
 NVector<T> &NVector<T>::shift(long iterations) {
@@ -141,7 +149,6 @@ NVector<T> &NVector<T>::shift(long iterations) {
     return *this;
 }
 
-
 // FILL
 
 template<typename T>
@@ -151,8 +158,8 @@ NVector<T> &NVector<T>::fill(T s) {
     return *this;
 }
 
-// ACCES OPERATOR
 
+// ACCES OPERATOR
 
 template<typename T>
 T &NVector<T>::operator()(long k) {
@@ -221,8 +228,8 @@ NVector<T> NVector<T>::sumProd(const std::vector<T> &scalars, const std::vector<
     return sum_prod;
 }
 
-// PROTECTED METHODS
 
+// PROTECTED METHODS
 
 template<typename T>
 NVector<T>::NVector(const vector<T> &data, size_t k1, size_t k2) : vector<T>(data), _k1(k1), _k2(k2) {
@@ -244,8 +251,8 @@ T NVector<T>::dotProduct(const NVector<T> &u) const {
     return dot;
 }
 
-// MANIPULATORS
 
+// MANIPULATORS
 
 template<typename T>
 NVector<T> &NVector<T>::forEach(const NVector<T> &u, const std::function<void(T &, const T &)> &binary_op) {

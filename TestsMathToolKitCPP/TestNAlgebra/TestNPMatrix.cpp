@@ -228,10 +228,10 @@ TEST_F(NPMatrixTest, Transposed) {
                          {0, 2, 10},
                          {0, 1, 2}};
 
-    ASSERT_EQ(_c.transposed(), expect_trans_c);
+    ASSERT_EQ(_c.trans(), expect_trans_c);
 
     mat_t u = mat_t(_c.col(1));
-    mat_t v = u.transposed();
+    mat_t v = u.trans();
 
     EXPECT_EQ(u.n(), 1);
     ASSERT_EQ(u.p(), 3);
@@ -251,7 +251,7 @@ TEST_F(NPMatrixTest, MatrixProd) {
     ASSERT_EQ(_b, expect_prod_b);
 
     mat_t u = mat_t({{1, 2}});
-    mat_t v{u.transposed()};
+    mat_t v{u.trans()};
 
 
     ASSERT_EQ(u * v, mat_t({{5}}));
