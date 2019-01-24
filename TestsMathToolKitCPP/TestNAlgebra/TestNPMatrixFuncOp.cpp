@@ -169,8 +169,9 @@ TEST_F(NPMatrixFuncOpTest, Shift) {
 }
 
 TEST_F(NPMatrixFuncOpTest, Transposed) {
-    mat_t expect_c1122{{2, 10},
-                       {1, 2}};
+    mat_t expect_c1122{ {0, 0,  0},
+                        {1, 2, 10},
+                        {5, 1, 2}};
 
     ASSERT_EQ(_c(1, 1, 2, 2).trans(), expect_c1122);
 }

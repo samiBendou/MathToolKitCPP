@@ -21,11 +21,13 @@ protected:
         _c = {{0, 0,  0},
               {1, 2,  1},
               {5, 10, 2}};
+
+        _d = {{2,  -1, 0,  3},
+              {-1, 2,  -1, 4},
+              {0,  -1, 2,  5}};
     }
 
-    mat_t _a;
-    mat_t _b;
-    mat_t _c;
+    mat_t _a, _b, _c, _d;
 };
 
 
@@ -53,6 +55,13 @@ TEST_F(NPMatrixTest, Affectation) {
 
     _a = _c;
     ASSERT_EQ(_a, _c);
+}
+
+TEST_F(NPMatrixTest, Memory) {
+    mat_t expect_a{mat_t::eye(4)};
+    expect_a(3, 3) = 0;
+    ASSERT_EQ(_a.resize(4, 4), expect_a);
+    ASSERT_EQ(_a.resize(2, 2), expect_a(0, 0, 1, 1));
 }
 
 TEST_F(NPMatrixTest, Construction) {
@@ -228,14 +237,21 @@ TEST_F(NPMatrixTest, Transposed) {
                          {0, 2, 10},
                          {0, 1, 2}};
 
+    mat_t expect_trans_d{{2,  -1, 0},
+                         {-1, 2,  -1},
+                         {0,  -1, 2},
+                         {3,  4, 5}};
+
     ASSERT_EQ(_c.trans(), expect_trans_c);
+    ASSERT_EQ(_d.trans(), expect_trans_d);
 
     mat_t u = mat_t(_c.col(1));
-    mat_t v = u.trans();
+    mat_t v{u};
 
     EXPECT_EQ(u.n(), 1);
     ASSERT_EQ(u.p(), 3);
 
+    v.trans();
     EXPECT_EQ(v.n(), 3);
     ASSERT_EQ(v.p(), 1);
 }
@@ -251,8 +267,8 @@ TEST_F(NPMatrixTest, MatrixProd) {
     ASSERT_EQ(_b, expect_prod_b);
 
     mat_t u = mat_t({{1, 2}});
-    mat_t v{u.trans()};
-
+    mat_t v{u};
+    v.trans();
 
     ASSERT_EQ(u * v, mat_t({{5}}));
 

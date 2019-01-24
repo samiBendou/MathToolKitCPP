@@ -136,11 +136,24 @@ public:
 
     vector<vector<T>> array() const;
 
-    NPMatrix<T>& resizeRow(size_t n);
+    inline NPMatrix<T>& resizeRow(size_t n) {
+        std::vector<T>::resize(n * _p);
+        _n = n;
+        return clean();
+    }
 
-    NPMatrix<T>& resizeCol(size_t p);
+    inline NPMatrix<T>& resizeCol(size_t p) {
+        NPMatrix<T> temp{_n , p};
+        temp(0, 0, _n - 1 , (_p < p ? _p : p) - 1) = (*this)(0, 0, _n - 1, (_p < p ? _p : p) - 1);
+        *this = temp;
+        return *this;
+    }
 
-    NPMatrix<T>& resize(size_t n, size_t p);
+    inline NPMatrix<T>& resize(size_t n, size_t p) {
+        resizeCol(p);
+        resizeRow(n);
+        return *this;
+    }
 
     // CHARACTERIZATION
 

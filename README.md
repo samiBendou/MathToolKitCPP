@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
-# MathToolKitCPP 1.1.2
+# MathToolKitCPP 1.2.0
 
 ### Introduction
 
@@ -51,6 +51,7 @@ git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/
 
 **Version log :**
 
+- 1.2.0 :   Adding matrix and vector resize interface and optimizing transposition, minor changes on API
 - 1.1.2 :   Minor fixes for gcc8
 - 1.1.1 :   minor fixes related to integration of CI tool and generating doc using doxygen.
 - 1.1.0 :   Adding cascade calls interface for NAlgebra API (vect.shift().swap()). Simplifying code structure.

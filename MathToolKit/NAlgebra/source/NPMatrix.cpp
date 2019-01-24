@@ -26,31 +26,11 @@ template<typename T>
 vector<vector<T>> NPMatrix<T>::array() const {
     vector<vector<T>> array{_i2 - _i1 + 1};
     for (size_t i = _i1; i <= _i2; ++i) {
-        array[i] = row(i);
+        array[i] = row(i).array();
     }
     setDefaultBrowseIndices();
     return array;
 }
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::resizeRow(size_t n) {
-    std::vector<T>::resize(n * _p);
-    _n = n;
-    return clean();
-}
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::resizeCol(size_t p) {
-    return *this;
-}
-
-template<typename T>
-NPMatrix<T> &NPMatrix<T>::resize(size_t n, size_t p) {
-    resizeCol(p);
-    resizeRow(n);
-    return *this;
-}
-
 
 // CHARACTERIZATION
 
@@ -261,12 +241,42 @@ NPMatrix<T> &NPMatrix<T>::setCols(const vector<NVector<T>> &vectors, size_t j1) 
 // TRANSPOSED
 template<typename T>
 NPMatrix<T> & NPMatrix<T>::trans() {
-    NPMatrix<T> temp{_j2 - _j1 + 1, _i2 - _i1 + 1};
-    for (auto i = _i1; i <= _i2; ++i) {
-        for (auto j = _j1; j <= _j2; ++j) {
+    if(_j2 - _j1 == 0 || _i2 - _i1 == 0) {
+        std::swap(_n, _p);
+        setDefaultBrowseIndices();
+        return *this;
+    }
+    size_t n = std::min(_i2, _j2);
+
+    for (auto i = _i1; i <= n; ++i) {
+        for (auto j = i + 1; j <= n; ++j) {
             swap(i, j, j, i);
         }
     }
+
+    assert(hasDefaultBrowseIndices() || (_j2 < _n && _i2 < _p));
+
+    if(_j2 - _j1 > _i2 - _i1) {
+        size_t n = _n;
+        resizeRow(_p);
+        for (auto i = _i1; i <= _j2; ++i) {
+            for (auto j = _i2; j <= _j2; ++j) {
+                swap(i, j, j, i);
+            }
+        }
+        resizeCol(n);
+
+    } else if(_j2 - _j1 < _i2 - _i1) {
+        size_t p = _p;
+        resizeCol(_n);
+        for (auto i = _j2; i <= _i2; ++i) {
+            for (auto j = _j1; j <= _i2; ++j) {
+                swap(i, j, j, i);
+            }
+        }
+        resizeRow(p);
+    }
+
     setDefaultBrowseIndices();
     return *this;
 }
