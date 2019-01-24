@@ -6,8 +6,6 @@ endif (APPLE)
 
 set(MATHTOOLKIT_HEADER_PATHS ../../MathToolKit/NAlgebra/header ../../MathToolKit/NAnalysis/header ../../MathToolKit/NGeometry/header)
 
-
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 include_directories(${MATHTOOLKIT_HEADER_PATHS})
 
 add_executable(TestNAnalysis TestNPField.cpp)

@@ -1,0 +1,3 @@
+[submodule "TestsMathToolKitCPP/gtest"]
+	path = TestsMathToolKitCPP/gtest
+	url = git@github.com:google/googletest

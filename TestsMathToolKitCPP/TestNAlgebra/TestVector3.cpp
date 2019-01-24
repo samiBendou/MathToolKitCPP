@@ -3,7 +3,7 @@
 //
 
 #include <Vector3.h>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 class Vector3Test : public ::testing::Test {
 

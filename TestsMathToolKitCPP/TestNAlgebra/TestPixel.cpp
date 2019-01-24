@@ -3,7 +3,7 @@
 //
 
 #include <Pixel.h>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 class PixelTest : public ::testing::Test {
 

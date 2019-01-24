@@ -39,14 +39,6 @@ eg : import NAlgebra if you want to use NPMatrix.
 
 3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html#details).
 
-### Run Unit Tests
-
-If you want to run unit tests you have to import googletest onto the cloned project.
-
-1. Clone MathToolKitCPP project
-
-2. Download googletest last version and put the googletest directory at MathToolKit/TestsMathToolKitCPP/lib/ : 
-
 ```commandline
 git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/ 
 ```

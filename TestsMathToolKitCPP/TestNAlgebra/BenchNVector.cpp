@@ -3,7 +3,7 @@
 //
 
 #include <NVector.h>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 #define NVECTOR_SMALL_DIM_TEST 1000000
 #define NVECTOR_ITERATIONS_TEST 1000

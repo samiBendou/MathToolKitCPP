@@ -3,7 +3,7 @@
 //
 
 #include <NPMatrix.h>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 class NPMatrixTest : public ::testing::Test {
 

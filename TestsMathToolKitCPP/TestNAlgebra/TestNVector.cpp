@@ -3,7 +3,7 @@
 //
 
 #include <NVector.h>
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 
 class NVectorTest : public ::testing::Test {
