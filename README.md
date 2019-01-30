@@ -39,10 +39,6 @@ eg : import NAlgebra if you want to use NPMatrix.
 
 3. Take a look at tutorials [here](https://samibendou.github.io/MathToolKitCPP/group___n_algebra.html#details).
 
-```commandline
-git clone https://github.com/google/googletest ./TestsMathToolKitCPP/lib/ 
-```
-
 ### Additional information
 
 **Copyright :** &copy; 2019-2018 Sami Dahoux [(GitHub)](https://github.com/samiBendou/), All Rights Reserved
